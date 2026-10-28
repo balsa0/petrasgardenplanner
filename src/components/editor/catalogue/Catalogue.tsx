@@ -688,7 +688,8 @@ export function surfaceSwatch(m: SurfaceMaterial, size = 160): string {
   const key = `${m.id}:${size}`;
   let url = swatchCache.get(key);
   if (!url) {
-    url = lookSwatchURL(m.id, m.look, size, m.look.base === "lawn" || m.look.base === "meadow" ? 1.6 : m.look.base === "decking" || m.look.base === "stone" ? 1.4 : 1);
+    const metres: Partial<Record<typeof m.look.base, number>> = { lawn: 1.6, meadow: 1.6, decking: 1.4, stone: 1.4, porcelain: 2.4, grassjoint: 2.6, flagstone: 2.4, stepping: 2, tiles: 1.2 };
+    url = lookSwatchURL(m.id, m.look, size, metres[m.look.base] ?? 1);
     swatchCache.set(key, url);
   }
   return url;

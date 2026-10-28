@@ -8,9 +8,14 @@ export type PatternKind =
   | "meadow"
   | "gravel"
   | "pavers"
+  | "porcelain"
+  | "grassjoint"
+  | "tiles"
   | "cobble"
   | "asphalt"
   | "stone"
+  | "flagstone"
+  | "stepping"
   | "concrete"
   | "decking"
   | "mulch"
@@ -108,6 +113,26 @@ export const SURFACE_MATERIALS: SurfaceMaterial[] = [
     look: { base: "pavers", layout: "basket", bg: "#a8987a", colors: ["#d6c6a5", "#cdbd9b", "#dccdae", "#c9b894", "#d2c29f"] },
     hard: true, drains: "no", upkeep: 1, goodFor: ["path", "terrace"], pbr: "pavers_basketweave_sand",
   }),
+  material("brick", {
+    group: "paving", color: "#9e4f36", edge: "#743a28",
+    look: { base: "pavers", bg: "#7a6a5c", colors: ["#9c4a32", "#a9573b", "#8c432e", "#b4643f", "#93503a", "#a24c35"] },
+    hard: true, drains: "no", upkeep: 1, goodFor: ["path", "terrace"], pbr: "clay_pavers_running",
+  }),
+  material("porcelain", {
+    group: "paving", color: "#d3d1cb", edge: "#a6a39c",
+    look: { base: "porcelain", bg: "#a9a6a0", colors: ["#d6d4ce", "#d0cec8", "#dbd9d4", "#cdcac4"] },
+    hard: true, drains: "no", upkeep: 1, goodFor: ["terrace", "path"], pbr: "porcelain_slabs_light",
+  }),
+  material("porcelain-grass", {
+    group: "paving", color: "#c3c4b2", edge: "#8d927a",
+    look: { base: "grassjoint", bg: "#76a44a", colors: ["#dedbd3", "#d8d5cc", "#e2dfd8", "#d4d1c8"] },
+    hard: true, drains: "partly", upkeep: 2, goodFor: ["terrace", "path"], pbr: "porcelain_slabs_grass_joints",
+  }),
+  material("terracotta", {
+    group: "paving", color: "#c0714a", edge: "#94573a",
+    look: { base: "tiles", bg: "#cbb59b", colors: ["#c46f45", "#b8653f", "#cc7b4f", "#b15f3c", "#c87650"], size: 0.3 },
+    hard: true, drains: "no", upkeep: 2, goodFor: ["terrace"], pbr: "terracotta_tiles",
+  }),
   material("slabs", {
     group: "paving", color: "#c8c6c0", edge: "#a09e98",
     look: { base: "pavers", layout: "stack", bg: "#a09e98", colors: ["#c9c7c1", "#c2c0ba", "#d0cec8", "#bebcb6"] },
@@ -115,6 +140,16 @@ export const SURFACE_MATERIALS: SurfaceMaterial[] = [
   }),
   // ── Natural stone ──
   material("stone", { group: "stone", color: "#cbbfa6", edge: "#9c8f76", look: { base: "stone" }, hard: true, drains: "partly", upkeep: 1, goodFor: ["path", "terrace"], pbr: "flagstone_sandstone" }),
+  material("york-stone", {
+    group: "stone", color: "#b9ad93", edge: "#86795f",
+    look: { base: "flagstone", bg: "#5f6148", colors: ["#c2b69c", "#b3a78d", "#a99f8a", "#c8bea8", "#b8aa8c", "#9f9a8c"] },
+    hard: true, drains: "partly", upkeep: 2, goodFor: ["terrace", "path"], pbr: "flagstone_york_reclaimed",
+  }),
+  material("stepping-stones", {
+    group: "stone", color: "#8fa267", edge: "#6b7e4a",
+    look: { base: "stepping", bg: "#76a44a", colors: ["#b9b4a8", "#aaa59a", "#c3beb2", "#a39e93"] },
+    hard: false, drains: "yes", upkeep: 3, goodFor: ["path"], pbr: "stepping_stones_lawn",
+  }),
   material("slate", {
     group: "stone", color: "#5a6168", edge: "#3f454a",
     look: { base: "stone", bg: "#3a3f44", colors: ["#4f565c", "#5a6168", "#474d53", "#62696f", "#545b61"] },
