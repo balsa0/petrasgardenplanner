@@ -1,5 +1,7 @@
+import { getUnitSystem } from "../geometry/units";
 import { analyseIrrigation } from "../irrigation/hydraulics";
-import { catalogue, headOutput } from "../model/irrigation";
+import { catalogue, headOutput, headPressureState, pressureColor } from "../model/irrigation";
+import { getEditor } from "../store/store";
 import type { GardenDoc, HeadEntity, Pt } from "../model/types";
 import { throwShape } from "../tools/irrigation";
 
@@ -15,6 +17,7 @@ const UNZONED = "#7d8a96";
  */
 export function drawIrrigation(ctx: Ctx, doc: GardenDoc, zoom: number) {
   const px = 1 / zoom;
+  const byPressure = getEditor().toolOpts.irrigation.colorBy === "pressure";
   const ents = doc.order.map((id) => doc.entities[id]).filter(Boolean);
   if (!ents.some((e) => e.kind === "source" || e.kind === "head" || e.kind === "pipe" || e.kind === "valve" || e.kind === "valvebox")) return;
   const res = analyseIrrigation(doc);
@@ -29,7 +32,10 @@ export function drawIrrigation(ctx: Ctx, doc: GardenDoc, zoom: number) {
     if (e.kind !== "head") continue;
     const r = res?.heads.get(e.id)?.radius ?? nominalRadius(e);
     if (!r) continue;
-    const c = zoneColor(res?.heads.get(e.id)?.zone);
+    const hr = res?.heads.get(e.id);
+    const nz = cat?.nozzle.get(e.nozzle);
+    const state = hr && nz ? headPressureState(nz, hr.pressure) : "ok";
+    const c = byPressure ? (state === "low" ? "#d62d20" : state === "high" ? "#e39b17" : "#3fa66b") : zoneColor(hr?.zone);
     const shape = throwShape(e.p, r, e.arc, e.dir);
     ctx.beginPath();
     shape.forEach((q, i) => (i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1])));
@@ -43,9 +49,31 @@ export function drawIrrigation(ctx: Ctx, doc: GardenDoc, zoom: number) {
     ctx.setLineDash([]);
   }
 
-  // Pipes: mainline dark, laterals in their zone's colour; wider pipes draw wider.
+  // Pipes: mainline dark, laterals in their zone's colour; wider pipes draw wider. In the
+  // pressure view each stretch shades from the pressure at one end to the other.
+  const coloured = new Set<string>();
+  if (byPressure && res) {
+    ctx.lineCap = "round";
+    for (const sg of res.segments) {
+      const pipe = doc.entities[sg.pipe];
+      const w = (1.5 + (pipe?.kind === "pipe" ? pipe.od : 25) / 14) * px;
+      ctx.beginPath();
+      ctx.moveTo(sg.a[0], sg.a[1]);
+      ctx.lineTo(sg.b[0], sg.b[1]);
+      ctx.strokeStyle = "rgba(255,255,255,0.9)";
+      ctx.lineWidth = w + 2 * px;
+      ctx.stroke();
+      const g = ctx.createLinearGradient(sg.a[0], sg.a[1], sg.b[0], sg.b[1]);
+      g.addColorStop(0, pressureColor(sg.pa));
+      g.addColorStop(1, pressureColor(sg.pb));
+      ctx.strokeStyle = g;
+      ctx.lineWidth = w;
+      ctx.stroke();
+      coloured.add(sg.pipe);
+    }
+  }
   for (const e of ents) {
-    if (e.kind !== "pipe") continue;
+    if (e.kind !== "pipe" || coloured.has(e.id)) continue;
     const zone = res?.pipes.get(e.id)?.zone;
     const c = zone === undefined ? UNZONED : zone === null ? MAIN : zoneColor(zone);
     ctx.beginPath();
@@ -95,14 +123,45 @@ export function drawIrrigation(ctx: Ctx, doc: GardenDoc, zoom: number) {
       ctx.lineWidth = px;
       ctx.stroke();
     } else if (e.kind === "head") {
-      const r = Math.max(0.06, 3.5 * px);
+      const hr = res?.heads.get(e.id);
+      const nz = cat?.nozzle.get(e.nozzle);
+      const r = Math.max(0.06, (byPressure ? 4.5 : 3.5) * px);
       ctx.beginPath();
       ctx.arc(e.p[0], e.p[1], r, 0, Math.PI * 2);
-      ctx.fillStyle = "#ffffff";
+      ctx.fillStyle = byPressure && hr ? pressureColor(hr.pressure) : "#ffffff";
       ctx.fill();
-      ctx.strokeStyle = zoneColor(res?.heads.get(e.id)?.zone);
-      ctx.lineWidth = 2 * px;
+      ctx.strokeStyle = byPressure ? "#1d1d1d" : zoneColor(hr?.zone);
+      ctx.lineWidth = (byPressure ? 1.2 : 2) * px;
       ctx.stroke();
+      if (byPressure && hr && nz) {
+        const state = headPressureState(nz, hr.pressure);
+        if (state !== "ok") {
+          // A badge: red "!" below the nozzle's range, amber above it.
+          const bx = e.p[0] + r * 1.1, by = e.p[1] - r * 1.1, br = Math.max(0.05, 4 * px);
+          ctx.beginPath();
+          ctx.arc(bx, by, br, 0, Math.PI * 2);
+          ctx.fillStyle = state === "low" ? "#d62d20" : "#e39b17";
+          ctx.fill();
+          ctx.fillStyle = "#ffffff";
+          ctx.font = `bold ${6 * px}px sans-serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("!", bx, by + 0.3 * px);
+        }
+        if (zoom > 28) {
+          // Pressure at the nozzle, next to the head, when zoomed in enough to read.
+          const imp = getUnitSystem() === "imperial";
+          const label = imp ? `${Math.round(hr.pressure * 14.5038)} psi` : `${hr.pressure.toFixed(1)} bar`;
+          ctx.font = `600 ${10 * px}px sans-serif`;
+          ctx.textAlign = "left";
+          ctx.textBaseline = "middle";
+          ctx.lineWidth = 3 * px;
+          ctx.strokeStyle = "rgba(255,255,255,0.9)";
+          ctx.strokeText(label, e.p[0] + r + 3 * px, e.p[1] + 6 * px);
+          ctx.fillStyle = state === "low" ? "#b0221a" : "#1d1d1d";
+          ctx.fillText(label, e.p[0] + r + 3 * px, e.p[1] + 6 * px);
+        }
+      }
     } else if (e.kind === "source") {
       const r = Math.max(0.15, 7 * px);
       ctx.beginPath();

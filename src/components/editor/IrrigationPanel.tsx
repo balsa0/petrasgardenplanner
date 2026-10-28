@@ -18,13 +18,17 @@ import {
   nozzlesFor,
   onCatalogue,
   precipRate,
+  presetSource,
+  pressureColor,
+  supplyKind,
+  supplyPressure,
   tableArc,
   type Body,
   type IrrigationCatalogue,
   type Nozzle,
 } from "@/editor/model/irrigation";
 import { normRot } from "@/editor/model/items";
-import type { Entity, HeadEntity, PipeEntity, SourceEntity, SourceType, ValveBoxEntity, ValveEntity } from "@/editor/model/types";
+import type { Entity, HeadEntity, PipeEntity, SourceEntity, ValveBoxEntity, ValveEntity } from "@/editor/model/types";
 import { getEditor, useEditor, type IrrigationOptions } from "@/editor/store/store";
 import { ColorDot, Field, Section, Segmented, Stat } from "./ui";
 
@@ -93,7 +97,106 @@ function startPlacing(place: IrrigationOptions["place"]) {
   getEditor().setTool("irrigate");
 }
 
-const SOURCE_TYPES: SourceType[] = ["mains", "well", "tank", "booster"];
+type SourceSettings = Pick<SourceEntity, "sourceType" | "pressure" | "flow" | "shutoff">;
+const KINDS = ["mains", "hydrophore", "pump"] as const;
+
+/** Type, pressures and flow of a water source, in the terms its kind is measured in. */
+function SourceFields({ cat, value, preset, onChange }: { cat: IrrigationCatalogue; value: SourceSettings; preset?: string; onChange: (v: Partial<SourceSettings> & { sourcePreset?: string }) => void }) {
+  const kind = supplyKind(value.sourceType);
+  const presets = cat.sources.filter((s) => supplyKind(s.kind) === kind);
+  const [lo, hi] = value.pressure;
+  const shut = value.shutoff ?? hi;
+  return (
+    <>
+      <Segmented
+        size="sm"
+        value={kind}
+        onChange={(k) => {
+          const p = cat.sources.find((s) => supplyKind(s.kind) === k);
+          onChange(p ? { ...presetSource(p), sourcePreset: p.id } : { sourceType: k, sourcePreset: "" });
+        }}
+        options={KINDS.map((k) => ({ value: k, label: t(`irrigation.source.${k}`) }))}
+      />
+      <p className="text-[11px] leading-snug text-muted-foreground">{t(`irrigation.source.${kind}.help`)}</p>
+      {presets.length > 0 && (
+        <Select value={preset || ""} onValueChange={(id) => {
+          const p = cat.sources.find((s) => s.id === id);
+          if (p) onChange({ ...presetSource(p), sourcePreset: id });
+        }}>
+          <SelectTrigger size="sm" className="w-full"><SelectValue placeholder={t("irrigation.source.preset")} /></SelectTrigger>
+          <SelectContent>{presets.map((p) => <SelectItem key={p.id} value={p.id}>{p.name}</SelectItem>)}</SelectContent>
+        </Select>
+      )}
+      {kind === "mains" && (
+        <>
+          <Field label={t("irrigation.static.low")}><PressureInput value={lo} onChange={(v) => onChange({ pressure: [v, Math.max(v, hi)] })} /></Field>
+          <Field label={t("irrigation.static.high")}><PressureInput value={hi} onChange={(v) => onChange({ pressure: [Math.min(v, lo), v] })} /></Field>
+          <Field label={t("irrigation.bucket")} hint={t("irrigation.bucket.hint")}><FlowInput value={value.flow} onChange={(v) => onChange({ flow: v })} /></Field>
+        </>
+      )}
+      {kind === "hydrophore" && (
+        <>
+          <Field label={t("irrigation.cutIn")}><PressureInput value={lo} onChange={(v) => onChange({ pressure: [v, Math.max(v, hi)] })} /></Field>
+          <Field label={t("irrigation.cutOut")}><PressureInput value={hi} onChange={(v) => onChange({ pressure: [Math.min(v, lo), v] })} /></Field>
+          <Field label={t("irrigation.shutoff")}><PressureInput value={shut} onChange={(v) => onChange({ shutoff: v })} /></Field>
+          <Field label={t("irrigation.maxFlow")}><FlowInput value={value.flow} onChange={(v) => onChange({ flow: v })} /></Field>
+        </>
+      )}
+      {kind === "pump" && (
+        <>
+          <Field label={t("irrigation.shutoff")} hint={t("irrigation.shutoff.hint")}><PressureInput value={shut} onChange={(v) => onChange({ shutoff: v })} /></Field>
+          <Field label={t("irrigation.maxFlow")}><FlowInput value={value.flow} onChange={(v) => onChange({ flow: v })} /></Field>
+        </>
+      )}
+    </>
+  );
+}
+
+/**
+ * The source's working pressure against flow, weakest and strongest, with a dot where each zone
+ * runs: how much pressure is left for the pipes and heads once that much water flows.
+ */
+function SupplyChart({ src, zones }: { src: SourceSettings; zones: { flow: number; color: string }[] }) {
+  const W = 220, H = 92, L = 30, B = 16;
+  const qMax = Math.max(src.flow, ...zones.map((z) => z.flow), 1);
+  const pMax = Math.max(supplyPressure(src, 0).high, 0.5) * 1.1;
+  const x = (q: number) => L + (q / qMax) * (W - L - 6);
+  const y = (p: number) => H - B - (p / pMax) * (H - B - 6);
+  const path = (side: "low" | "high") =>
+    Array.from({ length: 31 }, (_, i) => {
+      const q = (qMax * i) / 30;
+      return `${i ? "L" : "M"}${x(q).toFixed(1)},${y(supplyPressure(src, q)[side]).toFixed(1)}`;
+    }).join(" ");
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={t("irrigation.chart.label")}>
+      <line x1={L} y1={H - B} x2={W - 4} y2={H - B} stroke="currentColor" strokeOpacity={0.3} />
+      <line x1={L} y1={4} x2={L} y2={H - B} stroke="currentColor" strokeOpacity={0.3} />
+      <path d={path("high")} fill="none" stroke="#2f7fd0" strokeOpacity={0.45} strokeWidth={1.5} strokeDasharray="3 2" />
+      <path d={path("low")} fill="none" stroke="#2f7fd0" strokeWidth={2} />
+      {zones.map((z, i) => (
+        <circle key={i} cx={x(z.flow)} cy={y(supplyPressure(src, z.flow).low)} r={3.5} fill={z.color} stroke="#1d1d1d" strokeWidth={0.8} />
+      ))}
+      <text x={L - 3} y={y(pMax / 1.1) + 3} textAnchor="end" fontSize={8} fill="currentColor" opacity={0.6}>{fmtBar(pMax / 1.1)}</text>
+      <text x={L - 3} y={H - B + 3} textAnchor="end" fontSize={8} fill="currentColor" opacity={0.6}>0</text>
+      <text x={W - 4} y={H - 4} textAnchor="end" fontSize={8} fill="currentColor" opacity={0.6}>{fmtFlow(qMax)}</text>
+      <text x={L} y={H - 4} fontSize={8} fill="currentColor" opacity={0.6}>{t("irrigation.chart.flow")}</text>
+    </svg>
+  );
+}
+
+/** Colour scale of the pressure view. */
+function PressureLegend() {
+  const stops = [0.5, 1, 1.5, 2, 3, 4, 5];
+  return (
+    <div className="space-y-1">
+      <div className="h-2 rounded-full" style={{ background: `linear-gradient(to right, ${stops.map((b) => pressureColor(b)).join(", ")})` }} />
+      <div className="flex justify-between text-[10px] text-muted-foreground tabular">
+        {stops.filter((_, i) => i % 2 === 0).map((b) => <span key={b}>{fmtBar(b)}</span>)}
+      </div>
+      <p className="text-[11px] leading-snug text-muted-foreground">{t("irrigation.legend")}</p>
+    </div>
+  );
+}
 
 function nozzleLabel(n: Nozzle) {
   const arc = typeof n.arc === "number" ? `${n.arc}°` : Array.isArray(n.arc) ? `${n.arc[0]}–${n.arc[1]}°` : n.pattern ?? "";
@@ -131,7 +234,7 @@ function HeadPicker({ cat, body, nozzle, arc, onChange }: { cat: IrrigationCatal
         onChange={setBrand}
         options={[{ value: "all", label: t("irrigation.brand.all") }, ...brands.map((x) => ({ value: x, label: x }))]}
       />
-      <Select value={body || undefined} onValueChange={pickBody}>
+      <Select value={body} onValueChange={pickBody}>
         <SelectTrigger size="sm" className="w-full">
           <SelectValue placeholder={t("irrigation.pick.body")} />
         </SelectTrigger>
@@ -149,7 +252,7 @@ function HeadPicker({ cat, body, nozzle, arc, onChange }: { cat: IrrigationCatal
         </SelectContent>
       </Select>
       {b && (
-        <Select value={nozzle || undefined} onValueChange={(id) => onChange({ nozzle: id, arc: defaultArc(cat.nozzle.get(id)!) })}>
+        <Select value={nozzle} onValueChange={(id) => onChange({ nozzle: id, arc: defaultArc(cat.nozzle.get(id)!) })}>
           <SelectTrigger size="sm" className="w-full">
             <SelectValue placeholder={t("irrigation.pick.nozzle")} />
           </SelectTrigger>
@@ -236,45 +339,25 @@ export function IrrigationLibrary() {
   }, [cat, o.body, o.valve, o.box, o.pipeMaterial]);
 
   if (!cat) return <Section><p className="text-xs text-muted-foreground">{t("irrigation.loading")}</p></Section>;
-  const presets = cat.sources.filter((s) => s.kind === o.sourceType);
   const mat = cat.pipes.materials.find((m) => m.id === o.pipeMaterial) ?? cat.pipes.materials[0];
   const ods = [...new Set(mat?.sizes.map((s) => s.od) ?? [])].sort((a, b) => a - b);
   const pns = [...new Set(mat?.sizes.filter((s) => s.od === o.pipeOd && s.pn != null).map((s) => s.pn as number) ?? [])].sort((a, b) => a - b);
   return (
     <>
       <Section title={t("irrigation.section.source")}>
-        <Select value={o.sourceType} onValueChange={(v) => {
-          const p = cat.sources.find((s) => s.kind === v);
-          setOpts({ sourceType: v as SourceType, sourcePreset: p?.id ?? "", ...(p ? { pressure: [...p.pressure] as [number, number], flow: p.flow } : {}) });
-        }}>
-          <SelectTrigger size="sm" className="w-full"><SelectValue /></SelectTrigger>
-          <SelectContent>
-            {SOURCE_TYPES.map((k) => <SelectItem key={k} value={k}>{t(`irrigation.source.${k}`)}</SelectItem>)}
-          </SelectContent>
-        </Select>
-        {presets.length > 0 && (
-          <Select value={o.sourcePreset || undefined} onValueChange={(id) => {
-            const p = cat.sources.find((s) => s.id === id);
-            if (p) setOpts({ sourcePreset: id, pressure: [...p.pressure] as [number, number], flow: p.flow });
-          }}>
-            <SelectTrigger size="sm" className="w-full"><SelectValue placeholder={t("irrigation.source.preset")} /></SelectTrigger>
-            <SelectContent>{presets.map((p) => <SelectItem key={p.id} value={p.id}>{p.name}</SelectItem>)}</SelectContent>
-          </Select>
-        )}
-        <Field label={t("irrigation.pressureMin")}><PressureInput value={o.pressure[0]} onChange={(v) => setOpts({ pressure: [v, Math.max(v, o.pressure[1])] })} /></Field>
-        <Field label={t("irrigation.pressureMax")}><PressureInput value={o.pressure[1]} onChange={(v) => setOpts({ pressure: [Math.min(v, o.pressure[0]), v] })} /></Field>
-        <Field label={t("irrigation.flow")}><FlowInput value={o.flow} onChange={(v) => setOpts({ flow: v })} /></Field>
+        <SourceFields cat={cat} value={o} preset={o.sourcePreset} onChange={(v) => setOpts(v)} />
+        <SupplyChart src={o} zones={[]} />
         <PlaceButton place="source" icon={<Faucet />} label={t("irrigation.place.source")} />
       </Section>
       <Section title={t("irrigation.section.valves")}>
-        <Select value={o.valve || undefined} onValueChange={(v) => setOpts({ valve: v })}>
+        <Select value={o.valve} onValueChange={(v) => setOpts({ valve: v })}>
           <SelectTrigger size="sm" className="w-full"><SelectValue placeholder={t("irrigation.pick.valve")} /></SelectTrigger>
           <SelectContent className="max-h-80">
             {cat.valves.map((v) => <SelectItem key={v.id} value={v.id}>{v.brand} {v.model} {v.size}</SelectItem>)}
           </SelectContent>
         </Select>
         <PlaceButton place="valve" icon={<Columns2 />} label={t("irrigation.place.valve")} disabled={!o.valve} />
-        <Select value={o.box || undefined} onValueChange={(v) => setOpts({ box: v })}>
+        <Select value={o.box} onValueChange={(v) => setOpts({ box: v })}>
           <SelectTrigger size="sm" className="w-full"><SelectValue placeholder={t("irrigation.pick.box")} /></SelectTrigger>
           <SelectContent className="max-h-80">
             {cat.boxes.map((b) => <SelectItem key={b.id} value={b.id}>{b.brand} {b.model}</SelectItem>)}
@@ -340,12 +423,25 @@ function issueText(doc: ReturnType<typeof getEditor>["doc"], i: Issue): string {
 
 function Analysis() {
   const doc = useEditor((s) => s.doc);
+  const colorBy = useEditor((s) => s.toolOpts.irrigation.colorBy);
   useCatalogue();
   const res = analyseIrrigation(doc);
   if (!res) return null;
   const zoneName = (id: string) => doc.entities[id]?.name || t("irrigation.zone", { n: doc.order.filter((x) => doc.entities[x]?.kind === "valve").indexOf(id) + 1 });
   return (
     <Section title={t("irrigation.section.check")}>
+      <Field label={t("irrigation.colorBy")}>
+        <Segmented
+          size="sm"
+          value={colorBy}
+          onChange={(v) => setOpts({ colorBy: v })}
+          options={[
+            { value: "pressure", label: t("irrigation.colorBy.pressure") },
+            { value: "zone", label: t("irrigation.colorBy.zone") },
+          ]}
+        />
+      </Field>
+      {colorBy === "pressure" && <PressureLegend />}
       {res.zones.length > 0 && (
         <div className="space-y-1.5">
           {res.zones.map((z) => (
@@ -399,17 +495,25 @@ function patchE<K extends Entity["kind"]>(id: string, kind: K, fn: (e: Draft<Ext
 }
 
 function SourceEditor({ e }: { e: SourceEntity }) {
+  const cat = useCatalogue();
+  const doc = useEditor((s) => s.doc);
+  const zones = analyseIrrigation(doc)?.zones ?? [];
+  if (!cat) return null;
   return (
     <Section title={t("irrigation.section.source")}>
-      <Field label={t("irrigation.source.type")}>
-        <Select value={e.sourceType} onValueChange={(v) => patchE(e.id, "source", (x) => void (x.sourceType = v as SourceType))}>
-          <SelectTrigger size="sm" className="w-36"><SelectValue /></SelectTrigger>
-          <SelectContent>{SOURCE_TYPES.map((k) => <SelectItem key={k} value={k}>{t(`irrigation.source.${k}`)}</SelectItem>)}</SelectContent>
-        </Select>
-      </Field>
-      <Field label={t("irrigation.pressureMin")}><PressureInput value={e.pressure[0]} onChange={(v) => patchE(e.id, "source", (x) => void (x.pressure = [v, Math.max(v, x.pressure[1])]))} /></Field>
-      <Field label={t("irrigation.pressureMax")}><PressureInput value={e.pressure[1]} onChange={(v) => patchE(e.id, "source", (x) => void (x.pressure = [Math.min(v, x.pressure[0]), v]))} /></Field>
-      <Field label={t("irrigation.flow")}><FlowInput value={e.flow} onChange={(v) => patchE(e.id, "source", (x) => void (x.flow = v))} /></Field>
+      <SourceFields
+        cat={cat}
+        value={e}
+        preset={e.preset}
+        onChange={({ sourcePreset, ...v }) =>
+          patchE(e.id, "source", (x) => {
+            Object.assign(x, v);
+            if (sourcePreset !== undefined) x.preset = sourcePreset || undefined;
+          })
+        }
+      />
+      <SupplyChart src={e} zones={zones.map((z) => ({ flow: z.flow, color: z.color }))} />
+      {zones.length > 0 && <p className="text-[11px] leading-snug text-muted-foreground">{t("irrigation.chart.help")}</p>}
     </Section>
   );
 }
@@ -582,7 +686,7 @@ export function IrrigationToolOptions() {
   const n = cat?.nozzle.get(o.nozzle);
   const label =
     o.place === "head" && n ? `${cat?.body.get(o.body)?.model ?? ""} · ${nozzleLabel(n)} · ${o.arc}°` :
-    o.place === "source" ? `${t(`irrigation.source.${o.sourceType}`)} · ${fmtBar(o.pressure[0])}–${fmtBar(o.pressure[1])} · ${fmtFlow(o.flow)}` :
+    o.place === "source" ? `${t(`irrigation.source.${supplyKind(o.sourceType)}`)} · ${fmtBar(supplyPressure(o, 0).low)} · ${fmtFlow(o.flow)}` :
     o.place === "valve" ? cat?.valve.get(o.valve)?.model ?? "" : cat?.box.get(o.box)?.model ?? "";
   return (
     <>

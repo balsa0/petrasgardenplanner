@@ -2,7 +2,7 @@ import { closestOnSegment, dist } from "../geometry/poly";
 import {
   catalogue,
   headOutput,
-  tableLoss,
+  supplyPressure,
   pipeBore,
   pipeLoss,
   precipRate,
@@ -88,6 +88,8 @@ export interface IrrigationResult {
   issues: Issue[];
   /** Equipment and pipes reached from the source. */
   connected: Set<string>;
+  /** Pipe segments with the lowest working pressure at each end (bar), for the pressure view. */
+  segments: { a: Pt; b: Pt; pa: number; pb: number; pipe: string }[];
 }
 
 interface Node {
@@ -122,7 +124,7 @@ function solve(doc: GardenDoc, cat: IrrigationCatalogue): IrrigationResult {
   const valves = ents.filter((e): e is ValveEntity => e.kind === "valve");
   const heads = ents.filter((e): e is HeadEntity => e.kind === "head");
   const issues: Issue[] = [];
-  const result: IrrigationResult = { heads: new Map(), pipes: new Map(), zones: [], issues, connected: new Set() };
+  const result: IrrigationResult = { heads: new Map(), pipes: new Map(), zones: [], issues, connected: new Set(), segments: [] };
   if (!sources.length && (heads.length || pipes.length)) issues.push({ level: "error", code: "no-source" });
 
   // ── Network: pipe paths, split where one pipe's end tees into another's side ──
@@ -283,10 +285,16 @@ function solve(doc: GardenDoc, cat: IrrigationCatalogue): IrrigationResult {
 
   // ── Each zone in turn ──
   const srcZ = src ? heightAt(doc, src.p) : 0;
-  const [pLow, pHigh] = src ? src.pressure : [0, 0];
   const pipeFlow = new Map<string, number>();
-  const meter = src?.preset ? cat.sources.find((s) => s.id === src.preset)?.meterLoss : undefined;
-  const meterLoss = (lpm: number) => (meter ? tableLoss(meter, lpm) : 0);
+  const C = cat.pipes.hazenC ?? 150;
+  const zMemo = new Map<number, number>();
+  const z = (n: number) => {
+    let v = zMemo.get(n);
+    if (v === undefined) zMemo.set(n, (v = heightAt(doc, nodes[n].p)));
+    return v;
+  };
+  // Lowest working pressure seen at each pipe node, over the zones that use it.
+  const nodeLow = new Map<number, number>();
   valves.forEach((v, vi) => {
     const zoneHeads = [...headInfo.values()].filter((x) => x.zone === v.id);
     if (!zoneHeads.length || !src) return;
@@ -310,28 +318,55 @@ function solve(doc: GardenDoc, cat: IrrigationCatalogue): IrrigationResult {
       flows.set(x.h.id, headOutput(nz, x.h, nz.optimal ?? nz.table[Math.floor(nz.table.length / 2)].bar).flow);
     }
     let edgeQ = new Map<number, number>();
-    const run = (sourceBar: number) => {
-      for (let it = 0; it < 4; it++) {
-        edgeQ = new Map();
-        for (const x of zoneHeads) for (const ei of routes.get(x.h.id)!) edgeQ.set(ei, (edgeQ.get(ei) ?? 0) + flows.get(x.h.id)!);
-        const total = zoneHeads.reduce((a, x) => a + flows.get(x.h.id)!, 0);
-        const vLoss = valveLoss(valveProduct, total) + meterLoss(total);
+    let nodeP = new Map<number, number>();
+    // Pressure at every node on the way to the zone's heads: the source's working pressure at
+    // the zone's flow, less friction, climb and the valve where the water enters the zone.
+    const pressures = (sourceBar: number, vLoss: number) => {
+      const P = new Map<number, number>();
+      const at = (n: number): number => {
+        const known = P.get(n);
+        if (known !== undefined) return known;
+        const up = parent.get(n);
+        let val: number;
+        if (!up) val = sourceBar - (z(n) - srcZ) * BAR_PER_M;
+        else {
+          val = at(up.node) - pipeLoss(edgeQ.get(up.edge) ?? 0, edges[up.edge].len, edges[up.edge].bore, C) - (z(n) - z(up.node)) * BAR_PER_M;
+          if (up.node === valveNode && zoneAt.get(n) === v.id) val -= vLoss;
+        }
+        P.set(n, val);
+        return val;
+      };
+      for (const x of zoneHeads) at(x.node);
+      return P;
+    };
+    // Pressures for the current flows, and the heads' pressure at the nozzle (capped by regulators).
+    const settle = (side: "low" | "high") => {
+      edgeQ = new Map();
+      for (const x of zoneHeads) for (const ei of routes.get(x.h.id)!) edgeQ.set(ei, (edgeQ.get(ei) ?? 0) + flows.get(x.h.id)!);
+      const total = zoneHeads.reduce((a, x) => a + flows.get(x.h.id)!, 0);
+      nodeP = pressures(supplyPressure(src, total)[side], valveLoss(valveProduct, total));
+      for (const x of zoneHeads) {
+        const body = cat.body.get(x.h.body)!;
+        const bar = nodeP.get(x.node)!;
+        press.set(x.h.id, body.regulated ? Math.min(bar, body.regulated) : bar);
+      }
+    };
+    // Flow and pressure depend on each other; step halfway each round so steep supply curves settle.
+    const run = (side: "low" | "high") => {
+      for (let it = 0; it < 24; it++) {
+        settle(side);
         for (const x of zoneHeads) {
-          let bar = sourceBar - (heightAt(doc, nodes[x.node].p) - srcZ) * BAR_PER_M;
-          const rt = routes.get(x.h.id)!;
-          for (const ei of rt) bar -= pipeLoss(edgeQ.get(ei)!, edges[ei].len, edges[ei].bore, cat.pipes.hazenC ?? 150);
-          if (valveNode !== undefined && rt.length) bar -= vLoss;
-          const body = cat.body.get(x.h.body)!;
-          if (body.regulated) bar = Math.min(bar, body.regulated);
-          press.set(x.h.id, bar);
           const nz = cat.nozzle.get(x.h.nozzle)!;
-          flows.set(x.h.id, headOutput(nz, x.h, Math.max(0, bar)).flow);
+          const next = headOutput(nz, x.h, Math.max(0, press.get(x.h.id)!)).flow;
+          flows.set(x.h.id, (flows.get(x.h.id)! + next) / 2);
         }
       }
+      settle(side);
       return new Map(press);
     };
-    const high = run(pHigh);
-    const low = run(pLow);
+    const high = run("high");
+    const low = run("low");
+    for (const [n, bar] of nodeP) nodeLow.set(n, Math.min(nodeLow.get(n) ?? Infinity, bar));
     const total = zoneHeads.reduce((a, x) => a + flows.get(x.h.id)!, 0);
     for (const [ei, q] of edgeQ) pipeFlow.set(edges[ei].pipe, Math.max(pipeFlow.get(edges[ei].pipe) ?? 0, q));
 
@@ -348,7 +383,8 @@ function solve(doc: GardenDoc, cat: IrrigationCatalogue): IrrigationResult {
       if (bar < lo) issues.push({ level: "error", code: "low-pressure", id: x.h.id, args: { have: round(bar), need: lo } });
       else if (high.get(x.h.id)! > hi && !cat.body.get(x.h.body)!.regulated) issues.push({ level: "warn", code: "high-pressure", id: x.h.id, args: { have: round(high.get(x.h.id)!), max: hi } });
     }
-    if (total > src.flow) issues.push({ level: "error", code: "over-capacity", id: v.id, args: { need: Math.round(total), have: Math.round(src.flow) } });
+    // Near the top of its curve a source has almost no pressure left.
+    if (total > src.flow * 0.85) issues.push({ level: "error", code: "over-capacity", id: v.id, args: { need: Math.round(total), have: Math.round(src.flow * 0.85) } });
     if (valveProduct && (total < valveProduct.flowRange[0] || total > valveProduct.flowRange[1])) {
       issues.push({ level: "warn", code: "valve-range", id: v.id, args: { flow: Math.round(total), min: valveProduct.flowRange[0], max: valveProduct.flowRange[1] } });
     }
@@ -380,6 +416,12 @@ function solve(doc: GardenDoc, cat: IrrigationCatalogue): IrrigationResult {
     });
     void vi;
   });
+
+  // ── Pressure along the pipes, segment by segment ──
+  for (const e of edges) {
+    const pa = nodeLow.get(e.a), pb = nodeLow.get(e.b);
+    if (pa !== undefined && pb !== undefined) result.segments.push({ a: nodes[e.a].p, b: nodes[e.b].p, pa, pb, pipe: e.pipe });
+  }
 
   // ── Pipes: speed and loss at their busiest ──
   const maxV = cat.pipes.maxVelocity ?? 1.5;

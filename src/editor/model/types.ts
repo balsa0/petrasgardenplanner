@@ -259,15 +259,23 @@ export interface ItemEntity extends EntityBase {
 
 // ── Irrigation (see model/irrigation and irrigation/hydraulics) ──
 
-export type SourceType = "mains" | "well" | "tank" | "booster";
+/** Tap water, a hydrophore (pump + pressure tank + switch) or a plain pump; well, tank and booster are older names for pumps. */
+export type SourceType = "mains" | "hydrophore" | "pump" | "well" | "tank" | "booster";
 
-/** Where the water comes from: its static pressure range (bar) and the flow it can give (L/min). */
+/**
+ * Where the water comes from, as a supply curve: pressure falls as more water flows.
+ * Tap water: `pressure` is the static range (tap closed) and `flow` what an open tap gives (bucket
+ * test). Pump: `shutoff` is its top pressure (no flow) and `flow` its top flow. Hydrophore: a pump
+ * curve held between the switch's cut-in and cut-out `pressure`.
+ */
 export interface SourceEntity extends EntityBase {
   kind: "source";
   p: Pt;
   sourceType: SourceType;
   pressure: [number, number];
   flow: number;
+  /** Pump's shut-off pressure (bar), for pumps and hydrophores. */
+  shutoff?: number;
   /** The catalogue preset it started from; a mains meter's loss is taken off at the zone's flow. */
   preset?: string;
 }

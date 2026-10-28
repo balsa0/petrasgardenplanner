@@ -52,6 +52,9 @@ export interface IrrigationOptions {
   sourcePreset: string;
   pressure: [number, number];
   flow: number;
+  shutoff: number;
+  /** Colour the plan's pipes and heads by zone or by working pressure. */
+  colorBy: "zone" | "pressure";
   box: string;
   valve: string;
   body: string;
@@ -226,7 +229,9 @@ export const useEditor = create<EditorState>()(
         sourceType: "mains",
         sourcePreset: "",
         pressure: [3, 4],
-        flow: 30,
+        flow: 40,
+        shutoff: 4.5,
+        colorBy: "pressure",
         box: "",
         valve: "",
         body: "",

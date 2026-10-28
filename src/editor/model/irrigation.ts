@@ -1,4 +1,4 @@
-import type { HeadEntity, SourceType } from "./types";
+import type { HeadEntity, SourceEntity, SourceType } from "./types";
 
 /**
  * Irrigation products (Hunter and Rain Bird heads, nozzles, valves, valve boxes) and HDPE pipe
@@ -258,6 +258,75 @@ export function pipeLoss(lpm: number, length: number, boreMm: number, c = 150, f
 export function velocity(lpm: number, boreMm: number): number {
   const a = Math.PI * (boreMm / 2000) ** 2;
   return a > 0 ? lpm / 60000 / a : 0;
+}
+
+// ── Water sources as supply curves ───────────────────────────────────────
+
+/** What kind of supply a source is: tap water, a hydrophore, or a plain pump (well, tank and booster are pumps). */
+export function supplyKind(t: SourceType): "mains" | "hydrophore" | "pump" {
+  return t === "mains" ? "mains" : t === "hydrophore" || t === "well" ? "hydrophore" : "pump";
+}
+
+/** Pressure (bar) left at the source when `lpm` flows, on a curve from `p0` (no flow) to nothing at `qMax`. */
+const curve = (p0: number, qMax: number, lpm: number) => p0 * Math.max(0, 1 - (lpm / Math.max(1, qMax)) ** 2);
+
+/**
+ * The source's working pressure at a flow: `low` with the supply at its weakest (lowest static
+ * pressure, or the switch's cut-in), `high` at its strongest.
+ */
+export function supplyPressure(src: Pick<SourceEntity, "sourceType" | "pressure" | "flow" | "shutoff">, lpm: number): { low: number; high: number } {
+  const [lo, hi] = src.pressure;
+  switch (supplyKind(src.sourceType)) {
+    case "mains":
+      return { low: curve(lo, src.flow, lpm), high: curve(hi, src.flow, lpm) };
+    case "pump": {
+      const p = curve(src.shutoff ?? hi, src.flow, lpm);
+      return { low: p, high: p };
+    }
+    case "hydrophore": {
+      const p = curve(src.shutoff ?? hi * 1.25, src.flow, lpm);
+      return { low: Math.min(p, lo), high: Math.min(p, hi) };
+    }
+  }
+}
+
+/** A source's settings from a catalogue preset (rated points become a curve). */
+export function presetSource(p: SourcePreset & { maxSafeFlow?: number; maxFlow?: number }): { sourceType: SourceType; pressure: [number, number]; flow: number; shutoff: number } {
+  const kind = supplyKind(p.kind);
+  if (kind === "mains") return { sourceType: "mains", pressure: [...p.pressure], flow: Math.round(p.maxSafeFlow ?? p.flow / 0.75), shutoff: p.pressure[1] };
+  if (kind === "hydrophore") return { sourceType: "hydrophore", pressure: [...p.pressure], flow: Math.round(p.flow * 1.6), shutoff: Math.round(p.pressure[1] * 125) / 100 };
+  // Pump presets give a rated point (flow at the lower pressure) and the shut-off pressure.
+  const [rated, shut] = p.pressure;
+  const qMax = p.maxFlow ?? p.flow / Math.sqrt(Math.max(0.05, 1 - rated / shut));
+  return { sourceType: "pump", pressure: [rated, shut], flow: Math.round(qMax), shutoff: shut };
+}
+
+/** Plan colour for a pressure (bar): red when starved, through yellow and green, to blue and violet. */
+export function pressureColor(bar: number): string {
+  const stops: [number, [number, number, number]][] = [
+    [0.5, [214, 45, 32]],
+    [1.0, [240, 140, 46]],
+    [1.5, [232, 197, 58]],
+    [2.0, [92, 176, 80]],
+    [3.0, [43, 179, 177]],
+    [4.0, [47, 127, 208]],
+    [5.0, [107, 79, 196]],
+  ];
+  if (bar <= stops[0][0]) return rgb(stops[0][1]);
+  for (let i = 1; i < stops.length; i++) {
+    if (bar <= stops[i][0]) {
+      const [b0, c0] = stops[i - 1], [b1, c1] = stops[i];
+      const k = (bar - b0) / (b1 - b0);
+      return rgb([0, 1, 2].map((j) => c0[j] + (c1[j] - c0[j]) * k) as [number, number, number]);
+    }
+  }
+  return rgb(stops[stops.length - 1][1]);
+}
+const rgb = (c: [number, number, number]) => `#${c.map((v) => Math.round(v).toString(16).padStart(2, "0")).join("")}`;
+
+/** How a head's pressure sits against its nozzle's working range. */
+export function headPressureState(n: Nozzle, bar: number): "low" | "high" | "ok" {
+  return bar < n.pressureRange[0] ? "low" : bar > n.pressureRange[1] ? "high" : "ok";
 }
 
 /** A head's, valve's or box's product name once the catalogue is loaded. */

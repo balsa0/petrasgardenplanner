@@ -76,9 +76,10 @@ export function sanitizeEntities(entities: Record<string, Entity>): Record<strin
             kind: "source",
             p: raw.p,
             ...(typeof raw.name === "string" ? { name: raw.name } : {}),
-            sourceType: (["mains", "well", "tank", "booster"] as SourceType[]).includes(raw.sourceType) ? raw.sourceType : "mains",
+            sourceType: (["mains", "hydrophore", "pump", "well", "tank", "booster"] as SourceType[]).includes(raw.sourceType) ? raw.sourceType : "mains",
             pressure: [Math.min(lo, hi), Math.max(lo, hi)],
             flow: num(raw.flow, 0.1, 5000, 30),
+            ...(raw.shutoff !== undefined ? { shutoff: num(raw.shutoff, 0.1, 25, 4.5) } : {}),
             ...(typeof raw.preset === "string" ? { preset: raw.preset } : {}),
           }
         : null;

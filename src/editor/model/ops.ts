@@ -30,7 +30,7 @@ import type {
 import { isArea, isLine } from "./types";
 import { MATERIAL_BY_ID, isMaterialName } from "./materials";
 import { ITEM_BY_ID } from "./items";
-import { irrigationLabel } from "./irrigation";
+import { irrigationLabel, supplyKind } from "./irrigation";
 import { FENCE_BY_ID } from "./fences";
 import { getSpecies } from "./species";
 import { emptyTerrain } from "../terrain/terrain";
@@ -471,7 +471,7 @@ export function entityLabel(e: Entity): string {
     case "fence": return FENCE_BY_ID[e.fenceType]?.name ?? kindLabel(e.kind);
     case "item": return ITEM_BY_ID[e.item]?.name ?? kindLabel(e.kind);
     case "head": case "valve": case "valvebox": return irrigationLabel(e) ?? kindLabel(e.kind);
-    case "source": return t(`irrigation.source.${e.sourceType}`);
+    case "source": return t(`irrigation.source.${supplyKind(e.sourceType)}`);
     case "label": return e.text || kindLabel(e.kind);
     default: return kindLabel(e.kind);
   }
