@@ -18,6 +18,7 @@ import { useKeyboard } from "./useKeyboard";
 import { useMediaQuery } from "./useMediaQuery";
 import { Segmented } from "./ui";
 import { WelcomeDialog } from "./WelcomeDialog";
+import { CatalogueDialog } from "./catalogue/Catalogue";
 
 wireTools();
 
@@ -107,6 +108,7 @@ function EditorShell() {
         </div>
       )}
       <WelcomeDialog />
+      <CatalogueDialog />
       <ProgressWatcher />
     </div>
   );

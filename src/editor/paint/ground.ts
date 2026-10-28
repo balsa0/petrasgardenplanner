@@ -1,7 +1,7 @@
 import type { BBox } from "../geometry/poly";
 import { BED_EDGE_COLORS, MATERIAL_BY_ID } from "../model/materials";
 import type { BedEntity, GardenDoc, MultiPolygon, WaterEntity } from "../model/types";
-import { getPattern } from "./patterns";
+import { getLookPattern, getPattern } from "./patterns";
 
 type Ctx = CanvasRenderingContext2D;
 
@@ -60,7 +60,7 @@ export function paintGround(ctx: Ctx, doc: GardenDoc, o: GroundOptions) {
     const m = MATERIAL_BY_ID[e.material];
     if (!m) continue;
     tracePath(ctx, e.geometry);
-    ctx.fillStyle = getPattern(ctx, m.pattern);
+    ctx.fillStyle = getLookPattern(ctx, m.id, m.look);
     ctx.fill("evenodd");
     ctx.strokeStyle = m.edge;
     ctx.lineWidth = m.hard ? Math.max(0.05, 1.5 * px) : Math.max(0.025, px);

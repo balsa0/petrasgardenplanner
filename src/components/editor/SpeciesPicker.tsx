@@ -1,14 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ChevronsUpDown, Leaf } from "lucide-react";
+import { BookOpen, ChevronsUpDown, Leaf } from "lucide-react";
 import { speciesName, t } from "@/i18n";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
-  CATEGORY_LABELS,
   MOISTURE_LABELS,
+  SPECIES_BY_ID,
   STYLE_LABELS,
   SUN_LABELS,
   USE_LABELS,
@@ -16,27 +16,29 @@ import {
   getSpecies,
   matchesSpecies,
   searchWords,
-  speciesForLayer,
+  sortSpecies,
   zoneMinC,
-  type PlantCategory,
   type Species,
 } from "@/editor/model/species";
+import { pickedIds } from "@/editor/model/picks";
+import { getEditor, useEditor } from "@/editor/store/store";
 import { ColorDot } from "./ui";
 
-/** Searchable species combobox for the inspector. */
-export function SpeciesPicker({ value, layer, onChange }: { value: string; layer: "tree" | "bed"; onChange: (id: string) => void }) {
+/**
+ * Species chooser for the inspector: your picks for this garden to switch quickly, and the catalogue
+ * for everything else (choosing there applies to `forTree`).
+ */
+export function SpeciesPicker({ value, layer, forTree, onChange }: { value: string; layer: "tree" | "bed"; forTree?: string; onChange: (id: string) => void }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const sp = getSpecies(value);
+  const kind = layer === "tree" ? "trees" : "plants";
+  const doc = useEditor((s) => s.doc);
   const words = useMemo(() => searchWords(query), [query]);
-  // Same matching as the library: local names, English and Latin names, family, uses, …
-  const groups = useMemo(() => {
-    const m = new Map<PlantCategory, Species[]>();
-    for (const s of speciesForLayer(layer)) {
-      if (matchesSpecies(s, words)) m.set(s.category, [...(m.get(s.category) ?? []), s]);
-    }
-    return Array.from(m.entries());
-  }, [layer, words]);
+  const picks = useMemo(() => {
+    const ids = new Set([...pickedIds(doc, kind), value]);
+    return sortSpecies([...ids].map((id) => SPECIES_BY_ID[id]).filter(Boolean)).filter((s) => matchesSpecies(s, words));
+  }, [doc, kind, value, words]);
   return (
     <Popover
       open={open}
@@ -59,26 +61,34 @@ export function SpeciesPicker({ value, layer, onChange }: { value: string; layer
           <CommandInput value={query} onValueChange={setQuery} placeholder={t("panels.picker.search")} />
           <CommandList className="max-h-72">
             <CommandEmpty>{t("panels.picker.empty")}</CommandEmpty>
-            {groups.map(([cat, list]) => (
-              <CommandGroup key={cat} heading={CATEGORY_LABELS[cat]}>
-                {list.map((s) => (
-                  <CommandItem
-                    key={s.id}
-                    value={s.id}
-                    onSelect={() => {
-                      onChange(s.id);
-                      setOpen(false);
-                      setQuery("");
-                    }}
-                  >
-                    <ColorDot color={s.flower ?? s.foliage} />
-                    <span className="min-w-0 flex-1 truncate">{speciesName(s)}</span>
-                    {s.native && <Leaf className="size-3 text-primary" aria-label={t("panels.library.native")} />}
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            ))}
+            <CommandGroup heading={t(`catalogue.mine.${kind}`)}>
+              {picks.map((s) => (
+                <CommandItem
+                  key={s.id}
+                  value={s.id}
+                  onSelect={() => {
+                    onChange(s.id);
+                    setOpen(false);
+                    setQuery("");
+                  }}
+                >
+                  <ColorDot color={s.flower ?? s.foliage} />
+                  <span className="min-w-0 flex-1 truncate">{speciesName(s)}</span>
+                  {s.native && <Leaf className="size-3 text-primary" aria-label={t("panels.library.native")} />}
+                </CommandItem>
+              ))}
+            </CommandGroup>
           </CommandList>
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              getEditor().openCatalogue({ kind, forTree });
+            }}
+            className="flex w-full items-center gap-2 border-t px-3 py-2.5 text-left text-[13px] font-semibold text-primary hover:bg-muted"
+          >
+            <BookOpen className="size-4" /> {t("catalogue.browse")}
+          </button>
         </Command>
       </PopoverContent>
     </Popover>

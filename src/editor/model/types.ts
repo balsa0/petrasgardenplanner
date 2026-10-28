@@ -18,15 +18,35 @@ export type EntityKind = AreaKind | PointKind | LineKind;
 
 export type SurfaceMaterialId =
   | "lawn"
+  | "clover"
   | "meadow"
+  | "wildflowers"
   | "gravel"
+  | "gravel-white"
+  | "gravel-grey"
+  | "pebbles"
   | "pavers"
-  | "cobble"
-  | "asphalt"
+  | "pavers-anthracite"
+  | "pavers-herringbone"
+  | "pavers-basket"
+  | "slabs"
   | "stone"
+  | "slate"
+  | "travertine"
+  | "granite"
+  | "cobble"
   | "concrete"
+  | "concrete-exposed"
+  | "resin"
+  | "asphalt"
   | "decking"
-  | "mulch";
+  | "decking-larch"
+  | "decking-grey"
+  | "decking-composite"
+  | "mulch"
+  | "woodchip"
+  | "slate-chips"
+  | "lava";
 
 interface EntityBase {
   id: string;
@@ -168,6 +188,8 @@ export interface GardenDoc {
   /** Creation / draw order. */
   order: string[];
   terrain: TerrainData;
+  /** Species and surfaces picked from the catalogues ("your plants"); see model/picks. */
+  picks?: { plants?: string[]; trees?: string[]; surfaces?: string[] };
 }
 
 export const AREA_KINDS: AreaKind[] = ["plot", "building", "water", "surface", "bed"];

@@ -7,12 +7,13 @@ import { fmtNumber, getLocale, speciesName, t } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 import { fmtArea, fmtElev, fmtLen } from "@/editor/geometry/units";
 import { multiArea, multiPerimeter, pathLength } from "@/editor/geometry/poly";
-import { BED_EDGE_COLORS, BED_EDGE_NAMES, MATERIAL_BY_ID, SURFACE_MATERIALS } from "@/editor/model/materials";
+import { BED_EDGE_COLORS, BED_EDGE_NAMES, MATERIAL_BY_ID, SURFACE_GROUPS, SURFACE_GROUP_LABELS, SURFACE_MATERIALS } from "@/editor/model/materials";
+import { pickedIds } from "@/editor/model/picks";
 import { booleanSelection, entityLabel, kindLabel, type BoolOp } from "@/editor/model/ops";
 import { getSpecies, treeSize } from "@/editor/model/species";
 import { STAGE_BY_ID } from "@/editor/model/stages";
@@ -220,17 +221,31 @@ function WaterEditor({ e, doc }: { e: Extract<Entity, { kind: "water" }>; doc: G
 
 function SurfaceEditor({ e }: { e: Extract<Entity, { kind: "surface" }> }) {
   const m = MATERIAL_BY_ID[e.material];
+  const doc = useEditor((s) => s.doc);
+  const picked = new Set(pickedIds(doc, "surfaces"));
+  // Your surfaces first, then the rest of the catalogue by chapter.
+  const groups: [string, typeof SURFACE_MATERIALS][] = [
+    [t("catalogue.mine.surfaces"), SURFACE_MATERIALS.filter((x) => picked.has(x.id))],
+    ...SURFACE_GROUPS.map((g) => [SURFACE_GROUP_LABELS[g], SURFACE_MATERIALS.filter((x) => x.group === g && !picked.has(x.id))] as [string, typeof SURFACE_MATERIALS]),
+  ];
   return (
     <Section title={kindLabel(e.kind)}>
       <Field label={t("panels.surfaces.material")}>
         <Select value={e.material} onValueChange={(v) => patch(e.id, "surface", (s) => void (s.material = v as SurfaceMaterialId))}>
-          <SelectTrigger size="sm" className="w-36"><SelectValue /></SelectTrigger>
+          <SelectTrigger size="sm" className="w-40"><SelectValue /></SelectTrigger>
           <SelectContent>
-            {SURFACE_MATERIALS.map((x) => (
-              <SelectItem key={x.id} value={x.id}>
-                <ColorDot color={x.color} /> {x.name}
-              </SelectItem>
-            ))}
+            {groups
+              .filter(([, list]) => list.length)
+              .map(([label, list]) => (
+                <SelectGroup key={label}>
+                  <SelectLabel>{label}</SelectLabel>
+                  {list.map((x) => (
+                    <SelectItem key={x.id} value={x.id}>
+                      <ColorDot color={x.color} /> {x.name}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              ))}
           </SelectContent>
         </Select>
       </Field>
@@ -337,7 +352,7 @@ function TreeEditor({ e }: { e: Extract<Entity, { kind: "tree" }> }) {
   return (
     <>
       <Section title={t("panels.inspector.tree.species")}>
-        <SpeciesPicker value={e.species} layer="tree" onChange={(v) => patch(e.id, "tree", (tr) => void (tr.species = v))} />
+        <SpeciesPicker value={e.species} layer="tree" forTree={e.id} onChange={(v) => patch(e.id, "tree", (tr) => void (tr.species = v))} />
         <SpeciesDetails sp={sp} />
       </Section>
       <Section title={t("panels.inspector.tree.growth")}>

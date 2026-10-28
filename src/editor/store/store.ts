@@ -11,6 +11,7 @@ import { createEmptyDoc, duplicateEntities, removeEntities, translateEntities } 
 import { defaultToolFor, isEditableIn, type ToolId } from "../model/stages";
 import type { TerrainBrushMode } from "../terrain/terrain";
 import type { GardenStyle } from "../model/species";
+import type { PickKind } from "../model/picks";
 import { getLocale, loadLocale, saveLocale, type Locale } from "@/i18n";
 
 export interface ToolOptions {
@@ -108,6 +109,8 @@ interface EditorState {
   inspectorOpen: boolean;
   /** Narrow screens share one side panel: "auto" shows the selection when there is one. */
   sidePanel: "auto" | "library";
+  /** The open catalogue; `forTree` when it was opened to choose a species for that tree. */
+  catalogue: { kind: PickKind; forTree?: string } | null;
 
   update: (recipe: (d: Draft<GardenDoc>) => void, select?: string[]) => void;
   beginTx: () => void;
@@ -140,6 +143,7 @@ interface EditorState {
   openFloating: (f: FloatingInput | null) => void;
   setWelcome: (open: boolean) => void;
   setPanels: (o: Partial<{ libraryOpen: boolean; inspectorOpen: boolean; sidePanel: "auto" | "library" }>) => void;
+  openCatalogue: (c: { kind: PickKind; forTree?: string } | null) => void;
   markSaved: () => void;
 
   deleteSelection: () => void;
@@ -201,6 +205,7 @@ export const useEditor = create<EditorState>()(
     libraryOpen: true,
     inspectorOpen: true,
     sidePanel: "auto",
+    catalogue: null,
 
     update: (recipe, select) => {
       const { doc, txBase, past } = get();
@@ -334,6 +339,7 @@ export const useEditor = create<EditorState>()(
     openFloating: (floating) => set({ floating }),
     setWelcome: (welcomeOpen) => set({ welcomeOpen }),
     setPanels: (o) => set(o),
+    openCatalogue: (catalogue) => set({ catalogue }),
     markSaved: () => set({ dirty: false }),
 
     deleteSelection: () => {

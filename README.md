@@ -47,6 +47,21 @@ to the next step. Garden counters (plot, trees and shrubs, plants, kinds of plan
 change, placed things pulse, the selection card appears only while something is selected, and the
 clock can **play the year** month by month. Motion respects reduced-motion settings.
 
+## Catalogues
+
+Choosing plants, trees and surfaces happens in **catalogues** — a full-screen book opened from the
+side panel (Plant catalogue, Tree and shrub catalogue, Surface catalogue) or from a tree's species
+in the inspector. The left page has the chapters (categories) and every filter: garden style,
+European natives, sun, water, how cold winters get, height, flowering month, uses, evergreen, only
+your picks. Cards show an illustration drawn from the plant's form and colours; open one for its
+page (sun, water, winter hardiness, life cycle — annual, perennial, bulb…, size, flowering calendar,
+foliage, origin, uses, a gardener's note). **Pick** a card and it appears in the side panel under
+"Your plants" (picks are saved with the garden, per variant; older plans start with what they
+already use). The surface catalogue has 30 looks in 7 chapters — pavers in four colours and bonds,
+marble / granite chippings, pebbles, slate, travertine, granite, resin-bound gravel, larch,
+weathered and composite decking, wood chips, slate chippings, lava mulch — each with rain drainage,
+upkeep and where it suits.
+
 ## Checkpoints and variants
 
 Next to the garden name sits one chip with the open **variant** (A, B, C…) and a flag button.

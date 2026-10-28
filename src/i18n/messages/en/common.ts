@@ -13,7 +13,6 @@ const messages = {
   "common.perimeter": "Perimeter",
   "common.size": "Size",
   "common.color": "Colour",
-  "common.all": "All",
   "common.language": "Language",
   "common.units": "Units",
   "common.years": "{count, plural, one {# year} other {# years}}",
