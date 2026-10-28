@@ -71,17 +71,16 @@ const FlowInput = ({ value, onChange }: { value: number; onChange: (v: number) =
   <NumInput value={value} onChange={onChange} unit={imperial() ? "GPM" : "L/min"} scale={imperial() ? 1 / GPM : 1} min={1} max={2000} className="w-28" />
 );
 
-/** The catalogue once loaded (and a redraw of the plan when it arrives). */
+// Also redraws the plan when the catalogue arrives, so throws and checks appear.
+const subscribeCatalogue = (fn: () => void) =>
+  onCatalogue(() => {
+    fn();
+    getEditor().bumpOverlay();
+  });
+
+/** The catalogue once loaded. */
 function useCatalogue(): IrrigationCatalogue | null {
-  return useSyncExternalStore(
-    (fn) =>
-      onCatalogue(() => {
-        fn();
-        getEditor().bumpOverlay();
-      }),
-    catalogue,
-    () => null,
-  );
+  return useSyncExternalStore(subscribeCatalogue, catalogue, () => null);
 }
 
 function setOpts(o: Partial<IrrigationOptions>) {

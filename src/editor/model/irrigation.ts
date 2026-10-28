@@ -156,12 +156,12 @@ export function loadCatalogue(): Promise<IrrigationCatalogue> {
 
 export const catalogue = () => cat;
 
-/** Calls `fn` once the catalogue has loaded (right away if it has). */
+/**
+ * Calls `fn` when the catalogue arrives, starting the load if needed (a store subscription for
+ * useSyncExternalStore: never calls back synchronously, and does nothing once it is loaded).
+ */
 export function onCatalogue(fn: () => void): () => void {
-  if (cat) {
-    fn();
-    return () => {};
-  }
+  if (cat) return () => {};
   listeners.add(fn);
   void loadCatalogue();
   return () => listeners.delete(fn);
