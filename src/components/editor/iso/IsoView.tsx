@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
@@ -18,7 +18,8 @@ import { hudInsets, keys, safeCapture, setViewport } from "@/editor/viewport";
 import type { Pt } from "@/editor/model/types";
 import { contentBBox } from "../plan/PlanView";
 import { SceneContent } from "./Scene";
-import { EYE_HEIGHTS, ensurePose, forwardOf, look, stepWalk, walk } from "./walk";
+import { emitWalk, ensurePose, eyeHeight, forwardOf, look, rightOf, running, setLockRequest, setSound, stepWalk, walk } from "./walk";
+import { setAmbience, unlockAudio } from "./walkAudio";
 
 const MIN_ZOOM = 2;
 const MAX_ZOOM = 400;
@@ -84,17 +85,25 @@ function OrbitRig() {
   );
 }
 
-/** First-person camera for walk mode; the walker itself lives in ./walk. */
+const FOV = { walk: 62, run: 68, zoom: 26 };
+
+/**
+ * First-person camera for walk mode: eye height, the bob and sway of each stride, the dip after a
+ * jump and the field of view; the walker itself lives in ./walk.
+ */
 function WalkRig() {
   const ref = useRef<THREE.PerspectiveCamera>(null);
   const invalidate = useThree((s) => s.invalidate);
   const getThree = useThree((s) => s.get);
-  const eyeY = useRef<number | null>(null);
+  const eyeOff = useRef<number | null>(null);
+  // No bob or sway for people who asked their system for less motion.
+  const still = useMemo(() => typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches, []);
 
   useEffect(() => {
     const s = getEditor();
     const forward: Pt = s.walkFrom === "2d" ? [0, -1] : planVectors(isoAzimuth(s.camera.rotation)).fwd;
     ensurePose(s.doc, s.time.years, { center: s.camera.center, forward });
+    Object.assign(walk, { z: null, vz: 0, grounded: true, bob: 0, landing: 0, crouch: false, zoom: false, focus: null, started: false });
     // Only the camera moves while walking, so shadows are rendered once and refreshed on edits.
     const shadowMap = getThree().gl.shadowMap;
     shadowMap.autoUpdate = false;
@@ -113,6 +122,7 @@ function WalkRig() {
       shadowMap.autoUpdate = true;
       walk.keys.clear();
       walk.target = null;
+      setAmbience(false);
     };
   }, [getThree, invalidate]);
 
@@ -122,20 +132,36 @@ function WalkRig() {
     if (!cam || !pose) return;
     const s = getEditor();
     const dt = Math.min(delta, 0.1);
-    const active = stepWalk(s.doc, s.time.years, dt);
-    const want = sampleHeight(getHeightGrid(s.doc), pose.p[0], pose.p[1]) + EYE_HEIGHTS[walk.eye];
-    // Ease the eye height so steps, slopes and switching to a child's view don't jolt.
-    eyeY.current = eyeY.current == null ? want : eyeY.current + (want - eyeY.current) * (1 - Math.exp(-dt * 10));
-    const settling = Math.abs(want - eyeY.current) > 0.002;
-    const cp = Math.cos(pose.pitch);
+    const grid = getHeightGrid(s.doc);
+    const ground = (p: Pt) => sampleHeight(grid, p[0], p[1]);
+    const active = stepWalk(s.doc, s.time.years, dt, ground);
+    // Ease the eye height so crouching and switching to a child's view don't jolt.
+    const wantEye = eyeHeight();
+    eyeOff.current = eyeOff.current == null ? wantEye : eyeOff.current + (wantEye - eyeOff.current) * (1 - Math.exp(-dt * 9));
+    const settling = Math.abs(wantEye - eyeOff.current) > 0.002;
+    // Head bob: lowest as each foot lands, swaying towards the foot carrying the weight.
+    const bob = still ? 0 : walk.bob;
+    const lift = bob * (Math.abs(Math.sin(walk.phase)) - 0.5);
+    const sway = bob * 0.55 * Math.sin(walk.phase);
     const [fx, fz] = forwardOf(pose.yaw);
-    cam.position.set(pose.p[0], eyeY.current, pose.p[1]);
-    cam.lookAt(pose.p[0] + fx * cp, eyeY.current + Math.sin(pose.pitch), pose.p[1] + fz * cp);
+    const [rx, rz] = rightOf(pose.yaw);
+    const y = (walk.z ?? ground(pose.p)) + eyeOff.current + lift - (still ? 0 : walk.landing);
+    const cp = Math.cos(pose.pitch);
+    cam.position.set(pose.p[0] + rx * sway, y, pose.p[1] + rz * sway);
+    cam.lookAt(cam.position.x + fx * cp, y + Math.sin(pose.pitch), cam.position.z + fz * cp);
+    cam.rotateZ(-sway * 0.6);
+    // A little wider when running, much narrower while zooming in.
+    const fov = walk.zoom ? FOV.zoom : running() && Math.hypot(walk.vel[0], walk.vel[1]) > 2 ? FOV.run : FOV.walk;
+    const zooming = Math.abs(cam.fov - fov) > 0.05;
+    if (zooming) {
+      cam.fov += (fov - cam.fov) * (1 - Math.exp(-dt * 9));
+      cam.updateProjectionMatrix();
+    }
     cam.updateMatrixWorld();
-    if (active || settling) invalidate();
+    if (active || settling || zooming) invalidate();
   }, -1);
 
-  return <PerspectiveCamera ref={ref} makeDefault fov={62} near={0.05} far={2500} />;
+  return <PerspectiveCamera ref={ref} makeDefault fov={FOV.walk} near={0.05} far={2500} />;
 }
 
 function Bridge({
@@ -319,20 +345,78 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
       },
     );
 
-    // Walk mode: drag to look around (grab the view), click the ground to walk there.
+    // Walk mode, played like a game: a click captures the mouse, which then looks around (Esc lets
+    // go). Touch and pen keep drag-to-look and tap-to-walk.
     const LOOK_SPEED = 0.0042;
+    const MOUSE_LOOK = 0.0022;
     let lookDrag: { x: number; y: number; sx: number; sy: number; moved: boolean } | null = null;
+    const isLocked = () => document.pointerLockElement === wrap;
+    const lock = () => {
+      if (mode !== "walk" || isLocked()) return;
+      unlockAudio();
+      // Raw mouse input where the system offers it, plain capture elsewhere.
+      wrap.requestPointerLock({ unadjustedMovement: true }).catch(() => wrap.requestPointerLock().catch(() => {}));
+    };
+    const onLockChange = () => {
+      const locked = isLocked();
+      if (locked === walk.locked) return;
+      walk.locked = locked;
+      if (locked) {
+        walk.started = true;
+        setAmbience(walk.sound);
+      } else {
+        walk.unlockedAt = performance.now();
+        walk.keys.clear();
+        walk.zoom = false;
+        walk.focus = null;
+      }
+      emitWalk();
+      bridge.current.invalidate();
+    };
+    // What the crosshair is on, a few times a second.
+    const focusTimer =
+      mode === "walk"
+        ? window.setInterval(() => {
+            if (!walk.locked) return;
+            const r = rect();
+            const k = pick(r.left + r.width / 2, r.top + r.height / 2);
+            const pose = walk.pose;
+            const near = k.hitId && (!k.p || !pose || Math.hypot(k.p[0] - pose.p[0], k.p[1] - pose.p[1]) < 30) ? k.hitId : null;
+            if (near !== walk.focus) {
+              walk.focus = near;
+              emitWalk();
+            }
+          }, 150)
+        : 0;
+    if (mode === "walk") setLockRequest(lock);
 
     const setCursorStyle = () => {
-      if (mode === "walk") wrap.style.cursor = lookDrag?.moved ? "grabbing" : "grab";
+      if (mode === "walk") wrap.style.cursor = lookDrag?.moved ? "grabbing" : "pointer";
       else wrap.style.cursor = mode === "3d" ? "grab" : pan ? "grabbing" : keys.space ? "grab" : getTool().cursor;
     };
 
     const walkDown = (ev: PointerEvent) => {
+      if (ev.pointerType === "mouse") {
+        if (!isLocked()) {
+          if (ev.button === 0) lock();
+        } else if (ev.button === 2) {
+          walk.zoom = true;
+          bridge.current.invalidate();
+        }
+        return;
+      }
       lookDrag = { x: ev.clientX, y: ev.clientY, sx: ev.clientX, sy: ev.clientY, moved: false };
       safeCapture(wrap, ev.pointerId);
     };
     const walkMove = (ev: PointerEvent) => {
+      if (isLocked()) {
+        // Browsers now and then report a huge jump right after capturing; skip those.
+        if (Math.abs(ev.movementX) > 400 || Math.abs(ev.movementY) > 400) return;
+        const k = MOUSE_LOOK * (walk.zoom ? 0.45 : 1);
+        look(ev.movementX * k, -ev.movementY * k);
+        bridge.current.invalidate();
+        return;
+      }
       if (!lookDrag) return;
       look(-(ev.clientX - lookDrag.x) * LOOK_SPEED, (ev.clientY - lookDrag.y) * LOOK_SPEED);
       lookDrag.x = ev.clientX;
@@ -344,6 +428,13 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
       bridge.current.invalidate();
     };
     const walkUp = (ev: PointerEvent) => {
+      if (ev.pointerType === "mouse") {
+        if (ev.button === 2 && walk.zoom) {
+          walk.zoom = false;
+          bridge.current.invalidate();
+        }
+        return;
+      }
       if (lookDrag && !lookDrag.moved && ev.button === 0) {
         const k = pick(ev.clientX, ev.clientY);
         if (k.p) walk.target = k.p;
@@ -355,18 +446,33 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
     const walkWheel = (ev: WheelEvent) => {
       ev.preventDefault();
       const pose = walk.pose;
-      if (!pose) return;
+      if (!pose || isLocked()) return;
       const [fx, fy] = forwardOf(pose.yaw);
       const step = ev.deltaY < 0 ? 1.5 : -1.5;
       const from = walk.target ?? pose.p;
       walk.target = [from[0] + fx * step, from[1] + fy * step];
       bridge.current.invalidate();
     };
-    const WALK_KEYS = new Set(["KeyW", "KeyA", "KeyS", "KeyD", "KeyQ", "KeyE", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "ShiftLeft", "ShiftRight"]);
+    const WALK_KEYS = new Set(["KeyW", "KeyA", "KeyS", "KeyD", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "ShiftLeft", "ShiftRight"]);
     const typing = (t: EventTarget | null) =>
       !!(t as HTMLElement | null)?.closest?.("input,textarea,select,[contenteditable=true],[role=dialog],[role=menu],[data-radix-popper-content-wrapper]");
     const walkKeyDown = (ev: KeyboardEvent) => {
-      if (mode !== "walk" || typing(ev.target) || ev.ctrlKey || ev.metaKey || ev.altKey || !WALK_KEYS.has(ev.code)) return;
+      if (mode !== "walk" || typing(ev.target) || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+      // One-shot keys: jump, crouch (toggle), sound (toggle).
+      if (ev.code === "Space" || ev.code === "KeyC" || ev.code === "KeyM") {
+        ev.preventDefault();
+        if (ev.repeat) return;
+        if (ev.code === "Space") walk.jump = true;
+        else if (ev.code === "KeyC") walk.crouch = !walk.crouch;
+        else {
+          unlockAudio();
+          setSound(!walk.sound);
+        }
+        emitWalk();
+        bridge.current.invalidate();
+        return;
+      }
+      if (!WALK_KEYS.has(ev.code)) return;
       walk.keys.add(ev.code);
       if (!ev.code.startsWith("Shift")) ev.preventDefault();
       bridge.current.invalidate();
@@ -482,8 +588,17 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
     window.addEventListener("keydown", walkKeyDown);
     window.addEventListener("keyup", walkKeyUp);
     window.addEventListener("blur", walkBlur);
+    document.addEventListener("pointerlockchange", onLockChange);
     setCursorStyle();
     return () => {
+      window.clearInterval(focusTimer);
+      document.removeEventListener("pointerlockchange", onLockChange);
+      if (mode === "walk") {
+        setLockRequest(null);
+        if (isLocked()) document.exitPointerLock();
+        walk.locked = false;
+        emitWalk();
+      }
       unsubFit();
       setViewport(null);
       wrap.removeEventListener("pointerdown", onDown);

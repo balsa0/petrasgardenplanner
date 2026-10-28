@@ -780,5 +780,19 @@
   "walk.eye.label": "Altezza occhi",
   "walk.eye.adult": "Adulto",
   "walk.eye.child": "Bambino",
-  "walk.minimap.title": "Mappa — clicca per andarci"
+  "walk.minimap.title": "Mappa — clicca per andarci",
+  "walk.start.title": "Passeggia nel tuo giardino",
+  "walk.start.click": "Fai clic per iniziare",
+  "walk.paused.title": "In pausa",
+  "walk.paused.click": "Fai clic per continuare",
+  "walk.paused.leave": "Premi di nuovo Esc per uscire dalla passeggiata.",
+  "walk.help.mouse": "Mouse",
+  "walk.help.jump": "Salta",
+  "walk.help.crouch": "Accovacciati",
+  "walk.help.zoom": "Guarda da vicino",
+  "walk.help.zoomKeys": "Tasto destro",
+  "walk.help.sound": "Audio sì o no",
+  "walk.help.pause": "Pausa",
+  "walk.sound.on": "Audio attivo",
+  "walk.sound.off": "Audio disattivato"
 }

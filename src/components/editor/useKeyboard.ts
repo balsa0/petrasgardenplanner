@@ -9,6 +9,7 @@ import { keys } from "@/editor/viewport";
 import { t } from "@/i18n";
 import { TOOL_META } from "./meta";
 import { saveCheckpointNow } from "./VersionsMenu";
+import { walk } from "./iso/walk";
 
 function isTyping(target: EventTarget | null) {
   const el = target as HTMLElement | null;
@@ -62,6 +63,8 @@ export function useKeyboard() {
       if (s.view === "walk") {
         // The walk controller owns movement keys; only a few global keys apply.
         if (e.key === "Escape" || e.key === "Tab") {
+          // The first Esc only lets go of the captured mouse (the browser does that); a second one leaves.
+          if (e.key === "Escape" && performance.now() - walk.unlockedAt < 300) return;
           s.exitWalk();
           e.preventDefault();
         } else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "z") {

@@ -1,15 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useSyncExternalStore } from "react";
-import { LogOut } from "lucide-react";
+import { Fragment, useEffect, useRef, useSyncExternalStore } from "react";
+import { LogOut, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { EMPTY_BBOX, bboxValid, multiBBox } from "@/editor/geometry/poly";
+import { kindLabel } from "@/editor/model/ops";
+import { getSpecies } from "@/editor/model/species";
+import type { Entity } from "@/editor/model/types";
 import { drawPlan, screenToWorld, worldToScreen, type PlanCamera } from "@/editor/render/plan";
 import { getEditor, useEditor } from "@/editor/store/store";
-import { t } from "@/i18n";
+import { speciesName, t } from "@/i18n";
 import { Segmented } from "../ui";
-import { EYE_HEIGHTS, forwardOf, setEyeHeight, subscribeWalk, teleport, walk, type EyeHeight } from "./walk";
+import { useMediaQuery } from "../useMediaQuery";
+import { EYE_HEIGHTS, forwardOf, requestWalkLock, setEyeHeight, setSound, subscribeWalk, teleport, walk, type EyeHeight } from "./walk";
+import { unlockAudio } from "./walkAudio";
 
 const MAP_W = 200;
 const MAP_H = 150;
@@ -78,8 +84,8 @@ function Minimap() {
       const fov = 0.62;
       const reach = 34;
       const grad = ctx.createRadialGradient(x, y, 0, x, y, reach);
-      grad.addColorStop(0, "rgba(37,99,235,0.45)");
-      grad.addColorStop(1, "rgba(37,99,235,0)");
+      grad.addColorStop(0, "rgba(255,122,46,0.5)");
+      grad.addColorStop(1, "rgba(255,122,46,0)");
       ctx.fillStyle = grad;
       ctx.beginPath();
       ctx.moveTo(x, y);
@@ -87,8 +93,8 @@ function Minimap() {
       ctx.closePath();
       ctx.fill();
       ctx.fillStyle = "#ff7a2e";
-      ctx.strokeStyle = "#fff";
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = "#151413";
+      ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.arc(x, y, 5, 0, Math.PI * 2);
       ctx.fill();
@@ -127,24 +133,93 @@ function Minimap() {
   );
 }
 
-/** Exit button, eye height, controls legend and minimap shown over the walk view. */
+/** Name of the thing under the crosshair, and what it is. */
+function focusText(e: Entity): { title: string; sub: string | null } {
+  if (e.kind === "tree") {
+    const sp = getSpecies(e.species);
+    return { title: e.name || speciesName(sp), sub: sp.latin };
+  }
+  const kind = kindLabel(e.kind);
+  return e.name ? { title: e.name, sub: kind } : { title: kind, sub: null };
+}
+
+/** A dot in the middle of the view, with the name of whatever it rests on. */
+function Crosshair() {
+  const focus = useSyncExternalStore(subscribeWalk, () => walk.focus, () => null);
+  const e = useEditor((s) => (focus ? s.doc.entities[focus] : undefined));
+  const text = e ? focusText(e) : null;
+  return (
+    <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+      <span className="size-1.5 rounded-full bg-[var(--paper)] ring-[length:var(--line)] ring-[var(--ink)]" />
+      {text && (
+        <div className="hud-panel absolute top-[calc(50%+16px)] max-w-64 px-2.5 py-1 text-center">
+          <div className="font-display truncate text-[13px] font-semibold">{text.title}</div>
+          {text.sub && <div className="truncate text-[11px] text-muted-foreground italic">{text.sub}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Start and pause screen: how to play, and a click to capture the mouse. */
+function StartCard({ started }: { started: boolean }) {
+  const rows: [string, string][] = [
+    ["W A S D", t("walk.help.move")],
+    [t("walk.help.mouse"), t("walk.help.look")],
+    ["← →", t("walk.help.turn")],
+    ["Shift", t("walk.help.run")],
+    ["Space", t("walk.help.jump")],
+    ["C", t("walk.help.crouch")],
+    [t("walk.help.zoomKeys"), t("walk.help.zoom")],
+    ["M", t("walk.help.sound")],
+    ["Esc", t("walk.help.pause")],
+  ];
+  return (
+    <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-[var(--ink)]/20">
+      <button
+        type="button"
+        onClick={requestWalkLock}
+        className="hud-panel pointer-events-auto w-[min(380px,calc(100%-2rem))] cursor-pointer p-5 text-left outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+      >
+        <div className="font-display text-[20px] leading-tight font-bold">{t(started ? "walk.paused.title" : "walk.start.title")}</div>
+        <div className="keycap mt-3 flex h-10 items-center justify-center rounded-lg text-[14px] font-semibold" data-active="true">
+          {t(started ? "walk.paused.click" : "walk.start.click")}
+        </div>
+        <div className="mt-4 grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-1.5 text-[12.5px]">
+          {rows.map(([k, v]) => (
+            <Fragment key={v}>
+              <Kbd className="justify-self-start">{k}</Kbd>
+              <span>{v}</span>
+            </Fragment>
+          ))}
+        </div>
+        {started && <div className="mt-4 text-[12px] text-muted-foreground">{t("walk.paused.leave")}</div>}
+      </button>
+    </div>
+  );
+}
+
+/** Exit, eye height, sound, the minimap and, with a mouse, the start / pause card and crosshair. */
 export function WalkHud() {
   const exitWalk = useEditor((s) => s.exitWalk);
   const eye = useSyncExternalStore(subscribeWalk, () => walk.eye, () => walk.eye);
-  const rows: [string, string][] = [
-    ["W A S D", t("walk.help.move")],
-    ["← →", t("walk.help.turn")],
+  const locked = useSyncExternalStore(subscribeWalk, () => walk.locked, () => false);
+  const started = useSyncExternalStore(subscribeWalk, () => walk.started, () => false);
+  const sound = useSyncExternalStore(subscribeWalk, () => walk.sound, () => true);
+  // A mouse plays like a game; touch screens drag to look and tap to walk.
+  const mouse = useMediaQuery("(pointer: fine)");
+  const touchRows: [string, string][] = [
     [t("walk.help.lookKeys"), t("walk.help.look")],
-    ["Shift", t("walk.help.run")],
     [t("walk.help.goToKeys"), t("walk.help.goTo")],
   ];
+  const soundLabel = t(sound ? "walk.sound.on" : "walk.sound.off");
   return (
     <>
-      <div className="absolute left-3 z-10 flex items-center gap-2" style={{ top: "var(--hud-top)" }}>
+      <div className="absolute left-2 z-10 flex items-center gap-2" style={{ top: "var(--hud-top)" }}>
         <Button variant="secondary" size="sm" className="gap-1.5" onClick={exitWalk}>
           <LogOut /> {t("walk.exit")} <Kbd className="ml-0.5">Esc</Kbd>
         </Button>
-        <div className="flex items-center gap-2 hud-panel rounded-lg py-0.5 pr-0.5 pl-2.5">
+        <div className="hud-panel flex items-center gap-2 rounded-lg py-0.5 pr-0.5 pl-2.5">
           <span className="text-xs font-medium text-muted-foreground">{t("walk.eye.label")}</span>
           <Segmented<EyeHeight>
             size="sm"
@@ -153,17 +228,40 @@ export function WalkHud() {
             options={(Object.keys(EYE_HEIGHTS) as EyeHeight[]).map((k) => ({ value: k, label: t(`walk.eye.${k}`) }))}
           />
         </div>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              type="button"
+              aria-label={soundLabel}
+              aria-pressed={sound}
+              onClick={() => {
+                unlockAudio();
+                setSound(!sound);
+              }}
+              className="keycap flex size-8 items-center justify-center rounded-lg"
+            >
+              {sound ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
+            </button>
+          </TooltipTrigger>
+          <TooltipContent side="bottom">
+            {soundLabel} <Kbd>M</Kbd>
+          </TooltipContent>
+        </Tooltip>
       </div>
+      {mouse && locked && <Crosshair />}
+      {mouse && !locked && <StartCard started={started} />}
       <div className="hud-panel absolute right-0 bottom-0 z-10 hidden rounded-none border-r-0 border-b-0 p-1 @2xl:block">
         <Minimap />
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-0 z-10 flex max-w-full flex-wrap items-center gap-x-3 gap-y-1 bg-foreground px-3 py-1.5 text-xs text-background @2xl:max-w-[calc(100%-14rem)]">
-        {rows.map(([k, v]) => (
-          <span key={v} className="flex items-center gap-1.5 whitespace-nowrap">
-            <Kbd className="bg-background/15 text-background">{k}</Kbd> {v}
-          </span>
-        ))}
-      </div>
+      {!mouse && (
+        <div className="pointer-events-none absolute bottom-0 left-0 z-10 flex max-w-full flex-wrap items-center gap-x-3 gap-y-1 bg-foreground px-3 py-1.5 text-xs text-background @2xl:max-w-[calc(100%-14rem)]">
+          {touchRows.map(([k, v]) => (
+            <span key={v} className="flex items-center gap-1.5 whitespace-nowrap">
+              <Kbd className="bg-background/15 text-background">{k}</Kbd> {v}
+            </span>
+          ))}
+        </div>
+      )}
     </>
   );
 }

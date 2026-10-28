@@ -1,22 +1,34 @@
 /**
- * Walk mode: a first-person stroll through the garden at eye level. This module holds the walker
- * (position, heading, eye height), the obstacles it can't walk through and the movement step;
- * the 3D view renders it and the HUD reads it. Plan coordinates: x east, y south; heading 0 = +x.
+ * Walk mode: a first-person stroll through the garden, played like a game. This module holds the
+ * walker (position, heading, height, speed, the bob of each stride), the obstacles it can't walk
+ * through and the movement step; the 3D view renders it, the HUD reads it and ./walkAudio voices
+ * the footsteps. Plan coordinates: x east, y south; heading 0 = +x.
  */
 import { bboxValid, closestOnSegment, multiBBox, pointInMulti, signedDistance, type BBox } from "@/editor/geometry/poly";
 import { FENCE_BY_ID, fenceRuns } from "@/editor/model/fences";
+import { MATERIAL_BY_ID } from "@/editor/model/materials";
 import { getSpecies, treeSize } from "@/editor/model/species";
 import type { GardenDoc, MultiPolygon, Pt } from "@/editor/model/types";
 import { terrainExtent } from "@/editor/terrain/terrain";
+import { footstep, setAmbience, type Ground } from "./walkAudio";
 
 export const EYE_HEIGHTS = { adult: 1.6, child: 1.05 } as const;
 export type EyeHeight = keyof typeof EYE_HEIGHTS;
 
 const WALK_SPEED = 1.4; // m/s, an unhurried stroll
-const RUN_FACTOR = 2.6;
+const RUN_SPEED = 3.6; // a jog
+const CROUCH_SPEED = 0.7;
+const CROUCH_EYE = 0.62; // share of the standing eye height
 const TURN_SPEED = 1.8; // rad/s for the arrow keys
 const BODY_RADIUS = 0.25;
 const MAX_PITCH = 1.35;
+const GRAVITY = 9.81;
+const JUMP_SPEED = 3.2; // about 0.5 m off the ground
+/** Metres per step: one footfall each. */
+const STRIDE = { walk: 0.72, run: 1.05, crouch: 0.5 };
+const BOB = 0.03; // m of head bob at walking pace
+
+const SOUND_KEY = "gp:walk:sound";
 
 export interface WalkPose {
   p: Pt;
@@ -29,13 +41,43 @@ export interface WalkPose {
 export const walk = {
   pose: null as WalkPose | null,
   eye: "adult" as EyeHeight,
+  crouch: false,
   /** Physical key codes currently held (KeyW, ArrowUp, ShiftLeft…), so AZERTY etc. work too. */
   keys: new Set<string>(),
-  /** Point the walker is heading to after a click. */
+  /** A jump asked for since the last step. */
+  jump: false,
+  /** Right mouse held: look closer. */
+  zoom: false,
+  /** Point the walker is heading to after a tap (touch screens). */
   target: null as Pt | null,
   vel: [0, 0] as Pt,
   blocked: 0,
+  /** Height of the feet; null until the first step puts the walker on the ground. */
+  z: null as number | null,
+  vz: 0,
+  grounded: true,
+  /** Stride phase (π per step) and the bob's current size, for the camera. */
+  phase: 0,
+  bob: 0,
+  /** How far the eye dips after a landing, easing back to 0. */
+  landing: 0,
+  /** Whether the mouse is captured for looking, and when it was last let go (Esc). */
+  locked: false,
+  started: false,
+  unlockedAt: 0,
+  /** Footsteps and the garden's ambience. */
+  sound: readSound(),
+  /** What is under the crosshair. */
+  focus: null as string | null,
 };
+
+function readSound(): boolean {
+  try {
+    return localStorage.getItem(SOUND_KEY) !== "off";
+  } catch {
+    return true;
+  }
+}
 
 const listeners = new Set<() => void>();
 let version = 0;
@@ -54,6 +96,26 @@ export function emitWalk() {
 export function setEyeHeight(e: EyeHeight) {
   walk.eye = e;
   emitWalk();
+}
+
+export function setSound(on: boolean) {
+  walk.sound = on;
+  try {
+    localStorage.setItem(SOUND_KEY, on ? "on" : "off");
+  } catch {
+    /* storage unavailable */
+  }
+  setAmbience(on && walk.started);
+  emitWalk();
+}
+
+/** Asks the view to capture the mouse (set by the view while walk mode is open). */
+let lockRequest: (() => void) | null = null;
+export function setLockRequest(fn: (() => void) | null) {
+  lockRequest = fn;
+}
+export function requestWalkLock() {
+  lockRequest?.();
 }
 
 export const forwardOf = (yaw: number): Pt => [Math.cos(yaw), Math.sin(yaw)];
@@ -140,6 +202,26 @@ function slide(p: Pt, d: Pt, o: Obstacles): Pt {
   return p;
 }
 
+const GROUND_BY_GROUP: Record<string, Ground> = {
+  green: "grass",
+  gravel: "gravel",
+  mulch: "mulch",
+  paving: "hard",
+  stone: "hard",
+  solid: "hard",
+  wood: "wood",
+};
+
+/** What the walker is standing on: the topmost surface or bed under p, else grass. */
+export function groundAt(doc: GardenDoc, p: Pt): Ground {
+  for (let i = doc.order.length - 1; i >= 0; i--) {
+    const e = doc.entities[doc.order[i]];
+    if (e?.kind === "surface" && pointInMulti(p, e.geometry)) return GROUND_BY_GROUP[MATERIAL_BY_ID[e.material]?.group ?? ""] ?? "grass";
+    if (e?.kind === "bed" && pointInMulti(p, e.geometry)) return "mulch";
+  }
+  return "grass";
+}
+
 // ── Pose ─────────────────────────────────────────────────────────────────
 
 /**
@@ -166,6 +248,7 @@ export function ensurePose(doc: GardenDoc, years: number, from: { center: Pt; fo
   walk.pose = { p, yaw: Math.atan2(c[1] - p[1], c[0] - p[0]), pitch: -0.08 };
   walk.target = null;
   walk.vel = [0, 0];
+  walk.z = null;
   return walk.pose;
 }
 
@@ -175,6 +258,7 @@ export function teleport(doc: GardenDoc, years: number, p: Pt) {
   walk.pose = { ...walk.pose, p: q };
   walk.target = null;
   walk.vel = [0, 0];
+  walk.z = null;
   emitWalk();
 }
 
@@ -184,16 +268,32 @@ export function look(dYaw: number, dPitch: number) {
   walk.pose.pitch = Math.max(-MAX_PITCH, Math.min(MAX_PITCH, walk.pose.pitch + dPitch));
 }
 
-/** Advances the walker by dt seconds. Returns whether anything is still moving. */
-export function stepWalk(doc: GardenDoc, years: number, dt: number): boolean {
+/** Eye height above the feet right now (standing, crouching or as a child). */
+export function eyeHeight(): number {
+  return EYE_HEIGHTS[walk.eye] * (walk.crouch ? CROUCH_EYE : 1);
+}
+
+/** Whether the walker is running (Shift, moving forwards, standing up). */
+export function running(): boolean {
+  const k = walk.keys;
+  return (k.has("ShiftLeft") || k.has("ShiftRight")) && (k.has("KeyW") || k.has("ArrowUp")) && !walk.crouch;
+}
+
+/**
+ * Advances the walker by dt seconds: speeds up and slows down with some weight, slower uphill,
+ * jumps and falls under gravity, and counts strides for the head bob and the footsteps.
+ * `ground` gives the terrain height at a point. Returns whether anything is still moving.
+ */
+export function stepWalk(doc: GardenDoc, years: number, dt: number, ground: (p: Pt) => number): boolean {
   const pose = walk.pose;
   if (!pose) return false;
   const k = walk.keys;
   const held = (...codes: string[]) => codes.some((c) => k.has(c));
   const f = (held("KeyW", "ArrowUp") ? 1 : 0) - (held("KeyS", "ArrowDown") ? 1 : 0);
   const s = (held("KeyD") ? 1 : 0) - (held("KeyA") ? 1 : 0);
-  const turn = (held("ArrowRight", "KeyE") ? 1 : 0) - (held("ArrowLeft", "KeyQ") ? 1 : 0);
-  const speed = WALK_SPEED * (held("ShiftLeft", "ShiftRight") ? RUN_FACTOR : 1);
+  const turn = (held("ArrowRight") ? 1 : 0) - (held("ArrowLeft") ? 1 : 0);
+  const run = running();
+  const speed = (run ? RUN_SPEED : walk.crouch ? CROUCH_SPEED : WALK_SPEED) * (walk.eye === "child" ? 0.85 : 1);
   pose.yaw += turn * TURN_SPEED * dt;
 
   let want: Pt = [0, 0];
@@ -201,7 +301,9 @@ export function stepWalk(doc: GardenDoc, years: number, dt: number): boolean {
     walk.target = null;
     const fw = forwardOf(pose.yaw), rt = rightOf(pose.yaw);
     const len = Math.hypot(f, s);
-    want = [((fw[0] * f + rt[0] * s) / len) * speed, ((fw[1] * f + rt[1] * s) / len) * speed];
+    // Backwards and sideways steps are slower than walking ahead.
+    const v = speed * (f < 0 ? 0.65 : f === 0 ? 0.8 : 1);
+    want = [((fw[0] * f + rt[0] * s) / len) * v, ((fw[1] * f + rt[1] * s) / len) * v];
   } else if (walk.target) {
     const dx = walk.target[0] - pose.p[0], dy = walk.target[1] - pose.p[1];
     const d = Math.hypot(dx, dy);
@@ -214,20 +316,69 @@ export function stepWalk(doc: GardenDoc, years: number, dt: number): boolean {
       pose.yaw += diff * Math.min(1, dt * 2.5);
     }
   }
+  const wantLen = Math.hypot(want[0], want[1]);
+  if (wantLen > 0) {
+    // Uphill is harder going, downhill a little easier.
+    const dir: Pt = [want[0] / wantLen, want[1] / wantLen];
+    const grade = (ground([pose.p[0] + dir[0] * 0.4, pose.p[1] + dir[1] * 0.4]) - ground(pose.p)) / 0.4;
+    const k2 = Math.max(0.45, Math.min(1.12, 1 - grade * 1.4));
+    want = [want[0] * k2, want[1] * k2];
+  }
 
-  const a = 1 - Math.exp(-dt * 10);
+  // Feet: on the ground they follow it, in the air gravity takes over.
+  const gy = ground(pose.p);
+  if (walk.z == null) walk.z = gy;
+  if (walk.jump && walk.grounded) {
+    walk.vz = JUMP_SPEED * (walk.crouch ? 0.6 : 1);
+    walk.grounded = false;
+  }
+  walk.jump = false;
+  if (!walk.grounded) {
+    walk.vz -= GRAVITY * dt;
+    walk.z += walk.vz * dt;
+    if (walk.z <= gy) {
+      const impact = -walk.vz;
+      walk.z = gy;
+      walk.vz = 0;
+      walk.grounded = true;
+      walk.landing = Math.min(0.14, impact * 0.03);
+      footstep(groundAt(doc, pose.p), Math.min(1.6, 0.6 + impact * 0.25));
+    }
+  } else if (walk.z - gy > 0.3) {
+    // Stepped off a drop.
+    walk.grounded = false;
+    walk.vz = 0;
+  } else walk.z += (gy - walk.z) * (1 - Math.exp(-dt * 18));
+  walk.landing *= Math.exp(-dt * 7);
+
+  // Some weight to it: a moment to get going and to stop, little control in the air.
+  const rate = !walk.grounded ? 1.2 : wantLen > Math.hypot(walk.vel[0], walk.vel[1]) ? 7 : 9;
+  const a = 1 - Math.exp(-dt * rate);
   walk.vel = [walk.vel[0] + (want[0] - walk.vel[0]) * a, walk.vel[1] + (want[1] - walk.vel[1]) * a];
-  const moving = Math.hypot(walk.vel[0], walk.vel[1]) > 0.02;
+  const v = Math.hypot(walk.vel[0], walk.vel[1]);
+  const moving = v > 0.02;
   if (moving) {
     const before = pose.p;
     pose.p = slide(before, [walk.vel[0] * dt, walk.vel[1] * dt], obstacles(doc, years));
     const moved = Math.hypot(pose.p[0] - before[0], pose.p[1] - before[1]);
-    // Give up on a click target we keep bumping into.
-    if (walk.target && moved < Math.hypot(walk.vel[0], walk.vel[1]) * dt * 0.2) {
+    // Give up on a tap target we keep bumping into.
+    if (walk.target && moved < v * dt * 0.2) {
       walk.blocked += dt;
       if (walk.blocked > 0.4) walk.target = null;
     } else walk.blocked = 0;
+    if (walk.grounded && moved > 0) {
+      // A footfall each time the stride phase passes a multiple of π.
+      const stride = (run ? STRIDE.run : walk.crouch ? STRIDE.crouch : STRIDE.walk) * (walk.eye === "child" ? 0.75 : 1);
+      const steps = Math.floor(walk.phase / Math.PI);
+      walk.phase += (moved / stride) * Math.PI;
+      if (Math.floor(walk.phase / Math.PI) !== steps) footstep(groundAt(doc, pose.p), run ? 1.15 : walk.crouch ? 0.4 : 0.75);
+    }
     emitWalk();
   } else walk.vel = [0, 0];
-  return moving || turn !== 0 || !!walk.target || f !== 0 || s !== 0;
+
+  // The bob grows with speed and fades out when standing still or in the air.
+  const bobWant = walk.grounded && moving ? BOB * Math.min(1.8, v / WALK_SPEED) : 0;
+  walk.bob += (bobWant - walk.bob) * (1 - Math.exp(-dt * 6));
+
+  return moving || !walk.grounded || walk.bob > 0.0005 || walk.landing > 0.0005 || turn !== 0 || !!walk.target || f !== 0 || s !== 0;
 }
