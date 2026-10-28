@@ -19,7 +19,9 @@ export type ToolId =
   | "label"
   | "measure"
   | "fence"
-  | "item";
+  | "item"
+  | "irrigate"
+  | "pipe";
 
 export interface StageInfo {
   id: Stage;
@@ -165,6 +167,21 @@ export const STAGES: StageInfo[] = [
       tips: ["furnish.stage.tip1", "furnish.stage.tip2", "furnish.stage.tip3"],
     },
   ),
+  stage(
+    {
+      id: "irrigation",
+      index: 8,
+      editable: ["source", "valvebox", "valve", "head", "pipe"],
+      reshapable: ["pipe"],
+      tools: ["select", "irrigate", "pipe"],
+    },
+    {
+      title: "irrigation.stage.title",
+      short: "irrigation.stage.short",
+      summary: "irrigation.stage.summary",
+      tips: ["irrigation.stage.tip1", "irrigation.stage.tip2", "irrigation.stage.tip3", "irrigation.stage.tip4"],
+    },
+  ),
 ];
 
 export const STAGE_BY_ID = Object.fromEntries(STAGES.map((s) => [s.id, s])) as Record<Stage, StageInfo>;
@@ -179,6 +196,7 @@ export function defaultToolFor(stage: Stage, doc: GardenDoc): ToolId {
     case "beds": return has("bed") ? "select" : "rect";
     case "planting": return "plant";
     case "furnish": return has("item") ? "select" : "item";
+    case "irrigation": return has("source") ? "select" : "irrigate";
   }
 }
 
@@ -196,6 +214,7 @@ export function stageForKind(kind: EntityKind): Stage {
     case "tree": return "trees";
     case "bed": return "beds";
     case "item": return "furnish";
+    case "source": case "valvebox": case "valve": case "head": case "pipe": return "irrigation";
     default: return "plot";
   }
 }

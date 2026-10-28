@@ -1,0 +1,718 @@
+[
+ {
+  "id": "mains-meter-5-8in",
+  "kind": "mains",
+  "name": "Municipal mains, 5/8\" water meter (US/AWWA sizing)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 56.78,
+  "maxSafeFlow": 75.71,
+  "meterLoss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.01
+   },
+   {
+    "lpm": 7.57,
+    "bar": 0.02
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.03
+   },
+   {
+    "lpm": 15.14,
+    "bar": 0.04
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.06
+   },
+   {
+    "lpm": 22.71,
+    "bar": 0.09
+   },
+   {
+    "lpm": 26.5,
+    "bar": 0.12
+   },
+   {
+    "lpm": 30.28,
+    "bar": 0.16
+   },
+   {
+    "lpm": 34.07,
+    "bar": 0.21
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.26
+   },
+   {
+    "lpm": 41.64,
+    "bar": 0.3
+   },
+   {
+    "lpm": 45.42,
+    "bar": 0.35
+   },
+   {
+    "lpm": 49.21,
+    "bar": 0.42
+   },
+   {
+    "lpm": 53.0,
+    "bar": 0.5
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.57
+   },
+   {
+    "lpm": 60.57,
+    "bar": 0.65
+   },
+   {
+    "lpm": 64.35,
+    "bar": 0.74
+   },
+   {
+    "lpm": 68.14,
+    "bar": 0.83
+   },
+   {
+    "lpm": 71.92,
+    "bar": 0.92
+   },
+   {
+    "lpm": 75.71,
+    "bar": 1.03
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=200",
+  "note": "flow = 75% of the meter's maximum safe flow (20 gpm = last row of the Rain Bird meter pressure-loss table), per the Rain Bird design rule; also keep meter loss <= 10% of minimum static pressure and service-line velocity <= 1.5-2.3 m/s (https://www.rainbird.com/irrigation-design-tip-water-supply). pressure = Budapest Waterworks contractual service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf) - measure your own static pressure (summer daytime minimum)."
+ },
+ {
+  "id": "mains-meter-3-4in",
+  "kind": "mains",
+  "name": "Municipal mains, 3/4\" water meter (US/AWWA sizing)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 85.17,
+  "maxSafeFlow": 113.56,
+  "meterLoss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.01
+   },
+   {
+    "lpm": 7.57,
+    "bar": 0.01
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.02
+   },
+   {
+    "lpm": 15.14,
+    "bar": 0.03
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.04
+   },
+   {
+    "lpm": 22.71,
+    "bar": 0.05
+   },
+   {
+    "lpm": 26.5,
+    "bar": 0.06
+   },
+   {
+    "lpm": 30.28,
+    "bar": 0.07
+   },
+   {
+    "lpm": 34.07,
+    "bar": 0.09
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.11
+   },
+   {
+    "lpm": 41.64,
+    "bar": 0.13
+   },
+   {
+    "lpm": 45.42,
+    "bar": 0.15
+   },
+   {
+    "lpm": 49.21,
+    "bar": 0.18
+   },
+   {
+    "lpm": 53.0,
+    "bar": 0.21
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.25
+   },
+   {
+    "lpm": 60.57,
+    "bar": 0.28
+   },
+   {
+    "lpm": 64.35,
+    "bar": 0.32
+   },
+   {
+    "lpm": 68.14,
+    "bar": 0.36
+   },
+   {
+    "lpm": 71.92,
+    "bar": 0.4
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.45
+   },
+   {
+    "lpm": 83.28,
+    "bar": 0.54
+   },
+   {
+    "lpm": 90.85,
+    "bar": 0.66
+   },
+   {
+    "lpm": 98.42,
+    "bar": 0.77
+   },
+   {
+    "lpm": 105.99,
+    "bar": 0.9
+   },
+   {
+    "lpm": 113.56,
+    "bar": 1.03
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=200",
+  "note": "flow = 75% of the meter's maximum safe flow (30 gpm = last row of the Rain Bird meter pressure-loss table), per the Rain Bird design rule; also keep meter loss <= 10% of minimum static pressure and service-line velocity <= 1.5-2.3 m/s (https://www.rainbird.com/irrigation-design-tip-water-supply). pressure = Budapest Waterworks contractual service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf) - measure your own static pressure (summer daytime minimum)."
+ },
+ {
+  "id": "mains-meter-1in",
+  "kind": "mains",
+  "name": "Municipal mains, 1\" water meter (US/AWWA sizing)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 141.95,
+  "maxSafeFlow": 189.27,
+  "meterLoss": [
+   {
+    "lpm": 15.14,
+    "bar": 0.01
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.01
+   },
+   {
+    "lpm": 22.71,
+    "bar": 0.02
+   },
+   {
+    "lpm": 26.5,
+    "bar": 0.03
+   },
+   {
+    "lpm": 30.28,
+    "bar": 0.03
+   },
+   {
+    "lpm": 34.07,
+    "bar": 0.04
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.05
+   },
+   {
+    "lpm": 41.64,
+    "bar": 0.06
+   },
+   {
+    "lpm": 45.42,
+    "bar": 0.06
+   },
+   {
+    "lpm": 49.21,
+    "bar": 0.07
+   },
+   {
+    "lpm": 53.0,
+    "bar": 0.08
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.08
+   },
+   {
+    "lpm": 60.57,
+    "bar": 0.1
+   },
+   {
+    "lpm": 64.35,
+    "bar": 0.11
+   },
+   {
+    "lpm": 68.14,
+    "bar": 0.12
+   },
+   {
+    "lpm": 71.92,
+    "bar": 0.14
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.15
+   },
+   {
+    "lpm": 83.28,
+    "bar": 0.19
+   },
+   {
+    "lpm": 90.85,
+    "bar": 0.23
+   },
+   {
+    "lpm": 98.42,
+    "bar": 0.28
+   },
+   {
+    "lpm": 105.99,
+    "bar": 0.32
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.37
+   },
+   {
+    "lpm": 121.13,
+    "bar": 0.41
+   },
+   {
+    "lpm": 128.7,
+    "bar": 0.48
+   },
+   {
+    "lpm": 136.27,
+    "bar": 0.54
+   },
+   {
+    "lpm": 143.85,
+    "bar": 0.6
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.66
+   },
+   {
+    "lpm": 158.99,
+    "bar": 0.73
+   },
+   {
+    "lpm": 166.56,
+    "bar": 0.81
+   },
+   {
+    "lpm": 174.13,
+    "bar": 0.88
+   },
+   {
+    "lpm": 181.7,
+    "bar": 0.96
+   },
+   {
+    "lpm": 189.27,
+    "bar": 1.03
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=200",
+  "note": "flow = 75% of the meter's maximum safe flow (50 gpm = last row of the Rain Bird meter pressure-loss table), per the Rain Bird design rule; also keep meter loss <= 10% of minimum static pressure and service-line velocity <= 1.5-2.3 m/s (https://www.rainbird.com/irrigation-design-tip-water-supply). pressure = Budapest Waterworks contractual service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf) - measure your own static pressure (summer daytime minimum)."
+ },
+ {
+  "id": "mains-meter-1-5in",
+  "kind": "mains",
+  "name": "Municipal mains, 1 1/2\" water meter (US/AWWA sizing)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 283.91,
+  "maxSafeFlow": 378.54,
+  "meterLoss": [
+   {
+    "lpm": 60.57,
+    "bar": 0.03
+   },
+   {
+    "lpm": 64.35,
+    "bar": 0.03
+   },
+   {
+    "lpm": 68.14,
+    "bar": 0.04
+   },
+   {
+    "lpm": 71.92,
+    "bar": 0.05
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.06
+   },
+   {
+    "lpm": 83.28,
+    "bar": 0.07
+   },
+   {
+    "lpm": 90.85,
+    "bar": 0.08
+   },
+   {
+    "lpm": 98.42,
+    "bar": 0.1
+   },
+   {
+    "lpm": 105.99,
+    "bar": 0.11
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.12
+   },
+   {
+    "lpm": 121.13,
+    "bar": 0.14
+   },
+   {
+    "lpm": 128.7,
+    "bar": 0.17
+   },
+   {
+    "lpm": 136.27,
+    "bar": 0.19
+   },
+   {
+    "lpm": 143.85,
+    "bar": 0.21
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.23
+   },
+   {
+    "lpm": 158.99,
+    "bar": 0.25
+   },
+   {
+    "lpm": 166.56,
+    "bar": 0.27
+   },
+   {
+    "lpm": 174.13,
+    "bar": 0.29
+   },
+   {
+    "lpm": 181.7,
+    "bar": 0.31
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.34
+   },
+   {
+    "lpm": 196.84,
+    "bar": 0.37
+   },
+   {
+    "lpm": 204.41,
+    "bar": 0.39
+   },
+   {
+    "lpm": 211.98,
+    "bar": 0.43
+   },
+   {
+    "lpm": 219.55,
+    "bar": 0.46
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.5
+   },
+   {
+    "lpm": 246.05,
+    "bar": 0.57
+   },
+   {
+    "lpm": 264.98,
+    "bar": 0.68
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.77
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.88
+   },
+   {
+    "lpm": 340.69,
+    "bar": 1.11
+   },
+   {
+    "lpm": 378.54,
+    "bar": 1.38
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=200",
+  "note": "flow = 75% of the meter's maximum safe flow (100 gpm = last row of the Rain Bird meter pressure-loss table), per the Rain Bird design rule; also keep meter loss <= 10% of minimum static pressure and service-line velocity <= 1.5-2.3 m/s (https://www.rainbird.com/irrigation-design-tip-water-supply). pressure = Budapest Waterworks contractual service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf) - measure your own static pressure (summer daytime minimum)."
+ },
+ {
+  "id": "mains-meter-2in",
+  "kind": "mains",
+  "name": "Municipal mains, 2\" water meter (US/AWWA sizing)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 454.25,
+  "maxSafeFlow": 605.67,
+  "meterLoss": [
+   {
+    "lpm": 121.13,
+    "bar": 0.06
+   },
+   {
+    "lpm": 128.7,
+    "bar": 0.06
+   },
+   {
+    "lpm": 136.27,
+    "bar": 0.07
+   },
+   {
+    "lpm": 143.85,
+    "bar": 0.08
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.09
+   },
+   {
+    "lpm": 158.99,
+    "bar": 0.1
+   },
+   {
+    "lpm": 166.56,
+    "bar": 0.1
+   },
+   {
+    "lpm": 174.13,
+    "bar": 0.11
+   },
+   {
+    "lpm": 181.7,
+    "bar": 0.12
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.13
+   },
+   {
+    "lpm": 196.84,
+    "bar": 0.14
+   },
+   {
+    "lpm": 204.41,
+    "bar": 0.15
+   },
+   {
+    "lpm": 211.98,
+    "bar": 0.16
+   },
+   {
+    "lpm": 219.55,
+    "bar": 0.17
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.19
+   },
+   {
+    "lpm": 246.05,
+    "bar": 0.22
+   },
+   {
+    "lpm": 264.98,
+    "bar": 0.26
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.3
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.34
+   },
+   {
+    "lpm": 340.69,
+    "bar": 0.43
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.54
+   },
+   {
+    "lpm": 416.4,
+    "bar": 0.66
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.78
+   },
+   {
+    "lpm": 492.1,
+    "bar": 0.9
+   },
+   {
+    "lpm": 529.96,
+    "bar": 1.04
+   },
+   {
+    "lpm": 567.81,
+    "bar": 1.19
+   },
+   {
+    "lpm": 605.67,
+    "bar": 1.38
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=200",
+  "note": "flow = 75% of the meter's maximum safe flow (160 gpm = last row of the Rain Bird meter pressure-loss table), per the Rain Bird design rule; also keep meter loss <= 10% of minimum static pressure and service-line velocity <= 1.5-2.3 m/s (https://www.rainbird.com/irrigation-design-tip-water-supply). pressure = Budapest Waterworks contractual service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf) - measure your own static pressure (summer daytime minimum)."
+ },
+ {
+  "id": "mains-dn15-q3-2-5",
+  "kind": "mains",
+  "name": "Municipal mains, DN15 meter Q3 = 2.5 m3/h (EU/MID)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 31.3,
+  "q3": 41.7,
+  "meterLossAtQ3": 0.63,
+  "meterLoss": [
+   {
+    "lpm": 10.4,
+    "bar": 0.04
+   },
+   {
+    "lpm": 20.9,
+    "bar": 0.16
+   },
+   {
+    "lpm": 31.3,
+    "bar": 0.35
+   },
+   {
+    "lpm": 41.7,
+    "bar": 0.63
+   }
+  ],
+  "source": "https://www.diehl.com/cms/files/AQUARIUS-S---P-17.pdf?download=1",
+  "note": "Q3 (permanent flow) and 0.63 bar loss at Q3 from a Diehl AQUARIUS S/P DN15 datasheet; meterLoss rows below Q3 are DERIVED (loss ~ Q^2), not published. flow = 75% of Q3 (Rain Bird 75% rule applied to Q3 - an assumption). pressure = Budapest Waterworks service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf)."
+ },
+ {
+  "id": "mains-dn20-q3-4-0",
+  "kind": "mains",
+  "name": "Municipal mains, DN20 meter Q3 = 4.0 m3/h (EU/MID)",
+  "pressure": [
+   1.5,
+   6.0
+  ],
+  "flow": 50.0,
+  "q3": 66.7,
+  "meterLossAtQ3": 0.63,
+  "meterLoss": [
+   {
+    "lpm": 16.7,
+    "bar": 0.04
+   },
+   {
+    "lpm": 33.4,
+    "bar": 0.16
+   },
+   {
+    "lpm": 50.0,
+    "bar": 0.35
+   },
+   {
+    "lpm": 66.7,
+    "bar": 0.63
+   }
+  ],
+  "source": "https://www.diehl.com/cms/files/AQUARIUS-S---P-17.pdf?download=1",
+  "note": "Q3 (permanent flow) and 0.63 bar loss at Q3 from a Diehl AQUARIUS S/P DN20 datasheet; meterLoss rows below Q3 are DERIVED (loss ~ Q^2), not published. flow = 75% of Q3 (Rain Bird 75% rule applied to Q3 - an assumption). pressure = Budapest Waterworks service-point band 1.5-6 bar (https://vizmuvek.hu/files/public/altalanos-pdf/10-ASZF-NLSZSZ.pdf)."
+ },
+ {
+  "id": "well-pump-pressure-switch-30-50",
+  "kind": "well",
+  "name": "Well pump with pressure tank (30/50 psi switch)",
+  "pressure": [
+   2.07,
+   3.45
+  ],
+  "flow": 50.0,
+  "source": "https://www.freshwatersystems.com/products/square-d-pumptrol-9013fsg2j21-well-tank-pressure-switch-30-50-psi",
+  "note": "pressure = factory cut-in/cut-out of a common Square D Pumptrol 9013FSG2J21 switch (30/50 psi = 2.07/3.45 bar); design to the cut-in pressure. flow 50 L/min = 3 m3/h, the rated flow of a Grundfos SQ 3 class 3\" borehole pump (https://pumpa.eu/en/grundfos-sq-3) - replace with your pump curve at the cut-in pressure plus well lift. Edit both values for your well."
+ },
+ {
+  "id": "tank-submersible-sba-3-45",
+  "kind": "tank",
+  "name": "Rainwater tank + submersible pump (Grundfos SBA 3-45 A class)",
+  "pressure": [
+   3.2,
+   4.41
+  ],
+  "flow": 50.0,
+  "source": "https://www.solarics.de/cdn/shop/files/92713068_SBA_345_A.pdf",
+  "note": "Grundfos SBA 3-45 A datasheet: rated 3 m3/h (50 L/min) at 32.6 m head (3.20 bar), max head 45 m (4.41 bar, shut-off). Pressure falls as flow rises - pressure[0] is the value at the rated flow. Integrated controller restarts below ~2.2 bar (retailer data)."
+ },
+ {
+  "id": "booster-scala2-3-45",
+  "kind": "booster",
+  "name": "Booster / self-priming pressure pump (Grundfos SCALA2 3-45 class)",
+  "pressure": [
+   2.65,
+   4.41
+  ],
+  "flow": 50.0,
+  "maxFlow": 76.7,
+  "source": "https://www.anglianpumping.com/app/uploads/2024/01/99027074_SCALA2_345_A.pdf",
+  "note": "Grundfos SCALA2 3-45 A sheet: rated 3 m3/h (50 L/min) at 27 m head (2.65 bar), max head 45 m (4.41 bar); max flow 4.6 m3/h (76.7 L/min, from Grundfos SCALA2 3-45 sheet 93013254). Constant-pressure setpoint is adjustable (retailers: 1.5-4 bar); max inlet pressure 6 bar when boosting mains. When drawing from a tank, subtract suction lift."
+ }
+]

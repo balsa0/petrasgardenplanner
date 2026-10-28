@@ -6,14 +6,14 @@ export type Ring = Pt[];
 export type Polygon = Ring[];
 export type MultiPolygon = Polygon[];
 
-export type Stage = "plot" | "terrain" | "surfaces" | "trees" | "beds" | "planting" | "furnish";
+export type Stage = "plot" | "terrain" | "surfaces" | "trees" | "beds" | "planting" | "furnish" | "irrigation";
 /** "walk" is a first-person preview at eye level; it is never a stage's preferred view. */
 export type ViewMode = "2d" | "iso" | "3d" | "walk";
 export type EditView = Exclude<ViewMode, "walk">;
 
 export type AreaKind = "plot" | "building" | "water" | "surface" | "bed";
-export type PointKind = "tree" | "heightpoint" | "note" | "label" | "item";
-export type LineKind = "fence";
+export type PointKind = "tree" | "heightpoint" | "note" | "label" | "item" | "source" | "valvebox" | "valve" | "head";
+export type LineKind = "fence" | "pipe";
 export type EntityKind = AreaKind | PointKind | LineKind;
 
 export type SurfaceMaterialId =
@@ -257,9 +257,67 @@ export interface ItemEntity extends EntityBase {
   color: string;
 }
 
+// ── Irrigation (see model/irrigation and irrigation/hydraulics) ──
+
+export type SourceType = "mains" | "well" | "tank" | "booster";
+
+/** Where the water comes from: its static pressure range (bar) and the flow it can give (L/min). */
+export interface SourceEntity extends EntityBase {
+  kind: "source";
+  p: Pt;
+  sourceType: SourceType;
+  pressure: [number, number];
+  flow: number;
+  /** The catalogue preset it started from; a mains meter's loss is taken off at the zone's flow. */
+  preset?: string;
+}
+
+/** A valve box set flush with the ground; valves placed inside it are grouped with it. */
+export interface ValveBoxEntity extends EntityBase {
+  kind: "valvebox";
+  p: Pt;
+  rot: number;
+  /** Product id from the irrigation catalogue. */
+  product: string;
+}
+
+/** A zone valve: everything downstream of it runs together. */
+export interface ValveEntity extends EntityBase {
+  kind: "valve";
+  p: Pt;
+  product: string;
+  /** Zone colour on the plan. */
+  color: string;
+}
+
+/** A sprinkler, spray, rotor, bubbler or drip emitter. */
+export interface HeadEntity extends EntityBase {
+  kind: "head";
+  p: Pt;
+  /** Body and nozzle product ids from the irrigation catalogue. */
+  body: string;
+  nozzle: string;
+  /** Watered arc (degrees) and the direction of its middle, clockwise from east on the plan. */
+  arc: number;
+  dir: number;
+  /** Throw shortened with the radius screw, 0 → none, 0.25 → a quarter. */
+  trim: number;
+}
+
+/** Buried pipe along a path. */
+export interface PipeEntity extends EntityBase {
+  kind: "pipe";
+  path: Pt[];
+  closed: false;
+  /** Material id and outer diameter (mm) / pressure class from the catalogue's pipe table. */
+  material: string;
+  od: number;
+  pn: number;
+}
+
 export type AreaEntity = PlotEntity | BuildingEntity | WaterEntity | SurfaceEntity | BedEntity;
-export type PointEntity = TreeEntity | HeightPointEntity | NoteEntity | LabelEntity | ItemEntity;
-export type LineEntity = FenceEntity;
+export type PointEntity = TreeEntity | HeightPointEntity | NoteEntity | LabelEntity | ItemEntity | SourceEntity | ValveBoxEntity | ValveEntity | HeadEntity;
+export type LineEntity = FenceEntity | PipeEntity;
 export type Entity = AreaEntity | PointEntity | LineEntity;
 
 export interface TerrainData {
@@ -292,7 +350,7 @@ export function isArea(e: Entity | undefined | null): e is AreaEntity {
 }
 
 export function isLine(e: Entity | undefined | null): e is LineEntity {
-  return !!e && e.kind === "fence";
+  return !!e && (e.kind === "fence" || e.kind === "pipe");
 }
 
 export function isPoint(e: Entity | undefined | null): e is PointEntity {

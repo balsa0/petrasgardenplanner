@@ -1,0 +1,307 @@
+{
+ "hazenC": 140,
+ "hazenCNote": "C = 140 for polyethylene per the Hunter (PE 3408, ASTM D2239) and Rain Bird (PE SDR pressure-rated tube) friction-loss charts; many EU designers use 150 for new PE - 140 is the conservative manufacturer value.",
+ "hazenCSource": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=204",
+ "maxVelocity": 1.5,
+ "maxVelocityHard": 2.3,
+ "velocityNote": "maxVelocity 1.5 m/s (5 ft/s): Hunter and Rain Bird friction charts shade velocities above 5 ft/s (\"use with caution\"); Rain Bird drip tubing chart: above 5 ft/s (1.5 m/s) not recommended. maxVelocityHard 2.3 m/s (7.5 ft/s): Rain Bird valve recommendation / service-line limit - treat as an error threshold.",
+ "velocitySources": [
+  "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=206",
+  "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=61",
+  "https://www.rainbird.com/irrigation-design-tip-water-supply"
+ ],
+ "materials": [
+  {
+   "id": "pe100",
+   "name": "HDPE PE100 pressure pipe",
+   "standard": "EN 12201-2 / ISO 4427-2 (dimensions per DIN 8074 table, ISO 4065 SDR series)",
+   "pnSdr": {
+    "PN6": 26,
+    "PN10": 17,
+    "PN16": 11
+   },
+   "sizes": [
+    {
+     "od": 20,
+     "pn": 16,
+     "sdr": 11,
+     "wall": 1.9,
+     "id": 16.2,
+     "note": "EN 12201 product listings give 2.0 mm wall for this size (https://www.ahlsell.se/en/products/infra--sewer/pressure-pipes/pem-pressure-pipes/pem-pe100-pressure-pipes/2522019---20x2.0-pem-ror-50m-sdr11-pn16-pe100-rc---bla-stripe); id differs by <=0.2 mm."
+    },
+    {
+     "od": 25,
+     "pn": 10,
+     "sdr": 17,
+     "wall": 1.8,
+     "id": 21.4
+    },
+    {
+     "od": 25,
+     "pn": 16,
+     "sdr": 11,
+     "wall": 2.3,
+     "id": 20.4
+    },
+    {
+     "od": 32,
+     "pn": 10,
+     "sdr": 17,
+     "wall": 1.9,
+     "id": 28.2,
+     "note": "EN 12201 product listings give 2.0 mm wall for this size (https://generadordeprecios.info/espacios_urbanos/Instalaciones/Urbanas/Redes_de_agua_potable/Tubo_de_polietileno.html); id differs by <=0.2 mm."
+    },
+    {
+     "od": 32,
+     "pn": 16,
+     "sdr": 11,
+     "wall": 2.9,
+     "id": 26.2,
+     "note": "EN 12201 product listings give 3.0 mm wall for this size (https://www.lemu.dk/en/product/32x3-0-pe100-pem-sdr11-20m-rle-id-7810350008); id differs by <=0.2 mm."
+    },
+    {
+     "od": 40,
+     "pn": 6,
+     "sdr": 26,
+     "wall": 1.8,
+     "id": 36.4
+    },
+    {
+     "od": 40,
+     "pn": 10,
+     "sdr": 17,
+     "wall": 2.4,
+     "id": 35.2
+    },
+    {
+     "od": 40,
+     "pn": 16,
+     "sdr": 11,
+     "wall": 3.7,
+     "id": 32.6
+    },
+    {
+     "od": 50,
+     "pn": 6,
+     "sdr": 26,
+     "wall": 2.0,
+     "id": 46.0
+    },
+    {
+     "od": 50,
+     "pn": 10,
+     "sdr": 17,
+     "wall": 3.0,
+     "id": 44.0
+    },
+    {
+     "od": 50,
+     "pn": 16,
+     "sdr": 11,
+     "wall": 4.6,
+     "id": 40.8
+    },
+    {
+     "od": 63,
+     "pn": 6,
+     "sdr": 26,
+     "wall": 2.5,
+     "id": 58.0
+    },
+    {
+     "od": 63,
+     "pn": 10,
+     "sdr": 17,
+     "wall": 3.8,
+     "id": 55.4
+    },
+    {
+     "od": 63,
+     "pn": 16,
+     "sdr": 11,
+     "wall": 5.8,
+     "id": 51.4
+    }
+   ],
+   "source": "https://www.frank-gmbh.de/de-wAssets/docs/download-englisch/download/technische_infos/Pipe_dimensions_and_weights_for_sewage_pipe.pdf",
+   "note": "Wall thicknesses from the AGRU-FRANK \"Rohrabmessungen und Gewichte ... gemaess DIN 8074\" table; PN for PE100 at design factor C=1.25 (SDR26 = PN6.3, SDR17 = PN10, SDR11 = PN16). id = od - 2*wall (nominal). Sizes absent from the series (e.g. 16/20/25/32 SDR26) are not produced. The free EN 12201-2 table itself is not public; small-diameter walls in EN listings can be 0.1 mm thicker (see per-size notes)."
+  },
+  {
+   "id": "pe80",
+   "name": "HDPE/MDPE PE80 pressure pipe",
+   "standard": "EN 12201-2 / ISO 4427-2 (dimensions per DIN 8074 table, ISO 4065 SDR series)",
+   "pnSdr": {
+    "PN6": 21,
+    "PN10": 13.6,
+    "PN16": 9
+   },
+   "sizes": [
+    {
+     "od": 16,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 1.8,
+     "id": 12.4
+    },
+    {
+     "od": 20,
+     "pn": 10,
+     "sdr": 13.6,
+     "wall": 1.8,
+     "id": 16.4
+    },
+    {
+     "od": 20,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 2.3,
+     "id": 15.4
+    },
+    {
+     "od": 25,
+     "pn": 10,
+     "sdr": 13.6,
+     "wall": 1.9,
+     "id": 21.2
+    },
+    {
+     "od": 25,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 2.8,
+     "id": 19.4
+    },
+    {
+     "od": 32,
+     "pn": 10,
+     "sdr": 13.6,
+     "wall": 2.4,
+     "id": 27.2
+    },
+    {
+     "od": 32,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 3.6,
+     "id": 24.8
+    },
+    {
+     "od": 40,
+     "pn": 6,
+     "sdr": 21,
+     "wall": 1.9,
+     "id": 36.2
+    },
+    {
+     "od": 40,
+     "pn": 10,
+     "sdr": 13.6,
+     "wall": 3.0,
+     "id": 34.0
+    },
+    {
+     "od": 40,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 4.5,
+     "id": 31.0
+    },
+    {
+     "od": 50,
+     "pn": 6,
+     "sdr": 21,
+     "wall": 2.4,
+     "id": 45.2
+    },
+    {
+     "od": 50,
+     "pn": 10,
+     "sdr": 13.6,
+     "wall": 3.7,
+     "id": 42.6
+    },
+    {
+     "od": 50,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 5.6,
+     "id": 38.8
+    },
+    {
+     "od": 63,
+     "pn": 6,
+     "sdr": 21,
+     "wall": 3.0,
+     "id": 57.0
+    },
+    {
+     "od": 63,
+     "pn": 10,
+     "sdr": 13.6,
+     "wall": 4.7,
+     "id": 53.6
+    },
+    {
+     "od": 63,
+     "pn": 16,
+     "sdr": 9,
+     "wall": 7.1,
+     "id": 48.8
+    }
+   ],
+   "source": "https://www.frank-gmbh.de/de-wAssets/docs/download-englisch/download/technische_infos/Pipe_dimensions_and_weights_for_sewage_pipe.pdf",
+   "note": "PE80 at design factor C=1.25: SDR21 = PN6.3, SDR13.6 = PN10, SDR9 = PN16 (AGRU-FRANK header rows). 16 mm exists only as SDR9 (1.8 mm wall) in this series."
+  },
+  {
+   "id": "ldpe-drip-16",
+   "name": "LDPE drip / micro blank tubing 16 mm (Rain Bird XF blank tubing)",
+   "standard": "manufacturer (Rain Bird XF Series)",
+   "sizes": [
+    {
+     "od": 16.1,
+     "pn": 4.1,
+     "wall": 1.2,
+     "id": 13.6
+    }
+   ],
+   "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=155",
+   "note": "OD 0.634\" x ID 0.536\", wall 0.049\". pn = max operating pressure of XF dripline (60 psi = 4.14 bar), not a PN class. Velocities above 1.5 m/s not recommended. Takes 17 mm insert / XF / Easy-Fit fittings, not 16 mm fittings."
+  },
+  {
+   "id": "ldpe-drip-17",
+   "name": "LDPE drip blank tubing 17 mm (Hunter HDL-BLNK)",
+   "standard": "manufacturer (Hunter HDL)",
+   "sizes": [
+    {
+     "od": 16.8,
+     "pn": 4.1,
+     "wall": 1.24,
+     "id": 14.2
+    }
+   ],
+   "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=162",
+   "note": "0.660\" x 0.560\", wall 0.049\", up to 60 psi (4.14 bar)."
+  },
+  {
+   "id": "ldpe-supply-18",
+   "name": "LDPE supply/distribution tubing 18 mm (Rain Bird XT-700, Hunter supply tubing)",
+   "standard": "manufacturer",
+   "sizes": [
+    {
+     "od": 17.8,
+     "wall": 1.5,
+     "id": 14.7,
+     "model": "Rain Bird XT-700 (0.700\" x 0.580\")"
+    },
+    {
+     "od": 17.8,
+     "wall": 1.3,
+     "id": 15.2,
+     "model": "Hunter supply tubing (0.700\" x 0.600\")"
+    }
+   ],
+   "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=155",
+   "note": "Hunter dimensions from https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=169. No pressure class published in the extracted text."
+  }
+ ]
+}

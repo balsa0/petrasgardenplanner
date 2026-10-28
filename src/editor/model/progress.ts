@@ -80,6 +80,11 @@ const SPECS: Record<Stage, Spec[]> = {
     { name: "variety", need: 5, check: (f) => f.bedSpecies },
     { name: "lush", optional: true, need: 50, check: (f) => f.plants },
   ],
+  irrigation: [
+    { name: "source", check: (f) => has(f, (e) => e.kind === "source") },
+    { name: "heads", check: (f) => has(f, (e) => e.kind === "head") },
+    { name: "pipes", optional: true, check: (f) => has(f, (e) => e.kind === "pipe") },
+  ],
   furnish: [
     { name: "seating", check: (f) => has(f, (e) => e.kind === "item" && ITEM_BY_ID[e.item]?.group === "furniture") },
     { name: "extras", optional: true, check: (f) => has(f, (e) => e.kind === "item" && ITEM_BY_ID[e.item]?.group !== "furniture") },

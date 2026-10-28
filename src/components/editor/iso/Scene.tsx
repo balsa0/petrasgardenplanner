@@ -20,6 +20,7 @@ import { getHeightGrid, sampleHeight, terrainExtent, type HeightGrid } from "@/e
 import { buildFence, fenceTexture } from "./fenceGeometry";
 import { flatMat, geo, toShapes } from "./geometries";
 import { buildItem, type ItemSurface } from "./itemGeometry";
+import { IrrigationLayer } from "./IrrigationLayer";
 import { openingGeometries, planarWallUV, wallEdges, wallGeometry, wallMaterial } from "./buildingGeometry";
 import { doorColorOf, frameColorOf, wallMaterialOf } from "@/editor/model/openings";
 
@@ -860,6 +861,7 @@ export function SceneContent({ pickRef, walk = false }: { pickRef: React.RefObje
         {fenceRuns(doc).map((run, i) => (
           <FenceMesh key={`${run.id}:${i}`} run={run} grid={grid} />
         ))}
+        <IrrigationLayer doc={doc} grid={grid} detail={stage === "irrigation"} />
       </group>
       {ents.map((e) => (e.kind === "bed" && e.plants.length ? <BedPlantGroup key={e.id} bed={e} grid={grid} years={years} month={month} /> : null))}
       {stage === "terrain" && <HeightPins doc={doc} grid={grid} selection={selection} />}

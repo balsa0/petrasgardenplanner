@@ -1,5 +1,5 @@
 import type { GardenDoc, Pt } from "../model/types";
-import { isArea } from "../model/types";
+import { isArea, isLine } from "../model/types";
 import { closestOnSegment, dist, dist2 } from "./poly";
 import { niceSteps } from "./units";
 
@@ -71,7 +71,7 @@ function getTargets(doc: GardenDoc): Targets {
           }),
         ),
       );
-    } else if (e.kind === "fence") {
+    } else if (isLine(e)) {
       const n = e.path.length;
       e.path.forEach((p, i) => {
         const ref = { id, poly: 0, ring: 0, idx: i };
@@ -92,8 +92,8 @@ const sameRef = (a: VertexRef, b: VertexRef | null | undefined) =>
 function isAdjacentEdge(e: Targets["edges"][number], ex: VertexRef | null | undefined, doc: GardenDoc) {
   if (!ex || e.id !== ex.id || e.ref.poly !== ex.poly || e.ref.ring !== ex.ring) return false;
   const ent = doc.entities[ex.id];
-  if (!ent || (!isArea(ent) && ent.kind !== "fence")) return false;
-  const n = ent.kind === "fence" ? ent.path.length : (ent.geometry[ex.poly]?.[ex.ring]?.length ?? 0);
+  if (!ent || (!isArea(ent) && !isLine(ent))) return false;
+  const n = isLine(ent) ? ent.path.length : (ent.geometry[ex.poly]?.[ex.ring]?.length ?? 0);
   return e.ref.idx === ex.idx || (e.ref.idx + 1) % n === ex.idx;
 }
 

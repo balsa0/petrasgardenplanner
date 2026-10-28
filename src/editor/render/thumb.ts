@@ -13,7 +13,7 @@ export function renderThumb(doc: GardenDoc, month = 6, width = 192, height = 120
     const e = doc.entities[id];
     if (!e) continue;
     if (isArea(e)) multiBBox(e.geometry, b);
-    else if (e.kind === "fence") bboxOfPoints(e.path, b);
+    else if (e.kind === "fence" || e.kind === "pipe") bboxOfPoints(e.path, b);
     else bboxOfPoints([e.p], b);
   }
   const pad = 8;

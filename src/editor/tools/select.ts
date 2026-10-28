@@ -25,7 +25,7 @@ import {
 } from "../model/ops";
 import { STAGE_BY_ID, isEditableIn, stageForKind } from "../model/stages";
 import type { Entity, NoteEntity, LabelEntity, Pt } from "../model/types";
-import { isArea } from "../model/types";
+import { isArea, isLine } from "../model/types";
 import type { Overlay } from "../paint/overlays";
 import { ed, editableFilter, hitTest, redraw, snapAt, treeDisplaySize } from "./context";
 import { itemFootprint } from "../model/items";
@@ -88,7 +88,7 @@ interface EditRing {
 
 function editRings(e: Entity): EditRing[] {
   if (isArea(e)) return e.geometry.flatMap((poly, pi) => poly.map((ring, ri) => ({ pts: ring, closed: true, poly: pi, ring: ri })));
-  if (e.kind === "fence") return [{ pts: e.path, closed: e.closed, poly: 0, ring: 0 }];
+  if (isLine(e)) return [{ pts: e.path, closed: e.closed, poly: 0, ring: 0 }];
   return [];
 }
 
@@ -117,7 +117,7 @@ export function selectionOutlines(): Overlay[] {
   const outline = (en: Entity, style: "selection" | "hover") => {
     if (isArea(en)) {
       for (const poly of en.geometry) for (const ring of poly) out.push({ t: "line", pts: ring, closed: true, style });
-    } else if (en.kind === "fence") {
+    } else if (isLine(en)) {
       out.push({ t: "line", pts: en.path, closed: en.closed, style });
     } else if (en.kind === "tree") {
       out.push({ t: "circle", c: en.p, r: treeDisplaySize(en, s.time.years).spread / 2, style });
@@ -266,7 +266,7 @@ export class SelectTool implements Tool {
       if (sel.includes(id)) {
         const ent = s.doc.entities[id];
         let anchor: Pt = e.p;
-        if (ent && (isArea(ent) || ent.kind === "fence")) {
+        if (ent && (isArea(ent) || ent.kind === "fence" || ent.kind === "pipe")) {
           // Snap moves by the nearest corner, so outlines line up with their neighbours.
           let bd = Infinity;
           for (const r of editRings(ent)) for (const v of r.pts) {
@@ -390,7 +390,7 @@ export class SelectTool implements Tool {
         const picked = s.doc.order.filter((id) => {
           const e = s.doc.entities[id];
           if (!e || !editableFilter(e)) return false;
-          if (e.kind === "fence") return e.path.some(inRect);
+          if (e.kind === "fence" || e.kind === "pipe") return e.path.some(inRect);
           if (!isArea(e)) return inRect(e.p);
           if (!bboxIntersects(multiBBox(e.geometry), r)) return false;
           return e.geometry.some((poly) => poly[0].some(inRect)) || corners.some((c) => pointInMulti(c, e.geometry)) || e.geometry.some((poly) => corners.some((c) => pointInRing(c, poly[0])));
@@ -407,7 +407,7 @@ export class SelectTool implements Tool {
     if (!id) return;
     const ent = s.doc.entities[id];
     if (ent.kind === "note" || ent.kind === "label") return editText(id);
-    if (ent.kind === "fence") {
+    if (isLine(ent)) {
       // Double-click on a selected fence adds a post there.
       const c = this.reshapable()?.id === id ? closestOnPath(e.p, ent.path, ent.closed) : null;
       if (c && c.d < 8 * e.pxSize) s.update((d) => insertVertex(d, id, { poly: 0, ring: 0, idx: c.idx }, c.pt));
@@ -434,7 +434,7 @@ export class SelectTool implements Tool {
       });
       if (!ok) {
         const ent = s.doc.entities[av.id];
-        toast(t("tools.select.toast.minCorners", { count: ent?.kind === "fence" && !ent.closed ? 2 : 3 }), { id: "min-vertices" });
+        toast(t("tools.select.toast.minCorners", { count: isLine(ent) && !ent.closed ? 2 : 3 }), { id: "min-vertices" });
       }
       this.activeVertex = null;
       return true;

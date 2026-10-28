@@ -5,6 +5,7 @@ import { fxOverlays } from "../paint/fx";
 import { PlantBrushTool, SurfaceBrushTool, TerrainTool } from "./brushes";
 import { FenceTool } from "./fence";
 import { ItemTool } from "./items";
+import { IrrigateTool, PipeTool } from "./irrigation";
 import { OpeningTool } from "./opening";
 import { HeightPointTool, LabelTool, MeasureTool, NoteTool, SurveyTool, TreeTool } from "./points";
 import { SelectTool, selectionOutlines } from "./select";
@@ -30,6 +31,8 @@ const tools: Record<ToolId, Tool> = {
   measure: new MeasureTool(),
   fence: new FenceTool(),
   item: new ItemTool(),
+  irrigate: new IrrigateTool(),
+  pipe: new PipeTool(),
 };
 
 export function getTool(id: ToolId = useEditor.getState().tool): Tool {

@@ -20,7 +20,7 @@ export function contentBBox(doc: GardenDoc) {
     const e = doc.entities[id];
     if (!e) continue;
     if (isArea(e)) multiBBox(e.geometry, b);
-    else if (e.kind === "fence") bboxOfPoints(e.path, b);
+    else if (e.kind === "fence" || e.kind === "pipe") bboxOfPoints(e.path, b);
     else bboxOfPoints([e.p], b);
   }
   return bboxValid(b) ? b : null;

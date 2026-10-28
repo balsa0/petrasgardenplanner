@@ -1,0 +1,2384 @@
+[
+ {
+  "id": "hunter-pros-00",
+  "brand": "Hunter",
+  "model": "PROS-00 (shrub adapter)",
+  "kind": "spray-body",
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=57",
+  "note": "Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Shrub adapter: mounts on a riser, no pop-up.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-02",
+  "brand": "Hunter",
+  "model": "PROS-02",
+  "kind": "spray-body",
+  "popUp": 5.1,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=57",
+  "note": "Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-03",
+  "brand": "Hunter",
+  "model": "PROS-03",
+  "kind": "spray-body",
+  "popUp": 7.6,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=57",
+  "note": "Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-04",
+  "brand": "Hunter",
+  "model": "PROS-04",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=57",
+  "note": "Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Factory check valve option (-CV) holds up to 10 ft (3 m) of elevation.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-06",
+  "brand": "Hunter",
+  "model": "PROS-06",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=57",
+  "note": "Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Factory check valve option (-CV) holds up to 10 ft (3 m) of elevation.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-12",
+  "brand": "Hunter",
+  "model": "PROS-12",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=57",
+  "note": "Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Factory check valve option (-CV) holds up to 10 ft (3 m) of elevation.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-00-prs30",
+  "brand": "Hunter",
+  "model": "PROS-00-PRS30",
+  "kind": "spray-body",
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.07,
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=58",
+  "note": "In-stem pressure regulation to 30 PSI (2.07 bar), brown cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Shrub adapter: mounts on a riser, no pop-up.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-03-prs30",
+  "brand": "Hunter",
+  "model": "PROS-03-PRS30",
+  "kind": "spray-body",
+  "popUp": 7.6,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.07,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=58",
+  "note": "In-stem pressure regulation to 30 PSI (2.07 bar), brown cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-04-prs30",
+  "brand": "Hunter",
+  "model": "PROS-04-PRS30",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.07,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=58",
+  "note": "In-stem pressure regulation to 30 PSI (2.07 bar), brown cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-06-prs30",
+  "brand": "Hunter",
+  "model": "PROS-06-PRS30",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.07,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=58",
+  "note": "In-stem pressure regulation to 30 PSI (2.07 bar), brown cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-12-prs30",
+  "brand": "Hunter",
+  "model": "PROS-12-PRS30",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.07,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=58",
+  "note": "In-stem pressure regulation to 30 PSI (2.07 bar), brown cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-00-prs40",
+  "brand": "Hunter",
+  "model": "PROS-00-PRS40",
+  "kind": "spray-body",
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.76,
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=60",
+  "note": "In-stem pressure regulation to 40 PSI (2.76 bar), gray cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Shrub adapter: mounts on a riser, no pop-up.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-03-prs40",
+  "brand": "Hunter",
+  "model": "PROS-03-PRS40",
+  "kind": "spray-body",
+  "popUp": 7.6,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.76,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=60",
+  "note": "In-stem pressure regulation to 40 PSI (2.76 bar), gray cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-04-prs40",
+  "brand": "Hunter",
+  "model": "PROS-04-PRS40",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.76,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=60",
+  "note": "In-stem pressure regulation to 40 PSI (2.76 bar), gray cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-06-prs40",
+  "brand": "Hunter",
+  "model": "PROS-06-PRS40",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.76,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=60",
+  "note": "In-stem pressure regulation to 40 PSI (2.76 bar), gray cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pros-12-prs40",
+  "brand": "Hunter",
+  "model": "PROS-12-PRS40",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   6.89
+  ],
+  "regulated": 2.76,
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=60",
+  "note": "In-stem pressure regulation to 40 PSI (2.76 bar), gray cap. Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. Check valve: factory option on 4/6/12 in (up to 14 ft / 4.3 m), user-installed on 3 in (up to 10 ft).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-psu-02",
+  "brand": "Hunter",
+  "model": "PSU-02 (PS Ultra)",
+  "kind": "spray-body",
+  "popUp": 5.1,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=54",
+  "note": "Slim-line spray body; optional preinstalled nozzles 8A/10A/12A/15A/17A/5SS are the Pro Adjustable nozzles / SS-530 strip (identical catalog tables, see hunter-pro-adj-* and hunter-strip-530-ss). Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit.",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-psu-04",
+  "brand": "Hunter",
+  "model": "PSU-04 (PS Ultra)",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   4.83
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=54",
+  "note": "Slim-line spray body; optional preinstalled nozzles 8A/10A/12A/15A/17A/5SS are the Pro Adjustable nozzles / SS-530 strip (identical catalog tables, see hunter-pro-adj-* and hunter-strip-530-ss). Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. User-installed check valve up to 7 ft (2.1 m).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-psu-06",
+  "brand": "Hunter",
+  "model": "PSU-06 (PS Ultra)",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   4.83
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip",
+   "hunter-micro-spray",
+   "hunter-bubbler-nozzle"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=54",
+  "note": "Slim-line spray body; optional preinstalled nozzles 8A/10A/12A/15A/17A/5SS are the Pro Adjustable nozzles / SS-530 strip (identical catalog tables, see hunter-pro-adj-* and hunter-strip-530-ss). Compatible with all female-threaded spray nozzles (catalog), so Rain Bird spray/rotary nozzles also fit. User-installed check valve up to 7 ft (2.1 m).",
+  "compatibleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van"
+  ]
+ },
+ {
+  "id": "hunter-pgj-00",
+  "brand": "Hunter",
+  "model": "PGJ-00 (shrub)",
+  "kind": "rotor",
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   2.07,
+   3.45
+  ],
+  "arc": [
+   40,
+   360
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pgj"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=12",
+  "note": "Factory-installed 2.0 nozzle, 8 nozzles in rack. Drain check valve option (not on PGJ-00) up to 7 ft (2.1 m)."
+ },
+ {
+  "id": "hunter-pgj-04",
+  "brand": "Hunter",
+  "model": "PGJ-04",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   2.07,
+   3.45
+  ],
+  "arc": [
+   40,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgj"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=12",
+  "note": "Factory-installed 2.0 nozzle, 8 nozzles in rack. Drain check valve option (not on PGJ-00) up to 7 ft (2.1 m)."
+ },
+ {
+  "id": "hunter-pgj-06",
+  "brand": "Hunter",
+  "model": "PGJ-06",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   2.07,
+   3.45
+  ],
+  "arc": [
+   40,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgj"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=12",
+  "note": "Factory-installed 2.0 nozzle, 8 nozzles in rack. Drain check valve option (not on PGJ-00) up to 7 ft (2.1 m)."
+ },
+ {
+  "id": "hunter-pgj-12",
+  "brand": "Hunter",
+  "model": "PGJ-12",
+  "kind": "rotor",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   2.07,
+   3.45
+  ],
+  "arc": [
+   40,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgj"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=12",
+  "note": "Factory-installed 2.0 nozzle, 8 nozzles in rack. Drain check valve option (not on PGJ-00) up to 7 ft (2.1 m)."
+ },
+ {
+  "id": "hunter-srm-04",
+  "brand": "Hunter",
+  "model": "SRM-04",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   2.07,
+   3.45
+  ],
+  "arc": [
+   40,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-srm"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=13",
+  "note": "Factory-installed 2.0 nozzle, 8 standard nozzles. User-installed drain check valve up to 7 ft (2.1 m)."
+ },
+ {
+  "id": "hunter-pgp-ultra-00",
+  "brand": "Hunter",
+  "model": "PGP-00 (PGP Ultra) shrub",
+  "kind": "rotor",
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=16",
+  "note": "Ships with 8 standard (blue) + 4 low-angle nozzles; drain check valve option up to 10 ft (3 m)."
+ },
+ {
+  "id": "hunter-pgp-ultra-04",
+  "brand": "Hunter",
+  "model": "PGP-04 (PGP Ultra)",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=16",
+  "note": "Ships with 8 standard (blue) + 4 low-angle nozzles; drain check valve option up to 10 ft (3 m)."
+ },
+ {
+  "id": "hunter-pgp-ultra-06",
+  "brand": "Hunter",
+  "model": "PGP-06 (PGP Ultra)",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=16",
+  "note": "Ships with 8 standard (blue) + 4 low-angle nozzles; drain check valve option up to 10 ft (3 m)."
+ },
+ {
+  "id": "hunter-pgp-ultra-12",
+  "brand": "Hunter",
+  "model": "PGP-12 (PGP Ultra)",
+  "kind": "rotor",
+  "popUp": 30.5,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=16",
+  "note": "Ships with 8 standard (blue) + 4 low-angle nozzles; drain check valve option up to 10 ft (3 m)."
+ },
+ {
+  "id": "hunter-i20-00",
+  "brand": "Hunter",
+  "model": "I-20-00 shrub",
+  "kind": "rotor",
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=17",
+  "note": "Drain check valve standard (up to 10 ft / 3 m; NCV option on 4 in). FloStop. Stainless riser variants -SS for 4/6 in. Uses the same nozzle racks as PGP Ultra."
+ },
+ {
+  "id": "hunter-i20-04",
+  "brand": "Hunter",
+  "model": "I-20-04",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=17",
+  "note": "Drain check valve standard (up to 10 ft / 3 m; NCV option on 4 in). FloStop. Stainless riser variants -SS for 4/6 in. Uses the same nozzle racks as PGP Ultra."
+ },
+ {
+  "id": "hunter-i20-06",
+  "brand": "Hunter",
+  "model": "I-20-06",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=17",
+  "note": "Drain check valve standard (up to 10 ft / 3 m; NCV option on 4 in). FloStop. Stainless riser variants -SS for 4/6 in. Uses the same nozzle racks as PGP Ultra."
+ },
+ {
+  "id": "hunter-i20-12",
+  "brand": "Hunter",
+  "model": "I-20-12",
+  "kind": "rotor",
+  "popUp": 30.5,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.38,
+   6.89
+  ],
+  "recommendedRange": [
+   1.72,
+   4.83
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=17",
+  "note": "Drain check valve standard (up to 10 ft / 3 m; NCV option on 4 in). FloStop. Stainless riser variants -SS for 4/6 in. Uses the same nozzle racks as PGP Ultra."
+ },
+ {
+  "id": "hunter-pgp-ultra-00-prb",
+  "brand": "Hunter",
+  "model": "PGP-00-PRB",
+  "kind": "rotor",
+  "inlet": "3/4\"",
+  "pressureRange": [
+   4.14,
+   6.89
+  ],
+  "regulated": 3.1,
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=18",
+  "note": "Pressure-regulated body: nozzle discharge pressure 45 PSI (3.1 bar); requires 15 PSI dynamic pressure differential."
+ },
+ {
+  "id": "hunter-pgp-ultra-04-prb",
+  "brand": "Hunter",
+  "model": "PGP-04-PRB",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   4.14,
+   6.89
+  ],
+  "regulated": 3.1,
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=18",
+  "note": "Pressure-regulated body: nozzle discharge pressure 45 PSI (3.1 bar); requires 15 PSI dynamic pressure differential."
+ },
+ {
+  "id": "hunter-i20-00-prb",
+  "brand": "Hunter",
+  "model": "I-20-00-PRB",
+  "kind": "rotor",
+  "inlet": "3/4\"",
+  "pressureRange": [
+   4.14,
+   6.89
+  ],
+  "regulated": 3.1,
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=18",
+  "note": "Pressure-regulated body: nozzle discharge pressure 45 PSI (3.1 bar); requires 15 PSI dynamic pressure differential."
+ },
+ {
+  "id": "hunter-i20-04-prb",
+  "brand": "Hunter",
+  "model": "I-20-04-PRB",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   4.14,
+   6.89
+  ],
+  "regulated": 3.1,
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=18",
+  "note": "Pressure-regulated body: nozzle discharge pressure 45 PSI (3.1 bar); requires 15 PSI dynamic pressure differential."
+ },
+ {
+  "id": "hunter-i20-06-prb",
+  "brand": "Hunter",
+  "model": "I-20-06-PRB",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   4.14,
+   6.89
+  ],
+  "regulated": 3.1,
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-pgp-ultra-blue",
+   "hunter-pgp-ultra-gray-lowangle",
+   "hunter-pgp-ultra-green-highflow",
+   "hunter-pgp-ultra-black-shortradius",
+   "hunter-pgp-ultra-mpr25",
+   "hunter-pgp-ultra-mpr30",
+   "hunter-pgp-ultra-mpr35"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=18",
+  "note": "Pressure-regulated body: nozzle discharge pressure 45 PSI (3.1 bar); requires 15 PSI dynamic pressure differential."
+ },
+ {
+  "id": "hunter-i25-04",
+  "brand": "Hunter",
+  "model": "I-25-04",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.76,
+   6.89
+  ],
+  "recommendedRange": [
+   2.76,
+   6.89
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-i25-standard",
+   "hunter-i25-highspeed"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=22",
+  "note": "Drain check valve standard (up to 10 ft / 3 m). 5 nozzles included (07, 10, 15, 20, 25). High-speed nozzle option only on -SS models."
+ },
+ {
+  "id": "hunter-i25-06",
+  "brand": "Hunter",
+  "model": "I-25-06",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.76,
+   6.89
+  ],
+  "recommendedRange": [
+   2.76,
+   6.89
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-i25-standard",
+   "hunter-i25-highspeed"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=22",
+  "note": "Drain check valve standard (up to 10 ft / 3 m). 5 nozzles included (07, 10, 15, 20, 25). High-speed nozzle option only on -SS models."
+ },
+ {
+  "id": "hunter-i40-04",
+  "brand": "Hunter",
+  "model": "I-40-04-SS",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.76,
+   6.89
+  ],
+  "recommendedRange": [
+   2.76,
+   6.89
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-i40-standard",
+   "hunter-i40-highspeed"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=24",
+  "note": "Stainless riser; drain check valve standard (up to 15 ft / 4.6 m); 6 nozzles included."
+ },
+ {
+  "id": "hunter-i40-04-on",
+  "brand": "Hunter",
+  "model": "I-40-04-SS-ON",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.76,
+   6.89
+  ],
+  "recommendedRange": [
+   2.76,
+   6.89
+  ],
+  "arc": [
+   360,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-i40-on"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=24",
+  "note": "Full-circle opposing-nozzle model (360 only)."
+ },
+ {
+  "id": "hunter-i40-06",
+  "brand": "Hunter",
+  "model": "I-40-06-SS",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.76,
+   6.89
+  ],
+  "recommendedRange": [
+   2.76,
+   6.89
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-i40-standard",
+   "hunter-i40-highspeed"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=24",
+  "note": "Stainless riser; drain check valve standard (up to 15 ft / 4.6 m); 6 nozzles included."
+ },
+ {
+  "id": "hunter-i40-06-on",
+  "brand": "Hunter",
+  "model": "I-40-06-SS-ON",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.76,
+   6.89
+  ],
+  "recommendedRange": [
+   2.76,
+   6.89
+  ],
+  "arc": [
+   360,
+   360
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "hunter-i40-on"
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=24",
+  "note": "Full-circle opposing-nozzle model (360 only)."
+ },
+ {
+  "id": "rainbird-us-400",
+  "brand": "Rain Bird",
+  "model": "UNI-Spray US-400",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=7",
+  "note": "Optimum 30 psi (2.1 bar) at the nozzle. Also sold with HE-VAN pre-installed (US408HE/US410HE/US412HE/US415HE). Flow-by 0 at >=0.75 bar.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1802",
+  "brand": "Rain Bird",
+  "model": "1802",
+  "kind": "spray-body",
+  "popUp": 5.1,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=8",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1802-prs",
+  "brand": "Rain Bird",
+  "model": "1802-PRS",
+  "kind": "spray-body",
+  "popUp": 5.1,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar). Catalog lists 1802PRS pop-up as 2\" (5.8 cm) - the cm value appears to be a typo for 5.1 cm.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1803-prs",
+  "brand": "Rain Bird",
+  "model": "1803-PRS",
+  "kind": "spray-body",
+  "popUp": 7.6,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1804",
+  "brand": "Rain Bird",
+  "model": "1804",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=8",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1804-sam",
+  "brand": "Rain Bird",
+  "model": "1804-SAM",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "note": "Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1804-p45",
+  "brand": "Rain Bird",
+  "model": "1804-P45",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 3.1,
+  "note": "In-stem regulator holds the nozzle at ~45 psi (3.1 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1804-sam-prs",
+  "brand": "Rain Bird",
+  "model": "1804-SAM-PRS",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar). Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1804-sam-p45",
+  "brand": "Rain Bird",
+  "model": "1804-SAM-P45",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 3.1,
+  "note": "In-stem regulator holds the nozzle at ~45 psi (3.1 bar) for inlet pressures up to 70 psi (4.8 bar). Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1804-prs",
+  "brand": "Rain Bird",
+  "model": "1804-PRS",
+  "kind": "spray-body",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1806",
+  "brand": "Rain Bird",
+  "model": "1806",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=8",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1806-sam",
+  "brand": "Rain Bird",
+  "model": "1806-SAM",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "note": "Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1806-p45",
+  "brand": "Rain Bird",
+  "model": "1806-P45",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 3.1,
+  "note": "In-stem regulator holds the nozzle at ~45 psi (3.1 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1806-sam-prs",
+  "brand": "Rain Bird",
+  "model": "1806-SAM-PRS",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar). Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1806-sam-p45",
+  "brand": "Rain Bird",
+  "model": "1806-SAM-P45",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 3.1,
+  "note": "In-stem regulator holds the nozzle at ~45 psi (3.1 bar) for inlet pressures up to 70 psi (4.8 bar). Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1806-prs",
+  "brand": "Rain Bird",
+  "model": "1806-PRS",
+  "kind": "spray-body",
+  "popUp": 15.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1812",
+  "brand": "Rain Bird",
+  "model": "1812",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=8",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1812-sam",
+  "brand": "Rain Bird",
+  "model": "1812-SAM",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "note": "Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1812-p45",
+  "brand": "Rain Bird",
+  "model": "1812-P45",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 3.1,
+  "note": "In-stem regulator holds the nozzle at ~45 psi (3.1 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1812-sam-prs",
+  "brand": "Rain Bird",
+  "model": "1812-SAM-PRS",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar). Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1812-sam-p45",
+  "brand": "Rain Bird",
+  "model": "1812-SAM-P45",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": true,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 3.1,
+  "note": "In-stem regulator holds the nozzle at ~45 psi (3.1 bar) for inlet pressures up to 70 psi (4.8 bar). Seal-A-Matic check valve holds up to 4.2 m (14 ft) of elevation; ~0.4 bar (6 psi) to open.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-1812-prs",
+  "brand": "Rain Bird",
+  "model": "1812-PRS",
+  "kind": "spray-body",
+  "popUp": 30.5,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=9",
+  "regulated": 2.07,
+  "note": "In-stem regulator holds the nozzle at ~30 psi (2.07 bar) for inlet pressures up to 70 psi (4.8 bar).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-pa-8s-prs",
+  "brand": "Rain Bird",
+  "model": "PA-8S-PRS",
+  "kind": "bubbler-body",
+  "popUp": 0,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "regulated": 2.07,
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=11",
+  "note": "Pressure-regulating shrub adapter for 1/2\" riser (30 psi). Flow 0.2-4.0 gpm (0.76-15.1 L/min). Also PA-8S-P45 (45 psi).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-pa-8s-p45",
+  "brand": "Rain Bird",
+  "model": "PA-8S-P45",
+  "kind": "bubbler-body",
+  "popUp": 0,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.03,
+   4.83
+  ],
+  "regulated": 3.1,
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=11",
+  "note": "Pressure-regulating shrub adapter for 1/2\" riser (45 psi). Flow 0.2-4.0 gpm (0.76-15.1 L/min).",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-pa-8s",
+  "brand": "Rain Bird",
+  "model": "PA-8S",
+  "kind": "bubbler-body",
+  "popUp": 0,
+  "inlet": "1/2\"",
+  "checkValve": false,
+  "nozzleSeries": [
+   "rainbird-u-series",
+   "rainbird-he-van",
+   "rainbird-van",
+   "rainbird-mpr",
+   "rainbird-15-strip",
+   "rainbird-r-van",
+   "rainbird-bubbler"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=11",
+  "note": "Plain plastic shrub adapter for 1/2\" riser. No body pressure range published - use the nozzle limits.",
+  "compatibleSeries": [
+   "hunter-pro-adjustable",
+   "hunter-pro-fixed",
+   "hunter-pro-he",
+   "hunter-mp-rotator",
+   "hunter-strip"
+  ]
+ },
+ {
+  "id": "rainbird-3504-pc",
+  "brand": "Rain Bird",
+  "model": "3504-PC",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.72,
+   3.79
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-3500"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=38",
+  "note": "3504-PC-SAM has Seal-A-Matic check valve (holds 2.1 m / 7 ft). Radius 4.6-10.7 m; reducible 25% by screw."
+ },
+ {
+  "id": "rainbird-32sa",
+  "brand": "Rain Bird",
+  "model": "32SA",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1/2\"",
+  "pressureRange": [
+   1.72,
+   3.79
+  ],
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-32sa"
+  ],
+  "source": "https://www.rainbird.com/products/32sa-simple-adjust-rotor-sprinklers-international",
+  "note": "Simple-Adjust 1/2\" rotor, radius 5.8-9.8 m (19-32 ft). Check valve not stated. Nozzle data: Rain Bird RotorPerformance.pdf."
+ },
+ {
+  "id": "rainbird-5004-pc",
+  "brand": "Rain Bird",
+  "model": "5004-PC",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.72,
+   4.48
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-5000-rc",
+   "rainbird-5000-la",
+   "rainbird-5000-mpr"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=40",
+  "note": "Part circle 40-360 deg (FC models 360 only). SAM option (check valve, 2.1 m) on 4\" and 6\" models. 5000 Plus (+) adds flow shut-off."
+ },
+ {
+  "id": "rainbird-5004-plus-pc-sam-prs",
+  "brand": "Rain Bird",
+  "model": "5004+PCSAMR",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.72,
+   4.48
+  ],
+  "regulated": 3.1,
+  "checkValve": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-5000-rc",
+   "rainbird-5000-la",
+   "rainbird-5000-mpr"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=41",
+  "note": "5000 Plus with SAM check valve and 45 psi (3.1 bar) PRS in-stem regulator. Catalog PRS tables show 55-75 psi inlet giving ~45-50 psi nozzle performance; model nozzle pressure as min(inlet, 3.10 bar)."
+ },
+ {
+  "id": "rainbird-5006-pc",
+  "brand": "Rain Bird",
+  "model": "5006-PC",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.72,
+   4.48
+  ],
+  "checkValve": false,
+  "checkValveOption": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-5000-rc",
+   "rainbird-5000-la",
+   "rainbird-5000-mpr"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=40",
+  "note": "Part circle 40-360 deg (FC models 360 only). SAM option (check valve, 2.1 m) on 4\" and 6\" models. 5000 Plus (+) adds flow shut-off."
+ },
+ {
+  "id": "rainbird-5006-plus-pc-sam-prs",
+  "brand": "Rain Bird",
+  "model": "5006+PCSAMR",
+  "kind": "rotor",
+  "popUp": 15.2,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.72,
+   4.48
+  ],
+  "regulated": 3.1,
+  "checkValve": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-5000-rc",
+   "rainbird-5000-la",
+   "rainbird-5000-mpr"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=41",
+  "note": "5000 Plus with SAM check valve and 45 psi (3.1 bar) PRS in-stem regulator. Catalog PRS tables show 55-75 psi inlet giving ~45-50 psi nozzle performance; model nozzle pressure as min(inlet, 3.10 bar)."
+ },
+ {
+  "id": "rainbird-5012-plus-pc-sam-prs",
+  "brand": "Rain Bird",
+  "model": "5012+PCSAMR",
+  "kind": "rotor",
+  "popUp": 30.5,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.72,
+   4.48
+  ],
+  "regulated": 3.1,
+  "checkValve": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-5000-rc",
+   "rainbird-5000-la",
+   "rainbird-5000-mpr"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=41",
+  "note": "5000 Plus with SAM check valve and 45 psi (3.1 bar) PRS in-stem regulator. Catalog PRS tables show 55-75 psi inlet giving ~45-50 psi nozzle performance; model nozzle pressure as min(inlet, 3.10 bar)."
+ },
+ {
+  "id": "rainbird-5000s-plus-pc-sam",
+  "brand": "Rain Bird",
+  "model": "5000+SPCSAM (shrub)",
+  "kind": "rotor",
+  "popUp": 0,
+  "inlet": "3/4\"",
+  "pressureRange": [
+   1.72,
+   4.48
+  ],
+  "checkValve": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-5000-rc",
+   "rainbird-5000-la",
+   "rainbird-5000-mpr"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=41",
+  "note": "Shrub (riser-mounted) 5000 Plus with SAM; shrub height 19.7 cm (7 3/4\")."
+ },
+ {
+  "id": "rainbird-6504-pc",
+  "brand": "Rain Bird",
+  "model": "Falcon 6504-PC",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.07,
+   6.21
+  ],
+  "checkValve": true,
+  "arc": [
+   40,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-6504"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=48",
+  "note": "SAM check valve standard (holds 3.1 m / 10 ft). Radius 11.3-19.8 m. Nozzles included with rotor."
+ },
+ {
+  "id": "rainbird-6504-fc",
+  "brand": "Rain Bird",
+  "model": "Falcon 6504-FC",
+  "kind": "rotor",
+  "popUp": 10.2,
+  "inlet": "1\"",
+  "pressureRange": [
+   2.07,
+   6.21
+  ],
+  "checkValve": true,
+  "arc": 360,
+  "nozzleSeries": [
+   "rainbird-6504"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=48",
+  "note": "SAM check valve standard (holds 3.1 m / 10 ft). Radius 11.3-19.8 m. Nozzles included with rotor."
+ },
+ {
+  "id": "rainbird-8005",
+  "brand": "Rain Bird",
+  "model": "8005",
+  "kind": "rotor",
+  "popUp": 12.7,
+  "inlet": "1\"",
+  "pressureRange": [
+   3.45,
+   6.89
+  ],
+  "checkValve": true,
+  "arc": [
+   50,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-8005"
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=51",
+  "note": "Arc 50-330 deg part circle or 360 non-reversing full circle. SAM check valve (3.1 m / 10 ft). Radius 11.9-24.7 m."
+ },
+ {
+  "id": "rainbird-7005",
+  "brand": "Rain Bird",
+  "model": "7005 (legacy)",
+  "kind": "rotor",
+  "inlet": "1\"",
+  "pressureRange": [
+   3.45,
+   6.21
+  ],
+  "arc": [
+   50,
+   360
+  ],
+  "nozzleSeries": [
+   "rainbird-7005"
+  ],
+  "source": "https://medias.descours-cabaud.com/d180001/medias/docus/114/8913618796574.pdf",
+  "note": "LEGACY model not in the 2023 catalog (superseded by 8005). pressureRange = span of tested pressures in the 7005/8005 Operation Guide. Pop-up height not sourced."
+ }
+]

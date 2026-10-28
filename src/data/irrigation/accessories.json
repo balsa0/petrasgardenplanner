@@ -1,0 +1,1153 @@
+[
+ {
+  "id": "hunter-pcz-101-25",
+  "brand": "Hunter",
+  "model": "PCZ-101-25",
+  "kind": "control-zone-kit",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.34
+   },
+   {
+    "lpm": 3.79,
+    "bar": 2.34
+   },
+   {
+    "lpm": 18.93,
+    "bar": 2.34
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.55
+   },
+   {
+    "lpm": 56.78,
+    "bar": 2.83
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=151",
+  "note": "1\" PGV valve + HFR-100-075 filter-regulator. inletRequired = inlet pressure needed to hold the regulated outlet at each flow."
+ },
+ {
+  "id": "hunter-pcz-101-40",
+  "brand": "Hunter",
+  "model": "PCZ-101-40",
+  "kind": "control-zone-kit",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.83
+   },
+   {
+    "lpm": 3.79,
+    "bar": 2.9
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.1
+   },
+   {
+    "lpm": 37.85,
+    "bar": 3.59
+   },
+   {
+    "lpm": 56.78,
+    "bar": 4.07
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=151",
+  "note": "1\" PGV valve + HFR-100-075 filter-regulator. inletRequired = inlet pressure needed to hold the regulated outlet at each flow."
+ },
+ {
+  "id": "hunter-acz-075-25",
+  "brand": "Hunter",
+  "model": "ACZ-075-25",
+  "kind": "control-zone-kit",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 1.72
+   },
+   {
+    "lpm": 3.79,
+    "bar": 1.79
+   },
+   {
+    "lpm": 18.93,
+    "bar": 1.93
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.07
+   },
+   {
+    "lpm": 56.78,
+    "bar": 2.21
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=151",
+  "note": "Anti-siphon (PGV-ASV) valve + filter-regulator for above-ground installs. inletRequired from the shared \"PCZ and ACZ kits\" table."
+ },
+ {
+  "id": "hunter-acz-075-40",
+  "brand": "Hunter",
+  "model": "ACZ-075-40",
+  "kind": "control-zone-kit",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.83
+   },
+   {
+    "lpm": 3.79,
+    "bar": 2.96
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.24
+   },
+   {
+    "lpm": 37.85,
+    "bar": 3.59
+   },
+   {
+    "lpm": 56.78,
+    "bar": 3.79
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=151",
+  "note": "Anti-siphon (PGV-ASV) valve + filter-regulator for above-ground installs. inletRequired from the shared \"PCZ and ACZ kits\" table."
+ },
+ {
+  "id": "hunter-acz-101-25",
+  "brand": "Hunter",
+  "model": "ACZ-101-25",
+  "kind": "control-zone-kit",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 1.72
+   },
+   {
+    "lpm": 3.79,
+    "bar": 1.79
+   },
+   {
+    "lpm": 18.93,
+    "bar": 1.93
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.07
+   },
+   {
+    "lpm": 56.78,
+    "bar": 2.21
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=151",
+  "note": "Anti-siphon (PGV-ASV) valve + filter-regulator for above-ground installs. inletRequired from the shared \"PCZ and ACZ kits\" table."
+ },
+ {
+  "id": "hunter-acz-101-40",
+  "brand": "Hunter",
+  "model": "ACZ-101-40",
+  "kind": "control-zone-kit",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.83
+   },
+   {
+    "lpm": 3.79,
+    "bar": 2.96
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.24
+   },
+   {
+    "lpm": 37.85,
+    "bar": 3.59
+   },
+   {
+    "lpm": 56.78,
+    "bar": 3.79
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=151",
+  "note": "Anti-siphon (PGV-ASV) valve + filter-regulator for above-ground installs. inletRequired from the shared \"PCZ and ACZ kits\" table."
+ },
+ {
+  "id": "hunter-icz-101-25",
+  "brand": "Hunter",
+  "model": "ICZ-101-25",
+  "kind": "control-zone-kit",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 7.57,
+    "bar": 2.41
+   },
+   {
+    "lpm": 18.93,
+    "bar": 2.41
+   },
+   {
+    "lpm": 26.5,
+    "bar": 2.48
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.76
+   },
+   {
+    "lpm": 56.78,
+    "bar": 3.17
+   },
+   {
+    "lpm": 75.71,
+    "bar": 4.14
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=152",
+  "note": "1\" ICV with Filter Sentry + 1\" HY-100 filter + regulator; 1\" outlet."
+ },
+ {
+  "id": "hunter-icz-101-40",
+  "brand": "Hunter",
+  "model": "ICZ-101-40",
+  "kind": "control-zone-kit",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 7.57,
+    "bar": 3.59
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.59
+   },
+   {
+    "lpm": 26.5,
+    "bar": 3.72
+   },
+   {
+    "lpm": 37.85,
+    "bar": 4.0
+   },
+   {
+    "lpm": 56.78,
+    "bar": 4.55
+   },
+   {
+    "lpm": 75.71,
+    "bar": 5.65
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=152",
+  "note": "1\" ICV with Filter Sentry + 1\" HY-100 filter + regulator; 1\" outlet."
+ },
+ {
+  "id": "hunter-icz-101-lf-25",
+  "brand": "Hunter",
+  "model": "ICZ-101-LF-25",
+  "kind": "control-zone-kit",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.41
+   },
+   {
+    "lpm": 3.79,
+    "bar": 2.41
+   },
+   {
+    "lpm": 18.93,
+    "bar": 2.48
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.55
+   },
+   {
+    "lpm": 56.78,
+    "bar": 2.76
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=152",
+  "note": "1\" ICV + HFR-100-075 filter-regulator; 3/4\" outlet (low flow)."
+ },
+ {
+  "id": "hunter-icz-101-lf-40",
+  "brand": "Hunter",
+  "model": "ICZ-101-LF-40",
+  "kind": "control-zone-kit",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "pressureRange": [
+   1.38,
+   8.27
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.83
+   },
+   {
+    "lpm": 3.79,
+    "bar": 2.96
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.24
+   },
+   {
+    "lpm": 37.85,
+    "bar": 3.59
+   },
+   {
+    "lpm": 56.78,
+    "bar": 3.79
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=152",
+  "note": "1\" ICV + HFR-100-075 filter-regulator; 3/4\" outlet (low flow)."
+ },
+ {
+  "id": "hunter-hfr-075-25",
+  "brand": "Hunter",
+  "model": "HFR-075-25",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.07
+   },
+   {
+    "lpm": 7.57,
+    "bar": 2.07
+   },
+   {
+    "lpm": 18.93,
+    "bar": 2.14
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.28
+   },
+   {
+    "lpm": 56.78,
+    "bar": 2.55
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=156",
+  "note": "Filter + Senninger pressure regulator in one body (150 mesh / 100 micron). Flow range taken from the catalog table span (0.5-15 GPM)."
+ },
+ {
+  "id": "hunter-hfr-100-075-25",
+  "brand": "Hunter",
+  "model": "HFR-100-075-25",
+  "kind": "regulator",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "regulated": 1.72,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 2.07
+   },
+   {
+    "lpm": 7.57,
+    "bar": 2.07
+   },
+   {
+    "lpm": 18.93,
+    "bar": 2.14
+   },
+   {
+    "lpm": 37.85,
+    "bar": 2.21
+   },
+   {
+    "lpm": 56.78,
+    "bar": 2.41
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=156",
+  "note": "Filter + Senninger pressure regulator in one body (150 mesh / 100 micron). Flow range taken from the catalog table span (0.5-15 GPM)."
+ },
+ {
+  "id": "hunter-hfr-075-40",
+  "brand": "Hunter",
+  "model": "HFR-075-40",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 3.1
+   },
+   {
+    "lpm": 7.57,
+    "bar": 3.1
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.17
+   },
+   {
+    "lpm": 37.85,
+    "bar": 3.31
+   },
+   {
+    "lpm": 56.78,
+    "bar": 3.72
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=156",
+  "note": "Filter + Senninger pressure regulator in one body (150 mesh / 100 micron). Flow range taken from the catalog table span (0.5-15 GPM)."
+ },
+ {
+  "id": "hunter-hfr-100-075-40",
+  "brand": "Hunter",
+  "model": "HFR-100-075-40",
+  "kind": "regulator",
+  "size": "1\" x 3/4\"",
+  "flowRange": [
+   1.89,
+   56.78
+  ],
+  "regulated": 2.76,
+  "mesh": 150,
+  "inletRequired": [
+   {
+    "lpm": 1.89,
+    "bar": 3.1
+   },
+   {
+    "lpm": 7.57,
+    "bar": 3.1
+   },
+   {
+    "lpm": 18.93,
+    "bar": 3.17
+   },
+   {
+    "lpm": 37.85,
+    "bar": 3.24
+   },
+   {
+    "lpm": 56.78,
+    "bar": 3.59
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=156",
+  "note": "Filter + Senninger pressure regulator in one body (150 mesh / 100 micron). Flow range taken from the catalog table span (0.5-15 GPM)."
+ },
+ {
+  "id": "hunter-hy-075",
+  "brand": "Hunter",
+  "model": "HY-075",
+  "kind": "filter",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   75.71
+  ],
+  "pressureRange": [
+   0,
+   8.27
+  ],
+  "mesh": 150,
+  "loss": [
+   {
+    "lpm": 1.89,
+    "bar": 0.0
+   },
+   {
+    "lpm": 7.57,
+    "bar": 0.0
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.07
+   },
+   {
+    "lpm": 26.5,
+    "bar": 0.14
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.21
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.41
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.76
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=206",
+  "note": "Y-filter, stainless 150 mesh screen (80/120 optional). flowRange = span of the catalog loss table; specs https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=157."
+ },
+ {
+  "id": "hunter-hy-100",
+  "brand": "Hunter",
+  "model": "HY-100",
+  "kind": "filter",
+  "size": "1\"",
+  "flowRange": [
+   1.89,
+   75.71
+  ],
+  "pressureRange": [
+   0,
+   8.27
+  ],
+  "mesh": 150,
+  "loss": [
+   {
+    "lpm": 1.89,
+    "bar": 0.0
+   },
+   {
+    "lpm": 7.57,
+    "bar": 0.0
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.07
+   },
+   {
+    "lpm": 26.5,
+    "bar": 0.14
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.21
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.41
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.76
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=206",
+  "note": "Y-filter, stainless 150 mesh screen (80/120 optional). flowRange = span of the catalog loss table; specs https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=157."
+ },
+ {
+  "id": "hunter-hy-151",
+  "brand": "Hunter",
+  "model": "HY-151",
+  "kind": "filter",
+  "size": "1 1/2\"",
+  "flowRange": [
+   75.71,
+   302.83
+  ],
+  "pressureRange": [
+   0,
+   10.34
+  ],
+  "mesh": 150,
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.0
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.07
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.07
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.14
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.21
+   },
+   {
+    "lpm": 264.98,
+    "bar": 0.21
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.28
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=206",
+  "note": "Y-filter, stainless 150 mesh screen (80/120 optional). flowRange = span of the catalog loss table; specs https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=157."
+ },
+ {
+  "id": "hunter-hy-151-d",
+  "brand": "Hunter",
+  "model": "HY-151-D",
+  "kind": "filter",
+  "size": "1 1/2\"",
+  "flowRange": [
+   75.71,
+   302.83
+  ],
+  "pressureRange": [
+   0,
+   10.34
+  ],
+  "mesh": 120,
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.0
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.07
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.14
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.21
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.28
+   },
+   {
+    "lpm": 264.98,
+    "bar": 0.28
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.34
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=206",
+  "note": "Disc filter, 120 mesh. flowRange = span of the catalog loss table; specs https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=157."
+ },
+ {
+  "id": "hunter-hy-201",
+  "brand": "Hunter",
+  "model": "HY-201",
+  "kind": "filter",
+  "size": "2\"",
+  "flowRange": [
+   75.71,
+   378.54
+  ],
+  "pressureRange": [
+   0,
+   10.34
+  ],
+  "mesh": 150,
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.0
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.0
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.0
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.07
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.07
+   },
+   {
+    "lpm": 264.98,
+    "bar": 0.07
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.14
+   },
+   {
+    "lpm": 340.69,
+    "bar": 0.14
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.21
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=206",
+  "note": "Y-filter, stainless 150 mesh screen (80/120 optional). flowRange = span of the catalog loss table; specs https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=157."
+ },
+ {
+  "id": "hunter-hy-201-d",
+  "brand": "Hunter",
+  "model": "HY-201-D",
+  "kind": "filter",
+  "size": "2\"",
+  "flowRange": [
+   75.71,
+   378.54
+  ],
+  "pressureRange": [
+   0,
+   10.34
+  ],
+  "mesh": 120,
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.0
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.0
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.07
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.07
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.14
+   },
+   {
+    "lpm": 264.98,
+    "bar": 0.14
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.21
+   },
+   {
+    "lpm": 340.69,
+    "bar": 0.21
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.28
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=206",
+  "note": "Disc filter, 120 mesh. flowRange = span of the catalog loss table; specs https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=157."
+ },
+ {
+  "id": "hunter-senninger-prl-075-20",
+  "brand": "Hunter",
+  "model": "Senninger PRL 3/4\" 20 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   30.28
+  ],
+  "regulated": 1.38,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-prl-075-25",
+  "brand": "Hunter",
+  "model": "Senninger PRL 3/4\" 25 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   30.28
+  ],
+  "regulated": 1.72,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-prl-075-30",
+  "brand": "Hunter",
+  "model": "Senninger PRL 3/4\" 30 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   30.28
+  ],
+  "regulated": 2.07,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-prl-075-35",
+  "brand": "Hunter",
+  "model": "Senninger PRL 3/4\" 35 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   30.28
+  ],
+  "regulated": 2.41,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-prlg-075-25",
+  "brand": "Hunter",
+  "model": "Senninger PRLG 3/4\" 25 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   1.89,
+   26.5
+  ],
+  "regulated": 1.72,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-075-20",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 3/4\" 20 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 1.38,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-075-25",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 3/4\" 25 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 1.72,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-075-30",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 3/4\" 30 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 2.07,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-075-35",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 3/4\" 35 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 2.41,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-075-40",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 3/4\" 40 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 2.76,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-075-50",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 3/4\" 50 PSI",
+  "kind": "regulator",
+  "size": "3/4\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 3.45,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-100-20",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 1\" 20 PSI",
+  "kind": "regulator",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 1.38,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-100-25",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 1\" 25 PSI",
+  "kind": "regulator",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 1.72,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-100-30",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 1\" 30 PSI",
+  "kind": "regulator",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 2.07,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pmr-mf-100-40",
+  "brand": "Hunter",
+  "model": "Senninger PMR-MF 1\" 40 PSI",
+  "kind": "regulator",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   75.71
+  ],
+  "regulated": 2.76,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "hunter-senninger-pru-200-40",
+  "brand": "Hunter",
+  "model": "Senninger PRU 2\" 40 PSI",
+  "kind": "regulator",
+  "size": "2\"",
+  "flowRange": [
+   75.71,
+   378.54
+  ],
+  "regulated": 2.76,
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=158",
+  "note": "Senninger regulator sold by Hunter; needs inlet at least 5 PSI (0.34 bar) above the outlet setting; max inlet should not exceed 80 PSI above nominal."
+ },
+ {
+  "id": "rainbird-xcz-075-prf",
+  "brand": "Rain Bird",
+  "model": "XCZ-075-PRF",
+  "kind": "control-zone-kit",
+  "size": "3/4\"",
+  "flowRange": [
+   0.76,
+   18.93
+  ],
+  "inletPressure": [
+   1.38,
+   10.34
+  ],
+  "regulated": 2.07,
+  "mesh": 200,
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=160",
+  "note": "3/4\" Low Flow Valve + pressure-regulating RBY filter (200 mesh stainless). Min. inlet for 30 psi outlet rises with flow (catalog table p.160)."
+ },
+ {
+  "id": "rainbird-xczlf-100-prf",
+  "brand": "Rain Bird",
+  "model": "XCZLF-100-PRF",
+  "kind": "control-zone-kit",
+  "size": "1\"",
+  "flowRange": [
+   0.76,
+   37.85
+  ],
+  "inletPressure": [
+   1.38,
+   10.34
+  ],
+  "regulated": 2.76,
+  "mesh": 200,
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=160",
+  "note": "1\" Low Flow Valve + 1\" PR RBY filter (40 psi)."
+ },
+ {
+  "id": "rainbird-xcz-100-prf",
+  "brand": "Rain Bird",
+  "model": "XCZ-100-PRF",
+  "kind": "control-zone-kit",
+  "size": "1\"",
+  "flowRange": [
+   11.36,
+   56.78
+  ],
+  "inletPressure": [
+   1.38,
+   10.34
+  ],
+  "regulated": 2.76,
+  "mesh": 200,
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=161",
+  "note": "1\" DV valve + pressure-regulating RBY filter (40 psi, 200 mesh). Fits a Mini-Standard or 10\" round box."
+ }
+]

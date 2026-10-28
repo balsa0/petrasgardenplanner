@@ -1,0 +1,305 @@
+[
+ {
+  "id": "rainbird-vb-7rnd",
+  "brand": "Rain Bird",
+  "model": "VB-7RND",
+  "shape": "round",
+  "inner": {
+   "d": 16.8,
+   "h": 22.9
+  },
+  "innerBottom": {
+   "d": 21.5
+  },
+  "outer": {
+   "d": 25.0,
+   "h": 22.9
+  },
+  "fits": {
+   "1\"": 1
+  },
+  "fitsBasis": "manufacturer",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_valvebox_7-10RND.pdf",
+  "note": "inner.d = top opening; spec sheet: houses \"single valves or other subsurface components\"."
+ },
+ {
+  "id": "rainbird-vb-10rnd",
+  "brand": "Rain Bird",
+  "model": "VB-10RND",
+  "shape": "round",
+  "inner": {
+   "d": 25.1,
+   "h": 25.4
+  },
+  "innerBottom": {
+   "d": 30.2
+  },
+  "outer": {
+   "d": 35.0,
+   "h": 25.4
+  },
+  "fits": {
+   "1\"": 1
+  },
+  "fitsBasis": "manufacturer",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_valvebox_7-10RND.pdf",
+  "note": "inner.d = top opening (sheet prints 8.9\" (25.1 cm); the cm value is used). Spec sheet: \"single valves\". Also VB-10RND-H (locking lid), same body."
+ },
+ {
+  "id": "rainbird-vb-std",
+  "brand": "Rain Bird",
+  "model": "VB-STD",
+  "shape": "rect",
+  "inner": {
+   "w": 23.9,
+   "l": 36.8,
+   "h": 30.7
+  },
+  "innerBottom": {
+   "w": 35.9,
+   "l": 47.6
+  },
+  "outer": {
+   "w": 49.0,
+   "l": 59.0,
+   "h": 30.7
+  },
+  "fits": {
+   "1\"": 3
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_valvebox_STD.pdf",
+  "note": "inner = top opening (smallest clear opening); innerBottom = bottom opening. Also VB-STD-H (locking lid, same body); VB-STD-6EXT adds 17.2 cm height. fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ },
+ {
+  "id": "rainbird-vb-jmb",
+  "brand": "Rain Bird",
+  "model": "VB-JMB",
+  "shape": "rect",
+  "inner": {
+   "w": 30.9,
+   "l": 47.4,
+   "h": 30.7
+  },
+  "innerBottom": {
+   "w": 44.2,
+   "l": 61.1
+  },
+  "outer": {
+   "w": 53.3,
+   "l": 70.1,
+   "h": 30.7
+  },
+  "fits": {
+   "1\"": 5
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_valvebox_JMB.pdf",
+  "note": "inner = minimum top opening. VB-JMB-H = same body with locking lid (2 hex bolts). VB-JMB-6EXT adds 17.2 cm. fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ },
+ {
+  "id": "rainbird-vb-jmb-h",
+  "brand": "Rain Bird",
+  "model": "VB-JMB-H",
+  "shape": "rect",
+  "inner": {
+   "w": 30.9,
+   "l": 47.4,
+   "h": 30.7
+  },
+  "innerBottom": {
+   "w": 44.2,
+   "l": 61.1
+  },
+  "outer": {
+   "w": 53.3,
+   "l": 70.1,
+   "h": 30.7
+  },
+  "fits": {
+   "1\"": 5
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_valvebox_JMB.pdf",
+  "note": "Jumbo box with locking green lid (same body as VB-JMB). fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ },
+ {
+  "id": "rainbird-pvb6rnd",
+  "brand": "Rain Bird",
+  "model": "PVB6RND",
+  "shape": "round",
+  "inner": {
+   "d": 15.6
+  },
+  "innerBottom": {
+   "d": 21.9
+  },
+  "fits": {
+   "1\"": 1
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_PVB-Professional-Series-Valve-Boxes.pdf",
+  "note": "PVB Professional 6\" round. Height not published in the tech spec. fits=1 assumed for a 6\" round box (no manufacturer count)."
+ },
+ {
+  "id": "rainbird-pvb10rnd",
+  "brand": "Rain Bird",
+  "model": "PVB10RND",
+  "shape": "round",
+  "inner": {
+   "d": 25.4
+  },
+  "innerBottom": {
+   "d": 32.5
+  },
+  "fits": {
+   "1\"": 1
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_PVB-Professional-Series-Valve-Boxes.pdf",
+  "note": "PVB Professional 10\" round. Height not published in the tech spec. fits=1 assumed (cf. Rain Bird RNDVBA10 \"for use with one valve\")."
+ },
+ {
+  "id": "rainbird-pvbmst",
+  "brand": "Rain Bird",
+  "model": "PVBMST (Mini-Standard)",
+  "shape": "rect",
+  "inner": {
+   "w": 24.1,
+   "l": 38.1,
+   "h": 25.4
+  },
+  "innerBottom": {
+   "w": 31.8,
+   "l": 45.7
+  },
+  "fits": {
+   "1\"": 3
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_PVB-Professional-Series-Valve-Boxes.pdf",
+  "note": "Mini-standard; Rain Bird recommends it for the XCZ-100-PRF drip control-zone kit. fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ },
+ {
+  "id": "rainbird-pvbstd",
+  "brand": "Rain Bird",
+  "model": "PVBSTD",
+  "shape": "rect",
+  "inner": {
+   "w": 33.0,
+   "l": 46.4,
+   "h": 30.5
+  },
+  "innerBottom": {
+   "w": 40.5,
+   "l": 54.0
+  },
+  "fits": {
+   "1\"": 5
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_PVB-Professional-Series-Valve-Boxes.pdf",
+  "note": "fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ },
+ {
+  "id": "rainbird-pvbjmb",
+  "brand": "Rain Bird",
+  "model": "PVBJMB",
+  "shape": "rect",
+  "inner": {
+   "w": 41.6,
+   "l": 56.5,
+   "h": 30.5
+  },
+  "innerBottom": {
+   "w": 49.2,
+   "l": 64.1
+  },
+  "fits": {
+   "1\"": 9
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2018-02/ts_PVB-Professional-Series-Valve-Boxes.pdf",
+  "note": "fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ },
+ {
+  "id": "rainbird-vba02672",
+  "brand": "Rain Bird",
+  "model": "VBA02672 (6\" round, international)",
+  "shape": "round",
+  "inner": {
+   "d": 16.0,
+   "h": 23.7
+  },
+  "innerBottom": {
+   "d": 20.0
+  },
+  "fits": {
+   "1\"": 1
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42140_2023_intl_turf_catalog_v3_eng.pdf#page=69",
+  "note": "International VBA polypropylene box; d = top diameter (ØS), innerBottom = base diameter (ØB); height 236.5 mm. fits=1 assumed."
+ },
+ {
+  "id": "rainbird-vba02673",
+  "brand": "Rain Bird",
+  "model": "VBA02673 / RNDVBA10 (10\" round, international)",
+  "shape": "round",
+  "inner": {
+   "d": 24.2,
+   "h": 25.5
+  },
+  "innerBottom": {
+   "d": 33.5
+  },
+  "fits": {
+   "1\"": 1
+  },
+  "fitsBasis": "manufacturer",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42140_2023_intl_turf_catalog_v3_eng.pdf#page=69",
+  "note": "Rain Bird specifier page (RNDVBA10): \"For use with one valve\" (https://www.rainbird.com/professionals/specifier/valve-boxes)."
+ },
+ {
+  "id": "rainbird-vba02674",
+  "brand": "Rain Bird",
+  "model": "VBA02674 / STDVBA (standard rectangular, international)",
+  "shape": "rect",
+  "inner": {
+   "w": 26.7,
+   "l": 38.6,
+   "h": 30.5
+  },
+  "innerBottom": {
+   "w": 37.0,
+   "l": 50.5
+  },
+  "fits": {
+   "1\"": 4
+  },
+  "fitsBasis": "manufacturer",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42140_2023_intl_turf_catalog_v3_eng.pdf#page=69",
+  "note": "Top opening 386 x 267 mm, base 505 x 370 mm, H 305 mm (catalog dimension labels are offset in the PDF text; values mapped as top/base/height). Rain Bird specifier page (STDVBA): \"For use with up to four valves\". Extension VBA02676 (+180 mm)."
+ },
+ {
+  "id": "rainbird-vba02675",
+  "brand": "Rain Bird",
+  "model": "VBA02675 (jumbo rectangular, international)",
+  "shape": "rect",
+  "inner": {
+   "w": 38.0,
+   "l": 54.5,
+   "h": 30.5
+  },
+  "innerBottom": {
+   "w": 48.0,
+   "l": 63.0
+  },
+  "fits": {
+   "1\"": 8
+  },
+  "fitsBasis": "estimate",
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42140_2023_intl_turf_catalog_v3_eng.pdf#page=69",
+  "note": "Top 545 x 380 mm, base 630 x 480 mm, H 305 mm (see VBA02674 note on label offset). Extension VBA07777 (+190 mm). fits is an ESTIMATE (not a manufacturer rating): top-opening area / (38.6 x 26.7 cm / 4), i.e. scaled from Rain Bird's STDVBA rating of \"up to four valves\". Applies to 3/4\"-1\" plastic valves on a manifold; check actual valve + fittings footprint."
+ }
+]

@@ -184,7 +184,7 @@ export function StepHeader() {
 
 function anchorOf(e: Entity): Pt | null {
   if (isArea(e)) return labelPoint(e.geometry);
-  if (e.kind === "fence") return e.path[Math.floor(e.path.length / 2)] ?? null;
+  if (e.kind === "fence" || e.kind === "pipe") return e.path[Math.floor(e.path.length / 2)] ?? null;
   return e.p;
 }
 

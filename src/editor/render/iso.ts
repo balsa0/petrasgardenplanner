@@ -102,5 +102,9 @@ export function anchorElevation(doc: GardenDoc, e: Entity, years: number): numbe
     const p = e.path[0];
     return p ? sampleHeight(g, p[0], p[1]) + e.height + 0.2 : undefined;
   }
+  if (e.kind === "pipe") {
+    const p = e.path[0];
+    return p ? sampleHeight(g, p[0], p[1]) + 0.05 : undefined;
+  }
   return sampleHeight(g, e.p[0], e.p[1]) + 0.05;
 }

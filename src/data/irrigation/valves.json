@@ -1,0 +1,1166 @@
+[
+ {
+  "id": "hunter-pgv-100",
+  "brand": "Hunter",
+  "model": "PGV-100G / PGV-101G (1\")",
+  "size": "1\"",
+  "flowRange": [
+   0.76,
+   151.42
+  ],
+  "pressureRange": [
+   1.38,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.21
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.28
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.28
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.34
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.34
+   },
+   {
+    "lpm": 94.64,
+    "bar": 0.41
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.55
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.97
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 3.79,
+    "bar": 0.07
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.07
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.07
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.07
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.14
+   },
+   {
+    "lpm": 94.64,
+    "bar": 0.14
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.21
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.34
+   }
+  ],
+  "lossMaleMale": [
+   {
+    "lpm": 3.79,
+    "bar": 0.14
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.14
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.14
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.21
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.28
+   },
+   {
+    "lpm": 94.64,
+    "bar": 0.48
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.69
+   },
+   {
+    "lpm": 151.42,
+    "bar": 1.24
+   }
+  ],
+  "lossMaleBarb": [
+   {
+    "lpm": 3.79,
+    "bar": 0.14
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.14
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.14
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.21
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.28
+   },
+   {
+    "lpm": 94.64,
+    "bar": 0.41
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.69
+   },
+   {
+    "lpm": 151.42,
+    "bar": 1.1
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=79",
+  "note": "PGV-101 adds flow control; jar-top (-JT) versions share the data. Catalog loss values are whole PSI. Flow/pressure from p.78."
+ },
+ {
+  "id": "hunter-pgv-151",
+  "brand": "Hunter",
+  "model": "PGV-151 (1 1/2\")",
+  "size": "1.5\"",
+  "flowRange": [
+   75.71,
+   454.25
+  ],
+  "pressureRange": [
+   1.38,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.21
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.21
+   },
+   {
+    "lpm": 132.49,
+    "bar": 0.21
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.21
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.28
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.34
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.38
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.62
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.79
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 75.71,
+    "bar": 0.21
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.21
+   },
+   {
+    "lpm": 132.49,
+    "bar": 0.21
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.21
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.24
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.28
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.31
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.55
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.72
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=81",
+  "note": "Globe/angle convertible valve with flow control."
+ },
+ {
+  "id": "hunter-pgv-201",
+  "brand": "Hunter",
+  "model": "PGV-201 (2\")",
+  "size": "2\"",
+  "flowRange": [
+   75.71,
+   567.81
+  ],
+  "pressureRange": [
+   1.38,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.07
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.07
+   },
+   {
+    "lpm": 132.49,
+    "bar": 0.14
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.14
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.07
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.14
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.21
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.34
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.41
+   },
+   {
+    "lpm": 511.03,
+    "bar": 0.55
+   },
+   {
+    "lpm": 567.81,
+    "bar": 0.69
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 75.71,
+    "bar": 0.07
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.14
+   },
+   {
+    "lpm": 132.49,
+    "bar": 0.14
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.14
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.07
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.14
+   },
+   {
+    "lpm": 302.83,
+    "bar": 0.14
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.21
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.34
+   },
+   {
+    "lpm": 511.03,
+    "bar": 0.48
+   },
+   {
+    "lpm": 567.81,
+    "bar": 0.62
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=81",
+  "note": "Globe/angle convertible valve with flow control. Catalog values printed as-is (e.g. 50 GPM row lower than 40 GPM row)."
+ },
+ {
+  "id": "hunter-icv-101",
+  "brand": "Hunter",
+  "model": "ICV-101G (1\")",
+  "size": "1\"",
+  "flowRange": [
+   0.38,
+   151.42
+  ],
+  "pressureRange": [
+   1.38,
+   15.17
+  ],
+  "loss": [
+   {
+    "lpm": 0.38,
+    "bar": 0.14
+   },
+   {
+    "lpm": 1.89,
+    "bar": 0.14
+   },
+   {
+    "lpm": 3.79,
+    "bar": 0.14
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.17
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.21
+   },
+   {
+    "lpm": 56.78,
+    "bar": 0.21
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.21
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.62
+   },
+   {
+    "lpm": 151.42,
+    "bar": 1.38
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=83",
+  "note": "Globe valve with flow control; Filter Sentry option. Catalog loss table is \"at optimal flows\" (flows below the first listed row are not tabulated for 1.5\"/2\"). Flow range from p.82."
+ },
+ {
+  "id": "hunter-icv-151",
+  "brand": "Hunter",
+  "model": "ICV-151G (1 1/2\")",
+  "size": "1.5\"",
+  "flowRange": [
+   0.38,
+   567.81
+  ],
+  "pressureRange": [
+   1.38,
+   15.17
+  ],
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.1
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.1
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.12
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.15
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.21
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.27
+   },
+   {
+    "lpm": 340.69,
+    "bar": 0.38
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.48
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.75
+   },
+   {
+    "lpm": 511.03,
+    "bar": 0.88
+   },
+   {
+    "lpm": 567.81,
+    "bar": 1.12
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=83",
+  "note": "Globe valve with flow control; Filter Sentry option. Catalog loss table is \"at optimal flows\" (flows below the first listed row are not tabulated for 1.5\"/2\"). Flow range from p.82."
+ },
+ {
+  "id": "hunter-icv-201",
+  "brand": "Hunter",
+  "model": "ICV-201G (2\")",
+  "size": "2\"",
+  "flowRange": [
+   0.38,
+   757.08
+  ],
+  "pressureRange": [
+   1.38,
+   15.17
+  ],
+  "loss": [
+   {
+    "lpm": 151.42,
+    "bar": 0.06
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.08
+   },
+   {
+    "lpm": 227.12,
+    "bar": 0.12
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.17
+   },
+   {
+    "lpm": 340.69,
+    "bar": 0.22
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.29
+   },
+   {
+    "lpm": 454.25,
+    "bar": 0.45
+   },
+   {
+    "lpm": 511.03,
+    "bar": 0.54
+   },
+   {
+    "lpm": 567.81,
+    "bar": 0.68
+   },
+   {
+    "lpm": 662.45,
+    "bar": 0.92
+   },
+   {
+    "lpm": 757.08,
+    "bar": 1.22
+   }
+  ],
+  "source": "https://redesign.hunterindustries.com/sites/default/files/Hunter_Catalog_US.pdf#page=83",
+  "note": "Globe valve with flow control; Filter Sentry option. Catalog loss table is \"at optimal flows\" (flows below the first listed row are not tabulated for 1.5\"/2\"). Flow range from p.82."
+ },
+ {
+  "id": "rainbird-100-hv",
+  "brand": "Rain Bird",
+  "model": "100-HV",
+  "size": "1\"",
+  "flowRange": [
+   0.76,
+   113.56
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.11
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.14
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.16
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.23
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.32
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.42
+   }
+  ],
+  "lossMaleBarb": [
+   {
+    "lpm": 3.79,
+    "bar": 0.12
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.14
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.16
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.19
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.31
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.54
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=61",
+  "note": "Below 3 gpm (11.4 L/min) or for drip use a 200-mesh filter upstream. lossMaleBarb = 100-HV-MB model."
+ },
+ {
+  "id": "rainbird-075-dv",
+  "brand": "Rain Bird",
+  "model": "075-DV",
+  "size": "3/4\"",
+  "flowRange": [
+   0.76,
+   83.28
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.22
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.27
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.29
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.34
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.53
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 3.79,
+    "bar": 0.19
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.21
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.22
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.27
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.3
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.37
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.57
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=63",
+  "note": "lossAngle = catalog \"Angle, MxB\" table. Below 3 gpm use 200-mesh filter upstream."
+ },
+ {
+  "id": "rainbird-100-dv",
+  "brand": "Rain Bird",
+  "model": "100-DV",
+  "size": "1\"",
+  "flowRange": [
+   0.76,
+   151.42
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.23
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.25
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.26
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.26
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.35
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.44
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.59
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 3.79,
+    "bar": 0.17
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.2
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.21
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.21
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.3
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.51
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.88
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=63",
+  "note": "lossAngle = catalog \"100-DV Angle, MxB\" table. Below 3 gpm use 200-mesh filter upstream."
+ },
+ {
+  "id": "rainbird-100-dvf",
+  "brand": "Rain Bird",
+  "model": "100-DVF",
+  "size": "1\"",
+  "flowRange": [
+   0.76,
+   151.42
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 3.79,
+    "bar": 0.23
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.25
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.26
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.26
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.35
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.44
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.59
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 3.79,
+    "bar": 0.17
+   },
+   {
+    "lpm": 11.36,
+    "bar": 0.2
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.21
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.21
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.3
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.51
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.88
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=63",
+  "note": "DVF = DV with flow control; losses with flow control fully open. lossAngle = catalog \"100-DV Angle, MxB\" table. Below 3 gpm use 200-mesh filter upstream."
+ },
+ {
+  "id": "rainbird-100-pga",
+  "brand": "Rain Bird",
+  "model": "100-PGA",
+  "size": "1\"",
+  "flowRange": [
+   7.57,
+   151.42
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 7.57,
+    "bar": 0.35
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.38
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.41
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.41
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.44
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.48
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 7.57,
+    "bar": 0.3
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.34
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.38
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.39
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.38
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.52
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=66",
+  "note": "flowRange = span of the manufacturer loss table for this size (series spec 2-150 gpm / 7.6-568 L/min; 5 gpm min with PRS-Dial). Below 5 gpm use upstream filtration."
+ },
+ {
+  "id": "rainbird-150-pga",
+  "brand": "Rain Bird",
+  "model": "150-PGA",
+  "size": "1.5\"",
+  "flowRange": [
+   113.56,
+   378.54
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 113.56,
+    "bar": 0.13
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.22
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.33
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.77
+   },
+   {
+    "lpm": 378.54,
+    "bar": 1.32
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 113.56,
+    "bar": 0.09
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.14
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.21
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.45
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.81
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=66",
+  "note": "flowRange = span of the manufacturer loss table for this size (series spec 2-150 gpm / 7.6-568 L/min; 5 gpm min with PRS-Dial). Below 5 gpm use upstream filtration."
+ },
+ {
+  "id": "rainbird-200-pga",
+  "brand": "Rain Bird",
+  "model": "200-PGA",
+  "size": "2\"",
+  "flowRange": [
+   151.42,
+   567.81
+  ],
+  "pressureRange": [
+   1.03,
+   10.34
+  ],
+  "loss": [
+   {
+    "lpm": 151.42,
+    "bar": 0.08
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.1
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.21
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.38
+   },
+   {
+    "lpm": 473.18,
+    "bar": 0.59
+   },
+   {
+    "lpm": 567.81,
+    "bar": 0.83
+   }
+  ],
+  "lossAngle": [
+   {
+    "lpm": 151.42,
+    "bar": 0.07
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.06
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.12
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.21
+   },
+   {
+    "lpm": 473.18,
+    "bar": 0.33
+   },
+   {
+    "lpm": 567.81,
+    "bar": 0.45
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=66",
+  "note": "flowRange = span of the manufacturer loss table for this size (series spec 2-150 gpm / 7.6-568 L/min; 5 gpm min with PRS-Dial). Below 5 gpm use upstream filtration."
+ },
+ {
+  "id": "rainbird-100-peb",
+  "brand": "Rain Bird",
+  "model": "100-PEB",
+  "size": "1\"",
+  "flowRange": [
+   0.95,
+   189.27
+  ],
+  "pressureRange": [
+   1.38,
+   13.79
+  ],
+  "loss": [
+   {
+    "lpm": 0.95,
+    "bar": 0.06
+   },
+   {
+    "lpm": 1.89,
+    "bar": 0.07
+   },
+   {
+    "lpm": 3.79,
+    "bar": 0.09
+   },
+   {
+    "lpm": 18.93,
+    "bar": 0.12
+   },
+   {
+    "lpm": 37.85,
+    "bar": 0.12
+   },
+   {
+    "lpm": 75.71,
+    "bar": 0.2
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.39
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.69
+   },
+   {
+    "lpm": 189.27,
+    "bar": 1.08
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=70",
+  "note": "Scrubber valve (PESB same losses). flowRange = span of the loss table (series spec 0.25-300 gpm). Losses with flow control fully open. Above 100 psi (6.9 bar) inlet use PRS-Dial or regulator."
+ },
+ {
+  "id": "rainbird-150-peb",
+  "brand": "Rain Bird",
+  "model": "150-PEB",
+  "size": "1.5\"",
+  "flowRange": [
+   75.71,
+   567.81
+  ],
+  "pressureRange": [
+   1.38,
+   13.79
+  ],
+  "loss": [
+   {
+    "lpm": 75.71,
+    "bar": 0.27
+   },
+   {
+    "lpm": 113.56,
+    "bar": 0.25
+   },
+   {
+    "lpm": 151.42,
+    "bar": 0.24
+   },
+   {
+    "lpm": 189.27,
+    "bar": 0.25
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.37
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.66
+   },
+   {
+    "lpm": 473.18,
+    "bar": 1.01
+   },
+   {
+    "lpm": 567.81,
+    "bar": 1.46
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=70",
+  "note": "Scrubber valve (PESB same losses). flowRange = span of the loss table (series spec 0.25-300 gpm). Losses with flow control fully open. Above 100 psi (6.9 bar) inlet use PRS-Dial or regulator."
+ },
+ {
+  "id": "rainbird-200-peb",
+  "brand": "Rain Bird",
+  "model": "200-PEB",
+  "size": "2\"",
+  "flowRange": [
+   189.27,
+   757.08
+  ],
+  "pressureRange": [
+   1.38,
+   13.79
+  ],
+  "loss": [
+   {
+    "lpm": 189.27,
+    "bar": 0.33
+   },
+   {
+    "lpm": 283.91,
+    "bar": 0.31
+   },
+   {
+    "lpm": 378.54,
+    "bar": 0.36
+   },
+   {
+    "lpm": 473.18,
+    "bar": 0.57
+   },
+   {
+    "lpm": 567.81,
+    "bar": 0.81
+   },
+   {
+    "lpm": 662.45,
+    "bar": 1.07
+   },
+   {
+    "lpm": 757.08,
+    "bar": 1.34
+   }
+  ],
+  "source": "https://www.rainbird.com/sites/default/files/media/documents/2022-11/d42139_2023_dom_turf_catalog_v3_eng.pdf#page=70",
+  "note": "Scrubber valve (PESB same losses). flowRange = span of the loss table (series spec 0.25-300 gpm). Losses with flow control fully open. Above 100 psi (6.9 bar) inlet use PRS-Dial or regulator."
+ }
+]

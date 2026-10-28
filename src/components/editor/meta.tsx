@@ -1,4 +1,7 @@
 import {
+  Faucet,
+  ShowerHead,
+  Spline,
   Armchair,
   Bird,
   Birdhouse,
@@ -106,6 +109,8 @@ export const TOOL_META: Record<ToolId, ToolMeta> = {
   measure: tool(Ruler, "M", "shell.tool.measure.label", "shell.tool.measure.description"),
   fence: tool(Fence, "L", "shell.tool.fence.label", "shell.tool.fence.description"),
   item: tool(Armchair, "P", "furnish.tool.label", "furnish.tool.description"),
+  irrigate: tool(ShowerHead, "P", "irrigation.tool.place", "irrigation.tool.placeDescription"),
+  pipe: tool(Spline, "L", "irrigation.tool.pipe", "irrigation.tool.pipeDescription"),
 };
 
 export const STAGE_ICONS: Record<Stage, LucideIcon> = {
@@ -116,6 +121,7 @@ export const STAGE_ICONS: Record<Stage, LucideIcon> = {
   beds: Fence,
   planting: Sprout,
   furnish: Armchair,
+  irrigation: Faucet,
 };
 
 /** Sets --step to a step's colour (from the scheme), for `bg-[var(--step)]` and the like. */

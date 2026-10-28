@@ -5,7 +5,7 @@ import { subscribeWithSelector } from "zustand/middleware";
 import { produce, type Draft } from "immer";
 import type { SnapSettings } from "../geometry/snap";
 import { setUnitSystem, type UnitSystem } from "../geometry/units";
-import type { BedEdge, BedType, EditView, FenceType, GardenDoc, ItemType, Pt, Stage, SurfaceMaterialId, ViewMode } from "../model/types";
+import type { BedEdge, BedType, EditView, FenceType, GardenDoc, ItemType, Pt, SourceType, Stage, SurfaceMaterialId, ViewMode } from "../model/types";
 import type { BoolMode, StructurePreset } from "../model/ops";
 import { createEmptyDoc, duplicateEntities, removeEntities, translateEntities } from "../model/ops";
 import { defaultToolFor, isEditableIn, type ToolId } from "../model/stages";
@@ -42,6 +42,25 @@ export interface ToolOptions {
   itemType: ItemType;
   itemSize: { w: number; d: number; h: number };
   itemRot: number;
+  /** Irrigation step: what the place tool puts down next, and the pipe the pipe tool draws. */
+  irrigation: IrrigationOptions;
+}
+
+export interface IrrigationOptions {
+  place: "source" | "valvebox" | "valve" | "head";
+  sourceType: SourceType;
+  sourcePreset: string;
+  pressure: [number, number];
+  flow: number;
+  box: string;
+  valve: string;
+  body: string;
+  nozzle: string;
+  arc: number;
+  dir: number;
+  pipeMaterial: string;
+  pipeOd: number;
+  pipePn: number;
 }
 
 export interface DisplayOptions {
@@ -202,6 +221,22 @@ export const useEditor = create<EditorState>()(
       itemType: "dining-set",
       itemSize: { w: 2.6, d: 1.9, h: 0.75 },
       itemRot: 0,
+      irrigation: {
+        place: "source",
+        sourceType: "mains",
+        sourcePreset: "",
+        pressure: [3, 4],
+        flow: 30,
+        box: "",
+        valve: "",
+        body: "",
+        nozzle: "",
+        arc: 360,
+        dir: 0,
+        pipeMaterial: "",
+        pipeOd: 32,
+        pipePn: 6,
+      },
     },
     snap: { grid: true, objects: true, angles: true },
     display: { names: true, labels: true, notes: true, dimensions: true, grid: true, night: false },

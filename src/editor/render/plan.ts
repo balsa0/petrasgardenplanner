@@ -2,6 +2,7 @@ import { isConvex, isRectLike, ringCentroid } from "../geometry/poly";
 import { fmtElev, fmtLenShort, gridLevels, scaleBarSteps } from "../geometry/units";
 import { getSpecies, treeSize } from "../model/species";
 import { drawItems } from "./planItems";
+import { drawIrrigation } from "./planIrrigation";
 import { FENCE_BY_ID, fenceRuns, postPoints } from "../model/fences";
 import type { BuildingEntity, GardenDoc, Pt, Stage, TreeEntity } from "../model/types";
 import { paintGround, tracePath } from "../paint/ground";
@@ -99,6 +100,7 @@ export function drawPlan(ctx: Ctx, input: PlanInput): AnnotationHit[] {
   drawFences(ctx, doc, zoom);
   drawItems(ctx, doc, zoom);
   drawTrees(ctx, doc, input.years, input.month, zoom);
+  if (input.stage === "irrigation") drawIrrigation(ctx, doc, zoom);
 
   toScreen();
   const proj = planProjector(cam);

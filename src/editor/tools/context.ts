@@ -45,7 +45,7 @@ export function hitTest(doc: GardenDoc, p: Pt, pxSize: number, filter: (e: Entit
   let bestScore = Infinity;
   for (let i = doc.order.length - 1; i >= 0; i--) {
     const e = doc.entities[doc.order[i]];
-    if (!e || isArea(e) || e.kind === "fence" || !filter(e)) continue;
+    if (!e || isArea(e) || e.kind === "fence" || e.kind === "pipe" || !filter(e)) continue;
     if (e.kind === "item") {
       // Anywhere on the footprint; small things (lights) get a few pixels of slack.
       const slack = Math.max(0, 10 * pxSize - Math.min(e.w, e.d) / 2);
@@ -70,9 +70,9 @@ export function hitTest(doc: GardenDoc, p: Pt, pxSize: number, filter: (e: Entit
   let bestFence = Infinity;
   for (let i = doc.order.length - 1; i >= 0; i--) {
     const e = doc.entities[doc.order[i]];
-    if (e?.kind !== "fence" || !filter(e)) continue;
+    if ((e?.kind !== "fence" && e?.kind !== "pipe") || !filter(e)) continue;
     const c = closestOnPath(p, e.path, e.closed);
-    const reach = Math.max(tol, FENCE_BY_ID[e.fenceType].thickness / 2 + 2 * pxSize);
+    const reach = e.kind === "pipe" ? tol : Math.max(tol, FENCE_BY_ID[e.fenceType].thickness / 2 + 2 * pxSize);
     if (c && c.d < reach && c.d < bestFence) {
       bestFence = c.d;
       best = e.id;

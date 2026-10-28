@@ -1,6 +1,7 @@
 import { ITEM_BY_ID } from "./items";
 import { DOOR_COLORS, FRAME_COLORS, OPENING_TYPES, WALL_MATERIAL_IDS } from "./openings";
-import type { Entity, ItemEntity, Opening } from "./types";
+import { ZONE_COLORS } from "./irrigation";
+import type { Entity, ItemEntity, Opening, SourceType } from "./types";
 
 /**
  * Cleans up entities read from storage or an imported file, so values that end up in styles,
@@ -67,6 +68,32 @@ export function sanitizeEntities(entities: Record<string, Entity>): Record<strin
       if (b.doorColor !== undefined) b.doorColor = hex(b.doorColor, DOOR_COLORS[0]);
       if (b.openings !== undefined) b.openings = Array.isArray(b.openings) ? b.openings.map(cleanOpening).filter((o): o is Opening => !!o) : [];
       e = b;
+    } else if (raw.kind === "source") {
+      const lo = num(raw.pressure?.[0], 0.1, 16, 3), hi = num(raw.pressure?.[1], 0.1, 16, 4);
+      e = isPt(raw.p)
+        ? {
+            id,
+            kind: "source",
+            p: raw.p,
+            ...(typeof raw.name === "string" ? { name: raw.name } : {}),
+            sourceType: (["mains", "well", "tank", "booster"] as SourceType[]).includes(raw.sourceType) ? raw.sourceType : "mains",
+            pressure: [Math.min(lo, hi), Math.max(lo, hi)],
+            flow: num(raw.flow, 0.1, 5000, 30),
+            ...(typeof raw.preset === "string" ? { preset: raw.preset } : {}),
+          }
+        : null;
+    } else if (raw.kind === "valvebox") {
+      e = isPt(raw.p) && typeof raw.product === "string" ? { ...raw, rot: num(raw.rot, -360, 720, 0) } : null;
+    } else if (raw.kind === "valve") {
+      e = isPt(raw.p) && typeof raw.product === "string" ? { ...raw, color: hex(raw.color, ZONE_COLORS[0]) } : null;
+    } else if (raw.kind === "head") {
+      e = isPt(raw.p) && typeof raw.body === "string" && typeof raw.nozzle === "string"
+        ? { ...raw, arc: num(raw.arc, 1, 360, 360), dir: num(raw.dir, -360, 720, 0), trim: num(raw.trim, 0, 0.5, 0) }
+        : null;
+    } else if (raw.kind === "pipe") {
+      e = Array.isArray(raw.path) && raw.path.length >= 2 && raw.path.every(isPt)
+        ? { ...raw, closed: false, material: typeof raw.material === "string" ? raw.material : "", od: num(raw.od, 4, 400, 32), pn: num(raw.pn, 1, 40, 6) }
+        : null;
     } else if (raw.kind === "fence") {
       e = { ...raw, color: hex(raw.color, "#9a7650") };
     }

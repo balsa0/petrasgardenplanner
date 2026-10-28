@@ -43,7 +43,7 @@ const extentCache = new WeakMap<object, BBox>();
 
 function entityBBox(e: Entity, into: BBox) {
   if (isArea(e)) multiBBox(e.geometry, into);
-  else if (e.kind === "fence") bboxOfPoints(e.path, into);
+  else if (e.kind === "fence" || e.kind === "pipe") bboxOfPoints(e.path, into);
   else bboxOfPoints([e.p], into);
 }
 

@@ -25,6 +25,7 @@ import { WalkHud } from "./iso/WalkHud";
 import { Hotbar, ResourceStrip } from "./Hud";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 import { ItemToolOptions } from "./FurnishPanel";
+import { IrrigationToolOptions } from "./IrrigationPanel";
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -150,6 +151,8 @@ function ToolOptions() {
     );
   } else if (tool === "item") {
     content = <ItemToolOptions />;
+  } else if (tool === "irrigate" || tool === "pipe") {
+    content = <IrrigationToolOptions />;
   } else if (tool === "survey") {
     content = <Chip>{t("shell.canvas.surveySpacing", { distance: fmtLen(o.surveySpacing) })}</Chip>;
   }

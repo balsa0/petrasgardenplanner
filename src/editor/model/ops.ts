@@ -27,9 +27,10 @@ import type {
   SurfaceMaterialId,
   WaterEntity,
 } from "./types";
-import { isArea } from "./types";
+import { isArea, isLine } from "./types";
 import { MATERIAL_BY_ID, isMaterialName } from "./materials";
 import { ITEM_BY_ID } from "./items";
+import { irrigationLabel } from "./irrigation";
 import { FENCE_BY_ID } from "./fences";
 import { getSpecies } from "./species";
 import { emptyTerrain } from "../terrain/terrain";
@@ -358,7 +359,7 @@ export function translateEntities(d: Draft<GardenDoc>, ids: string[], dx: number
       const a = e as Draft<AreaEntity>;
       a.geometry = translateMulti(a.geometry as MultiPolygon, dx, dy);
       if (a.kind === "bed") for (const pl of a.plants) pl.p = [pl.p[0] + dx, pl.p[1] + dy];
-    } else if (e.kind === "fence") {
+    } else if (e.kind === "fence" || e.kind === "pipe") {
       e.path = e.path.map((p) => [p[0] + dx, p[1] + dy]);
     } else {
       const p = (e as { p: Pt }).p;
@@ -392,13 +393,13 @@ export interface VertexPath {
 /** The point list a vertex path refers to: an area ring, or a fence's path (poly 0, ring 0). */
 function ringOf(e: Draft<Entity> | undefined, v: VertexPath): Pt[] | undefined {
   if (!e) return undefined;
-  if (e.kind === "fence") return v.poly === 0 && v.ring === 0 ? (e.path as Pt[]) : undefined;
+  if (isLine(e)) return v.poly === 0 && v.ring === 0 ? (e.path as Pt[]) : undefined;
   return isArea(e as Entity) ? ((e as Draft<AreaEntity>).geometry[v.poly]?.[v.ring] as Pt[] | undefined) : undefined;
 }
 
 /** Fewest points a ring may keep: open fences need two, everything closed three. */
 function minPoints(e: Draft<Entity>) {
-  return e.kind === "fence" && !e.closed ? 2 : 3;
+  return isLine(e) && !e.closed ? 2 : 3;
 }
 
 export function moveVertex(d: Draft<GardenDoc>, id: string, v: VertexPath, p: Pt) {
@@ -436,7 +437,7 @@ export function setEdgeLength(d: Draft<GardenDoc>, id: string, v: VertexPath, le
   if (!e || !ring || length <= 0) return;
   const n = ring.length;
   // The end of an open fence has no following corner to keep square.
-  const openEnd = e.kind === "fence" && !e.closed && v.idx + 2 >= n;
+  const openEnd = isLine(e) && !e.closed && v.idx + 2 >= n;
   const a = ring[v.idx], b = ring[(v.idx + 1) % n], c = ring[(v.idx + 2) % n];
   const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
   if (len < 1e-9) return;
@@ -469,6 +470,8 @@ export function entityLabel(e: Entity): string {
     case "tree": return speciesName(getSpecies(e.species));
     case "fence": return FENCE_BY_ID[e.fenceType]?.name ?? kindLabel(e.kind);
     case "item": return ITEM_BY_ID[e.item]?.name ?? kindLabel(e.kind);
+    case "head": case "valve": case "valvebox": return irrigationLabel(e) ?? kindLabel(e.kind);
+    case "source": return t(`irrigation.source.${e.sourceType}`);
     case "label": return e.text || kindLabel(e.kind);
     default: return kindLabel(e.kind);
   }
