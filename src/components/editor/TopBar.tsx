@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Box, Check, Download, FilePlus2, FolderOpen, Footprints, Keyboard, Languages, Map as MapIcon, Menu, Palette, Redo2, Rotate3d, Sparkles, Sprout, Undo2 } from "lucide-react";
+import { Box, Download, FilePlus2, FolderOpen, Footprints, Keyboard, Languages, Map as MapIcon, Menu, Palette, Redo2, Rotate3d, Sparkles, Sprout, Undo2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,62 +28,56 @@ import { exportDoc, importDocFile, openSample } from "@/editor/store/persistence
 import { LOCALES, LOCALE_NAMES, isLocale, t } from "@/i18n";
 import { SCHEMES, SCHEME_SWATCHES, isScheme } from "@/lib/scheme";
 import { STAGE_ICONS, stepStyle } from "./meta";
-import { useCompletedSteps } from "./Hud";
 import { VersionsMenu } from "./VersionsMenu";
 import { ShortcutsDialog } from "./ShortcutsDialog";
 
-/** The six steps as a track, each in its own colour: finished steps get a check, the line fills in as you go. */
-function StageStepper() {
+/** The six planning modes as an icon switch, each in its own colour; the active one shows its name. */
+function ModeSwitch() {
   const stage = useEditor((s) => s.stage);
   const setStage = useEditor((s) => s.setStage);
-  const done = useCompletedSteps();
   return (
-    <nav aria-label={t("shell.topbar.steps")} className="hud-panel pointer-events-auto flex h-11 items-center rounded-none border-t-0 px-2">
-      {STAGES.map((st, i) => {
+    <div role="radiogroup" aria-label={t("shell.topbar.steps")} className="hud-panel pointer-events-auto flex h-11 items-center gap-1 rounded-none border-t-0 p-1.5">
+      {STAGES.map((st) => {
         const Icon = STAGE_ICONS[st.id];
         const active = st.id === stage;
-        const isDone = done.has(st.id);
         return (
-          <div key={st.id} className="flex items-center" style={stepStyle(st.id)}>
-            {i > 0 && (
-              <span aria-hidden className={cn("h-[2px] w-3 xl:w-5", done.has(STAGES[i - 1].id) ? "bg-[var(--ink)]" : "bg-[var(--ink)]/20")} />
-            )}
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  type="button"
-                  onClick={() => setStage(st.id)}
-                  aria-current={active ? "step" : undefined}
-                  className={cn(
-                    "group flex h-8 items-center gap-1.5 rounded-full p-1 text-[13px] font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
-                    active ? "border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)] pr-3 text-foreground" : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "font-display flex size-6 items-center justify-center rounded-full text-[12.5px] font-bold text-foreground tabular ring-[length:var(--line)] ring-[var(--ink)] ring-inset transition-transform",
-                      active ? "bg-card" : "bg-[var(--step)] group-hover:scale-110",
-                    )}
-                  >
-                    {isDone ? <Check className="size-3.5" strokeWidth={3.2} /> : st.index}
-                  </span>
-                  {active && <Icon className="size-3.5" />}
-                  {active && <span className="font-display text-[14px]">{st.short}</span>}
-                </button>
-              </TooltipTrigger>
-              <TooltipContent side="bottom" className="max-w-56 flex-col items-start gap-0.5 py-2">
-                <span className="font-semibold">
-                  {t("shell.topbar.step.numbered", { index: st.index, title: st.title })}
-                  {st.id === "terrain" && <span className="ml-1 font-normal opacity-70">{t("shell.topbar.step.optional")}</span>}
-                </span>
-                <span className="opacity-80">{st.summary}</span>
-                <span className="mt-1 opacity-60">{t("shell.topbar.step.press", { key: String(st.index) })}</span>
-              </TooltipContent>
-            </Tooltip>
-          </div>
+          <Tooltip key={st.id}>
+            <TooltipTrigger asChild>
+              <button
+                type="button"
+                role="radio"
+                aria-checked={active}
+                aria-label={st.title}
+                onClick={() => setStage(st.id)}
+                style={stepStyle(st.id)}
+                className={cn(
+                  "relative flex h-8 items-center gap-1.5 rounded-lg px-2 text-[13px] font-semibold outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
+                  active
+                    ? "border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)] pr-3 text-foreground"
+                    : "text-foreground/70 transition-colors hover:bg-muted hover:text-foreground",
+                )}
+              >
+                <Icon className="size-4" />
+                {active ? (
+                  <span className="font-display text-[14px]">{st.short}</span>
+                ) : (
+                  // A stripe of the mode's colour, so it is recognisable before it is picked.
+                  <span aria-hidden className="absolute inset-x-2 bottom-0.5 h-[3px] rounded-full bg-[var(--step)]" />
+                )}
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="max-w-56 flex-col items-start gap-0.5 py-2">
+              <span className="font-semibold">
+                {st.title}
+                {st.id === "terrain" && <span className="ml-1 font-normal opacity-70">{t("shell.topbar.step.optional")}</span>}
+              </span>
+              <span className="opacity-80">{st.summary}</span>
+              <span className="mt-1 opacity-60">{t("shell.topbar.step.press", { key: String(st.index) })}</span>
+            </TooltipContent>
+          </Tooltip>
         );
       })}
-    </nav>
+    </div>
   );
 }
 
@@ -217,7 +211,7 @@ export function TopBar() {
         </div>
       </div>
 
-      <StageStepper />
+      <ModeSwitch />
 
       <div className="flex flex-1 items-start justify-end gap-2">
         <div className="hud-panel pointer-events-auto flex h-11 items-center rounded-none border-t-0 px-1">

@@ -279,23 +279,16 @@
   from { transform: translateX(12px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
-@keyframes hud-check {
-  0% { transform: scale(0.4) rotate(-12deg); }
-  70% { transform: scale(1.15) rotate(0deg); }
-  100% { transform: scale(1); }
-}
 .animate-hud-bump { animation: hud-bump 420ms ease-out; display: inline-block; }
 .animate-hud-pop { animation: hud-pop 320ms cubic-bezier(0.2, 0.9, 0.3, 1.2); }
 .animate-hud-slide-left { animation: hud-slide-left 180ms ease-out; }
 .animate-hud-slide-right { animation: hud-slide-right 180ms ease-out; }
-.animate-hud-check { animation: hud-check 360ms cubic-bezier(0.2, 0.9, 0.3, 1.3); }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-hud-bump,
   .animate-hud-pop,
   .animate-hud-slide-left,
-  .animate-hud-slide-right,
-  .animate-hud-check {
+  .animate-hud-slide-right {
     animation: none;
   }
   .keycap,

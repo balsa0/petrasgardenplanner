@@ -1,27 +1,12 @@
 /**
- * Progress through the six steps: a few objectives per step, ticked off from what is on the plan,
- * plus the garden's headline numbers. Nothing here is stored; it is all derived from the document.
+ * Whether each step's essentials are on the plan (to save a checkpoint when a step is done), plus
+ * the garden's headline numbers. Nothing here is stored; it is all derived from the document.
  */
-import { t, type MessageKey } from "@/i18n";
 import { multiArea } from "../geometry/poly";
 import { terrainHasData } from "../terrain/terrain";
 import { MATERIAL_BY_ID } from "./materials";
 import { getSpecies } from "./species";
-import { STAGES } from "./stages";
 import type { Entity, GardenDoc, Stage } from "./types";
-
-export interface Objective {
-  /** Stable id, "stage.name". */
-  id: string;
-  stage: Stage;
-  /** Optional objectives don't block finishing the step. */
-  optional: boolean;
-  done: boolean;
-  /** For counted objectives: how many so far, and the goal. */
-  have?: number;
-  need?: number;
-  label: string;
-}
 
 interface Facts {
   ents: Entity[];
@@ -62,6 +47,7 @@ function facts(doc: GardenDoc): Facts {
   return f;
 }
 
+/** One essential of a step; optional ones don't block finishing it, counted ones need `need`. */
 type Spec = { name: string; optional?: boolean; need?: number; check: (f: Facts, doc: GardenDoc) => boolean | number };
 
 const has = (f: Facts, test: (e: Entity) => boolean) => f.ents.some(test);
@@ -95,36 +81,18 @@ const SPECS: Record<Stage, Spec[]> = {
   ],
 };
 
-export function stageObjectives(doc: GardenDoc, stage: Stage): Objective[] {
-  const f = facts(doc);
-  return SPECS[stage].map((s) => {
-    const r = s.check(f, doc);
-    const have = typeof r === "number" ? r : undefined;
-    const done = typeof r === "number" ? r >= (s.need ?? 1) : r;
-    return {
-      id: `${stage}.${s.name}`,
-      stage,
-      optional: !!s.optional,
-      done,
-      have,
-      need: s.need,
-      label: t(`shell.quest.${stage}.${s.name}` as MessageKey, { count: s.need ?? 1 }),
-    };
-  });
-}
-
 /**
- * A step is complete when its required objectives are done; the optional terrain step
+ * A step is complete when its required essentials are in place; the optional terrain step
  * counts once anything has been done in it.
  */
 export function stageComplete(doc: GardenDoc, stage: Stage): boolean {
-  const obj = stageObjectives(doc, stage);
-  const required = obj.filter((o) => !o.optional);
-  return required.length ? required.every((o) => o.done) : obj.some((o) => o.done);
-}
-
-export function allObjectives(doc: GardenDoc): Objective[] {
-  return STAGES.flatMap((s) => stageObjectives(doc, s.id));
+  const f = facts(doc);
+  const checks = SPECS[stage].map((s) => {
+    const r = s.check(f, doc);
+    return { optional: !!s.optional, done: typeof r === "number" ? r >= (s.need ?? 1) : r };
+  });
+  const required = checks.filter((c) => !c.optional);
+  return required.length ? required.every((c) => c.done) : checks.some((c) => c.done);
 }
 
 export interface GardenStats {

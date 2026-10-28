@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
-import { Check, ChevronDown, Flower2, LandPlot, Leaf, PanelLeftClose, PanelLeftOpen, TreeDeciduous } from "lucide-react";
+import { Flower2, LandPlot, Leaf, Lightbulb, PanelLeftClose, PanelLeftOpen, TreeDeciduous } from "lucide-react";
 import { fmtNumber, t } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Kbd } from "@/components/ui/kbd";
@@ -10,15 +9,15 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { labelPoint } from "@/editor/geometry/poly";
 import { fmtArea } from "@/editor/geometry/units";
-import { allObjectives, gardenStats, stageComplete, stageObjectives } from "@/editor/model/progress";
-import { COMMON_TOOLS, STAGES, STAGE_BY_ID, type StageInfo, type ToolId } from "@/editor/model/stages";
+import { gardenStats, stageComplete } from "@/editor/model/progress";
+import { COMMON_TOOLS, STAGES, STAGE_BY_ID, type ToolId } from "@/editor/model/stages";
 import type { Entity, GardenDoc, Pt } from "@/editor/model/types";
 import { isArea } from "@/editor/model/types";
 import { pulseAt } from "@/editor/paint/fx";
 import { getEditor, useEditor } from "@/editor/store/store";
 import { saveCheckpoint } from "@/editor/store/versions";
 import { GardenSummary } from "./Inspector";
-import { TOOL_META, stepStyle } from "./meta";
+import { STAGE_ICONS, TOOL_META, stepStyle } from "./meta";
 
 // ── Hotbar ───────────────────────────────────────────────────────────────
 
@@ -135,73 +134,43 @@ export function ResourceStrip() {
   );
 }
 
-// ── Goals ────────────────────────────────────────────────────────────────
+// ── Step header ──────────────────────────────────────────────────────────
 
-function Tick({ done, animate }: { done: boolean; animate?: boolean }) {
-  return (
-    <span
-      className={cn(
-        "flex size-[18px] shrink-0 items-center justify-center rounded-full ring-[length:var(--line)] ring-[var(--ink)] ring-inset",
-        done ? "bg-honey text-honey-foreground" : "bg-card",
-        done && animate && "animate-hud-check",
-      )}
-    >
-      {done && <Check className="size-3" strokeWidth={3.2} />}
-    </span>
-  );
-}
-
-/** The step's goals on a band in the step's colour, ticked off from the plan, with tips folded away. */
-export function QuestHeader() {
+/** The step's name and what it is for, on a band in the step's colour; tips fold out on demand. */
+export function StepHeader() {
   const stage = useEditor((s) => s.stage);
-  const doc = useEditor((s) => s.doc);
   const [tipsOpen, setTipsOpen] = useState(false);
   const info = STAGE_BY_ID[stage];
-  const goals = stageObjectives(doc, stage);
-  const complete = stageComplete(doc, stage);
+  const Icon = STAGE_ICONS[stage];
   return (
-    <div className="space-y-2.5 bg-[var(--step)] px-4 pt-3.5 pb-3" style={stepStyle(stage)}>
-      <div className="flex items-center gap-2.5">
-        <span
-          className={cn(
-            "font-display flex size-8 shrink-0 items-center justify-center rounded-full text-[15px] font-bold ring-[length:var(--line)] ring-[var(--ink)] ring-inset",
-            complete ? "bg-honey text-honey-foreground" : "bg-[var(--ink)] text-[var(--paper)]",
-          )}
-        >
-          {complete ? <Check className="size-4" strokeWidth={3} /> : info.index}
+    <div className="space-y-2 bg-[var(--step)] px-4 py-3" style={stepStyle(stage)}>
+      <div className="flex items-start gap-2.5">
+        <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[var(--ink)] text-[var(--paper)]">
+          <Icon className="size-4" />
         </span>
-        <div className="min-w-0">
-          <h2 className="font-display truncate text-[17px] leading-tight font-semibold">{info.title}</h2>
+        <div className="min-w-0 flex-1">
+          <h2 className="font-display truncate text-[16px] leading-tight font-semibold">{info.title}</h2>
           <p className="text-[11.5px] leading-snug text-foreground/75">{info.summary}</p>
         </div>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              type="button"
+              aria-label={t("shell.quest.tips")}
+              aria-expanded={tipsOpen}
+              onClick={() => setTipsOpen((o) => !o)}
+              className={cn("flex size-7 shrink-0 items-center justify-center rounded-md transition-colors hover:bg-[var(--ink)]/10", tipsOpen && "bg-[var(--ink)]/10")}
+            >
+              <Lightbulb className="size-4" />
+            </button>
+          </TooltipTrigger>
+          <TooltipContent side="right">{t("shell.quest.tips")}</TooltipContent>
+        </Tooltip>
       </div>
-      <ul aria-label={t("shell.quest.title")} className="space-y-1.5">
-        {goals.map((g) => (
-          <li key={g.id} className={cn("flex items-center gap-2 text-[12.5px]", g.done ? "text-foreground/60" : "text-foreground")}>
-            <Tick done={g.done} animate />
-            <span className={cn("min-w-0 flex-1", g.done && "line-through decoration-foreground/30")}>{g.label}</span>
-            {g.optional && !g.done && <span className="text-[10.5px] text-foreground/65">{t("shell.quest.optional")}</span>}
-            {g.need && g.need > 1 && !g.done && (
-              <span className="font-display text-[11.5px] font-semibold tabular text-foreground/70">
-                {fmtNumber(Math.min(g.have ?? 0, g.need))}/{fmtNumber(g.need)}
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
-      <button
-        type="button"
-        onClick={() => setTipsOpen((o) => !o)}
-        aria-expanded={tipsOpen}
-        className="flex items-center gap-1 text-[11.5px] font-medium text-foreground/70 hover:text-foreground"
-      >
-        <ChevronDown className={cn("size-3.5 transition-transform", !tipsOpen && "-rotate-90")} />
-        {t("shell.quest.tips")}
-      </button>
       {tipsOpen && (
         <ul className="space-y-1.5 border-l-[length:var(--line)] border-[var(--ink)]/40 pl-3">
           {info.tips.map((tip, i) => (
-            <li key={i} className="text-[12px] leading-snug text-foreground/80">
+            <li key={i} className="text-[12px] leading-snug text-foreground/85">
               {tip}
             </li>
           ))}
@@ -211,13 +180,7 @@ export function QuestHeader() {
   );
 }
 
-/** Steps whose goals are complete, for the step track. */
-export function useCompletedSteps(): Set<string> {
-  const doc = useEditor((s) => s.doc);
-  return new Set(STAGES.filter((s) => stageComplete(doc, s.id)).map((s) => s.id));
-}
-
-// ── Moments: goal and step pop-ups, placement pulses ──────────────────────
+// ── Feedback: placement pulses, automatic checkpoints ─────────────────────
 
 function anchorOf(e: Entity): Pt | null {
   if (isArea(e)) return labelPoint(e.geometry);
@@ -225,81 +188,26 @@ function anchorOf(e: Entity): Pt | null {
   return e.p;
 }
 
-function goalToast(label: string) {
-  toast.custom(
-    () => (
-      <div className="hud-panel animate-hud-pop flex items-center gap-3 rounded-2xl py-2.5 pr-5 pl-2.5">
-        <span className="animate-hud-check flex size-8 items-center justify-center rounded-full bg-honey text-honey-foreground">
-          <Check className="size-4.5" strokeWidth={3} />
-        </span>
-        <span>
-          <span className="block text-[11.5px] text-muted-foreground">{t("shell.quest.reached")}</span>
-          <span className="block text-[13.5px] font-semibold">{label}</span>
-        </span>
-      </div>
-    ),
-    { duration: 2600 },
-  );
-}
-
-function stepToast(st: StageInfo) {
-  const next = STAGES[st.index];
-  const done = STAGES.length;
-  toast.custom(
-    (id) => (
-      <div className="hud-panel animate-hud-pop flex items-center gap-3 rounded-2xl py-2.5 pr-2.5 pl-2.5">
-        <span
-          className="font-display animate-hud-check flex size-10 items-center justify-center rounded-full bg-[var(--step)] text-[17px] font-bold ring-[length:var(--line)] ring-[var(--ink)] ring-inset"
-          style={stepStyle(st.id)}
-        >
-          <Check className="size-5" strokeWidth={3} />
-        </span>
-        <span className="min-w-0">
-          <span className="font-display block text-[15px] leading-tight font-semibold">{t("shell.quest.stepDone", { step: st.title })}</span>
-          {!next && <span className="block max-w-64 text-[12px] text-muted-foreground">{t("shell.quest.allDone")}</span>}
-        </span>
-        {next && (
-          <button
-            type="button"
-            className="keycap ml-1 h-8 rounded-lg px-3 text-[12.5px] font-semibold whitespace-nowrap data-[active=true]:bg-[var(--step)]"
-            data-active="true"
-            style={stepStyle(next.id)}
-            onClick={() => {
-              getEditor().setStage(next.id);
-              toast.dismiss(id);
-            }}
-          >
-            {t("shell.quest.nextStep", { step: next.short })}
-          </button>
-        )}
-        <span className="sr-only">{t("shell.quest.progress", { done: st.index, total: done })}</span>
-      </div>
-    ),
-    { duration: next ? 6000 : 5000 },
-  );
-}
-
 /**
- * Watches the plan: placed things pulse, reached goals and finished steps get a short pop-up.
- * Opening another plan only resets the baseline, so loading a finished garden is quiet.
+ * Watches the plan: placed things pulse, and once a step's essentials are on the plan a checkpoint
+ * is saved quietly. Opening another plan only resets the baseline.
  */
 export function ProgressWatcher() {
   useEffect(() => {
     const snapshot = (doc: GardenDoc) => ({
       id: doc.id,
       ids: new Set(doc.order),
-      goals: new Set(allObjectives(doc).filter((o) => o.done).map((o) => o.id)),
       steps: new Set(STAGES.filter((s) => stageComplete(doc, s.id)).map((s) => s.id)),
     });
     let prev = snapshot(getEditor().doc);
-    const celebrated = new Set<string>();
+    const saved = new Set<string>();
     return useEditor.subscribe(
       (s) => s.doc,
       (doc) => {
         const next = snapshot(doc);
         if (next.id !== prev.id) {
           prev = next;
-          celebrated.clear();
+          saved.clear();
           return;
         }
         for (const id of doc.order) {
@@ -307,20 +215,10 @@ export function ProgressWatcher() {
           const p = anchorOf(doc.entities[id]);
           if (p) pulseAt(p);
         }
-        const newSteps = STAGES.filter((s) => next.steps.has(s.id) && !prev.steps.has(s.id) && !celebrated.has(`step:${s.id}`));
-        if (newSteps.length) {
-          for (const s of newSteps) {
-            celebrated.add(`step:${s.id}`);
-            stepToast(s);
-            // Like a game's autosave at a checkpoint.
-            void saveCheckpoint(t("shell.versions.autoStep", { step: s.title }), true).catch(() => {});
-          }
-        } else {
-          for (const o of allObjectives(doc)) {
-            if (!o.done || prev.goals.has(o.id) || celebrated.has(o.id)) continue;
-            celebrated.add(o.id);
-            goalToast(o.label);
-          }
+        for (const s of STAGES) {
+          if (!next.steps.has(s.id) || prev.steps.has(s.id) || saved.has(s.id)) continue;
+          saved.add(s.id);
+          void saveCheckpoint(t("shell.versions.autoStep", { step: s.title }), true).catch(() => {});
         }
         prev = next;
       },

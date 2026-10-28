@@ -20,9 +20,8 @@ import { getEditor, useEditor } from "@/editor/store/store";
 import type { TerrainBrushMode } from "@/editor/terrain/terrain";
 import { STRUCTURE_ICONS, stepStyle } from "./meta";
 import { FenceTypeGrid, PerimeterFenceSection } from "./FencePicker";
-import { QuestHeader } from "./Hud";
+import { StepHeader } from "./Hud";
 import { PickedSpecies, PickedSurfaces } from "./catalogue/Mine";
-import { stageComplete } from "@/editor/model/progress";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 import { ChoiceCard, ColorDot, Field, LengthInput, Section, Segmented } from "./ui";
 
@@ -456,14 +455,13 @@ function BedsLibrary() {
 export function LibraryPanel() {
   const stage = useEditor((s) => s.stage);
   const setStage = useEditor((s) => s.setStage);
-  const complete = useEditor((s) => stageComplete(s.doc, s.stage));
   const info = STAGE_BY_ID[stage];
   const prev = STAGES[info.index - 2];
   const next = STAGES[info.index];
   return (
     <aside aria-label={t("panels.library.ariaLabel")} className="flex min-h-0 flex-1 flex-col">
       <div className="border-b-[length:var(--line)] border-[var(--ink)]">
-        <QuestHeader />
+        <StepHeader />
       </div>
       <ScrollArea className="min-h-0 flex-1">
         <div className="divide-y divide-border/60">
@@ -485,14 +483,11 @@ export function LibraryPanel() {
         )}
         <div className="flex-1" />
         {next && (
-          // Lights up once this step's goals are done, nudging on to the next one.
           <button
-            key={complete ? "ready" : "open"}
             type="button"
-            data-active={complete}
             onClick={() => setStage(next.id)}
             style={stepStyle(next.id)}
-            className={cn("keycap flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-[12.5px] font-semibold whitespace-nowrap data-[active=true]:bg-[var(--step)]", complete && "animate-hud-pop")}
+            className="keycap flex h-8 items-center gap-1.5 rounded-lg bg-[var(--step)] px-2.5 text-[12.5px] font-semibold whitespace-nowrap hover:brightness-105"
           >
             {t("panels.library.next", { stage: next.short })} <ArrowRight className="size-4" />
           </button>

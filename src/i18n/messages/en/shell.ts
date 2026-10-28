@@ -104,11 +104,9 @@ const messages = {
   "shell.app.sidePanel.selection": "Selection",
 
   // --- Top bar ---
-  "shell.topbar.steps": "Planning steps",
+  "shell.topbar.steps": "Planning modes",
   // Shown after the step name in its tooltip, for steps that can be skipped.
   "shell.topbar.step.optional": "(optional)",
-  // Step tooltip heading, e.g. "2. Terrain".
-  "shell.topbar.step.numbered": "{index}. {title}",
   // {key} is the digit key that jumps to this step.
   "shell.topbar.step.press": "Press {key}",
   // Accessible name of the 2D / 2.5D / 3D / Walk switch.
@@ -315,31 +313,7 @@ const messages = {
   "shell.sample.label.kitchenGarden": "Kitchen garden",
   "shell.sample.label.frontGarden": "Front garden",
 
-  // ── Goals per step (ticked off automatically from the plan) ──
-  "shell.quest.title": "Goals",
-  "shell.quest.optional": "Optional",
-  "shell.quest.plot.boundary": "Draw your plot boundary",
-  "shell.quest.plot.house": "Add your house",
-  "shell.quest.plot.extras": "Add a pond, pool or fence",
-  "shell.quest.terrain.heights": "Mark a known height",
-  "shell.quest.terrain.shape": "Shape the ground with the brush",
-  "shell.quest.surfaces.green": "Lay a lawn or meadow",
-  "shell.quest.surfaces.paths": "Add a path or terrace",
-  "shell.quest.trees.tree": "{count, plural, one {Plant a tree} other {Plant # trees}}",
-  "shell.quest.trees.shrubs": "{count, plural, one {Plant a shrub} other {Plant # shrubs or roses}}",
-  "shell.quest.beds.flower": "Make a flower bed",
-  "shell.quest.beds.raised": "Build a raised bed",
-  "shell.quest.planting.fill": "Brush plants into a bed",
-  "shell.quest.planting.variety": "{count, plural, one {Use # kind of plant} other {Use # different plants}}",
-  "shell.quest.planting.lush": "{count, plural, one {Grow # plant} other {Grow # plants}}",
-  // Pop-up when a goal is reached; {goal} is the goal's text.
-  "shell.quest.reached": "Goal reached",
-  // Pop-up when every required goal of a step is done; {step} is the step's name.
-  "shell.quest.stepDone": "{step} done",
-  "shell.quest.nextStep": "Next: {step}",
-  "shell.quest.allDone": "All six steps are done. Walk through your garden to see it at eye level.",
-  // Progress along the step track, e.g. "3 of 6 steps done".
-  "shell.quest.progress": "{done} of {total} steps done",
+  // ── Step panel ──
   "shell.quest.tips": "Tips",
 
   // ── Garden counters along the top ──
