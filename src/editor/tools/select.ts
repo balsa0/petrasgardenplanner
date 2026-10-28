@@ -28,6 +28,8 @@ import type { Entity, NoteEntity, LabelEntity, Pt } from "../model/types";
 import { isArea } from "../model/types";
 import type { Overlay } from "../paint/overlays";
 import { ed, editableFilter, hitTest, redraw, snapAt, treeDisplaySize } from "./context";
+import { itemFootprint } from "../model/items";
+import { gateOnFence, rotateKey } from "./items";
 import type { Tool, ToolEvent, ToolHint } from "./types";
 
 type Drag =
@@ -119,6 +121,9 @@ export function selectionOutlines(): Overlay[] {
       out.push({ t: "line", pts: en.path, closed: en.closed, style });
     } else if (en.kind === "tree") {
       out.push({ t: "circle", c: en.p, r: treeDisplaySize(en, s.time.years).spread / 2, style });
+      if (style === "selection") out.push({ t: "handle", p: en.p, kind: "point" });
+    } else if (en.kind === "item") {
+      out.push({ t: "line", pts: itemFootprint(en), closed: true, style });
       if (style === "selection") out.push({ t: "handle", p: en.p, kind: "point" });
     } else if (en.kind === "heightpoint" && style === "selection") {
       out.push({ t: "handle", p: en.p, kind: "active" });
@@ -346,6 +351,17 @@ export class SelectTool implements Tool {
       this.snap = snapAt({ ...e, p: raw }, { exclude: (id) => ids.has(id), constrain: false });
       let delta: Pt = [this.snap.p[0] - d.anchor[0], this.snap.p[1] - d.anchor[1]];
       if (e.shift) delta = Math.abs(delta[0]) > Math.abs(delta[1]) ? [delta[0], 0] : [0, delta[1]];
+      // A gate dragged on its own slides along (and between) fences.
+      const lone = d.ids.length === 1 ? s.doc.entities[d.ids[0]] : null;
+      const fit = lone?.kind === "item" ? gateOnFence(s.doc, [d.anchor[0] + delta[0], d.anchor[1] + delta[1]], lone) : null;
+      if (lone?.kind === "item" && fit) {
+        d.applied = [fit.p[0] - d.anchor[0], fit.p[1] - d.anchor[1]];
+        s.update((dr) => {
+          const g = dr.entities[lone.id];
+          if (g?.kind === "item") Object.assign(g, { p: fit.p, rot: fit.rot });
+        });
+        return;
+      }
       const step: Pt = [delta[0] - d.applied[0], delta[1] - d.applied[1]];
       d.applied = delta;
       s.update((dr) => translateEntities(dr, d.ids, step[0], step[1]));
@@ -441,6 +457,7 @@ export class SelectTool implements Tool {
       }
       return false;
     }
+    if (rotateKey(k)) return true;
     if (k.key.startsWith("Arrow") && s.selection.length) {
       const big = getUnitSystem() === "imperial" ? 0.3048 : 1;
       const small = getUnitSystem() === "imperial" ? 0.0254 : 0.1;

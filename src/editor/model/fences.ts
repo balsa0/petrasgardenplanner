@@ -1,5 +1,7 @@
 import { t } from "@/i18n";
-import type { FenceProps, FenceType, GardenDoc, Pt } from "./types";
+import { closestOnPath, dist } from "../geometry/poly";
+import { ITEM_BY_ID } from "./items";
+import type { FenceProps, FenceType, GardenDoc, ItemEntity, Pt } from "./types";
 
 export interface FenceSpec {
   id: FenceType;
@@ -65,10 +67,12 @@ export interface FenceRun extends FenceProps {
   closed: boolean;
 }
 
+const lineCache = new WeakMap<object, FenceRun[]>();
 const runCache = new WeakMap<object, FenceRun[]>();
 
-export function fenceRuns(doc: GardenDoc): FenceRun[] {
-  const hit = runCache.get(doc.entities);
+/** Every fence line as drawn, gates ignored. */
+export function fenceLines(doc: GardenDoc): FenceRun[] {
+  const hit = lineCache.get(doc.entities);
   if (hit) return hit;
   const runs: FenceRun[] = [];
   for (const id of doc.order) {
@@ -79,8 +83,103 @@ export function fenceRuns(doc: GardenDoc): FenceRun[] {
       for (const poly of e.geometry) if (poly[0]?.length >= 3) runs.push({ id, path: poly[0], closed: true, ...e.fence });
     }
   }
+  lineCache.set(doc.entities, runs);
+  return runs;
+}
+
+/** How close (m) a gate's centre must be to a fence line to open it up. */
+const GATE_REACH = 0.3;
+
+/** The fence lines to draw: gates standing on a line cut it into pieces with a gap where each gate is. */
+export function fenceRuns(doc: GardenDoc): FenceRun[] {
+  const hit = runCache.get(doc.entities);
+  if (hit) return hit;
+  const gates = doc.order.map((id) => doc.entities[id]).filter((e): e is ItemEntity => e?.kind === "item" && !!ITEM_BY_ID[e.item]?.gate);
+  const runs: FenceRun[] = [];
+  for (const run of fenceLines(doc)) {
+    const gaps: [number, number][] = [];
+    for (const g of gates) {
+      const at = arcPosition(run, g.p);
+      if (at && at.d <= Math.max(GATE_REACH, FENCE_BY_ID[run.fenceType].thickness)) gaps.push([at.s - g.w / 2, at.s + g.w / 2]);
+    }
+    if (gaps.length) runs.push(...cutRun(run, gaps));
+    else runs.push(run);
+  }
   runCache.set(doc.entities, runs);
   return runs;
+}
+
+/** Distance along a run to the point nearest p, and how far p is from it. */
+function arcPosition(run: FenceRun, p: Pt): { s: number; d: number } | null {
+  const c = closestOnPath(p, run.path, run.closed);
+  if (!c) return null;
+  let s = 0;
+  for (let i = 0; i < c.idx; i++) s += dist(run.path[i], run.path[i + 1]);
+  return { s: s + dist(run.path[c.idx], c.pt), d: c.d };
+}
+
+/** The open pieces of a run left between gaps (arc-length intervals). */
+function cutRun(run: FenceRun, gaps: [number, number][]): FenceRun[] {
+  const pts = run.closed ? [...run.path, run.path[0]] : run.path;
+  const cum = [0];
+  for (let i = 1; i < pts.length; i++) cum.push(cum[i - 1] + dist(pts[i - 1], pts[i]));
+  const total = cum[cum.length - 1];
+  const at = (s: number): Pt => {
+    s = ((s % total) + total) % total;
+    let i = 1;
+    while (i < cum.length - 1 && cum[i] < s) i++;
+    const k = (s - cum[i - 1]) / (cum[i] - cum[i - 1] || 1);
+    return [pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * k, pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * k];
+  };
+  // The corners strictly between two arc positions; on a closed run `b` may pass the end once.
+  const piece = (a: number, b: number): Pt[] => {
+    const out: Pt[] = [at(a)];
+    const n = run.path.length;
+    if (run.closed) {
+      for (let lap = 0; lap <= 1; lap++) for (let i = 0; i < n; i++) {
+        const s = cum[i] + lap * total;
+        if (s > a && s < b) out.push(run.path[i]);
+      }
+    } else for (let i = 1; i < n - 1; i++) if (cum[i] > a && cum[i] < b) out.push(run.path[i]);
+    out.push(at(b));
+    return out;
+  };
+  const sorted = gaps.map(([a, b]) => [Math.max(run.closed ? a : 0, a), Math.min(run.closed ? b : total, b)] as [number, number]).sort((x, y) => x[0] - y[0]);
+  // Merge overlapping gaps.
+  const merged: [number, number][] = [];
+  for (const g of sorted) {
+    const last = merged[merged.length - 1];
+    if (last && g[0] <= last[1]) last[1] = Math.max(last[1], g[1]);
+    else merged.push([...g]);
+  }
+  const keep: [number, number][] = [];
+  if (run.closed) {
+    for (let i = 0; i < merged.length; i++) {
+      const from = merged[i][1];
+      const to = i + 1 < merged.length ? merged[i + 1][0] : merged[0][0] + total;
+      if (to - from > 0.05) keep.push([from, to]);
+    }
+  } else {
+    let from = 0;
+    for (const [a, b] of merged) {
+      if (a - from > 0.05) keep.push([from, a]);
+      from = b;
+    }
+    if (total - from > 0.05) keep.push([from, total]);
+  }
+  return keep.map(([a, b]) => ({ ...run, path: piece(a, b), closed: false }));
+}
+
+/** The nearest fence line within `reach` of p: where on it, its direction (degrees) and its look. */
+export function fenceSnap(doc: GardenDoc, p: Pt, reach: number): { p: Pt; rot: number; run: FenceRun } | null {
+  let best: { p: Pt; rot: number; run: FenceRun; d: number } | null = null;
+  for (const run of fenceLines(doc)) {
+    const c = closestOnPath(p, run.path, run.closed);
+    if (!c || c.d > reach || (best && c.d >= best.d)) continue;
+    const a = run.path[c.idx], b = run.path[(c.idx + 1) % run.path.length];
+    best = { p: c.pt, rot: (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180) / Math.PI, run, d: c.d };
+  }
+  return best && { p: best.p, rot: ((best.rot % 180) + 180) % 180, run: best.run };
 }
 
 /** Posts every `spacing` metres along a path, always including its corners. */

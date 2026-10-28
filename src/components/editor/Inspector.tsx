@@ -26,6 +26,7 @@ import { SpeciesDetails, SpeciesPicker } from "./SpeciesPicker";
 import { FenceSettings, FenceTypeGrid, PerimeterFenceSection } from "./FencePicker";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 import { Switch } from "@/components/ui/switch";
+import { ItemEditor } from "./FurnishPanel";
 
 function patch<K extends Entity["kind"]>(id: string, kind: K, fn: (e: Draft<Extract<Entity, { kind: K }>>) => void) {
   getEditor().update((d) => {
@@ -541,6 +542,7 @@ export function Inspector() {
             {e.kind === "heightpoint" && <HeightPointEditor e={e} doc={doc} />}
             {e.kind === "note" && <NoteEditor e={e} />}
             {e.kind === "label" && <LabelEditor e={e} />}
+            {e.kind === "item" && <ItemEditor e={e} />}
             <AreaStats e={e} />
             {isArea(e) && STAGE_BY_ID[getEditor().stage].reshapable.includes(e.kind) && (
               <Section>

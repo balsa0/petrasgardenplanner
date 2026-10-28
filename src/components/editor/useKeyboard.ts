@@ -111,7 +111,7 @@ export function useKeyboard() {
         s.requestFit();
       } else if (k === "w") {
         s.setView("walk");
-      } else if (/^[1-6]$/.test(e.key)) {
+      } else if (/^[1-9]$/.test(e.key) && Number(e.key) <= STAGES.length) {
         s.setStage(STAGES[Number(e.key) - 1].id);
       } else if (e.key.length === 1) {
         const id = toolForKey(e.key);

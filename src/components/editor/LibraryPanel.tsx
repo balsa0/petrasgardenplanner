@@ -21,6 +21,7 @@ import type { TerrainBrushMode } from "@/editor/terrain/terrain";
 import { STRUCTURE_ICONS, stepStyle } from "./meta";
 import { FenceTypeGrid, PerimeterFenceSection } from "./FencePicker";
 import { StepHeader } from "./Hud";
+import { FurnishLibrary } from "./FurnishPanel";
 import { PickedSpecies, PickedSurfaces } from "./catalogue/Mine";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 import { ChoiceCard, ColorDot, Field, LengthInput, Section, Segmented } from "./ui";
@@ -471,6 +472,7 @@ export function LibraryPanel() {
           {stage === "trees" && <SpeciesLibrary key="trees" layer="tree" />}
           {stage === "beds" && <BedsLibrary />}
           {stage === "planting" && <SpeciesLibrary key="plants" layer="bed" />}
+          {stage === "furnish" && <FurnishLibrary />}
         </div>
       </ScrollArea>
       <div className="flex items-center gap-2 border-t p-2.5">

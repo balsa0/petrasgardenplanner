@@ -29,6 +29,7 @@ import type {
 } from "./types";
 import { isArea } from "./types";
 import { MATERIAL_BY_ID, isMaterialName } from "./materials";
+import { ITEM_BY_ID } from "./items";
 import { FENCE_BY_ID } from "./fences";
 import { getSpecies } from "./species";
 import { emptyTerrain } from "../terrain/terrain";
@@ -446,6 +447,7 @@ export function entityLabel(e: Entity): string {
     case "bed": return t(e.bedType === "raised" ? "panels.entity.raisedBed" : "panels.entity.flowerBed");
     case "tree": return speciesName(getSpecies(e.species));
     case "fence": return FENCE_BY_ID[e.fenceType]?.name ?? kindLabel(e.kind);
+    case "item": return ITEM_BY_ID[e.item]?.name ?? kindLabel(e.kind);
     case "label": return e.text || kindLabel(e.kind);
     default: return kindLabel(e.kind);
   }

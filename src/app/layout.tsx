@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Garden Planner",
+  title: "Petra’s Garden Planner",
   description: "Plan your garden step by step — plot, terrain, surfaces, trees, beds and planting — in 2D, 2.5D and 3D.",
 };
 

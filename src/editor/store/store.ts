@@ -5,7 +5,7 @@ import { subscribeWithSelector } from "zustand/middleware";
 import { produce, type Draft } from "immer";
 import type { SnapSettings } from "../geometry/snap";
 import { setUnitSystem, type UnitSystem } from "../geometry/units";
-import type { BedEdge, BedType, EditView, FenceType, GardenDoc, Pt, Stage, SurfaceMaterialId, ViewMode } from "../model/types";
+import type { BedEdge, BedType, EditView, FenceType, GardenDoc, ItemType, Pt, Stage, SurfaceMaterialId, ViewMode } from "../model/types";
 import type { BoolMode, StructurePreset } from "../model/ops";
 import { createEmptyDoc, duplicateEntities, removeEntities, translateEntities } from "../model/ops";
 import { defaultToolFor, isEditableIn, type ToolId } from "../model/stages";
@@ -38,6 +38,10 @@ export interface ToolOptions {
   /** Fence tool: type and height of the next fence. */
   fenceType: FenceType;
   fenceHeight: number;
+  /** Furnish step: what the item tool places next, its size and turn (degrees). */
+  itemType: ItemType;
+  itemSize: { w: number; d: number; h: number };
+  itemRot: number;
 }
 
 export interface DisplayOptions {
@@ -49,6 +53,8 @@ export interface DisplayOptions {
   notes: boolean;
   dimensions: boolean;
   grid: boolean;
+  /** 3D views after dark: dim sky, lamps lit. */
+  night: boolean;
 }
 
 export interface CameraState {
@@ -193,9 +199,12 @@ export const useEditor = create<EditorState>()(
       nativeOnly: false,
       fenceType: "picket",
       fenceHeight: 1,
+      itemType: "dining-set",
+      itemSize: { w: 2.6, d: 1.9, h: 0.75 },
+      itemRot: 0,
     },
     snap: { grid: true, objects: true, angles: true },
-    display: { names: true, labels: true, notes: true, dimensions: true, grid: true },
+    display: { names: true, labels: true, notes: true, dimensions: true, grid: true, night: false },
     units: "metric",
     locale: getLocale(),
     scheme: "warm",

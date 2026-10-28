@@ -47,7 +47,7 @@ export function WelcomeDialog() {
             <div className="flex size-9 items-center justify-center rounded-xl border-[length:var(--line)] border-[var(--ink)] bg-primary text-primary-foreground">
               <Sprout className="size-5" />
             </div>
-            <span className="text-sm font-medium text-foreground/70">Garden Planner</span>
+            <span className="text-sm font-medium text-foreground/70">Petra’s Garden Planner</span>
           </div>
           <DialogTitle className="mt-4 text-2xl font-semibold tracking-tight">{t("shell.welcome.title")}</DialogTitle>
           <DialogDescription className="mt-1.5 max-w-lg text-[13.5px]">{t("shell.welcome.description")}</DialogDescription>

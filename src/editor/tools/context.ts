@@ -5,6 +5,7 @@ import { snapPoint, snapStepForZoom, type SnapQuery, type SnapResult } from "../
 import { fmtArea } from "../geometry/units";
 import { applyAreaShape, type AreaTarget } from "../model/ops";
 import { FENCE_BY_ID } from "../model/fences";
+import { itemContains, itemSpec } from "../model/items";
 import { isEditableIn } from "../model/stages";
 import { getSpecies, treeSize } from "../model/species";
 import type { Entity, GardenDoc, MultiPolygon, Pt, TreeEntity } from "../model/types";
@@ -45,6 +46,18 @@ export function hitTest(doc: GardenDoc, p: Pt, pxSize: number, filter: (e: Entit
   for (let i = doc.order.length - 1; i >= 0; i--) {
     const e = doc.entities[doc.order[i]];
     if (!e || isArea(e) || e.kind === "fence" || !filter(e)) continue;
+    if (e.kind === "item") {
+      // Anywhere on the footprint; small things (lights) get a few pixels of slack.
+      const slack = Math.max(0, 10 * pxSize - Math.min(e.w, e.d) / 2);
+      if (itemContains(e, p, slack)) {
+        const score = itemSpec(e).round ? dist(p, e.p) / (e.w / 2 + slack) * 0.5 : 0.4;
+        if (score < bestScore) {
+          bestScore = score;
+          best = e.id;
+        }
+      }
+      continue;
+    }
     const d = dist(p, e.p);
     let r = 12 * pxSize;
     if (e.kind === "tree") r = Math.max(treeDisplaySize(e, years).spread / 2, 10 * pxSize);

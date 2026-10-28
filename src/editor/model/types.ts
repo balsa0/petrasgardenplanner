@@ -6,13 +6,13 @@ export type Ring = Pt[];
 export type Polygon = Ring[];
 export type MultiPolygon = Polygon[];
 
-export type Stage = "plot" | "terrain" | "surfaces" | "trees" | "beds" | "planting";
+export type Stage = "plot" | "terrain" | "surfaces" | "trees" | "beds" | "planting" | "furnish";
 /** "walk" is a first-person preview at eye level; it is never a stage's preferred view. */
 export type ViewMode = "2d" | "iso" | "3d" | "walk";
 export type EditView = Exclude<ViewMode, "walk">;
 
 export type AreaKind = "plot" | "building" | "water" | "surface" | "bed";
-export type PointKind = "tree" | "heightpoint" | "note" | "label";
+export type PointKind = "tree" | "heightpoint" | "note" | "label" | "item";
 export type LineKind = "fence";
 export type EntityKind = AreaKind | PointKind | LineKind;
 
@@ -164,8 +164,70 @@ export interface FenceEntity extends EntityBase, FenceProps {
   closed: boolean;
 }
 
+export type ItemType =
+  | "gate"
+  | "gate-double"
+  | "gate-sliding"
+  | "greenhouse"
+  | "tunnel-arch"
+  | "tunnel-house"
+  | "cold-frame"
+  | "compost-bin"
+  | "water-butt"
+  | "pergola"
+  | "pergola-roofed"
+  | "pergola-louvre"
+  | "gazebo"
+  | "parasol"
+  | "parasol-cantilever"
+  | "sail-shade"
+  | "rose-arch"
+  | "dining-set"
+  | "bistro-set"
+  | "lounge-set"
+  | "sunbed"
+  | "bench"
+  | "picnic-table"
+  | "bbq"
+  | "fire-pit"
+  | "hanging-chair"
+  | "hammock"
+  | "swing"
+  | "trampoline"
+  | "pot"
+  | "planter-box"
+  | "bird-bath"
+  | "fountain"
+  | "sculpture"
+  | "boulder"
+  | "obelisk"
+  | "bird-house"
+  | "bridge"
+  | "lamp-post"
+  | "bollard"
+  | "bollard-round"
+  | "lantern-post"
+  | "solar-stake"
+  | "spotlight"
+  | "festoon";
+
+/** Something placed in the garden: a gate, greenhouse, pergola, furniture, ornament or light (see model/items). */
+export interface ItemEntity extends EntityBase {
+  kind: "item";
+  item: ItemType;
+  /** Centre of the footprint. */
+  p: Pt;
+  /** Clockwise turn on the plan, degrees. */
+  rot: number;
+  /** Width (across x before turning), depth and height, metres. */
+  w: number;
+  d: number;
+  h: number;
+  color: string;
+}
+
 export type AreaEntity = PlotEntity | BuildingEntity | WaterEntity | SurfaceEntity | BedEntity;
-export type PointEntity = TreeEntity | HeightPointEntity | NoteEntity | LabelEntity;
+export type PointEntity = TreeEntity | HeightPointEntity | NoteEntity | LabelEntity | ItemEntity;
 export type LineEntity = FenceEntity;
 export type Entity = AreaEntity | PointEntity | LineEntity;
 

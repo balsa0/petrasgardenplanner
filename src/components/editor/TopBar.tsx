@@ -203,7 +203,7 @@ export function TopBar() {
           <div className="flex size-8 shrink-0 items-center justify-center rounded-md border-[length:var(--line)] border-[var(--ink)] bg-primary text-primary-foreground">
             <Sprout className="size-4.5" />
           </div>
-          <div className="font-display hidden text-[14px] font-semibold whitespace-nowrap text-foreground/70 2xl:block">Garden Planner</div>
+          <div className="font-display hidden text-[14px] font-semibold whitespace-nowrap text-foreground/70 2xl:block">Petra’s Garden Planner</div>
           <div className="hidden h-5 w-px bg-border 2xl:block" />
           <ProjectName />
           <div className="h-5 w-px bg-border" />

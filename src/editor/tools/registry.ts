@@ -4,6 +4,7 @@ import { keys } from "../viewport";
 import { fxOverlays } from "../paint/fx";
 import { PlantBrushTool, SurfaceBrushTool, TerrainTool } from "./brushes";
 import { FenceTool } from "./fence";
+import { ItemTool } from "./items";
 import { HeightPointTool, LabelTool, MeasureTool, NoteTool, SurveyTool, TreeTool } from "./points";
 import { SelectTool, selectionOutlines } from "./select";
 import { CircleTool, PolygonTool, RectTool } from "./shapes";
@@ -26,6 +27,7 @@ const tools: Record<ToolId, Tool> = {
   label: new LabelTool(),
   measure: new MeasureTool(),
   fence: new FenceTool(),
+  item: new ItemTool(),
 };
 
 export function getTool(id: ToolId = useEditor.getState().tool): Tool {

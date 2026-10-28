@@ -3,7 +3,7 @@ import type { GardenDoc } from "../model/types";
 import { isArea } from "../model/types";
 import { drawPlan, type PlanCamera } from "./plan";
 
-const QUIET = { names: false, labels: false, notes: false, dimensions: false, grid: false };
+const QUIET = { names: false, labels: false, notes: false, dimensions: false, grid: false, night: false };
 
 /** A small top-down picture of a plan, for checkpoint and variant cards. Undefined if it can't render. */
 export function renderThumb(doc: GardenDoc, month = 6, width = 192, height = 120): string | undefined {

@@ -19,7 +19,7 @@ import { unlockAudio } from "./walkAudio";
 
 const MAP_W = 200;
 const MAP_H = 150;
-const NO_ANNOTATIONS = { names: false, labels: false, notes: false, dimensions: false, grid: false };
+const NO_ANNOTATIONS = { names: false, labels: false, notes: false, dimensions: false, grid: false, night: false };
 
 /** Plan camera that fits the garden into the minimap. */
 function mapCamera(): PlanCamera {

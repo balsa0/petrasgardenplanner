@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CalendarDays, Eye, EyeOff, Magnet, Maximize, Minus, Pause, Play, Plus, RotateCcw, RotateCw } from "lucide-react";
+import { CalendarDays, Eye, EyeOff, Magnet, Maximize, Minus, Moon, Pause, Play, Plus, RotateCcw, RotateCw, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
@@ -24,6 +24,7 @@ import { Segmented } from "./ui";
 import { WalkHud } from "./iso/WalkHud";
 import { Hotbar, ResourceStrip } from "./Hud";
 import { FENCE_BY_ID } from "@/editor/model/fences";
+import { ItemToolOptions } from "./FurnishPanel";
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -147,6 +148,8 @@ function ToolOptions() {
         <SizeSlider label={t("common.height")} value={o.fenceHeight} scale={1} min={f.min} max={f.max} step={0.05} onChange={(v) => set({ fenceHeight: v })} />
       </>
     );
+  } else if (tool === "item") {
+    content = <ItemToolOptions />;
   } else if (tool === "survey") {
     content = <Chip>{t("shell.canvas.surveySpacing", { distance: fmtLen(o.surveySpacing) })}</Chip>;
   }
@@ -258,12 +261,31 @@ function Compass() {
 function ViewControls() {
   const zoom = useEditor((s) => s.camera.zoom);
   const view = useEditor((s) => s.view);
+  const night = useEditor((s) => s.display.night);
   const zoomBy = (k: number) => {
     const s = getEditor();
     s.setCamera({ zoom: Math.max(1.5, Math.min(600, s.camera.zoom * k)) });
   };
   return (
     <div className="pointer-events-none flex items-end gap-2">
+      {view !== "2d" && (
+        <Pill className="rounded-none border-b-0">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon-sm"
+                aria-pressed={night}
+                aria-label={t(night ? "furnish.day" : "furnish.night")}
+                onClick={() => getEditor().setDisplay({ night: !night })}
+              >
+                {night ? <Sun /> : <Moon />}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>{t(night ? "furnish.day" : "furnish.night")}</TooltipContent>
+          </Tooltip>
+        </Pill>
+      )}
       {view === "iso" && (
         <Pill className="rounded-none border-b-0">
           <Tooltip>

@@ -5,6 +5,7 @@
  * the footsteps. Plan coordinates: x east, y south; heading 0 = +x.
  */
 import { bboxValid, closestOnSegment, multiBBox, pointInMulti, signedDistance, type BBox } from "@/editor/geometry/poly";
+import { ITEM_BY_ID, itemFootprint } from "@/editor/model/items";
 import { FENCE_BY_ID, fenceRuns } from "@/editor/model/fences";
 import { MATERIAL_BY_ID } from "@/editor/model/materials";
 import { getSpecies, treeSize } from "@/editor/model/species";
@@ -158,6 +159,12 @@ export function obstacles(doc: GardenDoc, years: number): Obstacles {
       const crownShare = sp.category === "climber" ? 0.5 : sp.form === "conical" ? 1.05 : height > 1.2 ? 1 : 0.75;
       const r = tallCrown ? Math.max(0.12, Math.min(0.35, height * 0.035)) : Math.max(0.15, (spread / 2) * crownShare);
       o.circles.push({ c: e.p, r });
+    } else if (e.kind === "item" && ITEM_BY_ID[e.item]?.solid) {
+      if (ITEM_BY_ID[e.item].round) o.circles.push({ c: e.p, r: e.w / 2 });
+      else {
+        const m: MultiPolygon = [[itemFootprint(e)]];
+        o.polys.push({ m, b: multiBBox(m) });
+      }
     }
   }
   obstacleCache.set(doc.entities, { years, o });

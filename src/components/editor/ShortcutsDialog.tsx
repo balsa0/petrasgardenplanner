@@ -3,6 +3,7 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Kbd } from "@/components/ui/kbd";
 import { fmtNumber, t } from "@/i18n";
+import { STAGES } from "@/editor/model/stages";
 import { TOOL_META } from "./meta";
 
 /** Shortcut groups as [keys, what it does]. Built at render time so it follows the active language. */
@@ -12,7 +13,7 @@ function groups(): { id: string; title: string; items: [string, string][] }[] {
       id: "general",
       title: t("shell.shortcuts.group.general"),
       items: [
-        ["1 – 6", t("shell.shortcuts.goToStep")],
+        [`1 – ${STAGES.length}`, t("shell.shortcuts.goToStep")],
         ["Tab", t("shell.shortcuts.switchView")],
         ["W", t("shell.view.walk.hint")],
         [", .", t("shell.shortcuts.rotateIso")],

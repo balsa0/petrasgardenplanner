@@ -1,4 +1,4 @@
-# Garden Planner (POC)
+# Petra’s Garden Planner (POC)
 
 A garden planner for non-gardeners: draw your plot, shape the terrain, paint surfaces, place trees,
 draw beds and brush in plants — in a precise 2D plan, a friendly isometric 2.5D "diorama" view, or a

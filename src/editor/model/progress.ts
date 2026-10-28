@@ -4,6 +4,7 @@
  */
 import { multiArea } from "../geometry/poly";
 import { terrainHasData } from "../terrain/terrain";
+import { ITEM_BY_ID } from "./items";
 import { MATERIAL_BY_ID } from "./materials";
 import { getSpecies } from "./species";
 import type { Entity, GardenDoc, Stage } from "./types";
@@ -78,6 +79,10 @@ const SPECS: Record<Stage, Spec[]> = {
     { name: "fill", check: (f) => f.plants > 0 },
     { name: "variety", need: 5, check: (f) => f.bedSpecies },
     { name: "lush", optional: true, need: 50, check: (f) => f.plants },
+  ],
+  furnish: [
+    { name: "seating", check: (f) => has(f, (e) => e.kind === "item" && ITEM_BY_ID[e.item]?.group === "furniture") },
+    { name: "extras", optional: true, check: (f) => has(f, (e) => e.kind === "item" && ITEM_BY_ID[e.item]?.group !== "furniture") },
   ],
 };
 

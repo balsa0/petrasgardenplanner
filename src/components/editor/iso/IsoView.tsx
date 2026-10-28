@@ -249,6 +249,7 @@ function Bridge({
 }
 
 export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
+  const night = useEditor((s) => s.display.night);
   const wrapRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLCanvasElement>(null);
   const pickRef = useRef<THREE.Group>(null);
@@ -623,7 +624,7 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
       tabIndex={-1}
       className="absolute inset-0 touch-none select-none outline-none"
       data-view={mode}
-      style={{ background: "var(--canvas)" }}
+      style={{ background: night ? "#141c2e" : "var(--canvas)" }}
     >
       <Canvas
         shadows

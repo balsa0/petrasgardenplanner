@@ -17,7 +17,8 @@ export type ToolId =
   | "note"
   | "label"
   | "measure"
-  | "fence";
+  | "fence"
+  | "item";
 
 export interface StageInfo {
   id: Stage;
@@ -148,6 +149,21 @@ export const STAGES: StageInfo[] = [
       tips: ["shell.stage.planting.tip1", "shell.stage.planting.tip2", "shell.stage.planting.tip3"],
     },
   ),
+  stage(
+    {
+      id: "furnish",
+      index: 7,
+      editable: ["item"],
+      reshapable: [],
+      tools: ["select", "item"],
+    },
+    {
+      title: "furnish.stage.title",
+      short: "furnish.stage.short",
+      summary: "furnish.stage.summary",
+      tips: ["furnish.stage.tip1", "furnish.stage.tip2", "furnish.stage.tip3"],
+    },
+  ),
 ];
 
 export const STAGE_BY_ID = Object.fromEntries(STAGES.map((s) => [s.id, s])) as Record<Stage, StageInfo>;
@@ -161,6 +177,7 @@ export function defaultToolFor(stage: Stage, doc: GardenDoc): ToolId {
     case "trees": return "tree";
     case "beds": return has("bed") ? "select" : "rect";
     case "planting": return "plant";
+    case "furnish": return has("item") ? "select" : "item";
   }
 }
 
@@ -177,6 +194,7 @@ export function stageForKind(kind: EntityKind): Stage {
     case "surface": return "surfaces";
     case "tree": return "trees";
     case "bed": return "beds";
+    case "item": return "furnish";
     default: return "plot";
   }
 }

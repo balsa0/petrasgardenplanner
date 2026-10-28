@@ -8,7 +8,7 @@ import { isConvex, isRectLike, ringCentroid, type BBox } from "@/editor/geometry
 import { BED_EDGE_COLORS } from "@/editor/model/materials";
 import { mulberry32 } from "@/editor/model/planting";
 import { getSpecies, treeSize } from "@/editor/model/species";
-import type { BedEntity, BuildingEntity, GardenDoc, MultiPolygon, Pt, TreeEntity, WaterEntity } from "@/editor/model/types";
+import type { BedEntity, BuildingEntity, GardenDoc, ItemEntity, MultiPolygon, Pt, TreeEntity, WaterEntity } from "@/editor/model/types";
 import { paintGround } from "@/editor/paint/ground";
 import { PATTERN_PPM, getPatternTile } from "@/editor/paint/patterns";
 import { seasonLook, shade } from "@/editor/render/colors";
@@ -19,6 +19,7 @@ import { useEditor } from "@/editor/store/store";
 import { getHeightGrid, sampleHeight, terrainExtent, type HeightGrid } from "@/editor/terrain/terrain";
 import { buildFence, fenceTexture } from "./fenceGeometry";
 import { flatMat, geo, toShapes } from "./geometries";
+import { buildItem, type ItemSurface } from "./itemGeometry";
 
 const SUN_DIR = new THREE.Vector3(-0.45, 1, 0.65).normalize();
 
@@ -210,8 +211,18 @@ const skyMat = new THREE.ShaderMaterial({
 });
 
 /** Sky dome that travels with the camera, so it is never reached. */
-function Sky() {
+const NIGHT_SKY = { top: new THREE.Color("#0b1530"), horizon: new THREE.Color("#2b3756"), ground: new THREE.Color("#161b17") };
+const NIGHT_FOG = new THREE.Color("#1b2338");
+
+function Sky({ night }: { night: boolean }) {
   const ref = useRef<THREE.Mesh>(null);
+  const invalidate = useThree((s) => s.invalidate);
+  useEffect(() => {
+    skyMat.uniforms.top.value = night ? NIGHT_SKY.top : SKY_TOP;
+    skyMat.uniforms.horizon.value = night ? NIGHT_SKY.horizon : SKY_HORIZON;
+    skyMat.uniforms.ground.value = night ? NIGHT_SKY.ground : SKY_GROUND;
+    invalidate();
+  }, [night, invalidate]);
   useFrame(({ camera }) => ref.current?.position.copy(camera.position));
   return (
     <mesh ref={ref} material={skyMat} renderOrder={-1} frustumCulled={false}>
@@ -336,7 +347,7 @@ const FenceMesh = memo(function FenceMesh({ run, grid }: { run: FenceRun; grid: 
 
 // ── Lights ───────────────────────────────────────────────────────────────
 
-function Lights({ extent }: { extent: BBox }) {
+function Lights({ extent, night }: { extent: BBox; night: boolean }) {
   const ref = useRef<THREE.DirectionalLight>(null);
   const scene = useThree((s) => s.scene);
   const cx = (extent.minX + extent.maxX) / 2, cz = (extent.minY + extent.maxY) / 2;
@@ -360,11 +371,12 @@ function Lights({ extent }: { extent: BBox }) {
   }, [cx, cz, half, scene]);
   return (
     <>
-      <hemisphereLight args={["#f3f6ff", "#8c7a5c", 1.35]} />
+      {/* Moonlight at night: just enough to make out shapes. */}
+      <hemisphereLight args={night ? ["#5a6d9c", "#1d1b18", 0.45] : ["#f3f6ff", "#8c7a5c", 1.35]} />
       <directionalLight
         ref={ref}
-        color="#fff6e6"
-        intensity={2.1}
+        color={night ? "#a9bde8" : "#fff6e6"}
+        intensity={night ? 0.35 : 2.1}
         castShadow
         shadow-mapSize={[4096, 4096]}
         shadow-bias={-0.0004}
@@ -686,6 +698,72 @@ const BedPlantGroup = memo(function BedPlantGroup({ bed, grid, years, month }: {
   return <BedPlants beds={beds} grid={grid} years={years} month={month} />;
 });
 
+// ── Furnish items ────────────────────────────────────────────────────────
+
+const itemMats = new Map<string, THREE.Material>();
+
+/** Shared material per surface, colour and time of day. */
+function itemMaterial(surface: ItemSurface, color: string, night: boolean): THREE.Material {
+  const key = `${surface}|${color}|${surface === "glow" && night ? "n" : ""}`;
+  let m = itemMats.get(key);
+  if (m) return m;
+  switch (surface) {
+    case "glass":
+      m = new THREE.MeshLambertMaterial({ color, transparent: true, opacity: 0.3, depthWrite: false, side: THREE.DoubleSide });
+      break;
+    case "film":
+      m = new THREE.MeshLambertMaterial({ color, transparent: true, opacity: 0.62, depthWrite: false, side: THREE.DoubleSide });
+      break;
+    case "net":
+      m = new THREE.MeshLambertMaterial({ color, transparent: true, opacity: 0.22, depthWrite: false, side: THREE.DoubleSide });
+      break;
+    case "fabric":
+      m = new THREE.MeshLambertMaterial({ color, side: THREE.DoubleSide });
+      break;
+    case "water":
+      m = new THREE.MeshLambertMaterial({ color, transparent: true, opacity: 0.85 });
+      break;
+    case "glow":
+      // Lit from inside at night; by day a pale, switched-off diffuser.
+      m = night ? new THREE.MeshBasicMaterial({ color }) : new THREE.MeshLambertMaterial({ color, emissive: new THREE.Color(color), emissiveIntensity: 0.15 });
+      break;
+    default:
+      m = new THREE.MeshLambertMaterial({ color });
+  }
+  itemMats.set(key, m);
+  return m;
+}
+
+/** At most this many lamps really light the scene; the rest just glow. */
+const MAX_LAMPS = 40;
+
+const ItemMesh = memo(function ItemMesh({ e, ground, night, lamps }: { e: ItemEntity; ground: number; night: boolean; lamps: boolean }) {
+  // Geometry only depends on what the item is, its size and colour; moving or turning reuses it.
+  const model = useMemo(
+    () => buildItem(e, night),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [e.id, e.item, e.w, e.d, e.h, e.color, night],
+  );
+  useEffect(() => () => model.parts.forEach((p) => p.geo.dispose()), [model]);
+  return (
+    <group position={[e.p[0], ground, e.p[1]]} rotation-y={(-e.rot * Math.PI) / 180} userData={{ entityId: e.id }}>
+      {model.parts.map((p, i) => (
+        <mesh
+          key={i}
+          geometry={p.geo}
+          material={itemMaterial(p.surface, p.color, night)}
+          castShadow={p.surface !== "glass" && p.surface !== "film" && p.surface !== "net" && p.surface !== "glow"}
+          receiveShadow={p.surface !== "glow"}
+        />
+      ))}
+      {night && lamps &&
+        model.lights.map((l, i) => (
+          <pointLight key={i} position={l.pos} color={l.color} intensity={2.6 * l.reach * l.reach + 3} distance={l.reach * 2.2} decay={2} />
+        ))}
+    </group>
+  );
+});
+
 // ── Spot heights ─────────────────────────────────────────────────────────
 
 function HeightPins({ doc, grid, selection }: { doc: GardenDoc; grid: HeightGrid; selection: string[] }) {
@@ -721,19 +799,21 @@ export function SceneContent({ pickRef, walk = false }: { pickRef: React.RefObje
   const years = useEditor((s) => s.time.years);
   const month = useEditor((s) => s.time.month);
   const selection = useEditor((s) => s.selection);
+  const night = useEditor((s) => s.display.night);
   const grid = getHeightGrid(doc);
   const extent = terrainExtent(doc);
 
   const ents = doc.order.map((id) => doc.entities[id]).filter(Boolean);
+  let lampBudget = MAX_LAMPS;
 
   return (
     <>
-      <Lights extent={extent} />
+      <Lights extent={extent} night={night} />
       <Terrain doc={doc} grid={grid} extent={extent} walk={walk} />
       {walk && (
         <>
-          <Sky />
-          <fog attach="fog" args={[SKY_HORIZON, 70, 520]} />
+          <Sky night={night} />
+          <fog attach="fog" args={[night ? NIGHT_FOG : SKY_HORIZON, 70, 520]} />
           <Surroundings grid={grid} />
         </>
       )}
@@ -743,6 +823,10 @@ export function SceneContent({ pickRef, walk = false }: { pickRef: React.RefObje
           if (e.kind === "building") return <Building key={e.id} e={e} grid={grid} />;
           if (e.kind === "bed" && e.bedType === "raised") return <RaisedBed key={e.id} e={e} grid={grid} />;
           if (e.kind === "tree") return <Tree key={e.id} t={e} ground={sampleHeight(grid, e.p[0], e.p[1])} years={years} month={month} />;
+          if (e.kind === "item") {
+            const lamps = night && lampBudget-- > 0;
+            return <ItemMesh key={e.id} e={e} ground={sampleHeight(grid, e.p[0], e.p[1])} night={night} lamps={lamps} />;
+          }
           return null;
         })}
         {fenceRuns(doc).map((run, i) => (

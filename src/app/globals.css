@@ -119,6 +119,7 @@
   --step-trees: #a7b84a;
   --step-beds: #f4a3b5;
   --step-planting: #c792df;
+  --step-furnish: #7fc4c0;
   /* Outline weight used everywhere. */
   --line: 1.5px;
 }
@@ -146,6 +147,7 @@
   --step-trees: #5cae6b;
   --step-beds: #c9a0dc;
   --step-planting: #eaa3bd;
+  --step-furnish: #e8c27a;
 }
 
 [data-scheme="coast"] {
@@ -169,6 +171,7 @@
   --step-trees: #72b89d;
   --step-beds: #f2a48e;
   --step-planting: #b9a6e3;
+  --step-furnish: #e9c46a;
 }
 
 .dark {
