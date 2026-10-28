@@ -53,6 +53,8 @@
   "catalogue.fact.autumn": "Colori autunnali",
   "catalogue.fact.origin": "Origine",
   "catalogue.fact.native": "Specie autoctona europea",
+  "catalogue.photo.credit": "Foto: {author}, {license}",
+  "catalogue.photo.species": "mostra {species}",
   "catalogue.fact.styles": "Stili di giardino",
   "catalogue.fact.uses": "Ideale per",
   "catalogue.fact.notes": "Nota del giardiniere",

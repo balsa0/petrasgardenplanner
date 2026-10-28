@@ -703,6 +703,8 @@
   "catalogue.fact.autumn": "Jesienne barwy",
   "catalogue.fact.origin": "Pochodzenie",
   "catalogue.fact.native": "Gatunek rodzimy w Europie",
+  "catalogue.photo.credit": "Zdjęcie: {author}, {license}",
+  "catalogue.photo.species": "przedstawia {species}",
   "catalogue.fact.styles": "Style ogrodu",
   "catalogue.fact.uses": "Zastosowanie",
   "catalogue.fact.notes": "Uwaga ogrodnika",

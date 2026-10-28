@@ -755,6 +755,8 @@
   "catalogue.fact.autumn": "Őszi lombszín",
   "catalogue.fact.origin": "Származás",
   "catalogue.fact.native": "Európában őshonos",
+  "catalogue.photo.credit": "Fotó: {author}, {license}",
+  "catalogue.photo.species": "a képen: {species}",
   "catalogue.fact.styles": "Kertstílusok",
   "catalogue.fact.uses": "Mire jó",
   "catalogue.fact.notes": "A kertész tanácsa",

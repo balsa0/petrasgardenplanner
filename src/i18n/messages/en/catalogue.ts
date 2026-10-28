@@ -67,6 +67,10 @@ const messages = {
   "catalogue.fact.autumn": "Autumn colour",
   "catalogue.fact.origin": "Origin",
   "catalogue.fact.native": "Native to Europe",
+  // Photo credit under a plant photo; {author} is the photographer, {license} e.g. "CC BY-SA 4.0".
+  "catalogue.photo.credit": "Photo: {author}, {license}",
+  // Shown when the photo is of the species rather than this cultivar; {species} is a Latin name.
+  "catalogue.photo.species": "shows {species}",
   "catalogue.fact.styles": "Garden styles",
   "catalogue.fact.uses": "Good for",
   "catalogue.fact.notes": "Gardener’s note",

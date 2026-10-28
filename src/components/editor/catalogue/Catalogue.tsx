@@ -40,7 +40,7 @@ import type { SurfaceMaterialId } from "@/editor/model/types";
 import { lookSwatchURL } from "@/editor/paint/patterns";
 import { getEditor, useEditor } from "@/editor/store/store";
 import { KIND_STEP, stepStyle } from "../meta";
-import { SpeciesArt } from "./SpeciesArt";
+import { PhotoCredit, SpeciesImage } from "./SpeciesImage";
 
 const PAGE = 60;
 
@@ -300,7 +300,7 @@ function SpeciesCard({ sp, picked, kind, onOpen }: { sp: Species; picked: boolea
     <article className="group relative overflow-hidden rounded-md border-[length:var(--line)] border-[var(--ink)] bg-card transition-transform hover:-translate-y-0.5">
       <button type="button" onClick={onOpen} className="block w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-ring/60">
         <div className="relative aspect-[4/3] border-b-[length:var(--line)] border-[var(--ink)] bg-[var(--art)]">
-          <SpeciesArt sp={sp} className="absolute inset-x-2 bottom-0 h-[92%] w-[calc(100%-1rem)]" />
+          <SpeciesImage key={sp.id} sp={sp} size="card" />
           {sp.native && (
             <span className="absolute top-2 left-2 flex size-6 items-center justify-center rounded-md border-[length:var(--line)] border-[var(--ink)] bg-card text-leaf" title={t("catalogue.fact.native")}>
               <Leaf className="size-3.5" />
@@ -348,8 +348,11 @@ function speciesPage({ sp, kind, picked, forTree, onBack }: { sp: Species; kind:
         <button type="button" onClick={onBack} className="flex items-center gap-1.5 self-start text-[12.5px] font-medium text-muted-foreground hover:text-foreground">
           <ArrowLeft className="size-4" /> {t("catalogue.back")}
         </button>
-        <div className="relative aspect-square w-full overflow-hidden rounded-md border-[length:var(--line)] border-[var(--ink)] bg-[var(--art)]">
-          <SpeciesArt sp={sp} className="absolute inset-x-3 bottom-0 h-[94%] w-[calc(100%-1.5rem)]" />
+        <div>
+          <div className="relative aspect-square w-full overflow-hidden rounded-md border-[length:var(--line)] border-[var(--ink)] bg-[var(--art)]">
+            <SpeciesImage key={sp.id} sp={sp} size="page" />
+          </div>
+          <PhotoCredit sp={sp} />
         </div>
         <div>
           <h2 className="font-display text-[24px] leading-tight font-bold">{speciesName(sp)}</h2>
@@ -832,7 +835,9 @@ export function CatalogueDialog() {
         showCloseButton={false}
         // Turning to a plant's page removes the focused card; that must not close the book.
         onFocusOutside={(e) => e.preventDefault()}
-        className="h-[calc(100dvh-2.5rem)] w-[calc(100vw-2.5rem)] max-w-none gap-0 rounded-md bg-transparent p-0 ring-0 sm:max-w-none"
+        // grid-rows-1 = minmax(0, 1fr): without it the content's implicit `auto` row grows to the
+        // full card list, so the book outgrows the dialog and neither page ever has to scroll.
+        className="h-[calc(100dvh-2.5rem)] w-[calc(100vw-2.5rem)] max-w-none grid-rows-1 gap-0 rounded-md bg-transparent p-0 ring-0 sm:max-w-none"
       >
         {catalogue && (catalogue.kind === "surfaces" ? <SurfaceCatalogue key="surfaces" /> : <SpeciesCatalogue key={catalogue.kind} kind={catalogue.kind} forTree={catalogue.forTree} />)}
       </DialogContent>

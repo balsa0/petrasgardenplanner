@@ -755,6 +755,8 @@
   "catalogue.fact.autumn": "Herbstfärbung",
   "catalogue.fact.origin": "Herkunft",
   "catalogue.fact.native": "In Europa heimisch",
+  "catalogue.photo.credit": "Foto: {author}, {license}",
+  "catalogue.photo.species": "zeigt {species}",
   "catalogue.fact.styles": "Gartenstile",
   "catalogue.fact.uses": "Geeignet für",
   "catalogue.fact.notes": "Gärtnertipp",

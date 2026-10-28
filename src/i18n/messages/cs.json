@@ -755,6 +755,8 @@
   "catalogue.fact.autumn": "Podzimní barvy",
   "catalogue.fact.origin": "Původ",
   "catalogue.fact.native": "Původní v Evropě",
+  "catalogue.photo.credit": "Foto: {author}, {license}",
+  "catalogue.photo.species": "zobrazuje {species}",
   "catalogue.fact.styles": "Styly zahrad",
   "catalogue.fact.uses": "Vhodné pro",
   "catalogue.fact.notes": "Poznámka zahradníka",

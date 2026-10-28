@@ -703,6 +703,8 @@
   "catalogue.fact.autumn": "Couleurs d'automne",
   "catalogue.fact.origin": "Origine",
   "catalogue.fact.native": "Indigène en Europe",
+  "catalogue.photo.credit": "Photo : {author}, {license}",
+  "catalogue.photo.species": "montre {species}",
   "catalogue.fact.styles": "Styles de jardin",
   "catalogue.fact.uses": "Idéal pour",
   "catalogue.fact.notes": "Le conseil du jardinier",
