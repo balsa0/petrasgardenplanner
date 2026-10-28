@@ -12,6 +12,7 @@ import type { BedEntity, BuildingEntity, GardenDoc, MultiPolygon, Pt, TreeEntity
 import { paintGround } from "@/editor/paint/ground";
 import { PATTERN_PPM, getPatternTile } from "@/editor/paint/patterns";
 import { seasonLook, shade } from "@/editor/render/colors";
+import { buildPlant } from "./treeGen";
 import { fenceRuns, type FenceRun } from "@/editor/model/fences";
 import { buildingLevels, raisedBedTop } from "@/editor/render/iso";
 import { useEditor } from "@/editor/store/store";
@@ -538,85 +539,39 @@ const RaisedBed = memo(function RaisedBed({ e, grid }: { e: BedEntity; grid: Hei
 
 // ── Trees & shrubs ───────────────────────────────────────────────────────
 
-const TRUNK = "#6b4f3a";
+/** One material for every generated plant: colours live in the geometry. */
+const plantWoodMat = new THREE.MeshLambertMaterial({ vertexColors: true, flatShading: true, side: THREE.DoubleSide });
+
+/**
+ * Generated plant shapes, shared by key so the same tree in the same month is built once. Old
+ * entries are let go; three.js re-uploads a released geometry if it is still on screen.
+ */
+const plantCache = new Map<string, THREE.BufferGeometry>();
+function plantGeometry(key: string, make: () => THREE.BufferGeometry) {
+  let g = plantCache.get(key);
+  if (g) {
+    plantCache.delete(key);
+  } else {
+    g = make();
+    if (plantCache.size > 600) {
+      const oldest = plantCache.keys().next().value!;
+      plantCache.get(oldest)!.dispose();
+      plantCache.delete(oldest);
+    }
+  }
+  plantCache.set(key, g);
+  return g;
+}
 
 const Tree = memo(function Tree({ t, ground, years, month }: { t: TreeEntity; ground: number; years: number; month: number }) {
   const sp = getSpecies(t.species);
-  const { height: H, spread: S } = treeSize(sp, t.plantedAge + years, t.heightOverride, t.spreadOverride);
-  const look = seasonLook(sp, month);
-  const variant = Math.floor(t.v * 3) % 3;
-  const rot = t.v * Math.PI * 2;
-  const R = S / 2;
-  const flowering = sp.category === "shrub" || sp.category === "rose" || sp.category === "climber";
-  const canopy = flatMat(look.canopy);
-  const shrubFlower = look.flower && flowering ? flatMat(look.flower) : null;
-  const trunk = flatMat(TRUNK);
-  const blob = geo.blob(variant);
-  const trunkR = Math.max(0.05, Math.min(0.35, H * 0.035));
-
-  const parts: React.ReactNode[] = [];
-  const addTrunk = (h: number) => parts.push(<mesh key="trunk" geometry={geo.trunk()} material={trunk} scale={[trunkR, h, trunkR]} castShadow />);
-
-  if (look.bare) {
-    const th = sp.form === "mound" ? 0.05 : H * 0.35;
-    if (th > 0.06) addTrunk(th);
-    parts.push(<mesh key="bare" geometry={geo.bareCrown()} material={trunk} position-y={th} scale={[R * 0.9, (H - th) * 0.9, R * 0.9]} castShadow />);
-  } else {
-    switch (sp.form) {
-      case "conical": {
-        addTrunk(H * 0.12);
-        for (let i = 0; i < 3; i++) {
-          parts.push(<mesh key={`c${i}`} geometry={geo.cone()} material={canopy} position-y={H * (0.08 + i * 0.26)} scale={[R * (1 - i * 0.24), H * (0.46 - i * 0.04), R * (1 - i * 0.24)]} castShadow receiveShadow />);
-        }
-        break;
-      }
-      case "columnar":
-        addTrunk(H * 0.08);
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.53} scale={[R, H * 0.48, R]} castShadow receiveShadow />);
-        break;
-      case "weeping":
-        addTrunk(H * 0.6);
-        parts.push(<mesh key="d" geometry={blob} material={canopy} position-y={H * 0.7} scale={[R * 0.85, H * 0.3, R * 0.85]} castShadow receiveShadow />);
-        parts.push(<mesh key="s" geometry={geo.skirt()} material={canopy} position-y={H * 0.12} scale={[R * 0.95, H * 0.6, R * 0.95]} castShadow receiveShadow />);
-        break;
-      case "climber":
-        // Climber on a post / trellis: a slim column of foliage.
-        parts.push(<mesh key="post" geometry={geo.trunk()} material={flatMat("#8a6a4a")} scale={[0.05, H, 0.05]} castShadow />);
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.55} scale={[R * 0.75, H * 0.47, Math.max(0.25, R * 0.35)]} castShadow receiveShadow />);
-        break;
-      case "mound":
-      case "rosette":
-      case "carpet":
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.48} scale={[R, H * 0.52, R]} castShadow receiveShadow />);
-        break;
-      case "upright":
-        addTrunk(H * 0.15);
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.56} scale={[R, H * 0.45, R]} castShadow receiveShadow />);
-        break;
-      case "spreading":
-        addTrunk(H * 0.45);
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.68} scale={[R, H * 0.3, R]} castShadow receiveShadow />);
-        break;
-      case "oval":
-        addTrunk(H * 0.3);
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.62} scale={[R, H * 0.4, R]} castShadow receiveShadow />);
-        break;
-      default:
-        addTrunk(H * 0.38);
-        parts.push(<mesh key="c" geometry={blob} material={canopy} position-y={H * 0.66} scale={[R, H * 0.34, R]} castShadow receiveShadow />);
-    }
-    if (shrubFlower) {
-      for (let i = 0; i < 9; i++) {
-        const a = i * 2.39996, d = Math.sqrt((i + 0.5) / 9) * R * 0.75;
-        parts.push(
-          <mesh key={`f${i}`} geometry={geo.flower()} material={shrubFlower} position={[Math.cos(a) * d, H * (0.75 + 0.2 * Math.cos(i)), Math.sin(a) * d]} scale={Math.max(0.06, R * 0.14)} />,
-        );
-      }
-    }
-  }
+  const age = t.plantedAge + years;
+  const { height, spread } = treeSize(sp, age, t.heightOverride, t.spreadOverride);
+  const key = `${sp.id}|${height.toFixed(2)}|${spread.toFixed(2)}|${Math.floor(age)}|${years < 3}|${month}|${t.v}`;
+  const geometry = plantGeometry(key, () => buildPlant({ sp, height, spread, age, sincePlanting: years, month, seed: t.v }));
   return (
-    <group position={[t.p[0], ground, t.p[1]]} rotation-y={rot} userData={{ entityId: t.id }}>
-      {parts}
+    <group position={[t.p[0], ground, t.p[1]]} rotation-y={t.v * Math.PI * 2} userData={{ entityId: t.id }}>
+      <mesh geometry={geometry} material={plantWoodMat} castShadow receiveShadow />
     </group>
   );
 });
@@ -652,6 +607,7 @@ const BedPlants = memo(function BedPlants({ beds, grid, years, month }: { beds: 
   const sets = useMemo(() => {
     const mk = (geometry: THREE.BufferGeometry): InstanceSet => ({ geometry, matrices: [], colors: [] });
     const blob = mk(geo.blobLow(0)), blob2 = mk(geo.blobLow(1)), tuft = mk(geo.tuft()), flowers = mk(geo.flower());
+    const spikes = mk(geo.spike()), rosettes = mk(geo.rosette());
     const q = new THREE.Quaternion();
     const up = new THREE.Vector3(0, 1, 0);
     for (const bed of beds) {
@@ -665,6 +621,7 @@ const BedPlants = memo(function BedPlants({ beds, grid, years, month }: { beds: 
         let h = size.height * (0.9 + pl.v * 0.2);
         q.setFromAxisAngle(up, pl.v * Math.PI * 2);
         const color = new THREE.Color(look.canopy);
+        if (look.hidden) continue;
         if (look.bare) {
           blob.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base + 0.03, pl.p[1]), q, new THREE.Vector3(r * 0.3, 0.05, r * 0.3)));
           blob.colors.push(new THREE.Color("#7a6650"));
@@ -673,17 +630,30 @@ const BedPlants = memo(function BedPlants({ beds, grid, years, month }: { beds: 
         if (sp.form === "grassy") {
           tuft.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base, pl.p[1]), q, new THREE.Vector3(r * 1.1, h, r * 1.1)));
           tuft.colors.push(color);
+        } else if (sp.form === "rosette") {
+          h = Math.max(0.08, h * 0.6);
+          rosettes.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base, pl.p[1]), q, new THREE.Vector3(r, h, r)));
+          rosettes.colors.push(color);
         } else {
           let sx = r, sy = h / 2;
           if (sp.form === "upright" || sp.form === "climber") sx = r * 0.75;
-          if (sp.form === "rosette") sy = Math.max(0.06, h * 0.32);
           if (sp.form === "carpet") sy = Math.max(0.05, h * 0.35);
           h = sy * 2;
           const target = pl.v > 0.5 ? blob : blob2;
           target.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base + sy * 0.92, pl.p[1]), q, new THREE.Vector3(sx, sy, sx)));
           target.colors.push(color);
         }
-        if (look.flower) {
+        if (look.flower && sp.form === "upright") {
+          // Upright plants flower in spikes above the leaves.
+          const n = Math.max(2, Math.min(7, Math.round(r * 12)));
+          const fc = new THREE.Color(look.flower);
+          const sl = Math.max(0.08, h * 0.45), sr = Math.max(0.015, Math.min(0.06, r * 0.12));
+          for (let i = 0; i < n; i++) {
+            const a = i * 2.39996 + pl.v * 6, d = Math.sqrt((i + 0.5) / n) * r * 0.5;
+            spikes.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0] + Math.cos(a) * d, base + h * 0.75, pl.p[1] + Math.sin(a) * d), q, new THREE.Vector3(sr, sl, sr)));
+            spikes.colors.push(fc);
+          }
+        } else if (look.flower) {
           const n = Math.max(3, Math.min(7, Math.round(r * 14)));
           const fc = new THREE.Color(look.flower);
           const fs = Math.max(0.025, Math.min(0.11, r * 0.2));
@@ -697,7 +667,7 @@ const BedPlants = memo(function BedPlants({ beds, grid, years, month }: { beds: 
         }
       }
     }
-    return { blob, blob2, tuft, flowers };
+    return { blob, blob2, tuft, flowers, spikes, rosettes };
   }, [beds, grid, years, month]);
   return (
     <group>
@@ -705,6 +675,8 @@ const BedPlants = memo(function BedPlants({ beds, grid, years, month }: { beds: 
       <Instances set={sets.blob2} />
       <Instances set={sets.tuft} />
       <Instances set={sets.flowers} castShadow={false} />
+      <Instances set={sets.spikes} castShadow={false} />
+      <Instances set={sets.rosettes} />
     </group>
   );
 });

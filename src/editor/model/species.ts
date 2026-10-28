@@ -184,6 +184,8 @@ export interface PlantSize {
   spread: number;
 }
 
+const PALMS = /^(Phoenix|Trachycarpus|Chamaerops|Washingtonia)\b/;
+
 export function treeSize(
   species: Species,
   age: number,
@@ -191,9 +193,12 @@ export function treeSize(
   spreadOverride?: number | null,
 ): PlantSize {
   const f = growthFraction(species, age);
+  // Young broadleaf trees are slim; the crown fills out as they mature.
+  const broadleaf = (species.category === "tree" || species.category === "fruit") && species.form !== "columnar" && !PALMS.test(species.latin);
+  const slim = broadleaf ? 0.55 + 0.45 * Math.min(1, Math.max(0, (f - 0.15) / 0.75)) : 1;
   return {
     height: (heightOverride ?? species.height) * f,
-    spread: (spreadOverride ?? species.spread) * f,
+    spread: (spreadOverride ?? species.spread) * f * slim,
   };
 }
 

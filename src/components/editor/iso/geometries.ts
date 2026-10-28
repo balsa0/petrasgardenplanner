@@ -71,6 +71,22 @@ export const geo = {
       return mergeGeometries(parts)!;
     }),
   flower: () => cached("flower", () => new THREE.IcosahedronGeometry(1, 0)),
+  /** Flower spike (lavender, salvia, foxglove): a slim cone, base at 0. */
+  spike: () => cached("spike", () => new THREE.ConeGeometry(1, 1, 5).translate(0, 0.5, 0)),
+  /** Leaf rosette (lettuce, cabbage, ferns): blades fanning out from the centre. */
+  rosette: () =>
+    cached("rosette", () => {
+      const parts: THREE.BufferGeometry[] = [];
+      for (let i = 0; i < 7; i++) {
+        const leaf = new THREE.IcosahedronGeometry(1, 0).scale(0.32, 0.12, 0.62); // already non-indexed
+        leaf.translate(0, 0, 0.5);
+        leaf.rotateX(-0.55 - (i % 2) * 0.25);
+        leaf.rotateY((i / 7) * Math.PI * 2);
+        parts.push(leaf);
+      }
+      parts.push(new THREE.IcosahedronGeometry(0.35, 0).scale(1, 0.9, 1).translate(0, 0.2, 0));
+      return mergeGeometries(parts)!;
+    }),
 };
 
 const materials = new Map<string, THREE.MeshLambertMaterial>();

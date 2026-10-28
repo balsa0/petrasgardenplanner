@@ -8,6 +8,7 @@ import { drawAnnotations, drawOverlays, font, type AnnotationHit, type Overlay, 
 import { contourSegments, getHeightGrid, type HeightGrid } from "../terrain/terrain";
 import type { DisplayOptions } from "../store/store";
 import { mix, seasonLook, shade } from "./colors";
+import { fruiting } from "../model/habit";
 import { canvasPaper } from "@/lib/scheme";
 
 export interface PlanCamera {
@@ -430,6 +431,18 @@ function drawTrees(ctx: Ctx, doc: GardenDoc, years: number, month: number, zoom:
       ctx.strokeStyle = shade(look.canopy, -0.4);
       ctx.lineWidth = 1.1 / zoom;
       ctx.stroke();
+      // Ripening and ripe fruit, a little larger than life so it reads.
+      const fruit = fruiting(sp, month, t.plantedAge + years);
+      if (fruit && fruit.onPlant > 0) {
+        ctx.fillStyle = fruit.color;
+        const n = Math.round((5 + r * 5) * Math.min(1.5, fruit.fruit.load) * fruit.onPlant);
+        for (let i = 0; i < n; i++) {
+          const a = i * 2.39996 + rot + 1.3, d = Math.sqrt((i + 0.5) / n) * r * 0.82;
+          ctx.beginPath();
+          ctx.arc(t.p[0] + Math.cos(a) * d, t.p[1] + Math.sin(a) * d, Math.max(Math.min(0.12, r * 0.07), 1.4 / zoom), 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
       if (look.flower && (sp.category === "shrub" || sp.category === "rose" || sp.category === "climber")) {
         ctx.fillStyle = look.flower;
         const n = Math.round(6 + r * 6);

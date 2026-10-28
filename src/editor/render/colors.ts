@@ -1,3 +1,4 @@
+import { habitOf, inMonths, leafing } from "../model/habit";
 import { foliageState, inBloom, type Species } from "../model/species";
 
 export function hexToRgb(hex: string): [number, number, number] {
@@ -26,13 +27,44 @@ export interface SeasonLook {
   flower: string | null;
   /** Deciduous plant without leaves. */
   bare: boolean;
+  /** Nothing above ground (dormant bulbs, annuals out of season). */
+  hidden?: boolean;
 }
 
 const BARE = "#8b7d6b";
+const STRAW = "#c9b384";
+
+const WOODY = new Set<Species["category"]>(["tree", "fruit", "conifer", "shrub", "rose", "climber"]);
+
+/** Average of several colours (autumn crowns seen from above). */
+function blend(colors: string[]): string {
+  const rgbs = colors.map(hexToRgb);
+  return rgbToHex([0, 1, 2].map((i) => rgbs.reduce((s, c) => s + c[i], 0) / rgbs.length) as [number, number, number]);
+}
 
 export function seasonLook(sp: Species, month: number): SeasonLook {
+  const bloomNow = inBloom(sp, month) ? sp.flower! : null;
+  if (WOODY.has(sp.category)) {
+    // Woody plants follow their habit: leaf-out, autumn colours, bare or dead-leaf winters.
+    const leaf = leafing(sp, month);
+    if (leaf.amount === 0) return { canopy: BARE, flower: bloomNow, bare: true };
+    const canopy = blend(leaf.colors);
+    if (bloomNow && habitOf(sp).blossomFirst && leaf.amount <= 0.55) return { canopy: mix(bloomNow, canopy, 0.2), flower: bloomNow, bare: false };
+    const blossomTree = bloomNow && (sp.category === "tree" || sp.category === "fruit");
+    return { canopy: blossomTree ? mix(canopy, bloomNow, 0.55) : canopy, flower: bloomNow, bare: false };
+  }
+  // Bulbs show from a month before flowering to a month after, then die back.
+  if (sp.category === "bulb" && sp.bloom && !inMonths(month, (sp.bloom[0] + 10) % 12 + 1, sp.bloom[1] % 12 + 1)) return { canopy: BARE, flower: null, bare: true, hidden: true };
+  // Annuals are planted a month or so before they flower and cleared after; without data, May to October.
+  if (sp.category === "annual" && !(sp.bloom ? inMonths(month, (sp.bloom[0] + 10) % 12 + 1, sp.bloom[1]) : inMonths(month, 5, 10))) {
+    return { canopy: BARE, flower: null, bare: true, hidden: true };
+  }
+  // Ornamental grasses stand as straw through winter until cut back in March.
+  if (sp.category === "grass" && sp.deciduous && inMonths(month, 11, 3)) {
+    return month === 3 ? { canopy: BARE, flower: null, bare: true } : { canopy: STRAW, flower: null, bare: false };
+  }
   const state = foliageState(sp, month);
-  const bloom = inBloom(sp, month) ? sp.flower! : null;
+  const bloom = bloomNow;
   if (state === "bare") return { canopy: BARE, flower: bloom, bare: true };
   if (state === "autumn") return { canopy: sp.autumn ?? mix(sp.foliage, "#c9a33a", 0.6), flower: null, bare: false };
   const blossomTree = bloom && (sp.category === "tree" || sp.category === "fruit");
