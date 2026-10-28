@@ -8,6 +8,7 @@ import { createSampleDoc } from "../model/sample";
 import { emptyTerrain } from "../terrain/terrain";
 import { getLocale, t } from "@/i18n";
 import { getEditor, useEditor, type DisplayOptions } from "./store";
+import { initVersions } from "./versions";
 
 const DOC_KEY = "gp:doc:v1";
 const UI_KEY = "gp:ui:v1";
@@ -83,6 +84,7 @@ export function initPersistence() {
     ed.loadDoc(createEmptyDoc(), { stage: "plot", fit: false });
     ed.setWelcome(true);
   }
+  void initVersions();
 
   let timer: ReturnType<typeof setTimeout> | null = null;
   useEditor.subscribe(

@@ -143,7 +143,7 @@ const messages = {
   "shell.welcome.title": "Plan your garden, one simple step at a time.",
   "shell.welcome.description": "No gardening knowledge needed. Outline your plot, then add paths, trees, beds and plants — and see it all in a friendly 3D model.",
   // {menuPath} is shell.welcome.replaceWarning.menuPath, shown in bold.
-  "shell.welcome.replaceWarning": "Starting over replaces the plan you have open. Use {menuPath} first if you want to keep a copy.",
+  "shell.welcome.replaceWarning": "Starting over replaces the plan you have open, with its variants and checkpoints. Use {menuPath} first if you want to keep a copy.",
   // Must match the main menu button (shell.topbar.menu.label) and its item (shell.topbar.menu.download).
   "shell.welcome.replaceWarning.menuPath": "Menu → Download plan",
   "shell.welcome.size.title": "I know my plot size",
@@ -283,7 +283,6 @@ const messages = {
   "shell.canvas.time.yearsFromNow": "{count, plural, one {# year from now} other {# years from now}}",
 
   // --- Keyboard toasts ---
-  "shell.keyboard.autosave": "Your garden is saved automatically in this browser.",
   "shell.keyboard.notesShown": "Notes shown",
   "shell.keyboard.notesHidden": "Notes hidden",
   "shell.keyboard.placeNamesShown": "Place names shown",
@@ -346,6 +345,42 @@ const messages = {
   "shell.hud.species": "{count, plural, one {kind of plant} other {kinds of plants}}",
   "shell.hud.playYear": "Play the year",
   "shell.hud.pauseYear": "Pause",
+
+  // ── Variants (separate lines of work on the same garden) and checkpoints (saved points to go back to) ──
+  "shell.versions.open": "Variants and checkpoints",
+  "shell.versions.variants": "Variants",
+  "shell.versions.variantsHelp": "Try different ideas for the same garden. Each variant keeps its own plan.",
+  "shell.versions.newVariant": "New variant",
+  "shell.versions.newVariantHelp": "Copies the plan you have open, so you can try something different.",
+  // Default name of a new variant; {letter} is A, B, C…
+  "shell.versions.defaultVariant": "Variant {letter}",
+  // Marks the variant that is open right now.
+  "shell.versions.current": "Open",
+  "shell.versions.switchedTo": "Switched to {name}",
+  "shell.versions.created": "{name} started",
+  "shell.versions.createdHelp": "It’s a copy of your plan. Change anything — the other variants stay as they are.",
+  "shell.versions.checkpoints": "Checkpoints in {variant}",
+  "shell.versions.save": "Save checkpoint",
+  "shell.versions.saved": "Checkpoint saved",
+  "shell.versions.unchanged": "Nothing has changed since the last checkpoint.",
+  // Default name of a checkpoint saved by hand; {n} counts them.
+  "shell.versions.defaultCheckpoint": "Checkpoint {n}",
+  // Badge on checkpoints the app saved by itself.
+  "shell.versions.auto": "Auto",
+  // Name of the checkpoint saved when a step is finished; {step} is the step's name.
+  "shell.versions.autoStep": "{step} done",
+  // Name of the checkpoint that keeps the current plan before going back to {name}.
+  "shell.versions.autoBeforeRestore": "Before going back to “{name}”",
+  "shell.versions.restore": "Go back to this",
+  "shell.versions.restored": "Back to “{name}”",
+  "shell.versions.restoredHelp": "Your plan from just before is saved as a checkpoint.",
+  "shell.versions.branch": "New variant from this",
+  "shell.versions.rename": "Rename",
+  "shell.versions.more": "More options",
+  "shell.versions.deleted": "Deleted “{name}”",
+  // {key} is the shortcut, shown as a key cap.
+  "shell.versions.empty": "No checkpoints yet. Press {key} to save one — finishing a step saves one for you too.",
+  "shell.versions.storageFull": "This browser has no room for more checkpoints. Delete a few old ones and try again.",
 };
 
 export default messages;

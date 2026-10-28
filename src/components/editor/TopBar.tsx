@@ -28,6 +28,7 @@ import { exportDoc, importDocFile, openSample } from "@/editor/store/persistence
 import { LOCALES, LOCALE_NAMES, isLocale, t } from "@/i18n";
 import { STAGE_ICONS } from "./meta";
 import { useCompletedSteps } from "./Hud";
+import { VersionsMenu } from "./VersionsMenu";
 import { ShortcutsDialog } from "./ShortcutsDialog";
 
 /** The six steps as a track: finished steps get a honey check, the line fills as you go. */
@@ -218,6 +219,8 @@ export function TopBar() {
           <div className="font-display hidden text-[14px] font-semibold whitespace-nowrap text-foreground/70 2xl:block">Garden Planner</div>
           <div className="hidden h-5 w-px bg-border 2xl:block" />
           <ProjectName />
+          <div className="h-5 w-px bg-border" />
+          <VersionsMenu />
         </div>
       </div>
 

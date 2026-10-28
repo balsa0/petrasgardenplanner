@@ -53,6 +53,7 @@ function Minimap() {
         years: s.time.years,
         month: s.time.month,
         overlays: [],
+        scaleBar: false,
       });
     };
     renderPlan();

@@ -116,6 +116,8 @@ interface EditorState {
   undo: () => void;
   redo: () => void;
   loadDoc: (doc: GardenDoc, opts?: { stage?: Stage; fit?: boolean }) => void;
+  /** Swaps in a whole document as one undoable change (restoring a checkpoint). */
+  replaceDoc: (doc: GardenDoc) => void;
 
   setStage: (s: Stage) => void;
   setView: (v: ViewMode) => void;
@@ -240,6 +242,11 @@ export const useEditor = create<EditorState>()(
       if (txBase || !future.length) return;
       const next = future[0];
       set({ doc: next, past: [...past, doc], future: future.slice(1), dirty: true, selection: pruneSelection(next, get().selection) });
+    },
+    replaceDoc: (doc) => {
+      const { doc: current, past, txBase } = get();
+      if (txBase) return;
+      set({ doc, past: [...past.slice(-HISTORY_LIMIT + 1), current], future: [], dirty: true, selection: [], hover: null, floating: null });
     },
     loadDoc: (doc, opts) => {
       const stage = opts?.stage ?? "plot";

@@ -16,6 +16,7 @@ import type { Entity, GardenDoc, Pt } from "@/editor/model/types";
 import { isArea } from "@/editor/model/types";
 import { pulseAt } from "@/editor/paint/fx";
 import { getEditor, useEditor } from "@/editor/store/store";
+import { saveCheckpoint } from "@/editor/store/versions";
 import { GardenSummary } from "./Inspector";
 import { TOOL_META } from "./meta";
 
@@ -305,6 +306,8 @@ export function ProgressWatcher() {
           for (const s of newSteps) {
             celebrated.add(`step:${s.id}`);
             stepToast(s);
+            // Like a game's autosave at a checkpoint.
+            void saveCheckpoint(t("shell.versions.autoStep", { step: s.title }), true).catch(() => {});
           }
         } else {
           for (const o of allObjectives(doc)) {

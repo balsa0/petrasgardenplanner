@@ -8,6 +8,7 @@ import { getTool } from "@/editor/tools/registry";
 import { keys } from "@/editor/viewport";
 import { t } from "@/i18n";
 import { TOOL_META } from "./meta";
+import { saveCheckpointNow } from "./VersionsMenu";
 
 function isTyping(target: EventTarget | null) {
   const el = target as HTMLElement | null;
@@ -86,7 +87,7 @@ export function useKeyboard() {
         else if (k === "y") s.redo();
         else if (k === "d") s.duplicateSelection();
         else if (k === "a") s.setSelection(s.doc.order.filter((id) => isEditableIn(s.stage, s.doc.entities[id].kind)));
-        else if (k === "s") toast.success(t("shell.keyboard.autosave"), { id: "autosave" });
+        else if (k === "s") void saveCheckpointNow();
         else return;
         e.preventDefault();
         return;

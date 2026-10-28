@@ -41,6 +41,8 @@ export interface PlanInput {
   years: number;
   month: number;
   overlays: Overlay[];
+  /** Small renders (thumbnails, minimap) leave out the scale bar. */
+  scaleBar?: boolean;
 }
 
 type Ctx = CanvasRenderingContext2D;
@@ -100,7 +102,7 @@ export function drawPlan(ctx: Ctx, input: PlanInput): AnnotationHit[] {
   if (input.stage === "terrain") drawHeightPoints(ctx, doc, proj, input.selection);
   const hits = drawAnnotations(ctx, doc, { names: input.display.names, labels: input.display.labels, notes: input.display.notes, selection: input.selection, hover: input.hover }, proj);
   drawOverlays(ctx, input.overlays, proj);
-  drawScaleBar(ctx, cam);
+  if (input.scaleBar !== false) drawScaleBar(ctx, cam);
   return hits;
 }
 

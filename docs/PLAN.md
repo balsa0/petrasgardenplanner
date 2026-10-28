@@ -112,6 +112,17 @@ Materials carry a `pbr` hint for the future photoreal renderer.
 * Default names the app creates (new garden, sample garden, new beds…) are created in the active
   language and then belong to the user's document.
 
+## 4d. Checkpoints and variants
+
+* A **variant** is a separate line of work on the same garden with its own document; the open
+  variant's document is the editor document (autosaved as before). A **checkpoint** is a stored
+  copy of a variant's document with a thumbnail. Names, dates and thumbnails form a small index.
+* Restoring swaps the document in as one undoable change after saving the current state as an
+  automatic checkpoint; automatic checkpoints (finished steps, before restores) are capped per
+  variant, named ones are kept until deleted, and unchanged plans aren't saved twice.
+* Storage is behind an async `VersionBackend` (localStorage today) so it can move to a database
+  without touching the UI.
+
 ## 5. Architecture
 
 ```

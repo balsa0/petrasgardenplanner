@@ -47,6 +47,21 @@ to the next step. Garden counters (plot, trees and shrubs, plants, kinds of plan
 change, placed things pulse, the selection card appears only while something is selected, and the
 clock can **play the year** month by month. Motion respects reduced-motion settings.
 
+## Checkpoints and variants
+
+Next to the garden name sits one chip with the open **variant** (A, B, C…) and a flag button.
+
+- **Save checkpoint** — the flag, or `Ctrl S`. Finishing a step saves one automatically. Each
+  checkpoint has a thumbnail; **Go back to this** restores it (undoable with `Ctrl Z`, and the plan
+  from just before is kept as a checkpoint too).
+- **New variant** copies the open plan (or any checkpoint) so you can try a different idea; click a
+  variant's card to switch. Each variant keeps its own plan and checkpoints. Rename or delete
+  (with undo) from the card's menu.
+
+For now everything is stored in the browser (`src/editor/store/versions.ts`, behind the async
+`VersionBackend` interface, ready to be swapped for a server or database). Starting a new garden,
+opening the example or a file starts a fresh set of variants.
+
 ## Languages
 
 English, Deutsch, Français, Magyar, Italiano, Español, Polski, Čeština — the OS / browser language is
