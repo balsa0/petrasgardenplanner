@@ -71,6 +71,12 @@ const messages = {
   "catalogue.photo.credit": "Photo: {author}, {license}",
   // Shown when the photo is of the species rather than this cultivar; {species} is a Latin name.
   "catalogue.photo.species": "shows {species}",
+  // Link from a plant's page to its Wikipedia article (in the app's language when there is one).
+  "catalogue.link.wikipedia": "Read more on Wikipedia",
+  // After the link when only the English article exists.
+  "catalogue.link.inEnglish": "in English",
+  // Fallback link when no Wikipedia article exists; keep the database's name and "Kew" as is.
+  "catalogue.link.powo": "Look it up in Plants of the World Online (Kew)",
   "catalogue.fact.styles": "Garden styles",
   "catalogue.fact.uses": "Good for",
   "catalogue.fact.notes": "Gardener’s note",

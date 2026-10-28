@@ -1,0 +1,7471 @@
+{
+ "pulsatilla-vulgaris": {
+  "en": "Pulsatilla vulgaris",
+  "de": "Gewöhnliche Kuhschelle",
+  "fr": "Anémone pulsatille",
+  "hu": "Nyugati kökörcsin",
+  "es": "Pulsatilla vulgaris",
+  "pl": "Sasanka zwyczajna",
+  "cs": "Koniklec německý"
+ },
+ "pulsatilla-grandis": {
+  "en": "Pulsatilla grandis",
+  "de": "Große Kuhschelle",
+  "hu": "Leánykökörcsin",
+  "cs": "Koniklec velkokvětý"
+ },
+ "pulsatilla-pratensis-subsp-nigricans": {
+  "en": "Pulsatilla pratensis",
+  "de": "Wiesen-Kuhschelle",
+  "fr": "Pulsatilla pratensis",
+  "hu": "Mezei kökörcsin",
+  "es": "Pulsatilla pratensis",
+  "pl": "Sasanka łąkowa",
+  "cs": "Koniklec luční"
+ },
+ "adonis-vernalis": {
+  "en": "Adonis vernalis",
+  "de": "Frühlings-Adonisröschen",
+  "fr": "Adonis de printemps",
+  "hu": "Tavaszi hérics",
+  "it": "Adonis vernalis",
+  "es": "Adonis vernalis",
+  "pl": "Miłek wiosenny",
+  "cs": "Hlaváček jarní"
+ },
+ "iris-pumila": {
+  "en": "Iris pumila",
+  "de": "Zwerg-Schwertlilie",
+  "fr": "Iris pumila",
+  "hu": "Apró nőszirom",
+  "es": "Iris pumila",
+  "pl": "Kosaciec niski",
+  "cs": "Kosatec nízký"
+ },
+ "iris-variegata": {
+  "en": "Iris variegata",
+  "de": "Bunte Schwertlilie",
+  "hu": "Tarka nőszirom",
+  "es": "Iris variegata",
+  "cs": "Kosatec různobarvý"
+ },
+ "stipa-pennata": {
+  "en": "Stipa pennata",
+  "de": "Echtes Federgras",
+  "fr": "Stipa pennata",
+  "hu": "Pusztai árvalányhaj",
+  "it": "Stipa pennata",
+  "es": "Stipa pennata",
+  "pl": "Ostnica Jana",
+  "cs": "Kavyl Ivanův"
+ },
+ "stipa-capillata": {
+  "en": "Stipa capillata",
+  "de": "Haar-Pfriemengras",
+  "hu": "Kunkorgó árvalányhaj",
+  "it": "Stipa capillata",
+  "es": "Stipa capillata",
+  "pl": "Ostnica włosowata",
+  "cs": "Kavyl vláskovitý"
+ },
+ "festuca-valesiaca": {
+  "en": "Festuca valesiaca",
+  "fr": "Festuca valesiaca",
+  "it": "Festuca valesiaca",
+  "pl": "Kostrzewa walezyjska",
+  "cs": "Kostřava walliská"
+ },
+ "linum-flavum": {
+  "en": "Linum flavum",
+  "de": "Gelber Lein",
+  "fr": "Lin jaune",
+  "hu": "Sárga len",
+  "es": "Linum flavum",
+  "pl": "Len złocisty",
+  "cs": "Len žlutý"
+ },
+ "linum-austriacum": {
+  "en": "Linum austriacum",
+  "de": "Österreichischer Lein",
+  "fr": "Lin d'Autriche",
+  "pl": "Len austriacki"
+ },
+ "aster-amellus": {
+  "en": "Aster amellus",
+  "de": "Berg-Aster",
+  "fr": "Aster amellus",
+  "hu": "Csillagőszirózsa",
+  "it": "Aster amellus",
+  "es": "Aster amellus",
+  "pl": "Aster gawędka",
+  "cs": "Hvězdnice chlumní"
+ },
+ "galatella-linosyris": {
+  "en": "Galatella linosyris",
+  "de": "Gold-Aster",
+  "fr": "Galatella linosyris",
+  "pl": "Ożota zwyczajna",
+  "cs": "Hvězdnice zlatovlásek"
+ },
+ "dictamnus-albus": {
+  "en": "Dictamnus albus",
+  "de": "Diptam",
+  "fr": "Fraxinelle",
+  "hu": "Nagyezerjófű",
+  "it": "Dictamnus albus",
+  "es": "Dictamnus albus",
+  "pl": "Dyptam jesionolistny",
+  "cs": "Třemdava bílá"
+ },
+ "salvia-pratensis": {
+  "en": "Salvia pratensis",
+  "de": "Wiesensalbei",
+  "fr": "Salvia pratensis",
+  "hu": "Mezei zsálya",
+  "it": "Salvia pratensis",
+  "es": "Salvia pratensis",
+  "pl": "Szałwia łąkowa",
+  "cs": "Šalvěj luční"
+ },
+ "salvia-nemorosa-wild": {
+  "en": "Salvia nemorosa",
+  "de": "Hain-Salbei",
+  "fr": "Salvia nemorosa",
+  "it": "Salvia nemorosa",
+  "es": "Salvia nemorosa",
+  "pl": "Szałwia omszona",
+  "cs": "Šalvěj hajní"
+ },
+ "salvia-verticillata": {
+  "en": "Salvia verticillata",
+  "de": "Quirlblütiger Salbei",
+  "fr": "Salvia verticillata",
+  "it": "Salvia verticillata",
+  "es": "Salvia verticillata",
+  "pl": "Szałwia okręgowa",
+  "cs": "Šalvěj přeslenitá"
+ },
+ "dianthus-carthusianorum": {
+  "en": "Dianthus carthusianorum",
+  "de": "Kartäusernelke",
+  "fr": "Œillet des Chartreux",
+  "hu": "Barátszegfű",
+  "it": "Dianthus carthusianorum",
+  "es": "Dianthus carthusianorum",
+  "pl": "Goździk kartuzek",
+  "cs": "Hvozdík kartouzek"
+ },
+ "dianthus-plumarius": {
+  "en": "Dianthus plumarius",
+  "de": "Feder-Nelke",
+  "fr": "Œillet mignardise",
+  "hu": "Tollas szegfű",
+  "es": "Dianthus plumarius",
+  "pl": "Goździk postrzępiony"
+ },
+ "anthericum-ramosum": {
+  "en": "Anthericum ramosum",
+  "de": "Rispige Graslilie",
+  "fr": "Anthericum ramosum",
+  "hu": "Ágas homokliliom",
+  "pl": "Pajęcznica gałęzista",
+  "cs": "Bělozářka větevnatá"
+ },
+ "allium-flavum": {
+  "en": "Allium flavum",
+  "de": "Gelber Lauch",
+  "fr": "Ail jaune",
+  "hu": "Sárga hagyma",
+  "es": "Allium flavum",
+  "pl": "Allium flavum",
+  "cs": "Česnek žlutý"
+ },
+ "allium-lusitanicum": {
+  "en": "Allium lusitanicum",
+  "de": "Berg-Lauch",
+  "fr": "Allium lusitanicum",
+  "it": "Allium lusitanicum",
+  "es": "Allium lusitanicum",
+  "pl": "Allium lusitanicum"
+ },
+ "euphorbia-epithymoides": {
+  "en": "Euphorbia epithymoides",
+  "de": "Vielfarbige Wolfsmilch",
+  "fr": "Euphorbia epithymoides",
+  "hu": "Színeváltó kutyatej",
+  "pl": "Wilczomlecz pstry",
+  "cs": "Pryšec mnohobarvý"
+ },
+ "thymus-pannonicus": {
+  "en": "Thymus pannonicus",
+  "cs": "Mateřídouška panonská"
+ },
+ "scabiosa-ochroleuca": {
+  "en": "Scabiosa ochroleuca",
+  "de": "Gelbe Skabiose",
+  "fr": "Scabiosa ochroleuca",
+  "hu": "Vajszínű ördögszem",
+  "pl": "Driakiew żółta",
+  "cs": "Hlaváč žlutavý"
+ },
+ "centaurea-scabiosa": {
+  "en": "Centaurea scabiosa",
+  "de": "Skabiosen-Flockenblume",
+  "fr": "Centaurée scabieuse",
+  "it": "Centaurea scabiosa",
+  "es": "Centaurea scabiosa",
+  "pl": "Chaber driakiewnik",
+  "cs": "Chrpa čekánek"
+ },
+ "globularia-cordifolia": {
+  "en": "Globularia cordifolia",
+  "de": "Herzblättrige Kugelblume",
+  "fr": "Globulaire à feuilles en cœur"
+ },
+ "helianthemum-nummularium": {
+  "en": "Helianthemum nummularium",
+  "de": "Gelbes Sonnenröschen",
+  "fr": "Helianthemum nummularium",
+  "it": "Helianthemum nummularium",
+  "es": "Helianthemum nummularium",
+  "pl": "Posłonek rozesłany",
+  "cs": "Devaterník velkokvětý"
+ },
+ "anthyllis-vulneraria": {
+  "en": "Anthyllis vulneraria",
+  "de": "Echter Wundklee",
+  "fr": "Anthyllide vulnéraire",
+  "hu": "Nyúlszapuka",
+  "it": "Anthyllis vulneraria",
+  "es": "Anthyllis vulneraria",
+  "pl": "Przelot pospolity",
+  "cs": "Úročník bolhoj"
+ },
+ "jovibarba-globifera": {
+  "en": "Jovibarba globifera",
+  "de": "Sempervivum globiferum",
+  "hu": "Gömbös kövirózsa",
+  "pl": "Rojownik pospolity",
+  "cs": "Netřeskovec výběžkatý"
+ },
+ "sedum-acre": {
+  "en": "Sedum acre",
+  "de": "Scharfer Mauerpfeffer",
+  "fr": "Orpin âcre",
+  "hu": "Borsos varjúháj",
+  "it": "Sedum acre",
+  "es": "Sedum acre",
+  "pl": "Rozchodnik ostry",
+  "cs": "Rozchodník ostrý"
+ },
+ "phlomis-tuberosa": {
+  "en": "Phlomoides tuberosa",
+  "de": "Knollen-Brandkraut",
+  "fr": "Phlomis tuberosa",
+  "hu": "Gumós macskahere",
+  "cs": "Sápa hlíznatá"
+ },
+ "nepeta-nuda": {
+  "en": "Nepeta nuda",
+  "de": "Kahle Katzenminze",
+  "fr": "Nepeta nuda",
+  "it": "Nepeta nuda",
+  "cs": "Šanta lesostepní"
+ },
+ "prunella-grandiflora": {
+  "en": "Prunella grandiflora",
+  "de": "Großblütige Braunelle",
+  "fr": "Brunelle à grandes fleurs",
+  "hu": "Nagyvirágú gyíkfű",
+  "it": "Prunella grandiflora",
+  "es": "Prunella grandiflora",
+  "pl": "Głowienka wielkokwiatowa",
+  "cs": "Černohlávek velkokvětý"
+ },
+ "leucanthemum-vulgare": {
+  "en": "Leucanthemum vulgare",
+  "de": "Magerwiesen-Margerite",
+  "fr": "Marguerite commune",
+  "hu": "Réti margitvirág",
+  "it": "Leucanthemum vulgare",
+  "es": "Leucanthemum vulgare",
+  "pl": "Jastrun właściwy",
+  "cs": "Kopretina bílá"
+ },
+ "knautia-arvensis": {
+  "en": "Knautia arvensis",
+  "de": "Acker-Witwenblume",
+  "fr": "Knautie des champs",
+  "hu": "Mezei varfű",
+  "it": "Knautia arvensis",
+  "es": "Knautia arvensis",
+  "pl": "Świerzbnica polna",
+  "cs": "Chrastavec rolní"
+ },
+ "centaurea-jacea": {
+  "en": "Centaurea jacea",
+  "de": "Wiesen-Flockenblume",
+  "fr": "Centaurée jacée",
+  "hu": "Réti imola",
+  "it": "Centaurea jacea",
+  "es": "Centaurea jacea",
+  "pl": "Chaber łąkowy",
+  "cs": "Chrpa luční"
+ },
+ "campanula-rotundifolia": {
+  "en": "Campanula rotundifolia",
+  "de": "Rundblättrige Glockenblume",
+  "fr": "Campanule à feuilles rondes",
+  "hu": "Kereklevelű harangvirág",
+  "it": "Campanula rotundifolia",
+  "es": "Campanula rotundifolia",
+  "pl": "Dzwonek okrągłolistny",
+  "cs": "Zvonek okrouhlolistý"
+ },
+ "galium-verum": {
+  "en": "Galium verum",
+  "de": "Echtes Labkraut",
+  "fr": "Caille-lait jaune",
+  "hu": "Tejoltó galaj",
+  "it": "Galium verum",
+  "es": "Galium verum",
+  "pl": "Przytulia właściwa",
+  "cs": "Svízel syřišťový"
+ },
+ "lotus-corniculatus": {
+  "en": "Lotus corniculatus",
+  "de": "Gewöhnlicher Hornklee",
+  "fr": "Lotier corniculé",
+  "hu": "Szarvaskerep",
+  "it": "Lotus corniculatus",
+  "es": "Lotus corniculatus",
+  "pl": "Komonica zwyczajna",
+  "cs": "Štírovník růžkatý"
+ },
+ "daucus-carota-subsp-carota": {
+  "en": "Daucus carota",
+  "de": "Möhre (Pflanzenart)",
+  "fr": "Daucus carota",
+  "hu": "Vadmurok",
+  "it": "Daucus carota",
+  "es": "Daucus carota",
+  "pl": "Marchew zwyczajna",
+  "cs": "Mrkev obecná"
+ },
+ "silene-flos-cuculi": {
+  "en": "Silene flos-cuculi",
+  "de": "Kuckucks-Lichtnelke",
+  "fr": "Lychnis fleur de coucou",
+  "hu": "Réti kakukkszegfű",
+  "it": "Silene flos-cuculi",
+  "es": "Lychnis flos-cuculi",
+  "pl": "Firletka poszarpana",
+  "cs": "Kohoutek luční"
+ },
+ "primula-veris": {
+  "en": "Primula veris",
+  "de": "Echte Schlüsselblume",
+  "fr": "Primevère officinale",
+  "hu": "Tavaszi kankalin",
+  "it": "Primula veris",
+  "es": "Primula veris",
+  "pl": "Pierwiosnek lekarski",
+  "cs": "Prvosenka jarní"
+ },
+ "silene-dioica": {
+  "en": "Silene dioica",
+  "de": "Rote Lichtnelke",
+  "fr": "Compagnon rouge",
+  "hu": "Piros mécsvirág",
+  "it": "Silene dioica",
+  "es": "Silene dioica",
+  "pl": "Lepnica czerwona"
+ },
+ "betonica-officinalis": {
+  "en": "Betonica officinalis",
+  "de": "Echte Betonie",
+  "fr": "Épiaire officinale",
+  "hu": "Orvosi tisztesfű",
+  "it": "Betonica officinalis",
+  "es": "Betonica officinalis",
+  "pl": "Bukwica zwyczajna",
+  "cs": "Bukvice lékařská"
+ },
+ "geum-rivale": {
+  "en": "Geum rivale",
+  "de": "Bach-Nelkenwurz",
+  "fr": "Benoîte des ruisseaux",
+  "hu": "Bókoló gyömbérgyökér",
+  "es": "Geum rivale",
+  "pl": "Kuklik zwisły",
+  "cs": "Kuklík potoční"
+ },
+ "sanguisorba-officinalis": {
+  "en": "Sanguisorba officinalis",
+  "de": "Großer Wiesenknopf",
+  "fr": "Sanguisorba officinalis",
+  "hu": "Őszi vérfű",
+  "es": "Sanguisorba officinalis",
+  "pl": "Krwiściąg lekarski",
+  "cs": "Krvavec toten"
+ },
+ "briza-media": {
+  "en": "Briza media",
+  "de": "Mittleres Zittergras",
+  "fr": "Briza media",
+  "es": "Briza media",
+  "pl": "Drżączka średnia",
+  "cs": "Třeslice prostřední"
+ },
+ "verbascum-thapsus": {
+  "en": "Verbascum thapsus",
+  "de": "Kleinblütige Königskerze",
+  "fr": "Molène thapsus",
+  "hu": "Molyhos ökörfarkkóró",
+  "it": "Verbascum thapsus",
+  "es": "Verbascum thapsus",
+  "pl": "Dziewanna drobnokwiatowa",
+  "cs": "Divizna malokvětá"
+ },
+ "verbascum-phoeniceum": {
+  "en": "Verbascum phoeniceum",
+  "de": "Violette Königskerze",
+  "fr": "Molène de Phénicie",
+  "hu": "Lila ökörfarkkóró",
+  "it": "Verbascum phoeniceum",
+  "es": "Verbascum phoeniceum",
+  "pl": "Dziewanna fioletowa",
+  "cs": "Divizna brunátná"
+ },
+ "verbascum-chaixii": {
+  "en": "Verbascum chaixii",
+  "fr": "Molène de Chaix",
+  "es": "Verbascum chaixii"
+ },
+ "echium-vulgare": {
+  "en": "Echium vulgare",
+  "de": "Gewöhnlicher Natternkopf",
+  "fr": "Vipérine commune",
+  "hu": "Terjőke kígyószisz",
+  "it": "Echium vulgare",
+  "es": "Echium vulgare",
+  "pl": "Żmijowiec zwyczajny",
+  "cs": "Hadinec obecný"
+ },
+ "malva-moschata": {
+  "en": "Malva moschata",
+  "de": "Moschus-Malve",
+  "fr": "Malva moschata",
+  "hu": "Pézsmamályva",
+  "it": "Malva moschata",
+  "es": "Malva moschata",
+  "pl": "Ślaz piżmowy"
+ },
+ "achillea-millefolium": {
+  "en": "Achillea millefolium",
+  "de": "Gemeine Schafgarbe",
+  "fr": "Achillée millefeuille",
+  "hu": "Közönséges cickafark",
+  "it": "Achillea millefolium",
+  "es": "Achillea millefolium",
+  "pl": "Krwawnik pospolity",
+  "cs": "Řebříček obecný"
+ },
+ "succisa-pratensis": {
+  "en": "Succisa pratensis",
+  "de": "Gewöhnlicher Teufelsabbiss",
+  "fr": "Succisa pratensis",
+  "hu": "Réti ördögharaptafű",
+  "it": "Succisa pratensis",
+  "es": "Succisa pratensis",
+  "pl": "Czarcikęs łąkowy",
+  "cs": "Čertkus luční"
+ },
+ "arnica-montana": {
+  "en": "Arnica montana",
+  "de": "Arnika",
+  "fr": "Arnica des montagnes",
+  "hu": "Hegyi árnika",
+  "it": "Arnica montana",
+  "es": "Arnica montana",
+  "pl": "Arnika górska",
+  "cs": "Prha arnika"
+ },
+ "anemone-nemorosa": {
+  "en": "Anemonoides nemorosa",
+  "it": "Anemonoides nemorosa"
+ },
+ "anemone-ranunculoides": {
+  "en": "Anemonoides ranunculoides",
+  "de": "Gelbes Windröschen",
+  "fr": "Anémone fausse-renoncule",
+  "hu": "Bogláros szellőrózsa",
+  "it": "Anemonoides ranunculoides",
+  "es": "Anemone ranunculoides",
+  "pl": "Zawilec żółty",
+  "cs": "Sasanka pryskyřníkovitá"
+ },
+ "hepatica-nobilis": {
+  "en": "Anemone hepatica",
+  "de": "Leberblümchen",
+  "fr": "Hepatica nobilis",
+  "hu": "Nemes májvirág",
+  "it": "Hepatica nobilis",
+  "es": "Hepatica nobilis",
+  "pl": "Przylaszczka pospolita",
+  "cs": "Jaterník podléška"
+ },
+ "pulmonaria-officinalis": {
+  "en": "Pulmonaria officinalis",
+  "de": "Geflecktes Lungenkraut",
+  "fr": "Pulmonaire officinale",
+  "hu": "Orvosi tüdőfű",
+  "it": "Pulmonaria officinalis",
+  "es": "Pulmonaria officinalis",
+  "pl": "Miodunka plamista",
+  "cs": "Plicník lékařský"
+ },
+ "asarum-europaeum": {
+  "en": "Asarum europaeum",
+  "de": "Gewöhnliche Haselwurz",
+  "fr": "Asaret d'Europe",
+  "hu": "Kereklevelű kapotnyak",
+  "it": "Asarum europaeum",
+  "es": "Asarum europaeum",
+  "pl": "Kopytnik pospolity",
+  "cs": "Kopytník evropský"
+ },
+ "galium-odoratum": {
+  "en": "Galium odoratum",
+  "de": "Waldmeister",
+  "fr": "Galium odoratum",
+  "hu": "Szagos müge",
+  "it": "Galium odoratum",
+  "es": "Galium odoratum",
+  "pl": "Przytulia wonna",
+  "cs": "Svízel vonný"
+ },
+ "lathyrus-vernus": {
+  "en": "Lathyrus vernus",
+  "de": "Frühlings-Platterbse",
+  "fr": "Gesse printanière",
+  "hu": "Tavaszi lednek",
+  "it": "Lathyrus vernus",
+  "pl": "Groszek wiosenny",
+  "cs": "Hrachor jarní"
+ },
+ "corydalis-cava": {
+  "en": "Corydalis cava",
+  "de": "Hohler Lerchensporn",
+  "fr": "Corydale creuse",
+  "hu": "Odvas keltike",
+  "it": "Corydalis cava",
+  "es": "Corydalis cava",
+  "pl": "Kokorycz pusta",
+  "cs": "Dymnivka dutá"
+ },
+ "primula-elatior": {
+  "en": "Primula elatior",
+  "de": "Hohe Schlüsselblume",
+  "fr": "Primula elatior",
+  "hu": "Sudár kankalin",
+  "it": "Primula elatior",
+  "es": "Primula elatior",
+  "pl": "Pierwiosnek wyniosły",
+  "cs": "Prvosenka vyšší"
+ },
+ "helleborus-foetidus": {
+  "en": "Helleborus foetidus",
+  "de": "Stinkende Nieswurz",
+  "fr": "Hellébore fétide",
+  "it": "Helleborus foetidus",
+  "es": "Helleborus foetidus",
+  "pl": "Ciemiernik cuchnący",
+  "cs": "Čemeřice smrdutá"
+ },
+ "cyclamen-purpurascens": {
+  "en": "Cyclamen purpurascens",
+  "de": "Europäisches Alpenveilchen",
+  "fr": "Cyclamen purpurascens",
+  "hu": "Erdei ciklámen",
+  "it": "Cyclamen purpurascens",
+  "es": "Cyclamen purpurascens",
+  "pl": "Cyklamen purpurowy",
+  "cs": "Brambořík nachový"
+ },
+ "leucojum-vernum": {
+  "en": "Leucojum vernum",
+  "de": "Frühlingsknotenblume",
+  "fr": "Nivéole de printemps",
+  "hu": "Tavaszi tőzike",
+  "it": "Leucojum vernum",
+  "es": "Leucojum vernum",
+  "pl": "Śnieżyca wiosenna",
+  "cs": "Bledule jarní"
+ },
+ "scilla-bifolia": {
+  "en": "Scilla bifolia",
+  "de": "Zweiblättriger Blaustern",
+  "fr": "Scille à deux feuilles",
+  "it": "Scilla bifolia",
+  "es": "Scilla bifolia",
+  "pl": "Cebulica dwulistna",
+  "cs": "Ladoňka dvoulistá"
+ },
+ "erythronium-dens-canis": {
+  "en": "Erythronium dens-canis",
+  "de": "Hunds-Zahnlilie",
+  "fr": "Dent de chien",
+  "hu": "Kakasmandikó",
+  "it": "Erythronium dens-canis",
+  "es": "Erythronium dens-canis",
+  "pl": "Psiząb liliowy",
+  "cs": "Kandík psí zub"
+ },
+ "allium-ursinum": {
+  "en": "Allium ursinum",
+  "de": "Bärlauch",
+  "fr": "Allium ursinum",
+  "hu": "Medvehagyma",
+  "it": "Allium ursinum",
+  "es": "Allium ursinum",
+  "pl": "Czosnek niedźwiedzi",
+  "cs": "Česnek medvědí"
+ },
+ "aruncus-dioicus": {
+  "en": "Aruncus dioicus",
+  "de": "Wald-Geißbart",
+  "fr": "Aruncus dioicus",
+  "hu": "Erdei tündérfürt",
+  "it": "Aruncus dioicus",
+  "pl": "Parzydło leśne",
+  "cs": "Udatna dvoudomá"
+ },
+ "lunaria-rediviva": {
+  "en": "Lunaria rediviva",
+  "de": "Ausdauerndes Silberblatt",
+  "fr": "Lunaria rediviva",
+  "hu": "Erdei holdviola",
+  "it": "Lunaria rediviva",
+  "es": "Lunaria rediviva",
+  "pl": "Miesiącznica trwała",
+  "cs": "Měsíčnice vytrvalá"
+ },
+ "digitalis-grandiflora": {
+  "en": "Digitalis grandiflora",
+  "de": "Großblütiger Fingerhut",
+  "fr": "Digitale à grandes fleurs",
+  "hu": "Sárga gyűszűvirág",
+  "it": "Digitalis grandiflora",
+  "es": "Digitalis grandiflora",
+  "pl": "Naparstnica zwyczajna",
+  "cs": "Náprstník velkokvětý"
+ },
+ "digitalis-lutea": {
+  "en": "Digitalis lutea",
+  "de": "Gelber Fingerhut",
+  "fr": "Digitalis lutea",
+  "it": "Digitalis lutea",
+  "es": "Digitalis lutea",
+  "pl": "Naparstnica żółta",
+  "cs": "Náprstník žlutý"
+ },
+ "polygonatum-multiflorum": {
+  "en": "Polygonatum multiflorum",
+  "de": "Vielblütige Weißwurz",
+  "fr": "Sceau-de-Salomon multiflore",
+  "hu": "Fürtös salamonpecsét",
+  "es": "Polygonatum multiflorum",
+  "pl": "Kokoryczka wielokwiatowa",
+  "cs": "Kokořík mnohokvětý"
+ },
+ "carex-sylvatica": {
+  "en": "Carex sylvatica",
+  "de": "Wald-Segge",
+  "fr": "Laîche des bois",
+  "es": "Carex sylvatica",
+  "pl": "Turzyca leśna",
+  "cs": "Ostřice lesní"
+ },
+ "carex-pendula": {
+  "en": "Carex pendula",
+  "de": "Hänge-Segge",
+  "fr": "Laîche à épis pendants",
+  "es": "Carex pendula",
+  "pl": "Turzyca zwisła",
+  "cs": "Ostřice převislá"
+ },
+ "luzula-sylvatica": {
+  "en": "Luzula sylvatica",
+  "de": "Wald-Hainsimse",
+  "fr": "Luzula sylvatica",
+  "pl": "Kosmatka olbrzymia",
+  "cs": "Bika lesní"
+ },
+ "dryopteris-carthusiana": {
+  "en": "Dryopteris carthusiana",
+  "de": "Gewöhnlicher Dornfarn",
+  "fr": "Dryopteris carthusiana",
+  "hu": "Szálkás pajzsika",
+  "it": "Dryopteris carthusiana",
+  "es": "Dryopteris carthusiana",
+  "pl": "Nerecznica krótkoostna",
+  "cs": "Kapraď osténkatá"
+ },
+ "blechnum-spicant": {
+  "en": "Struthiopteris spicant",
+  "de": "Rippenfarn",
+  "fr": "Struthiopteris spicant",
+  "hu": "Erdei bordapáfrány",
+  "it": "Blechnum spicant",
+  "es": "Blechnum spicant",
+  "pl": "Podrzeń żebrowiec",
+  "cs": "Žebrovice různolistá"
+ },
+ "caltha-palustris": {
+  "en": "Caltha palustris",
+  "de": "Sumpfdotterblume",
+  "fr": "Populage des marais",
+  "hu": "Mocsári gólyahír",
+  "it": "Caltha palustris",
+  "es": "Caltha palustris",
+  "pl": "Knieć błotna",
+  "cs": "Blatouch bahenní"
+ },
+ "iris-pseudacorus": {
+  "en": "Iris pseudacorus",
+  "de": "Sumpf-Schwertlilie",
+  "fr": "Iris pseudacorus",
+  "hu": "Sárga nőszirom",
+  "it": "Iris pseudacorus",
+  "es": "Iris pseudacorus",
+  "pl": "Kosaciec żółty",
+  "cs": "Kosatec žlutý"
+ },
+ "lythrum-salicaria": {
+  "en": "Lythrum salicaria",
+  "de": "Gewöhnlicher Blutweiderich",
+  "fr": "Salicaire commune",
+  "hu": "Réti füzény",
+  "it": "Lythrum salicaria",
+  "es": "Lythrum salicaria",
+  "pl": "Krwawnica pospolita",
+  "cs": "Kyprej vrbice"
+ },
+ "filipendula-ulmaria": {
+  "en": "Filipendula ulmaria",
+  "de": "Echtes Mädesüß",
+  "fr": "Filipendula ulmaria",
+  "hu": "Réti legyezőfű",
+  "it": "Olmaria",
+  "es": "Filipendula ulmaria",
+  "pl": "Wiązówka błotna",
+  "cs": "Tužebník jilmový"
+ },
+ "eupatorium-cannabinum": {
+  "en": "Eupatorium cannabinum",
+  "de": "Gewöhnlicher Wasserdost",
+  "fr": "Eupatoire à feuilles de chanvre",
+  "hu": "Sédkender",
+  "it": "Eupatorium cannabinum",
+  "es": "Eupatorium cannabinum",
+  "pl": "Sadziec konopiasty",
+  "cs": "Sadec konopáč"
+ },
+ "mentha-aquatica": {
+  "en": "Mentha aquatica",
+  "de": "Wasserminze",
+  "fr": "Menthe aquatique",
+  "hu": "Vízi menta",
+  "it": "Mentha aquatica",
+  "es": "Mentha aquatica",
+  "pl": "Mięta nadwodna",
+  "cs": "Máta vodní"
+ },
+ "butomus-umbellatus": {
+  "en": "Butomus umbellatus",
+  "de": "Schwanenblume",
+  "fr": "Butomus umbellatus",
+  "hu": "Virágkákafélék",
+  "it": "Butomus umbellatus",
+  "pl": "Łączeń baldaszkowy",
+  "cs": "Šmel okoličnatý"
+ },
+ "sagittaria-sagittifolia": {
+  "en": "Sagittaria sagittifolia",
+  "de": "Gewöhnliches Pfeilkraut",
+  "fr": "Sagittaire à feuilles en flèche",
+  "hu": "Nyílfű",
+  "it": "Sagittaria sagittifolia",
+  "es": "Sagittaria sagittifolia",
+  "pl": "Strzałka wodna",
+  "cs": "Šípatka střelolistá"
+ },
+ "typha-minima": {
+  "en": "Typha minima",
+  "de": "Zwerg-Rohrkolben",
+  "fr": "Typha minima",
+  "pl": "Pałka drobna",
+  "cs": "Orobinec nejmenší"
+ },
+ "typha-latifolia": {
+  "en": "Typha latifolia",
+  "de": "Breitblättriger Rohrkolben",
+  "fr": "Typha latifolia",
+  "hu": "Széleslevelű gyékény",
+  "it": "Typha latifolia",
+  "es": "Typha latifolia",
+  "pl": "Pałka szerokolistna",
+  "cs": "Orobinec širokolistý"
+ },
+ "nymphaea-alba": {
+  "en": "Nymphaea alba",
+  "de": "Weiße Seerose",
+  "fr": "Nénuphar blanc",
+  "hu": "Fehér tündérrózsa",
+  "it": "Nymphaea alba",
+  "es": "Nymphaea alba",
+  "pl": "Grzybienie białe",
+  "cs": "Leknín bílý"
+ },
+ "nuphar-lutea": {
+  "en": "Nuphar lutea",
+  "de": "Gelbe Teichrose",
+  "fr": "Nuphar lutea",
+  "hu": "Sárga vízitök",
+  "it": "Nuphar lutea",
+  "es": "Nuphar lutea",
+  "pl": "Grążel żółty",
+  "cs": "Stulík žlutý"
+ },
+ "menyanthes-trifoliata": {
+  "en": "Menyanthes",
+  "de": "Fieberklee",
+  "fr": "Trèfle d'eau",
+  "hu": "Vidrafű",
+  "it": "Menyanthes trifoliata",
+  "es": "Menyanthes trifoliata",
+  "pl": "Bobrek trójlistkowy",
+  "cs": "Vachta trojlistá"
+ },
+ "hottonia-palustris": {
+  "en": "Hottonia palustris",
+  "de": "Wasserfeder",
+  "fr": "Hottonia palustris",
+  "hu": "Békaliliom",
+  "it": "Hottonia palustris",
+  "es": "Hottonia palustris",
+  "pl": "Okrężnica bagienna",
+  "cs": "Žebratka bahenní"
+ },
+ "myosotis-scorpioides": {
+  "en": "Myosotis scorpioides",
+  "de": "Sumpf-Vergissmeinnicht",
+  "fr": "Myosotis scorpioides",
+  "es": "Myosotis scorpioides",
+  "pl": "Niezapominajka błotna",
+  "cs": "Pomněnka bahenní"
+ },
+ "valeriana-officinalis": {
+  "en": "Valerian (herb)",
+  "de": "Echter Baldrian",
+  "fr": "Valériane officinale",
+  "hu": "Orvosi macskagyökér",
+  "it": "Valeriana officinalis",
+  "es": "Valeriana officinalis",
+  "pl": "Kozłek lekarski",
+  "cs": "Kozlík lékařský"
+ },
+ "lysimachia-nummularia": {
+  "en": "Lysimachia nummularia",
+  "de": "Pfennigkraut",
+  "fr": "Lysimaque nummulaire",
+  "hu": "Pénzlevelű lizinka",
+  "it": "Lysimachia nummularia",
+  "es": "Lysimachia nummularia",
+  "pl": "Tojeść rozesłana",
+  "cs": "Vrbina penízková"
+ },
+ "cardamine-pratensis": {
+  "en": "Cardamine pratensis",
+  "de": "Wiesen-Schaumkraut",
+  "fr": "Cardamine des prés",
+  "hu": "Réti kakukktorma",
+  "es": "Cardamine pratensis",
+  "pl": "Rzeżucha łąkowa",
+  "cs": "Řeřišnice luční"
+ },
+ "phragmites-australis": {
+  "en": "Phragmites australis",
+  "de": "Schilfrohr",
+  "fr": "Roseau commun",
+  "hu": "Közönséges nád",
+  "it": "Phragmites australis",
+  "es": "Phragmites australis",
+  "pl": "Trzcina pospolita",
+  "cs": "Rákos obecný"
+ },
+ "gentiana-acaulis": {
+  "en": "Gentiana acaulis",
+  "de": "Kochscher Enzian",
+  "fr": "Gentiane acaule",
+  "it": "Gentiana acaulis",
+  "es": "Gentiana acaulis",
+  "cs": "Hořec bezlodyžný"
+ },
+ "gentiana-asclepiadea": {
+  "en": "Gentiana asclepiadea",
+  "de": "Schwalbenwurz-Enzian",
+  "fr": "Gentiane asclépiade",
+  "hu": "Fecsketárnics",
+  "it": "Gentiana asclepiadea",
+  "es": "Gentiana asclepiadea",
+  "pl": "Goryczka trojeściowa",
+  "cs": "Hořec tolitovitý"
+ },
+ "leontopodium-nivale-subsp-alpinum": {
+  "en": "Edelweiss",
+  "de": "Alpen-Edelweiß",
+  "fr": "Edelweiss",
+  "hu": "Havasi gyopár",
+  "it": "Leontopodium nivale",
+  "es": "Leontopodium alpinum",
+  "pl": "Szarotka alpejska",
+  "cs": "Plesnivec alpský"
+ },
+ "soldanella-alpina": {
+  "en": "Soldanella alpina",
+  "de": "Alpen-Soldanelle",
+  "fr": "Soldanelle des Alpes",
+  "it": "Soldanella alpina",
+  "es": "Soldanella alpina",
+  "cs": "Dřípatka alpská"
+ },
+ "saxifraga-paniculata": {
+  "en": "Saxifraga paniculata",
+  "de": "Rispen-Steinbrech",
+  "fr": "Saxifrage paniculée",
+  "hu": "Fürtös kőtörőfű",
+  "es": "Saxifraga paniculata",
+  "pl": "Skalnica gronkowa",
+  "cs": "Lomikámen vždyživý"
+ },
+ "dryas-octopetala": {
+  "en": "Dryas octopetala",
+  "de": "Weiße Silberwurz",
+  "fr": "Dryade à huit pétales",
+  "hu": "Havasi magcsákó",
+  "it": "Dryas octopetala",
+  "es": "Dryas octopetala",
+  "pl": "Dębik ośmiopłatkowy",
+  "cs": "Dryádka osmiplátečná"
+ },
+ "aster-alpinus": {
+  "en": "Aster alpinus",
+  "de": "Alpen-Aster",
+  "fr": "Aster des Alpes",
+  "it": "Aster alpinus",
+  "es": "Aster alpinus",
+  "pl": "Aster alpejski",
+  "cs": "Hvězdnice alpská"
+ },
+ "campanula-cochleariifolia": {
+  "en": "Campanula cochleariifolia",
+  "de": "Zwerg-Glockenblume",
+  "fr": "Campanule à feuilles de Cochléaire",
+  "it": "Campanula cochleariifolia",
+  "es": "Campanula cochleariifolia",
+  "pl": "Dzwonek drobny",
+  "cs": "Zvonek maličký"
+ },
+ "hesperis-matronalis": {
+  "en": "Hesperis matronalis",
+  "de": "Gewöhnliche Nachtviole",
+  "fr": "Julienne des dames",
+  "es": "Hesperis matronalis",
+  "pl": "Wieczornik damski",
+  "cs": "Večernice vonná"
+ },
+ "betula-pendula": {
+  "en": "Betula pendula",
+  "de": "Hänge-Birke",
+  "fr": "Bouleau verruqueux",
+  "hu": "Közönséges nyír",
+  "it": "Betula pendula",
+  "es": "Betula pendula",
+  "pl": "Brzoza brodawkowata",
+  "cs": "Bříza bělokorá"
+ },
+ "acer-palmatum": {
+  "en": "Acer palmatum",
+  "de": "Fächer-Ahorn",
+  "fr": "Érable palmé",
+  "hu": "Ujjas juhar",
+  "it": "Acer palmatum",
+  "es": "Acer palmatum",
+  "pl": "Klon palmowy",
+  "cs": "Javor dlanitolistý"
+ },
+ "acer-campestre": {
+  "en": "Acer campestre",
+  "de": "Feldahorn",
+  "fr": "Érable champêtre",
+  "hu": "Mezei juhar",
+  "it": "Acer campestre",
+  "es": "Acer campestre",
+  "pl": "Klon polny",
+  "cs": "Javor babyka"
+ },
+ "prunus-serrulata": {
+  "en": "Prunus serrulata",
+  "de": "Japanische Blütenkirsche",
+  "fr": "Prunus serrulata",
+  "hu": "Japáncseresznye",
+  "it": "Prunus serrulata",
+  "es": "Prunus serrulata",
+  "pl": "Wiśnia piłkowana",
+  "cs": "Sakura ozdobná"
+ },
+ "magnolia-soulangeana": {
+  "en": "Magnolia × soulangeana",
+  "de": "Tulpen-Magnolie",
+  "fr": "Magnolia ×soulangeana",
+  "hu": "Magnolia × soulangeana",
+  "it": "Magnolia × soulangeana",
+  "es": "Magnolia × soulangeana",
+  "pl": "Magnolia pośrednia",
+  "cs": "Šácholan Soulangeův"
+ },
+ "tilia-cordata": {
+  "en": "Tilia cordata",
+  "de": "Winterlinde",
+  "fr": "Tilleul à petites feuilles",
+  "hu": "Kislevelű hárs",
+  "it": "Tilia cordata",
+  "es": "Tilia cordata",
+  "pl": "Lipa drobnolistna",
+  "cs": "Lípa malolistá"
+ },
+ "juglans-regia": {
+  "en": "Juglans regia",
+  "de": "Echte Walnuss",
+  "fr": "Noyer commun",
+  "hu": "Közönséges dió",
+  "it": "Juglans regia",
+  "es": "Juglans regia",
+  "pl": "Orzech włoski",
+  "cs": "Ořešák královský"
+ },
+ "salix-babylonica": {
+  "en": "Salix babylonica",
+  "de": "Echte Trauerweide",
+  "fr": "Saule pleureur",
+  "hu": "Babiloni szomorúfűz",
+  "it": "Salix babylonica",
+  "es": "Salix babylonica",
+  "pl": "Wierzby o płaczącym pokroju",
+  "cs": "Vrba babylónská"
+ },
+ "carpinus-fastigiata": {
+  "en": "Carpinus betulus",
+  "de": "Gemeine Hainbuche",
+  "fr": "Charme commun",
+  "hu": "Közönséges gyertyán",
+  "it": "Carpinus betulus",
+  "es": "Carpinus betulus",
+  "pl": "Grab pospolity",
+  "cs": "Habr obecný"
+ },
+ "malus-domestica": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "pyrus-communis": {
+  "en": "Pyrus communis",
+  "de": "Kultur-Birne",
+  "fr": "Poirier commun",
+  "hu": "Nemes körte",
+  "it": "Pyrus communis",
+  "es": "Pyrus communis",
+  "pl": "Grusza pospolita",
+  "cs": "Hrušeň obecná"
+ },
+ "prunus-domestica": {
+  "en": "Prunus domestica",
+  "de": "Pflaume",
+  "fr": "Prunier",
+  "hu": "Nemes szilva",
+  "it": "Prunus domestica",
+  "es": "Prunus domestica",
+  "pl": "Śliwa domowa",
+  "cs": "Slivoň švestka"
+ },
+ "prunus-armeniaca": {
+  "en": "Prunus armeniaca",
+  "de": "Aprikose",
+  "fr": "Abricotier",
+  "hu": "Kajszibarack",
+  "it": "Prunus armeniaca",
+  "es": "Prunus armeniaca",
+  "pl": "Morela pospolita",
+  "cs": "Meruňka obecná"
+ },
+ "ficus-carica": {
+  "en": "Fig",
+  "de": "Echte Feige",
+  "fr": "Ficus carica",
+  "hu": "Közönséges füge",
+  "it": "Ficus carica",
+  "es": "Ficus carica",
+  "pl": "Figowiec pospolity",
+  "cs": "Fíkovník smokvoň"
+ },
+ "picea-pungens": {
+  "en": "Blue spruce",
+  "de": "Stech-Fichte",
+  "fr": "Épicéa bleu",
+  "hu": "Szúrós luc",
+  "it": "Picea pungens",
+  "es": "Picea pungens",
+  "pl": "Świerk kłujący",
+  "cs": "Smrk pichlavý"
+ },
+ "thuja-smaragd": {
+  "en": "Thuja occidentalis",
+  "de": "Abendländischer Lebensbaum",
+  "fr": "Thuya occidental",
+  "hu": "Nyugati tuja",
+  "it": "Thuja occidentalis",
+  "es": "Thuja occidentalis",
+  "pl": "Żywotnik zachodni",
+  "cs": "Zerav západní"
+ },
+ "pinus-sylvestris": {
+  "en": "Pinus sylvestris",
+  "de": "Waldkiefer",
+  "fr": "Pin sylvestre",
+  "hu": "Erdeifenyő",
+  "it": "Pinus sylvestris",
+  "es": "Pinus sylvestris",
+  "pl": "Sosna zwyczajna",
+  "cs": "Borovice lesní"
+ },
+ "pinus-mugo": {
+  "en": "Pinus mugo",
+  "de": "Bergkiefer",
+  "fr": "Pinus mugo",
+  "hu": "Havasi törpefenyő",
+  "it": "Pinus mugo",
+  "es": "Pinus mugo",
+  "pl": "Kosodrzewina",
+  "cs": "Borovice kleč"
+ },
+ "taxus-baccata": {
+  "en": "Taxus baccata",
+  "de": "Europäische Eibe",
+  "fr": "If commun",
+  "hu": "Közönséges tiszafa",
+  "it": "Taxus baccata",
+  "es": "Taxus baccata",
+  "pl": "Cis pospolity",
+  "cs": "Tis červený"
+ },
+ "hydrangea-macrophylla": {
+  "en": "Hydrangea macrophylla",
+  "de": "Gartenhortensie",
+  "fr": "Hydrangea macrophylla",
+  "hu": "Kerti hortenzia",
+  "it": "Hydrangea macrophylla",
+  "es": "Hydrangea macrophylla",
+  "pl": "Hortensja ogrodowa",
+  "cs": "Hortenzie velkolistá"
+ },
+ "syringa-vulgaris": {
+  "en": "Syringa vulgaris",
+  "de": "Gemeiner Flieder",
+  "fr": "Syringa vulgaris",
+  "hu": "Közönséges orgona",
+  "it": "Syringa vulgaris",
+  "es": "Syringa vulgaris",
+  "pl": "Lilak pospolity",
+  "cs": "Šeřík obecný"
+ },
+ "forsythia": {
+  "en": "Forsythia × intermedia",
+  "de": "Garten-Forsythie",
+  "fr": "Forsythia ×intermedia",
+  "pl": "Forsycja pośrednia",
+  "cs": "Zlatice prostřední"
+ },
+ "buxus-sempervirens": {
+  "en": "Buxus sempervirens",
+  "de": "Gewöhnlicher Buchsbaum",
+  "fr": "Buxus sempervirens",
+  "hu": "Örökzöld puszpáng",
+  "it": "Buxus sempervirens",
+  "es": "Buxus sempervirens",
+  "pl": "Bukszpan zwyczajny",
+  "cs": "Zimostráz vždyzelený"
+ },
+ "rhododendron": {
+  "en": "Rhododendron catawbiense",
+  "fr": "Rhododendron catawbiense",
+  "pl": "Różanecznik katawbijski"
+ },
+ "prunus-laurocerasus": {
+  "en": "Prunus laurocerasus",
+  "de": "Lorbeerkirsche",
+  "fr": "Laurier-cerise",
+  "hu": "Balkáni babérmeggy",
+  "it": "Prunus laurocerasus",
+  "es": "Prunus laurocerasus",
+  "pl": "Laurowiśnia wschodnia",
+  "cs": "Bobkovišeň lékařská"
+ },
+ "cotinus-coggygria": {
+  "en": "Cotinus coggygria",
+  "de": "Perückenstrauch",
+  "fr": "Cotinus coggygria",
+  "hu": "Sárga cserszömörce",
+  "it": "Cotinus coggygria",
+  "es": "Cotinus coggygria",
+  "pl": "Perukowiec podolski",
+  "cs": "Ruj vlasatá"
+ },
+ "corylus-avellana": {
+  "en": "Corylus avellana",
+  "de": "Gemeine Hasel",
+  "fr": "Corylus avellana",
+  "hu": "Európai mogyoró",
+  "it": "Corylus avellana",
+  "es": "Corylus avellana",
+  "pl": "Leszczyna pospolita",
+  "cs": "Líska obecná"
+ },
+ "lavandula-angustifolia": {
+  "en": "Lavandula angustifolia",
+  "de": "Echter Lavendel",
+  "fr": "Lavandula angustifolia",
+  "hu": "Közönséges levendula",
+  "it": "Lavandula angustifolia",
+  "es": "Lavandula angustifolia",
+  "pl": "Lawenda wąskolistna",
+  "cs": "Levandule lékařská"
+ },
+ "nepeta-faassenii": {
+  "en": "Nepeta × faassenii",
+  "de": "Hybrid-Katzenminze",
+  "pl": "Kocimiętka Faassena",
+  "cs": "Šanta zkřížená"
+ },
+ "echinacea-purpurea": {
+  "en": "Echinacea purpurea",
+  "de": "Purpur-Sonnenhut",
+  "fr": "Echinacea purpurea",
+  "hu": "Bíbor kasvirág",
+  "it": "Echinacea purpurea",
+  "es": "Echinacea purpurea",
+  "pl": "Jeżówka purpurowa",
+  "cs": "Třapatkovka nachová"
+ },
+ "rudbeckia-fulgida": {
+  "en": "Rudbeckia fulgida",
+  "de": "Gewöhnlicher Sonnenhut",
+  "fr": "Rudbeckia fulgida",
+  "pl": "Rudbekia błyskotliwa"
+ },
+ "salvia-nemorosa": {
+  "en": "Salvia nemorosa",
+  "de": "Hain-Salbei",
+  "fr": "Salvia nemorosa",
+  "it": "Salvia nemorosa",
+  "es": "Salvia nemorosa",
+  "pl": "Szałwia omszona",
+  "cs": "Šalvěj hajní"
+ },
+ "hosta": {
+  "en": "Hosta sieboldiana",
+  "de": "Blaublatt-Funkie",
+  "hu": "Hamvas árnyliliom",
+  "pl": "Funkia sina"
+ },
+ "hemerocallis": {
+  "en": "Daylily",
+  "de": "Taglilien",
+  "fr": "Hémérocalle",
+  "hu": "Sásliliom",
+  "it": "Hemerocallis",
+  "es": "Hemerocallis",
+  "pl": "Liliowiec",
+  "cs": "Denivka"
+ },
+ "paeonia-lactiflora": {
+  "en": "Paeonia lactiflora",
+  "de": "Paeonia lactiflora",
+  "fr": "Pivoine de Chine",
+  "es": "Paeonia lactiflora",
+  "pl": "Piwonia chińska",
+  "cs": "Pivoňka čínská"
+ },
+ "geranium-rozanne": {
+  "en": "Geranium",
+  "de": "Storchschnäbel",
+  "fr": "Geranium",
+  "hu": "Gólyaorr",
+  "it": "Geranium",
+  "es": "Geranium",
+  "pl": "Bodziszek",
+  "cs": "Kakost"
+ },
+ "sedum-autumn-joy": {
+  "en": "Hylotelephium",
+  "de": "Hylotelephium",
+  "fr": "Hylotelephium",
+  "hu": "Hylotelephium",
+  "it": "Hylotelephium",
+  "es": "Hylotelephium",
+  "pl": "Rozchodnikowiec",
+  "cs": "Rozchodníkovec"
+ },
+ "rosa-shrub": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "dryopteris": {
+  "en": "Dryopteris filix-mas",
+  "de": "Echter Wurmfarn",
+  "fr": "Dryopteris filix-mas",
+  "hu": "Erdei pajzsika",
+  "it": "Dryopteris filix-mas",
+  "es": "Dryopteris filix-mas",
+  "pl": "Nerecznica samcza",
+  "cs": "Kapraď samec"
+ },
+ "helleborus": {
+  "en": "Helleborus niger",
+  "de": "Schneerose",
+  "fr": "Helleborus niger",
+  "hu": "Fekete hunyor",
+  "it": "Helleborus niger",
+  "es": "Helleborus niger",
+  "pl": "Ciemiernik biały",
+  "cs": "Čemeřice černá"
+ },
+ "calamagrostis": {
+  "en": "Calamagrostis × acutiflora",
+  "fr": "Calamagrostis ×acutiflora"
+ },
+ "festuca-glauca": {
+  "en": "Festuca glauca",
+  "fr": "Fétuque glauque",
+  "es": "Festuca glauca",
+  "pl": "Kostrzewa popielata"
+ },
+ "miscanthus": {
+  "en": "Miscanthus sinensis",
+  "de": "Chinaschilf",
+  "fr": "Miscanthus sinensis",
+  "hu": "Miscanthus sinensis",
+  "es": "Miscanthus sinensis",
+  "pl": "Miskant chiński",
+  "cs": "Ozdobnice čínská"
+ },
+ "pennisetum": {
+  "en": "Cenchrus alopecuroides",
+  "de": "Lampenputzergras",
+  "fr": "Cenchrus alopecuroides",
+  "cs": "Dochan psárkovitý"
+ },
+ "tulipa": {
+  "en": "Tulip",
+  "de": "Tulpen",
+  "fr": "Tulipe",
+  "hu": "Tulipán",
+  "it": "Tulipa",
+  "es": "Tulipa",
+  "pl": "Tulipan",
+  "cs": "Tulipán"
+ },
+ "narcissus": {
+  "en": "Narcissus",
+  "de": "Narcissus",
+  "hu": "Narcissus (egyértelműsítő lap)",
+  "pl": "Narcyz (ujednoznacznienie)"
+ },
+ "allium": {
+  "en": "Allium",
+  "de": "Lauch (Gattung)",
+  "fr": "Allium",
+  "hu": "Hagyma (növénynemzetség)",
+  "it": "Allium",
+  "es": "Allium",
+  "pl": "Czosnek",
+  "cs": "Česnek"
+ },
+ "helianthus": {
+  "en": "Common sunflower",
+  "de": "Sonnenblume",
+  "fr": "Tournesol",
+  "hu": "Napraforgó (növényfaj)",
+  "it": "Helianthus annuus",
+  "es": "Helianthus annuus",
+  "pl": "Słonecznik zwyczajny",
+  "cs": "Slunečnice roční"
+ },
+ "cosmos": {
+  "en": "Cosmos bipinnatus",
+  "de": "Schmuckkörbchen",
+  "fr": "Cosmos bipinnatus",
+  "hu": "Kerti pillangóvirág",
+  "it": "Cosmos bipinnatus",
+  "es": "Cosmos bipinnatus",
+  "pl": "Kosmos pierzasty",
+  "cs": "Krásenka zpeřená"
+ },
+ "tagetes": {
+  "en": "Tagetes patula",
+  "fr": "Œillet d'Inde",
+  "hu": "Kis büdöske",
+  "es": "Tagetes patula",
+  "pl": "Aksamitka rozpierzchła",
+  "cs": "Aksamitník rozkladitý"
+ },
+ "tomato": {
+  "en": "Tomato",
+  "de": "Tomate",
+  "fr": "Tomate",
+  "hu": "Paradicsom (növényfaj)",
+  "it": "Solanum lycopersicum",
+  "es": "Solanum lycopersicum",
+  "pl": "Pomidor zwyczajny",
+  "cs": "Rajče jedlé"
+ },
+ "lettuce": {
+  "en": "Lettuce",
+  "de": "Gartensalat",
+  "fr": "Laitue cultivée",
+  "hu": "Kerti saláta",
+  "it": "Lactuca sativa",
+  "es": "Lactuca sativa",
+  "pl": "Sałata siewna",
+  "cs": "Locika setá"
+ },
+ "zucchini": {
+  "en": "Cucurbita pepo",
+  "de": "Gartenkürbis",
+  "fr": "Cucurbita pepo",
+  "hu": "Termesztett tök",
+  "it": "Cucurbita pepo",
+  "es": "Cucurbita pepo",
+  "pl": "Dynia zwyczajna",
+  "cs": "Tykev obecná"
+ },
+ "strawberry": {
+  "en": "Strawberry",
+  "de": "Gartenerdbeere",
+  "fr": "Fragaria ×ananassa",
+  "hu": "Eper (növényfaj)",
+  "it": "Fragaria × ananassa",
+  "es": "Fragaria × ananassa",
+  "pl": "Truskawka",
+  "cs": "Jahodník velkoplodý"
+ },
+ "pepper": {
+  "en": "Capsicum annuum",
+  "de": "Spanischer Pfeffer",
+  "fr": "Capsicum annuum",
+  "hu": "Közönséges paprika",
+  "it": "Capsicum annuum",
+  "es": "Capsicum annuum",
+  "pl": "Papryka roczna",
+  "cs": "Paprika setá"
+ },
+ "kale": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "rosmarinus": {
+  "en": "Rosemary",
+  "de": "Rosmarin",
+  "fr": "Romarin",
+  "hu": "Rozmaring",
+  "it": "Salvia rosmarinus",
+  "es": "Salvia rosmarinus",
+  "pl": "Rozmaryn lekarski",
+  "cs": "Šalvěj rozmarýna"
+ },
+ "thymus": {
+  "en": "Thymus vulgaris",
+  "de": "Echter Thymian",
+  "fr": "Thymus vulgaris",
+  "hu": "Kerti kakukkfű",
+  "it": "Thymus vulgaris",
+  "es": "Thymus vulgaris",
+  "pl": "Macierzanka tymianek",
+  "cs": "Tymián obecný"
+ },
+ "allium-schoenoprasum": {
+  "en": "Chives",
+  "de": "Schnittlauch",
+  "fr": "Ciboulette commune",
+  "hu": "Metélőhagyma",
+  "it": "Allium schoenoprasum",
+  "es": "Allium schoenoprasum",
+  "pl": "Szczypiorek",
+  "cs": "Pažitka pobřežní"
+ },
+ "ocimum": {
+  "en": "Basil",
+  "de": "Basilikum",
+  "fr": "Basilic (plante)",
+  "hu": "Bazsalikom",
+  "it": "Ocimum basilicum",
+  "es": "Ocimum basilicum",
+  "pl": "Bazylia pospolita",
+  "cs": "Bazalka pravá"
+ },
+ "mentha": {
+  "en": "Spearmint",
+  "de": "Grüne Minze",
+  "fr": "Mentha spicata",
+  "hu": "Fodormenta",
+  "it": "Mentha spicata",
+  "es": "Mentha spicata",
+  "pl": "Mięta zielona",
+  "cs": "Máta klasnatá"
+ },
+ "solanum-lycopersicum-var-cerasiforme": {
+  "en": "Tomato",
+  "de": "Tomate",
+  "fr": "Tomate",
+  "hu": "Paradicsom (növényfaj)",
+  "it": "Solanum lycopersicum",
+  "es": "Solanum lycopersicum",
+  "pl": "Pomidor zwyczajny",
+  "cs": "Rajče jedlé"
+ },
+ "solanum-lycopersicum-marmande": {
+  "en": "Tomato",
+  "de": "Tomate",
+  "fr": "Tomate",
+  "hu": "Paradicsom (növényfaj)",
+  "it": "Solanum lycopersicum",
+  "es": "Solanum lycopersicum",
+  "pl": "Pomidor zwyczajny",
+  "cs": "Rajče jedlé"
+ },
+ "solanum-lycopersicum-san-marzano": {
+  "en": "Tomato",
+  "de": "Tomate",
+  "fr": "Tomate",
+  "hu": "Paradicsom (növényfaj)",
+  "it": "Solanum lycopersicum",
+  "es": "Solanum lycopersicum",
+  "pl": "Pomidor zwyczajny",
+  "cs": "Rajče jedlé"
+ },
+ "capsicum-annuum-hungarian-wax": {
+  "en": "Capsicum annuum",
+  "de": "Spanischer Pfeffer",
+  "fr": "Capsicum annuum",
+  "hu": "Közönséges paprika",
+  "it": "Capsicum annuum",
+  "es": "Capsicum annuum",
+  "pl": "Papryka roczna",
+  "cs": "Paprika setá"
+ },
+ "capsicum-annuum-szegedi": {
+  "en": "Capsicum annuum",
+  "de": "Spanischer Pfeffer",
+  "fr": "Capsicum annuum",
+  "hu": "Közönséges paprika",
+  "it": "Capsicum annuum",
+  "es": "Capsicum annuum",
+  "pl": "Papryka roczna",
+  "cs": "Paprika setá"
+ },
+ "capsicum-annuum-corno-di-toro": {
+  "en": "Capsicum annuum",
+  "de": "Spanischer Pfeffer",
+  "fr": "Capsicum annuum",
+  "hu": "Közönséges paprika",
+  "it": "Capsicum annuum",
+  "es": "Capsicum annuum",
+  "pl": "Papryka roczna",
+  "cs": "Paprika setá"
+ },
+ "capsicum-annuum-cayenne": {
+  "en": "Capsicum annuum",
+  "de": "Spanischer Pfeffer",
+  "fr": "Capsicum annuum",
+  "hu": "Közönséges paprika",
+  "it": "Capsicum annuum",
+  "es": "Capsicum annuum",
+  "pl": "Papryka roczna",
+  "cs": "Paprika setá"
+ },
+ "solanum-melongena": {
+  "en": "Eggplant",
+  "de": "Aubergine",
+  "fr": "Aubergine",
+  "hu": "Padlizsán",
+  "it": "Solanum melongena",
+  "es": "Solanum melongena",
+  "pl": "Psianka podłużna",
+  "cs": "Lilek vejcoplodý"
+ },
+ "cucumis-sativus": {
+  "en": "Cucumber",
+  "de": "Gurke",
+  "fr": "Concombre",
+  "hu": "Uborka",
+  "it": "Cucumis sativus",
+  "es": "Cucumis sativus",
+  "pl": "Ogórek siewny",
+  "cs": "Okurka setá"
+ },
+ "cucumis-sativus-vert-petit-de-paris": {
+  "en": "Cucumber",
+  "de": "Gurke",
+  "fr": "Concombre",
+  "hu": "Uborka",
+  "it": "Cucumis sativus",
+  "es": "Cucumis sativus",
+  "pl": "Ogórek siewny",
+  "cs": "Okurka setá"
+ },
+ "cucurbita-pepo-black-beauty": {
+  "en": "Cucurbita pepo",
+  "de": "Gartenkürbis",
+  "fr": "Cucurbita pepo",
+  "hu": "Termesztett tök",
+  "it": "Cucurbita pepo",
+  "es": "Cucurbita pepo",
+  "pl": "Dynia zwyczajna",
+  "cs": "Tykev obecná"
+ },
+ "cucurbita-pepo-gold-rush": {
+  "en": "Cucurbita pepo",
+  "de": "Gartenkürbis",
+  "fr": "Cucurbita pepo",
+  "hu": "Termesztett tök",
+  "it": "Cucurbita pepo",
+  "es": "Cucurbita pepo",
+  "pl": "Dynia zwyczajna",
+  "cs": "Tykev obecná"
+ },
+ "cucurbita-maxima": {
+  "en": "Cucurbita maxima",
+  "de": "Riesen-Kürbis",
+  "fr": "Potiron",
+  "hu": "Óriástök",
+  "it": "Cucurbita maxima",
+  "es": "Cucurbita maxima",
+  "pl": "Dynia olbrzymia",
+  "cs": "Tykev velkoplodá"
+ },
+ "cucurbita-maxima-uchiki-kuri": {
+  "en": "Cucurbita maxima",
+  "de": "Riesen-Kürbis",
+  "fr": "Potiron",
+  "hu": "Óriástök",
+  "it": "Cucurbita maxima",
+  "es": "Cucurbita maxima",
+  "pl": "Dynia olbrzymia",
+  "cs": "Tykev velkoplodá"
+ },
+ "cucurbita-moschata": {
+  "en": "Cucurbita moschata",
+  "de": "Moschus-Kürbis",
+  "fr": "Courge musquée",
+  "hu": "Pézsmatök",
+  "it": "Cucurbita moschata",
+  "es": "Cucurbita moschata",
+  "pl": "Dynia piżmowa"
+ },
+ "cucurbita-pepo-var-styriaca": {
+  "en": "Cucurbita pepo",
+  "de": "Gartenkürbis",
+  "fr": "Cucurbita pepo",
+  "hu": "Termesztett tök",
+  "it": "Cucurbita pepo",
+  "es": "Cucurbita pepo",
+  "pl": "Dynia zwyczajna",
+  "cs": "Tykev obecná"
+ },
+ "cucumis-melo-var-cantalupensis-charentais": {
+  "en": "Cucumis melo",
+  "de": "Zuckermelone",
+  "fr": "Melon (plante)",
+  "hu": "Sárgadinnye",
+  "it": "Cucumis melo",
+  "es": "Cucumis melo",
+  "pl": "Ogórek melon",
+  "cs": "Meloun cukrový"
+ },
+ "citrullus-lanatus": {
+  "en": "Watermelon",
+  "de": "Wassermelone",
+  "fr": "Pastèque",
+  "hu": "Görögdinnye",
+  "it": "Citrullus lanatus",
+  "es": "Citrullus lanatus",
+  "pl": "Arbuz zwyczajny",
+  "cs": "Lubenice obecná"
+ },
+ "phaseolus-coccineus": {
+  "en": "Phaseolus coccineus",
+  "de": "Feuerbohne",
+  "fr": "Haricot d'Espagne",
+  "it": "Phaseolus coccineus",
+  "es": "Phaseolus coccineus",
+  "pl": "Fasola wielokwiatowa",
+  "cs": "Fazol šarlatový"
+ },
+ "phaseolus-vulgaris-var-nanus": {
+  "en": "Phaseolus vulgaris",
+  "de": "Gartenbohne",
+  "fr": "Haricot",
+  "hu": "Veteménybab",
+  "it": "Phaseolus vulgaris",
+  "es": "Phaseolus vulgaris",
+  "pl": "Fasola zwykła",
+  "cs": "Fazol obecný"
+ },
+ "phaseolus-vulgaris-fin-de-bagnols": {
+  "en": "Phaseolus vulgaris",
+  "de": "Gartenbohne",
+  "fr": "Haricot",
+  "hu": "Veteménybab",
+  "it": "Phaseolus vulgaris",
+  "es": "Phaseolus vulgaris",
+  "pl": "Fasola zwykła",
+  "cs": "Fazol obecný"
+ },
+ "phaseolus-vulgaris-neckarkonigin": {
+  "en": "Phaseolus vulgaris",
+  "de": "Gartenbohne",
+  "fr": "Haricot",
+  "hu": "Veteménybab",
+  "it": "Phaseolus vulgaris",
+  "es": "Phaseolus vulgaris",
+  "pl": "Fasola zwykła",
+  "cs": "Fazol obecný"
+ },
+ "vicia-faba": {
+  "en": "Vicia faba",
+  "de": "Ackerbohne",
+  "fr": "Vicia faba",
+  "hu": "Lóbab",
+  "it": "Vicia faba",
+  "es": "Vicia faba",
+  "pl": "Wyka bób",
+  "cs": "Bob obecný"
+ },
+ "pisum-sativum": {
+  "en": "Pea",
+  "de": "Erbse",
+  "fr": "Pois cultivé",
+  "hu": "Borsó",
+  "es": "Pisum sativum",
+  "pl": "Groch zwyczajny",
+  "cs": "Hrách setý"
+ },
+ "zea-mays-var-saccharata": {
+  "en": "Maize",
+  "de": "Mais",
+  "fr": "Zea mays",
+  "hu": "Kukorica (növényfaj)",
+  "it": "Zea mays",
+  "es": "Zea mays",
+  "pl": "Kukurydza zwyczajna",
+  "cs": "Kukuřice setá"
+ },
+ "solanum-tuberosum": {
+  "en": "Potato",
+  "de": "Kartoffel",
+  "fr": "Pomme de terre",
+  "hu": "Burgonya",
+  "it": "Solanum tuberosum",
+  "es": "Solanum tuberosum",
+  "pl": "Ziemniak",
+  "cs": "Lilek brambor"
+ },
+ "allium-cepa": {
+  "en": "Onion",
+  "de": "Zwiebel",
+  "fr": "Oignon",
+  "hu": "Vöröshagyma",
+  "it": "Allium cepa",
+  "es": "Allium cepa",
+  "pl": "Cebula zwyczajna",
+  "cs": "Cibule kuchyňská"
+ },
+ "allium-cepa-var-aggregatum": {
+  "en": "Onion",
+  "de": "Zwiebel",
+  "fr": "Oignon",
+  "hu": "Vöröshagyma",
+  "it": "Allium cepa",
+  "es": "Allium cepa",
+  "pl": "Cebula zwyczajna",
+  "cs": "Cibule kuchyňská"
+ },
+ "allium-sativum": {
+  "en": "Garlic",
+  "de": "Knoblauch",
+  "fr": "Ail cultivé",
+  "hu": "Fokhagyma",
+  "it": "Allium sativum",
+  "es": "Allium sativum",
+  "pl": "Czosnek pospolity",
+  "cs": "Česnek kuchyňský"
+ },
+ "allium-ampeloprasum-var-porrum": {
+  "en": "Allium ampeloprasum",
+  "de": "Ackerlauch",
+  "fr": "Poireau perpétuel",
+  "it": "Allium ampeloprasum",
+  "es": "Allium ampeloprasum"
+ },
+ "daucus-carota-subsp-sativus": {
+  "en": "Daucus carota",
+  "de": "Möhre (Pflanzenart)",
+  "fr": "Daucus carota",
+  "hu": "Vadmurok",
+  "it": "Daucus carota",
+  "es": "Daucus carota",
+  "pl": "Marchew zwyczajna",
+  "cs": "Mrkev obecná"
+ },
+ "pastinaca-sativa": {
+  "en": "Parsnip",
+  "de": "Pastinak",
+  "fr": "Panais",
+  "hu": "Pasztinák",
+  "it": "Pastinaca sativa",
+  "es": "Pastinaca sativa",
+  "pl": "Pasternak zwyczajny",
+  "cs": "Pastinák setý"
+ },
+ "beta-vulgaris-var-conditiva": {
+  "en": "Beta vulgaris",
+  "de": "Rübe (Art)",
+  "fr": "Beta vulgaris",
+  "it": "Beta vulgaris",
+  "es": "Beta vulgaris",
+  "pl": "Burak zwyczajny",
+  "cs": "Řepa obecná"
+ },
+ "apium-graveolens-var-rapaceum": {
+  "en": "Apium graveolens",
+  "de": "Echter Sellerie",
+  "it": "Apium graveolens",
+  "es": "Apium graveolens",
+  "pl": "Seler naciowy",
+  "cs": "Miřík celer"
+ },
+ "petroselinum-crispum-var-tuberosum": {
+  "en": "Parsley",
+  "de": "Petersilie",
+  "fr": "Persil",
+  "hu": "Petroselinum crispum",
+  "it": "Petroselinum crispum",
+  "es": "Petroselinum crispum",
+  "pl": "Pietruszka zwyczajna",
+  "cs": "Petržel zahradní"
+ },
+ "raphanus-sativus": {
+  "en": "Radish",
+  "de": "Garten-Rettich",
+  "fr": "Radis",
+  "hu": "Retek",
+  "it": "Raphanus raphanistrum sativus",
+  "es": "Raphanus sativus",
+  "pl": "Rzodkiew zwyczajna",
+  "cs": "Ředkev setá"
+ },
+ "raphanus-sativus-munchner-bier": {
+  "en": "Radish",
+  "de": "Garten-Rettich",
+  "fr": "Radis",
+  "hu": "Retek",
+  "it": "Raphanus raphanistrum sativus",
+  "es": "Raphanus sativus",
+  "pl": "Rzodkiew zwyczajna",
+  "cs": "Ředkev setá"
+ },
+ "brassica-oleracea-var-gongylodes": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-gongylodes-azur-star": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-sabauda": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-capitata": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-capitata-f-rubra": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-botrytis": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-italica": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "brassica-oleracea-var-gemmifera": {
+  "en": "Brassica oleracea",
+  "de": "Gemüsekohl",
+  "fr": "Chou commun",
+  "hu": "Vadkáposzta",
+  "it": "Brassica oleracea",
+  "es": "Brassica oleracea",
+  "pl": "Kapusta warzywna",
+  "cs": "Brukev zelná"
+ },
+ "spinacia-oleracea": {
+  "en": "Spinach",
+  "de": "Spinat",
+  "fr": "Épinard",
+  "hu": "Spenót (növényfaj)",
+  "it": "Spinacia oleracea",
+  "es": "Spinacia oleracea",
+  "pl": "Szpinak warzywny",
+  "cs": "Špenát setý"
+ },
+ "beta-vulgaris-var-cicla": {
+  "en": "Beta vulgaris",
+  "de": "Rübe (Art)",
+  "fr": "Beta vulgaris",
+  "it": "Beta vulgaris",
+  "es": "Beta vulgaris",
+  "pl": "Burak zwyczajny",
+  "cs": "Řepa obecná"
+ },
+ "beta-vulgaris-var-cicla-bright-lights": {
+  "en": "Beta vulgaris",
+  "de": "Rübe (Art)",
+  "fr": "Beta vulgaris",
+  "it": "Beta vulgaris",
+  "es": "Beta vulgaris",
+  "pl": "Burak zwyczajny",
+  "cs": "Řepa obecná"
+ },
+ "lactuca-sativa-little-gem": {
+  "en": "Lettuce",
+  "de": "Gartensalat",
+  "fr": "Laitue cultivée",
+  "hu": "Kerti saláta",
+  "it": "Lactuca sativa",
+  "es": "Lactuca sativa",
+  "pl": "Sałata siewna",
+  "cs": "Locika setá"
+ },
+ "lactuca-sativa-red-salad-bowl": {
+  "en": "Lettuce",
+  "de": "Gartensalat",
+  "fr": "Laitue cultivée",
+  "hu": "Kerti saláta",
+  "it": "Lactuca sativa",
+  "es": "Lactuca sativa",
+  "pl": "Sałata siewna",
+  "cs": "Locika setá"
+ },
+ "lactuca-sativa-lollo-rosso": {
+  "en": "Lettuce",
+  "de": "Gartensalat",
+  "fr": "Laitue cultivée",
+  "hu": "Kerti saláta",
+  "it": "Lactuca sativa",
+  "es": "Lactuca sativa",
+  "pl": "Sałata siewna",
+  "cs": "Locika setá"
+ },
+ "valerianella-locusta": {
+  "en": "Valeriana locusta",
+  "de": "Gewöhnlicher Feldsalat",
+  "fr": "Valerianella locusta",
+  "hu": "Salátagalambbegy",
+  "it": "Valeriana locusta",
+  "es": "Valerianella locusta",
+  "pl": "Roszpunka warzywna",
+  "cs": "Kozlíček polní"
+ },
+ "eruca-vesicaria": {
+  "en": "Eruca vesicaria",
+  "de": "Senfrauke",
+  "fr": "Eruca vesicaria",
+  "es": "Eruca vesicaria",
+  "pl": "Rokietta siewna"
+ },
+ "cichorium-endivia": {
+  "en": "Cichorium endivia",
+  "fr": "Chicorée endive",
+  "hu": "Endívia",
+  "it": "Cichorium endivia",
+  "es": "Cichorium endivia",
+  "pl": "Cykoria endywia",
+  "cs": "Čekanka listová"
+ },
+ "cichorium-intybus-palla-rossa": {
+  "en": "Chicory",
+  "de": "Gemeine Wegwarte",
+  "fr": "Cichorium intybus",
+  "hu": "Mezei katáng",
+  "it": "Cichorium intybus",
+  "es": "Cichorium intybus",
+  "pl": "Cykoria podróżnik",
+  "cs": "Čekanka obecná"
+ },
+ "rumex-acetosa": {
+  "en": "Sorrel",
+  "de": "Wiesen-Sauerampfer",
+  "fr": "Oseille commune",
+  "hu": "Mezei sóska",
+  "it": "Rumex acetosa",
+  "es": "Rumex acetosa",
+  "pl": "Szczaw zwyczajny",
+  "cs": "Šťovík kyselý"
+ },
+ "cynara-cardunculus-var-scolymus": {
+  "en": "Cardoon",
+  "de": "Cynara cardunculus",
+  "fr": "Cynara cardunculus",
+  "it": "Cynara cardunculus",
+  "es": "Cynara cardunculus",
+  "pl": "Karczoch hiszpański"
+ },
+ "cynara-cardunculus-var-altilis": {
+  "en": "Cardoon",
+  "de": "Cynara cardunculus",
+  "fr": "Cynara cardunculus",
+  "it": "Cynara cardunculus",
+  "es": "Cynara cardunculus",
+  "pl": "Karczoch hiszpański"
+ },
+ "asparagus-officinalis": {
+  "en": "Asparagus",
+  "de": "Gemüsespargel",
+  "fr": "Asperge",
+  "hu": "Közönséges spárga",
+  "it": "Asparagus officinalis",
+  "es": "Asparagus officinalis",
+  "pl": "Szparag lekarski",
+  "cs": "Chřest lékařský"
+ },
+ "rheum-x-hybridum": {
+  "en": "Rhubarb",
+  "de": "Gemeiner Rhabarber",
+  "fr": "Rheum rhabarbarum",
+  "hu": "Rheum rhabarbarum",
+  "it": "Rheum rhabarbarum",
+  "es": "Rheum rhabarbarum",
+  "pl": "Rabarbar kędzierzawy",
+  "cs": "Reveň kadeřavá"
+ },
+ "armoracia-rusticana": {
+  "en": "Horseradish",
+  "de": "Meerrettich",
+  "fr": "Raifort",
+  "hu": "Torma",
+  "it": "Armoracia rusticana",
+  "es": "Armoracia rusticana",
+  "pl": "Chrzan pospolity",
+  "cs": "Křen selský"
+ },
+ "helianthus-tuberosus": {
+  "en": "Jerusalem artichoke",
+  "de": "Topinambur",
+  "fr": "Topinambour",
+  "hu": "Csicsóka (növényfaj)",
+  "it": "Helianthus tuberosus",
+  "es": "Helianthus tuberosus",
+  "pl": "Słonecznik bulwiasty",
+  "cs": "Slunečnice topinambur"
+ },
+ "foeniculum-vulgare-var-azoricum": {
+  "en": "Fennel",
+  "de": "Fenchel",
+  "fr": "Fenouil commun",
+  "hu": "Édeskömény",
+  "it": "Foeniculum vulgare",
+  "es": "Foeniculum vulgare",
+  "pl": "Fenkuł włoski",
+  "cs": "Fenykl obecný"
+ },
+ "scorzonera-hispanica": {
+  "en": "Pseudopodospermum hispanicum",
+  "it": "Pseudopodospermum hispanicum"
+ },
+ "salvia-officinalis": {
+  "en": "Salvia officinalis",
+  "de": "Echter Salbei",
+  "fr": "Sauge officinale",
+  "hu": "Orvosi zsálya",
+  "it": "Salvia officinalis",
+  "es": "Salvia officinalis",
+  "pl": "Szałwia lekarska",
+  "cs": "Šalvěj lékařská"
+ },
+ "salvia-officinalis-purpurascens": {
+  "en": "Salvia officinalis",
+  "de": "Echter Salbei",
+  "fr": "Sauge officinale",
+  "hu": "Orvosi zsálya",
+  "it": "Salvia officinalis",
+  "es": "Salvia officinalis",
+  "pl": "Szałwia lekarska",
+  "cs": "Šalvěj lékařská"
+ },
+ "origanum-vulgare": {
+  "en": "Oregano",
+  "de": "Oregano",
+  "fr": "Origan",
+  "hu": "Szurokfű (növényfaj)",
+  "it": "Origanum vulgare",
+  "es": "Origanum vulgare",
+  "pl": "Lebiodka pospolita",
+  "cs": "Dobromysl obecná"
+ },
+ "origanum-majorana": {
+  "en": "Marjoram",
+  "de": "Majoran",
+  "fr": "Marjolaine",
+  "hu": "Majoránna",
+  "it": "Origanum majorana",
+  "es": "Origanum majorana",
+  "pl": "Lebiodka majeranek",
+  "cs": "Majoránka zahradní"
+ },
+ "satureja-montana": {
+  "en": "Winter savory",
+  "de": "Winter-Bohnenkraut",
+  "fr": "Satureja montana",
+  "hu": "Hegyi pereszlény",
+  "it": "Satureja montana",
+  "es": "Satureja montana",
+  "pl": "Cząber górski",
+  "cs": "Saturejka horská"
+ },
+ "satureja-hortensis": {
+  "en": "Summer savory",
+  "de": "Sommer-Bohnenkraut",
+  "fr": "Satureja hortensis",
+  "hu": "Borsikafű",
+  "it": "Satureja hortensis",
+  "es": "Satureja hortensis",
+  "pl": "Cząber ogrodowy",
+  "cs": "Saturejka zahradní"
+ },
+ "artemisia-dracunculus-sativa": {
+  "en": "Tarragon",
+  "de": "Estragon",
+  "fr": "Estragon",
+  "hu": "Tárkony",
+  "it": "Artemisia dracunculus",
+  "es": "Artemisia dracunculus",
+  "pl": "Bylica draganek",
+  "cs": "Pelyněk estragon"
+ },
+ "anthriscus-cerefolium": {
+  "en": "Chervil",
+  "de": "Echter Kerbel",
+  "fr": "Cerfeuil commun",
+  "hu": "Zamatos turbolya",
+  "it": "Anthriscus cerefolium",
+  "es": "Anthriscus cerefolium",
+  "pl": "Trybula ogrodowa",
+  "cs": "Kerblík třebule"
+ },
+ "petroselinum-crispum": {
+  "en": "Parsley",
+  "de": "Petersilie",
+  "fr": "Persil",
+  "hu": "Petroselinum crispum",
+  "it": "Petroselinum crispum",
+  "es": "Petroselinum crispum",
+  "pl": "Pietruszka zwyczajna",
+  "cs": "Petržel zahradní"
+ },
+ "petroselinum-crispum-var-neapolitanum": {
+  "en": "Parsley",
+  "de": "Petersilie",
+  "fr": "Persil",
+  "hu": "Petroselinum crispum",
+  "it": "Petroselinum crispum",
+  "es": "Petroselinum crispum",
+  "pl": "Pietruszka zwyczajna",
+  "cs": "Petržel zahradní"
+ },
+ "anethum-graveolens": {
+  "en": "Dill",
+  "de": "Dill (Pflanze)",
+  "fr": "Aneth",
+  "hu": "Kapor (növényfaj)",
+  "it": "Anethum graveolens",
+  "es": "Anethum graveolens",
+  "pl": "Koper ogrodowy",
+  "cs": "Kopr vonný"
+ },
+ "coriandrum-sativum": {
+  "en": "Coriander",
+  "de": "Echter Koriander",
+  "fr": "Coriandre",
+  "hu": "Koriander",
+  "it": "Coriandrum sativum",
+  "es": "Coriandrum sativum",
+  "pl": "Kolendra siewna",
+  "cs": "Koriandr setý"
+ },
+ "levisticum-officinale": {
+  "en": "Lovage",
+  "de": "Liebstöckel",
+  "fr": "Livèche",
+  "hu": "Orvosi lestyán",
+  "it": "Levisticum officinale",
+  "es": "Levisticum officinale",
+  "pl": "Lubczyk ogrodowy",
+  "cs": "Libeček lékařský"
+ },
+ "melissa-officinalis": {
+  "en": "Lemon balm",
+  "de": "Zitronenmelisse",
+  "fr": "Mélisse officinale",
+  "hu": "Citromfű",
+  "it": "Melissa officinalis",
+  "es": "Melissa officinalis",
+  "pl": "Melisa lekarska",
+  "cs": "Meduňka lékařská"
+ },
+ "mentha-x-piperita": {
+  "en": "Peppermint",
+  "de": "Pfefferminze",
+  "fr": "Menthe poivrée",
+  "hu": "Borsmenta",
+  "it": "Mentha × piperita",
+  "es": "Mentha × piperita",
+  "pl": "Mięta pieprzowa",
+  "cs": "Máta peprná"
+ },
+ "hyssopus-officinalis": {
+  "en": "Hyssopus officinalis",
+  "de": "Ysop",
+  "fr": "Hysope",
+  "hu": "Kerti izsóp",
+  "it": "Dracocephalum officinale",
+  "es": "Hyssopus officinalis",
+  "pl": "Hyzop lekarski",
+  "cs": "Yzop lékařský"
+ },
+ "borago-officinalis": {
+  "en": "Borage",
+  "de": "Borretsch",
+  "fr": "Bourrache officinale",
+  "hu": "Borágó",
+  "it": "Borago officinalis",
+  "es": "Borago officinalis",
+  "pl": "Ogórecznik lekarski",
+  "cs": "Brutnák lékařský"
+ },
+ "matricaria-chamomilla": {
+  "en": "Matricaria chamomilla",
+  "de": "Echte Kamille",
+  "fr": "Matricaria chamomilla",
+  "hu": "Orvosi székfű",
+  "it": "Matricaria chamomilla",
+  "es": "Matricaria chamomilla",
+  "pl": "Rumianek pospolity",
+  "cs": "Heřmánek pravý"
+ },
+ "chamaemelum-nobile": {
+  "en": "Chamaemelum nobile",
+  "de": "Römische Kamille",
+  "fr": "Camomille romaine",
+  "hu": "Római kamilla",
+  "it": "Chamaemelum nobile",
+  "es": "Chamaemelum nobile",
+  "pl": "Rumian rzymski",
+  "cs": "Rmenec sličný"
+ },
+ "aloysia-citrodora": {
+  "en": "Aloysia citrodora",
+  "de": "Zitronenstrauch",
+  "fr": "Aloysia citrodora",
+  "hu": "Citromverbéna",
+  "it": "Aloysia citrodora",
+  "es": "Aloysia citrodora",
+  "pl": "Miłowonka trójlistkowa",
+  "cs": "Aloisie citronová"
+ },
+ "carum-carvi": {
+  "en": "Caraway",
+  "de": "Echter Kümmel",
+  "fr": "Carvi",
+  "hu": "Fűszerkömény",
+  "it": "Carum carvi",
+  "es": "Carum carvi",
+  "pl": "Kminek zwyczajny",
+  "cs": "Kmín kořenný"
+ },
+ "foeniculum-vulgare": {
+  "en": "Fennel",
+  "de": "Fenchel",
+  "fr": "Fenouil commun",
+  "hu": "Édeskömény",
+  "it": "Foeniculum vulgare",
+  "es": "Foeniculum vulgare",
+  "pl": "Fenkuł włoski",
+  "cs": "Fenykl obecný"
+ },
+ "salvia-rosmarinus-miss-jessopps-upright": {
+  "en": "Rosemary",
+  "de": "Rosmarin",
+  "fr": "Romarin",
+  "hu": "Rozmaring",
+  "it": "Salvia rosmarinus",
+  "es": "Salvia rosmarinus",
+  "pl": "Rozmaryn lekarski",
+  "cs": "Šalvěj rozmarýna"
+ },
+ "salvia-rosmarinus-prostratus-group": {
+  "en": "Rosemary",
+  "de": "Rosmarin",
+  "fr": "Romarin",
+  "hu": "Rozmaring",
+  "it": "Salvia rosmarinus",
+  "es": "Salvia rosmarinus",
+  "pl": "Rozmaryn lekarski",
+  "cs": "Šalvěj rozmarýna"
+ },
+ "thymus-x-citriodorus": {
+  "en": "Thymus citriodorus",
+  "de": "Zitronen-Thymian",
+  "fr": "Thym citron",
+  "hu": "Citromillatú kakukkfű",
+  "cs": "Thymus × citriodorus"
+ },
+ "thymus-serpyllum": {
+  "en": "Thymus serpyllum",
+  "de": "Sand-Thymian",
+  "fr": "Serpolet",
+  "hu": "Keskenylevelű kakukkfű",
+  "it": "Thymus serpyllum",
+  "es": "Thymus serpyllum",
+  "pl": "Macierzanka piaskowa",
+  "cs": "Mateřídouška úzkolistá"
+ },
+ "lepidium-sativum": {
+  "en": "Garden cress",
+  "de": "Gartenkresse",
+  "fr": "Cresson alénois",
+  "hu": "Kerti zsázsa",
+  "it": "Lepidium sativum",
+  "es": "Lepidium sativum",
+  "pl": "Pieprzyca siewna",
+  "cs": "Řeřicha setá"
+ },
+ "sanguisorba-minor": {
+  "en": "Sanguisorba minor",
+  "de": "Kleiner Wiesenknopf",
+  "fr": "Pimprenelle",
+  "hu": "Kis vérfű",
+  "es": "Sanguisorba minor",
+  "pl": "Krwiściąg mniejszy",
+  "cs": "Krvavec menší"
+ },
+ "rubus-idaeus-glen-ample": {
+  "en": "Rubus idaeus",
+  "de": "Himbeere",
+  "fr": "Framboisier",
+  "hu": "Málna",
+  "it": "Rubus idaeus",
+  "es": "Rubus idaeus",
+  "pl": "Malina właściwa",
+  "cs": "Ostružiník maliník"
+ },
+ "rubus-idaeus-polka": {
+  "en": "Rubus idaeus",
+  "de": "Himbeere",
+  "fr": "Framboisier",
+  "hu": "Málna",
+  "it": "Rubus idaeus",
+  "es": "Rubus idaeus",
+  "pl": "Malina właściwa",
+  "cs": "Ostružiník maliník"
+ },
+ "rubus-fruticosus-loch-ness": {
+  "en": "Rubus fruticosus",
+  "de": "Rubus fruticosus",
+  "fr": "Ronce commune",
+  "hu": "Vadszeder",
+  "it": "Rubus fruticosus",
+  "es": "Rubus fruticosus",
+  "pl": "Jeżyna krzewiasta"
+ },
+ "ribes-rubrum": {
+  "en": "Redcurrant",
+  "de": "Rote Johannisbeere",
+  "fr": "Ribes rubrum",
+  "hu": "Vörös ribiszke",
+  "it": "Ribes rubrum",
+  "es": "Ribes rubrum",
+  "pl": "Porzeczka zwyczajna",
+  "cs": "Rybíz červený"
+ },
+ "ribes-rubrum-white-versailles": {
+  "en": "Redcurrant",
+  "de": "Rote Johannisbeere",
+  "fr": "Ribes rubrum",
+  "hu": "Vörös ribiszke",
+  "it": "Ribes rubrum",
+  "es": "Ribes rubrum",
+  "pl": "Porzeczka zwyczajna",
+  "cs": "Rybíz červený"
+ },
+ "ribes-nigrum": {
+  "en": "Blackcurrant",
+  "de": "Schwarze Johannisbeere",
+  "fr": "Ribes nigrum",
+  "hu": "Fekete ribiszke",
+  "it": "Ribes nigrum",
+  "es": "Ribes nigrum",
+  "pl": "Porzeczka czarna",
+  "cs": "Rybíz černý"
+ },
+ "ribes-uva-crispa": {
+  "en": "Ribes uva-crispa",
+  "de": "Stachelbeere",
+  "fr": "Groseillier à maquereau",
+  "hu": "Egres (növényfaj)",
+  "it": "Ribes uva-crispa",
+  "es": "Ribes uva-crispa",
+  "pl": "Porzeczka agrest",
+  "cs": "Srstka angrešt"
+ },
+ "ribes-x-nidigrolaria": {
+  "en": "Jostaberry",
+  "de": "Jostabeere",
+  "fr": "Casseille",
+  "hu": "Josta",
+  "cs": "Josta"
+ },
+ "vaccinium-corymbosum": {
+  "en": "Vaccinium corymbosum",
+  "de": "Amerikanische Heidelbeere",
+  "fr": "Vaccinium corymbosum",
+  "it": "Vaccinium corymbosum",
+  "es": "Vaccinium corymbosum",
+  "pl": "Borówka wysoka",
+  "cs": "Brusnice chocholičnatá"
+ },
+ "lonicera-caerulea-var-kamtschatica": {
+  "en": "Lonicera caerulea",
+  "de": "Blaue Heckenkirsche",
+  "fr": "Chèvrefeuille bleu",
+  "hu": "Kék mézbogyó",
+  "es": "Lonicera caerulea",
+  "pl": "Wiciokrzew siny"
+ },
+ "fragaria-vesca": {
+  "en": "Fragaria vesca",
+  "de": "Wald-Erdbeere",
+  "fr": "Fraisier des bois",
+  "hu": "Erdei szamóca",
+  "it": "Fragaria vesca",
+  "es": "Fragaria vesca",
+  "pl": "Poziomka pospolita",
+  "cs": "Jahodník obecný"
+ },
+ "rubus-tayberry": {
+  "en": "Rubus",
+  "de": "Rubus",
+  "fr": "Rubus",
+  "hu": "Szeder",
+  "it": "Rubus",
+  "es": "Rubus",
+  "pl": "Jeżyna",
+  "cs": "Ostružiník"
+ },
+ "aronia-melanocarpa-nero": {
+  "en": "Aronia melanocarpa",
+  "de": "Schwarze Apfelbeere",
+  "fr": "Aronia melanocarpa",
+  "hu": "Fekete törpeberkenye",
+  "pl": "Aronia czarna",
+  "cs": "Temnoplodec černoplodý"
+ },
+ "calendula-officinalis": {
+  "en": "Calendula officinalis",
+  "de": "Ringelblume",
+  "fr": "Souci officinal",
+  "hu": "Orvosi körömvirág",
+  "it": "Calendula officinalis",
+  "es": "Calendula officinalis",
+  "pl": "Nagietek lekarski",
+  "cs": "Měsíček lékařský"
+ },
+ "tropaeolum-majus": {
+  "en": "Tropaeolum majus",
+  "de": "Große Kapuzinerkresse",
+  "fr": "Grande capucine",
+  "hu": "Kerti sarkantyúka",
+  "it": "Tropaeolum majus",
+  "es": "Tropaeolum majus",
+  "pl": "Nasturcja większa",
+  "cs": "Lichořeřišnice větší"
+ },
+ "lathyrus-odoratus": {
+  "en": "Sweet pea",
+  "de": "Duftende Platterbse",
+  "fr": "Pois de senteur",
+  "it": "Lathyrus odoratus",
+  "es": "Lathyrus odoratus",
+  "pl": "Groszek pachnący",
+  "cs": "Hrachor vonný"
+ },
+ "centaurea-cyanus": {
+  "en": "Centaurea cyanus",
+  "de": "Kornblume",
+  "fr": "Cyanus segetum",
+  "hu": "Búzavirág",
+  "it": "Centaurea cyanus",
+  "es": "Centaurea cyanus",
+  "pl": "Chaber bławatek",
+  "cs": "Chrpa modrá"
+ },
+ "papaver-rhoeas": {
+  "en": "Papaver rhoeas",
+  "de": "Klatschmohn",
+  "fr": "Coquelicot",
+  "hu": "Pipacs",
+  "it": "Papaver rhoeas",
+  "es": "Papaver rhoeas",
+  "pl": "Mak polny",
+  "cs": "Mák vlčí"
+ },
+ "papaver-somniferum": {
+  "en": "Papaver somniferum",
+  "de": "Schlafmohn",
+  "fr": "Pavot somnifère",
+  "hu": "Kerti mák",
+  "it": "Papaver somniferum",
+  "es": "Papaver somniferum",
+  "pl": "Mak lekarski",
+  "cs": "Mák setý"
+ },
+ "nigella-damascena": {
+  "en": "Nigella damascena",
+  "de": "Jungfer im Grünen",
+  "fr": "Nigelle de Damas",
+  "hu": "Borzaskata",
+  "it": "Nigella damascena",
+  "es": "Nigella damascena",
+  "pl": "Czarnuszka damasceńska",
+  "cs": "Černucha damašská"
+ },
+ "antirrhinum-majus": {
+  "en": "Antirrhinum majus",
+  "de": "Großes Löwenmaul",
+  "fr": "Muflier à grandes fleurs",
+  "hu": "Kerti oroszlánszáj",
+  "it": "Antirrhinum majus",
+  "es": "Antirrhinum majus",
+  "pl": "Wyżlin większy",
+  "cs": "Hledík větší"
+ },
+ "zinnia-elegans": {
+  "en": "Zinnia elegans",
+  "de": "Zinnie",
+  "fr": "Zinnia violacea",
+  "hu": "Rézvirág",
+  "it": "Zinnia elegans",
+  "es": "Zinnia elegans",
+  "pl": "Cynia wytworna",
+  "cs": "Ostálka sličná"
+ },
+ "cosmos-bipinnatus-purity": {
+  "en": "Cosmos bipinnatus",
+  "de": "Schmuckkörbchen",
+  "fr": "Cosmos bipinnatus",
+  "hu": "Kerti pillangóvirág",
+  "it": "Cosmos bipinnatus",
+  "es": "Cosmos bipinnatus",
+  "pl": "Kosmos pierzasty",
+  "cs": "Krásenka zpeřená"
+ },
+ "cosmos-sulphureus": {
+  "en": "Cosmos sulphureus",
+  "fr": "Cosmos sulphureus",
+  "hu": "Sárga pillangóvirág",
+  "es": "Cosmos sulphureus"
+ },
+ "helianthus-annuus-teddy-bear": {
+  "en": "Common sunflower",
+  "de": "Sonnenblume",
+  "fr": "Tournesol",
+  "hu": "Napraforgó (növényfaj)",
+  "it": "Helianthus annuus",
+  "es": "Helianthus annuus",
+  "pl": "Słonecznik zwyczajny",
+  "cs": "Slunečnice roční"
+ },
+ "helianthus-annuus-italian-white": {
+  "en": "Common sunflower",
+  "de": "Sonnenblume",
+  "fr": "Tournesol",
+  "hu": "Napraforgó (növényfaj)",
+  "it": "Helianthus annuus",
+  "es": "Helianthus annuus",
+  "pl": "Słonecznik zwyczajny",
+  "cs": "Slunečnice roční"
+ },
+ "nicotiana-sylvestris": {
+  "en": "Nicotiana sylvestris",
+  "fr": "Nicotiana sylvestris",
+  "es": "Nicotiana sylvestris",
+  "pl": "Tytoń leśny"
+ },
+ "nicotiana-alata": {
+  "en": "Nicotiana alata",
+  "fr": "Nicotiana alata",
+  "it": "Nicotiana alata",
+  "pl": "Tytoń oskrzydlony"
+ },
+ "cleome-hassleriana": {
+  "en": "Cleome houtteana"
+ },
+ "amaranthus-caudatus": {
+  "en": "Amaranthus caudatus",
+  "de": "Garten-Fuchsschwanz",
+  "fr": "Amarante queue-de-renard",
+  "it": "Amaranthus caudatus",
+  "es": "Amaranthus caudatus",
+  "pl": "Szarłat zwisły",
+  "cs": "Laskavec ocasatý"
+ },
+ "ammi-majus": {
+  "en": "Ammi majus",
+  "de": "Große Knorpelmöhre",
+  "fr": "Ammi élevé",
+  "it": "Ammi majus",
+  "es": "Ammi majus",
+  "pl": "Aminek wielki",
+  "cs": "Morač větší"
+ },
+ "orlaya-grandiflora": {
+  "en": "Orlaya grandiflora",
+  "de": "Strahlen-Breitsame",
+  "fr": "Orlaya grandiflora",
+  "hu": "Nagyvirágú laputurbolya",
+  "pl": "Orlaja wielkokwiatowa",
+  "cs": "Paprska velkokvětá"
+ },
+ "scabiosa-atropurpurea": {
+  "en": "Scabiosa atropurpurea",
+  "de": "Samt-Skabiose",
+  "fr": "Scabiosa atropurpurea",
+  "es": "Scabiosa atropurpurea",
+  "pl": "Driakiew purpurowa"
+ },
+ "consolida-ajacis": {
+  "en": "Consolida ajacis",
+  "de": "Garten-Feldrittersporn",
+  "fr": "Delphinium ajacis",
+  "es": "Consolida ajacis",
+  "pl": "Ostróżeczka ogrodowa",
+  "cs": "Ostrožka zahradní"
+ },
+ "eschscholzia-californica": {
+  "en": "Eschscholzia californica",
+  "de": "Kalifornischer Mohn",
+  "fr": "Pavot de Californie",
+  "hu": "Kaliforniai kakukkmák",
+  "es": "Eschscholzia californica",
+  "pl": "Pozłotka kalifornijska",
+  "cs": "Sluncovka kalifornská"
+ },
+ "phacelia-tanacetifolia": {
+  "en": "Phacelia tanacetifolia",
+  "de": "Rainfarn-Phazelie",
+  "fr": "Phacélie à feuilles de tanaisie",
+  "hu": "Varádicslevelű mézontófű",
+  "it": "Phacelia tanacetifolia",
+  "es": "Phacelia tanacetifolia",
+  "pl": "Facelia błękitna",
+  "cs": "Svazenka vratičolistá"
+ },
+ "tagetes-erecta": {
+  "en": "Tagetes erecta",
+  "de": "Aufrechte Studentenblume",
+  "fr": "Rose d'Inde",
+  "hu": "Nagy büdöske",
+  "it": "Tagetes erecta",
+  "es": "Tagetes erecta",
+  "pl": "Aksamitka wzniesiona"
+ },
+ "tagetes-tenuifolia": {
+  "en": "Tagetes tenuifolia",
+  "de": "Schmalblättrige Studentenblume",
+  "fr": "Tagetes tenuifolia",
+  "it": "Tagetes tenuifolia",
+  "es": "Tagetes tenuifolia",
+  "pl": "Aksamitka wąskolistna"
+ },
+ "salvia-splendens": {
+  "en": "Salvia splendens",
+  "de": "Feuersalbei",
+  "fr": "Salvia splendens",
+  "it": "Salvia splendens",
+  "es": "Salvia splendens",
+  "pl": "Szałwia błyszcząca",
+  "cs": "Šalvěj zářivá"
+ },
+ "salvia-farinacea": {
+  "en": "Salvia farinacea",
+  "de": "Mehliger Salbei",
+  "fr": "Salvia farinacea",
+  "es": "Salvia farinacea"
+ },
+ "pelargonium-x-hortorum": {
+  "en": "Pelargonium × hortorum",
+  "fr": "Pelargonium ×hortorum",
+  "hu": "Kerti muskátli",
+  "es": "Pelargonium hortorum",
+  "pl": "Pelargonia pasiasta"
+ },
+ "pelargonium-peltatum": {
+  "en": "Pelargonium peltatum",
+  "fr": "Pelargonium peltatum",
+  "hu": "Futómuskátli",
+  "it": "Pelargonium peltatum",
+  "pl": "Pelargonia bluszczolistna"
+ },
+ "pelargonium-graveolens": {
+  "en": "Pelargonium graveolens",
+  "de": "Pelargonium graveolens",
+  "fr": "Pelargonium graveolens",
+  "hu": "Illatozó muskátli",
+  "it": "Pelargonium graveolens",
+  "es": "Pelargonium graveolens",
+  "pl": "Pelargonia pachnąca"
+ },
+ "petunia-x-atkinsiana": {
+  "en": "Petunia × atkinsiana",
+  "de": "Garten-Petunie",
+  "it": "Petunia × atkinsiana",
+  "es": "Petunia × hybrida",
+  "pl": "Petunia ogrodowa",
+  "cs": "Petúnie zahradní"
+ },
+ "petunia-surfinia-series": {
+  "en": "Petunia",
+  "de": "Petunien",
+  "fr": "Petunia",
+  "hu": "Petúnia",
+  "it": "Petunia",
+  "es": "Petunia",
+  "pl": "Petunia",
+  "cs": "Petúnie"
+ },
+ "impatiens-walleriana": {
+  "en": "Impatiens walleriana",
+  "de": "Fleißiges Lieschen",
+  "fr": "Impatiens walleriana",
+  "hu": "Törpe nebáncsvirág",
+  "it": "Impatiens walleriana",
+  "es": "Impatiens walleriana"
+ },
+ "impatiens-hawkeri": {
+  "en": "Impatiens hawkeri",
+  "hu": "Foltos nenyúljhozzám",
+  "es": "Impatiens hawkeri",
+  "pl": "Niecierpek nowogwinejski"
+ },
+ "lobelia-erinus": {
+  "en": "Lobelia erinus",
+  "de": "Männertreu",
+  "fr": "Lobélie érine",
+  "it": "Lobelia erinus",
+  "es": "Lobelia erinus",
+  "cs": "Lobelka modrá"
+ },
+ "ageratum-houstonianum": {
+  "en": "Ageratum houstonianum",
+  "de": "Gewöhnlicher Leberbalsam",
+  "fr": "Ageratum houstonianum",
+  "pl": "Żeniszek meksykański",
+  "cs": "Nestařec americký"
+ },
+ "lobularia-maritima": {
+  "en": "Lobularia maritima",
+  "de": "Strand-Silberkraut",
+  "fr": "Alysson maritime",
+  "it": "Lobularia maritima",
+  "es": "Lobularia maritima",
+  "pl": "Lobularia nadmorska",
+  "cs": "Tařicovka přímořská"
+ },
+ "celosia-argentea-var-plumosa": {
+  "en": "Celosia argentea",
+  "de": "Silber-Brandschopf",
+  "fr": "Celosia argentea",
+  "hu": "Ezüst celózia",
+  "it": "Celosia argentea",
+  "es": "Celosia argentea",
+  "pl": "Celozja srebrzysta"
+ },
+ "gomphrena-globosa": {
+  "en": "Gomphrena globosa",
+  "de": "Echter Kugelamarant",
+  "fr": "Gomphrena globosa",
+  "es": "Gomphrena globosa",
+  "pl": "Wiecznik kulisty"
+ },
+ "rudbeckia-hirta": {
+  "en": "Rudbeckia hirta",
+  "de": "Schwarzäugige Rudbeckie",
+  "fr": "Rudbeckia hirta",
+  "hu": "Borzas kúpvirág",
+  "it": "Rudbeckia hirta",
+  "es": "Rudbeckia bicolor",
+  "cs": "Třapatka srstnatá"
+ },
+ "malva-trimestris": {
+  "en": "Malva trimestris",
+  "fr": "Lavatera trimestris",
+  "es": "Lavatera trimestris",
+  "pl": "Ślazówka letnia"
+ },
+ "matthiola-incana": {
+  "en": "Matthiola incana",
+  "de": "Garten-Levkoje",
+  "fr": "Matthiola incana",
+  "it": "Matthiola incana",
+  "es": "Matthiola incana",
+  "cs": "Fiala šedivá"
+ },
+ "bidens-ferulifolia": {
+  "en": "Bidens ferulifolia",
+  "fr": "Bidens ferulifolia",
+  "hu": "Balkon aranya"
+ },
+ "lavandula-angustifolia-hidcote": {
+  "en": "Lavandula angustifolia",
+  "de": "Echter Lavendel",
+  "fr": "Lavandula angustifolia",
+  "hu": "Közönséges levendula",
+  "it": "Lavandula angustifolia",
+  "es": "Lavandula angustifolia",
+  "pl": "Lawenda wąskolistna",
+  "cs": "Levandule lékařská"
+ },
+ "lavandula-angustifolia-munstead": {
+  "en": "Lavandula angustifolia",
+  "de": "Echter Lavendel",
+  "fr": "Lavandula angustifolia",
+  "hu": "Közönséges levendula",
+  "it": "Lavandula angustifolia",
+  "es": "Lavandula angustifolia",
+  "pl": "Lawenda wąskolistna",
+  "cs": "Levandule lékařská"
+ },
+ "lavandula-angustifolia-folgate": {
+  "en": "Lavandula angustifolia",
+  "de": "Echter Lavendel",
+  "fr": "Lavandula angustifolia",
+  "hu": "Közönséges levendula",
+  "it": "Lavandula angustifolia",
+  "es": "Lavandula angustifolia",
+  "pl": "Lawenda wąskolistna",
+  "cs": "Levandule lékařská"
+ },
+ "lavandula-angustifolia-rosea": {
+  "en": "Lavandula angustifolia",
+  "de": "Echter Lavendel",
+  "fr": "Lavandula angustifolia",
+  "hu": "Közönséges levendula",
+  "it": "Lavandula angustifolia",
+  "es": "Lavandula angustifolia",
+  "pl": "Lawenda wąskolistna",
+  "cs": "Levandule lékařská"
+ },
+ "lavandula-stoechas": {
+  "en": "Lavandula stoechas",
+  "de": "Schopf-Lavendel",
+  "fr": "Lavandula stoechas",
+  "hu": "Füzéres levendula",
+  "it": "Lavandula stoechas",
+  "es": "Lavandula stoechas",
+  "cs": "Levandule korunkatá"
+ },
+ "lavandula-dentata": {
+  "en": "Lavandula dentata",
+  "de": "Französischer Lavendel",
+  "fr": "Lavandula dentata",
+  "it": "Lavandula dentata",
+  "es": "Lavandula dentata"
+ },
+ "lavandula-latifolia": {
+  "en": "Lavandula latifolia",
+  "de": "Breitblättriger Lavendel",
+  "fr": "Lavandula latifolia",
+  "it": "Lavandula latifolia",
+  "es": "Lavandula latifolia"
+ },
+ "cistus-purpureus": {
+  "en": "Cistus × purpureus"
+ },
+ "cistus-albidus": {
+  "en": "Cistus albidus",
+  "de": "Weißliche Zistrose",
+  "fr": "Cistus albidus",
+  "it": "Cistus albidus",
+  "es": "Cistus albidus",
+  "pl": "Czystek biały"
+ },
+ "cistus-salviifolius": {
+  "en": "Cistus salviifolius",
+  "de": "Salbeiblättrige Zistrose",
+  "fr": "Cistus salviifolius",
+  "it": "Cistus salviifolius",
+  "es": "Cistus salviifolius"
+ },
+ "cistus-ladanifer": {
+  "en": "Cistus ladanifer",
+  "de": "Lack-Zistrose",
+  "fr": "Cistus ladanifer",
+  "hu": "Balzsamos szuhar",
+  "it": "Cistus ladanifer",
+  "es": "Cistus ladanifer",
+  "pl": "Czystek żywicowy",
+  "cs": "Cist ladanový"
+ },
+ "halimium-lasianthum": {
+  "en": "Cistus lasianthus"
+ },
+ "santolina-chamaecyparissus": {
+  "en": "Santolina chamaecyparissus",
+  "de": "Graues Heiligenkraut",
+  "fr": "Santoline petit-cyprès",
+  "it": "Santolina chamaecyparissus",
+  "es": "Santolina chamaecyparissus",
+  "pl": "Santolina cyprysikowata",
+  "cs": "Svatolína cypřiškovitá"
+ },
+ "santolina-rosmarinifolia": {
+  "en": "Santolina rosmarinifolia",
+  "de": "Rosmarinblättriges Heiligenkraut",
+  "fr": "Santoline à feuilles de romarin",
+  "es": "Santolina rosmarinifolia"
+ },
+ "phlomis-fruticosa": {
+  "en": "Phlomis fruticosa",
+  "de": "Strauchiges Brandkraut",
+  "fr": "Phlomis fruticosa",
+  "it": "Phlomis fruticosa",
+  "es": "Phlomis fruticosa"
+ },
+ "phlomis-russeliana": {
+  "en": "Phlomis russeliana",
+  "de": "Russel-Brandkraut",
+  "fr": "Phlomis de Russell"
+ },
+ "euphorbia-characias-subsp-wulfenii": {
+  "en": "Euphorbia characias",
+  "de": "Palisaden-Wolfsmilch",
+  "fr": "Euphorbia characias",
+  "hu": "Euphorbia characias",
+  "it": "Euphorbia characias",
+  "es": "Euphorbia characias"
+ },
+ "euphorbia-myrsinites": {
+  "en": "Euphorbia myrsinites",
+  "de": "Walzen-Wolfsmilch",
+  "fr": "Euphorbia myrsinites",
+  "it": "Euphorbia myrsinites",
+  "es": "Euphorbia myrsinites",
+  "cs": "Pryšec myrtovitý"
+ },
+ "euphorbia-rigida": {
+  "en": "Euphorbia rigida",
+  "es": "Euphorbia rigida"
+ },
+ "helichrysum-italicum": {
+  "en": "Helichrysum italicum",
+  "de": "Italienische Strohblume",
+  "fr": "Helichrysum italicum",
+  "hu": "Olasz szalmagyopár",
+  "it": "Helichrysum italicum",
+  "es": "Helichrysum italicum",
+  "cs": "Smil italský"
+ },
+ "teucrium-fruticans": {
+  "en": "Teucrium fruticans",
+  "de": "Strauchiger Gamander",
+  "fr": "Teucrium fruticans",
+  "it": "Teucrium fruticans",
+  "es": "Teucrium fruticans"
+ },
+ "teucrium-chamaedrys": {
+  "en": "Teucrium chamaedrys",
+  "de": "Edel-Gamander",
+  "fr": "Germandrée petit-chêne",
+  "hu": "Sarlós gamandor",
+  "it": "Teucrium chamaedrys",
+  "es": "Teucrium chamaedrys",
+  "pl": "Ożanka właściwa",
+  "cs": "Ožanka kalamandra"
+ },
+ "myrtus-communis": {
+  "en": "Myrtus communis",
+  "de": "Myrte",
+  "fr": "Myrtus communis",
+  "hu": "Közönséges mirtusz",
+  "it": "Myrtus communis",
+  "es": "Myrtus communis",
+  "pl": "Mirt zwyczajny",
+  "cs": "Myrta obecná"
+ },
+ "myrtus-communis-tarentina": {
+  "en": "Myrtus communis",
+  "de": "Myrte",
+  "fr": "Myrtus communis",
+  "hu": "Közönséges mirtusz",
+  "it": "Myrtus communis",
+  "es": "Myrtus communis",
+  "pl": "Mirt zwyczajny",
+  "cs": "Myrta obecná"
+ },
+ "nerium-oleander": {
+  "en": "Nerium",
+  "de": "Oleander",
+  "fr": "Laurier-rose",
+  "hu": "Leander (növényfaj)",
+  "it": "Nerium oleander",
+  "es": "Nerium oleander",
+  "pl": "Oleander pospolity",
+  "cs": "Oleandr obecný"
+ },
+ "pittosporum-tobira": {
+  "en": "Pittosporum tobira",
+  "de": "Chinesischer Klebsame",
+  "fr": "Pittosporum tobira",
+  "it": "Pittosporum tobira",
+  "es": "Pittosporum tobira",
+  "pl": "Pospornica japońska"
+ },
+ "pittosporum-tobira-nana": {
+  "en": "Pittosporum tobira",
+  "de": "Chinesischer Klebsame",
+  "fr": "Pittosporum tobira",
+  "it": "Pittosporum tobira",
+  "es": "Pittosporum tobira",
+  "pl": "Pospornica japońska"
+ },
+ "westringia-fruticosa": {
+  "en": "Westringia fruticosa"
+ },
+ "coronilla-valentina-subsp-glauca": {
+  "en": "Coronilla valentina",
+  "fr": "Coronilla valentina"
+ },
+ "spartium-junceum": {
+  "en": "Spartium",
+  "de": "Pfriemenginster",
+  "fr": "Spartium junceum",
+  "hu": "Jeneszter",
+  "it": "Spartium junceum",
+  "es": "Spartium junceum",
+  "pl": "Szczodrzenica sitowata",
+  "cs": "Vítečník sítinovitý"
+ },
+ "genista-hispanica": {
+  "en": "Genista hispanica",
+  "fr": "Genista hispanica",
+  "es": "Genista hispanica"
+ },
+ "ballota-pseudodictamnus": {
+  "en": "Pseudodictamnus mediterraneus",
+  "de": "Pseudodictamnus mediterraneus",
+  "fr": "Ballota pseudodictamnus"
+ },
+ "bupleurum-fruticosum": {
+  "en": "Bupleurum fruticosum",
+  "de": "Strauchiges Hasenohr",
+  "fr": "Bupleurum fruticosum",
+  "es": "Bupleurum fruticosum"
+ },
+ "atriplex-halimus": {
+  "en": "Atriplex halimus",
+  "de": "Strauch-Melde",
+  "fr": "Atriplex halimus",
+  "it": "Atriplex halimus",
+  "es": "Atriplex halimus",
+  "pl": "Łoboda solniskowa"
+ },
+ "artemisia-powis-castle": {
+  "en": "Artemisia",
+  "de": "Artemisia",
+  "fr": "Artemisia",
+  "it": "Artemisia (disambigua)",
+  "es": "Artemisia",
+  "cs": "Artemisia (rozcestník)"
+ },
+ "artemisia-absinthium": {
+  "en": "Artemisia absinthium",
+  "de": "Wermutkraut",
+  "fr": "Absinthe (plante)",
+  "hu": "Fehér üröm",
+  "it": "Artemisia absinthium",
+  "es": "Artemisia absinthium",
+  "pl": "Bylica piołun",
+  "cs": "Pelyněk pravý"
+ },
+ "salvia-yangii-blue-spire": {
+  "en": "Salvia yangii",
+  "de": "Silber-Perowskie",
+  "fr": "Salvia yangii",
+  "es": "Salvia yangii",
+  "cs": "Šalvěj Yangova"
+ },
+ "salvia-greggii": {
+  "en": "Salvia greggii",
+  "de": "Herbst-Salbei",
+  "es": "Salvia greggii",
+  "cs": "Šalvěj Greggova"
+ },
+ "salvia-microphylla": {
+  "en": "Salvia microphylla",
+  "de": "Johannisbeer-Salbei",
+  "fr": "Salvia microphylla",
+  "es": "Salvia microphylla"
+ },
+ "salvia-amistad": {
+  "en": "Salvia",
+  "de": "Salbei",
+  "fr": "Sauge",
+  "hu": "Zsálya",
+  "it": "Salvia",
+  "es": "Salvia",
+  "pl": "Szałwia",
+  "cs": "Šalvěj"
+ },
+ "salvia-sclarea": {
+  "en": "Salvia sclarea",
+  "de": "Muskatellersalbei",
+  "fr": "Sauge sclarée",
+  "it": "Salvia sclarea",
+  "es": "Salvia sclarea",
+  "pl": "Szałwia muszkatołowa",
+  "cs": "Šalvěj muškátová"
+ },
+ "convolvulus-cneorum": {
+  "en": "Convolvulus cneorum",
+  "fr": "Convolvulus cneorum",
+  "it": "Convolvulus cneorum",
+  "es": "Convolvulus cneorum"
+ },
+ "convolvulus-sabatius": {
+  "en": "Convolvulus sabatius",
+  "de": "Kriechende Winde",
+  "es": "Convolvulus sabatius"
+ },
+ "lantana-camara": {
+  "en": "Lantana camara",
+  "de": "Wandelröschen",
+  "fr": "Lantana camara",
+  "hu": "Sétányrózsa",
+  "it": "Lantana camara",
+  "es": "Lantana camara",
+  "pl": "Lantana pospolita",
+  "cs": "Libora měnivá"
+ },
+ "plumbago-auriculata": {
+  "en": "Plumbago auriculata",
+  "de": "Kap-Bleiwurz",
+  "fr": "Dentelaire du Cap",
+  "es": "Plumbago auriculata",
+  "pl": "Ołownik uszkowaty"
+ },
+ "callistemon-citrinus": {
+  "en": "Melaleuca citrina",
+  "fr": "Melaleuca citrina"
+ },
+ "rhamnus-alaternus": {
+  "en": "Rhamnus alaternus",
+  "de": "Stechpalmen-Kreuzdorn",
+  "fr": "Nerprun alaterne",
+  "it": "Rhamnus alaternus",
+  "es": "Rhamnus alaternus"
+ },
+ "pistacia-lentiscus": {
+  "en": "Pistacia lentiscus",
+  "de": "Mastixstrauch",
+  "fr": "Pistacia lentiscus",
+  "it": "Pistacia lentiscus",
+  "es": "Pistacia lentiscus",
+  "pl": "Pistacja kleista",
+  "cs": "Řečík lentišek"
+ },
+ "hebe-great-orme": {
+  "en": "Hebe",
+  "de": "Hebe",
+  "fr": "Hébé (homonymie)",
+  "es": "Hebe",
+  "pl": "Hebe"
+ },
+ "hebe-red-edge": {
+  "en": "Hebe",
+  "de": "Hebe",
+  "fr": "Hébé (homonymie)",
+  "es": "Hebe",
+  "pl": "Hebe"
+ },
+ "agapanthus-africanus": {
+  "en": "Agapanthus africanus",
+  "de": "Afrikanische Schmucklilie",
+  "fr": "Agapanthus africanus",
+  "it": "Agapanthus africanus",
+  "es": "Agapanthus africanus",
+  "pl": "Agapant afrykański"
+ },
+ "agapanthus-headbourne-hybrids": {
+  "en": "Agapanthus",
+  "de": "Schmucklilien",
+  "fr": "Agapanthus",
+  "it": "Agapanthus",
+  "pl": "Agapant",
+  "cs": "Kalokvět"
+ },
+ "oenothera-lindheimeri-whirling-butterflies": {
+  "en": "Oenothera lindheimeri",
+  "de": "Prachtkerze",
+  "fr": "Oenothera lindheimeri",
+  "it": "Oenothera lindheimeri"
+ },
+ "erigeron-karvinskianus": {
+  "en": "Erigeron karvinskianus",
+  "de": "Mexikanisches Berufkraut",
+  "fr": "Erigeron karvinskianus",
+  "it": "Erigeron karvinskianus",
+  "es": "Erigeron karvinskianus"
+ },
+ "centranthus-ruber": {
+  "en": "Valeriana rubra",
+  "de": "Rote Spornblume",
+  "fr": "Centranthe rouge",
+  "hu": "Piros sarkantyúvirág",
+  "it": "Valeriana rubra",
+  "es": "Centranthus ruber",
+  "pl": "Ostrogowiec czerwony",
+  "cs": "Mavuň červená"
+ },
+ "achillea-moonshine": {
+  "en": "Achillea",
+  "de": "Schafgarben",
+  "fr": "Achillée",
+  "hu": "Cickafark (növénynemzetség)",
+  "it": "Achillea",
+  "es": "Achillea",
+  "pl": "Krwawnik",
+  "cs": "Řebříček"
+ },
+ "stachys-byzantina": {
+  "en": "Stachys byzantina",
+  "de": "Woll-Ziest",
+  "fr": "Stachys byzantina",
+  "es": "Stachys byzantina",
+  "pl": "Czyściec wełnisty",
+  "cs": "Čistec vlnatý"
+ },
+ "eryngium-bourgatii": {
+  "en": "Eryngium bourgatii",
+  "fr": "Panicaut de Bourgat",
+  "es": "Eryngium bourgatii"
+ },
+ "eryngium-giganteum": {
+  "en": "Eryngium giganteum",
+  "de": "Elfenbein-Mannstreu",
+  "fr": "Eryngium giganteum",
+  "it": "Eryngium giganteum",
+  "es": "Eryngium giganteum",
+  "cs": "Máčka obrovská"
+ },
+ "verbena-bonariensis": {
+  "en": "Verbena bonariensis",
+  "de": "Patagonisches Eisenkraut",
+  "fr": "Verveine de Buenos Aires",
+  "hu": "Verbena bonariensis",
+  "es": "Verbena bonariensis"
+ },
+ "silene-coronaria": {
+  "en": "Silene coronaria",
+  "de": "Kronen-Lichtnelke",
+  "fr": "Coquelourde des jardins",
+  "hu": "Bársonyos kakukkszegfű",
+  "es": "Silene coronaria",
+  "pl": "Firletka kwiecista",
+  "cs": "Kohoutek věncový"
+ },
+ "glaucium-flavum": {
+  "en": "Glaucium flavum",
+  "de": "Gelber Hornmohn",
+  "fr": "Glaucium flavum",
+  "it": "Glaucium flavum",
+  "es": "Glaucium flavum",
+  "pl": "Siwiec żółty"
+ },
+ "epilobium-canum": {
+  "en": "Epilobium canum"
+ },
+ "origanum-laevigatum-herrenhausen": {
+  "en": "Origanum laevigatum",
+  "fr": "Origan lisse",
+  "es": "Origanum laevigatum"
+ },
+ "nepeta-racemosa-walkers-low": {
+  "en": "Nepeta racemosa",
+  "de": "Trauben-Katzenminze",
+  "cs": "Šanta hroznovitá"
+ },
+ "asphodeline-lutea": {
+  "en": "Asphodeline lutea",
+  "de": "Gelber Affodill",
+  "fr": "Asphodeline lutea",
+  "it": "Asphodeline lutea",
+  "pl": "Złotnica żółta"
+ },
+ "asphodelus-albus": {
+  "en": "Asphodelus albus",
+  "de": "Weißer Affodill",
+  "fr": "Asphodèle blanc",
+  "hu": "Fehér aszfodélosz",
+  "es": "Asphodelus albus"
+ },
+ "acanthus-mollis": {
+  "en": "Acanthus mollis",
+  "de": "Wahrer Bärenklau",
+  "fr": "Acanthe à feuilles molles",
+  "it": "Acanthus mollis",
+  "es": "Acanthus mollis",
+  "pl": "Akant miękki",
+  "cs": "Paznehtník měkký"
+ },
+ "limonium-platyphyllum": {
+  "en": "Limonium platyphyllum"
+ },
+ "armeria-maritima": {
+  "en": "Armeria maritima",
+  "de": "Strand-Grasnelke",
+  "fr": "Armérie maritime",
+  "es": "Armeria maritima",
+  "pl": "Zawciąg pospolity"
+ },
+ "aurinia-saxatilis": {
+  "en": "Aurinia saxatilis",
+  "de": "Felsensteinkraut",
+  "fr": "Corbeille d'or",
+  "hu": "Szirti sziklaiternye",
+  "es": "Aurinia saxatilis",
+  "pl": "Smagliczka skalna",
+  "cs": "Tařice skalní"
+ },
+ "cerastium-tomentosum": {
+  "en": "Cerastium tomentosum",
+  "de": "Filziges Hornkraut",
+  "fr": "Céraiste cotonneux",
+  "hu": "Molyhos madárhúr",
+  "it": "Cerastium tomentosum",
+  "pl": "Rogownica kutnerowata",
+  "cs": "Rožec plstnatý"
+ },
+ "iberis-sempervirens": {
+  "en": "Iberis sempervirens",
+  "de": "Immergrüne Schleifenblume",
+  "fr": "Ibéris toujours vert",
+  "hu": "Örökzöld tatárvirág",
+  "es": "Iberis sempervirens",
+  "pl": "Ubiorek wiecznie zielony",
+  "cs": "Iberka vždyzelená"
+ },
+ "osteospermum-jucundum": {
+  "en": "Dimorphotheca jucunda",
+  "es": "Dimorphotheca jucunda"
+ },
+ "gazania-rigens": {
+  "en": "Gazania rigens",
+  "fr": "Gazania rigens",
+  "hu": "Pompás záporvirág",
+  "it": "Gazania rigens",
+  "es": "Gazania rigens",
+  "pl": "Gazania lśniąca",
+  "cs": "Gazánie zářivá"
+ },
+ "delosperma-cooperi": {
+  "en": "Delosperma cooperi",
+  "de": "Delosperma cooperi",
+  "fr": "Delosperma cooperi",
+  "es": "Delosperma cooperi"
+ },
+ "aeonium-zwartkop": {
+  "en": "Aeonium",
+  "de": "Aeonium",
+  "fr": "Aeonium",
+  "hu": "Kövirózsacserje",
+  "it": "Aeonium",
+  "es": "Aeonium",
+  "pl": "Eonium",
+  "cs": "Eonium"
+ },
+ "agave-americana": {
+  "en": "Agave americana",
+  "de": "Agave americana",
+  "fr": "Agave americana",
+  "hu": "Közönséges agávé",
+  "it": "Agave americana",
+  "es": "Agave americana",
+  "pl": "Agawa amerykańska",
+  "cs": "Agáve obecná"
+ },
+ "yucca-filamentosa": {
+  "en": "Yucca filamentosa",
+  "de": "Fädige Palmlilie",
+  "fr": "Yucca filamentosa",
+  "hu": "Foszlóslevelű pálmaliliom",
+  "es": "Yucca filamentosa",
+  "pl": "Jukka karolińska",
+  "cs": "Juka vláknitá"
+ },
+ "yucca-gloriosa": {
+  "en": "Yucca gloriosa",
+  "de": "Kerzen-Palmlilie",
+  "fr": "Yucca gloriosa",
+  "it": "Yucca gloriosa",
+  "es": "Yucca gloriosa"
+ },
+ "opuntia-ficus-indica": {
+  "en": "Opuntia ficus-indica",
+  "de": "Opuntia ficus-indica",
+  "fr": "Figuier de Barbarie",
+  "hu": "Közönséges fügekaktusz",
+  "it": "Opuntia ficus-indica",
+  "es": "Opuntia ficus-indica",
+  "pl": "Opuncja figowa",
+  "cs": "Opuncie mexická"
+ },
+ "opuntia-humifusa": {
+  "en": "Opuntia humifusa",
+  "de": "Opuntia humifusa",
+  "fr": "Opuntia humifusa",
+  "hu": "Ördögnyelv-fügekaktusz",
+  "it": "Opuntia humifusa",
+  "es": "Opuntia humifusa",
+  "cs": "Opuncie poléhavá"
+ },
+ "sedum-album": {
+  "en": "Sedum album",
+  "de": "Weiße Fetthenne",
+  "fr": "Orpin blanc",
+  "hu": "Fehér varjúháj",
+  "it": "Sedum album",
+  "es": "Sedum album",
+  "pl": "Rozchodnik biały",
+  "cs": "Rozchodník bílý"
+ },
+ "sempervivum-tectorum": {
+  "en": "Sempervivum tectorum",
+  "de": "Dach-Hauswurz",
+  "fr": "Joubarbe des toits",
+  "hu": "Fali kövirózsa",
+  "it": "Sempervivum tectorum",
+  "es": "Sempervivum tectorum",
+  "pl": "Rojnik murowy",
+  "cs": "Netřesk střešní"
+ },
+ "crambe-maritima": {
+  "en": "Crambe maritima",
+  "de": "Echter Meerkohl",
+  "fr": "Crambe maritime",
+  "hu": "Tengerparti tátorján",
+  "it": "Crambe maritima",
+  "es": "Crambe maritima",
+  "pl": "Modrak morski",
+  "cs": "Katrán přímořský"
+ },
+ "agastache-blue-fortune": {
+  "en": "Agastache",
+  "de": "Duftnesseln",
+  "fr": "Agastache",
+  "it": "Agastache",
+  "es": "Agastache",
+  "pl": "Kłosowiec",
+  "cs": "Agastache"
+ },
+ "nassella-tenuissima": {
+  "en": "Nassella tenuissima",
+  "de": "Mexikanisches Federgras",
+  "es": "Nassella tenuissima"
+ },
+ "stipa-gigantea": {
+  "en": "Celtica gigantea"
+ },
+ "helictotrichon-sempervirens": {
+  "en": "Helictotrichon sempervirens",
+  "it": "Helictotrichon sempervirens"
+ },
+ "pennisetum-villosum": {
+  "en": "Cenchrus longisetus",
+  "fr": "Pennisetum villosum"
+ },
+ "lagurus-ovatus": {
+  "en": "Lagurus ovatus",
+  "de": "Samtgras",
+  "fr": "Lagure ovale",
+  "es": "Lagurus ovatus",
+  "pl": "Dmuszek jajowaty"
+ },
+ "ampelodesmos-mauritanicus": {
+  "en": "Ampelodesmos",
+  "hu": "Ampelodesmos",
+  "it": "Ampelodesmos",
+  "es": "Ampelodesmos"
+ },
+ "briza-maxima": {
+  "en": "Briza maxima",
+  "de": "Großes Zittergras",
+  "fr": "Grande brize",
+  "it": "Briza maxima",
+  "es": "Briza maxima",
+  "pl": "Drżączka większa"
+ },
+ "allium-sphaerocephalon": {
+  "en": "Allium sphaerocephalon",
+  "de": "Kugelköpfiger Lauch",
+  "fr": "Ail à tête ronde",
+  "it": "Allium sphaerocephalon",
+  "es": "Allium sphaerocephalon",
+  "pl": "Czosnek główkowaty",
+  "cs": "Česnek kulatohlavý"
+ },
+ "allium-cristophii": {
+  "en": "Allium cristophii",
+  "de": "Sternkugel-Lauch",
+  "fr": "Allium cristophii",
+  "es": "Allium cristophii",
+  "pl": "Czosnek białawy",
+  "cs": "Česnek ozdobný"
+ },
+ "allium-siculum": {
+  "en": "Allium siculum",
+  "de": "Sizilianischer Honiglauch",
+  "fr": "Allium siculum"
+ },
+ "iris-reticulata": {
+  "en": "Iris reticulata",
+  "de": "Netzblatt-Schwertlilie",
+  "fr": "Iris reticulata",
+  "hu": "Recéshagymájú nőszirom",
+  "it": "Iris reticulata"
+ },
+ "gladiolus-communis-subsp-byzantinus": {
+  "en": "Gladiolus communis",
+  "de": "Gewöhnliche Siegwurz",
+  "es": "Gladiolus communis"
+ },
+ "tulipa-sylvestris": {
+  "en": "Tulipa sylvestris",
+  "de": "Wilde Tulpe",
+  "fr": "Tulipa sylvestris",
+  "it": "Tulipa sylvestris",
+  "es": "Tulipa sylvestris",
+  "pl": "Tulipan dziki",
+  "cs": "Tulipán planý"
+ },
+ "tulipa-clusiana": {
+  "en": "Tulipa clusiana",
+  "de": "Damen-Tulpe",
+  "fr": "Tulipa clusiana",
+  "es": "Tulipa clusiana",
+  "pl": "Tulipan Klusjusza"
+ },
+ "crocus-sativus": {
+  "en": "Crocus sativus",
+  "de": "Safran",
+  "fr": "Crocus sativus",
+  "hu": "Jóféle sáfrány",
+  "it": "Crocus sativus",
+  "es": "Crocus sativus",
+  "pl": "Szafran uprawny",
+  "cs": "Šafrán setý"
+ },
+ "narcissus-tazetta": {
+  "en": "Narcissus tazetta",
+  "de": "Strauß-Narzisse",
+  "fr": "Narcissus tazetta",
+  "it": "Narcissus tazetta",
+  "es": "Narcissus tazetta",
+  "pl": "Narcyz wielokwiatowy",
+  "cs": "Narcis taceta"
+ },
+ "sternbergia-lutea": {
+  "en": "Sternbergia lutea",
+  "de": "Herbst-Goldbecher",
+  "fr": "Sternbergia lutea",
+  "hu": "Őszi vetővirág",
+  "it": "Sternbergia lutea",
+  "es": "Sternbergia lutea"
+ },
+ "anemone-coronaria": {
+  "en": "Anemone coronaria",
+  "de": "Kronen-Anemone",
+  "fr": "Anémone couronnée",
+  "hu": "Koronás szellőrózsa",
+  "it": "Anemone coronaria",
+  "es": "Anemone coronaria",
+  "pl": "Zawilec wieńcowy",
+  "cs": "Sasanka věncová"
+ },
+ "cyclamen-hederifolium": {
+  "en": "Cyclamen hederifolium",
+  "de": "Efeublättriges Alpenveilchen",
+  "fr": "Cyclamen hederifolium",
+  "it": "Cyclamen hederifolium",
+  "es": "Cyclamen hederifolium"
+ },
+ "delphinium-elatum-group": {
+  "en": "Delphinium",
+  "de": "Rittersporne",
+  "fr": "Delphinium",
+  "hu": "Sarkantyúfű",
+  "it": "Delphinium",
+  "es": "Delphinium",
+  "pl": "Ostróżka",
+  "cs": "Stračka"
+ },
+ "lupinus-russell-group": {
+  "en": "Lupinus",
+  "de": "Lupinen",
+  "fr": "Lupin",
+  "hu": "Csillagfürt",
+  "it": "Lupinus",
+  "es": "Lupinus",
+  "pl": "Łubin",
+  "cs": "Lupina"
+ },
+ "digitalis-purpurea": {
+  "en": "Digitalis purpurea",
+  "de": "Roter Fingerhut",
+  "fr": "Digitalis purpurea",
+  "hu": "Piros gyűszűvirág",
+  "it": "Digitalis purpurea",
+  "es": "Digitalis purpurea",
+  "pl": "Naparstnica purpurowa",
+  "cs": "Náprstník červený"
+ },
+ "digitalis-purpurea-pams-choice": {
+  "en": "Digitalis purpurea",
+  "de": "Roter Fingerhut",
+  "fr": "Digitalis purpurea",
+  "hu": "Piros gyűszűvirág",
+  "it": "Digitalis purpurea",
+  "es": "Digitalis purpurea",
+  "pl": "Naparstnica purpurowa",
+  "cs": "Náprstník červený"
+ },
+ "alcea-rosea": {
+  "en": "Alcea rosea",
+  "de": "Gewöhnliche Stockrose",
+  "fr": "Alcea rosea",
+  "hu": "Mályvarózsa",
+  "it": "Alcea rosea",
+  "es": "Alcea rosea",
+  "pl": "Malwa różowa",
+  "cs": "Topolovka růžová"
+ },
+ "phlox-paniculata": {
+  "en": "Phlox paniculata",
+  "de": "Hoher Stauden-Phlox",
+  "fr": "Phlox paniculé",
+  "hu": "Lángvirág",
+  "es": "Phlox paniculata",
+  "pl": "Floks wiechowaty",
+  "cs": "Plamenka latnatá"
+ },
+ "phlox-paniculata-david": {
+  "en": "Phlox paniculata",
+  "de": "Hoher Stauden-Phlox",
+  "fr": "Phlox paniculé",
+  "hu": "Lángvirág",
+  "es": "Phlox paniculata",
+  "pl": "Floks wiechowaty",
+  "cs": "Plamenka latnatá"
+ },
+ "campanula-lactiflora": {
+  "en": "Campanula lactiflora",
+  "de": "Riesen-Glockenblume",
+  "fr": "Campanula lactiflora"
+ },
+ "campanula-persicifolia": {
+  "en": "Campanula persicifolia",
+  "de": "Pfirsichblättrige Glockenblume",
+  "fr": "Campanule à feuilles de pêcher",
+  "hu": "Baracklevelű harangvirág",
+  "it": "Campanula persicifolia",
+  "es": "Campanula persicifolia",
+  "pl": "Dzwonek brzoskwiniolistny",
+  "cs": "Zvonek broskvolistý"
+ },
+ "campanula-glomerata-superba": {
+  "en": "Campanula glomerata",
+  "de": "Knäuel-Glockenblume",
+  "fr": "Campanule agglomérée",
+  "hu": "Csomós harangvirág",
+  "it": "Campanula glomerata",
+  "es": "Campanula glomerata",
+  "pl": "Dzwonek skupiony",
+  "cs": "Zvonek klubkatý"
+ },
+ "astrantia-major": {
+  "en": "Astrantia major",
+  "de": "Große Sterndolde",
+  "fr": "Grande astrance",
+  "hu": "Nagy völgycsillag",
+  "it": "Astrantia major",
+  "es": "Astrantia major",
+  "pl": "Jarzmianka większa",
+  "cs": "Jarmanka větší"
+ },
+ "alchemilla-mollis": {
+  "en": "Alchemilla mollis",
+  "de": "Weicher Frauenmantel",
+  "fr": "Alchémille molle",
+  "es": "Alchemilla mollis",
+  "pl": "Przywrotnik miękki",
+  "cs": "Kontryhel měkký"
+ },
+ "geranium-x-magnificum": {
+  "en": "Geranium × magnificum"
+ },
+ "geranium-macrorrhizum": {
+  "en": "Geranium macrorrhizum",
+  "de": "Balkan-Storchschnabel",
+  "fr": "Geranium macrorrhizum",
+  "it": "Geranium macrorrhizum",
+  "pl": "Bodziszek korzeniasty",
+  "cs": "Kakost oddenkatý"
+ },
+ "geranium-sanguineum": {
+  "en": "Geranium sanguineum",
+  "de": "Blutroter Storchschnabel",
+  "fr": "Géranium sanguin",
+  "hu": "Piros gólyaorr",
+  "it": "Geranium sanguineum",
+  "es": "Geranium sanguineum",
+  "pl": "Bodziszek czerwony",
+  "cs": "Kakost krvavý"
+ },
+ "geranium-phaeum": {
+  "en": "Geranium phaeum",
+  "de": "Brauner Storchschnabel",
+  "fr": "Géranium livide",
+  "it": "Geranium phaeum",
+  "es": "Geranium phaeum",
+  "pl": "Bodziszek żałobny",
+  "cs": "Kakost hnědočervený"
+ },
+ "symphyotrichum-novae-angliae": {
+  "en": "Symphyotrichum novae-angliae",
+  "de": "Raublatt-Aster",
+  "fr": "Symphyotrichum novae-angliae",
+  "it": "Symphyotrichum novae-angliae",
+  "es": "Symphyotrichum novae-angliae",
+  "pl": "Aster nowoangielski",
+  "cs": "Astřička novoanglická"
+ },
+ "symphyotrichum-novi-belgii": {
+  "en": "Symphyotrichum novi-belgii",
+  "de": "Neubelgische Aster",
+  "fr": "Symphyotrichum novi-belgii",
+  "it": "Symphyotrichum novi-belgii",
+  "pl": "Aster nowobelgijski",
+  "cs": "Astřička novobelgická"
+ },
+ "aster-x-frikartii-monch": {
+  "en": "Aster × frikartii"
+ },
+ "echinops-ritro": {
+  "en": "Echinops ritro",
+  "de": "Ruthenische Kugeldistel",
+  "fr": "Azurite (plante)",
+  "hu": "Echinops ritro",
+  "it": "Echinops ritro",
+  "es": "Echinops ritro"
+ },
+ "eryngium-planum": {
+  "en": "Eryngium planum",
+  "de": "Flachblatt-Mannstreu",
+  "fr": "Eryngium planum",
+  "hu": "Kék iringó",
+  "es": "Eryngium planum",
+  "pl": "Mikołajek płaskolistny",
+  "cs": "Máčka plocholistá"
+ },
+ "iris-germanica": {
+  "en": "Iris × germanica",
+  "de": "Deutsche Schwertlilie",
+  "fr": "Iris d'Allemagne",
+  "hu": "Kerti nőszirom",
+  "it": "Iris × germanica",
+  "es": "Iris germanica",
+  "pl": "Kosaciec bródkowy"
+ },
+ "iris-jane-phillips": {
+  "en": "Iris",
+  "de": "Iris",
+  "fr": "Iris",
+  "hu": "Iris (egyértelműsítő lap)",
+  "it": "Iris",
+  "es": "Iris (desambiguación)",
+  "pl": "Iris",
+  "cs": "Iris"
+ },
+ "iris-sibirica": {
+  "en": "Iris sibirica",
+  "de": "Sibirische Schwertlilie",
+  "fr": "Iris sibirica",
+  "hu": "Szibériai nőszirom",
+  "it": "Iris sibirica",
+  "es": "Iris sibirica",
+  "pl": "Kosaciec syberyjski",
+  "cs": "Kosatec sibiřský"
+ },
+ "hemerocallis-fulva": {
+  "en": "Hemerocallis fulva",
+  "de": "Gelbrote Taglilie",
+  "fr": "Hémérocalle fauve",
+  "hu": "Lángszínű sásliliom",
+  "it": "Hemerocallis fulva",
+  "es": "Hemerocallis fulva",
+  "cs": "Denivka plavá"
+ },
+ "hemerocallis-frans-hals": {
+  "en": "Daylily",
+  "de": "Taglilien",
+  "fr": "Hémérocalle",
+  "hu": "Sásliliom",
+  "it": "Hemerocallis",
+  "es": "Hemerocallis",
+  "pl": "Liliowiec",
+  "cs": "Denivka"
+ },
+ "kniphofia-uvaria": {
+  "en": "Kniphofia uvaria",
+  "de": "Schopf-Fackellilie",
+  "fr": "Kniphofia uvaria",
+  "hu": "Fürtös fáklyaliliom",
+  "es": "Kniphofia uvaria",
+  "pl": "Trytoma groniasta",
+  "cs": "Mnohokvět hroznatý"
+ },
+ "crocosmia-lucifer": {
+  "en": "Crocosmia",
+  "de": "Montbretien",
+  "fr": "Crocosmia",
+  "it": "Crocosmia",
+  "es": "Crocosmia",
+  "pl": "Krokosmia"
+ },
+ "anemone-x-hybrida-honorine-jobert": {
+  "en": "Eriocapitella × hybrida"
+ },
+ "anemone-x-hybrida-konigin-charlotte": {
+  "en": "Eriocapitella × hybrida"
+ },
+ "aquilegia-vulgaris": {
+  "en": "Aquilegia vulgaris",
+  "de": "Gemeine Akelei",
+  "fr": "Ancolie commune",
+  "it": "Aquilegia vulgaris",
+  "es": "Aquilegia vulgaris",
+  "pl": "Orlik pospolity",
+  "cs": "Orlíček obecný"
+ },
+ "aquilegia-vulgaris-var-stellata-nora-barlow": {
+  "en": "Aquilegia vulgaris",
+  "de": "Gemeine Akelei",
+  "fr": "Ancolie commune",
+  "it": "Aquilegia vulgaris",
+  "es": "Aquilegia vulgaris",
+  "pl": "Orlik pospolity",
+  "cs": "Orlíček obecný"
+ },
+ "lamprocapnos-spectabilis": {
+  "en": "Lamprocapnos",
+  "de": "Tränendes Herz",
+  "fr": "Cœur de Marie",
+  "hu": "Nagy szívvirág",
+  "es": "Lamprocapnos",
+  "pl": "Serduszka okazałe",
+  "cs": "Srdcovka nádherná"
+ },
+ "dicentra-luxuriant": {
+  "en": "Dicentra",
+  "de": "Herzblumen",
+  "fr": "Dicentre",
+  "hu": "Szívvirág",
+  "it": "Dicentra",
+  "es": "Dicentra",
+  "pl": "Serduszka (roślina)"
+ },
+ "papaver-orientale": {
+  "en": "Papaver orientale",
+  "de": "Türkischer Mohn",
+  "fr": "Papaver orientale",
+  "hu": "Keleti mák",
+  "it": "Papaver orientale",
+  "pl": "Mak wschodni",
+  "cs": "Mák východní"
+ },
+ "leucanthemum-x-superbum": {
+  "en": "Leucanthemum × superbum",
+  "hu": "Leucanthemum × superbum"
+ },
+ "achillea-terracotta": {
+  "en": "Achillea",
+  "de": "Schafgarben",
+  "fr": "Achillée",
+  "hu": "Cickafark (növénynemzetség)",
+  "it": "Achillea",
+  "es": "Achillea",
+  "pl": "Krwawnik",
+  "cs": "Řebříček"
+ },
+ "achillea-millefolium-cerise-queen": {
+  "en": "Achillea millefolium",
+  "de": "Gemeine Schafgarbe",
+  "fr": "Achillée millefeuille",
+  "hu": "Közönséges cickafark",
+  "it": "Achillea millefolium",
+  "es": "Achillea millefolium",
+  "pl": "Krwawnik pospolity",
+  "cs": "Řebříček obecný"
+ },
+ "helenium-moerheim-beauty": {
+  "en": "Helenium",
+  "de": "Sonnenbraut",
+  "fr": "Helenium",
+  "it": "Helenium",
+  "es": "Helenium",
+  "pl": "Dzielżan",
+  "cs": "Záplevák"
+ },
+ "heliopsis-helianthoides-var-scabra-sommersonne": {
+  "en": "Heliopsis helianthoides",
+  "de": "Garten-Sonnenauge",
+  "es": "Heliopsis helianthoides",
+  "pl": "Słoneczniczek szorstki"
+ },
+ "rudbeckia-laciniata-goldquelle": {
+  "en": "Rudbeckia laciniata",
+  "de": "Schlitzblättriger Sonnenhut",
+  "fr": "Rudbeckia laciniata",
+  "hu": "Magas kúpvirág",
+  "it": "Rudbeckia laciniata",
+  "pl": "Rudbekia naga",
+  "cs": "Třapatka dřípatá"
+ },
+ "echinacea-purpurea-rubinstern": {
+  "en": "Echinacea purpurea",
+  "de": "Purpur-Sonnenhut",
+  "fr": "Echinacea purpurea",
+  "hu": "Bíbor kasvirág",
+  "it": "Echinacea purpurea",
+  "es": "Echinacea purpurea",
+  "pl": "Jeżówka purpurowa",
+  "cs": "Třapatkovka nachová"
+ },
+ "echinacea-purpurea-white-swan": {
+  "en": "Echinacea purpurea",
+  "de": "Purpur-Sonnenhut",
+  "fr": "Echinacea purpurea",
+  "hu": "Bíbor kasvirág",
+  "it": "Echinacea purpurea",
+  "es": "Echinacea purpurea",
+  "pl": "Jeżówka purpurowa",
+  "cs": "Třapatkovka nachová"
+ },
+ "monarda-cambridge-scarlet": {
+  "en": "Monarda",
+  "de": "Monarda (Pflanzengattung)",
+  "fr": "Monarda",
+  "hu": "Méhbalzsam",
+  "it": "Monarda",
+  "es": "Monarda",
+  "pl": "Pysznogłówka",
+  "cs": "Zavinutka"
+ },
+ "veronica-spicata": {
+  "en": "Veronica spicata",
+  "de": "Ähriger Ehrenpreis",
+  "fr": "Véronique en épi",
+  "it": "Veronica spicata",
+  "pl": "Przetacznik kłosowy",
+  "cs": "Rozrazil klasnatý"
+ },
+ "veronica-longifolia-blauriesin": {
+  "en": "Veronica longifolia",
+  "de": "Langblättriger Ehrenpreis",
+  "fr": "Véronique à longues feuilles",
+  "es": "Veronica longifolia",
+  "pl": "Przetacznik długolistny",
+  "cs": "Rozrazil dlouholistý"
+ },
+ "veronicastrum-virginicum-fascination": {
+  "en": "Veronicastrum virginicum",
+  "de": "Veronicastrum virginicum",
+  "cs": "Rozrazil virginský"
+ },
+ "persicaria-amplexicaulis-firetail": {
+  "en": "Bistorta amplexicaulis"
+ },
+ "sanguisorba-officinalis-red-thunder": {
+  "en": "Sanguisorba officinalis",
+  "de": "Großer Wiesenknopf",
+  "fr": "Sanguisorba officinalis",
+  "hu": "Őszi vérfű",
+  "es": "Sanguisorba officinalis",
+  "pl": "Krwiściąg lekarski",
+  "cs": "Krvavec toten"
+ },
+ "thalictrum-aquilegiifolium": {
+  "en": "Thalictrum aquilegiifolium",
+  "de": "Akeleiblättrige Wiesenraute",
+  "fr": "Thalictrum aquilegiifolium",
+  "hu": "Erdei borkóró",
+  "it": "Thalictrum aquilegiifolium",
+  "pl": "Rutewka orlikolistna"
+ },
+ "filipendula-rubra-venusta": {
+  "en": "Filipendula rubra",
+  "es": "Filipendula rubra",
+  "cs": "Tužebník červený"
+ },
+ "ligularia-dentata-desdemona": {
+  "en": "Ligularia dentata",
+  "fr": "Ligularia dentata"
+ },
+ "astilbe-chinensis-var-taquetii-purpurlanze": {
+  "en": "Astilbe chinensis",
+  "de": "Astilbe chinensis"
+ },
+ "hosta-halcyon": {
+  "en": "Hosta",
+  "de": "Funkien",
+  "fr": "Hosta (genre)",
+  "hu": "Árnyliliom",
+  "it": "Hosta (botanica)",
+  "es": "Hosta",
+  "pl": "Funkia",
+  "cs": "Bohyška"
+ },
+ "hosta-patriot": {
+  "en": "Hosta",
+  "de": "Funkien",
+  "fr": "Hosta (genre)",
+  "hu": "Árnyliliom",
+  "it": "Hosta (botanica)",
+  "es": "Hosta",
+  "pl": "Funkia",
+  "cs": "Bohyška"
+ },
+ "hosta-sum-and-substance": {
+  "en": "Hosta",
+  "de": "Funkien",
+  "fr": "Hosta (genre)",
+  "hu": "Árnyliliom",
+  "it": "Hosta (botanica)",
+  "es": "Hosta",
+  "pl": "Funkia",
+  "cs": "Bohyška"
+ },
+ "heuchera-palace-purple": {
+  "en": "Heuchera",
+  "de": "Purpurglöckchen",
+  "fr": "Heuchera",
+  "hu": "Tűzeső",
+  "it": "Heuchera",
+  "es": "Heuchera",
+  "pl": "Żurawka (roślina)"
+ },
+ "heuchera-lime-marmalade": {
+  "en": "Heuchera",
+  "de": "Purpurglöckchen",
+  "fr": "Heuchera",
+  "hu": "Tűzeső",
+  "it": "Heuchera",
+  "es": "Heuchera",
+  "pl": "Żurawka (roślina)"
+ },
+ "brunnera-macrophylla-jack-frost": {
+  "en": "Brunnera macrophylla",
+  "de": "Großblättriges Kaukasusvergissmeinnicht",
+  "fr": "Brunnera macrophylla",
+  "cs": "Pomněnkovec velkolistý"
+ },
+ "pulmonaria-saccharata-mrs-moon": {
+  "en": "Pulmonaria saccharata",
+  "it": "Pulmonaria saccharata",
+  "pl": "Miodunka pstra"
+ },
+ "bergenia-cordifolia": {
+  "en": "Bergenia crassifolia",
+  "de": "Dickblatt-Bergenie",
+  "fr": "Bergenia crassifolia",
+  "it": "Bergenia crassifolia",
+  "es": "Bergenia crassifolia",
+  "pl": "Bergenia grubolistna",
+  "cs": "Bergenie tučnolistá"
+ },
+ "tiarella-cordifolia": {
+  "en": "Tiarella cordifolia",
+  "fr": "Tiarella cordifolia"
+ },
+ "polygonatum-x-hybridum": {
+  "en": "Polygonatum × hybridum"
+ },
+ "lamium-maculatum-white-nancy": {
+  "en": "Lamium maculatum",
+  "de": "Gefleckte Taubnessel",
+  "fr": "Lamium maculatum",
+  "hu": "Foltos árvacsalán",
+  "it": "Lamium maculatum",
+  "es": "Lamium maculatum",
+  "pl": "Jasnota plamista",
+  "cs": "Hluchavka skvrnitá"
+ },
+ "ajuga-reptans-braunherz": {
+  "en": "Ajuga reptans",
+  "de": "Kriechender Günsel",
+  "fr": "Bugle rampante",
+  "hu": "Indás ínfű",
+  "it": "Ajuga reptans",
+  "es": "Ajuga reptans",
+  "pl": "Dąbrówka rozłogowa",
+  "cs": "Zběhovec plazivý"
+ },
+ "vinca-minor": {
+  "en": "Vinca minor",
+  "de": "Kleines Immergrün",
+  "fr": "Petite Pervenche",
+  "hu": "Kis meténg",
+  "it": "Vinca minor",
+  "es": "Vinca minor",
+  "pl": "Barwinek pospolity",
+  "cs": "Barvínek menší"
+ },
+ "pachysandra-terminalis": {
+  "en": "Pachysandra terminalis",
+  "de": "Japanischer Ysander",
+  "fr": "Pachysandra terminalis",
+  "pl": "Runianka japońska"
+ },
+ "waldsteinia-ternata": {
+  "en": "Waldsteinia ternata",
+  "de": "Dreiblättrige Waldsteinie",
+  "pl": "Pragnia syberyjska",
+  "cs": "Mochnička trojčetná"
+ },
+ "lysimachia-punctata": {
+  "en": "Lysimachia punctata",
+  "de": "Punktierter Gilbweiderich",
+  "fr": "Lysimaque ponctuée",
+  "pl": "Tojeść kropkowana",
+  "cs": "Vrbina tečkovaná"
+ },
+ "paeonia-lactiflora-sarah-bernhardt": {
+  "en": "Paeonia lactiflora",
+  "de": "Paeonia lactiflora",
+  "fr": "Pivoine de Chine",
+  "es": "Paeonia lactiflora",
+  "pl": "Piwonia chińska",
+  "cs": "Pivoňka čínská"
+ },
+ "paeonia-lactiflora-bowl-of-beauty": {
+  "en": "Paeonia lactiflora",
+  "de": "Paeonia lactiflora",
+  "fr": "Pivoine de Chine",
+  "es": "Paeonia lactiflora",
+  "pl": "Piwonia chińska",
+  "cs": "Pivoňka čínská"
+ },
+ "paeonia-officinalis-rubra-plena": {
+  "en": "Paeonia officinalis",
+  "de": "Gemeine Pfingstrose",
+  "fr": "Paeonia officinalis",
+  "hu": "Kerti bazsarózsa",
+  "it": "Paeonia officinalis",
+  "es": "Paeonia officinalis",
+  "pl": "Piwonia lekarska",
+  "cs": "Pivoňka lékařská"
+ },
+ "paeonia-suffruticosa": {
+  "en": "Paeonia × suffruticosa",
+  "de": "Strauch-Pfingstrose",
+  "fr": "Paeonia suffruticosa",
+  "hu": "Fás bazsarózsa",
+  "es": "Paeonia suffruticosa",
+  "pl": "Piwonia drzewiasta",
+  "cs": "Pivoňka keřovitá"
+ },
+ "dianthus-doris": {
+  "en": "Dianthus",
+  "de": "Nelken",
+  "fr": "Dianthus",
+  "hu": "Szegfű",
+  "it": "Dianthus",
+  "es": "Dianthus",
+  "pl": "Goździk",
+  "cs": "Hvozdík"
+ },
+ "dianthus-mrs-sinkins": {
+  "en": "Dianthus",
+  "de": "Nelken",
+  "fr": "Dianthus",
+  "hu": "Szegfű",
+  "it": "Dianthus",
+  "es": "Dianthus",
+  "pl": "Goździk",
+  "cs": "Hvozdík"
+ },
+ "gypsophila-paniculata-bristol-fairy": {
+  "en": "Gypsophila paniculata",
+  "de": "Rispiges Gipskraut",
+  "fr": "Gypsophila paniculata",
+  "hu": "Buglyos fátyolvirág",
+  "it": "Gypsophila paniculata",
+  "es": "Gypsophila paniculata",
+  "pl": "Łyszczec wiechowaty",
+  "cs": "Šater latnatý"
+ },
+ "lychnis-chalcedonica": {
+  "en": "Silene chalcedonica",
+  "de": "Brennende Liebe",
+  "es": "Silene chalcedonica",
+  "pl": "Firletka chalcedońska"
+ },
+ "knautia-macedonica": {
+  "en": "Knautia macedonica",
+  "fr": "Knautia macedonica"
+ },
+ "scabiosa-butterfly-blue": {
+  "en": "Scabiosa",
+  "de": "Skabiosen",
+  "fr": "Scabiosa",
+  "it": "Scabiosa",
+  "es": "Scabiosa",
+  "pl": "Driakiew",
+  "cs": "Hlaváč (květina)"
+ },
+ "centaurea-montana": {
+  "en": "Centaurea montana",
+  "de": "Berg-Flockenblume",
+  "fr": "Centaurea montana",
+  "it": "Centaurea montana",
+  "es": "Centaurea montana",
+  "pl": "Chaber górski",
+  "cs": "Chrpa horská"
+ },
+ "lunaria-annua": {
+  "en": "Lunaria annua",
+  "de": "Einjähriges Silberblatt",
+  "fr": "Lunaria annua",
+  "hu": "Kerti holdviola",
+  "it": "Lunaria annua",
+  "es": "Lunaria annua",
+  "pl": "Miesiącznica roczna",
+  "cs": "Měsíčnice roční"
+ },
+ "myosotis-sylvatica": {
+  "en": "Myosotis sylvatica",
+  "de": "Wald-Vergissmeinnicht",
+  "fr": "Myosotis sylvatica",
+  "hu": "Erdei nefelejcs",
+  "it": "Myosotis sylvatica",
+  "pl": "Niezapominajka leśna",
+  "cs": "Pomněnka lesní"
+ },
+ "bellis-perennis-pomponette": {
+  "en": "Bellis perennis",
+  "de": "Gänseblümchen",
+  "fr": "Pâquerette",
+  "hu": "Százszorszép (növényfaj)",
+  "it": "Bellis perennis",
+  "es": "Bellis perennis",
+  "pl": "Stokrotka pospolita",
+  "cs": "Sedmikráska chudobka"
+ },
+ "viola-cornuta": {
+  "en": "Viola cornuta",
+  "de": "Hornveilchen",
+  "fr": "Pensée à corne",
+  "it": "Viola cornuta",
+  "es": "Viola cornuta",
+  "pl": "Fiołek rogaty",
+  "cs": "Violka rohatá"
+ },
+ "primula-vulgaris": {
+  "en": "Primula vulgaris",
+  "de": "Stängellose Schlüsselblume",
+  "fr": "Primula vulgaris",
+  "hu": "Szártalan kankalin",
+  "it": "Primula vulgaris",
+  "es": "Primula acaulis",
+  "pl": "Pierwiosnek bezłodygowy",
+  "cs": "Prvosenka bezlodyžná"
+ },
+ "primula-auricula": {
+  "en": "Primula auricula",
+  "de": "Aurikel",
+  "fr": "Primula auricula",
+  "hu": "Cifra kankalin",
+  "it": "Primula auricula",
+  "es": "Primula auricula",
+  "pl": "Pierwiosnek łyszczak"
+ },
+ "doronicum-orientale-magnificum": {
+  "en": "Doronicum orientale",
+  "fr": "Doronicum orientale",
+  "pl": "Omieg wschodni",
+  "cs": "Kamzičník kavkazský"
+ },
+ "trollius-europaeus": {
+  "en": "Trollius europaeus",
+  "de": "Trollblume",
+  "fr": "Trolle d'Europe",
+  "hu": "Európai zergeboglár",
+  "it": "Trollius europaeus",
+  "es": "Trollius europaeus",
+  "pl": "Pełnik europejski",
+  "cs": "Upolín evropský"
+ },
+ "rodgersia-aesculifolia": {
+  "en": "Rodgersia aesculifolia",
+  "fr": "Rodgersia aesculifolia",
+  "pl": "Rodgersja kasztanowcolistna"
+ },
+ "molinia-caerulea-subsp-arundinacea-transparent": {
+  "en": "Molinia caerulea",
+  "de": "Blaues Pfeifengras",
+  "fr": "Molinia caerulea",
+  "hu": "Nyugati kékperje",
+  "it": "Molinia caerulea",
+  "es": "Molinia caerulea",
+  "pl": "Trzęślica modra",
+  "cs": "Bezkolenec modrý"
+ },
+ "deschampsia-cespitosa-goldtau": {
+  "en": "Deschampsia cespitosa",
+  "de": "Rasen-Schmiele",
+  "fr": "Canche cespiteuse",
+  "hu": "Gyepes sédbúza",
+  "it": "Deschampsia cespitosa",
+  "pl": "Śmiałek darniowy",
+  "cs": "Metlice trsnatá"
+ },
+ "hakonechloa-macra-aureola": {
+  "en": "Hakonechloa"
+ },
+ "carex-morrowii-ice-dance": {
+  "en": "Carex morrowii",
+  "fr": "Carex morrowii"
+ },
+ "carex-testacea": {
+  "en": "Carex testacea",
+  "fr": "Carex testacea"
+ },
+ "panicum-virgatum-shenandoah": {
+  "en": "Panicum virgatum",
+  "de": "Rutenhirse",
+  "fr": "Panicum virgatum",
+  "hu": "Vesszős köles",
+  "it": "Panicum virgatum",
+  "es": "Panicum virgatum",
+  "pl": "Proso rózgowate",
+  "cs": "Proso prutnaté"
+ },
+ "sesleria-autumnalis": {
+  "en": "Sesleria autumnalis"
+ },
+ "luzula-nivea": {
+  "en": "Luzula nivea",
+  "de": "Schneeweiße Hainsimse",
+  "fr": "Luzule nivale",
+  "it": "Luzula nivea"
+ },
+ "miscanthus-sinensis-malepartus": {
+  "en": "Miscanthus sinensis",
+  "de": "Chinaschilf",
+  "fr": "Miscanthus sinensis",
+  "hu": "Miscanthus sinensis",
+  "es": "Miscanthus sinensis",
+  "pl": "Miskant chiński",
+  "cs": "Ozdobnice čínská"
+ },
+ "miscanthus-sinensis-zebrinus": {
+  "en": "Miscanthus sinensis",
+  "de": "Chinaschilf",
+  "fr": "Miscanthus sinensis",
+  "hu": "Miscanthus sinensis",
+  "es": "Miscanthus sinensis",
+  "pl": "Miskant chiński",
+  "cs": "Ozdobnice čínská"
+ },
+ "imperata-cylindrica-rubra": {
+  "en": "Imperata cylindrica",
+  "de": "Silberhaargras",
+  "fr": "Imperata cylindrica",
+  "it": "Imperata cylindrica",
+  "es": "Imperata cylindrica",
+  "cs": "Imperata válcovitá"
+ },
+ "athyrium-filix-femina": {
+  "en": "Athyrium filix-femina",
+  "de": "Wald-Frauenfarn",
+  "fr": "Athyrium filix-femina",
+  "it": "Athyrium filix-femina",
+  "es": "Athyrium filix-femina",
+  "pl": "Wietlica samicza",
+  "cs": "Papratka samičí"
+ },
+ "polystichum-setiferum": {
+  "en": "Polystichum setiferum",
+  "de": "Grannen-Schildfarn",
+  "fr": "Polystichum setiferum",
+  "es": "Polystichum setiferum"
+ },
+ "asplenium-scolopendrium": {
+  "en": "Asplenium scolopendrium",
+  "de": "Hirschzungenfarn",
+  "fr": "Scolopendre (fougère)",
+  "hu": "Gímpáfrány",
+  "it": "Asplenium scolopendrium",
+  "es": "Asplenium scolopendrium",
+  "pl": "Zanokcica języcznik",
+  "cs": "Jelení jazyk celolistý"
+ },
+ "osmunda-regalis": {
+  "en": "Osmunda regalis",
+  "de": "Königsfarn",
+  "fr": "Osmonde royale",
+  "it": "Osmunda regalis",
+  "es": "Osmunda regalis",
+  "pl": "Długosz królewski",
+  "cs": "Podezřeň královská"
+ },
+ "matteuccia-struthiopteris": {
+  "en": "Matteuccia",
+  "fr": "Matteuccia",
+  "pl": "Pióropusznik"
+ },
+ "polypodium-vulgare": {
+  "en": "Polypodium vulgare",
+  "de": "Gewöhnlicher Tüpfelfarn",
+  "fr": "Polypode commun",
+  "hu": "Közönséges édesgyökerű páfrány",
+  "it": "Polypodium vulgare",
+  "es": "Polypodium vulgare",
+  "pl": "Paprotka zwyczajna",
+  "cs": "Osladič obecný"
+ },
+ "tulipa-queen-of-night": {
+  "en": "Tulip",
+  "de": "Tulpen",
+  "fr": "Tulipe",
+  "hu": "Tulipán",
+  "it": "Tulipa",
+  "es": "Tulipa",
+  "pl": "Tulipan",
+  "cs": "Tulipán"
+ },
+ "tulipa-ballerina": {
+  "en": "Tulip",
+  "de": "Tulpen",
+  "fr": "Tulipe",
+  "hu": "Tulipán",
+  "it": "Tulipa",
+  "es": "Tulipa",
+  "pl": "Tulipan",
+  "cs": "Tulipán"
+ },
+ "tulipa-angelique": {
+  "en": "Tulip",
+  "de": "Tulpen",
+  "fr": "Tulipe",
+  "hu": "Tulipán",
+  "it": "Tulipa",
+  "es": "Tulipa",
+  "pl": "Tulipan",
+  "cs": "Tulipán"
+ },
+ "tulipa-pink-impression": {
+  "en": "Tulip",
+  "de": "Tulpen",
+  "fr": "Tulipe",
+  "hu": "Tulipán",
+  "it": "Tulipa",
+  "es": "Tulipa",
+  "pl": "Tulipan",
+  "cs": "Tulipán"
+ },
+ "tulipa-tarda": {
+  "en": "Tulipa urumiensis",
+  "fr": "Tulipa urumiensis",
+  "it": "Tulipa urumiensis"
+ },
+ "narcissus-tete-a-tete": {
+  "en": "Narcissus",
+  "de": "Narcissus",
+  "hu": "Narcissus (egyértelműsítő lap)",
+  "pl": "Narcyz (ujednoznacznienie)"
+ },
+ "narcissus-thalia": {
+  "en": "Narcissus",
+  "de": "Narcissus",
+  "hu": "Narcissus (egyértelműsítő lap)",
+  "pl": "Narcyz (ujednoznacznienie)"
+ },
+ "narcissus-february-gold": {
+  "en": "Narcissus",
+  "de": "Narcissus",
+  "hu": "Narcissus (egyértelműsítő lap)",
+  "pl": "Narcyz (ujednoznacznienie)"
+ },
+ "narcissus-poeticus-var-recurvus": {
+  "en": "Narcissus poeticus",
+  "de": "Weiße Narzisse",
+  "fr": "Narcisse des poètes",
+  "hu": "Fehér nárcisz",
+  "it": "Narcissus poeticus",
+  "es": "Narcissus poeticus",
+  "pl": "Narcyz biały",
+  "cs": "Narcis bílý"
+ },
+ "galanthus-nivalis": {
+  "en": "Galanthus nivalis",
+  "de": "Kleines Schneeglöckchen",
+  "fr": "Galanthus nivalis",
+  "hu": "Kikeleti hóvirág",
+  "it": "Galanthus nivalis",
+  "es": "Galanthus nivalis",
+  "pl": "Śnieżyczka przebiśnieg",
+  "cs": "Sněženka podsněžník"
+ },
+ "crocus-tommasinianus": {
+  "en": "Crocus tommasinianus",
+  "de": "Elfen-Krokus",
+  "hu": "Illír sáfrány",
+  "it": "Crocus tommasinianus",
+  "es": "Crocus tommasinianus"
+ },
+ "crocus-vernus-pickwick": {
+  "en": "Crocus vernus",
+  "de": "Frühlings-Krokus",
+  "fr": "Crocus vernus",
+  "hu": "Kerti sáfrány",
+  "it": "Crocus vernus",
+  "es": "Crocus vernus",
+  "pl": "Szafran wiosenny",
+  "cs": "Šafrán jarní"
+ },
+ "muscari-armeniacum": {
+  "en": "Muscari armeniacum",
+  "de": "Armenische Traubenhyazinthe",
+  "fr": "Muscari armeniacum",
+  "it": "Muscari armeniacum",
+  "pl": "Szafirek armeński",
+  "cs": "Modřenec arménský"
+ },
+ "scilla-siberica": {
+  "en": "Scilla siberica",
+  "de": "Sibirischer Blaustern",
+  "fr": "Scille de Sibérie",
+  "es": "Scilla siberica",
+  "pl": "Cebulica syberyjska",
+  "cs": "Ladoňka sibiřská"
+ },
+ "scilla-forbesii": {
+  "en": "Scilla forbesii",
+  "fr": "Scilla forbesii",
+  "hu": "Anatóliai hófény"
+ },
+ "hyacinthoides-non-scripta": {
+  "en": "Hyacinthoides non-scripta",
+  "de": "Atlantisches Hasenglöckchen",
+  "fr": "Hyacinthoides non-scripta",
+  "es": "Hyacinthoides non-scripta"
+ },
+ "fritillaria-meleagris": {
+  "en": "Fritillaria meleagris",
+  "de": "Schachblume",
+  "fr": "Fritillaire pintade",
+  "hu": "Mocsári kockásliliom",
+  "it": "Fritillaria meleagris",
+  "es": "Fritillaria meleagris",
+  "pl": "Szachownica kostkowata",
+  "cs": "Řebčík kostkovaný"
+ },
+ "fritillaria-imperialis": {
+  "en": "Fritillaria imperialis",
+  "de": "Kaiserkrone (Pflanze)",
+  "fr": "Fritillaire impériale",
+  "hu": "Császárkorona",
+  "it": "Fritillaria imperialis",
+  "es": "Fritillaria imperialis",
+  "pl": "Szachownica cesarska"
+ },
+ "leucojum-aestivum-gravetye-giant": {
+  "en": "Leucojum aestivum",
+  "de": "Sommer-Knotenblume",
+  "fr": "Nivéole d'été",
+  "hu": "Nyári tőzike",
+  "es": "Leucojum aestivum",
+  "pl": "Śnieżyca letnia",
+  "cs": "Bledule letní"
+ },
+ "eranthis-hyemalis": {
+  "en": "Eranthis hyemalis",
+  "de": "Winterling",
+  "fr": "Eranthis hyemalis",
+  "hu": "Kikeletnyitó téltemető",
+  "it": "Eranthis hyemalis",
+  "es": "Eranthis hyemalis",
+  "pl": "Rannik zimowy",
+  "cs": "Talovín zimní"
+ },
+ "allium-globemaster": {
+  "en": "Allium",
+  "de": "Lauch (Gattung)",
+  "fr": "Allium",
+  "hu": "Hagyma (növénynemzetség)",
+  "it": "Allium",
+  "es": "Allium",
+  "pl": "Czosnek",
+  "cs": "Česnek"
+ },
+ "allium-gladiator": {
+  "en": "Allium",
+  "de": "Lauch (Gattung)",
+  "fr": "Allium",
+  "hu": "Hagyma (növénynemzetség)",
+  "it": "Allium",
+  "es": "Allium",
+  "pl": "Czosnek",
+  "cs": "Česnek"
+ },
+ "camassia-leichtlinii-caerulea": {
+  "en": "Camassia leichtlinii",
+  "de": "Leichtlin-Prärielilie",
+  "pl": "Kamasja Leichtlina"
+ },
+ "lilium-regale": {
+  "en": "Lilium regale",
+  "de": "Königs-Lilie",
+  "fr": "Lis royal",
+  "es": "Lilium regale"
+ },
+ "lilium-martagon": {
+  "en": "Lilium martagon",
+  "de": "Türkenbund",
+  "fr": "Lis martagon",
+  "hu": "Turbánliliom",
+  "it": "Lilium martagon",
+  "es": "Lilium martagon",
+  "pl": "Lilia złotogłów",
+  "cs": "Lilie zlatohlavá"
+ },
+ "lilium-candidum": {
+  "en": "Lilium candidum",
+  "de": "Madonnen-Lilie",
+  "fr": "Lilium candidum",
+  "hu": "Fehér liliom",
+  "it": "Lilium candidum",
+  "es": "Lilium candidum",
+  "pl": "Lilia biała",
+  "cs": "Lilie bělostná"
+ },
+ "dahlia-bishop-of-llandaff": {
+  "en": "Dahlia",
+  "de": "Dahlien",
+  "fr": "Dahlia",
+  "hu": "Dália (növénynemzetség)",
+  "it": "Dahlia (botanica)",
+  "es": "Dahlia",
+  "pl": "Dalia (roślina)",
+  "cs": "Jiřina (květina)"
+ },
+ "dahlia-cafe-au-lait": {
+  "en": "Dahlia",
+  "de": "Dahlien",
+  "fr": "Dahlia",
+  "hu": "Dália (növénynemzetség)",
+  "it": "Dahlia (botanica)",
+  "es": "Dahlia",
+  "pl": "Dalia (roślina)",
+  "cs": "Jiřina (květina)"
+ },
+ "canna-x-generalis": {
+  "en": "List of Canna cultivars"
+ },
+ "hyacinthus-orientalis-delft-blue": {
+  "en": "Hyacinthus orientalis",
+  "de": "Gartenhyazinthe",
+  "fr": "Hyacinthus orientalis",
+  "hu": "Kerti jácint",
+  "it": "Hyacinthus orientalis",
+  "pl": "Hiacynt wschodni",
+  "cs": "Hyacint východní"
+ },
+ "anemone-blanda": {
+  "en": "Anemonoides blanda",
+  "de": "Balkan-Windröschen",
+  "fr": "Anémone de Grèce",
+  "it": "Anemonoides blanda",
+  "es": "Anemone blanda"
+ },
+ "cyclamen-coum": {
+  "en": "Cyclamen coum",
+  "de": "Vorfrühlings-Alpenveilchen",
+  "fr": "Cyclamen coum",
+  "hu": "Kislevelű ciklámen",
+  "it": "Cyclamen coum",
+  "es": "Cyclamen coum"
+ },
+ "convallaria-majalis": {
+  "en": "Lily of the valley",
+  "de": "Maiglöckchen",
+  "fr": "Muguet de mai",
+  "hu": "Gyöngyvirág",
+  "it": "Convallaria majalis",
+  "es": "Convallaria majalis",
+  "pl": "Konwalia majowa",
+  "cs": "Konvalinka vonná"
+ },
+ "taxus-baccata-fastigiata": {
+  "en": "Taxus baccata",
+  "de": "Europäische Eibe",
+  "fr": "If commun",
+  "hu": "Közönséges tiszafa",
+  "it": "Taxus baccata",
+  "es": "Taxus baccata",
+  "pl": "Cis pospolity",
+  "cs": "Tis červený"
+ },
+ "taxus-x-media-hicksii": {
+  "en": "Taxus × media",
+  "hu": "Oszloptiszafa",
+  "pl": "Cis pośredni"
+ },
+ "juniperus-communis": {
+  "en": "Juniperus communis",
+  "de": "Gemeiner Wacholder",
+  "fr": "Juniperus communis",
+  "hu": "Közönséges boróka",
+  "it": "Juniperus communis",
+  "es": "Juniperus communis",
+  "pl": "Jałowiec pospolity",
+  "cs": "Jalovec obecný"
+ },
+ "juniperus-squamata-blue-star": {
+  "en": "Juniperus squamata",
+  "de": "Beschuppter Wacholder",
+  "fr": "Genévrier écailleux",
+  "hu": "Törpe boróka",
+  "es": "Juniperus squamata",
+  "cs": "Jalovec šupinatý"
+ },
+ "juniperus-sabina": {
+  "en": "Juniperus sabina",
+  "de": "Sadebaum",
+  "fr": "Juniperus sabina",
+  "hu": "Nehézszagú boróka",
+  "it": "Juniperus sabina",
+  "es": "Juniperus sabina",
+  "pl": "Jałowiec sabiński",
+  "cs": "Jalovec chvojka"
+ },
+ "juniperus-scopulorum-skyrocket": {
+  "en": "Juniperus scopulorum",
+  "de": "Rocky-Mountain-Wacholder",
+  "fr": "Genévrier des Rocheuses",
+  "hu": "Oregoni boróka",
+  "es": "Juniperus scopulorum",
+  "cs": "Jalovec skalní"
+ },
+ "juniperus-horizontalis-blue-chip": {
+  "en": "Juniperus horizontalis",
+  "de": "Kriech-Wacholder",
+  "fr": "Genévrier rampant",
+  "hu": "Henye boróka",
+  "pl": "Jałowiec płożący",
+  "cs": "Jalovec polehlý"
+ },
+ "cupressus-sempervirens-stricta": {
+  "en": "Cupressus sempervirens",
+  "de": "Mittelmeer-Zypresse",
+  "fr": "Cupressus sempervirens",
+  "hu": "Európai ciprus",
+  "it": "Cupressus sempervirens",
+  "es": "Cupressus sempervirens",
+  "pl": "Cyprys wiecznie zielony",
+  "cs": "Cypřiš stálezelený"
+ },
+ "pinus-pinea": {
+  "en": "Pinus pinea",
+  "de": "Pinie",
+  "fr": "Pin parasol",
+  "hu": "Mandulafenyő",
+  "it": "Pinus pinea",
+  "es": "Pinus pinea",
+  "pl": "Sosna pinia",
+  "cs": "Borovice pinie"
+ },
+ "pinus-nigra": {
+  "en": "Pinus nigra",
+  "de": "Schwarzkiefer",
+  "fr": "Pinus nigra",
+  "hu": "Feketefenyő",
+  "it": "Pinus nigra",
+  "es": "Pinus nigra",
+  "pl": "Sosna czarna",
+  "cs": "Borovice černá"
+ },
+ "pinus-cembra": {
+  "en": "Pinus cembra",
+  "de": "Zirbelkiefer",
+  "fr": "Pinus cembra",
+  "hu": "Havasi cirbolyafenyő",
+  "it": "Pinus cembra",
+  "es": "Pinus cembra",
+  "pl": "Sosna limba",
+  "cs": "Borovice limba"
+ },
+ "pinus-mugo-mops": {
+  "en": "Pinus mugo",
+  "de": "Bergkiefer",
+  "fr": "Pinus mugo",
+  "hu": "Havasi törpefenyő",
+  "it": "Pinus mugo",
+  "es": "Pinus mugo",
+  "pl": "Kosodrzewina",
+  "cs": "Borovice kleč"
+ },
+ "abies-alba": {
+  "en": "Abies alba",
+  "de": "Weiß-Tanne",
+  "fr": "Abies alba",
+  "hu": "Közönséges jegenyefenyő",
+  "it": "Abies alba",
+  "es": "Abies alba",
+  "pl": "Jodła pospolita",
+  "cs": "Jedle bělokorá"
+ },
+ "abies-nordmanniana": {
+  "en": "Abies nordmanniana",
+  "de": "Nordmann-Tanne",
+  "fr": "Sapin de Nordmann",
+  "hu": "Kaukázusi jegenyefenyő",
+  "it": "Abies nordmanniana",
+  "es": "Abies nordmanniana",
+  "pl": "Jodła kaukaska",
+  "cs": "Jedle kavkazská"
+ },
+ "abies-koreana": {
+  "en": "Abies koreana",
+  "de": "Korea-Tanne",
+  "fr": "Sapin de Corée",
+  "hu": "Koreai jegenyefenyő",
+  "it": "Abies koreana",
+  "es": "Abies koreana",
+  "pl": "Jodła koreańska",
+  "cs": "Jedle korejská"
+ },
+ "picea-abies": {
+  "en": "Picea abies",
+  "de": "Gemeine Fichte",
+  "fr": "Épicéa commun",
+  "hu": "Közönséges lucfenyő",
+  "it": "Picea abies",
+  "es": "Picea abies",
+  "pl": "Świerk pospolity",
+  "cs": "Smrk ztepilý"
+ },
+ "picea-abies-nidiformis": {
+  "en": "Picea abies",
+  "de": "Gemeine Fichte",
+  "fr": "Épicéa commun",
+  "hu": "Közönséges lucfenyő",
+  "it": "Picea abies",
+  "es": "Picea abies",
+  "pl": "Świerk pospolity",
+  "cs": "Smrk ztepilý"
+ },
+ "picea-omorika": {
+  "en": "Picea omorika",
+  "de": "Serbische Fichte",
+  "fr": "Picea omorika",
+  "hu": "Szerb luc",
+  "it": "Picea omorika",
+  "es": "Picea omorika",
+  "pl": "Świerk serbski",
+  "cs": "Smrk omorika"
+ },
+ "larix-decidua": {
+  "en": "Larix decidua",
+  "de": "Europäische Lärche",
+  "fr": "Larix decidua",
+  "hu": "Európai vörösfenyő",
+  "it": "Larix decidua",
+  "es": "Larix decidua",
+  "pl": "Modrzew europejski",
+  "cs": "Modřín opadavý"
+ },
+ "cedrus-atlantica-glauca": {
+  "en": "Cedrus atlantica",
+  "de": "Atlas-Zeder",
+  "fr": "Cedrus atlantica",
+  "hu": "Atlaszcédrus",
+  "it": "Cedrus atlantica",
+  "es": "Cedrus atlantica",
+  "pl": "Cedr atlaski",
+  "cs": "Cedr atlaský"
+ },
+ "cedrus-libani": {
+  "en": "Cedrus libani",
+  "de": "Libanon-Zeder",
+  "fr": "Cèdre du Liban",
+  "hu": "Libanoni cédrus",
+  "it": "Cedrus libani",
+  "es": "Cedrus libani",
+  "pl": "Cedr libański",
+  "cs": "Cedr libanonský"
+ },
+ "thuja-occidentalis-brabant": {
+  "en": "Thuja occidentalis",
+  "de": "Abendländischer Lebensbaum",
+  "fr": "Thuya occidental",
+  "hu": "Nyugati tuja",
+  "it": "Thuja occidentalis",
+  "es": "Thuja occidentalis",
+  "pl": "Żywotnik zachodni",
+  "cs": "Zerav západní"
+ },
+ "thuja-occidentalis-danica": {
+  "en": "Thuja occidentalis",
+  "de": "Abendländischer Lebensbaum",
+  "fr": "Thuya occidental",
+  "hu": "Nyugati tuja",
+  "it": "Thuja occidentalis",
+  "es": "Thuja occidentalis",
+  "pl": "Żywotnik zachodni",
+  "cs": "Zerav západní"
+ },
+ "thuja-plicata": {
+  "en": "Thuja plicata",
+  "de": "Riesen-Lebensbaum",
+  "fr": "Thuja plicata",
+  "hu": "Óriás tuja",
+  "it": "Thuja plicata",
+  "es": "Thuja plicata",
+  "pl": "Żywotnik olbrzymi",
+  "cs": "Zerav obrovský"
+ },
+ "chamaecyparis-lawsoniana-columnaris": {
+  "en": "Chamaecyparis lawsoniana",
+  "de": "Lawsons Scheinzypresse",
+  "fr": "Cyprès de Lawson",
+  "hu": "Oregoni hamisciprus",
+  "it": "Chamaecyparis lawsoniana",
+  "es": "Chamaecyparis lawsoniana",
+  "pl": "Cyprysik Lawsona",
+  "cs": "Cypřišek Lawsonův"
+ },
+ "microbiota-decussata": {
+  "en": "Microbiota decussata",
+  "de": "Sibirischer Zwerglebensbaum",
+  "fr": "Microbiota decussata",
+  "hu": "Mandzsu ciprusboróka",
+  "es": "Microbiota decussata",
+  "pl": "Mikrobiota syberyjska",
+  "cs": "Mikrobiota křížolistá"
+ },
+ "metasequoia-glyptostroboides": {
+  "en": "Metasequoia glyptostroboides",
+  "de": "Urweltmammutbaum",
+  "fr": "Metasequoia glyptostroboides",
+  "hu": "Kínai mamutfenyő",
+  "it": "Metasequoia glyptostroboides",
+  "es": "Metasequoia glyptostroboides",
+  "pl": "Metasekwoja chińska",
+  "cs": "Metasekvoje čínská"
+ },
+ "taxodium-distichum": {
+  "en": "Taxodium distichum",
+  "de": "Echte Sumpfzypresse",
+  "fr": "Taxodium distichum",
+  "hu": "Amerikai mocsárciprus",
+  "it": "Taxodium distichum",
+  "es": "Taxodium distichum",
+  "pl": "Cypryśnik błotny",
+  "cs": "Tisovec dvouřadý"
+ },
+ "sequoiadendron-giganteum": {
+  "en": "Sequoiadendron giganteum",
+  "de": "Riesenmammutbaum",
+  "fr": "Séquoia géant",
+  "hu": "Óriás mamutfenyő",
+  "it": "Sequoiadendron giganteum",
+  "es": "Sequoiadendron giganteum",
+  "pl": "Mamutowiec olbrzymi",
+  "cs": "Sekvojovec obrovský"
+ },
+ "buxus-sempervirens-suffruticosa": {
+  "en": "Buxus sempervirens",
+  "de": "Gewöhnlicher Buchsbaum",
+  "fr": "Buxus sempervirens",
+  "hu": "Örökzöld puszpáng",
+  "it": "Buxus sempervirens",
+  "es": "Buxus sempervirens",
+  "pl": "Bukszpan zwyczajny",
+  "cs": "Zimostráz vždyzelený"
+ },
+ "ilex-aquifolium": {
+  "en": "Ilex aquifolium",
+  "de": "Europäische Stechpalme",
+  "fr": "Houx",
+  "hu": "Közönséges magyal",
+  "it": "Ilex aquifolium",
+  "es": "Ilex aquifolium",
+  "pl": "Ostrokrzew kolczasty",
+  "cs": "Cesmína ostrolistá"
+ },
+ "ilex-crenata-dark-green": {
+  "en": "Ilex crenata",
+  "de": "Japanische Stechpalme",
+  "fr": "Houx crénelé",
+  "cs": "Cesmína vroubkovaná"
+ },
+ "ligustrum-vulgare": {
+  "en": "Ligustrum vulgare",
+  "de": "Gewöhnlicher Liguster",
+  "fr": "Troène commun",
+  "hu": "Közönséges fagyal",
+  "it": "Ligustrum vulgare",
+  "es": "Ligustrum vulgare",
+  "pl": "Ligustr pospolity",
+  "cs": "Ptačí zob obecný"
+ },
+ "ligustrum-ovalifolium": {
+  "en": "Ligustrum ovalifolium",
+  "de": "Ovalblättriger Liguster",
+  "fr": "Ligustrum ovalifolium",
+  "hu": "Széleslevelű fagyal",
+  "cs": "Ptačí zob vejčitolistý"
+ },
+ "lonicera-nitida": {
+  "en": "Lonicera nitida",
+  "fr": "Lonicera nitida",
+  "cs": "Zimolez lesklý"
+ },
+ "photinia-x-fraseri-red-robin": {
+  "en": "Photinia × fraseri",
+  "fr": "Photinia ×fraseri",
+  "it": "Photinia × fraseri"
+ },
+ "euonymus-japonicus": {
+  "en": "Euonymus japonicus",
+  "fr": "Euonymus japonicus",
+  "it": "Euonymus japonicus",
+  "es": "Euonymus japonicus"
+ },
+ "griselinia-littoralis": {
+  "en": "Griselinia littoralis",
+  "fr": "Griselinia littoralis",
+  "es": "Griselinia littoralis"
+ },
+ "escallonia-apple-blossom": {
+  "en": "Escallonia",
+  "de": "Escallonia",
+  "fr": "Escallonia",
+  "hu": "Escallonia",
+  "es": "Escallonia",
+  "pl": "Twardziczka",
+  "cs": "Zábluda"
+ },
+ "elaeagnus-x-ebbingei": {
+  "en": "Elaeagnus × submacrophylla",
+  "de": "Wintergrüne Ölweide",
+  "fr": "Elaeagnus ×submacrophylla",
+  "es": "Elaeagnus × submacrophylla"
+ },
+ "osmanthus-x-burkwoodii": {
+  "en": "Osmanthus delavayi",
+  "de": "Osmanthus delavayi",
+  "fr": "Osmanthus delavayi",
+  "it": "Osmanthus delavayi"
+ },
+ "berberis-thunbergii-f-atropurpurea": {
+  "en": "Berberis thunbergii",
+  "de": "Thunberg-Berberitze",
+  "fr": "Berberis thunbergii",
+  "es": "Berberis thunbergii",
+  "pl": "Berberys Thunberga",
+  "cs": "Dřišťál Thunbergův"
+ },
+ "prunus-lusitanica": {
+  "en": "Prunus lusitanica",
+  "de": "Portugiesische Lorbeerkirsche",
+  "fr": "Laurier du Portugal",
+  "it": "Prunus lusitanica",
+  "es": "Prunus lusitanica"
+ },
+ "prunus-laurocerasus-otto-luyken": {
+  "en": "Prunus laurocerasus",
+  "de": "Lorbeerkirsche",
+  "fr": "Laurier-cerise",
+  "hu": "Balkáni babérmeggy",
+  "it": "Prunus laurocerasus",
+  "es": "Prunus laurocerasus",
+  "pl": "Laurowiśnia wschodnia",
+  "cs": "Bobkovišeň lékařská"
+ },
+ "crataegus-monogyna": {
+  "en": "Crataegus monogyna",
+  "de": "Eingriffeliger Weißdorn",
+  "fr": "Crataegus monogyna",
+  "hu": "Egybibés galagonya",
+  "it": "Crataegus monogyna",
+  "es": "Crataegus monogyna",
+  "pl": "Głóg jednoszyjkowy",
+  "cs": "Hloh jednosemenný"
+ },
+ "prunus-spinosa": {
+  "en": "Prunus spinosa",
+  "de": "Schlehdorn",
+  "fr": "Prunellier",
+  "hu": "Kökény (növényfaj)",
+  "it": "Prunus spinosa",
+  "es": "Prunus spinosa",
+  "pl": "Śliwa tarnina",
+  "cs": "Trnka obecná"
+ },
+ "cornus-sanguinea": {
+  "en": "Cornus sanguinea",
+  "de": "Roter Hartriegel",
+  "fr": "Cornouiller sanguin",
+  "hu": "Veresgyűrű som",
+  "it": "Cornus sanguinea",
+  "es": "Cornus sanguinea",
+  "pl": "Dereń świdwa",
+  "cs": "Svída krvavá"
+ },
+ "euonymus-europaeus": {
+  "en": "Euonymus europaeus",
+  "de": "Gewöhnlicher Spindelstrauch",
+  "fr": "Fusain d'Europe",
+  "hu": "Közönséges kecskerágó",
+  "it": "Euonymus europaeus",
+  "es": "Euonymus europaeus",
+  "pl": "Trzmielina pospolita",
+  "cs": "Brslen evropský"
+ },
+ "sambucus-nigra": {
+  "en": "Sambucus nigra",
+  "de": "Schwarzer Holunder",
+  "fr": "Sambucus nigra",
+  "hu": "Fekete bodza",
+  "it": "Sambucus nigra",
+  "es": "Sambucus nigra",
+  "pl": "Bez czarny",
+  "cs": "Bez černý"
+ },
+ "sambucus-nigra-black-lace": {
+  "en": "Sambucus nigra",
+  "de": "Schwarzer Holunder",
+  "fr": "Sambucus nigra",
+  "hu": "Fekete bodza",
+  "it": "Sambucus nigra",
+  "es": "Sambucus nigra",
+  "pl": "Bez czarny",
+  "cs": "Bez černý"
+ },
+ "viburnum-opulus": {
+  "en": "Viburnum opulus",
+  "de": "Gewöhnlicher Schneeball",
+  "fr": "Viorne obier",
+  "hu": "Kányabangita",
+  "it": "Viburnum opulus",
+  "es": "Viburnum opulus",
+  "pl": "Kalina koralowa",
+  "cs": "Kalina obecná"
+ },
+ "viburnum-opulus-roseum": {
+  "en": "Viburnum opulus",
+  "de": "Gewöhnlicher Schneeball",
+  "fr": "Viorne obier",
+  "hu": "Kányabangita",
+  "it": "Viburnum opulus",
+  "es": "Viburnum opulus",
+  "pl": "Kalina koralowa",
+  "cs": "Kalina obecná"
+ },
+ "viburnum-lantana": {
+  "en": "Viburnum lantana",
+  "de": "Wolliger Schneeball",
+  "fr": "Viorne lantane",
+  "hu": "Ostorménfa",
+  "it": "Viburnum lantana",
+  "es": "Viburnum lantana",
+  "pl": "Kalina hordowina",
+  "cs": "Kalina tušalaj"
+ },
+ "rhamnus-cathartica": {
+  "en": "Rhamnus cathartica",
+  "de": "Purgier-Kreuzdorn",
+  "fr": "Rhamnus cathartica",
+  "hu": "Varjútövis",
+  "it": "Rhamnus cathartica",
+  "es": "Rhamnus catharticus",
+  "pl": "Szakłak pospolity",
+  "cs": "Řešetlák počistivý"
+ },
+ "frangula-alnus": {
+  "en": "Frangula alnus",
+  "de": "Faulbaum",
+  "fr": "Bourdaine",
+  "hu": "Közönséges kutyabenge",
+  "it": "Frangula alnus",
+  "es": "Frangula alnus",
+  "pl": "Kruszyna pospolita",
+  "cs": "Krušina olšová"
+ },
+ "lonicera-xylosteum": {
+  "en": "Lonicera xylosteum",
+  "de": "Rote Heckenkirsche",
+  "fr": "Lonicera xylosteum",
+  "hu": "Ükörkelonc",
+  "it": "Lonicera xylosteum",
+  "es": "Lonicera xylosteum",
+  "pl": "Wiciokrzew pospolity",
+  "cs": "Zimolez obecný"
+ },
+ "hippophae-rhamnoides": {
+  "en": "Sea buckthorn",
+  "de": "Sanddorn",
+  "fr": "Argousier",
+  "hu": "Európai homoktövis",
+  "it": "Hippophae rhamnoides",
+  "es": "Hippophae rhamnoides",
+  "pl": "Rokitnik zwyczajny",
+  "cs": "Rakytník řešetlákový"
+ },
+ "daphne-mezereum": {
+  "en": "Daphne mezereum",
+  "de": "Echter Seidelbast",
+  "fr": "Bois-joli",
+  "hu": "Farkasboroszlán",
+  "it": "Daphne mezereum",
+  "es": "Daphne mezereum",
+  "pl": "Wawrzynek wilczełyko",
+  "cs": "Lýkovec jedovatý"
+ },
+ "ribes-alpinum": {
+  "en": "Ribes alpinum",
+  "de": "Alpen-Johannisbeere",
+  "fr": "Ribes alpinum",
+  "hu": "Havasi ribiszke",
+  "it": "Ribes alpinum",
+  "es": "Ribes alpinum",
+  "pl": "Porzeczka alpejska",
+  "cs": "Rybíz alpínský"
+ },
+ "philadelphus-coronarius": {
+  "en": "Philadelphus coronarius",
+  "de": "Europäischer Pfeifenstrauch",
+  "fr": "Philadelphus coronarius",
+  "hu": "Közönséges jezsámen",
+  "es": "Philadelphus coronarius",
+  "pl": "Jaśminowiec wonny",
+  "cs": "Pustoryl věncový"
+ },
+ "deutzia-gracilis": {
+  "en": "Deutzia gracilis",
+  "de": "Zierliche Deutzie",
+  "it": "Deutzia gracilis"
+ },
+ "weigela-bristol-ruby": {
+  "en": "Weigela",
+  "de": "Weigelien",
+  "fr": "Weigela",
+  "hu": "Rózsalonc",
+  "it": "Weigela",
+  "es": "Weigela",
+  "pl": "Krzewuszka",
+  "cs": "Weigelie"
+ },
+ "spiraea-x-vanhouttei": {
+  "en": "Spiraea × vanhouttei",
+  "fr": "Spirée de Van Houtte",
+  "pl": "Tawuła van Houtte’a",
+  "cs": "Tavolník van Houtteův"
+ },
+ "spiraea-japonica-anthony-waterer": {
+  "en": "Spiraea japonica",
+  "fr": "Spiraea japonica",
+  "es": "Spiraea japonica",
+  "pl": "Tawuła japońska",
+  "cs": "Tavolník japonský"
+ },
+ "kolkwitzia-amabilis": {
+  "en": "Kolkwitzia",
+  "fr": "Kolkwitzia",
+  "es": "Kolkwitzia"
+ },
+ "buddleja-davidii": {
+  "en": "Buddleja davidii",
+  "de": "Schmetterlingsflieder",
+  "fr": "Buddleia de David",
+  "hu": "Nyáriorgona",
+  "it": "Buddleja davidii",
+  "es": "Buddleja davidii",
+  "pl": "Budleja Davida",
+  "cs": "Komule Davidova"
+ },
+ "hibiscus-syriacus-oiseau-bleu": {
+  "en": "Hibiscus syriacus",
+  "de": "Straucheibisch",
+  "fr": "Hibiscus syriacus",
+  "hu": "Kerti mályvacserje",
+  "it": "Hibiscus syriacus",
+  "es": "Hibiscus syriacus",
+  "pl": "Ketmia syryjska",
+  "cs": "Ibišek syrský"
+ },
+ "hydrangea-paniculata-limelight": {
+  "en": "Hydrangea paniculata",
+  "de": "Rispen-Hortensie",
+  "fr": "Hydrangea paniculata",
+  "hu": "Bugás hortenzia",
+  "it": "Hydrangea paniculata",
+  "pl": "Hortensja bukietowa"
+ },
+ "hydrangea-arborescens-annabelle": {
+  "en": "Hydrangea arborescens",
+  "de": "Wald-Hortensie",
+  "fr": "Hydrangea arborescens",
+  "hu": "Cserjés hortenzia",
+  "es": "Hydrangea arborescens",
+  "pl": "Hortensja krzewiasta",
+  "cs": "Hortenzie stromkovitá"
+ },
+ "hydrangea-quercifolia": {
+  "en": "Hydrangea quercifolia",
+  "de": "Eichenblättrige Hortensie",
+  "fr": "Hydrangea quercifolia",
+  "es": "Hydrangea quercifolia",
+  "pl": "Hortensja dębolistna"
+ },
+ "viburnum-x-bodnantense-dawn": {
+  "en": "Viburnum × bodnantense",
+  "de": "Bodnant-Schneeball",
+  "cs": "Kalina bodnantská"
+ },
+ "viburnum-plicatum-f-tomentosum-mariesii": {
+  "en": "Viburnum plicatum",
+  "fr": "Viburnum plicatum",
+  "it": "Viburnum plicatum",
+  "cs": "Kalina řasnatá"
+ },
+ "viburnum-tinus": {
+  "en": "Viburnum tinus",
+  "de": "Lorbeerblättriger Schneeball",
+  "fr": "Viorne tin",
+  "hu": "Téli bangita",
+  "it": "Viburnum tinus",
+  "es": "Viburnum tinus",
+  "pl": "Kalina wawrzynowata",
+  "cs": "Kalina modroplodá"
+ },
+ "kerria-japonica-pleniflora": {
+  "en": "Kerria japonica",
+  "de": "Kerrie",
+  "fr": "Corète du Japon",
+  "hu": "Boglárkacserje",
+  "it": "Kerria japonica",
+  "es": "Kerria japonica",
+  "pl": "Złotlin japoński",
+  "cs": "Zákula japonská"
+ },
+ "ceanothus-concha": {
+  "en": "Ceanothus",
+  "de": "Säckelblumen",
+  "fr": "Céanothe",
+  "es": "Ceanothus",
+  "pl": "Prusznik",
+  "cs": "Latnatec"
+ },
+ "choisya-ternata": {
+  "en": "Choisya ternata",
+  "de": "Orangenblume",
+  "fr": "Choisya ternata"
+ },
+ "skimmia-japonica-rubella": {
+  "en": "Skimmia japonica",
+  "de": "Skimmia japonica",
+  "fr": "Skimmia japonica",
+  "it": "Skimmia japonica",
+  "es": "Skimmia japonica",
+  "pl": "Skimmia japońska"
+ },
+ "pieris-forest-flame": {
+  "en": "Pieris",
+  "de": "Pieris",
+  "hu": "Pieris (egyértelműsítő lap)",
+  "it": "Pieris",
+  "es": "Pieris"
+ },
+ "camellia-japonica": {
+  "en": "Camellia japonica",
+  "de": "Japanische Kamelie",
+  "fr": "Camélia du Japon",
+  "hu": "Japán kamélia",
+  "es": "Camellia japonica",
+  "pl": "Kamelia japońska",
+  "cs": "Kamélie japonská"
+ },
+ "rhododendron-luteum": {
+  "en": "Rhododendron luteum",
+  "de": "Gelbe Azalee",
+  "fr": "Rhododendron luteum",
+  "pl": "Różanecznik żółty",
+  "cs": "Pěnišník žlutý"
+ },
+ "rhododendron-hinomayo": {
+  "en": "Rhododendron",
+  "de": "Rhododendren",
+  "fr": "Rhododendron",
+  "hu": "Havasszépe",
+  "it": "Rhododendron",
+  "es": "Rhododendron",
+  "pl": "Różanecznik",
+  "cs": "Pěnišník"
+ },
+ "magnolia-stellata": {
+  "en": "Magnolia stellata",
+  "de": "Stern-Magnolie",
+  "fr": "Magnolia étoilé",
+  "hu": "Csillagvirágú liliomfa",
+  "it": "Magnolia stellata",
+  "es": "Magnolia stellata",
+  "pl": "Magnolia gwiaździsta",
+  "cs": "Šácholan hvězdovitý"
+ },
+ "hamamelis-x-intermedia-arnold-promise": {
+  "en": "Hamamelis × intermedia",
+  "de": "Hamamelis ×intermedia"
+ },
+ "cornus-alba-sibirica": {
+  "en": "Cornus alba",
+  "de": "Tatarischer Hartriegel",
+  "fr": "Cornus alba",
+  "hu": "Fehér som",
+  "it": "Cornus alba",
+  "es": "Cornus alba",
+  "pl": "Dereń biały",
+  "cs": "Svída bílá"
+ },
+ "cornus-kousa": {
+  "en": "Cornus kousa",
+  "de": "Asiatischer Blüten-Hartriegel",
+  "fr": "Cornouiller du Japon",
+  "es": "Cornus kousa",
+  "pl": "Dereń kousa",
+  "cs": "Dřín japonský"
+ },
+ "acer-palmatum-garnet": {
+  "en": "Acer palmatum",
+  "de": "Fächer-Ahorn",
+  "fr": "Érable palmé",
+  "hu": "Ujjas juhar",
+  "it": "Acer palmatum",
+  "es": "Acer palmatum",
+  "pl": "Klon palmowy",
+  "cs": "Javor dlanitolistý"
+ },
+ "physocarpus-opulifolius-diabolo": {
+  "en": "Physocarpus opulifolius",
+  "de": "Schneeballblättrige Blasenspiere",
+  "fr": "Physocarpus opulifolius",
+  "pl": "Pęcherznica kalinolistna",
+  "cs": "Tavola kalinolistá"
+ },
+ "caryopteris-x-clandonensis-heavenly-blue": {
+  "en": "Caryopteris × clandonensis",
+  "pl": "Kariopteris angielski",
+  "cs": "Ořechokřídlec clandonský"
+ },
+ "dasiphora-fruticosa-goldfinger": {
+  "en": "Dasiphora fruticosa",
+  "de": "Fingerstrauch",
+  "fr": "Dasiphora fruticosa",
+  "hu": "Cserjés pimpó",
+  "pl": "Pięciornik krzewiasty",
+  "cs": "Mochnovec křovitý"
+ },
+ "mahonia-aquifolium": {
+  "en": "Berberis aquifolium",
+  "de": "Berberis aquifolium",
+  "fr": "Berberis aquifolium",
+  "es": "Berberis aquifolium",
+  "pl": "Berberis aquifolium",
+  "cs": "Berberis aquifolium"
+ },
+ "aucuba-japonica-crotonifolia": {
+  "en": "Aucuba japonica",
+  "de": "Japanische Aukube",
+  "fr": "Aucuba japonica",
+  "hu": "Japán babérsom",
+  "es": "Aucuba japonica",
+  "pl": "Aukuba japońska"
+ },
+ "fatsia-japonica": {
+  "en": "Fatsia japonica",
+  "de": "Zimmeraralie",
+  "fr": "Fatsia japonica",
+  "hu": "Japán arália",
+  "it": "Fatsia japonica",
+  "es": "Fatsia japonica",
+  "pl": "Fatsja japońska"
+ },
+ "abelia-x-grandiflora": {
+  "en": "Abelia × grandiflora",
+  "de": "Großblütige Abelie",
+  "es": "Abelia × grandiflora"
+ },
+ "hypericum-hidcote": {
+  "en": "Hypericum",
+  "de": "Johanniskräuter",
+  "fr": "Millepertuis",
+  "hu": "Orbáncfű (növénynemzetség)",
+  "it": "Hypericum",
+  "es": "Hypericum",
+  "pl": "Dziurawiec",
+  "cs": "Třezalka"
+ },
+ "symphoricarpos-albus": {
+  "en": "Symphoricarpos albus",
+  "de": "Gewöhnliche Schneebeere",
+  "fr": "Symphorine blanche",
+  "hu": "Fehér hóbogyó",
+  "it": "Symphoricarpos albus",
+  "es": "Symphoricarpos albus",
+  "pl": "Śnieguliczka biała",
+  "cs": "Pámelník bílý"
+ },
+ "cotoneaster-horizontalis": {
+  "en": "Cotoneaster horizontalis",
+  "de": "Fächer-Zwergmispel",
+  "fr": "Cotoneaster horizontalis",
+  "it": "Cotoneaster horizontalis",
+  "es": "Cotoneaster horizontalis",
+  "pl": "Irga pozioma",
+  "cs": "Skalník rozprostřený"
+ },
+ "cotoneaster-franchetii": {
+  "en": "Cotoneaster franchetii",
+  "de": "Franchets Zwergmispel",
+  "fr": "Cotoneaster franchetii",
+  "es": "Cotoneaster franchetii",
+  "cs": "Skalník Franchetův"
+ },
+ "pyracantha-orange-glow": {
+  "en": "Pyracantha",
+  "de": "Feuerdorn",
+  "fr": "Pyracantha",
+  "hu": "Tűztövis",
+  "it": "Pyracantha",
+  "es": "Pyracantha",
+  "pl": "Ognik (roślina)",
+  "cs": "Hlohyně"
+ },
+ "syringa-meyeri-palibin": {
+  "en": "Syringa pubescens",
+  "de": "Wolliger Flieder"
+ },
+ "syringa-vulgaris-madame-lemoine": {
+  "en": "Syringa vulgaris",
+  "de": "Gemeiner Flieder",
+  "fr": "Syringa vulgaris",
+  "hu": "Közönséges orgona",
+  "it": "Syringa vulgaris",
+  "es": "Syringa vulgaris",
+  "pl": "Lilak pospolity",
+  "cs": "Šeřík obecný"
+ },
+ "forsythia-x-intermedia-lynwood-variety": {
+  "en": "Forsythia × intermedia",
+  "de": "Garten-Forsythie",
+  "fr": "Forsythia ×intermedia",
+  "pl": "Forsycja pośrednia",
+  "cs": "Zlatice prostřední"
+ },
+ "euonymus-fortunei-emerald-n-gold": {
+  "en": "Euonymus fortunei",
+  "de": "Kletter-Spindelstrauch",
+  "fr": "Euonymus fortunei",
+  "hu": "Repkénykecskerágó",
+  "es": "Euonymus fortunei",
+  "pl": "Trzmielina Fortune’a",
+  "cs": "Brslen Fortuneův"
+ },
+ "rosa-gertrude-jekyll": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-munstead-wood": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-olivia-rose-austin": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-graham-thomas": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-the-lady-of-the-lake": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-boscobel": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-princess-anne": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-gallica-var-officinalis": {
+  "en": "Rosa gallica",
+  "de": "Essig-Rose",
+  "fr": "Rosa gallica",
+  "hu": "Parlagi rózsa",
+  "it": "Rosa gallica",
+  "es": "Rosa gallica",
+  "pl": "Róża francuska",
+  "cs": "Růže keltská"
+ },
+ "rosa-gallica-versicolor": {
+  "en": "Rosa gallica",
+  "de": "Essig-Rose",
+  "fr": "Rosa gallica",
+  "hu": "Parlagi rózsa",
+  "it": "Rosa gallica",
+  "es": "Rosa gallica",
+  "pl": "Róża francuska",
+  "cs": "Růže keltská"
+ },
+ "rosa-cardinal-de-richelieu": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-madame-hardy": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-x-centifolia": {
+  "en": "Rosa × centifolia",
+  "de": "Rosa centifolia",
+  "fr": "Rosa ×centifolia",
+  "hu": "Százlevelű rózsa",
+  "it": "Rosa × centifolia",
+  "es": "Rosa x centifolia",
+  "pl": "Róża stulistna",
+  "cs": "Růže stolistá"
+ },
+ "rosa-x-alba-alba-maxima": {
+  "en": "Rosa × alba",
+  "de": "Rosa alba",
+  "fr": "Rosa ×alba",
+  "hu": "Fehér rózsa",
+  "es": "Rosa × alba",
+  "pl": "Róża białokwiatowa",
+  "cs": "Růže bílá"
+ },
+ "rosa-louise-odier": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-madame-isaac-pereire": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-jacques-cartier": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-iceberg": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-peace": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-ingrid-bergman": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-new-dawn": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-albertine": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-rambling-rector": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-pierre-de-ronsard": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-madame-alfred-carriere": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-gloire-de-dijon": {
+  "en": "Rosa",
+  "de": "Rosa",
+  "fr": "Rosa",
+  "hu": "Rosa (egyértelműsítő lap)",
+  "it": "Rosa",
+  "es": "Rosa (desambiguación)",
+  "pl": "Rosa (ujednoznacznienie)",
+  "cs": "Rosa (rozcestník)"
+ },
+ "rosa-canina": {
+  "en": "Rosa canina",
+  "de": "Hundsrose",
+  "fr": "Rosa canina",
+  "hu": "Vadrózsa",
+  "it": "Rosa canina",
+  "es": "Rosa canina",
+  "pl": "Róża dzika",
+  "cs": "Růže šípková"
+ },
+ "rosa-rugosa": {
+  "en": "Rosa rugosa",
+  "de": "Kartoffel-Rose",
+  "fr": "Rosa rugosa",
+  "it": "Rosa rugosa",
+  "es": "Rosa rugosa",
+  "pl": "Róża pomarszczona",
+  "cs": "Růže svraskalá"
+ },
+ "rosa-glauca": {
+  "en": "Rosa glauca",
+  "de": "Rotblatt-Rose",
+  "fr": "Rosa glauca",
+  "es": "Rosa glauca",
+  "pl": "Róża czerwonawa",
+  "cs": "Růže sivá"
+ },
+ "rosa-spinosissima": {
+  "en": "Rosa pimpinellifolia",
+  "de": "Bibernell-Rose",
+  "fr": "Rosa pimpinellifolia",
+  "hu": "Jajrózsa",
+  "it": "Rosa spinosissima",
+  "pl": "Róża gęstokolczasta",
+  "cs": "Růže bedrníkolistá"
+ },
+ "rosa-rubiginosa": {
+  "en": "Rosa rubiginosa",
+  "de": "Wein-Rose",
+  "fr": "Rosa rubiginosa",
+  "hu": "Rozsdás rózsa",
+  "it": "Rosa rubiginosa",
+  "es": "Rosa eglanteria",
+  "pl": "Róża rdzawa",
+  "cs": "Růže vinná"
+ },
+ "clematis-montana-var-rubens": {
+  "en": "Clematis montana",
+  "fr": "Clématite des montagnes",
+  "hu": "Hegyi iszalag",
+  "es": "Clematis montana",
+  "pl": "Powojnik górski"
+ },
+ "clematis-nelly-moser": {
+  "en": "Clematis",
+  "de": "Waldreben",
+  "fr": "Clématite",
+  "hu": "Iszalag",
+  "it": "Clematis",
+  "es": "Clematis",
+  "pl": "Powojnik",
+  "cs": "Plamének"
+ },
+ "clematis-jackmanii": {
+  "en": "Clematis",
+  "de": "Waldreben",
+  "fr": "Clématite",
+  "hu": "Iszalag",
+  "it": "Clematis",
+  "es": "Clematis",
+  "pl": "Powojnik",
+  "cs": "Plamének"
+ },
+ "clematis-etoile-violette": {
+  "en": "Clematis",
+  "de": "Waldreben",
+  "fr": "Clématite",
+  "hu": "Iszalag",
+  "it": "Clematis",
+  "es": "Clematis",
+  "pl": "Powojnik",
+  "cs": "Plamének"
+ },
+ "clematis-armandii": {
+  "en": "Clematis armandii",
+  "fr": "Clematis armandii",
+  "hu": "Clematis armandii",
+  "it": "Clematis armandii",
+  "es": "Clematis armandii"
+ },
+ "wisteria-sinensis": {
+  "en": "Wisteria sinensis",
+  "de": "Chinesische Wisteria",
+  "fr": "Wisteria sinensis",
+  "hu": "Lilaakác",
+  "it": "Wisteria sinensis",
+  "es": "Wisteria sinensis",
+  "pl": "Glicynia chińska"
+ },
+ "wisteria-floribunda": {
+  "en": "Wisteria floribunda",
+  "de": "Japanische Wisteria",
+  "fr": "Wisteria floribunda",
+  "it": "Wisteria floribunda",
+  "es": "Wisteria floribunda",
+  "pl": "Glicynia japońska",
+  "cs": "Vistárie květnatá"
+ },
+ "lonicera-periclymenum": {
+  "en": "Lonicera periclymenum",
+  "de": "Waldgeißblatt",
+  "fr": "Chèvrefeuille des bois",
+  "hu": "Búbos lonc",
+  "es": "Lonicera periclymenum",
+  "pl": "Wiciokrzew pomorski",
+  "cs": "Zimolez ovíjivý"
+ },
+ "lonicera-caprifolium": {
+  "en": "Lonicera caprifolium",
+  "de": "Gartengeißblatt",
+  "fr": "Lonicera caprifolium",
+  "hu": "Jerikói lonc",
+  "it": "Lonicera caprifolium",
+  "es": "Lonicera caprifolium",
+  "pl": "Wiciokrzew przewiercień",
+  "cs": "Zimolez kozí list"
+ },
+ "hedera-helix": {
+  "en": "Hedera helix",
+  "de": "Gemeiner Efeu",
+  "fr": "Lierre grimpant",
+  "hu": "Közönséges borostyán",
+  "it": "Hedera helix",
+  "es": "Hedera helix",
+  "pl": "Bluszcz pospolity",
+  "cs": "Břečťan popínavý"
+ },
+ "parthenocissus-quinquefolia": {
+  "en": "Parthenocissus quinquefolia",
+  "de": "Selbstkletternde Jungfernrebe",
+  "fr": "Parthenocissus quinquefolia",
+  "hu": "Tapadó vadszőlő",
+  "it": "Parthenocissus quinquefolia",
+  "es": "Parthenocissus quinquefolia",
+  "pl": "Winobluszcz pięciolistkowy",
+  "cs": "Loubinec pětilistý"
+ },
+ "parthenocissus-tricuspidata": {
+  "en": "Parthenocissus tricuspidata",
+  "de": "Dreispitzige Jungfernrebe",
+  "fr": "Parthenocissus tricuspidata",
+  "hu": "Háromkaréjú vadszőlő",
+  "es": "Parthenocissus tricuspidata",
+  "pl": "Winobluszcz trójklapowy",
+  "cs": "Loubinec trojlaločný"
+ },
+ "vitis-vinifera": {
+  "en": "Vitis vinifera",
+  "de": "Weinrebe",
+  "fr": "Vitis vinifera",
+  "hu": "Bortermő szőlő",
+  "it": "Vitis vinifera",
+  "es": "Vitis vinifera",
+  "pl": "Winorośl właściwa",
+  "cs": "Réva vinná"
+ },
+ "humulus-lupulus": {
+  "en": "Humulus lupulus",
+  "de": "Echter Hopfen",
+  "fr": "Houblon",
+  "hu": "Közönséges komló",
+  "it": "Humulus lupulus",
+  "es": "Humulus lupulus",
+  "pl": "Chmiel zwyczajny",
+  "cs": "Chmel otáčivý"
+ },
+ "campsis-radicans": {
+  "en": "Campsis radicans",
+  "de": "Amerikanische Klettertrompete",
+  "fr": "Campsis radicans",
+  "hu": "Trombitafolyondár",
+  "it": "Campsis radicans",
+  "es": "Campsis radicans",
+  "pl": "Milin amerykański",
+  "cs": "Křivouš kořenující"
+ },
+ "jasminum-officinale": {
+  "en": "Jasminum officinale",
+  "de": "Echter Jasmin",
+  "fr": "Jasminum officinale",
+  "hu": "Közönséges jázmin",
+  "it": "Jasminum officinale",
+  "es": "Jasminum officinale",
+  "pl": "Jaśmin lekarski"
+ },
+ "trachelospermum-jasminoides": {
+  "en": "Trachelospermum jasminoides",
+  "de": "Trachelospermum jasminoides",
+  "fr": "Trachelospermum jasminoides",
+  "it": "Trachelospermum jasminoides",
+  "es": "Trachelospermum jasminoides"
+ },
+ "hydrangea-anomala-subsp-petiolaris": {
+  "en": "Hydrangea anomala",
+  "de": "Hydrangea anomala",
+  "fr": "Hydrangea anomala",
+  "es": "Hydrangea anomala"
+ },
+ "akebia-quinata": {
+  "en": "Akebia quinata",
+  "de": "Fingerblättrige Akebie",
+  "fr": "Akebia quinata",
+  "hu": "Ötlevélkéjű akébia",
+  "it": "Akebia quinata",
+  "es": "Akebia quinata",
+  "pl": "Akebia pięciolistkowa"
+ },
+ "actinidia-deliciosa": {
+  "en": "Actinidia chinensis var. deliciosa",
+  "de": "Actinidia deliciosa",
+  "fr": "Actinidia deliciosa",
+  "hu": "Actinidia deliciosa",
+  "it": "Actinidia chinensis var. deliciosa",
+  "es": "Actinidia deliciosa",
+  "pl": "Aktinidia smakowita",
+  "cs": "Aktinidie lahodná"
+ },
+ "actinidia-arguta": {
+  "en": "Actinidia arguta",
+  "de": "Scharfzähniger Strahlengriffel",
+  "fr": "Kiwaï",
+  "hu": "Kopasz kivi",
+  "it": "Actinidia arguta",
+  "es": "Actinidia arguta",
+  "pl": "Aktinidia ostrolistna",
+  "cs": "Aktinidie význačná"
+ },
+ "fallopia-baldschuanica": {
+  "en": "Fallopia baldschuanica",
+  "de": "Schlingknöterich",
+  "fr": "Fallopia baldschuanica",
+  "es": "Fallopia baldschuanica",
+  "pl": "Rdestówka bucharska"
+ },
+ "passiflora-caerulea": {
+  "en": "Passiflora caerulea",
+  "de": "Blaue Passionsblume",
+  "fr": "Passiflora caerulea",
+  "hu": "Kék golgotavirág",
+  "it": "Passiflora caerulea",
+  "es": "Passiflora caerulea",
+  "pl": "Męczennica błękitna"
+ },
+ "bougainvillea-glabra": {
+  "en": "Bougainvillea glabra",
+  "de": "Kahle Drillingsblume",
+  "hu": "Kopasz murvafürt",
+  "es": "Bougainvillea glabra",
+  "pl": "Bugenwilla gładka",
+  "cs": "Bugenvilea lysá"
+ },
+ "quercus-robur": {
+  "en": "Quercus robur",
+  "de": "Stieleiche",
+  "fr": "Chêne pédonculé",
+  "hu": "Kocsányos tölgy",
+  "it": "Quercus robur",
+  "es": "Quercus robur",
+  "pl": "Dąb szypułkowy",
+  "cs": "Dub letní"
+ },
+ "quercus-robur-fastigiata": {
+  "en": "Quercus robur",
+  "de": "Stieleiche",
+  "fr": "Chêne pédonculé",
+  "hu": "Kocsányos tölgy",
+  "it": "Quercus robur",
+  "es": "Quercus robur",
+  "pl": "Dąb szypułkowy",
+  "cs": "Dub letní"
+ },
+ "quercus-petraea": {
+  "en": "Quercus petraea",
+  "de": "Traubeneiche",
+  "fr": "Quercus petraea",
+  "hu": "Kocsánytalan tölgy",
+  "it": "Quercus petraea",
+  "es": "Quercus petraea",
+  "pl": "Dąb bezszypułkowy",
+  "cs": "Dub zimní"
+ },
+ "quercus-cerris": {
+  "en": "Quercus cerris",
+  "de": "Zerreiche",
+  "fr": "Quercus cerris",
+  "hu": "Csertölgy",
+  "it": "Quercus cerris",
+  "es": "Quercus cerris",
+  "pl": "Dąb burgundzki",
+  "cs": "Dub cer"
+ },
+ "quercus-frainetto": {
+  "en": "Quercus frainetto",
+  "de": "Ungarische Eiche",
+  "fr": "Chêne de Hongrie",
+  "hu": "Magyar tölgy",
+  "it": "Quercus frainetto",
+  "es": "Quercus frainetto",
+  "pl": "Dąb węgierski",
+  "cs": "Dub balkánský"
+ },
+ "quercus-pubescens": {
+  "en": "Quercus pubescens",
+  "de": "Flaumeiche",
+  "fr": "Chêne pubescent",
+  "hu": "Molyhos tölgy",
+  "it": "Quercus pubescens",
+  "es": "Quercus humilis",
+  "pl": "Dąb omszony",
+  "cs": "Dub pýřitý"
+ },
+ "quercus-ilex": {
+  "en": "Quercus ilex",
+  "de": "Steineiche",
+  "fr": "Chêne vert",
+  "hu": "Magyaltölgy",
+  "it": "Quercus ilex",
+  "es": "Quercus ilex",
+  "pl": "Dąb ostrolistny",
+  "cs": "Dub cesmínovitý"
+ },
+ "quercus-suber": {
+  "en": "Quercus suber",
+  "de": "Korkeiche",
+  "fr": "Chêne-liège",
+  "hu": "Paratölgy",
+  "it": "Quercus suber",
+  "es": "Quercus suber",
+  "pl": "Dąb korkowy",
+  "cs": "Dub korkový"
+ },
+ "quercus-rubra": {
+  "en": "Quercus rubra",
+  "de": "Roteiche",
+  "fr": "Chêne rouge d'Amérique",
+  "hu": "Vörös tölgy",
+  "it": "Quercus rubra",
+  "es": "Quercus rubra",
+  "pl": "Dąb czerwony",
+  "cs": "Dub červený"
+ },
+ "fagus-sylvatica": {
+  "en": "Fagus sylvatica",
+  "de": "Rotbuche",
+  "fr": "Hêtre commun",
+  "hu": "Európai bükk",
+  "it": "Fagus sylvatica",
+  "es": "Fagus sylvatica",
+  "pl": "Buk zwyczajny",
+  "cs": "Buk lesní"
+ },
+ "fagus-sylvatica-atropurpurea": {
+  "en": "Fagus sylvatica",
+  "de": "Rotbuche",
+  "fr": "Hêtre commun",
+  "hu": "Európai bükk",
+  "it": "Fagus sylvatica",
+  "es": "Fagus sylvatica",
+  "pl": "Buk zwyczajny",
+  "cs": "Buk lesní"
+ },
+ "fagus-sylvatica-dawyck": {
+  "en": "Fagus sylvatica",
+  "de": "Rotbuche",
+  "fr": "Hêtre commun",
+  "hu": "Európai bükk",
+  "it": "Fagus sylvatica",
+  "es": "Fagus sylvatica",
+  "pl": "Buk zwyczajny",
+  "cs": "Buk lesní"
+ },
+ "carpinus-betulus": {
+  "en": "Carpinus betulus",
+  "de": "Gemeine Hainbuche",
+  "fr": "Charme commun",
+  "hu": "Közönséges gyertyán",
+  "it": "Carpinus betulus",
+  "es": "Carpinus betulus",
+  "pl": "Grab pospolity",
+  "cs": "Habr obecný"
+ },
+ "tilia-platyphyllos": {
+  "en": "Tilia platyphyllos",
+  "de": "Sommerlinde",
+  "fr": "Tilleul à grandes feuilles",
+  "hu": "Nagylevelű hárs",
+  "it": "Tilia platyphyllos",
+  "es": "Tilia platyphyllos",
+  "pl": "Lipa szerokolistna",
+  "cs": "Lípa velkolistá"
+ },
+ "tilia-tomentosa": {
+  "en": "Tilia tomentosa",
+  "de": "Silber-Linde",
+  "fr": "Tilleul argenté",
+  "hu": "Ezüst hárs",
+  "es": "Tilia tomentosa",
+  "pl": "Lipa srebrzysta",
+  "cs": "Lípa stříbrná"
+ },
+ "tilia-europaea": {
+  "en": "Tilia × europaea",
+  "de": "Holländische Linde",
+  "fr": "Tilleul commun",
+  "es": "Tilia × europaea",
+  "cs": "Lípa obecná"
+ },
+ "acer-platanoides": {
+  "en": "Acer platanoides",
+  "de": "Spitzahorn",
+  "fr": "Érable plane",
+  "hu": "Korai juhar",
+  "it": "Acer platanoides",
+  "es": "Acer platanoides",
+  "pl": "Klon zwyczajny",
+  "cs": "Javor mléč"
+ },
+ "acer-platanoides-crimson-king": {
+  "en": "Acer platanoides",
+  "de": "Spitzahorn",
+  "fr": "Érable plane",
+  "hu": "Korai juhar",
+  "it": "Acer platanoides",
+  "es": "Acer platanoides",
+  "pl": "Klon zwyczajny",
+  "cs": "Javor mléč"
+ },
+ "acer-platanoides-globosum": {
+  "en": "Acer platanoides",
+  "de": "Spitzahorn",
+  "fr": "Érable plane",
+  "hu": "Korai juhar",
+  "it": "Acer platanoides",
+  "es": "Acer platanoides",
+  "pl": "Klon zwyczajny",
+  "cs": "Javor mléč"
+ },
+ "acer-pseudoplatanus": {
+  "en": "Acer pseudoplatanus",
+  "de": "Berg-Ahorn",
+  "fr": "Érable sycomore",
+  "hu": "Hegyi juhar",
+  "it": "Acer pseudoplatanus",
+  "es": "Acer pseudoplatanus",
+  "pl": "Klon jawor",
+  "cs": "Javor klen"
+ },
+ "acer-tataricum": {
+  "en": "Acer tataricum",
+  "de": "Tatarischer Steppen-Ahorn",
+  "fr": "Acer tataricum",
+  "hu": "Tatár juhar",
+  "es": "Acer tataricum",
+  "pl": "Klon tatarski",
+  "cs": "Javor tatarský"
+ },
+ "acer-monspessulanum": {
+  "en": "Acer monspessulanum",
+  "de": "Französischer Ahorn",
+  "fr": "Érable de Montpellier",
+  "it": "Acer monspessulanum",
+  "es": "Acer monspessulanum",
+  "pl": "Klon francuski",
+  "cs": "Javor francouzský"
+ },
+ "acer-palmatum-osakazuki": {
+  "en": "Acer palmatum",
+  "de": "Fächer-Ahorn",
+  "fr": "Érable palmé",
+  "hu": "Ujjas juhar",
+  "it": "Acer palmatum",
+  "es": "Acer palmatum",
+  "pl": "Klon palmowy",
+  "cs": "Javor dlanitolistý"
+ },
+ "acer-palmatum-sango-kaku": {
+  "en": "Acer palmatum",
+  "de": "Fächer-Ahorn",
+  "fr": "Érable palmé",
+  "hu": "Ujjas juhar",
+  "it": "Acer palmatum",
+  "es": "Acer palmatum",
+  "pl": "Klon palmowy",
+  "cs": "Javor dlanitolistý"
+ },
+ "acer-griseum": {
+  "en": "Acer griseum",
+  "de": "Zimt-Ahorn",
+  "fr": "Érable à écorce de papier",
+  "hu": "Szürke juhar",
+  "es": "Acer griseum",
+  "pl": "Klon strzępiastokory",
+  "cs": "Javor šedý"
+ },
+ "fraxinus-excelsior": {
+  "en": "Fraxinus excelsior",
+  "de": "Gemeine Esche",
+  "fr": "Frêne élevé",
+  "hu": "Magas kőris",
+  "it": "Fraxinus excelsior",
+  "es": "Fraxinus excelsior",
+  "pl": "Jesion wyniosły",
+  "cs": "Jasan ztepilý"
+ },
+ "fraxinus-ornus": {
+  "en": "Fraxinus ornus",
+  "de": "Manna-Esche",
+  "fr": "Fraxinus ornus",
+  "hu": "Virágos kőris",
+  "it": "Fraxinus ornus",
+  "es": "Fraxinus ornus",
+  "pl": "Jesion mannowy",
+  "cs": "Jasan zimnář"
+ },
+ "ulmus-laevis": {
+  "en": "Ulmus laevis",
+  "de": "Flatterulme",
+  "fr": "Ulmus laevis",
+  "hu": "Vénic-szil",
+  "it": "Ulmus laevis",
+  "es": "Ulmus laevis",
+  "pl": "Wiąz szypułkowy",
+  "cs": "Jilm vaz"
+ },
+ "alnus-glutinosa": {
+  "en": "Alnus glutinosa",
+  "de": "Schwarz-Erle",
+  "fr": "Alnus glutinosa",
+  "hu": "Mézgás éger",
+  "it": "Alnus glutinosa",
+  "es": "Alnus glutinosa",
+  "pl": "Olsza czarna",
+  "cs": "Olše lepkavá"
+ },
+ "salix-alba": {
+  "en": "Salix alba",
+  "de": "Silber-Weide",
+  "fr": "Salix alba",
+  "hu": "Fehér fűz",
+  "it": "Salix alba",
+  "es": "Salix alba",
+  "pl": "Wierzba biała",
+  "cs": "Vrba bílá"
+ },
+ "salix-caprea": {
+  "en": "Salix caprea",
+  "de": "Sal-Weide",
+  "fr": "Saule marsault",
+  "hu": "Kecskefűz",
+  "it": "Salix caprea",
+  "es": "Salix caprea",
+  "pl": "Wierzba iwa",
+  "cs": "Vrba jíva"
+ },
+ "salix-babylonica-pekinensis-tortuosa": {
+  "en": "Salix babylonica",
+  "de": "Echte Trauerweide",
+  "fr": "Saule pleureur",
+  "hu": "Babiloni szomorúfűz",
+  "it": "Salix babylonica",
+  "es": "Salix babylonica",
+  "pl": "Wierzby o płaczącym pokroju",
+  "cs": "Vrba babylónská"
+ },
+ "populus-nigra-italica": {
+  "en": "Populus nigra",
+  "de": "Schwarz-Pappel",
+  "fr": "Peuplier noir",
+  "hu": "Fekete nyár",
+  "it": "Populus nigra",
+  "es": "Populus nigra",
+  "pl": "Topola czarna",
+  "cs": "Topol černý"
+ },
+ "sorbus-aucuparia": {
+  "en": "Sorbus aucuparia",
+  "de": "Vogelbeere",
+  "fr": "Sorbus aucuparia",
+  "hu": "Madárberkenye",
+  "it": "Sorbus aucuparia",
+  "es": "Sorbus aucuparia",
+  "pl": "Jarząb pospolity",
+  "cs": "Jeřáb ptačí"
+ },
+ "sorbus-aria": {
+  "en": "Aria edulis",
+  "fr": "Aria edulis",
+  "it": "Aria edulis"
+ },
+ "sorbus-torminalis": {
+  "en": "Aria torminalis"
+ },
+ "sorbus-domestica": {
+  "en": "Cormus domestica",
+  "de": "Speierling",
+  "fr": "Cormier",
+  "it": "Cormus domestica",
+  "es": "Sorbus domestica",
+  "pl": "Jarząb domowy",
+  "cs": "Jeřáb oskeruše"
+ },
+ "prunus-avium": {
+  "en": "Prunus avium",
+  "de": "Vogelkirsche (Baum)",
+  "fr": "Prunus avium",
+  "hu": "Vadcseresznye",
+  "it": "Prunus avium",
+  "es": "Prunus avium",
+  "pl": "Wiśnia ptasia",
+  "cs": "Třešeň ptačí"
+ },
+ "prunus-padus": {
+  "en": "Prunus padus",
+  "de": "Gewöhnliche Traubenkirsche",
+  "fr": "Prunus padus",
+  "hu": "Zelnicemeggy",
+  "it": "Prunus padus",
+  "es": "Prunus padus",
+  "pl": "Czeremcha zwyczajna",
+  "cs": "Střemcha obecná"
+ },
+ "prunus-mahaleb": {
+  "en": "Prunus mahaleb",
+  "de": "Steinweichsel",
+  "fr": "Prunus mahaleb",
+  "hu": "Sajmeggy",
+  "it": "Prunus mahaleb",
+  "es": "Prunus mahaleb",
+  "pl": "Wiśnia wonna",
+  "cs": "Višeň turecká"
+ },
+ "prunus-cerasifera-nigra": {
+  "en": "Prunus cerasifera",
+  "de": "Kirschpflaume",
+  "fr": "Prunus cerasifera",
+  "hu": "Cseresznyeszilva",
+  "it": "Prunus cerasifera",
+  "es": "Prunus cerasifera",
+  "pl": "Śliwa wiśniowa",
+  "cs": "Slivoň myrobalán"
+ },
+ "prunus-accolade": {
+  "en": "Prunus",
+  "de": "Prunus",
+  "fr": "Prunus",
+  "hu": "Prunus",
+  "it": "Prunus",
+  "es": "Prunus",
+  "pl": "Śliwa",
+  "cs": "Slivoň"
+ },
+ "prunus-tai-haku": {
+  "en": "Prunus",
+  "de": "Prunus",
+  "fr": "Prunus",
+  "hu": "Prunus",
+  "it": "Prunus",
+  "es": "Prunus",
+  "pl": "Śliwa",
+  "cs": "Slivoň"
+ },
+ "prunus-amanogawa": {
+  "en": "Prunus",
+  "de": "Prunus",
+  "fr": "Prunus",
+  "hu": "Prunus",
+  "it": "Prunus",
+  "es": "Prunus",
+  "pl": "Śliwa",
+  "cs": "Slivoň"
+ },
+ "malus-sylvestris": {
+  "en": "Malus sylvestris",
+  "de": "Holzapfel",
+  "fr": "Malus sylvestris",
+  "hu": "Vadalma",
+  "it": "Malus sylvestris",
+  "es": "Malus sylvestris",
+  "pl": "Jabłoń dzika",
+  "cs": "Jabloň lesní"
+ },
+ "malus-evereste": {
+  "en": "Malus",
+  "de": "Äpfel",
+  "fr": "Pommier",
+  "hu": "Alma (növénynemzetség)",
+  "it": "Malus",
+  "es": "Malus",
+  "pl": "Jabłoń",
+  "cs": "Jabloň"
+ },
+ "malus-robusta-red-sentinel": {
+  "en": "Malus × robusta",
+  "de": "Sibirischer Holzapfel"
+ },
+ "malus-john-downie": {
+  "en": "Malus",
+  "de": "Äpfel",
+  "fr": "Pommier",
+  "hu": "Alma (növénynemzetség)",
+  "it": "Malus",
+  "es": "Malus",
+  "pl": "Jabłoń",
+  "cs": "Jabloň"
+ },
+ "betula-pubescens": {
+  "en": "Betula pubescens",
+  "de": "Moor-Birke",
+  "fr": "Betula pubescens",
+  "hu": "Molyhos nyír",
+  "it": "Betula pubescens",
+  "es": "Betula pubescens",
+  "pl": "Brzoza omszona",
+  "cs": "Bříza pýřitá"
+ },
+ "betula-utilis-jacquemontii": {
+  "en": "Betula utilis",
+  "de": "Himalaya-Birke",
+  "fr": "Betula utilis",
+  "hu": "Himalájai nyír",
+  "pl": "Brzoza pożyteczna"
+ },
+ "robinia-pseudoacacia": {
+  "en": "Robinia pseudoacacia",
+  "de": "Gewöhnliche Robinie",
+  "fr": "Robinia pseudoacacia",
+  "hu": "Fehér akác",
+  "it": "Robinia pseudoacacia",
+  "es": "Robinia pseudoacacia",
+  "pl": "Robinia akacjowa",
+  "cs": "Trnovník akát"
+ },
+ "robinia-pseudoacacia-umbraculifera": {
+  "en": "Robinia pseudoacacia",
+  "de": "Gewöhnliche Robinie",
+  "fr": "Robinia pseudoacacia",
+  "hu": "Fehér akác",
+  "it": "Robinia pseudoacacia",
+  "es": "Robinia pseudoacacia",
+  "pl": "Robinia akacjowa",
+  "cs": "Trnovník akát"
+ },
+ "robinia-pseudoacacia-frisia": {
+  "en": "Robinia pseudoacacia",
+  "de": "Gewöhnliche Robinie",
+  "fr": "Robinia pseudoacacia",
+  "hu": "Fehér akác",
+  "it": "Robinia pseudoacacia",
+  "es": "Robinia pseudoacacia",
+  "pl": "Robinia akacjowa",
+  "cs": "Trnovník akát"
+ },
+ "styphnolobium-japonicum": {
+  "en": "Styphnolobium japonicum",
+  "de": "Japanischer Schnurbaum",
+  "fr": "Styphnolobium japonicum",
+  "hu": "Közönséges pagodafa",
+  "it": "Styphnolobium japonicum",
+  "es": "Styphnolobium japonicum",
+  "pl": "Perełkowiec japoński",
+  "cs": "Jerlín japonský"
+ },
+ "platanus-hispanica": {
+  "en": "London plane",
+  "de": "Ahornblättrige Platane",
+  "fr": "Platane commun",
+  "hu": "Közönséges platán",
+  "it": "Platanus × hispanica",
+  "es": "Platanus × hispanica",
+  "pl": "Platan klonolistny",
+  "cs": "Platan javorolistý"
+ },
+ "aesculus-hippocastanum": {
+  "en": "Aesculus hippocastanum",
+  "de": "Gewöhnliche Rosskastanie",
+  "fr": "Aesculus hippocastanum",
+  "hu": "Közönséges vadgesztenye",
+  "it": "Aesculus hippocastanum",
+  "es": "Aesculus hippocastanum",
+  "pl": "Kasztanowiec pospolity",
+  "cs": "Jírovec maďal"
+ },
+ "aesculus-carnea-briotii": {
+  "en": "Aesculus × carnea",
+  "de": "Fleischrote Rosskastanie",
+  "fr": "Marronnier à fleurs rouges",
+  "hu": "Hússzínű vadgesztenye",
+  "es": "Aesculus × carnea",
+  "pl": "Kasztanowiec czerwony",
+  "cs": "Jírovec pleťový"
+ },
+ "castanea-sativa": {
+  "en": "Sweet chestnut",
+  "de": "Edelkastanie",
+  "fr": "Castanea sativa",
+  "hu": "Szelídgesztenye",
+  "it": "Castanea sativa",
+  "es": "Castanea sativa",
+  "pl": "Kasztan jadalny",
+  "cs": "Kaštanovník setý"
+ },
+ "celtis-australis": {
+  "en": "Celtis australis",
+  "de": "Europäischer Zürgelbaum",
+  "fr": "Micocoulier de Provence",
+  "it": "Celtis australis",
+  "es": "Celtis australis",
+  "pl": "Wiązowiec południowy",
+  "cs": "Břestovec jižní"
+ },
+ "celtis-occidentalis": {
+  "en": "Celtis occidentalis",
+  "de": "Amerikanischer Zürgelbaum",
+  "fr": "Micocoulier occidental",
+  "hu": "Nyugati ostorfa",
+  "es": "Celtis occidentalis",
+  "pl": "Wiązowiec zachodni",
+  "cs": "Břestovec západní"
+ },
+ "paulownia-tomentosa": {
+  "en": "Paulownia tomentosa",
+  "de": "Blauglockenbaum",
+  "fr": "Paulownia tomentosa",
+  "hu": "Császárfa",
+  "it": "Paulownia tomentosa",
+  "es": "Paulownia tomentosa",
+  "pl": "Paulownia omszona",
+  "cs": "Pavlovnie plstnatá"
+ },
+ "catalpa-bignonioides": {
+  "en": "Catalpa bignonioides",
+  "de": "Gewöhnlicher Trompetenbaum",
+  "fr": "Catalpa bignonioides",
+  "hu": "Szívlevelű szivarfa",
+  "it": "Catalpa bignonioides",
+  "es": "Catalpa bignonioides",
+  "pl": "Surmia bignoniowa",
+  "cs": "Katalpa trubačovitá"
+ },
+ "catalpa-bignonioides-nana": {
+  "en": "Catalpa bignonioides",
+  "de": "Gewöhnlicher Trompetenbaum",
+  "fr": "Catalpa bignonioides",
+  "hu": "Szívlevelű szivarfa",
+  "it": "Catalpa bignonioides",
+  "es": "Catalpa bignonioides",
+  "pl": "Surmia bignoniowa",
+  "cs": "Katalpa trubačovitá"
+ },
+ "gleditsia-triacanthos-sunburst": {
+  "en": "Honey locust",
+  "de": "Amerikanische Gleditschie",
+  "fr": "Févier d'Amérique",
+  "hu": "Tövises lepényfa",
+  "it": "Gleditsia triacanthos",
+  "es": "Gleditsia triacanthos",
+  "pl": "Glediczja trójcierniowa",
+  "cs": "Dřezovec trojtrnný"
+ },
+ "liquidambar-styraciflua": {
+  "en": "Liquidambar styraciflua",
+  "de": "Amerikanischer Amberbaum",
+  "fr": "Liquidambar styraciflua",
+  "hu": "Amerikai ámbrafa",
+  "it": "Liquidambar styraciflua",
+  "es": "Liquidambar styraciflua",
+  "pl": "Ambrowiec balsamiczny",
+  "cs": "Ambroň západní"
+ },
+ "liriodendron-tulipifera": {
+  "en": "Liriodendron tulipifera",
+  "de": "Tulpenbaum",
+  "fr": "Liriodendron tulipifera",
+  "hu": "Amerikai tulipánfa",
+  "it": "Liriodendron tulipifera",
+  "es": "Liriodendron tulipifera",
+  "pl": "Tulipanowiec amerykański",
+  "cs": "Liliovník tulipánokvětý"
+ },
+ "ginkgo-biloba": {
+  "en": "Ginkgo biloba",
+  "de": "Ginkgo",
+  "fr": "Ginkgo biloba",
+  "hu": "Páfrányfenyő",
+  "it": "Ginkgo biloba",
+  "es": "Ginkgo biloba",
+  "pl": "Miłorząb dwuklapowy",
+  "cs": "Jinan dvoulaločný"
+ },
+ "amelanchier-lamarckii": {
+  "en": "Amelanchier × lamarckii",
+  "de": "Kupfer-Felsenbirne",
+  "fr": "Amelanchier lamarckii",
+  "hu": "Mézalmácska",
+  "it": "Amelanchier × lamarckii",
+  "es": "Amelanchier lamarckii",
+  "pl": "Świdośliwa Lamarcka",
+  "cs": "Muchovník Lamarckův"
+ },
+ "cercis-siliquastrum": {
+  "en": "Cercis siliquastrum",
+  "de": "Gewöhnlicher Judasbaum",
+  "fr": "Arbre de Judée",
+  "hu": "Közönséges júdásfa",
+  "it": "Cercis siliquastrum",
+  "es": "Cercis siliquastrum",
+  "pl": "Judaszowiec południowy",
+  "cs": "Zmarlika Jidášova"
+ },
+ "albizia-julibrissin": {
+  "en": "Albizia julibrissin",
+  "de": "Seidenbaum",
+  "fr": "Albizia julibrissin",
+  "hu": "Perzsa selyemakác",
+  "it": "Albizia julibrissin",
+  "es": "Albizia julibrissin",
+  "pl": "Albicja biało-różowa",
+  "cs": "Albízie růžová"
+ },
+ "koelreuteria-paniculata": {
+  "en": "Koelreuteria paniculata",
+  "de": "Blasenesche",
+  "fr": "Koelreuteria paniculata",
+  "hu": "Bugás csörgőfa",
+  "it": "Koelreuteria paniculata",
+  "es": "Koelreuteria paniculata",
+  "pl": "Roztrzeplin wiechowaty",
+  "cs": "Svitel latnatý"
+ },
+ "magnolia-kobus": {
+  "en": "Magnolia kobus",
+  "de": "Kobushi-Magnolie",
+  "fr": "Magnolia de Kobé",
+  "hu": "Japán liliomfa",
+  "it": "Magnolia kobus",
+  "es": "Magnolia kobus",
+  "pl": "Magnolia japońska",
+  "cs": "Šácholan japonský"
+ },
+ "magnolia-grandiflora": {
+  "en": "Magnolia grandiflora",
+  "de": "Immergrüne Magnolie",
+  "fr": "Magnolia à grandes fleurs",
+  "hu": "Nagyvirágú liliomfa",
+  "it": "Magnolia grandiflora",
+  "es": "Magnolia grandiflora",
+  "pl": "Magnolia wielkokwiatowa",
+  "cs": "Šácholan velkokvětý"
+ },
+ "parrotia-persica": {
+  "en": "Parrotia persica",
+  "de": "Parrotia persica",
+  "fr": "Parrotia persica",
+  "hu": "Perzsa varázsfa",
+  "it": "Parrotia persica",
+  "es": "Parrotia persica",
+  "pl": "Parocja perska"
+ },
+ "davidia-involucrata": {
+  "en": "Davidia involucrata",
+  "de": "Taschentuchbaum",
+  "fr": "Davidia involucrata",
+  "hu": "Galambfa",
+  "it": "Davidia involucrata",
+  "es": "Davidia involucrata",
+  "pl": "Dawidia chińska",
+  "cs": "Davidie listenová"
+ },
+ "pyrus-calleryana-chanticleer": {
+  "en": "Pyrus calleryana",
+  "de": "Chinesische Wild-Birne",
+  "fr": "Poirier de Chine",
+  "it": "Pyrus calleryana",
+  "es": "Pyrus calleryana",
+  "pl": "Grusza drobnoowocowa",
+  "cs": "Hrušeň Calleryova"
+ },
+ "pyrus-salicifolia-pendula": {
+  "en": "Pyrus salicifolia",
+  "de": "Weidenblättrige Birne",
+  "fr": "Poirier à feuilles de saule",
+  "hu": "Fűzlevelű körte",
+  "es": "Pyrus salicifolia",
+  "pl": "Grusza wierzbolistna"
+ },
+ "laburnum-watereri-vossii": {
+  "en": "Laburnum × watereri"
+ },
+ "corylus-colurna": {
+  "en": "Corylus colurna",
+  "de": "Baum-Hasel",
+  "fr": "Corylus colurna",
+  "hu": "Török mogyoró",
+  "es": "Corylus colurna",
+  "pl": "Leszczyna turecka",
+  "cs": "Líska turecká"
+ },
+ "olea-europaea": {
+  "en": "Olea europaea",
+  "de": "Olivenbaum",
+  "fr": "Olea europaea",
+  "hu": "Olajfa (növényfaj)",
+  "it": "Olea europaea",
+  "es": "Olea europaea",
+  "pl": "Oliwka europejska",
+  "cs": "Olivovník evropský"
+ },
+ "arbutus-unedo": {
+  "en": "Arbutus unedo",
+  "de": "Westlicher Erdbeerbaum",
+  "fr": "Arbousier",
+  "hu": "Nyugati szamócafa",
+  "it": "Arbutus unedo",
+  "es": "Arbutus unedo",
+  "pl": "Chruścina jagodna",
+  "cs": "Planika obecná"
+ },
+ "laurus-nobilis": {
+  "en": "Laurus nobilis",
+  "de": "Echter Lorbeer",
+  "fr": "Laurus nobilis",
+  "hu": "Nemes babér",
+  "it": "Laurus nobilis",
+  "es": "Laurus nobilis",
+  "pl": "Wawrzyn szlachetny",
+  "cs": "Vavřín vznešený"
+ },
+ "phillyrea-latifolia": {
+  "en": "Phillyrea latifolia",
+  "de": "Breitblättrige Steinlinde",
+  "fr": "Phillyrea latifolia",
+  "it": "Phillyrea latifolia",
+  "es": "Phillyrea latifolia",
+  "pl": "Filirea szerokolistna"
+ },
+ "melia-azedarach": {
+  "en": "Melia azedarach",
+  "de": "Zedrachbaum",
+  "fr": "Melia azedarach",
+  "hu": "Miatyánkcserje",
+  "it": "Melia azedarach",
+  "es": "Melia azedarach",
+  "cs": "Zederach hladký"
+ },
+ "jacaranda-mimosifolia": {
+  "en": "Jacaranda mimosifolia",
+  "de": "Palisanderholzbaum",
+  "fr": "Flamboyant bleu",
+  "hu": "Mimózalevelű zsakaranda",
+  "it": "Jacaranda mimosifolia",
+  "es": "Jacaranda mimosifolia",
+  "pl": "Jakaranda mimozolistna"
+ },
+ "chamaerops-humilis": {
+  "en": "Chamaerops",
+  "it": "Chamaerops"
+ },
+ "phoenix-canariensis": {
+  "en": "Phoenix canariensis",
+  "de": "Kanarische Dattelpalme",
+  "fr": "Phoenix canariensis",
+  "hu": "Kanári datolyapálma",
+  "it": "Phoenix canariensis",
+  "es": "Phoenix canariensis",
+  "pl": "Daktylowiec kanaryjski",
+  "cs": "Datlovník kanárský"
+ },
+ "trachycarpus-fortunei": {
+  "en": "Trachycarpus fortunei",
+  "de": "Chinesische Hanfpalme",
+  "fr": "Trachycarpus fortunei",
+  "hu": "Kínai kenderpálma",
+  "it": "Trachycarpus fortunei",
+  "es": "Trachycarpus fortunei",
+  "pl": "Szorstkowiec Fortunego",
+  "cs": "Trachykarpus žíněný"
+ },
+ "washingtonia-robusta": {
+  "en": "Washingtonia filifera var. robusta",
+  "de": "Mexikanische Washingtonpalme",
+  "fr": "Washingtonia robusta",
+  "hu": "Mexikói Washington-pálma",
+  "it": "Washingtonia robusta",
+  "es": "Washingtonia robusta"
+ },
+ "malus-domestica-coxs-orange-pippin": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-bramleys-seedling": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-belle-de-boskoop": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-jonagold": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-topaz": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-gala": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-jonathan": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-reine-des-reinettes": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "malus-domestica-egremont-russet": {
+  "en": "Apple",
+  "de": "Tafelapfel",
+  "fr": "Pomme",
+  "it": "Mela",
+  "es": "Manzana",
+  "pl": "Jabłko",
+  "cs": "Jablko"
+ },
+ "pyrus-communis-conference": {
+  "en": "Pyrus communis",
+  "de": "Kultur-Birne",
+  "fr": "Poirier commun",
+  "hu": "Nemes körte",
+  "it": "Pyrus communis",
+  "es": "Pyrus communis",
+  "pl": "Grusza pospolita",
+  "cs": "Hrušeň obecná"
+ },
+ "pyrus-communis-williams-bon-chretien": {
+  "en": "Pyrus communis",
+  "de": "Kultur-Birne",
+  "fr": "Poirier commun",
+  "hu": "Nemes körte",
+  "it": "Pyrus communis",
+  "es": "Pyrus communis",
+  "pl": "Grusza pospolita",
+  "cs": "Hrušeň obecná"
+ },
+ "pyrus-communis-doyenne-du-comice": {
+  "en": "Pyrus communis",
+  "de": "Kultur-Birne",
+  "fr": "Poirier commun",
+  "hu": "Nemes körte",
+  "it": "Pyrus communis",
+  "es": "Pyrus communis",
+  "pl": "Grusza pospolita",
+  "cs": "Hrušeň obecná"
+ },
+ "prunus-cerasus-morello": {
+  "en": "Prunus cerasus",
+  "de": "Sauerkirsche",
+  "fr": "Prunus cerasus",
+  "hu": "Meggy",
+  "it": "Prunus cerasus",
+  "es": "Prunus cerasus",
+  "pl": "Wiśnia pospolita",
+  "cs": "Višeň obecná"
+ },
+ "prunus-cerasus-erdi-botermo": {
+  "en": "Prunus cerasus",
+  "de": "Sauerkirsche",
+  "fr": "Prunus cerasus",
+  "hu": "Meggy",
+  "it": "Prunus cerasus",
+  "es": "Prunus cerasus",
+  "pl": "Wiśnia pospolita",
+  "cs": "Višeň obecná"
+ },
+ "prunus-avium-stella": {
+  "en": "Prunus avium",
+  "de": "Vogelkirsche (Baum)",
+  "fr": "Prunus avium",
+  "hu": "Vadcseresznye",
+  "it": "Prunus avium",
+  "es": "Prunus avium",
+  "pl": "Wiśnia ptasia",
+  "cs": "Třešeň ptačí"
+ },
+ "prunus-avium-kordia": {
+  "en": "Prunus avium",
+  "de": "Vogelkirsche (Baum)",
+  "fr": "Prunus avium",
+  "hu": "Vadcseresznye",
+  "it": "Prunus avium",
+  "es": "Prunus avium",
+  "pl": "Wiśnia ptasia",
+  "cs": "Třešeň ptačí"
+ },
+ "prunus-armeniaca-gonci-magyar-kajszi": {
+  "en": "Prunus armeniaca",
+  "de": "Aprikose",
+  "fr": "Abricotier",
+  "hu": "Kajszibarack",
+  "it": "Prunus armeniaca",
+  "es": "Prunus armeniaca",
+  "pl": "Morela pospolita",
+  "cs": "Meruňka obecná"
+ },
+ "prunus-persica-redhaven": {
+  "en": "Peach",
+  "de": "Pfirsich",
+  "fr": "Pêcher",
+  "hu": "Őszibarack",
+  "it": "Prunus persica",
+  "es": "Prunus persica",
+  "pl": "Brzoskwinia zwyczajna",
+  "cs": "Broskvoň obecná"
+ },
+ "prunus-persica-nucipersica-lord-napier": {
+  "en": "Peach",
+  "de": "Pfirsich",
+  "fr": "Pêcher",
+  "hu": "Őszibarack",
+  "it": "Prunus persica",
+  "es": "Prunus persica",
+  "pl": "Brzoskwinia zwyczajna",
+  "cs": "Broskvoň obecná"
+ },
+ "cydonia-oblonga-vranja": {
+  "en": "Quince",
+  "de": "Quitte",
+  "fr": "Cognassier",
+  "hu": "Birs",
+  "it": "Cydonia oblonga",
+  "es": "Cydonia oblonga",
+  "pl": "Pigwa pospolita",
+  "cs": "Kdouloň obecná"
+ },
+ "mespilus-germanica": {
+  "en": "Mespilus germanica",
+  "de": "Mispel",
+  "fr": "Néflier",
+  "it": "Crataegus germanica",
+  "es": "Mespilus germanica",
+  "pl": "Nieszpułka zwyczajna",
+  "cs": "Mišpule obecná"
+ },
+ "morus-alba": {
+  "en": "Morus alba",
+  "de": "Weiße Maulbeere",
+  "fr": "Mûrier blanc",
+  "hu": "Fehér eperfa",
+  "it": "Morus alba",
+  "es": "Morus alba",
+  "pl": "Morwa biała",
+  "cs": "Morušovník bílý"
+ },
+ "morus-nigra": {
+  "en": "Morus nigra",
+  "de": "Schwarze Maulbeere",
+  "fr": "Mûrier noir",
+  "hu": "Fekete eperfa",
+  "it": "Morus nigra",
+  "es": "Morus nigra",
+  "pl": "Morwa czarna",
+  "cs": "Morušovník černý"
+ },
+ "juglans-regia-franquette": {
+  "en": "Juglans regia",
+  "de": "Echte Walnuss",
+  "fr": "Noyer commun",
+  "hu": "Közönséges dió",
+  "it": "Juglans regia",
+  "es": "Juglans regia",
+  "pl": "Orzech włoski",
+  "cs": "Ořešák královský"
+ },
+ "prunus-dulcis": {
+  "en": "Almond",
+  "de": "Mandelbaum",
+  "fr": "Amandier",
+  "hu": "Mandula (növényfaj)",
+  "it": "Prunus amygdalus",
+  "es": "Prunus dulcis",
+  "pl": "Migdałowiec pospolity",
+  "cs": "Mandloň obecná"
+ },
+ "castanea-sativa-marron-de-lyon": {
+  "en": "Sweet chestnut",
+  "de": "Edelkastanie",
+  "fr": "Castanea sativa",
+  "hu": "Szelídgesztenye",
+  "it": "Castanea sativa",
+  "es": "Castanea sativa",
+  "pl": "Kasztan jadalny",
+  "cs": "Kaštanovník setý"
+ },
+ "prunus-domestica-victoria": {
+  "en": "Prunus domestica",
+  "de": "Pflaume",
+  "fr": "Prunier",
+  "hu": "Nemes szilva",
+  "it": "Prunus domestica",
+  "es": "Prunus domestica",
+  "pl": "Śliwa domowa",
+  "cs": "Slivoň švestka"
+ },
+ "prunus-domestica-mirabelle-de-nancy": {
+  "en": "Prunus domestica",
+  "de": "Pflaume",
+  "fr": "Prunier",
+  "hu": "Nemes szilva",
+  "it": "Prunus domestica",
+  "es": "Prunus domestica",
+  "pl": "Śliwa domowa",
+  "cs": "Slivoň švestka"
+ },
+ "prunus-domestica-reine-claude-verte": {
+  "en": "Prunus domestica",
+  "de": "Pflaume",
+  "fr": "Prunier",
+  "hu": "Nemes szilva",
+  "it": "Prunus domestica",
+  "es": "Prunus domestica",
+  "pl": "Śliwa domowa",
+  "cs": "Slivoň švestka"
+ },
+ "prunus-domestica-stanley": {
+  "en": "Prunus domestica",
+  "de": "Pflaume",
+  "fr": "Prunier",
+  "hu": "Nemes szilva",
+  "it": "Prunus domestica",
+  "es": "Prunus domestica",
+  "pl": "Śliwa domowa",
+  "cs": "Slivoň švestka"
+ },
+ "prunus-domestica-besztercei": {
+  "en": "Prunus domestica",
+  "de": "Pflaume",
+  "fr": "Prunier",
+  "hu": "Nemes szilva",
+  "it": "Prunus domestica",
+  "es": "Prunus domestica",
+  "pl": "Śliwa domowa",
+  "cs": "Slivoň švestka"
+ },
+ "cornus-mas": {
+  "en": "Cornus mas",
+  "de": "Kornelkirsche",
+  "fr": "Cornus mas",
+  "hu": "Húsos som",
+  "it": "Cornus mas",
+  "es": "Cornus mas",
+  "pl": "Dereń jadalny",
+  "cs": "Dřín obecný"
+ },
+ "punica-granatum": {
+  "en": "Pomegranate",
+  "de": "Granatapfel",
+  "fr": "Grenadier commun",
+  "hu": "Gránátalma",
+  "it": "Punica granatum",
+  "es": "Punica granatum",
+  "pl": "Granat właściwy",
+  "cs": "Marhaník granátový"
+ },
+ "diospyros-kaki": {
+  "en": "Diospyros kaki",
+  "de": "Kaki",
+  "fr": "Plaqueminier",
+  "hu": "Datolyaszilva",
+  "it": "Diospyros kaki",
+  "es": "Diospyros kaki",
+  "pl": "Hurma wschodnia",
+  "cs": "Tomel japonský"
+ },
+ "ficus-carica-brown-turkey": {
+  "en": "Fig",
+  "de": "Echte Feige",
+  "fr": "Ficus carica",
+  "hu": "Közönséges füge",
+  "it": "Ficus carica",
+  "es": "Ficus carica",
+  "pl": "Figowiec pospolity",
+  "cs": "Fíkovník smokvoň"
+ },
+ "olea-europaea-arbequina": {
+  "en": "Olea europaea",
+  "de": "Olivenbaum",
+  "fr": "Olea europaea",
+  "hu": "Olajfa (növényfaj)",
+  "it": "Olea europaea",
+  "es": "Olea europaea",
+  "pl": "Oliwka europejska",
+  "cs": "Olivovník evropský"
+ },
+ "citrus-limon": {
+  "en": "Lemon",
+  "de": "Zitrone",
+  "fr": "Citronnier",
+  "hu": "Citrom",
+  "it": "Citrus × limon",
+  "es": "Citrus × limon",
+  "pl": "Cytryna zwyczajna",
+  "cs": "Citrus limonový"
+ },
+ "citrus-sinensis": {
+  "en": "Citrus × sinensis",
+  "fr": "Oranger",
+  "hu": "Narancs",
+  "it": "Citrus × sinensis",
+  "es": "Citrus × sinensis",
+  "pl": "Pomarańcza chińska",
+  "cs": "Pomerančovník čínský"
+ },
+ "citrus-reticulata": {
+  "en": "Mandarin orange",
+  "de": "Mandarine",
+  "fr": "Mandarinier",
+  "hu": "Mandarin (gyümölcs)",
+  "it": "Citrus reticulata",
+  "es": "Citrus reticulata",
+  "pl": "Mandarynka (roślina)",
+  "cs": "Mandarinka obecná"
+ },
+ "eriobotrya-japonica": {
+  "en": "Loquat",
+  "de": "Japanische Wollmispel",
+  "fr": "Eriobotrya japonica",
+  "hu": "Japánnaspolya",
+  "it": "Eriobotrya japonica",
+  "es": "Eriobotrya japonica",
+  "pl": "Nieśplik japoński",
+  "cs": "Lokvát japonský"
+ },
+ "ceratonia-siliqua": {
+  "en": "Carob",
+  "de": "Johannisbrotbaum",
+  "fr": "Caroubier",
+  "hu": "Szentjánoskenyérfa",
+  "it": "Ceratonia siliqua",
+  "es": "Ceratonia siliqua",
+  "pl": "Szarańczyn strąkowy",
+  "cs": "Rohovník obecný"
+ },
+ "ziziphus-jujuba": {
+  "en": "Jujube",
+  "de": "Chinesische Jujube",
+  "fr": "Jujubier commun",
+  "hu": "Jujuba",
+  "it": "Ziziphus jujuba",
+  "es": "Ziziphus jujuba",
+  "pl": "Głożyna pospolita",
+  "cs": "Cicimek čínský"
+ },
+ "asimina-triloba": {
+  "en": "Asimina triloba",
+  "de": "Dreilappige Papau",
+  "fr": "Asiminier trilobé",
+  "hu": "Pawpaw",
+  "it": "Asimina triloba",
+  "es": "Asimina triloba",
+  "pl": "Asymina trójklapowa",
+  "cs": "Muďoul trojlaločný"
+ },
+ "pistacia-vera": {
+  "en": "Pistachio",
+  "de": "Pistazie",
+  "fr": "Pistacia vera",
+  "it": "Pistacia vera",
+  "es": "Pistacia vera",
+  "pl": "Pistacja właściwa",
+  "cs": "Řečík pistáciový"
+ }
+}

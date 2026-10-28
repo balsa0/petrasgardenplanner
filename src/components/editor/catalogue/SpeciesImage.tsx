@@ -1,8 +1,8 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
 import type { Species } from "@/editor/model/species";
 import { t } from "@/i18n";
+import { lazyData } from "./lazyData";
 import { PlantPortrait } from "./PlantPortrait";
 
 /** A freely licensed photo from Wikimedia Commons (see scripts/fetch-plant-photos.mjs). */
@@ -19,29 +19,12 @@ interface PlantPhoto {
 }
 
 // The photo list is only needed once a catalogue opens, so it loads on first use.
-let photos: Record<string, PlantPhoto> | null = null;
-let loading = false;
-const listeners = new Set<() => void>();
-
-function subscribe(fn: () => void) {
-  listeners.add(fn);
-  if (!photos && !loading) {
-    loading = true;
-    void import("@/data/plant-photos.json").then((m) => {
-      photos = m.default as Record<string, PlantPhoto>;
-      listeners.forEach((l) => l());
-    });
-  }
-  return () => listeners.delete(fn);
-}
+const usePhotos = lazyData<Record<string, PlantPhoto>>(() => import("@/data/plant-photos.json"));
 
 /** The plant's photo, null if it has none, undefined while the list is loading. */
 function usePhoto(id: string): PlantPhoto | null | undefined {
-  return useSyncExternalStore(
-    subscribe,
-    () => (photos ? (photos[id] ?? null) : undefined),
-    () => undefined,
-  );
+  const photos = usePhotos();
+  return photos ? (photos[id] ?? null) : undefined;
 }
 
 /** Commons thumbnails come in any width: ask for the size the box needs. */

@@ -41,6 +41,7 @@ import { lookSwatchURL } from "@/editor/paint/patterns";
 import { getEditor, useEditor } from "@/editor/store/store";
 import { KIND_STEP, stepStyle } from "../meta";
 import { PhotoCredit, SpeciesImage } from "./SpeciesImage";
+import { PlantLink } from "./PlantLink";
 
 const PAGE = 60;
 
@@ -358,6 +359,9 @@ function speciesPage({ sp, kind, picked, forTree, onBack }: { sp: Species; kind:
           <h2 className="font-display text-[24px] leading-tight font-bold">{speciesName(sp)}</h2>
           <p className="text-[13px] text-muted-foreground italic">{sp.latin}</p>
           <p className="text-[12px] text-muted-foreground">{sp.family}</p>
+          <div className="mt-2">
+            <PlantLink sp={sp} />
+          </div>
         </div>
         <div className="mt-auto flex flex-wrap gap-2">
           <PickButton size="lg" picked={picked} onToggle={() => togglePick(kind, sp.id, !picked)} />
