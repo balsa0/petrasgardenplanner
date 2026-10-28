@@ -58,6 +58,8 @@ const messages = {
   "shell.tool.fence.description": "Click posts; double-click to finish",
   "shell.tool.select.label": "Select & edit",
   "shell.tool.select.description": "Select, move and reshape",
+  "shell.tool.opening.label": "Windows & doors",
+  "shell.tool.opening.description": "Click a wall of the selected building",
   "shell.tool.rect.label": "Rectangle",
   // "6x4" is typed input (width x depth); keep it as is.
   "shell.tool.rect.description": "Drag or type a size like 6x4",

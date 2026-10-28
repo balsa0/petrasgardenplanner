@@ -268,13 +268,14 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
       const cam = bridge.current.camera;
       const r = rect();
       const screen: [number, number] = [clientX - r.left, clientY - r.top];
-      if (!cam) return { p: null as Pt | null, h: 0, hitId: null as string | null, screen };
+      if (!cam) return { p: null as Pt | null, h: 0, hitId: null as string | null, hitPoint: null as [number, number, number] | null, screen };
       ndc.set((screen[0] / r.width) * 2 - 1, -(screen[1] / r.height) * 2 + 1);
       raycaster.setFromCamera(ndc, cam);
       const o = raycaster.ray.origin, d = raycaster.ray.direction;
       const grid = getHeightGrid(getEditor().doc);
       const hit = raycastTerrain(grid, [o.x, o.y, o.z], [d.x, d.y, d.z]);
       let hitId: string | null = null;
+      let hitPoint: [number, number, number] | null = null;
       if (pickRef.current) {
         for (const it of raycaster.intersectObjects(pickRef.current.children, true)) {
           if (hit && it.distance > hit.t + 0.05) break;
@@ -282,6 +283,7 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
           while (obj && !obj.userData.entityId) obj = obj.parent;
           if (obj) {
             hitId = obj.userData.entityId as string;
+            hitPoint = [it.point.x, it.point.y, it.point.z];
             break;
           }
         }
@@ -294,7 +296,7 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
           break;
         }
       }
-      return { p: hit?.p ?? null, h: hit?.h ?? 0, hitId, screen };
+      return { p: hit?.p ?? null, h: hit?.h ?? 0, hitId, hitPoint, screen };
     };
 
     const pxSize = () => {
@@ -304,7 +306,7 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
 
     const toolEvent = (ev: PointerEvent | MouseEvent, k: ReturnType<typeof pick>): ToolEvent | null =>
       k.p
-        ? { p: k.p, screen: k.screen, pxSize: pxSize(), button: ev.button, shift: ev.shiftKey, alt: ev.altKey, mod: ev.ctrlKey || ev.metaKey, hitId: k.hitId, view: mode }
+        ? { p: k.p, screen: k.screen, pxSize: pxSize(), button: ev.button, shift: ev.shiftKey, alt: ev.altKey, mod: ev.ctrlKey || ev.metaKey, hitId: k.hitId, hitPoint: k.hitPoint, view: mode }
         : null;
 
     setViewport({

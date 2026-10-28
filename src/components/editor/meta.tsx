@@ -33,6 +33,7 @@ import {
   Umbrella,
   Utensils,
   BedSingle,
+  AppWindow,
   Brush,
   Circle,
   Droplets,
@@ -88,6 +89,7 @@ function tool(icon: LucideIcon, key: string, label: MessageKey, description: Mes
 
 export const TOOL_META: Record<ToolId, ToolMeta> = {
   select: tool(MousePointer2, "V", "shell.tool.select.label", "shell.tool.select.description"),
+  opening: tool(AppWindow, "W", "shell.tool.opening.label", "shell.tool.opening.description"),
   rect: tool(Square, "R", "shell.tool.rect.label", "shell.tool.rect.description"),
   polygon: tool(Pentagon, "P", "shell.tool.polygon.label", "shell.tool.polygon.description"),
   circle: tool(Circle, "C", "shell.tool.circle.label", "shell.tool.circle.description"),

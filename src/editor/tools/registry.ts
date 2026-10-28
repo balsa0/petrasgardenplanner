@@ -5,6 +5,7 @@ import { fxOverlays } from "../paint/fx";
 import { PlantBrushTool, SurfaceBrushTool, TerrainTool } from "./brushes";
 import { FenceTool } from "./fence";
 import { ItemTool } from "./items";
+import { OpeningTool } from "./opening";
 import { HeightPointTool, LabelTool, MeasureTool, NoteTool, SurveyTool, TreeTool } from "./points";
 import { SelectTool, selectionOutlines } from "./select";
 import { CircleTool, PolygonTool, RectTool } from "./shapes";
@@ -12,6 +13,7 @@ import type { Tool } from "./types";
 
 const tools: Record<ToolId, Tool> = {
   select: new SelectTool(),
+  opening: new OpeningTool(),
   polygon: new PolygonTool(),
   rect: new RectTool(),
   circle: new CircleTool(),

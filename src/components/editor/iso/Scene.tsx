@@ -20,6 +20,8 @@ import { getHeightGrid, sampleHeight, terrainExtent, type HeightGrid } from "@/e
 import { buildFence, fenceTexture } from "./fenceGeometry";
 import { flatMat, geo, toShapes } from "./geometries";
 import { buildItem, type ItemSurface } from "./itemGeometry";
+import { openingGeometries, planarWallUV, wallEdges, wallGeometry, wallMaterial } from "./buildingGeometry";
+import { doorColorOf, frameColorOf, wallMaterialOf } from "@/editor/model/openings";
 
 const SUN_DIR = new THREE.Vector3(-0.45, 1, 0.65).normalize();
 
@@ -474,30 +476,56 @@ function roofGeometries(b: BuildingEntity, wallTop: number): { roof: THREE.Buffe
 
 const edgeMat = new THREE.LineBasicMaterial({ color: "#2b2620", transparent: true, opacity: 0.35 });
 
+const glassMat = new THREE.MeshLambertMaterial({ color: "#334452", emissive: "#1b2630", flatShading: true });
+const revealMat = flatMat("#2a2723");
+
 const Building = memo(function Building({ e, grid }: { e: BuildingEntity; grid: HeightGrid }) {
   const lv = buildingLevels(grid, e);
-  const pitched = useMemo(() => roofGeometries(e, lv.wallTop), [e, lv.wallTop]);
-  const body = useMemo(() => {
-    const g = new THREE.ExtrudeGeometry(toShapes(e.geometry), { depth: lv.wallTop - lv.base, bevelEnabled: false, curveSegments: 4 });
+  const pitched = useMemo(() => {
+    const r = roofGeometries(e, lv.wallTop);
+    if (r?.gables) planarWallUV(r.gables);
+    return r;
+  }, [e, lv.wallTop]);
+  const walls = useMemo(() => wallGeometry(e.geometry, lv.base, lv.wallTop), [e.geometry, lv.base, lv.wallTop]);
+  const cap = useMemo(() => {
+    const g = new THREE.ShapeGeometry(toShapes(e.geometry), 4);
     g.rotateX(-Math.PI / 2);
-    g.translate(0, lv.base, 0);
+    g.translate(0, lv.wallTop, 0);
     return g;
-  }, [e.geometry, lv.base, lv.wallTop]);
-  const edges = useMemo(() => new THREE.EdgesGeometry(body, 25), [body]);
+  }, [e.geometry, lv.wallTop]);
+  const edges = useMemo(() => wallEdges(e.geometry, lv.base, lv.wallTop), [e.geometry, lv.base, lv.wallTop]);
   const roofEdges = useMemo(() => (pitched ? new THREE.EdgesGeometry(pitched.roof, 20) : null), [pitched]);
-  useEffect(() => () => { body.dispose(); edges.dispose(); roofEdges?.dispose(); pitched?.roof.dispose(); pitched?.gables?.dispose(); }, [body, edges, roofEdges, pitched]);
+  const openings = useMemo(() => openingGeometries(e, lv.floor), [e, lv.floor]);
+  useEffect(
+    () => () => {
+      walls.dispose();
+      cap.dispose();
+      edges.dispose();
+      roofEdges?.dispose();
+      pitched?.roof.dispose();
+      pitched?.gables?.dispose();
+      for (const g of Object.values(openings)) g?.dispose();
+    },
+    [walls, cap, edges, roofEdges, pitched, openings],
+  );
 
-  const wall = flatMat(e.wallColor);
-  const cap = flatMat(pitched ? e.wallColor : e.roofColor);
+  const finish = wallMaterialOf(e);
+  const wall = wallMaterial(finish, e.wallColor);
+  const capMat = flatMat(pitched ? e.wallColor : e.roofColor);
   const roofMat = useMemo(() => new THREE.MeshLambertMaterial({ color: e.roofColor, flatShading: true, side: THREE.DoubleSide }), [e.roofColor]);
-  const gableMat = useMemo(() => new THREE.MeshLambertMaterial({ color: e.wallColor, flatShading: true, side: THREE.DoubleSide }), [e.wallColor]);
+  const gableMat = wallMaterial(finish, e.wallColor, true);
   return (
     <group userData={{ entityId: e.id }}>
-      <mesh geometry={body} material={[cap, wall]} castShadow receiveShadow />
+      <mesh geometry={walls} material={wall} castShadow receiveShadow />
+      <mesh geometry={cap} material={capMat} castShadow receiveShadow />
       <lineSegments geometry={edges} material={edgeMat} />
       {pitched && <mesh geometry={pitched.roof} material={roofMat} castShadow receiveShadow />}
       {pitched?.gables && <mesh geometry={pitched.gables} material={gableMat} castShadow receiveShadow />}
       {roofEdges && <lineSegments geometry={roofEdges} material={edgeMat} />}
+      {openings.reveal && <mesh geometry={openings.reveal} material={revealMat} />}
+      {openings.glass && <mesh geometry={openings.glass} material={glassMat} />}
+      {openings.frame && <mesh geometry={openings.frame} material={flatMat(frameColorOf(e))} castShadow />}
+      {openings.door && <mesh geometry={openings.door} material={flatMat(doorColorOf(e))} castShadow />}
     </group>
   );
 });

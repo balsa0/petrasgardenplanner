@@ -3,6 +3,7 @@ import type { EntityKind, GardenDoc, Stage } from "./types";
 
 export type ToolId =
   | "select"
+  | "opening"
   | "polygon"
   | "rect"
   | "circle"

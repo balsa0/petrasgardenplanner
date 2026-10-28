@@ -14,6 +14,7 @@
 import { create } from "zustand";
 import { nanoid } from "nanoid";
 import type { GardenDoc, Stage } from "../model/types";
+import { sanitizeEntities } from "../model/sanitize";
 import { renderThumb } from "../render/thumb";
 import { getEditor, useEditor } from "./store";
 
@@ -82,7 +83,10 @@ const localBackend: VersionBackend = {
   async readDoc(key) {
     try {
       const raw = localStorage.getItem(`gp:vdoc:${key}`);
-      return raw ? (JSON.parse(raw) as GardenDoc) : null;
+      if (!raw) return null;
+      const doc = JSON.parse(raw) as GardenDoc;
+      const entities = sanitizeEntities(doc.entities ?? {});
+      return { ...doc, entities, order: (doc.order ?? []).filter((id) => Object.hasOwn(entities, id)) };
     } catch {
       return null;
     }

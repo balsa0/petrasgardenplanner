@@ -5,6 +5,7 @@ import type { GardenDoc, Stage } from "../model/types";
 import { styleForRegion, type GardenStyle } from "../model/species";
 import { createEmptyDoc } from "../model/ops";
 import { createSampleDoc } from "../model/sample";
+import { sanitizeEntities } from "../model/sanitize";
 import { emptyTerrain } from "../terrain/terrain";
 import { getLocale, t } from "@/i18n";
 import { storedScheme } from "@/lib/scheme";
@@ -36,12 +37,14 @@ function write(key: string, value: unknown) {
 export function validateDoc(raw: unknown): GardenDoc | null {
   if (!raw || typeof raw !== "object") return null;
   const d = raw as Partial<GardenDoc>;
-  if (d.schema !== 1 || !d.entities || !Array.isArray(d.order)) return null;
+  if (d.schema !== 1 || !d.entities || typeof d.entities !== "object" || !Array.isArray(d.order)) return null;
+  const entities = sanitizeEntities(d.entities);
   return {
     ...createEmptyDoc(d.name),
     ...d,
+    entities,
     terrain: d.terrain?.chunks ? d.terrain : emptyTerrain(),
-    order: d.order.filter((id) => !!d.entities![id]),
+    order: d.order.filter((id) => typeof id === "string" && Object.hasOwn(entities, id)),
   } as GardenDoc;
 }
 

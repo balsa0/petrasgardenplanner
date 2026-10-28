@@ -69,6 +69,45 @@ function roundRect(c: Ctx, x: number, y: number, w: number, h: number, r: number
   c.fill();
 }
 
+/** Lawn ground for slab and stepping-stone patterns. */
+function lawnBed(c: Ctx, W: number, H: number, rnd: Rng, bg: string) {
+  c.fillStyle = bg;
+  c.fillRect(0, 0, W, H);
+  const area = (W * H) / (PATTERN_PPM * PATTERN_PPM);
+  noiseRects(c, W, H, rnd, Math.round(1300 * area), ["#6f9c43", "#8bb95c", "#74a247", "#90bd62"], 2);
+  grassBlades(c, W, H, rnd, Math.round(130 * area), ["#5f8c38", "#9cc46a"], 3);
+}
+
+/** One slab with soft clouding; `weathered` adds lichen spots and darker, damp edges. */
+function slab(c: Ctx, rnd: Rng, x: number, y: number, w: number, h: number, color: string, r: number, weathered = false) {
+  c.save();
+  c.beginPath();
+  c.roundRect(x, y, w, h, r);
+  c.fillStyle = color;
+  c.fill();
+  c.clip();
+  for (let i = 0; i < 4; i++) {
+    const cx = x + rnd() * w, cy = y + rnd() * h, rr = Math.max(w, h) * (0.2 + rnd() * 0.35);
+    const g = c.createRadialGradient(cx, cy, 0, cx, cy, rr);
+    g.addColorStop(0, rnd() < 0.5 ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)");
+    g.addColorStop(1, "rgba(0,0,0,0)");
+    c.fillStyle = g;
+    c.fillRect(x, y, w, h);
+  }
+  if (weathered) {
+    c.strokeStyle = "rgba(40,45,25,0.25)";
+    c.lineWidth = 3;
+    c.strokeRect(x, y, w, h);
+    for (let i = 0; i < 10; i++) {
+      c.fillStyle = pick(rnd, ["rgba(225,220,190,0.35)", "rgba(120,130,80,0.25)", "rgba(60,60,50,0.15)"]);
+      c.beginPath();
+      c.arc(x + rnd() * w, y + rnd() * h, 1 + rnd() * 3, 0, Math.PI * 2);
+      c.fill();
+    }
+  }
+  c.restore();
+}
+
 /**
  * How a surface looks: a base pattern plus colours and layout. Materials in the catalogue are
  * variations of a handful of bases (e.g. anthracite pavers in herringbone, white marble chippings).
@@ -177,6 +216,59 @@ const SPECS: Record<PatternKind, TileSpec> = {
       noiseRects(c, W, H, rnd, 900, ["rgba(0,0,0,0.05)", "rgba(255,255,255,0.08)"], 1);
     },
   },
+  // Large-format porcelain, 1.2 × 0.6 m in a half bond with tight joints and soft clouding.
+  porcelain: {
+    w: 2.4, h: 1.2,
+    draw: (c, W, H, rnd, k) => {
+      const cols = k.colors ?? ["#d6d4ce", "#d0cec8", "#dbd9d4"];
+      c.fillStyle = k.bg ?? "#a9a6a0";
+      c.fillRect(0, 0, W, H);
+      const sw = W / 2, sh = H / 2;
+      for (let r = 0; r < 2; r++)
+        for (let i = 0; i < 2; i++) {
+          const x = i * sw + (r % 2) * (sw / 2), y = r * sh;
+          const col = pick(rnd, cols);
+          wrap(W, H, x, y, sw, (xx, yy) => slab(c, rnd, xx + 0.6, yy + 0.6, sw - 1.2, sh - 1.2, col, 0.5));
+        }
+      noiseRects(c, W, H, rnd, 2500, ["rgba(0,0,0,0.03)", "rgba(255,255,255,0.05)"], 1);
+    },
+  },
+  // Porcelain slabs in a grid with ~8 cm lawn strips between them.
+  grassjoint: {
+    w: 2.56, h: 1.36,
+    draw: (c, W, H, rnd, k) => {
+      lawnBed(c, W, H, rnd, k.bg ?? "#76a44a");
+      const gap = 0.08 * PATTERN_PPM, sw = W / 2, sh = H / 2;
+      for (let r = 0; r < 2; r++)
+        for (let i = 0; i < 2; i++) {
+          const col = pick(rnd, k.colors ?? ["#dedbd3", "#d8d5cc"]);
+          // Grass shadow along the slab edges, then the slab.
+          c.fillStyle = "rgba(30,50,20,0.25)";
+          c.fillRect(i * sw + gap / 2 - 1, r * sh + gap / 2 - 1, sw - gap + 2, sh - gap + 2);
+          slab(c, rnd, i * sw + gap / 2, r * sh + gap / 2, sw - gap, sh - gap, col, 1.5);
+        }
+    },
+  },
+  // Square tiles (terracotta, quarry tiles) of `size` metres.
+  tiles: {
+    w: 1.2, h: 1.2,
+    draw: (c, W, H, rnd, k) => {
+      c.fillStyle = k.bg ?? "#cbb59b";
+      c.fillRect(0, 0, W, H);
+      const n = Math.max(1, Math.round(1.2 / (k.size ?? 0.3))), s = W / n, j = 1.6;
+      for (let r = 0; r < n; r++)
+        for (let i = 0; i < n; i++) {
+          c.fillStyle = pick(rnd, k.colors ?? ["#c46f45", "#b8653f", "#cc7b4f"]);
+          roundRect(c, i * s + j / 2, r * s + j / 2, s - j, s - j, 1.2);
+          // Worn, lighter patches.
+          c.fillStyle = `rgba(255,235,210,${0.04 + rnd() * 0.08})`;
+          c.beginPath();
+          c.ellipse(i * s + s * (0.3 + rnd() * 0.4), r * s + s * (0.3 + rnd() * 0.4), s * 0.3, s * 0.2, rnd() * Math.PI, 0, Math.PI * 2);
+          c.fill();
+        }
+      noiseRects(c, W, H, rnd, 3000, ["rgba(0,0,0,0.05)", "rgba(255,255,255,0.06)"], 1);
+    },
+  },
   cobble: {
     w: 1, h: 1,
     draw: (c, W, H, rnd, k) => {
@@ -218,6 +310,78 @@ const SPECS: Record<PatternKind, TileSpec> = {
       }
       if (k.accents) noiseRects(c, W, H, rnd, 6000, k.accents, 1);
       noiseRects(c, W, H, rnd, 3000, ["rgba(0,0,0,0.05)", "rgba(255,255,255,0.09)"], 2);
+    },
+  },
+  // Reclaimed York stone: random rectangles in courses, weathered, with mossy joints.
+  flagstone: {
+    w: 2.4, h: 2.4,
+    draw: (c, W, H, rnd, k) => {
+      c.fillStyle = k.bg ?? "#5f6148";
+      c.fillRect(0, 0, W, H);
+      speckle(c, W, H, rnd, 900, ["#6f7a46", "#55603a", "#7d8550"], 0.8, 1.8);
+      let y = 0;
+      for (const rh of [0.6, 0.45, 0.6, 0.3, 0.45]) {
+        const h = rh * PATTERN_PPM;
+        const shift = rnd() * W;
+        let x = 0;
+        while (x < W - 1) {
+          let w = (0.4 + rnd() * 0.5) * PATTERN_PPM;
+          if (W - (x + w) < 0.3 * PATTERN_PPM) w = W - x;
+          const col = pick(rnd, k.colors ?? ["#c2b69c", "#b3a78d", "#a99f8a"]);
+          wrap(W, H, x + shift, y, w, (xx, yy) => slab(c, rnd, xx + 2, yy + 2, w - 4, h - 4, col, 3, true));
+          x += w;
+        }
+        y += h;
+      }
+      noiseRects(c, W, H, rnd, 5000, ["rgba(0,0,0,0.06)", "rgba(255,255,255,0.07)"], 2);
+    },
+  },
+  // Irregular stepping stones laid into a lawn.
+  stepping: {
+    w: 2, h: 2,
+    draw: (c, W, H, rnd, k) => {
+      lawnBed(c, W, H, rnd, k.bg ?? "#76a44a");
+      const spots: [number, number][] = [[0.25, 0.25], [0.75, 0.25], [0.5, 0.75], [0, 0.75]];
+      for (const [fx, fy] of spots) {
+        const cx = (fx + (rnd() - 0.5) * 0.08) * W, cy = (fy + (rnd() - 0.5) * 0.08) * H;
+        const r = (0.2 + rnd() * 0.08) * PATTERN_PPM;
+        const pts: [number, number][] = [];
+        const n = 10;
+        for (let i = 0; i < n; i++) {
+          const a = (i / n) * Math.PI * 2, rr = r * (0.8 + rnd() * 0.3);
+          pts.push([Math.cos(a) * rr * 1.15, Math.sin(a) * rr * 0.9]);
+        }
+        const col = pick(rnd, k.colors ?? ["#b9b4a8", "#aaa59a"]);
+        const rot = rnd() * Math.PI;
+        wrap(W, H, cx, cy, r * 1.3, (xx, yy) => {
+          const path = () => {
+            c.beginPath();
+            pts.forEach(([px, py], i) => {
+              const x = xx + px * Math.cos(rot) - py * Math.sin(rot), y = yy + px * Math.sin(rot) + py * Math.cos(rot);
+              if (i) c.lineTo(x, y);
+              else c.moveTo(x, y);
+            });
+            c.closePath();
+          };
+          // Shadow on the grass, the stone, then speckle and a light top.
+          c.save();
+          c.translate(1.5, 2);
+          path();
+          c.fillStyle = "rgba(25,40,15,0.35)";
+          c.fill();
+          c.restore();
+          path();
+          c.fillStyle = col;
+          c.fill();
+          c.save();
+          path();
+          c.clip();
+          noiseRects(c, W, H, rnd, 1500, ["rgba(0,0,0,0.08)", "rgba(255,255,255,0.12)"], 2);
+          c.fillStyle = "rgba(255,255,255,0.08)";
+          c.fillRect(xx - r, yy - r, r * 2, r * 0.8);
+          c.restore();
+        });
+      }
     },
   },
   concrete: {
