@@ -75,7 +75,7 @@ export function ShortcutsDialog({ open, onOpenChange }: { open: boolean; onOpenC
         <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
           {groups().map((g) => (
             <section key={g.id}>
-              <h3 className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">{g.title}</h3>
+              <h3 className="font-display mb-2 text-[13.5px] font-semibold text-foreground/80">{g.title}</h3>
               <ul className="space-y-1.5">
                 {g.items.map(([k, v]) => (
                   <li key={k} className="flex items-center justify-between gap-4 text-sm">

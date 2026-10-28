@@ -139,7 +139,7 @@ export function WalkHud() {
   ];
   return (
     <>
-      <div className="absolute top-3 left-3 z-10 flex items-center gap-2">
+      <div className="absolute left-3 z-10 flex items-center gap-2" style={{ top: "var(--hud-top)" }}>
         <Button variant="secondary" size="sm" className="gap-1.5 shadow-sm" onClick={exitWalk}>
           <LogOut /> {t("walk.exit")} <Kbd className="ml-0.5">Esc</Kbd>
         </Button>

@@ -35,6 +35,8 @@ import { getEditor, useEditor } from "@/editor/store/store";
 import type { TerrainBrushMode } from "@/editor/terrain/terrain";
 import { STRUCTURE_ICONS } from "./meta";
 import { FenceTypeGrid, PerimeterFenceSection } from "./FencePicker";
+import { QuestHeader } from "./Hud";
+import { stageComplete } from "@/editor/model/progress";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 import { ChoiceCard, ColorDot, Field, LengthInput, Section, Segmented } from "./ui";
 
@@ -686,18 +688,14 @@ function BedsLibrary() {
 export function LibraryPanel() {
   const stage = useEditor((s) => s.stage);
   const setStage = useEditor((s) => s.setStage);
+  const complete = useEditor((s) => stageComplete(s.doc, s.stage));
   const info = STAGE_BY_ID[stage];
   const prev = STAGES[info.index - 2];
   const next = STAGES[info.index];
   return (
-    <aside aria-label={t("panels.library.ariaLabel")} className="z-10 flex w-64 shrink-0 flex-col border-r bg-background xl:w-72">
-      <div className="border-b px-4 pt-3.5 pb-3">
-        <div className="text-[11px] font-semibold tracking-wider text-primary uppercase">
-          {t("panels.library.step", { step: info.index, total: STAGES.length })}
-          {stage === "terrain" && <span className="ml-1.5 font-medium text-muted-foreground normal-case">{t("panels.library.optional")}</span>}
-        </div>
-        <h2 className="mt-0.5 text-[15px] font-semibold">{info.title}</h2>
-        <p className="text-xs text-muted-foreground">{info.summary}</p>
+    <aside aria-label={t("panels.library.ariaLabel")} className="flex min-h-0 flex-1 flex-col">
+      <div className="border-b">
+        <QuestHeader />
       </div>
       <ScrollArea className="min-h-0 flex-1">
         <div className="divide-y divide-border/60">
@@ -719,9 +717,16 @@ export function LibraryPanel() {
         )}
         <div className="flex-1" />
         {next && (
-          <Button size="sm" onClick={() => setStage(next.id)}>
-            {t("panels.library.next", { stage: next.short })} <ArrowRight />
-          </Button>
+          // Lights up once this step's goals are done, nudging on to the next one.
+          <button
+            key={complete ? "ready" : "open"}
+            type="button"
+            data-active={complete}
+            onClick={() => setStage(next.id)}
+            className={cn("keycap flex h-8 items-center gap-1.5 rounded-lg px-3 text-[13px] font-semibold", complete && "animate-hud-pop")}
+          >
+            {t("panels.library.next", { stage: next.short })} <ArrowRight className="size-4" />
+          </button>
         )}
       </div>
     </aside>

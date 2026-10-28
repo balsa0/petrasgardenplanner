@@ -95,9 +95,6 @@ const messages = {
   // "Library" = the left panel listing materials, plants and structures to draw with.
   "shell.toolRail.showLibrary": "Show library",
   "shell.toolRail.hideLibrary": "Hide library",
-  // "Inspector" = the right panel showing the properties of the selected object.
-  "shell.toolRail.showInspector": "Show inspector",
-  "shell.toolRail.hideInspector": "Hide inspector",
 
   // --- Editor layout ---
   // Accessible name of the drawing area.
@@ -313,6 +310,42 @@ const messages = {
   "shell.sample.note.terraceSun": "Terrace gets morning sun until ~1 pm.",
   "shell.sample.label.kitchenGarden": "Kitchen garden",
   "shell.sample.label.frontGarden": "Front garden",
+
+  // ── Goals per step (ticked off automatically from the plan) ──
+  "shell.quest.title": "Goals",
+  "shell.quest.optional": "Optional",
+  "shell.quest.plot.boundary": "Draw your plot boundary",
+  "shell.quest.plot.house": "Add your house",
+  "shell.quest.plot.extras": "Add a pond, pool or fence",
+  "shell.quest.terrain.heights": "Mark a known height",
+  "shell.quest.terrain.shape": "Shape the ground with the brush",
+  "shell.quest.surfaces.green": "Lay a lawn or meadow",
+  "shell.quest.surfaces.paths": "Add a path or terrace",
+  "shell.quest.trees.tree": "{count, plural, one {Plant a tree} other {Plant # trees}}",
+  "shell.quest.trees.shrubs": "{count, plural, one {Plant a shrub} other {Plant # shrubs or roses}}",
+  "shell.quest.beds.flower": "Make a flower bed",
+  "shell.quest.beds.raised": "Build a raised bed",
+  "shell.quest.planting.fill": "Brush plants into a bed",
+  "shell.quest.planting.variety": "{count, plural, one {Use # kind of plant} other {Use # different plants}}",
+  "shell.quest.planting.lush": "{count, plural, one {Grow # plant} other {Grow # plants}}",
+  // Pop-up when a goal is reached; {goal} is the goal's text.
+  "shell.quest.reached": "Goal reached",
+  // Pop-up when every required goal of a step is done; {step} is the step's name.
+  "shell.quest.stepDone": "{step} done",
+  "shell.quest.nextStep": "Next: {step}",
+  "shell.quest.allDone": "All six steps are done. Walk through your garden to see it at eye level.",
+  // Progress along the step track, e.g. "3 of 6 steps done".
+  "shell.quest.progress": "{done} of {total} steps done",
+  "shell.quest.tips": "Tips",
+
+  // ── Garden counters along the top ──
+  "shell.hud.label": "Your garden",
+  "shell.hud.plot": "plot",
+  "shell.hud.trees": "{count, plural, one {tree or shrub} other {trees and shrubs}}",
+  "shell.hud.plants": "{count, plural, one {plant} other {plants}}",
+  "shell.hud.species": "{count, plural, one {kind of plant} other {kinds of plants}}",
+  "shell.hud.playYear": "Play the year",
+  "shell.hud.pauseYear": "Pause",
 };
 
 export default messages;

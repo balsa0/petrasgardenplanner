@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Box, Check, ChevronRight, Download, FilePlus2, FolderOpen, Footprints, Keyboard, Languages, Map as MapIcon, Menu, Redo2, Rotate3d, Sparkles, Sprout, Undo2 } from "lucide-react";
+import { Box, Check, Download, FilePlus2, FolderOpen, Footprints, Keyboard, Languages, Map as MapIcon, Menu, Redo2, Rotate3d, Sparkles, Sprout, Undo2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -22,39 +22,33 @@ import {
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Kbd } from "@/components/ui/kbd";
 import { STAGES } from "@/editor/model/stages";
-import type { GardenDoc, Stage, ViewMode } from "@/editor/model/types";
+import type { ViewMode } from "@/editor/model/types";
 import { useEditor, getEditor } from "@/editor/store/store";
 import { exportDoc, importDocFile, openSample } from "@/editor/store/persistence";
-import { terrainHasData } from "@/editor/terrain/terrain";
 import { LOCALES, LOCALE_NAMES, isLocale, t } from "@/i18n";
 import { STAGE_ICONS } from "./meta";
+import { useCompletedSteps } from "./Hud";
 import { ShortcutsDialog } from "./ShortcutsDialog";
 
-function stageDone(doc: GardenDoc, stage: Stage): boolean {
-  const ents = doc.order.map((id) => doc.entities[id]);
-  switch (stage) {
-    case "plot": return ents.some((e) => e?.kind === "plot");
-    case "terrain": return terrainHasData(doc.terrain) || ents.some((e) => e?.kind === "heightpoint");
-    case "surfaces": return ents.some((e) => e?.kind === "surface");
-    case "trees": return ents.some((e) => e?.kind === "tree");
-    case "beds": return ents.some((e) => e?.kind === "bed");
-    case "planting": return ents.some((e) => e?.kind === "bed" && e.plants.length > 0);
-  }
-}
-
+/** The six steps as a track: finished steps get a honey check, the line fills as you go. */
 function StageStepper() {
   const stage = useEditor((s) => s.stage);
-  const doc = useEditor((s) => s.doc);
   const setStage = useEditor((s) => s.setStage);
+  const done = useCompletedSteps();
   return (
-    <nav aria-label={t("shell.topbar.steps")} className="flex items-center rounded-xl bg-muted/70 p-1 ring-1 ring-border/60">
+    <nav aria-label={t("shell.topbar.steps")} className="hud-panel pointer-events-auto flex h-11 items-center rounded-2xl px-2">
       {STAGES.map((st, i) => {
         const Icon = STAGE_ICONS[st.id];
         const active = st.id === stage;
-        const done = stageDone(doc, st.id);
+        const isDone = done.has(st.id);
         return (
           <div key={st.id} className="flex items-center">
-            {i > 0 && <ChevronRight className="mx-0.5 size-3 shrink-0 text-muted-foreground/50" aria-hidden />}
+            {i > 0 && (
+              <span
+                aria-hidden
+                className={cn("h-[3px] w-3 rounded-full xl:w-5", done.has(STAGES[i - 1].id) ? "bg-honey" : "bg-border")}
+              />
+            )}
             <Tooltip>
               <TooltipTrigger asChild>
                 <button
@@ -62,20 +56,26 @@ function StageStepper() {
                   onClick={() => setStage(st.id)}
                   aria-current={active ? "step" : undefined}
                   className={cn(
-                    "group flex h-8 items-center gap-1.5 rounded-lg px-2 text-[13px] font-medium transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
-                    active ? "bg-primary text-primary-foreground shadow-sm" : "text-muted-foreground hover:bg-background hover:text-foreground",
+                    "group flex h-8 items-center gap-1.5 rounded-full p-1 text-[13px] font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
+                    active ? "bg-primary pr-3 text-primary-foreground shadow-[0_2px_0_oklch(0.33_0.08_152)]" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   <span
                     className={cn(
-                      "flex size-5 items-center justify-center rounded-md text-[11px] font-semibold tabular",
-                      active ? "bg-primary-foreground/15" : done ? "bg-primary/12 text-primary" : "bg-background ring-1 ring-border",
+                      "font-display flex size-6 items-center justify-center rounded-full text-[12.5px] font-bold tabular transition-colors",
+                      active
+                        ? isDone
+                          ? "bg-honey text-honey-foreground"
+                          : "bg-primary-foreground/18"
+                        : isDone
+                          ? "bg-honey text-honey-foreground"
+                          : "bg-background ring-[1.5px] ring-border ring-inset group-hover:ring-foreground/30",
                     )}
                   >
-                    {done && !active ? <Check className="size-3" strokeWidth={3} /> : st.index}
+                    {isDone ? <Check className="size-3.5" strokeWidth={3.2} /> : st.index}
                   </span>
-                  <Icon className={cn("size-3.5", active ? "" : "hidden 2xl:block")} />
-                  <span className={cn(active ? "" : "hidden xl:inline")}>{st.short}</span>
+                  {active && <Icon className="size-3.5" />}
+                  {active && <span className="font-display text-[14px]">{st.short}</span>}
                 </button>
               </TooltipTrigger>
               <TooltipContent side="bottom" className="max-w-56 flex-col items-start gap-0.5 py-2">
@@ -94,7 +94,6 @@ function StageStepper() {
   );
 }
 
-// "2D", "2.5D" and "3D" read the same in every language.
 const VIEWS: { id: ViewMode; label: string; icon: typeof MapIcon; hint: string }[] = [
   {
     id: "2d",
@@ -136,7 +135,7 @@ function ViewSwitch() {
   const view = useEditor((s) => s.view);
   const setView = useEditor((s) => s.setView);
   return (
-    <div role="radiogroup" aria-label={t("shell.topbar.view")} className="flex items-center rounded-lg bg-muted/70 p-0.5 ring-1 ring-border/60">
+    <div role="radiogroup" aria-label={t("shell.topbar.view")} className="hud-panel pointer-events-auto flex h-11 items-center gap-1 rounded-2xl p-1.5">
       {VIEWS.map((v) => (
         <Tooltip key={v.id}>
           <TooltipTrigger asChild>
@@ -146,8 +145,8 @@ function ViewSwitch() {
               aria-checked={view === v.id}
               onClick={() => setView(v.id)}
               className={cn(
-                "flex h-7 items-center gap-1.5 rounded-md px-2.5 text-xs font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
-                view === v.id ? "bg-background text-foreground shadow-sm ring-1 ring-border" : "text-muted-foreground hover:text-foreground",
+                "flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
+                view === v.id ? "keycap" : "text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
               )}
             >
               <v.icon className="size-3.5" />
@@ -209,20 +208,23 @@ export function TopBar() {
   const [shortcuts, setShortcuts] = useState(false);
 
   return (
-    <header className="relative z-20 flex h-14 shrink-0 items-center gap-3 border-b bg-background/95 px-3 backdrop-blur">
-      <div className="flex min-w-0 flex-1 items-center gap-2.5 overflow-hidden">
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-          <Sprout className="size-4.5" />
+    // Floats over the garden: the bar itself lets clicks through, only its pills catch them.
+    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center gap-3 p-3">
+      <div className="flex min-w-0 flex-1">
+        <div className="hud-panel pointer-events-auto flex h-11 min-w-0 items-center gap-2 rounded-2xl pr-2 pl-1.5">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_2px_0_oklch(0.33_0.08_152)]">
+            <Sprout className="size-4.5" />
+          </div>
+          <div className="font-display hidden text-[14px] font-semibold whitespace-nowrap text-foreground/70 2xl:block">Garden Planner</div>
+          <div className="hidden h-5 w-px bg-border 2xl:block" />
+          <ProjectName />
         </div>
-        <div className="hidden text-[13px] font-medium whitespace-nowrap text-muted-foreground 2xl:block">Garden Planner</div>
-        <div className="hidden h-5 w-px bg-border 2xl:block" />
-        <ProjectName />
       </div>
 
       <StageStepper />
 
       <div className="flex flex-1 items-center justify-end gap-2">
-        <div className="flex items-center">
+        <div className="hud-panel pointer-events-auto flex h-11 items-center rounded-2xl px-1">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ghost" size="icon" aria-label={t("common.undo")} disabled={!canUndo} onClick={() => getEditor().undo()}>
@@ -247,9 +249,9 @@ export function TopBar() {
         <ViewSwitch />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" aria-label={t("shell.topbar.menu.label")}>
-              <Menu />
-            </Button>
+            <button type="button" aria-label={t("shell.topbar.menu.label")} className="keycap pointer-events-auto flex size-11 items-center justify-center rounded-2xl">
+              <Menu className="size-4.5" />
+            </button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-60">
             <DropdownMenuItem onSelect={() => getEditor().setWelcome(true)}>

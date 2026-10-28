@@ -66,7 +66,7 @@ function FloatingInputBox({ f }: { f: FloatingInputState }) {
       style={{ left: Math.max(140, pos[0]), top: pos[1] + 14 }}
       onPointerDown={(e) => e.stopPropagation()}
     >
-      <div className="mb-1.5 text-[11px] font-semibold tracking-wide text-muted-foreground uppercase">{f.label}</div>
+      <div className="font-display mb-1.5 text-[12.5px] font-semibold text-foreground/75">{f.label}</div>
       {f.multiline ? (
         <textarea ref={ref} rows={3} {...common} onChange={(e) => setValue(e.target.value)} className="w-full resize-none rounded-md border bg-background px-2 py-1.5 text-sm outline-none focus:border-ring focus:ring-2 focus:ring-ring/30" />
       ) : (

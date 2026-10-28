@@ -37,6 +37,16 @@ isometric rotation (`,` `.`), 3D orbit preview and **walk mode** (`W`): a first-
 or child eye height — WASD / arrows, drag to look, click the ground to walk there, Shift to run,
 minimap to jump; you can't walk through buildings, water, raised beds, shrubs or trunks.
 
+## Interface (experiment: `experiment/game-ui`)
+
+The editor is laid out like a calm builder game: the garden fills the screen and the UI floats over
+it. A **hotbar** of keycap tools sits at the bottom (with the current tool's hint on top), the
+**step track** at the top fills with honey checks, and each step lists a few **goals** that tick off
+from what you put on the plan — reaching one, or finishing a step, gets a short pop-up with a button
+to the next step. Garden counters (plot, trees and shrubs, plants, kinds of plants) bump when they
+change, placed things pulse, the selection card appears only while something is selected, and the
+clock can **play the year** month by month. Motion respects reduced-motion settings.
+
 ## Languages
 
 English, Deutsch, Français, Magyar, Italiano, Español, Polski, Čeština — the OS / browser language is

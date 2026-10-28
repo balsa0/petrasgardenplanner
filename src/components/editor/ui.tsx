@@ -10,7 +10,7 @@ export function Section({ title, action, children, className }: { title?: string
     <section className={cn("space-y-2.5 px-4 py-3.5", className)}>
       {(title || action) && (
         <div className="flex items-center justify-between gap-2">
-          {title && <h3 className="text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">{title}</h3>}
+          {title && <h3 className="font-display text-[13.5px] font-semibold text-foreground/80">{title}</h3>}
           {action}
         </div>
       )}

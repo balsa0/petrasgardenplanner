@@ -12,7 +12,9 @@ export type Overlay =
   | { t: "circle"; c: Pt; r: number; style: OverlayStyle; z?: number }
   | { t: "handle"; p: Pt; kind: "vertex" | "mid" | "active" | "point"; z?: number }
   | { t: "snap"; p: Pt; kind: SnapKind; z?: number }
-  | { t: "label"; p: Pt; text: string; style: "dim" | "info" | "input" | "warn"; z?: number; dy?: number };
+  | { t: "label"; p: Pt; text: string; style: "dim" | "info" | "input" | "warn"; z?: number; dy?: number }
+  /** Placement feedback; k runs 0 → 1 over the effect's life. */
+  | { t: "pulse"; p: Pt; k: number; z?: number };
 
 export interface Projector {
   /** CSS-pixel screen position of a world point at elevation z (undefined → on the ground). */
@@ -207,6 +209,21 @@ export function drawOverlays(ctx: Ctx, overlays: Overlay[], proj: Projector) {
         ctx.strokeStyle = COLORS.accent;
         ctx.lineWidth = 1.5;
         ctx.stroke();
+        break;
+      }
+      case "pulse": {
+        const s = proj.project(o.p, o.z);
+        if (!s) break;
+        const e = 1 - (1 - o.k) ** 3;
+        ctx.beginPath();
+        ctx.arc(s[0], s[1], 6 + 30 * e, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(233, 168, 59, ${0.85 * (1 - o.k)})`;
+        ctx.lineWidth = 1 + 3 * (1 - o.k);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(s[0], s[1], 4 * (1 - o.k) + 1, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.9 * (1 - o.k)})`;
+        ctx.fill();
         break;
       }
       case "snap": {

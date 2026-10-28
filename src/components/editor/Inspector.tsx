@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Draft } from "immer";
-import { CheckCircle2, Circle, Copy, Lightbulb, SquaresIntersect, SquaresSubtract, SquaresUnite, Trash2 } from "lucide-react";
+import { Copy, SquaresIntersect, SquaresSubtract, SquaresUnite, Trash2 } from "lucide-react";
 import { fmtNumber, getLocale, speciesName, t } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -69,7 +69,7 @@ function Header({ e }: { e: Entity }) {
   return (
     <div className="flex items-start gap-2 border-b px-4 pt-3.5 pb-3">
       <div className="min-w-0 flex-1">
-        <div className="text-[11px] font-semibold tracking-wider text-primary uppercase">{kindLabel(e.kind)}</div>
+        <div className="text-[12px] font-medium text-primary">{kindLabel(e.kind)}</div>
         {canName ? (
           <input
             aria-label={t("common.name")}
@@ -445,7 +445,7 @@ function MultiInspector({ ids, doc }: { ids: string[]; doc: GardenDoc }) {
   return (
     <>
       <div className="border-b px-4 pt-3.5 pb-3">
-        <div className="text-[11px] font-semibold tracking-wider text-primary uppercase">{t("panels.inspector.multi.title")}</div>
+        <div className="text-[12px] font-medium text-primary">{t("panels.inspector.multi.title")}</div>
         <div className="text-[15px] font-semibold">{t("common.items", { count: ids.length })}</div>
         <div className="mt-1 text-xs text-muted-foreground">{Array.from(kinds.entries()).map(([k, n]) => `${fmtNumber(n)} × ${k}`).join(" · ")}</div>
       </div>
@@ -471,7 +471,7 @@ function MultiInspector({ ids, doc }: { ids: string[]; doc: GardenDoc }) {
 
 // ── Nothing selected ─────────────────────────────────────────────────────
 
-function GardenSummary({ doc }: { doc: GardenDoc }) {
+export function GardenSummary({ doc }: { doc: GardenDoc }) {
   let plot = 0, built = 0, water = 0, soft = 0, hard = 0, beds = 0, trees = 0, plants = 0;
   for (const id of doc.order) {
     const e = doc.entities[id];
@@ -503,42 +503,14 @@ function GardenSummary({ doc }: { doc: GardenDoc }) {
   );
 }
 
-function StageGuide() {
-  const stage = useEditor((s) => s.stage);
-  const info = STAGE_BY_ID[stage];
-  return (
-    <Section>
-      <div className="rounded-xl bg-accent/60 p-3.5 ring-1 ring-primary/15">
-        <div className="mb-2 flex items-center gap-2 text-[13px] font-semibold text-accent-foreground">
-          <Lightbulb className="size-4 text-primary" /> {t("panels.inspector.guide.title")}
-        </div>
-        <ul className="space-y-2">
-          {info.tips.map((tip, i) => (
-            <li key={i} className="flex gap-2 text-[12.5px] leading-snug text-foreground/85">
-              {i === 0 ? <CheckCircle2 className="mt-px size-3.5 shrink-0 text-primary" /> : <Circle className="mt-px size-3.5 shrink-0 text-primary/50" />}
-              <span>{tip}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <p className="px-1 text-[11px] text-muted-foreground">{t("panels.inspector.guide.selectHint")}</p>
-    </Section>
-  );
-}
-
-export function Inspector({ floating = false }: { floating?: boolean }) {
+/** The selected thing's properties; shown in a card while something is selected. */
+export function Inspector() {
   const selection = useEditor((s) => s.selection);
   const doc = useEditor((s) => s.doc);
   const e = selection.length === 1 ? doc.entities[selection[0]] : null;
   return (
-    <aside
-      aria-label={t("panels.inspector.ariaLabel")}
-      className={cn(
-        "z-20 flex flex-col bg-background",
-        floating ? "absolute top-14 right-3 bottom-16 w-72 overflow-hidden rounded-2xl border shadow-xl" : "w-80 shrink-0 border-l",
-      )}
-    >
-      <ScrollArea className="min-h-0 flex-1">
+    <aside aria-label={t("panels.inspector.ariaLabel")} className="flex min-h-0 flex-auto flex-col">
+      <ScrollArea className="min-h-0 flex-auto">
         {selection.length > 1 ? (
           <MultiInspector ids={selection} doc={doc} />
         ) : e ? (
@@ -561,12 +533,7 @@ export function Inspector({ floating = false }: { floating?: boolean }) {
               </Section>
             )}
           </div>
-        ) : (
-          <div className="divide-y divide-border/60">
-            <StageGuide />
-            <GardenSummary doc={doc} />
-          </div>
-        )}
+        ) : null}
       </ScrollArea>
     </aside>
   );

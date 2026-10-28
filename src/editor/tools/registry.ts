@@ -1,6 +1,7 @@
 import type { ToolId } from "../model/stages";
 import { useEditor } from "../store/store";
 import { keys } from "../viewport";
+import { fxOverlays } from "../paint/fx";
 import { PlantBrushTool, SurfaceBrushTool, TerrainTool } from "./brushes";
 import { FenceTool } from "./fence";
 import { HeightPointTool, LabelTool, MeasureTool, NoteTool, SurveyTool, TreeTool } from "./points";
@@ -42,7 +43,8 @@ export function brushWheel(ev: WheelEvent): boolean {
 /** Everything the views should draw on top: the selection plus the active tool's previews. */
 export function activeOverlays() {
   const id = useEditor.getState().tool;
-  return id === "select" ? tools.select.overlays() : [...selectionOutlines(), ...tools[id].overlays()];
+  const own = id === "select" ? tools.select.overlays() : [...selectionOutlines(), ...tools[id].overlays()];
+  return [...own, ...fxOverlays()];
 }
 
 let wired = false;

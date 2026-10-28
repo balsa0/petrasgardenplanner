@@ -17,6 +17,17 @@ export function getViewport() {
   return api;
 }
 
+/**
+ * Screen space the floating HUD leaves free over a view (px from each edge), read from the shell's
+ * --hud-* variables, so "fit" frames the garden where it can actually be seen.
+ */
+export function hudInsets(el: Element): { left: number; right: number; top: number; bottom: number } {
+  const cs = getComputedStyle(el);
+  const px = (name: string, fallback: number) => parseFloat(cs.getPropertyValue(name)) || fallback;
+  // Below the top bar sits the counters row; above the bottom edge the hotbar and its hint.
+  return { left: px("--hud-l", 12), right: px("--hud-r", 12), top: px("--hud-top", 64) + 48, bottom: 128 };
+}
+
 /** Keyboard state shared by views (space-to-pan). */
 /** `altWheel`: Alt was used with the wheel, so its release must not open the browser menu. */
 export const keys = { space: false, altWheel: false };

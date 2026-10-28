@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
@@ -7,6 +7,13 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin", "latin-ext"],
+});
+
+// Display face for step names, counters and hotkeys: a little character without being playful.
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin", "latin-ext"],
+  axes: ["opsz", "wdth"],
 });
 
 const geistMono = Geist_Mono({
@@ -25,10 +32,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} h-full antialiased`}>
       <body className="h-full overflow-hidden">
         <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
-        <Toaster position="top-center" offset={68} theme="light" richColors={false} closeButton />
+        <Toaster position="top-center" offset={116} theme="light" richColors={false} closeButton />
       </body>
     </html>
   );

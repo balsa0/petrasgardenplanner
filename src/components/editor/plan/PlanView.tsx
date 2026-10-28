@@ -9,7 +9,7 @@ import { heightAt } from "@/editor/terrain/terrain";
 import { activeOverlays, brushWheel, getTool } from "@/editor/tools/registry";
 import type { ToolEvent } from "@/editor/tools/types";
 import { isArea, type GardenDoc } from "@/editor/model/types";
-import { keys, safeCapture, setViewport } from "@/editor/viewport";
+import { hudInsets, keys, safeCapture, setViewport } from "@/editor/viewport";
 
 const MIN_ZOOM = 1.5;
 const MAX_ZOOM = 600;
@@ -74,9 +74,13 @@ export function PlanView() {
         return;
       }
       const r = wrap.getBoundingClientRect();
-      const pad = Math.min(80, r.width * 0.12);
-      const zoom = Math.max(MIN_ZOOM, Math.min(120, Math.min((r.width - pad * 2) / (b.maxX - b.minX || 1), (r.height - pad * 2) / (b.maxY - b.minY || 1))));
-      s.setCamera({ center: [(b.minX + b.maxX) / 2, (b.minY + b.maxY) / 2], zoom });
+      const inset = hudInsets(wrap);
+      const w = Math.max(100, r.width - inset.left - inset.right), h = Math.max(100, r.height - inset.top - inset.bottom);
+      const pad = Math.min(48, w * 0.08);
+      const zoom = Math.max(MIN_ZOOM, Math.min(120, Math.min((w - pad * 2) / (b.maxX - b.minX || 1), (h - pad * 2) / (b.maxY - b.minY || 1))));
+      // Centre the garden in the free area, not behind the panels.
+      const ox = (inset.left - inset.right) / 2, oy = (inset.top - inset.bottom) / 2;
+      s.setCamera({ center: [(b.minX + b.maxX) / 2 - ox / zoom, (b.minY + b.maxY) / 2 - oy / zoom], zoom });
     };
 
     const ro = new ResizeObserver(() => {

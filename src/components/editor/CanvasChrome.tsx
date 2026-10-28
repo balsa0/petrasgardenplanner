@@ -1,6 +1,7 @@
 "use client";
 
-import { CalendarDays, Eye, EyeOff, Magnet, Maximize, Minus, Plus, RotateCcw, RotateCw } from "lucide-react";
+import { useEffect, useState } from "react";
+import { CalendarDays, Eye, EyeOff, Magnet, Maximize, Minus, Pause, Play, Plus, RotateCcw, RotateCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/kbd";
@@ -21,12 +22,13 @@ import { tx } from "@/i18n/rich";
 import { TOOL_META } from "./meta";
 import { Segmented } from "./ui";
 import { WalkHud } from "./iso/WalkHud";
+import { Hotbar, ResourceStrip } from "./Hud";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 
 const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 function Pill({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <div className={cn("pointer-events-auto flex items-center gap-1 rounded-xl border bg-background/95 p-1 shadow-sm backdrop-blur", className)}>{children}</div>;
+  return <div className={cn("hud-panel pointer-events-auto flex items-center gap-1 rounded-xl p-1", className)}>{children}</div>;
 }
 
 function Chip({ color, children }: { color?: string; children: React.ReactNode }) {
@@ -66,7 +68,7 @@ function ToolOptions() {
         <Chip>{what}</Chip>
         <Segmented
           size="sm"
-          className="w-56"
+          className="shrink-0"
           value={o.boolMode}
           onChange={(v) => set({ boolMode: v })}
           options={[
@@ -98,7 +100,7 @@ function ToolOptions() {
       <>
         <Segmented
           size="sm"
-          className="w-64"
+          className="shrink-0"
           value={o.terrainMode}
           onChange={(v) => set({ terrainMode: v })}
           options={[
@@ -122,7 +124,7 @@ function ToolOptions() {
         <Chip color={sp.foliage}>{speciesName(sp)}</Chip>
         <Segmented
           size="sm"
-          className="w-80"
+          className="shrink-0"
           value={String(o.treeAge)}
           onChange={(v) => set({ treeAge: Number(v) })}
           options={PLANTING_SIZES.map((p) => ({ value: String(p.age), label: p.id === "existing" ? t("shell.canvas.treeSize.existing") : p.label, title: p.hint }))}
@@ -149,14 +151,11 @@ function ToolOptions() {
     content = <Chip>{t("shell.canvas.surveySpacing", { distance: fmtLen(o.surveySpacing) })}</Chip>;
   }
   if (!content) return null;
-  return (
-    <div className="pointer-events-none absolute top-3 left-3 z-10 @4xl:left-1/2 @4xl:-translate-x-1/2">
-      <Pill>{content}</Pill>
-    </div>
-  );
+  return <Pill className="animate-hud-pop max-w-full overflow-x-auto">{content}</Pill>;
 }
 
-function HintBar() {
+/** What the active tool expects next, shown on top of the hotbar. */
+function useHint(): React.ReactNode {
   useEditor((s) => s.overlayTick);
   useEditor((s) => s.selection);
   const tool = useEditor((s) => s.tool);
@@ -164,21 +163,19 @@ function HintBar() {
   const hint = view === "3d" ? { text: t("shell.canvas.hint3d"), keys: [["Tab", t("shell.canvas.hint3d.back")]] as [string, string][] } : getTool(tool).hint();
   const subtract = view !== "3d" && (tool === "rect" || tool === "polygon" || tool === "circle") && isSubtracting(false);
   return (
-    <div className="pointer-events-none absolute bottom-14 left-1/2 z-10 flex max-w-[calc(100%-1.5rem)] -translate-x-1/2 justify-center @5xl:bottom-3 @5xl:max-w-[min(760px,calc(100%-34rem))]">
-      <div className="flex items-center gap-3 rounded-full bg-foreground/88 px-4 py-2 text-[12.5px] text-background shadow-lg backdrop-blur">
-        {subtract && <span className="rounded-full bg-rose-500 px-2 py-0.5 text-[11px] font-semibold">{t("shell.canvas.boolMode.subtract")}</span>}
-        <span className="truncate">{hint.text}</span>
-        {hint.keys?.length ? (
-          <span className="hidden items-center gap-2.5 border-l border-background/20 pl-3 xl:flex">
-            {hint.keys.map(([k, v]) => (
-              <span key={k} className="flex items-center gap-1 whitespace-nowrap text-background/75">
-                <Kbd className="bg-background/15 text-background">{k}</Kbd> {v}
-              </span>
-            ))}
-          </span>
-        ) : null}
-      </div>
-    </div>
+    <>
+      {subtract && <span className="shrink-0 rounded-full bg-rose-500 px-2 py-0.5 text-[11px] font-semibold text-white">{t("shell.canvas.boolMode.subtract")}</span>}
+      <span className="truncate">{hint.text}</span>
+      {hint.keys?.length ? (
+        <span className="hidden shrink-0 items-center gap-2 border-l pl-2.5 @5xl:flex">
+          {hint.keys.slice(0, 3).map(([k, v]) => (
+            <span key={k} className="flex items-center gap-1 whitespace-nowrap text-muted-foreground">
+              <Kbd>{k}</Kbd> {v}
+            </span>
+          ))}
+        </span>
+      ) : null}
+    </>
   );
 }
 
@@ -196,8 +193,8 @@ function StatusBar() {
     { key: "angles", label: t("shell.canvas.snap.angles"), hint: t("shell.canvas.snap.angles.hint") },
   ] as const;
   return (
-    <div className="pointer-events-none absolute bottom-3 left-3 z-10">
-      <Pill className="h-9 gap-2 pr-3 text-xs tabular text-muted-foreground">
+    <div className="pointer-events-none flex">
+      <Pill className="h-10 gap-2 pr-3 text-xs tabular text-muted-foreground">
         {view !== "3d" && (
           <Popover>
             <PopoverTrigger asChild>
@@ -219,16 +216,18 @@ function StatusBar() {
             </PopoverContent>
           </Popover>
         )}
-        <span className="h-4 w-px bg-border" />
-        {cursor ? (
-          <>
-            <span>X {fmtLen(cursor.p[0])}</span>
-            <span>Y {fmtLen(cursor.p[1])}</span>
-            <span className="text-foreground/80">▲ {fmtElev(cursor.elevation)}</span>
-          </>
-        ) : (
-          <span className="w-28">{t("shell.canvas.cursor.none")}</span>
-        )}
+        <span className="hidden h-4 w-px bg-border @[26rem]/status:block" />
+        <span className="hidden items-center gap-2 whitespace-nowrap @[26rem]/status:flex">
+          {cursor ? (
+            <>
+              <span>X {fmtLen(cursor.p[0])}</span>
+              <span>Y {fmtLen(cursor.p[1])}</span>
+              <span className="text-foreground/80">▲ {fmtElev(cursor.elevation)}</span>
+            </>
+          ) : (
+            <span className="w-28">{t("shell.canvas.cursor.none")}</span>
+          )}
+        </span>
         <span className="h-4 w-px bg-border" />
         <button type="button" className="font-semibold text-foreground hover:text-primary" onClick={() => setUnits(units === "metric" ? "imperial" : "metric")} title={t("shell.canvas.switchUnits")}>
           {units === "metric" ? "m" : "ft"}
@@ -244,7 +243,7 @@ function Compass() {
   const deg = view === "iso" ? (isoAzimuth(rotation) * 180) / Math.PI : 0;
   if (view === "3d") return null;
   return (
-    <div className="pointer-events-auto flex size-10 items-center justify-center rounded-full border bg-background/95 shadow-sm" title={t("shell.canvas.compass.north")}>
+    <div className="hud-panel pointer-events-auto flex size-10 items-center justify-center rounded-full" title={t("shell.canvas.compass.north")}>
       <svg viewBox="-20 -20 40 40" className="size-8 transition-transform duration-300" style={{ transform: `rotate(${deg}deg)` }} aria-label={t("shell.canvas.compass.arrow")}>
         <path d="M0 -14 L5 2 L0 -1 L-5 2 Z" fill="#b91c1c" />
         <path d="M0 14 L5 2 L0 -1 L-5 2 Z" fill="#a8a29e" opacity="0.6" />
@@ -264,7 +263,7 @@ function ViewControls() {
     s.setCamera({ zoom: Math.max(1.5, Math.min(600, s.camera.zoom * k)) });
   };
   return (
-    <div className="pointer-events-none absolute right-3 bottom-3 z-10 flex items-end gap-2">
+    <div className="pointer-events-none flex items-end gap-2">
       {view === "iso" && (
         <Pill>
           <Tooltip>
@@ -352,6 +351,36 @@ function yearsLabel(years: number) {
   return years === 0 ? t("shell.canvas.time.today") : t("shell.canvas.time.yearsAhead", { count: years });
 }
 
+/** Steps through the months while playing, so you can watch a year go by. */
+function PlayYear() {
+  const [playing, setPlaying] = useState(false);
+  useEffect(() => {
+    if (!playing) return;
+    const id = setInterval(() => {
+      const s = getEditor();
+      s.setTime({ month: (s.time.month % 12) + 1 });
+    }, 700);
+    return () => clearInterval(id);
+  }, [playing]);
+  const label = t(playing ? "shell.hud.pauseYear" : "shell.hud.playYear");
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <button
+          type="button"
+          aria-label={label}
+          aria-pressed={playing}
+          onClick={() => setPlaying((p) => !p)}
+          className="keycap flex size-8 items-center justify-center rounded-lg"
+        >
+          {playing ? <Pause className="size-3.5" fill="currentColor" /> : <Play className="size-3.5" fill="currentColor" />}
+        </button>
+      </TooltipTrigger>
+      <TooltipContent side="bottom">{label}</TooltipContent>
+    </Tooltip>
+  );
+}
+
 function TimeControl() {
   const time = useEditor((s) => s.time);
   const setTime = useEditor((s) => s.setTime);
@@ -359,7 +388,11 @@ function TimeControl() {
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-1.5">
-          <CalendarDays /> {monthLabel(time.month, "short")} · {yearsLabel(time.years)}
+          <CalendarDays />
+          <span key={time.month} className="font-display animate-hud-bump text-[13.5px] font-semibold">
+            {monthLabel(time.month, "short")}
+          </span>
+          <span className="text-muted-foreground">{yearsLabel(time.years)}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-80 gap-4 p-4">
@@ -396,13 +429,20 @@ function TimeControl() {
   );
 }
 
+/**
+ * Game-style HUD over the garden, laid out inside the space the floating panels leave free
+ * (--hud-l / --hud-r): counters and time along the top, status, the hotbar and the camera along the bottom.
+ */
 export function CanvasChrome() {
   const walking = useEditor((s) => s.view === "walk");
+  const hint = useHint();
+  const free = { left: "var(--hud-l)", right: "var(--hud-r)" };
   return (
     <>
-      {!walking && <ToolOptions />}
-      <div className="pointer-events-none absolute top-3 right-3 z-10">
+      <div className="pointer-events-none absolute z-10 flex items-start justify-between gap-3" style={{ ...free, top: "var(--hud-top)" }}>
+        {walking ? <span /> : <ResourceStrip />}
         <Pill>
+          <PlayYear />
           <TimeControl />
           <div className="h-5 w-px bg-border" />
           <DisplayMenu />
@@ -411,11 +451,18 @@ export function CanvasChrome() {
       {walking ? (
         <WalkHud />
       ) : (
-        <>
-          <HintBar />
-          <StatusBar />
-          <ViewControls />
-        </>
+        <div className="pointer-events-none absolute bottom-3 z-10 grid grid-cols-[1fr_auto_1fr] items-end gap-3" style={free}>
+          <div className="@container/status w-full min-w-0 justify-self-start">
+            <StatusBar />
+          </div>
+          <div className="flex max-w-[min(720px,calc(100vw-2rem))] min-w-0 flex-col items-center gap-2">
+            <ToolOptions />
+            <Hotbar hint={hint} />
+          </div>
+          <div className="justify-self-end">
+            <ViewControls />
+          </div>
+        </div>
       )}
     </>
   );

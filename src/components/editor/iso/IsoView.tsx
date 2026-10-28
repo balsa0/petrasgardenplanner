@@ -12,8 +12,9 @@ import { getHeightGrid, sampleHeight } from "@/editor/terrain/terrain";
 import { editableFilter, hitTest } from "@/editor/tools/context";
 import { activeOverlays, brushWheel, getTool } from "@/editor/tools/registry";
 import { selectionOutlines } from "@/editor/tools/select";
+import { fxOverlays } from "@/editor/paint/fx";
 import type { ToolEvent } from "@/editor/tools/types";
-import { keys, safeCapture, setViewport } from "@/editor/viewport";
+import { hudInsets, keys, safeCapture, setViewport } from "@/editor/viewport";
 import type { Pt } from "@/editor/model/types";
 import { contentBBox } from "../plan/PlanView";
 import { SceneContent } from "./Scene";
@@ -216,7 +217,7 @@ function Bridge({
       { names: s.display.names, labels: s.display.labels, notes: s.display.notes, selection: s.selection, hover: s.hover, anchorZ: (e) => anchorElevation(s.doc, e, s.time.years) },
       proj,
     );
-    if (mode !== "walk") drawOverlays(ctx, mode === "iso" ? activeOverlays() : selectionOutlines(), proj);
+    if (mode !== "walk") drawOverlays(ctx, mode === "iso" ? activeOverlays() : [...selectionOutlines(), ...fxOverlays()], proj);
   });
   return null;
 }
@@ -293,12 +294,19 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
     const fit = () => {
       const s = getEditor();
       const b = contentBBox(s.doc);
-      const { width, height } = wrap.getBoundingClientRect();
+      const rect0 = wrap.getBoundingClientRect();
       if (!b) return s.setCamera({ center: [0, 0], zoom: 20 });
+      const inset = hudInsets(wrap);
+      const width = Math.max(100, rect0.width - inset.left - inset.right), height = Math.max(100, rect0.height - inset.top - inset.bottom);
       const diag = Math.hypot(b.maxX - b.minX, b.maxY - b.minY);
       // Ground diamond spans diag horizontally and diag·sin(el) vertically; leave room for buildings and trees.
-      const zoom = Math.max(MIN_ZOOM, Math.min(120, Math.min((width - 60) / (diag + 4), (height - 90) / (diag * Math.sin(ISO_ELEVATION) + 9))));
-      s.setCamera({ center: [(b.minX + b.maxX) / 2, (b.minY + b.maxY) / 2], zoom });
+      const zoom = Math.max(MIN_ZOOM, Math.min(120, Math.min((width - 40) / (diag + 4), (height - 40) / (diag * Math.sin(ISO_ELEVATION) + 9))));
+      // Shift so the garden sits in the middle of the area the HUD leaves free.
+      const ox = (inset.left - inset.right) / 2, oy = (inset.top - inset.bottom) / 2;
+      const { right, fwd } = planVectors(isoAzimuth(s.camera.rotation));
+      const k = oy / (zoom * Math.sin(ISO_ELEVATION));
+      const cx = (b.minX + b.maxX) / 2, cy = (b.minY + b.maxY) / 2;
+      s.setCamera({ center: [cx - (right[0] * ox) / zoom + fwd[0] * k, cy - (right[1] * ox) / zoom + fwd[1] * k], zoom });
     };
     let lastFit = getEditor().fitTick;
     const unsubFit = useEditor.subscribe(

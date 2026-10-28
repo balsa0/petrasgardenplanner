@@ -3,10 +3,6 @@
 const messages = {
   // ── Library panel frame ─────────────────────────────────────────────────
   "panels.library.ariaLabel": "Library",
-  // Above the step title, e.g. "Step 2 of 6".
-  "panels.library.step": "Step {step} of {total}",
-  // Small badge next to "Step 2 of 6" for a step that can be skipped.
-  "panels.library.optional": "optional",
   // Accessible name of the back button; {stage} is the previous step's title.
   "panels.library.back": "Back to {stage}",
   // Button to the next step; {stage} is its short name, e.g. "Next: Terrain".
@@ -347,8 +343,6 @@ const messages = {
   "panels.inspector.summary.beds": "Beds",
   "panels.inspector.summary.trees": "Trees & shrubs",
   "panels.inspector.summary.bedPlants": "Bed plants",
-  "panels.inspector.guide.title": "How this step works",
-  "panels.inspector.guide.selectHint": "Select something in the garden to edit its details here.",
 };
 
 export default messages;
