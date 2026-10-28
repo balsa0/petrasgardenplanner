@@ -11,6 +11,7 @@ import { pickedIds, setPicked, type PickKind } from "@/editor/model/picks";
 import { SPECIES_BY_ID, formatBloom, sortSpecies, speciesForLayer, type Species } from "@/editor/model/species";
 import type { SurfaceMaterialId } from "@/editor/model/types";
 import { getEditor, useEditor } from "@/editor/store/store";
+import { KIND_STEP, stepStyle } from "../meta";
 import { Section } from "../ui";
 import { SunGlyph, WaterGlyph, surfaceSwatch } from "./Catalogue";
 
@@ -20,20 +21,21 @@ const TOTALS: Record<PickKind, () => number> = {
   surfaces: () => SURFACE_MATERIALS.length,
 };
 
-/** Looks like the book it opens: a green cover with the catalogue's name. */
+/** Looks like the book it opens: a cover in its step's colour with the catalogue's name. */
 export function CatalogueButton({ kind }: { kind: PickKind }) {
   return (
     <button
       type="button"
       onClick={() => getEditor().openCatalogue({ kind })}
-      className="group flex w-full items-center gap-3 rounded-md border-[length:var(--line)] border-[var(--ink)] bg-primary py-2.5 pr-3 pl-2.5 text-left text-primary-foreground transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring/60 active:translate-x-px active:translate-y-px"
+      style={stepStyle(KIND_STEP[kind])}
+      className="group flex w-full items-center gap-3 rounded-md border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)] py-2.5 pr-3 pl-2.5 text-left text-foreground transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring/60 active:translate-x-px active:translate-y-px"
     >
       <span className="flex size-9 shrink-0 items-center justify-center rounded-sm border-[length:var(--line)] border-[var(--ink)] bg-card text-foreground">
         <BookOpen className="size-5" />
       </span>
       <span className="min-w-0">
         <span className="font-display block truncate text-[14px] leading-tight font-semibold">{t(`catalogue.title.${kind}`)}</span>
-        <span className="block text-[11.5px] text-primary-foreground/75">{t(`catalogue.count.${kind}`, { count: TOTALS[kind]() })}</span>
+        <span className="block text-[11.5px] text-foreground/75">{t(`catalogue.count.${kind}`, { count: TOTALS[kind]() })}</span>
       </span>
     </button>
   );

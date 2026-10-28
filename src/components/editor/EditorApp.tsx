@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { t } from "@/i18n";
-import { cn } from "@/lib/utils";
 import { initPersistence } from "@/editor/store/persistence";
 import { useEditor } from "@/editor/store/store";
 import { wireTools } from "@/editor/tools/registry";
@@ -22,11 +21,16 @@ import { CatalogueDialog } from "./catalogue/Catalogue";
 
 wireTools();
 
-/** HUD geometry: panels float 12px from the edges, below the 56px top bar. */
-const GAP = 12;
-const TOP = 64;
+/**
+ * HUD geometry: everything is docked to the screen edges to leave the garden as much room as
+ * possible. Side panels hang below the 44px top bar (sharing its outline); the free HUD keeps 8px
+ * from them.
+ */
+const BAR = 44;
+const GAP = 8;
 const LEFT_W = { wide: 304, narrow: 272 };
 const RIGHT_W = 316;
+const DOCK_TOP = `calc(${BAR}px - var(--line))`;
 
 /** Below 1280px the library and the selection share the left card, so the garden stays visible. */
 function NarrowSidePanel() {
@@ -78,9 +82,9 @@ function EditorShell() {
   const right = !walking && wide && inspectorOpen && hasSelection;
   const leftW = wide ? LEFT_W.wide : LEFT_W.narrow;
   const hudVars = {
-    "--hud-l": `${left ? leftW + GAP * 2 : GAP}px`,
-    "--hud-r": `${right ? RIGHT_W + GAP * 2 : GAP}px`,
-    "--hud-top": `${TOP}px`,
+    "--hud-l": `${left ? leftW + GAP : 0}px`,
+    "--hud-r": `${right ? RIGHT_W + GAP : 0}px`,
+    "--hud-top": `${BAR + GAP}px`,
   } as React.CSSProperties;
 
   return (
@@ -93,16 +97,16 @@ function EditorShell() {
       <TopBar />
       {left && (
         <div
-          className="hud-panel animate-hud-slide-left absolute bottom-3 left-3 z-20 flex flex-col overflow-hidden rounded-2xl"
-          style={{ top: TOP, width: leftW }}
+          className="hud-panel animate-hud-slide-left absolute bottom-0 left-0 z-20 flex flex-col overflow-hidden rounded-none border-b-0 border-l-0"
+          style={{ top: DOCK_TOP, width: leftW }}
         >
           {wide ? <LibraryPanel /> : <NarrowSidePanel />}
         </div>
       )}
       {right && (
         <div
-          className={cn("hud-panel animate-hud-slide-right absolute right-3 z-20 flex flex-col overflow-hidden rounded-2xl")}
-          style={{ top: TOP, width: RIGHT_W, maxHeight: `calc(100% - ${TOP + GAP}px)` }}
+          className="hud-panel animate-hud-slide-right absolute right-0 z-20 flex flex-col overflow-hidden rounded-none border-r-0"
+          style={{ top: DOCK_TOP, width: RIGHT_W, maxHeight: `calc(100% - ${BAR}px)` }}
         >
           <Inspector />
         </div>

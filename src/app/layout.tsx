@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, IBM_Plex_Mono, Space_Mono } from "next/font/google";
+import Script from "next/script";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import { SCHEME_BOOT } from "@/lib/scheme";
 import "./globals.css";
 
 // Monospace throughout, like a field notebook: Plex for text, Space Mono for titles and numbers.
@@ -33,10 +35,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${plex.variable} ${space.variable} ${geistMono.variable} h-full antialiased`}>
+    // The colour scheme is set on <html> before hydration, hence the suppressed warning.
+    <html lang="en" className={`${plex.variable} ${space.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="h-full overflow-hidden">
+        <Script id="scheme" strategy="beforeInteractive">
+          {SCHEME_BOOT}
+        </Script>
         <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
-        <Toaster position="top-center" offset={116} theme="light" richColors={false} closeButton />
+        <Toaster position="top-center" offset={104} theme="light" richColors={false} closeButton />
       </body>
     </html>
   );

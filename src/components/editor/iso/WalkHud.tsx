@@ -154,10 +154,10 @@ export function WalkHud() {
           />
         </div>
       </div>
-      <div className="absolute right-3 bottom-3 z-10 hidden hud-panel rounded-xl p-1 @2xl:block">
+      <div className="hud-panel absolute right-0 bottom-0 z-10 hidden rounded-none border-r-0 border-b-0 p-1 @2xl:block">
         <Minimap />
       </div>
-      <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex max-w-[calc(100%-1.5rem)] flex-wrap items-center gap-x-3 gap-y-1 rounded-xl bg-foreground px-3 py-1.5 text-xs text-background @2xl:max-w-[calc(100%-15rem)]">
+      <div className="pointer-events-none absolute bottom-0 left-0 z-10 flex max-w-full flex-wrap items-center gap-x-3 gap-y-1 bg-foreground px-3 py-1.5 text-xs text-background @2xl:max-w-[calc(100%-14rem)]">
         {rows.map(([k, v]) => (
           <span key={v} className="flex items-center gap-1.5 whitespace-nowrap">
             <Kbd className="bg-background/15 text-background">{k}</Kbd> {v}

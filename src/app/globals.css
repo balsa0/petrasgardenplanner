@@ -110,8 +110,65 @@
   --cover-foreground: #fcefda;
   --paper: #fcefda;
   --art: #f9e2bd;
+  /* The plan's paper and the backdrop behind the 2.5D and 3D views. */
+  --canvas: #f7e8cf;
+  /* Each step has its own colour: the step track, the panel band, the next-step button. */
+  --step-plot: #ff7a2e;
+  --step-terrain: #d8ab72;
+  --step-surfaces: #e25b45;
+  --step-trees: #a7b84a;
+  --step-beds: #f4a3b5;
+  --step-planting: #c792df;
   /* Outline weight used everywhere. */
   --line: 1.5px;
+}
+
+/* Other colour schemes re-tint the paper, the "go" colour and the step colours; ink and
+   sun-yellow (selected / done) stay the same everywhere. Set on <html data-scheme>. */
+[data-scheme="meadow"] {
+  --background: #eef0dc;
+  --card: #f8f9ee;
+  --popover: #f8f9ee;
+  --secondary: #e3e8cc;
+  --muted: #e2e7cb;
+  --muted-foreground: #5a6150;
+  --primary: #5cae6b;
+  --primary-ink: #2f6e3c;
+  --sidebar: #eef0dc;
+  --sidebar-primary: #5cae6b;
+  --chart-1: #5cae6b;
+  --paper: #eef0dc;
+  --art: #dfe8c6;
+  --canvas: #e9edd6;
+  --step-plot: #8fcf8a;
+  --step-terrain: #cdb87a;
+  --step-surfaces: #a9cbb7;
+  --step-trees: #5cae6b;
+  --step-beds: #c9a0dc;
+  --step-planting: #eaa3bd;
+}
+
+[data-scheme="coast"] {
+  --background: #e8eff0;
+  --card: #f5f9f9;
+  --popover: #f5f9f9;
+  --secondary: #dbe6e8;
+  --muted: #d9e4e6;
+  --muted-foreground: #55646b;
+  --primary: #4fa8d1;
+  --primary-ink: #1f6385;
+  --sidebar: #e8eff0;
+  --sidebar-primary: #4fa8d1;
+  --chart-1: #4fa8d1;
+  --paper: #e8eff0;
+  --art: #d3e3e6;
+  --canvas: #e3ecee;
+  --step-plot: #6cbad9;
+  --step-terrain: #d2c2a0;
+  --step-surfaces: #a7b9cc;
+  --step-trees: #72b89d;
+  --step-beds: #f2a48e;
+  --step-planting: #b9a6e3;
 }
 
 .dark {

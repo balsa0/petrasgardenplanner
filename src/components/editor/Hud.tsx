@@ -18,7 +18,7 @@ import { pulseAt } from "@/editor/paint/fx";
 import { getEditor, useEditor } from "@/editor/store/store";
 import { saveCheckpoint } from "@/editor/store/versions";
 import { GardenSummary } from "./Inspector";
-import { TOOL_META } from "./meta";
+import { TOOL_META, stepStyle } from "./meta";
 
 // ── Hotbar ───────────────────────────────────────────────────────────────
 
@@ -57,7 +57,7 @@ export function Hotbar({ hint }: { hint?: React.ReactNode }) {
   const setPanels = useEditor((s) => s.setPanels);
   const libraryLabel = t(libraryOpen ? "shell.toolRail.hideLibrary" : "shell.toolRail.showLibrary");
   return (
-    <div className="hud-panel pointer-events-auto flex max-w-full flex-col items-center gap-1.5 rounded-2xl px-2 pt-1.5 pb-2">
+    <div className="hud-panel pointer-events-auto flex max-w-full flex-col items-center gap-1.5 rounded-none border-b-0 px-2 pt-1.5 pb-2">
       {hint && <div className="flex max-w-full items-center gap-2.5 px-1 text-[12px] text-foreground/75">{hint}</div>}
       <nav aria-label={t("shell.toolRail.label")} className="flex items-center gap-1.5">
         <Tooltip>
@@ -103,10 +103,10 @@ export function ResourceStrip() {
   const st = gardenStats(doc);
   const woody = st.trees + st.shrubs;
   const items = [
-    { icon: LandPlot, value: fmtArea(st.plotArea), label: t("shell.hud.plot"), show: st.plotArea > 0 },
-    { icon: TreeDeciduous, value: fmtNumber(woody), label: t("shell.hud.trees", { count: woody }), show: true },
-    { icon: Flower2, value: fmtNumber(st.plants), label: t("shell.hud.plants", { count: st.plants }), show: true },
-    { icon: Leaf, value: fmtNumber(st.species), label: t("shell.hud.species", { count: st.species }), show: true },
+    { icon: LandPlot, step: "plot" as const, value: fmtArea(st.plotArea), label: t("shell.hud.plot"), show: st.plotArea > 0 },
+    { icon: TreeDeciduous, step: "trees" as const, value: fmtNumber(woody), label: t("shell.hud.trees", { count: woody }), show: true },
+    { icon: Flower2, step: "planting" as const, value: fmtNumber(st.plants), label: t("shell.hud.plants", { count: st.plants }), show: true },
+    { icon: Leaf, step: "beds" as const, value: fmtNumber(st.species), label: t("shell.hud.species", { count: st.species }), show: true },
   ].filter((i) => i.show);
   if (!doc.order.length) return null;
   return (
@@ -115,11 +115,13 @@ export function ResourceStrip() {
         <button
           type="button"
           aria-label={t("shell.hud.label")}
-          className="hud-panel pointer-events-auto flex h-10 items-center gap-3.5 rounded-xl px-3.5 text-left transition-transform outline-none hover:-translate-y-px focus-visible:ring-2 focus-visible:ring-ring/60"
+          className="hud-panel pointer-events-auto flex h-10 items-center gap-3 rounded-xl pr-3.5 pl-1.5 text-left transition-transform outline-none hover:-translate-y-px focus-visible:ring-2 focus-visible:ring-ring/60"
         >
           {items.map((it, i) => (
-            <span key={i} className={cn("flex items-baseline gap-1.5", i > 1 && "hidden @3xl:flex")}>
-              <it.icon className="size-4 shrink-0 self-center text-primary-ink" />
+            <span key={i} className={cn("flex items-center gap-1.5", i > 1 && "hidden @3xl:flex")} style={stepStyle(it.step)}>
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-md border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)]">
+                <it.icon className="size-4" />
+              </span>
               <Counter value={it.value} />
               <span className="hidden text-[11.5px] whitespace-nowrap text-muted-foreground @5xl:inline">{it.label}</span>
             </span>
@@ -139,8 +141,8 @@ function Tick({ done, animate }: { done: boolean; animate?: boolean }) {
   return (
     <span
       className={cn(
-        "flex size-[18px] shrink-0 items-center justify-center rounded-full",
-        done ? "bg-honey text-honey-foreground" : "bg-background ring-[1.5px] ring-border ring-inset",
+        "flex size-[18px] shrink-0 items-center justify-center rounded-full ring-[length:var(--line)] ring-[var(--ink)] ring-inset",
+        done ? "bg-honey text-honey-foreground" : "bg-card",
         done && animate && "animate-hud-check",
       )}
     >
@@ -149,7 +151,7 @@ function Tick({ done, animate }: { done: boolean; animate?: boolean }) {
   );
 }
 
-/** The step's goals, ticked off from the plan, with tips folded away. */
+/** The step's goals on a band in the step's colour, ticked off from the plan, with tips folded away. */
 export function QuestHeader() {
   const stage = useEditor((s) => s.stage);
   const doc = useEditor((s) => s.doc);
@@ -158,19 +160,19 @@ export function QuestHeader() {
   const goals = stageObjectives(doc, stage);
   const complete = stageComplete(doc, stage);
   return (
-    <div className="space-y-2.5 px-4 pt-3.5 pb-3">
+    <div className="space-y-2.5 bg-[var(--step)] px-4 pt-3.5 pb-3" style={stepStyle(stage)}>
       <div className="flex items-center gap-2.5">
         <span
           className={cn(
-            "font-display flex size-8 shrink-0 items-center justify-center rounded-full text-[15px] font-bold",
-            complete ? "bg-honey text-honey-foreground" : "bg-primary text-primary-foreground",
+            "font-display flex size-8 shrink-0 items-center justify-center rounded-full text-[15px] font-bold ring-[length:var(--line)] ring-[var(--ink)] ring-inset",
+            complete ? "bg-honey text-honey-foreground" : "bg-[var(--ink)] text-[var(--paper)]",
           )}
         >
           {complete ? <Check className="size-4" strokeWidth={3} /> : info.index}
         </span>
         <div className="min-w-0">
           <h2 className="font-display truncate text-[17px] leading-tight font-semibold">{info.title}</h2>
-          <p className="text-[11.5px] leading-snug text-muted-foreground">{info.summary}</p>
+          <p className="text-[11.5px] leading-snug text-foreground/75">{info.summary}</p>
         </div>
       </div>
       <ul aria-label={t("shell.quest.title")} className="space-y-1.5">
@@ -178,9 +180,9 @@ export function QuestHeader() {
           <li key={g.id} className={cn("flex items-center gap-2 text-[12.5px]", g.done ? "text-foreground/60" : "text-foreground")}>
             <Tick done={g.done} animate />
             <span className={cn("min-w-0 flex-1", g.done && "line-through decoration-foreground/30")}>{g.label}</span>
-            {g.optional && !g.done && <span className="text-[10.5px] text-muted-foreground">{t("shell.quest.optional")}</span>}
+            {g.optional && !g.done && <span className="text-[10.5px] text-foreground/65">{t("shell.quest.optional")}</span>}
             {g.need && g.need > 1 && !g.done && (
-              <span className="font-display text-[11.5px] font-semibold tabular text-muted-foreground">
+              <span className="font-display text-[11.5px] font-semibold tabular text-foreground/70">
                 {fmtNumber(Math.min(g.have ?? 0, g.need))}/{fmtNumber(g.need)}
               </span>
             )}
@@ -191,13 +193,13 @@ export function QuestHeader() {
         type="button"
         onClick={() => setTipsOpen((o) => !o)}
         aria-expanded={tipsOpen}
-        className="flex items-center gap-1 text-[11.5px] font-medium text-muted-foreground hover:text-foreground"
+        className="flex items-center gap-1 text-[11.5px] font-medium text-foreground/70 hover:text-foreground"
       >
         <ChevronDown className={cn("size-3.5 transition-transform", !tipsOpen && "-rotate-90")} />
         {t("shell.quest.tips")}
       </button>
       {tipsOpen && (
-        <ul className="space-y-1.5 border-l-2 border-primary/20 pl-3">
+        <ul className="space-y-1.5 border-l-[length:var(--line)] border-[var(--ink)]/40 pl-3">
           {info.tips.map((tip, i) => (
             <li key={i} className="text-[12px] leading-snug text-foreground/80">
               {tip}
@@ -246,8 +248,11 @@ function stepToast(st: StageInfo) {
   toast.custom(
     (id) => (
       <div className="hud-panel animate-hud-pop flex items-center gap-3 rounded-2xl py-2.5 pr-2.5 pl-2.5">
-        <span className="font-display animate-hud-check flex size-10 items-center justify-center rounded-full bg-honey text-[17px] font-bold text-honey-foreground">
-          {st.index}
+        <span
+          className="font-display animate-hud-check flex size-10 items-center justify-center rounded-full bg-[var(--step)] text-[17px] font-bold ring-[length:var(--line)] ring-[var(--ink)] ring-inset"
+          style={stepStyle(st.id)}
+        >
+          <Check className="size-5" strokeWidth={3} />
         </span>
         <span className="min-w-0">
           <span className="font-display block text-[15px] leading-tight font-semibold">{t("shell.quest.stepDone", { step: st.title })}</span>
@@ -256,8 +261,9 @@ function stepToast(st: StageInfo) {
         {next && (
           <button
             type="button"
-            className="keycap ml-1 h-8 rounded-lg px-3 text-[12.5px] font-semibold whitespace-nowrap"
+            className="keycap ml-1 h-8 rounded-lg px-3 text-[12.5px] font-semibold whitespace-nowrap data-[active=true]:bg-[var(--step)]"
             data-active="true"
+            style={stepStyle(next.id)}
             onClick={() => {
               getEditor().setStage(next.id);
               toast.dismiss(id);

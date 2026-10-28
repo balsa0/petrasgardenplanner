@@ -135,6 +135,11 @@ const messages = {
   "shell.topbar.menu.metric": "Metric (m, cm)",
   "shell.topbar.menu.imperial": "Imperial (ft, in)",
   "shell.topbar.menu.shortcuts": "Keyboard shortcuts",
+  // Colour scheme picker; the names describe the palette (warm = cream and orange, meadow = greens, coast = blues).
+  "shell.topbar.menu.scheme": "Colour scheme",
+  "shell.topbar.menu.scheme.warm": "Warm",
+  "shell.topbar.menu.scheme.meadow": "Meadow",
+  "shell.topbar.menu.scheme.coast": "Coast",
   // Toasts after choosing "Open file…". {name} is the garden's name.
   "shell.topbar.fileOpened": "Opened “{name}”",
   "shell.topbar.fileInvalid": "That file doesn't look like a garden plan.",

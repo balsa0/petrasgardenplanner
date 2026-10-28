@@ -24,8 +24,8 @@ export function getViewport() {
 export function hudInsets(el: Element): { left: number; right: number; top: number; bottom: number } {
   const cs = getComputedStyle(el);
   const px = (name: string, fallback: number) => parseFloat(cs.getPropertyValue(name)) || fallback;
-  // Below the top bar sits the counters row; above the bottom edge the hotbar and its hint.
-  return { left: px("--hud-l", 12), right: px("--hud-r", 12), top: px("--hud-top", 64) + 48, bottom: 128 };
+  // Below the top bar sits the counters row; along the bottom edge the hotbar and its hint.
+  return { left: px("--hud-l", 0), right: px("--hud-r", 0), top: px("--hud-top", 52) + 44, bottom: 112 };
 }
 
 /** Keyboard state shared by views (space-to-pan). */

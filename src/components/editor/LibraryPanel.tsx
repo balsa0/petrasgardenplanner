@@ -18,7 +18,7 @@ import { STAGES, STAGE_BY_ID } from "@/editor/model/stages";
 import type { BedEdge } from "@/editor/model/types";
 import { getEditor, useEditor } from "@/editor/store/store";
 import type { TerrainBrushMode } from "@/editor/terrain/terrain";
-import { STRUCTURE_ICONS } from "./meta";
+import { STRUCTURE_ICONS, stepStyle } from "./meta";
 import { FenceTypeGrid, PerimeterFenceSection } from "./FencePicker";
 import { QuestHeader } from "./Hud";
 import { PickedSpecies, PickedSurfaces } from "./catalogue/Mine";
@@ -462,7 +462,7 @@ export function LibraryPanel() {
   const next = STAGES[info.index];
   return (
     <aside aria-label={t("panels.library.ariaLabel")} className="flex min-h-0 flex-1 flex-col">
-      <div className="border-b">
+      <div className="border-b-[length:var(--line)] border-[var(--ink)]">
         <QuestHeader />
       </div>
       <ScrollArea className="min-h-0 flex-1">
@@ -491,7 +491,8 @@ export function LibraryPanel() {
             type="button"
             data-active={complete}
             onClick={() => setStage(next.id)}
-            className={cn("keycap flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-[12.5px] font-semibold whitespace-nowrap", complete && "animate-hud-pop")}
+            style={stepStyle(next.id)}
+            className={cn("keycap flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-[12.5px] font-semibold whitespace-nowrap data-[active=true]:bg-[var(--step)]", complete && "animate-hud-pop")}
           >
             {t("panels.library.next", { stage: next.short })} <ArrowRight className="size-4" />
           </button>

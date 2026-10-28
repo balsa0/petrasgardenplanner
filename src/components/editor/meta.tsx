@@ -24,10 +24,12 @@ import {
   Container,
   type LucideIcon,
 } from "lucide-react";
+import type { CSSProperties } from "react";
 import { t, type MessageKey } from "@/i18n";
 import type { ToolId } from "@/editor/model/stages";
 import type { Stage } from "@/editor/model/types";
 import type { StructurePreset } from "@/editor/model/ops";
+import type { PickKind } from "@/editor/model/picks";
 
 export interface ToolMeta {
   label: string;
@@ -77,6 +79,14 @@ export const STAGE_ICONS: Record<Stage, LucideIcon> = {
   beds: Fence,
   planting: Sprout,
 };
+
+/** Sets --step to a step's colour (from the scheme), for `bg-[var(--step)]` and the like. */
+export function stepStyle(s: Stage): CSSProperties {
+  return { "--step": `var(--step-${s})` } as CSSProperties;
+}
+
+/** The step each catalogue belongs to, for its colour. */
+export const KIND_STEP: Record<PickKind, Stage> = { plants: "planting", trees: "trees", surfaces: "surfaces" };
 
 export const STRUCTURE_ICONS: Record<StructurePreset, LucideIcon> = {
   plot: LandPlot,

@@ -194,7 +194,7 @@ function StatusBar() {
   ] as const;
   return (
     <div className="pointer-events-none flex">
-      <Pill className="h-10 gap-2 pr-3 text-xs tabular text-muted-foreground">
+      <Pill className="h-10 gap-2 rounded-none border-b-0 pr-3 text-xs tabular text-muted-foreground">
         {view !== "3d" && (
           <Popover>
             <PopoverTrigger asChild>
@@ -243,7 +243,7 @@ function Compass() {
   const deg = view === "iso" ? (isoAzimuth(rotation) * 180) / Math.PI : 0;
   if (view === "3d") return null;
   return (
-    <div className="hud-panel pointer-events-auto flex size-10 items-center justify-center rounded-full" title={t("shell.canvas.compass.north")}>
+    <div className="hud-panel pointer-events-auto mr-2 mb-2 flex size-10 items-center justify-center rounded-full" title={t("shell.canvas.compass.north")}>
       <svg viewBox="-20 -20 40 40" className="size-8 transition-transform duration-300" style={{ transform: `rotate(${deg}deg)` }} aria-label={t("shell.canvas.compass.arrow")}>
         <path d="M0 -14 L5 2 L0 -1 L-5 2 Z" fill="#b91c1c" />
         <path d="M0 14 L5 2 L0 -1 L-5 2 Z" fill="#a8a29e" opacity="0.6" />
@@ -265,7 +265,7 @@ function ViewControls() {
   return (
     <div className="pointer-events-none flex items-end gap-2">
       {view === "iso" && (
-        <Pill>
+        <Pill className="rounded-none border-b-0">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ghost" size="icon-sm" aria-label={t("shell.canvas.rotateLeft")} onClick={() => getEditor().setCamera({ rotation: getEditor().camera.rotation - 1 })}><RotateCcw /></Button>
@@ -285,7 +285,7 @@ function ViewControls() {
         </Pill>
       )}
       {view !== "3d" && (
-        <Pill>
+        <Pill className="rounded-none border-b-0">
           <Button variant="ghost" size="icon-sm" aria-label={t("shell.canvas.zoomOut")} onClick={() => zoomBy(1 / 1.25)}><Minus /></Button>
           <span className="w-12 text-center text-xs tabular text-muted-foreground">{fmtNumber(Math.round((zoom / 24) * 100) / 100, { style: "percent" })}</span>
           <Button variant="ghost" size="icon-sm" aria-label={t("shell.canvas.zoomIn")} onClick={() => zoomBy(1.25)}><Plus /></Button>
@@ -430,8 +430,9 @@ function TimeControl() {
 }
 
 /**
- * Game-style HUD over the garden, laid out inside the space the floating panels leave free
- * (--hud-l / --hud-r): counters and time along the top, status, the hotbar and the camera along the bottom.
+ * Game-style HUD over the garden, laid out inside the space the side panels leave free
+ * (--hud-l / --hud-r): counters and time along the top, then status, the hotbar and the camera
+ * docked to the bottom edge.
  */
 export function CanvasChrome() {
   const walking = useEditor((s) => s.view === "walk");
@@ -439,7 +440,7 @@ export function CanvasChrome() {
   const free = { left: "var(--hud-l)", right: "var(--hud-r)" };
   return (
     <>
-      <div className="pointer-events-none absolute z-10 flex items-start justify-between gap-3" style={{ ...free, top: "var(--hud-top)" }}>
+      <div className="pointer-events-none absolute z-10 flex items-start justify-between gap-3 px-2" style={{ ...free, top: "var(--hud-top)" }}>
         {walking ? <span /> : <ResourceStrip />}
         <Pill>
           <PlayYear />
@@ -451,7 +452,7 @@ export function CanvasChrome() {
       {walking ? (
         <WalkHud />
       ) : (
-        <div className="pointer-events-none absolute bottom-3 z-10 grid grid-cols-[1fr_auto_1fr] items-end gap-3" style={free}>
+        <div className="pointer-events-none absolute bottom-0 z-10 grid grid-cols-[1fr_auto_1fr] items-end gap-2" style={free}>
           <div className="@container/status w-full min-w-0 justify-self-start">
             <StatusBar />
           </div>

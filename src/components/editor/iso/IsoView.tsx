@@ -508,7 +508,7 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
       tabIndex={-1}
       className="absolute inset-0 touch-none select-none outline-none"
       data-view={mode}
-      style={{ background: "#f7e8cf" }}
+      style={{ background: "var(--canvas)" }}
     >
       <Canvas
         shadows

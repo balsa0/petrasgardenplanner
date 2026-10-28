@@ -8,6 +8,7 @@ import { drawAnnotations, drawOverlays, font, type AnnotationHit, type Overlay, 
 import { contourSegments, getHeightGrid, type HeightGrid } from "../terrain/terrain";
 import type { DisplayOptions } from "../store/store";
 import { mix, seasonLook, shade } from "./colors";
+import { canvasPaper } from "@/lib/scheme";
 
 export interface PlanCamera {
   center: Pt;
@@ -47,13 +48,11 @@ export interface PlanInput {
 
 type Ctx = CanvasRenderingContext2D;
 
-const PAPER = "#f7e8cf";
-
 export function drawPlan(ctx: Ctx, input: PlanInput): AnnotationHit[] {
   const { cam, doc } = input;
   const { dpr, zoom } = cam;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  ctx.fillStyle = PAPER;
+  ctx.fillStyle = canvasPaper();
   ctx.fillRect(0, 0, cam.width, cam.height);
 
   const toWorld = () =>

@@ -13,7 +13,7 @@ import { getEditor, useEditor } from "@/editor/store/store";
 import { openSample, startNewGarden } from "@/editor/store/persistence";
 import { t } from "@/i18n";
 import { tx } from "@/i18n/rich";
-import { STAGE_ICONS } from "./meta";
+import { STAGE_ICONS, stepStyle } from "./meta";
 import { LengthInput } from "./ui";
 
 export function WelcomeDialog() {
@@ -55,9 +55,9 @@ export function WelcomeDialog() {
             {STAGES.map((st) => {
               const Icon = STAGE_ICONS[st.id];
               return (
-                <li key={st.id} className="flex items-center gap-1.5 rounded-md border-[length:var(--line)] border-[var(--ink)] bg-card px-2.5 py-1 text-[11.5px] font-medium">
-                  <span className="text-muted-foreground tabular">{st.index}</span>
-                  <Icon className="size-3.5 text-primary-ink" />
+                <li key={st.id} className="flex items-center gap-1.5 rounded-md border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)] px-2.5 py-1 text-[11.5px] font-medium" style={stepStyle(st.id)}>
+                  <span className="tabular opacity-70">{st.index}</span>
+                  <Icon className="size-3.5" />
                   {st.short}
                 </li>
               );

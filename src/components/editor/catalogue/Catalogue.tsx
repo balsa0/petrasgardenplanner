@@ -39,6 +39,7 @@ import {
 import type { SurfaceMaterialId } from "@/editor/model/types";
 import { lookSwatchURL } from "@/editor/paint/patterns";
 import { getEditor, useEditor } from "@/editor/store/store";
+import { KIND_STEP, stepStyle } from "../meta";
 import { SpeciesArt } from "./SpeciesArt";
 
 const PAGE = 60;
@@ -146,12 +147,12 @@ const PAPER = "var(--paper)";
  * The catalogue as an open book: a cover board around two pages. `left` is the narrow page
  * (chapters, filters or the illustration), `right` the wide one (cards or facts).
  */
-function Book({ title, subtitle, left, right, onClose }: { title: string; subtitle: string; left: React.ReactNode; right: React.ReactNode; onClose: () => void }) {
+function Book({ kind, title, subtitle, left, right, onClose }: { kind: PickKind; title: string; subtitle: string; left: React.ReactNode; right: React.ReactNode; onClose: () => void }) {
   return (
-    <div className="flex size-full rounded-md bg-[var(--cover)] p-2">
+    <div className="flex size-full rounded-md border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)] p-2" style={stepStyle(KIND_STEP[kind])}>
       <DialogTitle className="sr-only">{title}</DialogTitle>
       <DialogDescription className="sr-only">{subtitle}</DialogDescription>
-      <div className="relative flex min-h-0 flex-1 overflow-hidden rounded-sm" style={{ background: PAPER }}>
+      <div className="relative flex min-h-0 flex-1 overflow-hidden rounded-sm border-[length:var(--line)] border-[var(--ink)]" style={{ background: PAPER }}>
         <aside className="relative flex w-64 shrink-0 flex-col overflow-y-auto border-r-[length:var(--line)] border-[var(--ink)] xl:w-72">
           {left}
         </aside>
@@ -533,7 +534,7 @@ function SpeciesCatalogue({ kind, forTree }: { kind: "plants" | "trees"; forTree
   if (open) {
     const sp = getSpecies(open);
     const page = speciesPage({ sp, kind, picked: picked.has(sp.id), forTree, onBack: () => setOpen(null) });
-    return <Book title={title} subtitle={subtitle} left={page.left} right={page.right} onClose={close} />;
+    return <Book kind={kind} title={title} subtitle={subtitle} left={page.left} right={page.right} onClose={close} />;
   }
 
   const left = (
@@ -670,7 +671,7 @@ function SpeciesCatalogue({ kind, forTree }: { kind: "plants" | "trees"; forTree
       </div>
     </>
   );
-  return <Book title={title} subtitle={subtitle} left={left} right={right} onClose={close} />;
+  return <Book kind={kind} title={title} subtitle={subtitle} left={left} right={right} onClose={close} />;
 }
 
 // ── Surfaces ─────────────────────────────────────────────────────────────
@@ -776,7 +777,7 @@ function SurfaceCatalogue() {
   if (open) {
     const m = MATERIAL_BY_ID[open];
     const page = surfacePage({ m, picked: picked.has(m.id), onBack: () => setOpen(null) });
-    return <Book title={title} subtitle={subtitle} left={page.left} right={page.right} onClose={close} />;
+    return <Book kind="surfaces" title={title} subtitle={subtitle} left={page.left} right={page.right} onClose={close} />;
   }
   const left = (
     <div className="space-y-4 pb-6">
@@ -816,7 +817,7 @@ function SurfaceCatalogue() {
       </div>
     </>
   );
-  return <Book title={title} subtitle={subtitle} left={left} right={right} onClose={close} />;
+  return <Book kind="surfaces" title={title} subtitle={subtitle} left={left} right={right} onClose={close} />;
 }
 
 // ── Mount point ──────────────────────────────────────────────────────────

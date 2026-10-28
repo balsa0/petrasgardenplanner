@@ -13,6 +13,7 @@ import type { TerrainBrushMode } from "../terrain/terrain";
 import type { GardenStyle } from "../model/species";
 import type { PickKind } from "../model/picks";
 import { getLocale, loadLocale, saveLocale, type Locale } from "@/i18n";
+import { applyScheme, SCHEME_KEY, type Scheme } from "@/lib/scheme";
 
 export interface ToolOptions {
   structure: StructurePreset;
@@ -95,6 +96,7 @@ interface EditorState {
   display: DisplayOptions;
   units: UnitSystem;
   locale: Locale;
+  scheme: Scheme;
   time: { years: number; month: number };
   camera: CameraState;
   /** Bumped when tool previews change, so views redraw overlays. */
@@ -135,6 +137,8 @@ interface EditorState {
   setUnits: (u: UnitSystem, persist?: boolean) => void;
   /** Loads the language, then switches the UI to it. `persist: false` for the auto-detected default. */
   setLocale: (l: Locale, persist?: boolean) => Promise<void>;
+  /** `persist: false` when restoring the saved choice at start-up. */
+  setScheme: (s: Scheme, persist?: boolean) => void;
   setTime: (o: Partial<{ years: number; month: number }>) => void;
   setCamera: (o: Partial<CameraState>) => void;
   requestFit: () => void;
@@ -194,6 +198,7 @@ export const useEditor = create<EditorState>()(
     display: { names: true, labels: true, notes: true, dimensions: true, grid: true },
     units: "metric",
     locale: getLocale(),
+    scheme: "warm",
     time: { years: 0, month: 6 },
     camera: { center: [0, 0], zoom: 24, rotation: 0 },
     overlayTick: 0,
@@ -330,6 +335,18 @@ export const useEditor = create<EditorState>()(
       await loadLocale(locale);
       if (persist) saveLocale(locale);
       set({ locale, overlayTick: get().overlayTick + 1 });
+    },
+    setScheme: (scheme, persist = true) => {
+      applyScheme(scheme);
+      if (persist) {
+        try {
+          localStorage.setItem(SCHEME_KEY, scheme);
+        } catch {
+          /* storage unavailable */
+        }
+      }
+      // The plan's paper follows the scheme.
+      set({ scheme, overlayTick: get().overlayTick + 1 });
     },
     setTime: (o) => set({ time: { ...get().time, ...o } }),
     setCamera: (o) => set({ camera: { ...get().camera, ...o } }),

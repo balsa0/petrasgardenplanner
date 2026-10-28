@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import { Box, Check, Download, FilePlus2, FolderOpen, Footprints, Keyboard, Languages, Map as MapIcon, Menu, Redo2, Rotate3d, Sparkles, Sprout, Undo2 } from "lucide-react";
+import { Box, Check, Download, FilePlus2, FolderOpen, Footprints, Keyboard, Languages, Map as MapIcon, Menu, Palette, Redo2, Rotate3d, Sparkles, Sprout, Undo2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,29 +26,27 @@ import type { ViewMode } from "@/editor/model/types";
 import { useEditor, getEditor } from "@/editor/store/store";
 import { exportDoc, importDocFile, openSample } from "@/editor/store/persistence";
 import { LOCALES, LOCALE_NAMES, isLocale, t } from "@/i18n";
-import { STAGE_ICONS } from "./meta";
+import { SCHEMES, SCHEME_SWATCHES, isScheme } from "@/lib/scheme";
+import { STAGE_ICONS, stepStyle } from "./meta";
 import { useCompletedSteps } from "./Hud";
 import { VersionsMenu } from "./VersionsMenu";
 import { ShortcutsDialog } from "./ShortcutsDialog";
 
-/** The six steps as a track: finished steps get a honey check, the line fills as you go. */
+/** The six steps as a track, each in its own colour: finished steps get a check, the line fills in as you go. */
 function StageStepper() {
   const stage = useEditor((s) => s.stage);
   const setStage = useEditor((s) => s.setStage);
   const done = useCompletedSteps();
   return (
-    <nav aria-label={t("shell.topbar.steps")} className="hud-panel pointer-events-auto flex h-11 items-center rounded-2xl px-2">
+    <nav aria-label={t("shell.topbar.steps")} className="hud-panel pointer-events-auto flex h-11 items-center rounded-none border-t-0 px-2">
       {STAGES.map((st, i) => {
         const Icon = STAGE_ICONS[st.id];
         const active = st.id === stage;
         const isDone = done.has(st.id);
         return (
-          <div key={st.id} className="flex items-center">
+          <div key={st.id} className="flex items-center" style={stepStyle(st.id)}>
             {i > 0 && (
-              <span
-                aria-hidden
-                className={cn("h-[3px] w-3 rounded-full xl:w-5", done.has(STAGES[i - 1].id) ? "bg-honey" : "bg-border")}
-              />
+              <span aria-hidden className={cn("h-[2px] w-3 xl:w-5", done.has(STAGES[i - 1].id) ? "bg-[var(--ink)]" : "bg-[var(--ink)]/20")} />
             )}
             <Tooltip>
               <TooltipTrigger asChild>
@@ -58,19 +56,13 @@ function StageStepper() {
                   aria-current={active ? "step" : undefined}
                   className={cn(
                     "group flex h-8 items-center gap-1.5 rounded-full p-1 text-[13px] font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
-                    active ? "border-[length:var(--line)] border-[var(--ink)] bg-primary pr-3 text-primary-foreground" : "text-muted-foreground hover:text-foreground",
+                    active ? "border-[length:var(--line)] border-[var(--ink)] bg-[var(--step)] pr-3 text-foreground" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   <span
                     className={cn(
-                      "font-display flex size-6 items-center justify-center rounded-full text-[12.5px] font-bold tabular transition-colors",
-                      active
-                        ? isDone
-                          ? "bg-honey text-honey-foreground"
-                          : "bg-primary-foreground/18"
-                        : isDone
-                          ? "bg-honey text-honey-foreground"
-                          : "bg-background ring-[1.5px] ring-border ring-inset group-hover:ring-foreground/30",
+                      "font-display flex size-6 items-center justify-center rounded-full text-[12.5px] font-bold text-foreground tabular ring-[length:var(--line)] ring-[var(--ink)] ring-inset transition-transform",
+                      active ? "bg-card" : "bg-[var(--step)] group-hover:scale-110",
                     )}
                   >
                     {isDone ? <Check className="size-3.5" strokeWidth={3.2} /> : st.index}
@@ -136,7 +128,7 @@ function ViewSwitch() {
   const view = useEditor((s) => s.view);
   const setView = useEditor((s) => s.setView);
   return (
-    <div role="radiogroup" aria-label={t("shell.topbar.view")} className="hud-panel pointer-events-auto flex h-11 items-center gap-1 rounded-2xl p-1.5">
+    <div role="radiogroup" aria-label={t("shell.topbar.view")} className="hud-panel pointer-events-auto flex h-11 items-center gap-1 rounded-none border-t-0 p-1.5">
       {VIEWS.map((v) => (
         <Tooltip key={v.id}>
           <TooltipTrigger asChild>
@@ -205,14 +197,15 @@ export function TopBar() {
   const canRedo = useEditor((s) => s.future.length > 0);
   const units = useEditor((s) => s.units);
   const locale = useEditor((s) => s.locale);
+  const scheme = useEditor((s) => s.scheme);
   const fileRef = useRef<HTMLInputElement>(null);
   const [shortcuts, setShortcuts] = useState(false);
 
   return (
-    // Floats over the garden: the bar itself lets clicks through, only its pills catch them.
-    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center gap-3 p-3">
+    // Docked to the top edge: the bar lets clicks through, only its pieces catch them.
+    <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-start gap-2">
       <div className="flex min-w-0 flex-1">
-        <div className="hud-panel pointer-events-auto flex h-11 min-w-0 items-center gap-2 rounded-2xl pr-2 pl-1.5">
+        <div className="hud-panel pointer-events-auto flex h-11 min-w-0 items-center gap-2 rounded-none border-t-0 border-l-0 pr-2 pl-1.5">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-md border-[length:var(--line)] border-[var(--ink)] bg-primary text-primary-foreground">
             <Sprout className="size-4.5" />
           </div>
@@ -226,8 +219,8 @@ export function TopBar() {
 
       <StageStepper />
 
-      <div className="flex flex-1 items-center justify-end gap-2">
-        <div className="hud-panel pointer-events-auto flex h-11 items-center rounded-2xl px-1">
+      <div className="flex flex-1 items-start justify-end gap-2">
+        <div className="hud-panel pointer-events-auto flex h-11 items-center rounded-none border-t-0 px-1">
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ghost" size="icon" aria-label={t("common.undo")} disabled={!canUndo} onClick={() => getEditor().undo()}>
@@ -252,7 +245,7 @@ export function TopBar() {
         <ViewSwitch />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button type="button" aria-label={t("shell.topbar.menu.label")} className="keycap pointer-events-auto flex size-11 items-center justify-center rounded-2xl">
+            <button type="button" aria-label={t("shell.topbar.menu.label")} className="keycap pointer-events-auto flex size-11 items-center justify-center rounded-none border-t-0 border-r-0">
               <Menu className="size-4.5" />
             </button>
           </DropdownMenuTrigger>
@@ -296,6 +289,27 @@ export function TopBar() {
                   {LOCALES.map((l) => (
                     <DropdownMenuRadioItem key={l} value={l} lang={l}>
                       {LOCALE_NAMES[l]}
+                    </DropdownMenuRadioItem>
+                  ))}
+                </DropdownMenuRadioGroup>
+              </DropdownMenuSubContent>
+            </DropdownMenuSub>
+            <DropdownMenuSub>
+              <DropdownMenuSubTrigger>
+                <Palette />
+                <span className="flex-1">{t("shell.topbar.menu.scheme")}</span>
+                <span className="text-xs text-muted-foreground">{t(`shell.topbar.menu.scheme.${scheme}`)}</span>
+              </DropdownMenuSubTrigger>
+              <DropdownMenuSubContent className="min-w-48">
+                <DropdownMenuRadioGroup value={scheme} onValueChange={(v) => isScheme(v) && getEditor().setScheme(v)}>
+                  {SCHEMES.map((s) => (
+                    <DropdownMenuRadioItem key={s} value={s} className="gap-2.5">
+                      <span aria-hidden className="flex">
+                        {SCHEME_SWATCHES[s].map((c) => (
+                          <span key={c} className="-ml-[1.5px] size-3.5 border-[length:var(--line)] border-[var(--ink)] first:ml-0" style={{ background: c }} />
+                        ))}
+                      </span>
+                      {t(`shell.topbar.menu.scheme.${s}`)}
                     </DropdownMenuRadioItem>
                   ))}
                 </DropdownMenuRadioGroup>

@@ -7,6 +7,7 @@ import { createEmptyDoc } from "../model/ops";
 import { createSampleDoc } from "../model/sample";
 import { emptyTerrain } from "../terrain/terrain";
 import { getLocale, t } from "@/i18n";
+import { storedScheme } from "@/lib/scheme";
 import { getEditor, useEditor, type DisplayOptions } from "./store";
 import { initVersions } from "./versions";
 
@@ -61,6 +62,8 @@ export function initPersistence() {
   })();
   if (storedUnits === "metric" || storedUnits === "imperial") ed.setUnits(storedUnits, false);
   else ed.setUnits(detectUnitSystem(), false);
+
+  ed.setScheme(storedScheme(), false);
 
   // The language was loaded before the editor mounted (see EditorLoader).
   useEditor.setState({ locale: getLocale() });
