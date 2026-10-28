@@ -11,15 +11,16 @@ import { getSpecies, treeSize } from "@/editor/model/species";
 import type { BedEntity, BuildingEntity, GardenDoc, ItemEntity, MultiPolygon, Pt, TreeEntity, WaterEntity } from "@/editor/model/types";
 import { paintGround } from "@/editor/paint/ground";
 import { PATTERN_PPM, getPatternTile } from "@/editor/paint/patterns";
-import { seasonLook, shade } from "@/editor/render/colors";
+import { shade } from "@/editor/render/colors";
 import { buildPlant } from "./treeGen";
 import { fenceRuns, type FenceRun } from "@/editor/model/fences";
 import { buildingLevels, raisedBedTop } from "@/editor/render/iso";
 import { useEditor } from "@/editor/store/store";
 import { getHeightGrid, sampleHeight, terrainExtent, type HeightGrid } from "@/editor/terrain/terrain";
 import { buildFence, fenceTexture } from "./fenceGeometry";
-import { flatMat, geo, toShapes } from "./geometries";
+import { flatMat, toShapes } from "./geometries";
 import { buildItem, type ItemSurface } from "./itemGeometry";
+import { bedPlantParts, shapeGeometry, type Shape } from "./bedPlant";
 import { IrrigationLayer } from "./IrrigationLayer";
 import { openingGeometries, planarWallUV, wallEdges, wallGeometry, wallMaterial } from "./buildingGeometry";
 import { doorColorOf, frameColorOf, wallMaterialOf } from "@/editor/model/openings";
@@ -645,79 +646,29 @@ function Instances({ set, castShadow = true }: { set: InstanceSet; castShadow?: 
 }
 
 const BedPlants = memo(function BedPlants({ beds, grid, years, month }: { beds: BedEntity[]; grid: HeightGrid; years: number; month: number }) {
+  // One instance set per shape across the bed (leaves, flowers, stems, stakes, fruit).
   const sets = useMemo(() => {
-    const mk = (geometry: THREE.BufferGeometry): InstanceSet => ({ geometry, matrices: [], colors: [] });
-    const blob = mk(geo.blobLow(0)), blob2 = mk(geo.blobLow(1)), tuft = mk(geo.tuft()), flowers = mk(geo.flower());
-    const spikes = mk(geo.spike()), rosettes = mk(geo.rosette());
-    const q = new THREE.Quaternion();
-    const up = new THREE.Vector3(0, 1, 0);
+    const byShape = new Map<Shape, InstanceSet>();
     for (const bed of beds) {
       const top = bed.bedType === "raised" ? raisedBedTop(grid, bed).top - 0.06 : null;
       for (const pl of bed.plants) {
         const sp = getSpecies(pl.species);
-        const size = treeSize(sp, 1 + years);
-        const look = seasonLook(sp, month);
         const base = top ?? sampleHeight(grid, pl.p[0], pl.p[1]);
-        const r = (size.spread / 2) * (0.88 + pl.v * 0.24);
-        let h = size.height * (0.9 + pl.v * 0.2);
-        q.setFromAxisAngle(up, pl.v * Math.PI * 2);
-        const color = new THREE.Color(look.canopy);
-        if (look.hidden) continue;
-        if (look.bare) {
-          blob.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base + 0.03, pl.p[1]), q, new THREE.Vector3(r * 0.3, 0.05, r * 0.3)));
-          blob.colors.push(new THREE.Color("#7a6650"));
-          continue;
-        }
-        if (sp.form === "grassy") {
-          tuft.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base, pl.p[1]), q, new THREE.Vector3(r * 1.1, h, r * 1.1)));
-          tuft.colors.push(color);
-        } else if (sp.form === "rosette") {
-          h = Math.max(0.08, h * 0.6);
-          rosettes.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base, pl.p[1]), q, new THREE.Vector3(r, h, r)));
-          rosettes.colors.push(color);
-        } else {
-          let sx = r, sy = h / 2;
-          if (sp.form === "upright" || sp.form === "climber") sx = r * 0.75;
-          if (sp.form === "carpet") sy = Math.max(0.05, h * 0.35);
-          h = sy * 2;
-          const target = pl.v > 0.5 ? blob : blob2;
-          target.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0], base + sy * 0.92, pl.p[1]), q, new THREE.Vector3(sx, sy, sx)));
-          target.colors.push(color);
-        }
-        if (look.flower && sp.form === "upright") {
-          // Upright plants flower in spikes above the leaves.
-          const n = Math.max(2, Math.min(7, Math.round(r * 12)));
-          const fc = new THREE.Color(look.flower);
-          const sl = Math.max(0.08, h * 0.45), sr = Math.max(0.015, Math.min(0.06, r * 0.12));
-          for (let i = 0; i < n; i++) {
-            const a = i * 2.39996 + pl.v * 6, d = Math.sqrt((i + 0.5) / n) * r * 0.5;
-            spikes.matrices.push(new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0] + Math.cos(a) * d, base + h * 0.75, pl.p[1] + Math.sin(a) * d), q, new THREE.Vector3(sr, sl, sr)));
-            spikes.colors.push(fc);
-          }
-        } else if (look.flower) {
-          const n = Math.max(3, Math.min(7, Math.round(r * 14)));
-          const fc = new THREE.Color(look.flower);
-          const fs = Math.max(0.025, Math.min(0.11, r * 0.2));
-          for (let i = 0; i < n; i++) {
-            const a = i * 2.39996 + pl.v * 6, d = Math.sqrt((i + 0.5) / n) * r * 0.65;
-            flowers.matrices.push(
-              new THREE.Matrix4().compose(new THREE.Vector3(pl.p[0] + Math.cos(a) * d, base + h * (0.82 + 0.18 * ((i * 7) % 3) / 2), pl.p[1] + Math.sin(a) * d), q, new THREE.Vector3(fs, fs, fs)),
-            );
-            flowers.colors.push(fc);
-          }
+        for (const part of bedPlantParts(sp, pl.p[0], base, pl.p[1], pl.v, years, month)) {
+          let set = byShape.get(part.shape);
+          if (!set) byShape.set(part.shape, (set = { geometry: shapeGeometry(part.shape), matrices: [], colors: [] }));
+          set.matrices.push(part.m);
+          set.colors.push(part.color);
         }
       }
     }
-    return { blob, blob2, tuft, flowers, spikes, rosettes };
+    return [...byShape.entries()];
   }, [beds, grid, years, month]);
   return (
     <group>
-      <Instances set={sets.blob} />
-      <Instances set={sets.blob2} />
-      <Instances set={sets.tuft} />
-      <Instances set={sets.flowers} castShadow={false} />
-      <Instances set={sets.spikes} castShadow={false} />
-      <Instances set={sets.rosettes} />
+      {sets.map(([shape, set]) => (
+        <Instances key={shape} set={set} castShadow={shape.startsWith("leaf.") || shape === "stake"} />
+      ))}
     </group>
   );
 });

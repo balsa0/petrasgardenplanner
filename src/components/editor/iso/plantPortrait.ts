@@ -6,9 +6,8 @@
 import * as THREE from "three";
 import { habitOf } from "@/editor/model/habit";
 import { treeSize, type Species } from "@/editor/model/species";
-import { seasonLook } from "@/editor/render/colors";
 import { ISO_ELEVATION, isoAzimuth, isoDirection } from "@/editor/render/iso";
-import { geo } from "./geometries";
+import { bedPlantParts, shapeGeometry } from "./bedPlant";
 import { buildPlant } from "./treeGen";
 
 const SUN_DIR = new THREE.Vector3(-0.45, 1, 0.65).normalize();
@@ -27,68 +26,31 @@ function portraitMonth(sp: Species): number {
 
 // ── Bed plants ───────────────────────────────────────────────────────────
 
-/** A small group of a bed plant, shaped as in the garden's beds (tuft, rosette, mound, spikes). */
+/** A small group of a bed plant, modelled as in the garden's beds. */
 function bedPlantGeometry(sp: Species, month: number): THREE.BufferGeometry {
   const pos: number[] = [];
   const col: number[] = [];
-  const bake = (proto: THREE.BufferGeometry, m: THREE.Matrix4, color: string) => {
-    const g = proto.index ? proto.toNonIndexed() : proto.clone();
-    g.applyMatrix4(m);
-    const p = g.attributes.position.array;
-    const c = new THREE.Color(color);
-    for (let i = 0; i < p.length; i += 3) {
-      pos.push(p[i], p[i + 1], p[i + 2]);
-      col.push(c.r, c.g, c.b);
-    }
-    g.dispose();
-  };
-  const look = seasonLook(sp, month);
-  const size = treeSize(sp, 1);
-  const q = new THREE.Quaternion();
-  const up = new THREE.Vector3(0, 1, 0);
-  const r0 = size.spread / 2;
+  const r0 = treeSize(sp, 1).spread / 2;
   // Three plants in a loose drift, the front one largest.
   const spots: [number, number, number][] = [
-    [0, 0, 1],
-    [-r0 * 1.15, -r0 * 0.9, 0.86],
-    [r0 * 1.05, -r0 * 1.1, 0.92],
+    [0, 0, 0.2],
+    [-r0 * 1.15, -r0 * 0.9, 0.5],
+    [r0 * 1.05, -r0 * 1.1, 0.8],
   ];
-  spots.forEach(([x, z, k], i) => {
-    const v = 0.2 + i * 0.3;
-    q.setFromAxisAngle(up, v * Math.PI * 2);
-    const r = r0 * k, h = size.height * k;
-    const at = (y: number, sx: number, sy: number, sz = sx) => new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), q, new THREE.Vector3(sx, sy, sz));
-    if (look.hidden || look.bare) {
-      bake(geo.blobLow(0), at(0.03, r * 0.3, 0.05), "#7a6650");
-      return;
-    }
-    let top = h;
-    if (sp.form === "grassy") bake(geo.tuft(), at(0, r * 1.1, h), look.canopy);
-    else if (sp.form === "rosette") {
-      top = Math.max(0.08, h * 0.6);
-      bake(geo.rosette(), at(0, r, top), look.canopy);
-    } else {
-      const sx = sp.form === "upright" || sp.form === "climber" ? r * 0.75 : r;
-      const sy = sp.form === "carpet" ? Math.max(0.05, h * 0.35) : h / 2;
-      top = sy * 2;
-      bake(geo.blobLow(i % 2), at(sy * 0.92, sx, sy), look.canopy);
-    }
-    if (look.flower && sp.form === "upright") {
-      const n = Math.max(2, Math.min(7, Math.round(r * 12)));
-      const sl = Math.max(0.08, top * 0.45), sr = Math.max(0.015, Math.min(0.06, r * 0.12));
-      for (let j = 0; j < n; j++) {
-        const a = j * 2.39996 + v * 6, d = Math.sqrt((j + 0.5) / n) * r * 0.5;
-        bake(geo.spike(), new THREE.Matrix4().compose(new THREE.Vector3(x + Math.cos(a) * d, top * 0.75, z + Math.sin(a) * d), q, new THREE.Vector3(sr, sl, sr)), look.flower);
+  for (const [x, z, v] of spots) {
+    for (const part of bedPlantParts(sp, x, 0, z, v, 2, month)) {
+      const g = shapeGeometry(part.shape).clone();
+      g.applyMatrix4(part.m);
+      const flat = g.index ? g.toNonIndexed() : g;
+      const p = flat.attributes.position.array;
+      for (let i = 0; i < p.length; i += 3) {
+        pos.push(p[i], p[i + 1], p[i + 2]);
+        col.push(part.color.r, part.color.g, part.color.b);
       }
-    } else if (look.flower) {
-      const n = Math.max(3, Math.min(7, Math.round(r * 14)));
-      const fs = Math.max(0.025, Math.min(0.11, r * 0.2));
-      for (let j = 0; j < n; j++) {
-        const a = j * 2.39996 + v * 6, d = Math.sqrt((j + 0.5) / n) * r * 0.65;
-        bake(geo.flower(), new THREE.Matrix4().compose(new THREE.Vector3(x + Math.cos(a) * d, top * (0.82 + (0.18 * ((j * 7) % 3)) / 2), z + Math.sin(a) * d), q, new THREE.Vector3(fs, fs, fs)), look.flower);
-      }
+      g.dispose();
+      if (flat !== g) flat.dispose();
     }
-  });
+  }
   const g = new THREE.BufferGeometry();
   g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
   g.setAttribute("color", new THREE.Float32BufferAttribute(col, 3));
