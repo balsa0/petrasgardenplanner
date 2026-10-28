@@ -68,6 +68,25 @@ export interface PlotEntity extends EntityBase {
 
 export type RoofType = "flat" | "gable";
 export type BuildingType = "house" | "garage" | "shed" | "other";
+/** Wall finish: painted render, brick, stone, timber boards or cladding panels. */
+export type WallMaterial = "render" | "brick" | "stone" | "wood" | "panel";
+export type OpeningType = "window" | "door" | "french" | "garage";
+
+/** A window or door in one wall of a building. */
+export interface Opening {
+  id: string;
+  type: OpeningType;
+  /** The wall: polygon, ring and edge (edge i runs from corner i to corner i + 1). */
+  poly: number;
+  ring: number;
+  edge: number;
+  /** Centre along the wall, 0 → 1. */
+  t: number;
+  width: number;
+  height: number;
+  /** Bottom above the floor (m); 0 for doors. */
+  sill: number;
+}
 
 export interface BuildingEntity extends EntityBase {
   kind: "building";
@@ -80,6 +99,12 @@ export interface BuildingEntity extends EntityBase {
   roofHeight: number;
   wallColor: string;
   roofColor: string;
+  /** Missing in older plans: render. */
+  wallMaterial?: WallMaterial;
+  openings?: Opening[];
+  /** Window frames; doors are painted separately. */
+  frameColor?: string;
+  doorColor?: string;
 }
 
 export type WaterType = "pond" | "pool";

@@ -32,6 +32,7 @@ import { MATERIAL_BY_ID, isMaterialName } from "./materials";
 import { FENCE_BY_ID } from "./fences";
 import { getSpecies } from "./species";
 import { emptyTerrain } from "../terrain/terrain";
+import { openingAnchors, reattachOpenings } from "./openings";
 import { speciesName, t } from "@/i18n";
 
 export const newId = () => nanoid(10);
@@ -141,7 +142,7 @@ export function makeAreaEntity(
       const presets: Record<"house" | "garage" | "shed", Omit<BuildingEntity, "id" | "kind" | "geometry">> = {
         house: { buildingType: "house", height: 5.5, roof: "gable", roofHeight: 2.6, wallColor: "#ece6da", roofColor: "#a1503e", name: t("panels.entity.house") },
         garage: { buildingType: "garage", height: 2.8, roof: "flat", roofHeight: 0, wallColor: "#d9d5cd", roofColor: "#77756f", name: t("panels.entity.garage") },
-        shed: { buildingType: "shed", height: 2.2, roof: "gable", roofHeight: 0.7, wallColor: "#8c6a48", roofColor: "#4f5452", name: t("panels.entity.shed") },
+        shed: { buildingType: "shed", height: 2.2, roof: "gable", roofHeight: 0.7, wallColor: "#8c6a48", wallMaterial: "wood", roofColor: "#4f5452", name: t("panels.entity.shed") },
       };
       const p = presets[target.preset];
       const b: BuildingEntity = { id, kind: "building", geometry, ...p, name: nextName(d, p.name!) };
@@ -239,6 +240,15 @@ export function eraseSurfaces(d: Draft<GardenDoc>, geom: MultiPolygon) {
   removeEntities(d, remove);
 }
 
+/** Windows and doors of buildings, by where they are, to put back after their outlines change. */
+function anchorsOf(es: Draft<AreaEntity>[]) {
+  return es.flatMap((e) => (e.kind === "building" && e.openings?.length ? openingAnchors(e as BuildingEntity) : []));
+}
+
+function reattach(e: Draft<AreaEntity>, anchors: ReturnType<typeof anchorsOf>) {
+  if (e.kind === "building" && (anchors.length || e.openings?.length)) e.openings = reattachOpenings(e.geometry as MultiPolygon, anchors);
+}
+
 /** Adds a drawn shape according to the boolean mode. Returns ids to select. */
 export function applyAreaShape(
   d: Draft<GardenDoc>,
@@ -283,7 +293,9 @@ export function applyAreaShape(
     }
     const first = d.entities[targets[0]] as Draft<AreaEntity>;
     const others = targets.slice(1).map((id) => d.entities[id] as Draft<AreaEntity>);
+    const anchors = anchorsOf([first, ...others]);
     first.geometry = union(first.geometry as MultiPolygon, ...others.map((o) => o.geometry as MultiPolygon), geom);
+    reattach(first, anchors);
     if (first.kind === "bed") {
       for (const o of others) if (o.kind === "bed") first.plants.push(...o.plants);
     }
@@ -298,7 +310,9 @@ export function applyAreaShape(
     const e = d.entities[id] as Draft<AreaEntity>;
     const rest = difference(e.geometry as MultiPolygon, geom);
     if (rest.length) {
+      const anchors = anchorsOf([e]);
       e.geometry = rest;
+      reattach(e, anchors);
       if (e.kind === "bed") clipBedPlants(e);
       kept.push(id);
     } else remove.push(id);
@@ -314,6 +328,7 @@ export function booleanSelection(d: Draft<GardenDoc>, ids: string[], op: BoolOp)
   const areas = ids.map((id) => d.entities[id]).filter(isArea) as Draft<AreaEntity>[];
   if (areas.length < 2) return ids;
   const [first, ...rest] = areas;
+  const anchors = anchorsOf(op === "union" ? areas : [first]);
   const g0 = first.geometry as MultiPolygon;
   const gs = rest.map((r) => r.geometry as MultiPolygon);
   let res: MultiPolygon;
@@ -326,6 +341,7 @@ export function booleanSelection(d: Draft<GardenDoc>, ids: string[], op: BoolOp)
     return [];
   }
   first.geometry = res;
+  reattach(first, anchors);
   if (first.kind === "bed") {
     if (op === "union") for (const r of rest) if (r.kind === "bed") first.plants.push(...r.plants);
     clipBedPlants(first);
@@ -391,16 +407,21 @@ export function moveVertex(d: Draft<GardenDoc>, id: string, v: VertexPath, p: Pt
 }
 
 export function insertVertex(d: Draft<GardenDoc>, id: string, v: VertexPath, p: Pt) {
-  const ring = ringOf(d.entities[id], v);
+  const e = d.entities[id];
+  const ring = ringOf(e, v);
   if (!ring) return;
+  const anchors = isArea(e as Entity) ? anchorsOf([e as Draft<AreaEntity>]) : [];
   ring.splice(v.idx + 1, 0, p);
+  if (anchors.length) reattach(e as Draft<AreaEntity>, anchors);
 }
 
 export function deleteVertex(d: Draft<GardenDoc>, id: string, v: VertexPath): boolean {
   const e = d.entities[id];
   const ring = ringOf(e, v);
   if (!e || !ring || ring.length <= minPoints(e)) return false;
+  const anchors = isArea(e as Entity) ? anchorsOf([e as Draft<AreaEntity>]) : [];
   ring.splice(v.idx, 1);
+  if (anchors.length) reattach(e as Draft<AreaEntity>, anchors);
   return true;
 }
 

@@ -16,6 +16,8 @@ export interface ToolEvent {
   mod: boolean;
   /** Entity under the cursor found by the view (3D raycast / annotation hit). */
   hitId?: string | null;
+  /** Where the ray met that entity in 3D views (x, elevation, plan y), e.g. a point on a wall. */
+  hitPoint?: [number, number, number] | null;
   view: ViewMode;
 }
 

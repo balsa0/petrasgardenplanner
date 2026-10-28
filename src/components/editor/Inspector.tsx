@@ -23,6 +23,7 @@ import { getEditor, useEditor } from "@/editor/store/store";
 import { heightAt } from "@/editor/terrain/terrain";
 import { ColorDot, Field, LengthInput, Section, Segmented, Stat } from "./ui";
 import { SpeciesDetails, SpeciesPicker } from "./SpeciesPicker";
+import { OpeningsSection, WallsSection } from "./BuildingWalls";
 import { FenceSettings, FenceTypeGrid, PerimeterFenceSection } from "./FencePicker";
 import { FENCE_BY_ID } from "@/editor/model/fences";
 import { Switch } from "@/components/ui/switch";
@@ -34,8 +35,6 @@ function patch<K extends Entity["kind"]>(id: string, kind: K, fn: (e: Draft<Extr
   });
 }
 
-const WALL_COLORS = ["#ece6da", "#d9d5cd", "#c9b79c", "#b3684b", "#8c6a48", "#6f7a80"];
-const ROOF_COLORS = ["#a1503e", "#7a3b2e", "#4f5452", "#77756f", "#3c4a5c", "#5a6b45"];
 const NOTE_COLORS: { id: NoteColor; color: string }[] = [
   { id: "yellow", color: "#f59e0b" },
   { id: "green", color: "#16a34a" },
@@ -147,16 +146,8 @@ function BuildingEditor({ e }: { e: Extract<Entity, { kind: "building" }> }) {
           </Field>
         )}
       </Section>
-      <Section title={t("panels.inspector.building.colours")}>
-        <div className="space-y-1.5">
-          <div className="text-xs text-muted-foreground">{t("panels.inspector.building.walls")}</div>
-          <Swatches colors={WALL_COLORS} value={e.wallColor} onChange={(c) => patch(e.id, "building", (b) => void (b.wallColor = c))} />
-        </div>
-        <div className="space-y-1.5">
-          <div className="text-xs text-muted-foreground">{t("panels.inspector.building.roof")}</div>
-          <Swatches colors={ROOF_COLORS} value={e.roofColor} onChange={(c) => patch(e.id, "building", (b) => void (b.roofColor = c))} />
-        </div>
-      </Section>
+      <WallsSection e={e} />
+      <OpeningsSection e={e} />
     </>
   );
 }

@@ -52,6 +52,10 @@ const messages = {
   "tools.gesture.dblClickArea": "Dbl-click an area",
   "tools.gesture.spaceDrag": "Space+drag",
   "tools.gesture.clickPoint": "Click a point",
+  "tools.gesture.drag": "Drag",
+  "tools.opening.hint.place": "Adding: {kind}. Click a wall of a building.",
+  "tools.opening.hint.moving": "Slide it along the wall, or onto another wall.",
+  "tools.opening.key.move": "move",
 
   // ── Measurements drawn next to the cursor ──
   // {len} is a formatted length, {angle} a direction in degrees (0 = east).

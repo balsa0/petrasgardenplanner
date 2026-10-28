@@ -10,6 +10,7 @@ import type { DisplayOptions } from "../store/store";
 import { mix, seasonLook, shade } from "./colors";
 import { fruiting } from "../model/habit";
 import { canvasPaper } from "@/lib/scheme";
+import { along, placedOpenings } from "../model/openings";
 
 export interface PlanCamera {
   center: Pt;
@@ -362,6 +363,87 @@ function drawBuildings(ctx: Ctx, doc: GardenDoc, zoom: number) {
       ctx.strokeStyle = shade(e.roofColor, -0.3);
       ctx.lineWidth = 1 / zoom;
       ctx.stroke();
+    }
+    drawOpenings(ctx, e, zoom);
+  }
+}
+
+/**
+ * Windows and doors on a building's outline, drawn as on an architect's plan: a window is a pale
+ * gap with a double line, a door a gap with its leaf and swing arc into the building.
+ */
+function drawOpenings(ctx: Ctx, e: BuildingEntity, zoom: number) {
+  const px = 1 / zoom;
+  const ink = shade(e.roofColor, -0.55);
+  const t = Math.max(0.2, 5 * px);
+  for (const po of placedOpenings(e)) {
+    const { wall } = po;
+    const a = along(wall, po.s0), b = along(wall, po.s1);
+    const w = po.s1 - po.s0;
+    const n = wall.n, inn: Pt = [-n[0], -n[1]];
+    const off = (p: Pt, d: number, dir: Pt = n): Pt => [p[0] + dir[0] * d, p[1] + dir[1] * d];
+    // The gap in the wall.
+    ctx.beginPath();
+    for (const p of [off(a, t / 2), off(b, t / 2), off(b, -t / 2), off(a, -t / 2)]) ctx.lineTo(p[0], p[1]);
+    ctx.closePath();
+    ctx.fillStyle = canvasPaper();
+    ctx.fill();
+    ctx.strokeStyle = ink;
+    ctx.lineWidth = 1 * px;
+    ctx.beginPath();
+    if (po.o.type === "window") {
+      for (const d of [-t / 6, t / 6]) {
+        const p = off(a, d), q = off(b, d);
+        ctx.moveTo(p[0], p[1]);
+        ctx.lineTo(q[0], q[1]);
+      }
+      ctx.stroke();
+      continue;
+    }
+    // Jambs across the wall.
+    for (const p of [a, b]) {
+      const p1 = off(p, t / 2), p2 = off(p, -t / 2);
+      ctx.moveTo(p1[0], p1[1]);
+      ctx.lineTo(p2[0], p2[1]);
+    }
+    ctx.stroke();
+    if (po.o.type === "garage") {
+      // An up-and-over door: dashed where it runs into the garage.
+      ctx.setLineDash([3 * px, 2 * px]);
+      ctx.beginPath();
+      for (const s of [0, 1]) {
+        const p = off(s ? b : a, -t / 2, n), q = off(p, Math.min(w, 2.5), inn);
+        ctx.moveTo(p[0], p[1]);
+        ctx.lineTo(q[0], q[1]);
+      }
+      const p = off(a, -t / 2 - Math.min(w, 2.5)), q = off(b, -t / 2 - Math.min(w, 2.5));
+      ctx.moveTo(p[0], p[1]);
+      ctx.lineTo(q[0], q[1]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      continue;
+    }
+    // Leaves hinged at the jambs, open into the building, with their swing arcs.
+    const leaves: [Pt, Pt, number][] = po.o.type === "french" ? [[a, wall.u, w / 2], [b, [-wall.u[0], -wall.u[1]], w / 2]] : [[a, wall.u, w]];
+    for (const [hinge, dir, r] of leaves) {
+      const h = off(hinge, -t / 2);
+      const open = off(h, r, inn);
+      const shut = off(h, r, dir);
+      ctx.beginPath();
+      ctx.moveTo(h[0], h[1]);
+      ctx.lineTo(open[0], open[1]);
+      ctx.lineWidth = 1.4 * px;
+      ctx.stroke();
+      const a0 = Math.atan2(open[1] - h[1], open[0] - h[0]), a1 = Math.atan2(shut[1] - h[1], shut[0] - h[0]);
+      let da = a1 - a0;
+      while (da > Math.PI) da -= 2 * Math.PI;
+      while (da < -Math.PI) da += 2 * Math.PI;
+      ctx.beginPath();
+      ctx.arc(h[0], h[1], r, a0, a1, da < 0);
+      ctx.lineWidth = 0.8 * px;
+      ctx.setLineDash([2 * px, 2 * px]);
+      ctx.stroke();
+      ctx.setLineDash([]);
     }
   }
 }
