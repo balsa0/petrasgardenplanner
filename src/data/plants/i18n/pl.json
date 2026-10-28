@@ -1,0 +1,3561 @@
+{
+  "betula-pendula": [
+    "Brzoza brodawkowata",
+    "Brzoza",
+    "Brzoza zwisła"
+  ],
+  "acer-palmatum": [
+    "Klon palmowy 'Bloodgood'",
+    "Klon japoński"
+  ],
+  "acer-campestre": [
+    "Klon polny",
+    "Klon"
+  ],
+  "prunus-serrulata": [
+    "Wiśnia piłkowana 'Kanzan'",
+    "Wiśnia japońska",
+    "Sakura"
+  ],
+  "magnolia-soulangeana": [
+    "Magnolia pośrednia",
+    "Magnolia Soulange'a",
+    "Magnolia"
+  ],
+  "tilia-cordata": [
+    "Lipa drobnolistna",
+    "Lipa"
+  ],
+  "juglans-regia": [
+    "Orzech włoski",
+    "Orzech"
+  ],
+  "salix-babylonica": [
+    "Wierzba babilońska",
+    "Wierzba płacząca"
+  ],
+  "carpinus-fastigiata": [
+    "Grab pospolity kolumnowy",
+    "Grab kolumnowy"
+  ],
+  "malus-domestica": [
+    "Jabłoń domowa",
+    "Jabłoń",
+    "Jabłko"
+  ],
+  "pyrus-communis": [
+    "Grusza pospolita",
+    "Grusza",
+    "Gruszka"
+  ],
+  "prunus-domestica": [
+    "Śliwa domowa",
+    "Śliwa",
+    "Śliwka"
+  ],
+  "prunus-armeniaca": [
+    "Morela pospolita",
+    "Morela"
+  ],
+  "ficus-carica": [
+    "Figowiec pospolity",
+    "Figa"
+  ],
+  "picea-pungens": [
+    "Świerk kłujący srebrny",
+    "Świerk srebrny",
+    "Świerk kłujący"
+  ],
+  "thuja-smaragd": [
+    "Żywotnik zachodni Smaragd",
+    "Tuja Szmaragd",
+    "Tuja"
+  ],
+  "pinus-sylvestris": [
+    "Sosna zwyczajna",
+    "Sosna"
+  ],
+  "pinus-mugo": [
+    "Sosna górska",
+    "Kosodrzewina",
+    "Kosówka"
+  ],
+  "taxus-baccata": [
+    "Cis pospolity",
+    "Cis"
+  ],
+  "hydrangea-macrophylla": [
+    "Hortensja ogrodowa",
+    "Hortensja wielkolistna",
+    "Hortensja"
+  ],
+  "syringa-vulgaris": [
+    "Lilak pospolity",
+    "Bez lilak",
+    "Bez"
+  ],
+  "forsythia": [
+    "Forsycja pośrednia",
+    "Forsycja"
+  ],
+  "buxus-sempervirens": [
+    "Bukszpan wieczniezielony",
+    "Bukszpan"
+  ],
+  "rhododendron": [
+    "Różanecznik katawbijski",
+    "Rododendron",
+    "Różanecznik"
+  ],
+  "prunus-laurocerasus": [
+    "Laurowiśnia wschodnia",
+    "Laurowiśnia"
+  ],
+  "cotinus-coggygria": [
+    "Perukowiec podolski 'Royal Purple'",
+    "Perukowiec"
+  ],
+  "corylus-avellana": [
+    "Leszczyna pospolita",
+    "Leszczyna",
+    "Orzech laskowy"
+  ],
+  "lavandula-angustifolia": [
+    "Lawenda wąskolistna",
+    "Lawenda lekarska",
+    "Lawenda"
+  ],
+  "nepeta-faassenii": [
+    "Kocimiętka Faassena",
+    "Kocimiętka"
+  ],
+  "echinacea-purpurea": [
+    "Jeżówka purpurowa",
+    "Jeżówka",
+    "Echinacea"
+  ],
+  "rudbeckia-fulgida": [
+    "Rudbekia błyskotliwa 'Goldsturm'",
+    "Rudbekia"
+  ],
+  "salvia-nemorosa": [
+    "Szałwia omszona 'Caradonna'",
+    "Szałwia gajowa",
+    "Szałwia"
+  ],
+  "hosta": [
+    "Funkia Siebolda",
+    "Funkia",
+    "Hosta"
+  ],
+  "hemerocallis": [
+    "Liliowiec 'Stella de Oro'",
+    "Liliowiec"
+  ],
+  "paeonia-lactiflora": [
+    "Piwonia chińska",
+    "Piwonia mlecznokwiatowa",
+    "Piwonia"
+  ],
+  "geranium-rozanne": [
+    "Bodziszek 'Rozanne'",
+    "Bodziszek"
+  ],
+  "sedum-autumn-joy": [
+    "Rozchodnik 'Herbstfreude'",
+    "Rozchodnik okazały",
+    "Rozchodnikowiec"
+  ],
+  "rosa-shrub": [
+    "Róża krzewiasta 'Bonica'",
+    "Róża"
+  ],
+  "dryopteris": [
+    "Nerecznica samcza",
+    "Paproć"
+  ],
+  "helleborus": [
+    "Ciemiernik biały",
+    "Róża Bożego Narodzenia",
+    "Ciemiernik"
+  ],
+  "calamagrostis": [
+    "Trzcinnik ostrokwiatowy 'Karl Foerster'",
+    "Trzcinnik"
+  ],
+  "festuca-glauca": [
+    "Kostrzewa sina",
+    "Kostrzewa"
+  ],
+  "miscanthus": [
+    "Miskant chiński 'Gracillimus'",
+    "Miskant",
+    "Trawa chińska"
+  ],
+  "pennisetum": [
+    "Rozplenica japońska",
+    "Rozplenica"
+  ],
+  "tulipa": [
+    "Tulipan 'Apeldoorn'",
+    "Tulipan"
+  ],
+  "narcissus": [
+    "Narcyz 'Dutch Master'",
+    "Żonkil",
+    "Narcyz"
+  ],
+  "allium": [
+    "Czosnek ozdobny 'Purple Sensation'",
+    "Czosnek ozdobny"
+  ],
+  "helianthus": [
+    "Słonecznik zwyczajny",
+    "Słonecznik"
+  ],
+  "cosmos": [
+    "Onętek podwójnie pierzasty",
+    "Kosmos",
+    "Kosmea"
+  ],
+  "tagetes": [
+    "Aksamitka rozpierzchła",
+    "Aksamitka"
+  ],
+  "tomato": [
+    "Pomidor",
+    "Pomidor zwyczajny"
+  ],
+  "lettuce": [
+    "Sałata siewna",
+    "Sałata"
+  ],
+  "zucchini": [
+    "Cukinia",
+    "Dynia zwyczajna"
+  ],
+  "strawberry": [
+    "Truskawka",
+    "Truskawka ogrodowa"
+  ],
+  "pepper": [
+    "Papryka słodka",
+    "Papryka roczna",
+    "Papryka"
+  ],
+  "kale": [
+    "Jarmuż",
+    "Kapusta jarmuż"
+  ],
+  "rosmarinus": [
+    "Rozmaryn lekarski",
+    "Rozmaryn"
+  ],
+  "thymus": [
+    "Tymianek pospolity",
+    "Tymianek",
+    "Macierzanka tymianek"
+  ],
+  "allium-schoenoprasum": [
+    "Szczypiorek",
+    "Czosnek szczypiorek"
+  ],
+  "ocimum": [
+    "Bazylia pospolita",
+    "Bazylia"
+  ],
+  "mentha": [
+    "Mięta zielona",
+    "Mięta kłosowa",
+    "Mięta"
+  ],
+  "quercus-robur": [
+    "Dąb szypułkowy",
+    "Dąb"
+  ],
+  "quercus-robur-fastigiata": [
+    "Dąb szypułkowy kolumnowy",
+    "Dąb kolumnowy"
+  ],
+  "quercus-petraea": [
+    "Dąb bezszypułkowy",
+    "Dąb"
+  ],
+  "quercus-cerris": [
+    "Dąb burgundzki",
+    "Dąb indyczy"
+  ],
+  "quercus-frainetto": "Dąb węgierski",
+  "quercus-pubescens": "Dąb omszony",
+  "quercus-ilex": [
+    "Dąb ostrolistny",
+    "Dąb skalny"
+  ],
+  "quercus-suber": "Dąb korkowy",
+  "quercus-rubra": "Dąb czerwony",
+  "fagus-sylvatica": [
+    "Buk zwyczajny",
+    "Buk pospolity",
+    "Buk"
+  ],
+  "fagus-sylvatica-atropurpurea": [
+    "Buk purpurowy",
+    "Buk zwyczajny purpurowy",
+    "Buk czerwony"
+  ],
+  "fagus-sylvatica-dawyck": [
+    "Buk zwyczajny 'Dawyck'",
+    "Buk kolumnowy"
+  ],
+  "carpinus-betulus": [
+    "Grab pospolity",
+    "Grab"
+  ],
+  "tilia-platyphyllos": [
+    "Lipa szerokolistna",
+    "Lipa"
+  ],
+  "tilia-tomentosa": [
+    "Lipa srebrzysta",
+    "Lipa węgierska"
+  ],
+  "tilia-europaea": [
+    "Lipa holenderska",
+    "Lipa europejska"
+  ],
+  "acer-platanoides": [
+    "Klon zwyczajny",
+    "Klon pospolity",
+    "Klon"
+  ],
+  "acer-platanoides-crimson-king": [
+    "Klon zwyczajny 'Crimson King'",
+    "Klon czerwonolistny"
+  ],
+  "acer-platanoides-globosum": [
+    "Klon zwyczajny kulisty",
+    "Klon kulisty"
+  ],
+  "acer-pseudoplatanus": [
+    "Klon jawor",
+    "Jawor"
+  ],
+  "acer-tataricum": "Klon tatarski",
+  "acer-monspessulanum": "Klon francuski",
+  "acer-palmatum-osakazuki": [
+    "Klon palmowy 'Osakazuki'",
+    "Klon japoński"
+  ],
+  "acer-palmatum-sango-kaku": [
+    "Klon palmowy o koralowych pędach",
+    "Klon palmowy Sango-kaku",
+    "Klon japoński"
+  ],
+  "acer-griseum": "Klon strzępiastokory",
+  "fraxinus-excelsior": [
+    "Jesion wyniosły",
+    "Jesion"
+  ],
+  "fraxinus-ornus": "Jesion mannowy",
+  "ulmus-laevis": [
+    "Wiąz szypułkowy",
+    "Wiąz"
+  ],
+  "alnus-glutinosa": [
+    "Olsza czarna",
+    "Olcha",
+    "Olsza"
+  ],
+  "salix-alba": [
+    "Wierzba biała",
+    "Wierzba"
+  ],
+  "salix-caprea": [
+    "Wierzba iwa",
+    "Iwa",
+    "Bazie"
+  ],
+  "salix-babylonica-pekinensis-tortuosa": [
+    "Wierzba mandżurska pokręcona",
+    "Wierzba pokręcona",
+    "Wierzba chińska"
+  ],
+  "populus-nigra-italica": [
+    "Topola włoska",
+    "Topola czarna"
+  ],
+  "sorbus-aucuparia": [
+    "Jarząb pospolity",
+    "Jarzębina"
+  ],
+  "sorbus-aria": "Jarząb mączny",
+  "sorbus-torminalis": [
+    "Jarząb brekinia",
+    "Brekinia",
+    "Brzęk"
+  ],
+  "sorbus-domestica": "Jarząb domowy",
+  "prunus-avium": [
+    "Czereśnia ptasia",
+    "Wiśnia ptasia",
+    "Czereśnia"
+  ],
+  "prunus-padus": [
+    "Czeremcha zwyczajna",
+    "Czeremcha"
+  ],
+  "prunus-mahaleb": [
+    "Wiśnia wonna",
+    "Antypka"
+  ],
+  "prunus-cerasifera-nigra": [
+    "Śliwa wiśniowa czerwonolistna",
+    "Ałycza czerwonolistna",
+    "Mirabelka czerwonolistna"
+  ],
+  "prunus-accolade": [
+    "Wiśnia ozdobna 'Accolade'",
+    "Wiśnia japońska"
+  ],
+  "prunus-tai-haku": [
+    "Wiśnia ozdobna 'Tai Haku'",
+    "Wiśnia japońska"
+  ],
+  "prunus-amanogawa": [
+    "Wiśnia piłkowana 'Amanogawa'",
+    "Wiśnia kolumnowa",
+    "Wiśnia japońska"
+  ],
+  "malus-sylvestris": [
+    "Jabłoń dzika",
+    "Dzika jabłoń"
+  ],
+  "malus-evereste": [
+    "Jabłoń ozdobna 'Evereste'",
+    "Rajska jabłoń"
+  ],
+  "malus-robusta-red-sentinel": [
+    "Jabłoń ozdobna 'Red Sentinel'",
+    "Rajska jabłoń"
+  ],
+  "malus-john-downie": [
+    "Jabłoń ozdobna 'John Downie'",
+    "Rajska jabłoń"
+  ],
+  "betula-pubescens": [
+    "Brzoza omszona",
+    "Brzoza"
+  ],
+  "betula-utilis-jacquemontii": [
+    "Brzoza pożyteczna",
+    "Brzoza himalajska",
+    "Brzoza Jacquemonta"
+  ],
+  "robinia-pseudoacacia": [
+    "Robinia akacjowa",
+    "Grochodrzew",
+    "Akacja"
+  ],
+  "robinia-pseudoacacia-umbraculifera": [
+    "Robinia akacjowa kulista",
+    "Akacja kulista"
+  ],
+  "robinia-pseudoacacia-frisia": [
+    "Robinia akacjowa 'Frisia'",
+    "Akacja złota"
+  ],
+  "styphnolobium-japonicum": [
+    "Perełkowiec japoński",
+    "Szupin japoński",
+    "Sofora japońska"
+  ],
+  "platanus-hispanica": [
+    "Platan klonolistny",
+    "Platan"
+  ],
+  "aesculus-hippocastanum": [
+    "Kasztanowiec zwyczajny",
+    "Kasztanowiec biały",
+    "Kasztan"
+  ],
+  "aesculus-carnea-briotii": [
+    "Kasztanowiec czerwony 'Briotii'",
+    "Kasztanowiec pośredni"
+  ],
+  "castanea-sativa": [
+    "Kasztan jadalny",
+    "Kasztanowiec jadalny"
+  ],
+  "celtis-australis": "Wiązowiec południowy",
+  "celtis-occidentalis": "Wiązowiec zachodni",
+  "paulownia-tomentosa": [
+    "Paulownia omszona",
+    "Paulownia cesarska"
+  ],
+  "catalpa-bignonioides": [
+    "Surmia bignoniowa",
+    "Katalpa"
+  ],
+  "catalpa-bignonioides-nana": [
+    "Surmia bignoniowa kulista",
+    "Katalpa kulista"
+  ],
+  "gleditsia-triacanthos-sunburst": [
+    "Glediczja trójcierniowa 'Sunburst'",
+    "Glediczja"
+  ],
+  "liquidambar-styraciflua": [
+    "Ambrowiec amerykański",
+    "Ambrowiec"
+  ],
+  "liriodendron-tulipifera": [
+    "Tulipanowiec amerykański",
+    "Tulipanowiec"
+  ],
+  "ginkgo-biloba": [
+    "Miłorząb dwuklapowy",
+    "Miłorząb",
+    "Ginkgo"
+  ],
+  "amelanchier-lamarckii": [
+    "Świdośliwa Lamarcka",
+    "Świdośliwa"
+  ],
+  "cercis-siliquastrum": [
+    "Judaszowiec południowy",
+    "Judaszowiec",
+    "Drzewo Judasza"
+  ],
+  "albizia-julibrissin": [
+    "Albicja jedwabista",
+    "Akacja jedwabista"
+  ],
+  "koelreuteria-paniculata": [
+    "Roztrzeplin wiechowaty",
+    "Koelreuteria"
+  ],
+  "magnolia-kobus": [
+    "Magnolia japońska",
+    "Magnolia kobus"
+  ],
+  "magnolia-grandiflora": "Magnolia wielkokwiatowa",
+  "parrotia-persica": [
+    "Parocja perska",
+    "Parrocja"
+  ],
+  "davidia-involucrata": [
+    "Dawidia chińska",
+    "Drzewo chusteczkowe"
+  ],
+  "pyrus-calleryana-chanticleer": [
+    "Grusza drobnoowocowa 'Chanticleer'",
+    "Grusza ozdobna"
+  ],
+  "pyrus-salicifolia-pendula": [
+    "Grusza wierzbolistna zwisająca",
+    "Grusza wierzbolistna"
+  ],
+  "laburnum-watereri-vossii": [
+    "Złotokap Waterera 'Vossii'",
+    "Złotokap"
+  ],
+  "corylus-colurna": "Leszczyna turecka",
+  "olea-europaea": [
+    "Oliwka europejska",
+    "Drzewo oliwne",
+    "Oliwka"
+  ],
+  "arbutus-unedo": [
+    "Chruścina jagodna",
+    "Drzewo truskawkowe"
+  ],
+  "laurus-nobilis": [
+    "Wawrzyn szlachetny",
+    "Laur",
+    "Liść laurowy"
+  ],
+  "phillyrea-latifolia": [
+    "Filirea szerokolistna",
+    "Fillirea"
+  ],
+  "melia-azedarach": [
+    "Miodla pospolita",
+    "Melia"
+  ],
+  "jacaranda-mimosifolia": [
+    "Jakaranda mimozolistna",
+    "Jakaranda"
+  ],
+  "chamaerops-humilis": [
+    "Karłatka niska",
+    "Palma karłowata"
+  ],
+  "phoenix-canariensis": [
+    "Daktylowiec kanaryjski",
+    "Palma kanaryjska"
+  ],
+  "trachycarpus-fortunei": [
+    "Szorstkowiec Fortune'a",
+    "Palma konopna"
+  ],
+  "washingtonia-robusta": [
+    "Waszyngtonia mocna",
+    "Waszyngtonia"
+  ],
+  "malus-domestica-coxs-orange-pippin": "Jabłoń 'Cox's Orange Pippin'",
+  "malus-domestica-bramleys-seedling": "Jabłoń 'Bramley's Seedling'",
+  "malus-domestica-belle-de-boskoop": [
+    "Jabłoń 'Belle de Boskoop'",
+    "Jabłoń Boskoop"
+  ],
+  "malus-domestica-jonagold": "Jabłoń 'Jonagold'",
+  "malus-domestica-topaz": "Jabłoń 'Topaz'",
+  "malus-domestica-gala": "Jabłoń 'Gala'",
+  "malus-domestica-jonathan": "Jabłoń 'Jonathan'",
+  "malus-domestica-reine-des-reinettes": [
+    "Jabłoń 'Reine des Reinettes'",
+    "Jabłoń Złota reneta"
+  ],
+  "malus-domestica-egremont-russet": "Jabłoń 'Egremont Russet'",
+  "pyrus-communis-conference": "Grusza 'Conference'",
+  "pyrus-communis-williams-bon-chretien": [
+    "Grusza 'Williams' Bon Chrétien'",
+    "Grusza Bonkreta Williamsa"
+  ],
+  "pyrus-communis-doyenne-du-comice": [
+    "Grusza 'Doyenné du Comice'",
+    "Grusza Komisówka"
+  ],
+  "prunus-cerasus-morello": [
+    "Wiśnia 'Morello'",
+    "Wiśnia Łutówka"
+  ],
+  "prunus-cerasus-erdi-botermo": "Wiśnia 'Érdi bőtermő'",
+  "prunus-avium-stella": "Czereśnia 'Stella'",
+  "prunus-avium-kordia": "Czereśnia 'Kordia'",
+  "prunus-armeniaca-gonci-magyar-kajszi": [
+    "Morela 'Gönci magyar kajszi'",
+    "Morela węgierska"
+  ],
+  "prunus-persica-redhaven": [
+    "Brzoskwinia 'Redhaven'",
+    "Brzoskwinia"
+  ],
+  "prunus-persica-nucipersica-lord-napier": [
+    "Nektaryna 'Lord Napier'",
+    "Nektarynka"
+  ],
+  "cydonia-oblonga-vranja": [
+    "Pigwa 'Vranja'",
+    "Pigwa pospolita"
+  ],
+  "mespilus-germanica": [
+    "Nieszpułka zwyczajna",
+    "Nieszpułka"
+  ],
+  "morus-alba": [
+    "Morwa biała",
+    "Morwa"
+  ],
+  "morus-nigra": [
+    "Morwa czarna",
+    "Morwa"
+  ],
+  "juglans-regia-franquette": "Orzech włoski 'Franquette'",
+  "prunus-dulcis": [
+    "Migdałowiec pospolity",
+    "Migdał"
+  ],
+  "castanea-sativa-marron-de-lyon": "Kasztan jadalny 'Marron de Lyon'",
+  "prunus-domestica-victoria": "Śliwa 'Victoria'",
+  "prunus-domestica-mirabelle-de-nancy": [
+    "Mirabelka 'de Nancy'",
+    "Śliwa mirabelka",
+    "Mirabelka"
+  ],
+  "prunus-domestica-reine-claude-verte": [
+    "Renkloda 'Reine Claude Verte'",
+    "Renkloda zielona",
+    "Śliwa renkloda"
+  ],
+  "prunus-domestica-stanley": "Śliwa 'Stanley'",
+  "prunus-domestica-besztercei": [
+    "Śliwa 'Besztercei'",
+    "Węgierka"
+  ],
+  "cornus-mas": [
+    "Dereń jadalny",
+    "Dereń właściwy",
+    "Dereń"
+  ],
+  "punica-granatum": [
+    "Granatowiec właściwy",
+    "Granat"
+  ],
+  "diospyros-kaki": [
+    "Hurma wschodnia",
+    "Kaki",
+    "Persymona"
+  ],
+  "ficus-carica-brown-turkey": "Figowiec 'Brown Turkey'",
+  "olea-europaea-arbequina": "Oliwka 'Arbequina'",
+  "citrus-limon": [
+    "Cytryna zwyczajna",
+    "Cytryna"
+  ],
+  "citrus-sinensis": [
+    "Pomarańcza chińska",
+    "Pomarańcza słodka",
+    "Pomarańcza"
+  ],
+  "citrus-reticulata": [
+    "Mandarynka",
+    "Mandarynka zwyczajna"
+  ],
+  "eriobotrya-japonica": [
+    "Nieśplik japoński",
+    "Miszpelnik japoński",
+    "Loquat"
+  ],
+  "ceratonia-siliqua": [
+    "Szarańczyn strąkowy",
+    "Chleb świętojański",
+    "Karob"
+  ],
+  "ziziphus-jujuba": [
+    "Głożyna pospolita",
+    "Jujuba",
+    "Daktyl chiński"
+  ],
+  "asimina-triloba": [
+    "Asimina trójklapowa",
+    "Pawpaw"
+  ],
+  "pistacia-vera": [
+    "Pistacja właściwa",
+    "Pistacja"
+  ],
+  "taxus-baccata-fastigiata": [
+    "Cis pospolity kolumnowy",
+    "Cis irlandzki"
+  ],
+  "taxus-x-media-hicksii": [
+    "Cis pośredni Hicksii",
+    "Cis pośredni"
+  ],
+  "juniperus-communis": [
+    "Jałowiec pospolity",
+    "Jałowiec"
+  ],
+  "juniperus-squamata-blue-star": [
+    "Jałowiec łuskowaty 'Blue Star'",
+    "Jałowiec"
+  ],
+  "juniperus-sabina": "Jałowiec sabiński",
+  "juniperus-scopulorum-skyrocket": [
+    "Jałowiec skalny 'Skyrocket'",
+    "Jałowiec"
+  ],
+  "juniperus-horizontalis-blue-chip": [
+    "Jałowiec płożący 'Blue Chip'",
+    "Jałowiec"
+  ],
+  "cupressus-sempervirens-stricta": [
+    "Cyprys wiecznie zielony kolumnowy",
+    "Cyprys włoski",
+    "Cyprys"
+  ],
+  "pinus-pinea": [
+    "Sosna pinia",
+    "Pinia"
+  ],
+  "pinus-nigra": "Sosna czarna",
+  "pinus-cembra": [
+    "Sosna limba",
+    "Limba"
+  ],
+  "pinus-mugo-mops": [
+    "Sosna górska 'Mops'",
+    "Kosodrzewina"
+  ],
+  "abies-alba": [
+    "Jodła pospolita",
+    "Jodła"
+  ],
+  "abies-nordmanniana": [
+    "Jodła kaukaska",
+    "Jodła Nordmanna"
+  ],
+  "abies-koreana": "Jodła koreańska",
+  "picea-abies": [
+    "Świerk pospolity",
+    "Świerk"
+  ],
+  "picea-abies-nidiformis": [
+    "Świerk pospolity gniazdowy",
+    "Świerk gniazdowy"
+  ],
+  "picea-omorika": "Świerk serbski",
+  "larix-decidua": [
+    "Modrzew europejski",
+    "Modrzew"
+  ],
+  "cedrus-atlantica-glauca": [
+    "Cedr atlaski siny",
+    "Cedr atlaski",
+    "Cedr niebieski"
+  ],
+  "cedrus-libani": [
+    "Cedr libański",
+    "Cedr"
+  ],
+  "thuja-occidentalis-brabant": [
+    "Żywotnik zachodni 'Brabant'",
+    "Tuja"
+  ],
+  "thuja-occidentalis-danica": [
+    "Żywotnik zachodni 'Danica'",
+    "Tuja"
+  ],
+  "thuja-plicata": [
+    "Żywotnik olbrzymi",
+    "Tuja olbrzymia"
+  ],
+  "chamaecyparis-lawsoniana-columnaris": [
+    "Cyprysik Lawsona 'Columnaris'",
+    "Cyprysik"
+  ],
+  "microbiota-decussata": [
+    "Mikrobiota syberyjska",
+    "Mikrobiota"
+  ],
+  "metasequoia-glyptostroboides": [
+    "Metasekwoja chińska",
+    "Metasekwoja"
+  ],
+  "taxodium-distichum": "Cypryśnik błotny",
+  "sequoiadendron-giganteum": [
+    "Mamutowiec olbrzymi",
+    "Sekwoja olbrzymia"
+  ],
+  "buxus-sempervirens-suffruticosa": [
+    "Bukszpan karłowy",
+    "Bukszpan wieczniezielony Suffruticosa",
+    "Bukszpan"
+  ],
+  "ilex-aquifolium": [
+    "Ostrokrzew kolczasty",
+    "Ostrokrzew"
+  ],
+  "ilex-crenata-dark-green": [
+    "Ostrokrzew karbowany 'Dark Green'",
+    "Ostrokrzew"
+  ],
+  "ligustrum-vulgare": [
+    "Ligustr pospolity",
+    "Ligustr"
+  ],
+  "ligustrum-ovalifolium": [
+    "Ligustr owalnolistny",
+    "Ligustr"
+  ],
+  "lonicera-nitida": [
+    "Wiciokrzew chiński",
+    "Wiciokrzew lśniący"
+  ],
+  "photinia-x-fraseri-red-robin": [
+    "Głogownik Frasera 'Red Robin'",
+    "Fotinia",
+    "Głogownik"
+  ],
+  "euonymus-japonicus": "Trzmielina japońska",
+  "griselinia-littoralis": [
+    "Gryzelinia nadbrzeżna",
+    "Gryzelinia"
+  ],
+  "escallonia-apple-blossom": [
+    "Eskalonia 'Apple Blossom'",
+    "Eskalonia"
+  ],
+  "elaeagnus-x-ebbingei": [
+    "Oliwnik Ebbingego",
+    "Oliwnik"
+  ],
+  "osmanthus-x-burkwoodii": [
+    "Wonnolist Burkwooda",
+    "Osmantus Burkwooda"
+  ],
+  "berberis-thunbergii-f-atropurpurea": [
+    "Berberys Thunberga czerwonolistny",
+    "Berberys"
+  ],
+  "prunus-lusitanica": "Laurowiśnia portugalska",
+  "prunus-laurocerasus-otto-luyken": [
+    "Laurowiśnia wschodnia 'Otto Luyken'",
+    "Laurowiśnia"
+  ],
+  "crataegus-monogyna": [
+    "Głóg jednoszyjkowy",
+    "Głóg"
+  ],
+  "prunus-spinosa": [
+    "Śliwa tarnina",
+    "Tarnina",
+    "Tarka"
+  ],
+  "cornus-sanguinea": [
+    "Dereń świdwa",
+    "Świdwa"
+  ],
+  "euonymus-europaeus": [
+    "Trzmielina pospolita",
+    "Trzmielina"
+  ],
+  "sambucus-nigra": [
+    "Bez czarny",
+    "Czarny bez"
+  ],
+  "sambucus-nigra-black-lace": [
+    "Bez czarny 'Black Lace'",
+    "Czarny bez"
+  ],
+  "viburnum-opulus": [
+    "Kalina koralowa",
+    "Kalina"
+  ],
+  "viburnum-opulus-roseum": [
+    "Kalina koralowa pełnokwiatowa",
+    "Kalina buldeneż",
+    "Buldeneż"
+  ],
+  "viburnum-lantana": [
+    "Kalina hordowina",
+    "Hordowina"
+  ],
+  "rhamnus-cathartica": [
+    "Szakłak pospolity",
+    "Szakłak"
+  ],
+  "frangula-alnus": [
+    "Kruszyna pospolita",
+    "Kruszyna"
+  ],
+  "lonicera-xylosteum": [
+    "Wiciokrzew suchodrzew",
+    "Suchodrzew"
+  ],
+  "hippophae-rhamnoides": [
+    "Rokitnik zwyczajny",
+    "Rokitnik"
+  ],
+  "daphne-mezereum": [
+    "Wawrzynek wilczełyko",
+    "Wilczełyko"
+  ],
+  "ribes-alpinum": "Porzeczka alpejska",
+  "philadelphus-coronarius": [
+    "Jaśminowiec wonny",
+    "Jaśmin",
+    "Jaśminowiec"
+  ],
+  "deutzia-gracilis": [
+    "Żylistek wysmukły",
+    "Żylistek"
+  ],
+  "weigela-bristol-ruby": [
+    "Krzewuszka 'Bristol Ruby'",
+    "Weigela",
+    "Krzewuszka"
+  ],
+  "spiraea-x-vanhouttei": [
+    "Tawuła van Houtte'a",
+    "Tawuła"
+  ],
+  "spiraea-japonica-anthony-waterer": [
+    "Tawuła japońska 'Anthony Waterer'",
+    "Tawuła"
+  ],
+  "kolkwitzia-amabilis": [
+    "Kolkwicja chińska",
+    "Kolkwicja"
+  ],
+  "buddleja-davidii": [
+    "Budleja Davida",
+    "Motyli krzew",
+    "Budleja"
+  ],
+  "hibiscus-syriacus-oiseau-bleu": [
+    "Ketmia syryjska 'Oiseau Bleu'",
+    "Hibiskus ogrodowy",
+    "Ketmia"
+  ],
+  "hydrangea-paniculata-limelight": [
+    "Hortensja bukietowa 'Limelight'",
+    "Hortensja"
+  ],
+  "hydrangea-arborescens-annabelle": [
+    "Hortensja drzewiasta 'Annabelle'",
+    "Hortensja"
+  ],
+  "hydrangea-quercifolia": [
+    "Hortensja dębolistna",
+    "Hortensja"
+  ],
+  "viburnum-x-bodnantense-dawn": [
+    "Kalina bodnantska 'Dawn'",
+    "Kalina"
+  ],
+  "viburnum-plicatum-f-tomentosum-mariesii": [
+    "Kalina japońska 'Mariesii'",
+    "Kalina"
+  ],
+  "viburnum-tinus": [
+    "Kalina wawrzynowata",
+    "Kalina"
+  ],
+  "chaenomeles-x-superba-crimson-and-gold": [
+    "Pigwowiec okazały 'Crimson and Gold'",
+    "Pigwowiec"
+  ],
+  "kerria-japonica-pleniflora": [
+    "Złotlin japoński 'Pleniflora'",
+    "Złotlin",
+    "Kerria"
+  ],
+  "exochorda-x-macrantha-the-bride": [
+    "Obiela wielkokwiatowa 'The Bride'",
+    "Obiela"
+  ],
+  "ceanothus-concha": [
+    "Prusznik 'Concha'",
+    "Prusznik"
+  ],
+  "choisya-ternata": [
+    "Choisja trójlistkowa",
+    "Choisya"
+  ],
+  "skimmia-japonica-rubella": [
+    "Skimia japońska 'Rubella'",
+    "Skimia"
+  ],
+  "pieris-forest-flame": [
+    "Pieris 'Forest Flame'",
+    "Pieris"
+  ],
+  "camellia-japonica": [
+    "Kamelia japońska",
+    "Kamelia"
+  ],
+  "rhododendron-luteum": [
+    "Różanecznik żółty",
+    "Azalia pontyjska",
+    "Azalia żółta"
+  ],
+  "rhododendron-hinomayo": [
+    "Azalia japońska 'Hinomayo'",
+    "Różanecznik",
+    "Azalia"
+  ],
+  "magnolia-stellata": [
+    "Magnolia gwiaździsta",
+    "Magnolia"
+  ],
+  "hamamelis-x-intermedia-arnold-promise": [
+    "Oczar pośredni 'Arnold Promise'",
+    "Oczar"
+  ],
+  "cornus-alba-sibirica": [
+    "Dereń biały 'Sibirica'",
+    "Dereń"
+  ],
+  "cornus-kousa": [
+    "Dereń kousa",
+    "Dereń japoński"
+  ],
+  "acer-palmatum-garnet": [
+    "Klon palmowy 'Garnet'",
+    "Klon japoński"
+  ],
+  "physocarpus-opulifolius-diabolo": [
+    "Pęcherznica kalinolistna 'Diabolo'",
+    "Pęcherznica"
+  ],
+  "caryopteris-x-clandonensis-heavenly-blue": [
+    "Barbula klandońska 'Heavenly Blue'",
+    "Barbula"
+  ],
+  "dasiphora-fruticosa-goldfinger": [
+    "Pięciornik krzewiasty 'Goldfinger'",
+    "Pięciornik"
+  ],
+  "mahonia-aquifolium": [
+    "Mahonia pospolita",
+    "Mahonia"
+  ],
+  "aucuba-japonica-crotonifolia": [
+    "Aukuba japońska 'Crotonifolia'",
+    "Aukuba"
+  ],
+  "fatsia-japonica": [
+    "Fatsja japońska",
+    "Fatsja"
+  ],
+  "abelia-x-grandiflora": [
+    "Abelia wielkokwiatowa",
+    "Abelia"
+  ],
+  "hypericum-hidcote": [
+    "Dziurawiec 'Hidcote'",
+    "Dziurawiec"
+  ],
+  "symphoricarpos-albus": [
+    "Śnieguliczka biała",
+    "Śnieguliczka"
+  ],
+  "cotoneaster-horizontalis": [
+    "Irga pozioma",
+    "Irga"
+  ],
+  "cotoneaster-franchetii": [
+    "Irga Francheta",
+    "Irga"
+  ],
+  "pyracantha-orange-glow": [
+    "Ognik 'Orange Glow'",
+    "Ognik"
+  ],
+  "syringa-meyeri-palibin": [
+    "Lilak Meyera 'Palibin'",
+    "Bez Meyera",
+    "Lilak"
+  ],
+  "syringa-vulgaris-madame-lemoine": [
+    "Lilak pospolity 'Madame Lemoine'",
+    "Bez",
+    "Lilak"
+  ],
+  "forsythia-x-intermedia-lynwood-variety": [
+    "Forsycja pośrednia 'Lynwood Variety'",
+    "Forsycja"
+  ],
+  "euonymus-fortunei-emerald-n-gold": [
+    "Trzmielina Fortune'a 'Emerald 'n' Gold'",
+    "Trzmielina"
+  ],
+  "rosa-gertrude-jekyll": [
+    "Róża angielska 'Gertrude Jekyll'",
+    "Róża"
+  ],
+  "rosa-munstead-wood": [
+    "Róża angielska 'Munstead Wood'",
+    "Róża"
+  ],
+  "rosa-olivia-rose-austin": [
+    "Róża angielska 'Olivia Rose Austin'",
+    "Róża"
+  ],
+  "rosa-graham-thomas": [
+    "Róża angielska 'Graham Thomas'",
+    "Róża"
+  ],
+  "rosa-the-lady-of-the-lake": [
+    "Róża pnąca rambler 'The Lady of the Lake'",
+    "Rambler"
+  ],
+  "rosa-boscobel": [
+    "Róża angielska 'Boscobel'",
+    "Róża"
+  ],
+  "rosa-princess-anne": [
+    "Róża angielska 'Princess Anne'",
+    "Róża"
+  ],
+  "rosa-gallica-var-officinalis": [
+    "Róża francuska lekarska",
+    "Róża aptekarska",
+    "Róża francuska"
+  ],
+  "rosa-gallica-versicolor": [
+    "Rosa Mundi",
+    "Róża francuska Versicolor"
+  ],
+  "rosa-cardinal-de-richelieu": [
+    "Róża francuska 'Cardinal de Richelieu'",
+    "Róża galijska"
+  ],
+  "rosa-madame-hardy": [
+    "Róża damasceńska 'Madame Hardy'",
+    "Róża damasceńska"
+  ],
+  "rosa-x-centifolia": [
+    "Róża stulistna",
+    "Róża prowansalska"
+  ],
+  "rosa-x-alba-alba-maxima": [
+    "Róża biała Alba Maxima",
+    "Róża biała"
+  ],
+  "rosa-louise-odier": [
+    "Róża burbońska 'Louise Odier'",
+    "Róża burbońska"
+  ],
+  "rosa-madame-isaac-pereire": [
+    "Róża burbońska 'Madame Isaac Pereire'",
+    "Róża burbońska"
+  ],
+  "rosa-jacques-cartier": [
+    "Róża portlandzka 'Jacques Cartier'",
+    "Róża portlandzka"
+  ],
+  "rosa-iceberg": [
+    "Róża wielokwiatowa 'Iceberg' (Schneewittchen)",
+    "Róża rabatowa",
+    "Schneewittchen"
+  ],
+  "rosa-peace": [
+    "Róża wielkokwiatowa 'Peace' (Gloria Dei)",
+    "Róża herbatnia",
+    "Gloria Dei"
+  ],
+  "rosa-ingrid-bergman": [
+    "Róża wielkokwiatowa 'Ingrid Bergman'",
+    "Róża herbatnia"
+  ],
+  "rosa-new-dawn": [
+    "Róża pnąca 'New Dawn'",
+    "Róża pnąca"
+  ],
+  "rosa-albertine": [
+    "Róża pnąca rambler 'Albertine'",
+    "Rambler"
+  ],
+  "rosa-rambling-rector": [
+    "Róża pnąca rambler 'Rambling Rector'",
+    "Rambler"
+  ],
+  "rosa-pauls-himalayan-musk": [
+    "Róża pnąca rambler 'Paul's Himalayan Musk'",
+    "Rambler"
+  ],
+  "rosa-pierre-de-ronsard": [
+    "Róża pnąca 'Pierre de Ronsard' (Eden Rose 88)",
+    "Eden Rose",
+    "Róża pnąca"
+  ],
+  "rosa-madame-alfred-carriere": [
+    "Róża noisette 'Madame Alfred Carrière'",
+    "Róża pnąca"
+  ],
+  "rosa-gloire-de-dijon": [
+    "Róża pnąca 'Gloire de Dijon'",
+    "Róża pnąca"
+  ],
+  "rosa-canina": [
+    "Róża dzika",
+    "Dzika róża",
+    "Róża psia"
+  ],
+  "rosa-rugosa": [
+    "Róża pomarszczona",
+    "Róża japońska"
+  ],
+  "rosa-glauca": [
+    "Róża czerwonolistna",
+    "Róża sina"
+  ],
+  "rosa-spinosissima": [
+    "Róża gęstokolczasta",
+    "Róża pimpinella"
+  ],
+  "rosa-rubiginosa": [
+    "Róża rdzawa",
+    "Róża eglanteria"
+  ],
+  "clematis-montana-var-rubens": [
+    "Powojnik górski różowy",
+    "Powojnik górski",
+    "Klematis"
+  ],
+  "clematis-nelly-moser": [
+    "Powojnik 'Nelly Moser'",
+    "Klematis"
+  ],
+  "clematis-jackmanii": [
+    "Powojnik 'Jackmanii'",
+    "Klematis"
+  ],
+  "clematis-etoile-violette": [
+    "Powojnik 'Étoile Violette'",
+    "Klematis"
+  ],
+  "clematis-armandii": [
+    "Powojnik Armanda",
+    "Klematis"
+  ],
+  "wisteria-sinensis": [
+    "Glicynia chińska",
+    "Wisteria"
+  ],
+  "wisteria-floribunda": [
+    "Glicynia kwiecista",
+    "Glicynia japońska",
+    "Wisteria"
+  ],
+  "lonicera-periclymenum": [
+    "Wiciokrzew pomorski",
+    "Wiciokrzew"
+  ],
+  "lonicera-caprifolium": [
+    "Wiciokrzew przewiercień",
+    "Przewiercień",
+    "Wiciokrzew"
+  ],
+  "hedera-helix": [
+    "Bluszcz pospolity",
+    "Bluszcz"
+  ],
+  "parthenocissus-quinquefolia": [
+    "Winobluszcz pięciolistkowy",
+    "Dzikie wino"
+  ],
+  "parthenocissus-tricuspidata": [
+    "Winobluszcz trójklapowy",
+    "Dzikie wino"
+  ],
+  "vitis-vinifera": [
+    "Winorośl właściwa",
+    "Winorośl",
+    "Winogrono"
+  ],
+  "humulus-lupulus": [
+    "Chmiel zwyczajny",
+    "Chmiel"
+  ],
+  "campsis-radicans": [
+    "Milin amerykański",
+    "Milin"
+  ],
+  "jasminum-officinale": [
+    "Jaśmin lekarski",
+    "Jaśmin"
+  ],
+  "trachelospermum-jasminoides": [
+    "Jaśmin gwiaździsty",
+    "Trachelospermum jaśminowate",
+    "Jaśmin toskański"
+  ],
+  "hydrangea-anomala-subsp-petiolaris": [
+    "Hortensja pnąca",
+    "Hortensja"
+  ],
+  "akebia-quinata": [
+    "Akebia pięciolistkowa",
+    "Akebia"
+  ],
+  "actinidia-deliciosa": [
+    "Aktinidia smakowita",
+    "Kiwi"
+  ],
+  "actinidia-arguta": [
+    "Aktinidia ostrolistna",
+    "Mini kiwi",
+    "Kiwi"
+  ],
+  "fallopia-baldschuanica": [
+    "Rdestówka bałdżuańska",
+    "Rdestówka Auberta",
+    "Rdest Auberta"
+  ],
+  "passiflora-caerulea": [
+    "Męczennica błękitna",
+    "Passiflora",
+    "Marakuja"
+  ],
+  "bougainvillea-glabra": [
+    "Bugenwilla gładka",
+    "Bugenwilla"
+  ],
+  "lavandula-angustifolia-hidcote": [
+    "Lawenda wąskolistna 'Hidcote'",
+    "Lawenda"
+  ],
+  "lavandula-angustifolia-munstead": [
+    "Lawenda wąskolistna 'Munstead'",
+    "Lawenda"
+  ],
+  "lavandula-angustifolia-folgate": [
+    "Lawenda wąskolistna 'Folgate'",
+    "Lawenda"
+  ],
+  "lavandula-angustifolia-rosea": [
+    "Lawenda wąskolistna 'Rosea'",
+    "Lawenda"
+  ],
+  "lavandula-intermedia-grosso": [
+    "Lawenda pośrednia 'Grosso'",
+    "Lawandyna",
+    "Lawenda"
+  ],
+  "lavandula-intermedia-provence": [
+    "Lawenda pośrednia 'Provence'",
+    "Lawandyna",
+    "Lawenda"
+  ],
+  "lavandula-intermedia-phenomenal": [
+    "Lawenda pośrednia 'Phenomenal'",
+    "Lawandyna",
+    "Lawenda"
+  ],
+  "lavandula-stoechas": [
+    "Lawenda francuska",
+    "Lawenda hiszpańska",
+    "Lawenda motylkowa"
+  ],
+  "lavandula-dentata": "Lawenda ząbkowana",
+  "lavandula-latifolia": "Lawenda szerokolistna",
+  "cistus-purpureus": [
+    "Czystek purpurowy",
+    "Czystek"
+  ],
+  "cistus-albidus": [
+    "Czystek białawy",
+    "Czystek"
+  ],
+  "cistus-salviifolius": [
+    "Czystek szałwiolistny",
+    "Czystek"
+  ],
+  "cistus-ladanifer": [
+    "Czystek ladanowy",
+    "Czystek"
+  ],
+  "cistus-pulverulentus-sunset": [
+    "Czystek 'Sunset'",
+    "Czystek"
+  ],
+  "cistus-hybridus": [
+    "Czystek mieszańcowy",
+    "Czystek"
+  ],
+  "halimium-lasianthum": [
+    "Halimium wełniste",
+    "Halimium"
+  ],
+  "santolina-chamaecyparissus": [
+    "Santolina cyprysikowata",
+    "Santolina"
+  ],
+  "santolina-rosmarinifolia": [
+    "Santolina rozmarynolistna",
+    "Santolina"
+  ],
+  "phlomis-fruticosa": [
+    "Żeleźniak krzewiasty",
+    "Szałwia jerozolimska",
+    "Phlomis"
+  ],
+  "phlomis-russeliana": [
+    "Żeleźniak Russela",
+    "Phlomis"
+  ],
+  "euphorbia-characias-subsp-wulfenii": [
+    "Wilczomlecz Wulfena",
+    "Wilczomlecz śródziemnomorski",
+    "Wilczomlecz"
+  ],
+  "euphorbia-myrsinites": [
+    "Wilczomlecz mirtolistny",
+    "Wilczomlecz"
+  ],
+  "euphorbia-rigida": [
+    "Wilczomlecz sztywny",
+    "Wilczomlecz"
+  ],
+  "helichrysum-italicum": [
+    "Kocanka włoska",
+    "Ziele curry"
+  ],
+  "teucrium-fruticans": [
+    "Ożanka krzewiasta",
+    "Ożanka"
+  ],
+  "teucrium-chamaedrys": [
+    "Ożanka właściwa",
+    "Ożanka"
+  ],
+  "myrtus-communis": [
+    "Mirt zwyczajny",
+    "Mirt"
+  ],
+  "myrtus-communis-tarentina": [
+    "Mirt tarencki",
+    "Mirt zwyczajny drobnolistny",
+    "Mirt"
+  ],
+  "nerium-oleander": [
+    "Oleander pospolity",
+    "Oleander"
+  ],
+  "pittosporum-tobira": [
+    "Pospornica japońska",
+    "Pittosporum"
+  ],
+  "pittosporum-tobira-nana": [
+    "Pospornica japońska karłowa",
+    "Pittosporum"
+  ],
+  "westringia-fruticosa": [
+    "Westringia krzewiasta",
+    "Rozmaryn australijski"
+  ],
+  "coronilla-valentina-subsp-glauca": [
+    "Cieciorka walencka",
+    "Coronilla"
+  ],
+  "spartium-junceum": [
+    "Szczodrzenica sitowata",
+    "Spartium"
+  ],
+  "genista-hispanica": [
+    "Janowiec hiszpański",
+    "Janowiec"
+  ],
+  "ballota-pseudodictamnus": [
+    "Mierznica",
+    "Ballota"
+  ],
+  "bupleurum-fruticosum": "Przewiercień krzewiasty",
+  "atriplex-halimus": [
+    "Łoboda halimus",
+    "Łoboda"
+  ],
+  "artemisia-powis-castle": [
+    "Bylica 'Powis Castle'",
+    "Bylica"
+  ],
+  "artemisia-absinthium": [
+    "Bylica piołun",
+    "Piołun"
+  ],
+  "salvia-yangii-blue-spire": [
+    "Perowskia łobodolistna 'Blue Spire'",
+    "Perowskia",
+    "Szałwia rosyjska"
+  ],
+  "salvia-greggii": [
+    "Szałwia Gregga",
+    "Szałwia"
+  ],
+  "salvia-microphylla": [
+    "Szałwia drobnolistna",
+    "Szałwia"
+  ],
+  "salvia-amistad": [
+    "Szałwia 'Amistad'",
+    "Szałwia"
+  ],
+  "salvia-sclarea": [
+    "Szałwia muszkatołowa",
+    "Szałwia"
+  ],
+  "convolvulus-cneorum": [
+    "Powój srebrzysty",
+    "Powój krzewiasty"
+  ],
+  "convolvulus-sabatius": [
+    "Powój mauretański",
+    "Powój"
+  ],
+  "lantana-camara": [
+    "Lantana pospolita",
+    "Lantana"
+  ],
+  "plumbago-auriculata": [
+    "Ołownik uszkowaty",
+    "Plumbago"
+  ],
+  "callistemon-citrinus": [
+    "Szczotkowiec cytrynowy",
+    "Kallistemon"
+  ],
+  "rhamnus-alaternus": [
+    "Szakłak wiecznie zielony",
+    "Szakłak"
+  ],
+  "pistacia-lentiscus": [
+    "Pistacja kleista",
+    "Drzewo mastyksowe"
+  ],
+  "hebe-great-orme": [
+    "Hebe 'Great Orme'",
+    "Hebe"
+  ],
+  "hebe-red-edge": [
+    "Hebe 'Red Edge'",
+    "Hebe"
+  ],
+  "agapanthus-africanus": [
+    "Agapant afrykański",
+    "Lilia afrykańska",
+    "Agapant"
+  ],
+  "agapanthus-headbourne-hybrids": [
+    "Agapant (mieszańce Headbourne)",
+    "Lilia afrykańska",
+    "Agapant"
+  ],
+  "oenothera-lindheimeri-whirling-butterflies": [
+    "Gaura Lindheimera 'Whirling Butterflies'",
+    "Wiesiołek Lindheimera",
+    "Gaura"
+  ],
+  "erigeron-karvinskianus": [
+    "Przymiotno Karwińskiego",
+    "Przymiotno"
+  ],
+  "centranthus-ruber": [
+    "Ostrogowiec czerwony",
+    "Ostrogowiec"
+  ],
+  "achillea-moonshine": [
+    "Krwawnik 'Moonshine'",
+    "Krwawnik"
+  ],
+  "stachys-byzantina": [
+    "Czyściec wełnisty",
+    "Ośle uszy",
+    "Czyściec bizantyjski"
+  ],
+  "eryngium-bourgatii": [
+    "Mikołajek Bourgata",
+    "Mikołajek pirenejski",
+    "Mikołajek"
+  ],
+  "eryngium-giganteum": [
+    "Mikołajek olbrzymi",
+    "Mikołajek"
+  ],
+  "verbena-bonariensis": [
+    "Werbena patagońska",
+    "Werbena argentyńska",
+    "Werbena"
+  ],
+  "silene-coronaria": [
+    "Firletka kwiecista",
+    "Lepnica wieńcowa"
+  ],
+  "glaucium-flavum": [
+    "Siwiec żółty",
+    "Mak rogaty"
+  ],
+  "epilobium-canum": [
+    "Wierzbownica kalifornijska",
+    "Zauschneria"
+  ],
+  "origanum-laevigatum-herrenhausen": [
+    "Lebiodka gładka 'Herrenhausen'",
+    "Oregano ozdobne"
+  ],
+  "nepeta-racemosa-walkers-low": [
+    "Kocimiętka groniasta 'Walker's Low'",
+    "Kocimiętka"
+  ],
+  "asphodeline-lutea": [
+    "Złotnica żółta",
+    "Złotnica"
+  ],
+  "asphodelus-albus": [
+    "Złotogłów biały",
+    "Asfodel biały"
+  ],
+  "acanthus-mollis": [
+    "Akant miękki",
+    "Akant"
+  ],
+  "limonium-platyphyllum": [
+    "Zatrwian szerokolistny",
+    "Zatrwian"
+  ],
+  "armeria-maritima": [
+    "Zawciąg nadmorski",
+    "Zawciąg"
+  ],
+  "aurinia-saxatilis": [
+    "Smagliczka skalna",
+    "Smagliczka"
+  ],
+  "cerastium-tomentosum": [
+    "Rogownica kutnerowata",
+    "Rogownica"
+  ],
+  "iberis-sempervirens": [
+    "Ubiorek wiecznie zielony",
+    "Ubiorek",
+    "Iberis"
+  ],
+  "osteospermum-jucundum": [
+    "Osteospermum",
+    "Stokrotka afrykańska"
+  ],
+  "gazania-rigens": [
+    "Gazania lśniąca",
+    "Gazania"
+  ],
+  "delosperma-cooperi": [
+    "Delosperma Coopera",
+    "Delosperma"
+  ],
+  "aeonium-zwartkop": [
+    "Eonium czarne",
+    "Eonium drzewiaste",
+    "Aeonium"
+  ],
+  "agave-americana": [
+    "Agawa amerykańska",
+    "Agawa"
+  ],
+  "yucca-filamentosa": [
+    "Juka karolińska",
+    "Juka ogrodowa",
+    "Juka"
+  ],
+  "yucca-gloriosa": [
+    "Juka okazała",
+    "Juka"
+  ],
+  "opuntia-ficus-indica": [
+    "Opuncja figowa",
+    "Figa indyjska",
+    "Opuncja"
+  ],
+  "opuntia-humifusa": [
+    "Opuncja rozesłana",
+    "Opuncja"
+  ],
+  "sedum-album": [
+    "Rozchodnik biały",
+    "Rozchodnik"
+  ],
+  "sempervivum-tectorum": [
+    "Rojnik murowy",
+    "Rojnik"
+  ],
+  "crambe-maritima": [
+    "Modrak morski",
+    "Kapusta morska"
+  ],
+  "agastache-blue-fortune": [
+    "Kłosowiec 'Blue Fortune'",
+    "Kłosowiec",
+    "Agastache"
+  ],
+  "nassella-tenuissima": [
+    "Ostnica cieniutka",
+    "Ostnica meksykańska",
+    "Ostnica"
+  ],
+  "stipa-gigantea": [
+    "Ostnica olbrzymia",
+    "Ostnica"
+  ],
+  "helictotrichon-sempervirens": [
+    "Owsica wiecznie zielona",
+    "Owsica"
+  ],
+  "pennisetum-villosum": [
+    "Rozplenica kosmata",
+    "Rozplenica"
+  ],
+  "lagurus-ovatus": [
+    "Dmuszek jajowaty",
+    "Zajęczy ogon",
+    "Trawa aksamitna"
+  ],
+  "ampelodesmos-mauritanicus": [
+    "Ampelodesmos mauretański",
+    "Ampelodesmos"
+  ],
+  "briza-maxima": [
+    "Drżączka największa",
+    "Drżączka"
+  ],
+  "allium-sphaerocephalon": [
+    "Czosnek główkowaty",
+    "Czosnek ozdobny"
+  ],
+  "allium-cristophii": [
+    "Czosnek Christopha",
+    "Czosnek ozdobny"
+  ],
+  "allium-siculum": [
+    "Czosnek sycylijski",
+    "Nektaroskordum"
+  ],
+  "iris-reticulata": [
+    "Kosaciec żyłkowany",
+    "Irys żyłkowany"
+  ],
+  "gladiolus-communis-subsp-byzantinus": [
+    "Mieczyk bizantyjski",
+    "Mieczyk"
+  ],
+  "tulipa-sylvestris": [
+    "Tulipan leśny",
+    "Tulipan dziki"
+  ],
+  "tulipa-clusiana": [
+    "Tulipan Clusiusa",
+    "Tulipan botaniczny"
+  ],
+  "crocus-sativus": [
+    "Krokus uprawny",
+    "Szafran"
+  ],
+  "narcissus-tazetta": [
+    "Narcyz bukietowy",
+    "Narcyz tazeta"
+  ],
+  "sternbergia-lutea": [
+    "Sternbergia żółta",
+    "Sternbergia"
+  ],
+  "anemone-coronaria": [
+    "Zawilec wieńcowy",
+    "Zawilec"
+  ],
+  "cyclamen-hederifolium": [
+    "Cyklamen bluszczolistny",
+    "Fiołek alpejski"
+  ],
+  "delphinium-elatum-group": [
+    "Ostróżka wyniosła (grupa Elatum)",
+    "Ostróżka"
+  ],
+  "lupinus-russell-group": [
+    "Łubin Russella",
+    "Łubin trwały",
+    "Łubin"
+  ],
+  "digitalis-purpurea": [
+    "Naparstnica purpurowa",
+    "Naparstnica"
+  ],
+  "digitalis-purpurea-pams-choice": [
+    "Naparstnica purpurowa 'Pam's Choice'",
+    "Naparstnica"
+  ],
+  "alcea-rosea": [
+    "Malwa różowa",
+    "Prawoślaz różowy",
+    "Malwa"
+  ],
+  "phlox-paniculata": [
+    "Floks wiechowaty",
+    "Płomyk wiechowaty",
+    "Floks"
+  ],
+  "phlox-paniculata-david": [
+    "Floks wiechowaty 'David'",
+    "Floks"
+  ],
+  "campanula-lactiflora": [
+    "Dzwonek mlecznokwiatowy",
+    "Dzwonek"
+  ],
+  "campanula-persicifolia": [
+    "Dzwonek brzoskwiniolistny",
+    "Dzwonek"
+  ],
+  "campanula-glomerata-superba": [
+    "Dzwonek skupiony 'Superba'",
+    "Dzwonek"
+  ],
+  "astrantia-major": [
+    "Jarzmianka większa",
+    "Jarzmianka"
+  ],
+  "alchemilla-mollis": [
+    "Przywrotnik miękki",
+    "Przywrotnik"
+  ],
+  "geranium-x-magnificum": [
+    "Bodziszek wspaniały",
+    "Bodziszek"
+  ],
+  "geranium-johnsons-blue": [
+    "Bodziszek 'Johnson's Blue'",
+    "Bodziszek"
+  ],
+  "geranium-macrorrhizum": [
+    "Bodziszek korzeniasty",
+    "Bodziszek"
+  ],
+  "geranium-sanguineum": [
+    "Bodziszek czerwony",
+    "Bodziszek krwisty",
+    "Bodziszek"
+  ],
+  "geranium-phaeum": [
+    "Bodziszek żałobny",
+    "Bodziszek"
+  ],
+  "symphyotrichum-novae-angliae": [
+    "Aster nowoangielski",
+    "Astrzec nowoangielski",
+    "Marcinek"
+  ],
+  "symphyotrichum-novi-belgii": [
+    "Aster nowobelgijski",
+    "Marcinek",
+    "Astrzec nowobelgijski"
+  ],
+  "aster-x-frikartii-monch": [
+    "Aster Frikarta 'Mönch'",
+    "Aster"
+  ],
+  "echinops-ritro": [
+    "Przegorzan pospolity",
+    "Przegorzan"
+  ],
+  "eryngium-planum": [
+    "Mikołajek płaskolistny",
+    "Mikołajek"
+  ],
+  "iris-germanica": [
+    "Kosaciec bródkowy",
+    "Kosaciec niemiecki",
+    "Irys"
+  ],
+  "iris-jane-phillips": [
+    "Kosaciec bródkowy 'Jane Phillips'",
+    "Irys"
+  ],
+  "iris-sibirica": [
+    "Kosaciec syberyjski",
+    "Irys syberyjski"
+  ],
+  "hemerocallis-fulva": [
+    "Liliowiec rdzawy",
+    "Liliowiec"
+  ],
+  "hemerocallis-frans-hals": [
+    "Liliowiec 'Frans Hals'",
+    "Liliowiec"
+  ],
+  "kniphofia-uvaria": [
+    "Trytoma groniasta",
+    "Trytoma",
+    "Knifofia"
+  ],
+  "crocosmia-lucifer": [
+    "Krokosmia 'Lucifer'",
+    "Montbrecja",
+    "Krokosmia"
+  ],
+  "anemone-x-hybrida-honorine-jobert": [
+    "Zawilec mieszańcowy 'Honorine Jobert'",
+    "Zawilec japoński"
+  ],
+  "anemone-x-hybrida-konigin-charlotte": [
+    "Zawilec mieszańcowy 'Queen Charlotte'",
+    "Zawilec 'Königin Charlotte'",
+    "Zawilec japoński"
+  ],
+  "aquilegia-vulgaris": [
+    "Orlik pospolity",
+    "Orlik"
+  ],
+  "aquilegia-vulgaris-var-stellata-nora-barlow": [
+    "Orlik pospolity 'Nora Barlow'",
+    "Orlik"
+  ],
+  "lamprocapnos-spectabilis": [
+    "Serduszka okazała",
+    "Serduszka",
+    "Dicentra"
+  ],
+  "dicentra-luxuriant": [
+    "Serduszka 'Luxuriant'",
+    "Serduszka"
+  ],
+  "papaver-orientale": [
+    "Mak wschodni",
+    "Mak"
+  ],
+  "leucanthemum-x-superbum": [
+    "Jastrun śnieżny",
+    "Złocień wielki",
+    "Margerytka"
+  ],
+  "achillea-terracotta": [
+    "Krwawnik 'Terracotta'",
+    "Krwawnik"
+  ],
+  "achillea-millefolium-cerise-queen": [
+    "Krwawnik pospolity 'Cerise Queen'",
+    "Krwawnik"
+  ],
+  "helenium-moerheim-beauty": [
+    "Dzielżan 'Moerheim Beauty'",
+    "Dzielżan"
+  ],
+  "heliopsis-helianthoides-var-scabra-sommersonne": [
+    "Słoneczniczek szorstki 'Sommersonne'",
+    "Słoneczniczek"
+  ],
+  "rudbeckia-laciniata-goldquelle": [
+    "Rudbekia naga 'Goldquelle'",
+    "Rudbekia"
+  ],
+  "echinacea-purpurea-rubinstern": [
+    "Jeżówka purpurowa 'Rubinstern'",
+    "Jeżówka"
+  ],
+  "echinacea-purpurea-white-swan": [
+    "Jeżówka purpurowa 'White Swan'",
+    "Jeżówka"
+  ],
+  "monarda-cambridge-scarlet": [
+    "Pysznogłówka 'Cambridge Scarlet'",
+    "Pysznogłówka",
+    "Monarda"
+  ],
+  "veronica-spicata": [
+    "Przetacznik kłosowy",
+    "Przetacznik"
+  ],
+  "veronica-longifolia-blauriesin": [
+    "Przetacznik długolistny 'Blauriesin'",
+    "Przetacznik"
+  ],
+  "veronicastrum-virginicum-fascination": [
+    "Przetacznikowiec wirginijski 'Fascination'",
+    "Przetacznikowiec"
+  ],
+  "persicaria-amplexicaulis-firetail": [
+    "Rdest himalajski 'Firetail'",
+    "Rdest"
+  ],
+  "sanguisorba-officinalis-red-thunder": [
+    "Krwiściąg lekarski 'Red Thunder'",
+    "Krwiściąg"
+  ],
+  "thalictrum-aquilegiifolium": [
+    "Rutewka orlikolistna",
+    "Rutewka"
+  ],
+  "filipendula-rubra-venusta": [
+    "Wiązówka czerwona 'Venusta'",
+    "Wiązówka"
+  ],
+  "ligularia-dentata-desdemona": [
+    "Języczka pomarańczowa 'Desdemona'",
+    "Języczka"
+  ],
+  "astilbe-x-arendsii-fanal": [
+    "Tawułka Arendsa 'Fanal'",
+    "Tawułka",
+    "Astilbe"
+  ],
+  "astilbe-chinensis-var-taquetii-purpurlanze": [
+    "Tawułka chińska 'Purpurlanze'",
+    "Tawułka",
+    "Astilbe"
+  ],
+  "hosta-halcyon": [
+    "Funkia 'Halcyon'",
+    "Hosta"
+  ],
+  "hosta-patriot": [
+    "Funkia 'Patriot'",
+    "Hosta"
+  ],
+  "hosta-sum-and-substance": [
+    "Funkia 'Sum and Substance'",
+    "Hosta"
+  ],
+  "heuchera-palace-purple": [
+    "Żurawka 'Palace Purple'",
+    "Żurawka"
+  ],
+  "heuchera-lime-marmalade": [
+    "Żurawka 'Lime Marmalade'",
+    "Żurawka"
+  ],
+  "brunnera-macrophylla-jack-frost": [
+    "Brunnera wielkolistna 'Jack Frost'",
+    "Brunnera"
+  ],
+  "pulmonaria-saccharata-mrs-moon": [
+    "Miodunka cukrowa 'Mrs Moon'",
+    "Miodunka"
+  ],
+  "bergenia-cordifolia": [
+    "Bergenia sercolistna",
+    "Bergenia"
+  ],
+  "epimedium-x-versicolor-sulphureum": [
+    "Epimedium różnobarwne 'Sulphureum'",
+    "Epimedium"
+  ],
+  "tiarella-cordifolia": [
+    "Tiarella sercolistna",
+    "Tiarella"
+  ],
+  "polygonatum-x-hybridum": [
+    "Kokoryczka mieszańcowa",
+    "Kokoryczka"
+  ],
+  "lamium-maculatum-white-nancy": [
+    "Jasnota plamista 'White Nancy'",
+    "Jasnota"
+  ],
+  "ajuga-reptans-braunherz": [
+    "Dąbrówka rozłogowa 'Braunherz'",
+    "Dąbrówka"
+  ],
+  "vinca-minor": [
+    "Barwinek pospolity",
+    "Barwinek"
+  ],
+  "pachysandra-terminalis": [
+    "Runianka japońska",
+    "Pachysandra"
+  ],
+  "waldsteinia-ternata": [
+    "Pragnia syberyjska",
+    "Waldsteinia"
+  ],
+  "lysimachia-punctata": [
+    "Tojeść kropkowana",
+    "Tojeść"
+  ],
+  "salvia-x-sylvestris-mainacht": [
+    "Szałwia leśna 'Mainacht'",
+    "Szałwia"
+  ],
+  "paeonia-lactiflora-sarah-bernhardt": [
+    "Piwonia chińska 'Sarah Bernhardt'",
+    "Piwonia"
+  ],
+  "paeonia-lactiflora-bowl-of-beauty": [
+    "Piwonia chińska 'Bowl of Beauty'",
+    "Piwonia"
+  ],
+  "paeonia-officinalis-rubra-plena": [
+    "Piwonia lekarska 'Rubra Plena'",
+    "Piwonia"
+  ],
+  "paeonia-suffruticosa": [
+    "Piwonia drzewiasta",
+    "Piwonia krzewiasta",
+    "Piwonia"
+  ],
+  "dianthus-doris": [
+    "Goździk ogrodowy 'Doris'",
+    "Goździk"
+  ],
+  "dianthus-mrs-sinkins": [
+    "Goździk ogrodowy 'Mrs Sinkins'",
+    "Goździk"
+  ],
+  "gypsophila-paniculata-bristol-fairy": [
+    "Łyszczec wiechowaty 'Bristol Fairy'",
+    "Gipsówka",
+    "Łyszczec"
+  ],
+  "lychnis-chalcedonica": [
+    "Firletka chalcedońska",
+    "Firletka"
+  ],
+  "knautia-macedonica": [
+    "Świerzbnica macedońska",
+    "Świerzbnica"
+  ],
+  "scabiosa-butterfly-blue": [
+    "Driakiew 'Butterfly Blue'",
+    "Driakiew"
+  ],
+  "centaurea-montana": [
+    "Chaber górski",
+    "Chaber"
+  ],
+  "erysimum-bowless-mauve": [
+    "Pszonak 'Bowles's Mauve'",
+    "Pszonak"
+  ],
+  "lunaria-annua": [
+    "Miesiącznica roczna",
+    "Judaszowe srebrniki",
+    "Miesiącznica"
+  ],
+  "myosotis-sylvatica": [
+    "Niezapominajka leśna",
+    "Niezapominajka"
+  ],
+  "bellis-perennis-pomponette": [
+    "Stokrotka pospolita 'Pomponette'",
+    "Stokrotka"
+  ],
+  "viola-cornuta": [
+    "Fiołek rogaty",
+    "Fiołek"
+  ],
+  "primula-vulgaris": [
+    "Pierwiosnek bezłodygowy",
+    "Prymulka",
+    "Pierwiosnek"
+  ],
+  "primula-auricula": [
+    "Pierwiosnek łyszczak",
+    "Aurykuła",
+    "Pierwiosnek"
+  ],
+  "doronicum-orientale-magnificum": [
+    "Omieg wschodni 'Magnificum'",
+    "Omieg"
+  ],
+  "trollius-europaeus": [
+    "Pełnik europejski",
+    "Pełnik"
+  ],
+  "rodgersia-aesculifolia": [
+    "Rodgersja kasztanowcolistna",
+    "Rodgersja"
+  ],
+  "molinia-caerulea-subsp-arundinacea-transparent": [
+    "Trzęślica trzcinowata 'Transparent'",
+    "Trzęślica"
+  ],
+  "deschampsia-cespitosa-goldtau": [
+    "Śmiałek darniowy 'Goldtau'",
+    "Śmiałek"
+  ],
+  "hakonechloa-macra-aureola": [
+    "Hakonechloa smukła 'Aureola'",
+    "Hakonechloa"
+  ],
+  "carex-morrowii-ice-dance": [
+    "Turzyca Morrowa 'Ice Dance'",
+    "Turzyca"
+  ],
+  "carex-testacea": [
+    "Turzyca pomarańczowa",
+    "Turzyca nowozelandzka",
+    "Turzyca"
+  ],
+  "panicum-virgatum-shenandoah": [
+    "Proso rózgowe 'Shenandoah'",
+    "Proso rózgowe"
+  ],
+  "sesleria-autumnalis": [
+    "Sesleria jesienna",
+    "Sesleria"
+  ],
+  "luzula-nivea": [
+    "Kosmatka śnieżna",
+    "Kosmatka"
+  ],
+  "miscanthus-sinensis-malepartus": [
+    "Miskant chiński 'Malepartus'",
+    "Miskant"
+  ],
+  "miscanthus-sinensis-zebrinus": [
+    "Miskant chiński zebrowy",
+    "Miskant Zebrinus",
+    "Miskant"
+  ],
+  "imperata-cylindrica-rubra": [
+    "Imperata cylindryczna 'Red Baron'",
+    "Imperata"
+  ],
+  "athyrium-filix-femina": [
+    "Wietlica samicza",
+    "Paproć"
+  ],
+  "polystichum-setiferum": [
+    "Paprotnik szczecinkozębny",
+    "Paprotnik",
+    "Paproć"
+  ],
+  "asplenium-scolopendrium": [
+    "Języcznik zwyczajny",
+    "Języcznik",
+    "Paproć"
+  ],
+  "osmunda-regalis": [
+    "Długosz królewski",
+    "Paproć"
+  ],
+  "matteuccia-struthiopteris": [
+    "Pióropusznik strusi",
+    "Paproć"
+  ],
+  "polypodium-vulgare": [
+    "Paprotka zwyczajna",
+    "Paproć"
+  ],
+  "tulipa-queen-of-night": [
+    "Tulipan 'Queen of Night'",
+    "Tulipan"
+  ],
+  "tulipa-ballerina": [
+    "Tulipan 'Ballerina'",
+    "Tulipan"
+  ],
+  "tulipa-angelique": [
+    "Tulipan 'Angélique'",
+    "Tulipan"
+  ],
+  "tulipa-pink-impression": [
+    "Tulipan Darwina 'Pink Impression'",
+    "Tulipan"
+  ],
+  "tulipa-tarda": [
+    "Tulipan późny",
+    "Tulipan tarda",
+    "Tulipan botaniczny"
+  ],
+  "narcissus-tete-a-tete": [
+    "Narcyz 'Tête-à-Tête'",
+    "Żonkil",
+    "Narcyz"
+  ],
+  "narcissus-thalia": [
+    "Narcyz 'Thalia'",
+    "Narcyz"
+  ],
+  "narcissus-february-gold": [
+    "Narcyz 'February Gold'",
+    "Żonkil",
+    "Narcyz"
+  ],
+  "narcissus-poeticus-var-recurvus": [
+    "Narcyz biały",
+    "Narcyz poetycki"
+  ],
+  "galanthus-nivalis": [
+    "Śnieżyczka przebiśnieg",
+    "Przebiśnieg"
+  ],
+  "crocus-tommasinianus": [
+    "Krokus Tomasiniego",
+    "Krokus"
+  ],
+  "crocus-vernus-pickwick": [
+    "Krokus wiosenny 'Pickwick'",
+    "Krokus"
+  ],
+  "muscari-armeniacum": [
+    "Szafirek armeński",
+    "Szafirek"
+  ],
+  "scilla-siberica": [
+    "Cebulica syberyjska",
+    "Cebulica"
+  ],
+  "scilla-forbesii": [
+    "Śnieżnik Forbesa",
+    "Śnieżnik",
+    "Chionodoxa"
+  ],
+  "hyacinthoides-non-scripta": [
+    "Hiacyntowiec zwyczajny",
+    "Hiacyntowiec",
+    "Dzwonki angielskie"
+  ],
+  "fritillaria-meleagris": [
+    "Szachownica kostkowata",
+    "Szachownica"
+  ],
+  "fritillaria-imperialis": [
+    "Szachownica cesarska",
+    "Korona cesarska"
+  ],
+  "leucojum-aestivum-gravetye-giant": [
+    "Śnieżyca letnia 'Gravetye Giant'",
+    "Śnieżyca"
+  ],
+  "eranthis-hyemalis": [
+    "Rannik zimowy",
+    "Rannik"
+  ],
+  "allium-globemaster": [
+    "Czosnek ozdobny 'Globemaster'",
+    "Czosnek ozdobny"
+  ],
+  "allium-gladiator": [
+    "Czosnek ozdobny 'Gladiator'",
+    "Czosnek ozdobny"
+  ],
+  "camassia-leichtlinii-caerulea": [
+    "Kamasja Leichtlina 'Caerulea'",
+    "Kamasja"
+  ],
+  "lilium-regale": [
+    "Lilia królewska",
+    "Lilia"
+  ],
+  "lilium-martagon": [
+    "Lilia złotogłów",
+    "Lilia"
+  ],
+  "lilium-candidum": [
+    "Lilia biała",
+    "Lilia Madonna",
+    "Lilia"
+  ],
+  "dahlia-bishop-of-llandaff": [
+    "Dalia 'Bishop of Llandaff'",
+    "Georginia",
+    "Dalia"
+  ],
+  "dahlia-cafe-au-lait": [
+    "Dalia 'Café au Lait'",
+    "Georginia",
+    "Dalia"
+  ],
+  "gladiolus-x-hortulanus": [
+    "Mieczyk ogrodowy",
+    "Mieczyk",
+    "Gladiola"
+  ],
+  "canna-x-generalis": [
+    "Paciorecznik ogrodowy",
+    "Kanna",
+    "Paciorecznik"
+  ],
+  "hyacinthus-orientalis-delft-blue": [
+    "Hiacynt wschodni 'Delft Blue'",
+    "Hiacynt"
+  ],
+  "anemone-blanda": [
+    "Zawilec grecki",
+    "Zawilec"
+  ],
+  "cyclamen-coum": [
+    "Cyklamen dyskowaty",
+    "Fiołek alpejski"
+  ],
+  "convallaria-majalis": [
+    "Konwalia majowa",
+    "Konwalia"
+  ],
+  "pulsatilla-vulgaris": [
+    "Sasanka zwyczajna",
+    "Sasanka"
+  ],
+  "pulsatilla-grandis": [
+    "Sasanka wielkokwiatowa",
+    "Sasanka"
+  ],
+  "pulsatilla-pratensis-subsp-nigricans": [
+    "Sasanka łąkowa czerniejąca",
+    "Sasanka łąkowa",
+    "Sasanka"
+  ],
+  "adonis-vernalis": [
+    "Miłek wiosenny",
+    "Miłek"
+  ],
+  "iris-pumila": [
+    "Kosaciec niski",
+    "Irys karłowy"
+  ],
+  "iris-variegata": [
+    "Kosaciec pstry",
+    "Kosaciec węgierski"
+  ],
+  "stipa-pennata": [
+    "Ostnica Jana",
+    "Ostnica"
+  ],
+  "stipa-capillata": [
+    "Ostnica włosowata",
+    "Ostnica"
+  ],
+  "festuca-valesiaca": [
+    "Kostrzewa walezyjska",
+    "Kostrzewa"
+  ],
+  "linum-flavum": [
+    "Len złocisty",
+    "Len żółty",
+    "Len"
+  ],
+  "linum-austriacum": [
+    "Len austriacki",
+    "Len"
+  ],
+  "inula-ensifolia": [
+    "Oman wąskolistny",
+    "Oman"
+  ],
+  "aster-amellus": [
+    "Aster gawędka",
+    "Gawędka",
+    "Aster"
+  ],
+  "galatella-linosyris": [
+    "Aster złotowłos",
+    "Złotowłos zwyczajny",
+    "Aster"
+  ],
+  "dictamnus-albus": [
+    "Dyptam jesionolistny",
+    "Krzew gorejący",
+    "Dyptam"
+  ],
+  "salvia-pratensis": [
+    "Szałwia łąkowa",
+    "Szałwia"
+  ],
+  "salvia-nemorosa-wild": [
+    "Szałwia omszona",
+    "Szałwia gajowa",
+    "Szałwia"
+  ],
+  "salvia-verticillata": [
+    "Szałwia okręgowa",
+    "Szałwia"
+  ],
+  "echium-russicum": [
+    "Żmijowiec czerwony",
+    "Żmijowiec"
+  ],
+  "dianthus-carthusianorum": [
+    "Goździk kartuzek",
+    "Kartuzek",
+    "Goździk"
+  ],
+  "dianthus-plumarius": [
+    "Goździk pierzasty",
+    "Goździk"
+  ],
+  "anthericum-ramosum": [
+    "Pajęcznica gałęzista",
+    "Pajęcznica"
+  ],
+  "allium-flavum": [
+    "Czosnek żółty",
+    "Czosnek ozdobny"
+  ],
+  "allium-lusitanicum": [
+    "Czosnek górski",
+    "Czosnek ozdobny"
+  ],
+  "euphorbia-epithymoides": [
+    "Wilczomlecz pstry",
+    "Wilczomlecz"
+  ],
+  "thymus-pannonicus": [
+    "Macierzanka pannońska",
+    "Macierzanka"
+  ],
+  "scabiosa-ochroleuca": [
+    "Driakiew żółtawa",
+    "Driakiew"
+  ],
+  "centaurea-scabiosa": [
+    "Chaber driakiewnik",
+    "Chaber"
+  ],
+  "globularia-cordifolia": [
+    "Kulnik sercowatolistny",
+    "Kulnik"
+  ],
+  "helianthemum-nummularium": [
+    "Posłonek rozesłany",
+    "Posłonek"
+  ],
+  "anthyllis-vulneraria": [
+    "Przelot pospolity",
+    "Przelot"
+  ],
+  "crambe-tataria": [
+    "Modrak tatarski",
+    "Modrak"
+  ],
+  "jovibarba-globifera": [
+    "Rojownik pospolity",
+    "Rojownik"
+  ],
+  "sedum-acre": [
+    "Rozchodnik ostry",
+    "Rozchodnik"
+  ],
+  "phlomis-tuberosa": [
+    "Żeleźniak bulwiasty",
+    "Phlomis"
+  ],
+  "nepeta-nuda": [
+    "Kocimiętka naga",
+    "Kocimiętka"
+  ],
+  "veronica-teucrium": [
+    "Przetacznik pagórkowy",
+    "Przetacznik"
+  ],
+  "prunella-grandiflora": [
+    "Głowienka wielkokwiatowa",
+    "Głowienka"
+  ],
+  "leucanthemum-vulgare": [
+    "Złocień właściwy",
+    "Jastrun właściwy",
+    "Margerytka"
+  ],
+  "knautia-arvensis": [
+    "Świerzbnica polna",
+    "Świerzbnica"
+  ],
+  "centaurea-jacea": [
+    "Chaber łąkowy",
+    "Chaber"
+  ],
+  "campanula-rotundifolia": [
+    "Dzwonek okrągłolistny",
+    "Dzwonek"
+  ],
+  "galium-verum": [
+    "Przytulia właściwa",
+    "Przytulia"
+  ],
+  "lotus-corniculatus": [
+    "Komonica zwyczajna",
+    "Komonica"
+  ],
+  "daucus-carota-subsp-carota": [
+    "Marchew dzika",
+    "Dzika marchew"
+  ],
+  "silene-flos-cuculi": [
+    "Firletka poszarpana",
+    "Firletka"
+  ],
+  "primula-veris": [
+    "Pierwiosnek lekarski",
+    "Kluczyki",
+    "Pierwiosnek"
+  ],
+  "silene-dioica": [
+    "Lepnica czerwona",
+    "Bniec czerwony"
+  ],
+  "betonica-officinalis": [
+    "Bukwica zwyczajna",
+    "Bukwica lekarska",
+    "Bukwica"
+  ],
+  "geum-rivale": [
+    "Kuklik zwisły",
+    "Kuklik"
+  ],
+  "sanguisorba-officinalis": [
+    "Krwiściąg lekarski",
+    "Krwiściąg"
+  ],
+  "briza-media": [
+    "Drżączka średnia",
+    "Drżączka"
+  ],
+  "verbascum-thapsus": [
+    "Dziewanna drobnokwiatowa",
+    "Dziewanna"
+  ],
+  "verbascum-phoeniceum": [
+    "Dziewanna fioletowa",
+    "Dziewanna"
+  ],
+  "verbascum-chaixii": [
+    "Dziewanna Chaixa",
+    "Dziewanna"
+  ],
+  "echium-vulgare": [
+    "Żmijowiec zwyczajny",
+    "Żmijowiec"
+  ],
+  "malva-moschata": [
+    "Ślaz piżmowy",
+    "Ślaz"
+  ],
+  "achillea-millefolium": [
+    "Krwawnik pospolity",
+    "Krwawnik"
+  ],
+  "succisa-pratensis": [
+    "Czarcikęs łąkowy",
+    "Czarcikęs"
+  ],
+  "arnica-montana": [
+    "Arnika górska",
+    "Arnika"
+  ],
+  "anemone-nemorosa": [
+    "Zawilec gajowy",
+    "Zawilec"
+  ],
+  "anemone-ranunculoides": [
+    "Zawilec żółty",
+    "Zawilec"
+  ],
+  "hepatica-nobilis": [
+    "Przylaszczka pospolita",
+    "Przylaszczka"
+  ],
+  "pulmonaria-officinalis": [
+    "Miodunka plamista",
+    "Miodunka"
+  ],
+  "asarum-europaeum": [
+    "Kopytnik pospolity",
+    "Kopytnik"
+  ],
+  "galium-odoratum": [
+    "Przytulia wonna",
+    "Marzanka wonna"
+  ],
+  "lathyrus-vernus": [
+    "Groszek wiosenny",
+    "Groszek"
+  ],
+  "corydalis-cava": [
+    "Kokorycz pusta",
+    "Kokorycz"
+  ],
+  "primula-elatior": [
+    "Pierwiosnek wyniosły",
+    "Pierwiosnek"
+  ],
+  "helleborus-odorus": [
+    "Ciemiernik wonny",
+    "Ciemiernik"
+  ],
+  "helleborus-purpurascens": [
+    "Ciemiernik purpurowy",
+    "Ciemiernik czerwonawy",
+    "Ciemiernik"
+  ],
+  "helleborus-foetidus": [
+    "Ciemiernik cuchnący",
+    "Ciemiernik"
+  ],
+  "cyclamen-purpurascens": [
+    "Cyklamen purpurowy",
+    "Fiołek alpejski"
+  ],
+  "leucojum-vernum": [
+    "Śnieżyca wiosenna",
+    "Śnieżyca"
+  ],
+  "scilla-bifolia": [
+    "Cebulica dwulistna",
+    "Cebulica"
+  ],
+  "erythronium-dens-canis": [
+    "Psiząb europejski",
+    "Psiząb"
+  ],
+  "allium-ursinum": [
+    "Czosnek niedźwiedzi",
+    "Czosnek"
+  ],
+  "aruncus-dioicus": [
+    "Parzydło leśne",
+    "Parzydło"
+  ],
+  "lunaria-rediviva": [
+    "Miesiącznica trwała",
+    "Miesiącznica"
+  ],
+  "digitalis-grandiflora": [
+    "Naparstnica zwyczajna",
+    "Naparstnica wielkokwiatowa",
+    "Naparstnica"
+  ],
+  "digitalis-lutea": [
+    "Naparstnica żółta",
+    "Naparstnica"
+  ],
+  "polygonatum-multiflorum": [
+    "Kokoryczka wielokwiatowa",
+    "Kokoryczka"
+  ],
+  "carex-sylvatica": [
+    "Turzyca leśna",
+    "Turzyca"
+  ],
+  "carex-pendula": [
+    "Turzyca zwisła",
+    "Turzyca"
+  ],
+  "luzula-sylvatica": [
+    "Kosmatka olbrzymia",
+    "Kosmatka"
+  ],
+  "dryopteris-carthusiana": [
+    "Nerecznica krótkoostna",
+    "Paproć"
+  ],
+  "blechnum-spicant": [
+    "Podrzeń żebrowiec",
+    "Paproć"
+  ],
+  "caltha-palustris": [
+    "Knieć błotna",
+    "Kaczeniec"
+  ],
+  "iris-pseudacorus": [
+    "Kosaciec żółty",
+    "Irys żółty"
+  ],
+  "lythrum-salicaria": [
+    "Krwawnica pospolita",
+    "Krwawnica"
+  ],
+  "filipendula-ulmaria": [
+    "Wiązówka błotna",
+    "Wiązówka"
+  ],
+  "eupatorium-cannabinum": [
+    "Sadziec konopiasty",
+    "Sadziec"
+  ],
+  "mentha-aquatica": [
+    "Mięta nadwodna",
+    "Mięta wodna",
+    "Mięta"
+  ],
+  "butomus-umbellatus": [
+    "Łączeń baldaszkowy",
+    "Łączeń"
+  ],
+  "sagittaria-sagittifolia": [
+    "Strzałka wodna",
+    "Strzałka"
+  ],
+  "typha-minima": [
+    "Pałka najmniejsza",
+    "Pałka"
+  ],
+  "typha-latifolia": [
+    "Pałka szerokolistna",
+    "Pałka wodna",
+    "Pałka"
+  ],
+  "nymphaea-alba": [
+    "Grzybienie białe",
+    "Lilia wodna",
+    "Grzybienie"
+  ],
+  "nuphar-lutea": [
+    "Grążel żółty",
+    "Grążel"
+  ],
+  "menyanthes-trifoliata": [
+    "Bobrek trójlistkowy",
+    "Bobrek"
+  ],
+  "hottonia-palustris": [
+    "Okrężnica bagienna",
+    "Okrężnica"
+  ],
+  "myosotis-scorpioides": [
+    "Niezapominajka błotna",
+    "Niezapominajka"
+  ],
+  "valeriana-officinalis": [
+    "Kozłek lekarski",
+    "Waleriana",
+    "Kozłek"
+  ],
+  "lysimachia-nummularia": [
+    "Tojeść rozesłana",
+    "Tojeść"
+  ],
+  "cardamine-pratensis": [
+    "Rzeżucha łąkowa",
+    "Rzeżucha"
+  ],
+  "phragmites-australis": [
+    "Trzcina pospolita",
+    "Trzcina"
+  ],
+  "gentiana-acaulis": [
+    "Goryczka bezłodygowa",
+    "Goryczka"
+  ],
+  "gentiana-asclepiadea": [
+    "Goryczka trojeściowa",
+    "Goryczka"
+  ],
+  "leontopodium-nivale-subsp-alpinum": [
+    "Szarotka alpejska",
+    "Szarotka"
+  ],
+  "soldanella-alpina": [
+    "Urdzik alpejski",
+    "Urdzik"
+  ],
+  "saxifraga-paniculata": [
+    "Skalnica gronkowa",
+    "Skalnica"
+  ],
+  "dryas-octopetala": [
+    "Dębik ośmiopłatkowy",
+    "Dębik"
+  ],
+  "aster-alpinus": [
+    "Aster alpejski",
+    "Aster"
+  ],
+  "campanula-cochleariifolia": [
+    "Dzwonek drobny",
+    "Dzwonek"
+  ],
+  "hesperis-matronalis": [
+    "Wieczornik damski",
+    "Wieczornik"
+  ],
+  "solanum-lycopersicum-var-cerasiforme": [
+    "Pomidor koktajlowy",
+    "Pomidor cherry",
+    "Pomidor"
+  ],
+  "solanum-lycopersicum-marmande": [
+    "Pomidor mięsisty 'Marmande'",
+    "Pomidor"
+  ],
+  "solanum-lycopersicum-san-marzano": [
+    "Pomidor śliwkowy 'San Marzano'",
+    "Pomidor podłużny",
+    "Pomidor"
+  ],
+  "capsicum-annuum-hungarian-wax": [
+    "Papryka węgierska",
+    "Papryka woskowa",
+    "Papryka"
+  ],
+  "capsicum-annuum-szegedi": [
+    "Papryka przyprawowa 'Szegedi'",
+    "Papryka"
+  ],
+  "capsicum-annuum-corno-di-toro": [
+    "Papryka słodka 'Corno di Toro'",
+    "Papryka"
+  ],
+  "capsicum-annuum-cayenne": [
+    "Papryka chili 'Cayenne'",
+    "Papryka ostra",
+    "Pieprz cayenne"
+  ],
+  "solanum-melongena": [
+    "Bakłażan",
+    "Oberżyna",
+    "Psianka podłużna"
+  ],
+  "cucumis-sativus": [
+    "Ogórek siewny",
+    "Ogórek"
+  ],
+  "cucumis-sativus-vert-petit-de-paris": [
+    "Ogórek korniszon 'Vert Petit de Paris'",
+    "Korniszon",
+    "Ogórek"
+  ],
+  "cucurbita-pepo-black-beauty": [
+    "Cukinia 'Black Beauty'",
+    "Cukinia"
+  ],
+  "cucurbita-pepo-gold-rush": [
+    "Cukinia 'Gold Rush'",
+    "Cukinia żółta",
+    "Cukinia"
+  ],
+  "cucurbita-maxima": [
+    "Dynia olbrzymia",
+    "Dynia"
+  ],
+  "cucurbita-maxima-uchiki-kuri": [
+    "Dynia olbrzymia 'Hokkaido'",
+    "Dynia Hokkaido",
+    "Dynia"
+  ],
+  "cucurbita-moschata": [
+    "Dynia piżmowa",
+    "Dynia butternut",
+    "Dynia"
+  ],
+  "cucurbita-pepo-var-styriaca": [
+    "Dynia styryjska",
+    "Dynia oleista",
+    "Dynia bezłuskowa"
+  ],
+  "cucumis-melo-var-cantalupensis-charentais": [
+    "Melon kantalupa Charentais",
+    "Kantalupa",
+    "Melon"
+  ],
+  "citrullus-lanatus": [
+    "Arbuz",
+    "Kawon"
+  ],
+  "phaseolus-coccineus": [
+    "Fasola wielokwiatowa",
+    "Piękny Jaś",
+    "Fasola tyczna"
+  ],
+  "phaseolus-vulgaris-var-nanus": [
+    "Fasola karłowa",
+    "Fasola zwykła karłowa",
+    "Fasolka szparagowa"
+  ],
+  "phaseolus-vulgaris-fin-de-bagnols": [
+    "Fasola szparagowa 'Fin de Bagnols'",
+    "Fasolka szparagowa"
+  ],
+  "phaseolus-vulgaris-neckarkonigin": [
+    "Fasola tyczna 'Neckarkönigin'",
+    "Fasola"
+  ],
+  "vicia-faba": "Bób",
+  "pisum-sativum": [
+    "Groch zwyczajny",
+    "Groch siewny",
+    "Groszek"
+  ],
+  "zea-mays-var-saccharata": [
+    "Kukurydza cukrowa",
+    "Kukurydza"
+  ],
+  "solanum-tuberosum": [
+    "Ziemniak",
+    "Kartofel",
+    "Psianka ziemniak"
+  ],
+  "allium-cepa": [
+    "Cebula zwyczajna",
+    "Cebula"
+  ],
+  "allium-cepa-var-aggregatum": [
+    "Szalotka",
+    "Cebula szalotka"
+  ],
+  "allium-sativum": [
+    "Czosnek pospolity",
+    "Czosnek"
+  ],
+  "allium-ampeloprasum-var-porrum": "Por",
+  "daucus-carota-subsp-sativus": [
+    "Marchew",
+    "Marchew zwyczajna",
+    "Marchewka"
+  ],
+  "pastinaca-sativa": [
+    "Pasternak zwyczajny",
+    "Pasternak"
+  ],
+  "beta-vulgaris-var-conditiva": [
+    "Burak ćwikłowy",
+    "Burak"
+  ],
+  "apium-graveolens-var-rapaceum": [
+    "Seler korzeniowy",
+    "Seler"
+  ],
+  "petroselinum-crispum-var-tuberosum": [
+    "Pietruszka korzeniowa",
+    "Pietruszka"
+  ],
+  "raphanus-sativus": [
+    "Rzodkiewka",
+    "Rzodkiew zwyczajna"
+  ],
+  "raphanus-sativus-munchner-bier": [
+    "Rzodkiew 'Münchner Bier'",
+    "Rzodkiew piwna",
+    "Rzodkiew"
+  ],
+  "brassica-oleracea-var-gongylodes": "Kalarepa",
+  "brassica-oleracea-var-gongylodes-azur-star": [
+    "Kalarepa fioletowa 'Azur Star'",
+    "Kalarepa"
+  ],
+  "brassica-oleracea-var-sabauda": [
+    "Kapusta włoska",
+    "Kapusta"
+  ],
+  "brassica-oleracea-var-capitata": [
+    "Kapusta głowiasta biała",
+    "Kapusta biała",
+    "Kapusta"
+  ],
+  "brassica-oleracea-var-capitata-f-rubra": [
+    "Kapusta głowiasta czerwona",
+    "Kapusta czerwona",
+    "Modra kapusta"
+  ],
+  "brassica-oleracea-var-botrytis": "Kalafior",
+  "brassica-oleracea-var-italica": [
+    "Brokuł",
+    "Kapusta szparagowa"
+  ],
+  "brassica-oleracea-var-gemmifera": [
+    "Brukselka",
+    "Kapusta brukselska"
+  ],
+  "spinacia-oleracea": [
+    "Szpinak warzywny",
+    "Szpinak"
+  ],
+  "beta-vulgaris-var-cicla": [
+    "Burak liściowy",
+    "Boćwina",
+    "Mangold"
+  ],
+  "beta-vulgaris-var-cicla-bright-lights": [
+    "Burak liściowy 'Bright Lights'",
+    "Boćwina",
+    "Mangold"
+  ],
+  "lactuca-sativa-little-gem": [
+    "Sałata 'Little Gem'",
+    "Sałata rzymska",
+    "Sałata"
+  ],
+  "lactuca-sativa-red-salad-bowl": [
+    "Sałata dębolistna 'Red Salad Bowl'",
+    "Sałata"
+  ],
+  "lactuca-sativa-lollo-rosso": [
+    "Sałata 'Lollo Rosso'",
+    "Sałata"
+  ],
+  "valerianella-locusta": [
+    "Roszponka warzywna",
+    "Roszponka"
+  ],
+  "eruca-vesicaria": [
+    "Rokietta siewna",
+    "Rukola",
+    "Rukiola"
+  ],
+  "cichorium-endivia": [
+    "Endywia",
+    "Cykoria endywia",
+    "Frisée"
+  ],
+  "cichorium-intybus-palla-rossa": [
+    "Cykoria sałatowa 'Palla Rossa'",
+    "Radicchio",
+    "Cykoria"
+  ],
+  "rumex-acetosa": [
+    "Szczaw zwyczajny",
+    "Szczaw"
+  ],
+  "cynara-cardunculus-var-scolymus": [
+    "Karczoch zwyczajny",
+    "Karczoch"
+  ],
+  "cynara-cardunculus-var-altilis": [
+    "Kard",
+    "Karczoch hiszpański"
+  ],
+  "asparagus-officinalis": [
+    "Szparag lekarski",
+    "Szparagi"
+  ],
+  "rheum-x-hybridum": [
+    "Rabarbar ogrodowy",
+    "Rabarbar"
+  ],
+  "armoracia-rusticana": [
+    "Chrzan pospolity",
+    "Chrzan"
+  ],
+  "helianthus-tuberosus": [
+    "Słonecznik bulwiasty",
+    "Topinambur"
+  ],
+  "foeniculum-vulgare-var-azoricum": [
+    "Koper włoski bulwiasty",
+    "Fenkuł",
+    "Koper włoski"
+  ],
+  "scorzonera-hispanica": [
+    "Wężymord czarny korzeń",
+    "Skorzonera",
+    "Czarny korzeń"
+  ],
+  "salvia-officinalis": [
+    "Szałwia lekarska",
+    "Szałwia"
+  ],
+  "salvia-officinalis-purpurascens": [
+    "Szałwia lekarska purpurowa",
+    "Szałwia purpurowa",
+    "Szałwia"
+  ],
+  "origanum-vulgare": [
+    "Lebiodka pospolita",
+    "Oregano"
+  ],
+  "origanum-majorana": [
+    "Majeranek ogrodowy",
+    "Majeranek"
+  ],
+  "satureja-montana": [
+    "Cząber górski",
+    "Cząber"
+  ],
+  "satureja-hortensis": [
+    "Cząber ogrodowy",
+    "Cząber"
+  ],
+  "artemisia-dracunculus-sativa": [
+    "Estragon francuski",
+    "Bylica estragon",
+    "Estragon"
+  ],
+  "anthriscus-cerefolium": [
+    "Trybula ogrodowa",
+    "Trybula"
+  ],
+  "petroselinum-crispum": [
+    "Pietruszka naciowa kędzierzawa",
+    "Natka pietruszki",
+    "Pietruszka"
+  ],
+  "petroselinum-crispum-var-neapolitanum": [
+    "Pietruszka naciowa gładka",
+    "Pietruszka włoska",
+    "Pietruszka"
+  ],
+  "anethum-graveolens": [
+    "Koper ogrodowy",
+    "Koperek"
+  ],
+  "coriandrum-sativum": [
+    "Kolendra siewna",
+    "Kolendra"
+  ],
+  "levisticum-officinale": [
+    "Lubczyk ogrodowy",
+    "Lubczyk"
+  ],
+  "melissa-officinalis": [
+    "Melisa lekarska",
+    "Melisa"
+  ],
+  "mentha-x-piperita": [
+    "Mięta pieprzowa",
+    "Mięta"
+  ],
+  "hyssopus-officinalis": [
+    "Hyzop lekarski",
+    "Hyzop"
+  ],
+  "borago-officinalis": [
+    "Ogórecznik lekarski",
+    "Ogórecznik",
+    "Borago"
+  ],
+  "matricaria-chamomilla": [
+    "Rumianek pospolity",
+    "Rumianek"
+  ],
+  "chamaemelum-nobile": [
+    "Rumian szlachetny",
+    "Rumianek rzymski"
+  ],
+  "aloysia-citrodora": [
+    "Lippia cytrynowa",
+    "Werbena cytrynowa"
+  ],
+  "carum-carvi": [
+    "Kminek zwyczajny",
+    "Kminek"
+  ],
+  "foeniculum-vulgare": [
+    "Koper włoski",
+    "Fenkuł"
+  ],
+  "salvia-rosmarinus-miss-jessopps-upright": [
+    "Rozmaryn 'Miss Jessopp's Upright'",
+    "Rozmaryn"
+  ],
+  "salvia-rosmarinus-prostratus-group": [
+    "Rozmaryn płożący",
+    "Rozmaryn"
+  ],
+  "thymus-x-citriodorus": [
+    "Macierzanka cytrynowa",
+    "Tymianek cytrynowy"
+  ],
+  "thymus-serpyllum": [
+    "Macierzanka piaskowa",
+    "Macierzanka",
+    "Tymianek piaskowy"
+  ],
+  "lepidium-sativum": [
+    "Rzeżucha ogrodowa",
+    "Rzeżucha"
+  ],
+  "sanguisorba-minor": [
+    "Krwiściąg mniejszy",
+    "Pimpinela"
+  ],
+  "rubus-idaeus-glen-ample": [
+    "Malina letnia 'Glen Ample'",
+    "Malina"
+  ],
+  "rubus-idaeus-polka": [
+    "Malina jesienna 'Polka'",
+    "Malina"
+  ],
+  "rubus-fruticosus-loch-ness": [
+    "Jeżyna bezkolcowa 'Loch Ness'",
+    "Jeżyna"
+  ],
+  "ribes-rubrum": [
+    "Porzeczka czerwona",
+    "Porzeczka"
+  ],
+  "ribes-rubrum-white-versailles": [
+    "Porzeczka biała 'White Versailles'",
+    "Porzeczka"
+  ],
+  "ribes-nigrum": [
+    "Porzeczka czarna",
+    "Porzeczka"
+  ],
+  "ribes-uva-crispa": [
+    "Agrest",
+    "Porzeczka agrest"
+  ],
+  "ribes-x-nidigrolaria": [
+    "Porzeczkoagrest",
+    "Josta",
+    "Jostaberry"
+  ],
+  "vaccinium-corymbosum": [
+    "Borówka wysoka",
+    "Borówka amerykańska",
+    "Borówka"
+  ],
+  "lonicera-caerulea-var-kamtschatica": [
+    "Jagoda kamczacka",
+    "Wiciokrzew kamczacki",
+    "Haskap"
+  ],
+  "fragaria-vesca": [
+    "Poziomka pospolita",
+    "Poziomka"
+  ],
+  "rubus-tayberry": [
+    "Tayberry",
+    "Malinojeżyna"
+  ],
+  "aronia-melanocarpa-nero": [
+    "Aronia czarnoowocowa 'Nero'",
+    "Aronia"
+  ],
+  "calendula-officinalis": [
+    "Nagietek lekarski",
+    "Nagietek"
+  ],
+  "tropaeolum-majus": [
+    "Nasturcja większa",
+    "Nasturcja"
+  ],
+  "lathyrus-odoratus": [
+    "Groszek pachnący",
+    "Groszek"
+  ],
+  "centaurea-cyanus": [
+    "Chaber bławatek",
+    "Bławatek",
+    "Chaber"
+  ],
+  "papaver-rhoeas": [
+    "Mak polny",
+    "Mak"
+  ],
+  "papaver-somniferum": [
+    "Mak lekarski",
+    "Mak siewny",
+    "Mak"
+  ],
+  "nigella-damascena": [
+    "Czarnuszka damasceńska",
+    "Czarnuszka"
+  ],
+  "antirrhinum-majus": [
+    "Wyżlin większy",
+    "Lwia paszcza"
+  ],
+  "zinnia-elegans": [
+    "Cynia wytworna",
+    "Cynia"
+  ],
+  "cosmos-bipinnatus-purity": [
+    "Onętek podwójnie pierzasty 'Purity'",
+    "Kosmos",
+    "Onętek"
+  ],
+  "cosmos-sulphureus": [
+    "Onętek siarkowy",
+    "Kosmos siarkowy",
+    "Kosmos"
+  ],
+  "helianthus-annuus-teddy-bear": [
+    "Słonecznik karłowy 'Teddy Bear'",
+    "Słonecznik"
+  ],
+  "helianthus-annuus-italian-white": [
+    "Słonecznik 'Italian White'",
+    "Słonecznik"
+  ],
+  "nicotiana-sylvestris": [
+    "Tytoń leśny",
+    "Tytoń"
+  ],
+  "nicotiana-alata": [
+    "Tytoń oskrzydlony",
+    "Tytoń ozdobny",
+    "Tytoń"
+  ],
+  "cleome-hassleriana": [
+    "Kleome ciernista",
+    "Kleome"
+  ],
+  "amaranthus-caudatus": [
+    "Szarłat zwisły",
+    "Amarantus"
+  ],
+  "ammi-majus": [
+    "Aminek większy",
+    "Aminek"
+  ],
+  "orlaya-grandiflora": [
+    "Orlaja wielkokwiatowa",
+    "Orlaja"
+  ],
+  "scabiosa-atropurpurea": [
+    "Driakiew ciemnopurpurowa",
+    "Driakiew"
+  ],
+  "consolida-ajacis": [
+    "Ostróżeczka ogrodowa",
+    "Ostróżka"
+  ],
+  "eschscholzia-californica": [
+    "Pozłotka kalifornijska",
+    "Eszolcja",
+    "Pozłotka"
+  ],
+  "phacelia-tanacetifolia": [
+    "Facelia błękitna",
+    "Facelia"
+  ],
+  "tagetes-erecta": [
+    "Aksamitka wyniosła",
+    "Aksamitka"
+  ],
+  "tagetes-tenuifolia": [
+    "Aksamitka wąskolistna",
+    "Aksamitka"
+  ],
+  "salvia-splendens": [
+    "Szałwia błyszcząca",
+    "Szałwia"
+  ],
+  "salvia-farinacea": [
+    "Szałwia omączona",
+    "Szałwia"
+  ],
+  "pelargonium-x-hortorum": [
+    "Pelargonia pasiasta",
+    "Pelargonia rabatowa",
+    "Pelargonia"
+  ],
+  "pelargonium-peltatum": [
+    "Pelargonia bluszczolistna",
+    "Pelargonia zwisająca",
+    "Pelargonia"
+  ],
+  "pelargonium-graveolens": [
+    "Pelargonia pachnąca",
+    "Anginka",
+    "Pelargonia"
+  ],
+  "petunia-x-atkinsiana": [
+    "Petunia ogrodowa",
+    "Petunia"
+  ],
+  "petunia-surfinia-series": [
+    "Petunia zwisająca (Surfinia)",
+    "Surfinia",
+    "Petunia"
+  ],
+  "begonia-x-semperflorens-cultorum": [
+    "Begonia stale kwitnąca",
+    "Begonia"
+  ],
+  "impatiens-walleriana": [
+    "Niecierpek Wallera",
+    "Niecierpek"
+  ],
+  "impatiens-hawkeri": [
+    "Niecierpek nowogwinejski",
+    "Niecierpek"
+  ],
+  "lobelia-erinus": [
+    "Lobelia przylądkowa",
+    "Lobelia"
+  ],
+  "glandularia-x-hybrida": [
+    "Werbena ogrodowa",
+    "Werbena mieszańcowa",
+    "Werbena"
+  ],
+  "ageratum-houstonianum": [
+    "Żeniszek meksykański",
+    "Ageratum",
+    "Żeniszek"
+  ],
+  "lobularia-maritima": [
+    "Smagliczka nadmorska",
+    "Lobularia",
+    "Alyssum"
+  ],
+  "celosia-argentea-var-plumosa": [
+    "Celozja srebrzysta pierzasta",
+    "Celozja"
+  ],
+  "gomphrena-globosa": [
+    "Gomfrena kulista",
+    "Gomfrena"
+  ],
+  "rudbeckia-hirta": [
+    "Rudbekia owłosiona",
+    "Rudbekia"
+  ],
+  "malva-trimestris": [
+    "Ślazówka letnia",
+    "Lawatera"
+  ],
+  "matthiola-incana": [
+    "Lewkonia letnia",
+    "Lewkonia"
+  ],
+  "bidens-ferulifolia": [
+    "Uczep koprolistny",
+    "Bidens"
+  ],
+  "fuchsia-x-hybrida": [
+    "Fuksja mieszańcowa",
+    "Fuksja"
+  ]
+}
