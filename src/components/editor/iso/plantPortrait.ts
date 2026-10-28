@@ -59,8 +59,8 @@ function bedPlantGeometry(sp: Species, month: number): THREE.BufferGeometry {
 }
 
 /** The plant as it would stand in the garden in its showiest month. */
-function portraitGeometry(sp: Species): THREE.BufferGeometry {
-  const month = portraitMonth(sp);
+function portraitGeometry(sp: Species, at?: number): THREE.BufferGeometry {
+  const month = at ?? portraitMonth(sp);
   if (sp.layer === "bed") return bedPlantGeometry(sp, month);
   // Well grown, but not yet at the end of its growth.
   const age = Math.max(3, Math.round(sp.years * 0.6));
@@ -109,11 +109,30 @@ function getStage(): Stage {
   return stage;
 }
 
-function render(sp: Species, w: number, h: number): string {
+/** One box that holds the plant in every month, so a year of portraits shares one scale. */
+const yearBoxes = new Map<string, THREE.Box3>();
+function yearBox(sp: Species): THREE.Box3 {
+  let box = yearBoxes.get(sp.id);
+  if (box) return box;
+  box = new THREE.Box3();
+  for (let m = 1; m <= 12; m++) {
+    const g = portraitGeometry(sp, m);
+    g.computeBoundingBox();
+    if (g.boundingBox && !g.boundingBox.isEmpty()) box.union(g.boundingBox);
+    g.dispose();
+  }
+  if (box.isEmpty()) box.set(new THREE.Vector3(-0.3, 0, -0.3), new THREE.Vector3(0.3, 0.3, 0.3));
+  // Always include the ground under the plant, so a cut-back stub sits low in the frame.
+  box.min.y = Math.min(box.min.y, 0);
+  yearBoxes.set(sp.id, box);
+  return box;
+}
+
+function render(sp: Species, w: number, h: number, month?: number): string {
   const s = getStage();
-  const g = portraitGeometry(sp);
+  const g = portraitGeometry(sp, month);
   g.computeBoundingBox();
-  const box = g.boundingBox!;
+  const box = month ? yearBox(sp) : g.boundingBox!;
   const size = box.getSize(new THREE.Vector3());
   const centre = box.getCenter(new THREE.Vector3());
   const reach = Math.max(size.x, size.y, size.z, 0.2);
@@ -173,11 +192,12 @@ function render(sp: Species, w: number, h: number): string {
 // ── Queue and cache ──────────────────────────────────────────────────────
 
 const cache = new Map<string, string>();
-const waiting = new Map<string, { sp: Species; w: number; h: number; cbs: Set<(url: string) => void> }>();
+const waiting = new Map<string, { sp: Species; w: number; h: number; month?: number; cbs: Set<(url: string) => void> }>();
 let pumping = false;
 
-export function portraitKey(sp: Species, w: number, h: number) {
-  return `${sp.id}|${w}x${h}`;
+/** Cache key of a portrait; with a month, the plant as it is that month (on the year's common scale). */
+export function portraitKey(sp: Species, w: number, h: number, month?: number) {
+  return `${sp.id}|${w}x${h}${month ? `|${month}` : ""}`;
 }
 
 export function cachedPortrait(key: string): string | null {
@@ -191,7 +211,7 @@ function pump() {
     waiting.delete(key);
     let url = "";
     try {
-      url = render(job.sp, job.w, job.h);
+      url = render(job.sp, job.w, job.h, job.month);
     } catch {
       /* WebGL unavailable: the card keeps its plain background */
     }
@@ -203,8 +223,8 @@ function pump() {
 }
 
 /** Asks for a portrait of `sp` at w × h pixels; `cb` gets an image URL. Returns a cancel function. */
-export function requestPortrait(sp: Species, w: number, h: number, cb: (url: string) => void): () => void {
-  const key = portraitKey(sp, w, h);
+export function requestPortrait(sp: Species, w: number, h: number, cb: (url: string) => void, month?: number): () => void {
+  const key = portraitKey(sp, w, h, month);
   const hit = cache.get(key);
   if (hit !== undefined) {
     cb(hit);
@@ -212,7 +232,7 @@ export function requestPortrait(sp: Species, w: number, h: number, cb: (url: str
   }
   let job = waiting.get(key);
   if (!job) {
-    job = { sp, w, h, cbs: new Set() };
+    job = { sp, w, h, month, cbs: new Set() };
     waiting.set(key, job);
   }
   job.cbs.add(cb);

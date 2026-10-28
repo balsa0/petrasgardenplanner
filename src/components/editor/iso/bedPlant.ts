@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
-import { habitOf, inMonths } from "@/editor/model/habit";
+import { inMonths } from "@/editor/model/habit";
+import { phase, type Phase } from "@/editor/model/phenology";
 import { mulberry32 } from "@/editor/model/planting";
 import { treeSize, type Species } from "@/editor/model/species";
 import { mix, seasonLook } from "@/editor/render/colors";
@@ -462,55 +463,90 @@ export interface BedPart {
 }
 
 const STEM = "#5f7d3f";
-const SEED = "#6f5a42";
 const WOOD = "#8a6a48";
-const STRAW = "#b9a57a";
+const TWIGS = "#7a6650";
 
+const WOODY = new Set(["shrub", "rose", "tree", "fruit", "conifer", "climber"]);
 const WARM_CROPS = new Set<Crop>(["tomato", "pepper", "squash", "bean", "corn", "potato"]);
 
-/**
- * How far through its yearly growth a herbaceous plant is (0 just emerged, 1 full size) and whether
- * it is above ground at all. Woody and evergreen plants are always full.
- */
-function seasonGrowth(sp: Species, hab: BedHabit, month: number): { k: number; show: boolean } {
-  if (hab.crop || sp.category === "vegetable") {
-    const start = hab.crop && WARM_CROPS.has(hab.crop) ? 5 : 4;
-    const end = hab.crop && WARM_CROPS.has(hab.crop) ? 10 : 11;
-    if (!inMonths(month, start, end)) return { k: 0, show: false };
-    return { k: Math.min(1, (month - start + 1) / 3), show: true };
-  }
-  if (!sp.deciduous || sp.category === "shrub" || sp.category === "rose") return { k: 1, show: true };
-  const emerge = habitOf(sp).leafOut ?? 4;
-  const peak = sp.bloom ? Math.max(emerge + 1, sp.bloom[0]) : 6;
-  if (month < emerge || month > 11) return { k: 0, show: true };
-  return { k: Math.min(1, (month - emerge + 1) / (peak - emerge + 1)), show: true };
+/** Vegetables: sown or planted out in spring (warm crops after the frosts), grown on, cleared in autumn. */
+function cropPhase(sp: Species, hab: BedHabit, month: number): Phase {
+  const warm = !!hab.crop && WARM_CROPS.has(hab.crop);
+  const start = warm ? 5 : 4, end = warm ? 10 : 11;
+  const none = { heads: "none" as const, headColor: null };
+  if (!inMonths(month, start, end)) return { stage: "dormant", size: 0, spread: 0, leaf: sp.foliage, hidden: true, ...none };
+  const k = Math.min(1, (month - start + 1) / 3);
+  const open = !!sp.bloom && inMonths(month, sp.bloom[0], sp.bloom[1]);
+  return { stage: k < 1 ? "growing" : open ? "bloom" : "full", size: 0.3 + 0.7 * k, spread: 0.6 + 0.4 * k, leaf: sp.foliage, hidden: false, heads: open ? "open" : "none", headColor: open ? sp.flower : null };
+}
+
+/** Shrubs and roses in beds keep their size; their leaves come and go with their habit. */
+function woodyPhase(sp: Species, month: number): Phase {
+  const look = seasonLook(sp, month);
+  return {
+    stage: look.bare ? "dormant" : look.flower ? "bloom" : "full",
+    size: 1,
+    spread: 1,
+    leaf: look.bare ? TWIGS : look.canopy,
+    hidden: false,
+    heads: look.flower ? "open" : "none",
+    headColor: look.flower,
+  };
+}
+
+/** Where a plant is in its year: crops, shrubs and everything else each keep their own calendar. */
+export function bedPhase(sp: Species, month: number): Phase {
+  const hab = bedHabitOf(sp);
+  if (hab.crop || sp.category === "vegetable") return cropPhase(sp, hab, month);
+  if (WOODY.has(sp.category)) return woodyPhase(sp, month);
+  return phase(sp, month);
 }
 
 /** The parts of one bed plant standing at (x, y, z), `v` its 0–1 variation, at an age and month. */
 export function bedPlantParts(sp: Species, x: number, y: number, z: number, v: number, years: number, month: number): BedPart[] {
   const hab = bedHabitOf(sp);
-  const look = seasonLook(sp, month);
+  const woody = WOODY.has(sp.category);
+  const ph = bedPhase(sp, month);
   const out: BedPart[] = [];
+  if (ph.hidden) return out;
   const rot = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), v * Math.PI * 2);
   const put = (shape: Shape, px: number, py: number, pz: number, sx: number, sy: number, sz: number, color: string | THREE.Color, q: THREE.Quaternion = rot) =>
     out.push({ shape, m: new THREE.Matrix4().compose(new THREE.Vector3(px, py, pz), q, new THREE.Vector3(sx, sy, sz)), color: color instanceof THREE.Color ? color : new THREE.Color(color) });
 
-  const grow = seasonGrowth(sp, hab, month);
-  if (look.hidden || !grow.show) return out;
   const size = treeSize(sp, 1 + years);
-  const r = (size.spread / 2) * (0.88 + v * 0.24) * (0.6 + 0.4 * grow.k);
-  const h = size.height * (0.9 + v * 0.2) * (0.3 + 0.7 * grow.k);
+  const r0 = (size.spread / 2) * (0.88 + v * 0.24);
+  const h0 = size.height * (0.9 + v * 0.2);
+  const r = r0 * ph.spread;
+  const h = h0 * ph.size;
 
-  // Winter: the stubs of a cut-back perennial, or straw standing for grasses.
-  if (look.bare || grow.k === 0) {
-    if (hab.leaf === "grass" && look.canopy !== "#8b7d6b") put("leaf.grass", x, y, z, r * 1.1, h, r * 1.1, STRAW);
-    else put("leaf.carpet", x, y, z, r * 0.45, 0.12, r * 0.45, "#7a6650");
+  // Winter states first.
+  if (ph.stage === "cut" || (ph.stage === "dormant" && !woody)) {
+    // Cut back to stubble (grasses) or a low crown.
+    if (hab.leaf === "grass") put("leaf.grass", x, y, z, r0 * 0.5, Math.max(0.05, h0 * 0.1), r0 * 0.5, ph.leaf);
+    else put("leaf.carpet", x, y, z, r0 * 0.4, Math.max(0.04, h0 * 0.08), r0 * 0.4, ph.leaf);
+    return out;
+  }
+  const leafColor = new THREE.Color(ph.leaf);
+  if (ph.stage === "dormant") {
+    // Bare shrub or rose: a twiggy frame.
+    put("leaf.clump", x, y, z, r * 0.8, h * 0.85, r * 0.8, leafColor);
+    return out;
+  }
+  if (ph.stage === "straw" && hab.leaf !== "grass") {
+    // A perennial's winter skeleton: dark stems holding last summer's heads.
+    const n = Math.max(3, Math.round(hab.count * Math.max(0.35, r0 * 2) * 0.6));
+    for (let i = 0; i < n; i++) {
+      const a = i * 2.39996 + v * 6, d = Math.sqrt((i + 0.5) / n) * r0 * 0.5;
+      put("stem", x + Math.cos(a) * d, y, z + Math.sin(a) * d, 0.007, h * (0.75 + (0.25 * ((i * 7) % 4)) / 3), 0.007, leafColor);
+    }
+    addHeads(h);
     return out;
   }
 
-  const leafColor = new THREE.Color(look.canopy);
-  const leafH = hab.bloom === "none" || !look.flower ? h : h * hab.leafShare;
-  const L = hab.leaf;
+  const shoots = ph.stage === "shoots";
+  const showHeads = ph.heads !== "none" && hab.bloom !== "none";
+  const leafH = showHeads ? h * hab.leafShare : h;
+  const L = shoots && (hab.leaf === "mound" || hab.leaf === "carpet") ? "clump" : hab.leaf;
   const wide = L === "carpet" || L === "sprawl" ? 1.05 : L === "clump" || L === "stalk" || L === "tubes" ? 0.75 : 1;
   const lh = L === "carpet" ? Math.min(leafH, Math.max(0.06, r * 0.4)) : L === "rosette" || L === "succulent" ? Math.min(leafH, Math.max(0.08, r * 0.8)) : leafH;
   put(`leaf.${L}` as Shape, x, y, z, r * wide, lh, r * wide, leafColor);
@@ -519,10 +555,10 @@ export function bedPlantParts(sp: Species, x: number, y: number, z: number, v: n
   if (hab.crop) {
     const fruit = sp.flower ? new THREE.Color(sp.flower) : new THREE.Color("#c0392b");
     const rnd = mulberry32(Math.floor(v * 1e6));
-    const ripe = grow.k >= 0.66;
+    const ripe = ph.size >= 0.95;
     switch (hab.crop) {
       case "tomato":
-        put("stake", x + r * 0.15, y, z, 0.012, h * 1.1, 0.012, WOOD);
+        put("stake", x + r * 0.15, y, z, 0.012, h0 * 1.1, 0.012, WOOD);
         if (ripe) for (let i = 0; i < 6; i++) put("fruit", x + (rnd() - 0.5) * r, y + h * (0.3 + rnd() * 0.5), z + (rnd() - 0.5) * r, 0.03, 0.03, 0.03, rnd() > 0.3 ? fruit : "#7aa84c");
         break;
       case "pepper":
@@ -536,7 +572,7 @@ export function bedPlantParts(sp: Species, x: number, y: number, z: number, v: n
         for (let i = 0; i < 3; i++) {
           const a = (i / 3) * Math.PI * 2;
           const q = new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.sin(a) * 0.18, 0, -Math.cos(a) * 0.18));
-          put("stake", x + Math.cos(a) * r * 0.5, y, z + Math.sin(a) * r * 0.5, 0.01, Math.max(h, 1.6), 0.01, WOOD, q);
+          put("stake", x + Math.cos(a) * r * 0.5, y, z + Math.sin(a) * r * 0.5, 0.01, Math.max(h0, 1.6), 0.01, WOOD, q);
         }
         break;
       case "corn":
@@ -553,29 +589,27 @@ export function bedPlantParts(sp: Species, x: number, y: number, z: number, v: n
       case "potato":
         break;
     }
-    if (hab.bloom !== "none" && look.flower) addFlowers();
-    return out;
   }
-  addFlowers();
+  if (showHeads) addHeads(lh);
   return out;
 
-  function addFlowers() {
-    const seeds = !look.flower && habitOf(sp).dryHeads && sp.bloom && inMonths(month, sp.bloom[1] + 1, sp.bloom[1] + 2);
-    const budding = !look.flower && sp.bloom && month === ((sp.bloom[0] + 10) % 12) + 1;
-    if (hab.bloom === "none" || (!look.flower && !seeds && !budding)) return;
-    const color = look.flower ? new THREE.Color(look.flower) : seeds ? new THREE.Color(SEED) : mixColor(leafColor, sp.flower ?? "#ffffff", 0.35);
+  /** Flower heads (buds, open flowers or seed heads) above or among leaves `lh` tall. */
+  function addHeads(lh: number) {
+    if (hab.bloom === "none" || ph.heads === "none" || !ph.headColor) return;
+    const color = new THREE.Color(ph.headColor);
+    const budding = ph.heads === "bud", seeds = ph.heads === "seed";
     const scale = budding ? 0.45 : seeds ? 0.75 : 1;
     const rnd = mulberry32(Math.floor(v * 1e6) + 7);
-    const n = Math.max(1, Math.min(28, Math.round(hab.count * Math.max(0.35, r * 2) * (budding ? 0.6 : 1))));
-    const fs = Math.max(0.018, Math.min(0.22, r * 2 * hab.head)) * scale;
-    const above = h - lh;
+    const n = Math.max(1, Math.min(28, Math.round(hab.count * Math.max(0.35, r0 * 2) * (budding ? 0.6 : 1))));
+    const fs = Math.max(0.018, Math.min(0.22, r0 * 2 * hab.head)) * scale;
+    const above = Math.max(0, h - lh);
     const spread = hab.leaf === "carpet" || hab.leaf === "mound" ? 0.8 : 0.55;
     for (let i = 0; i < n; i++) {
       const a = i * 2.39996 + v * 6, d = Math.sqrt((i + 0.5) / n) * r * spread;
       const fx = x + Math.cos(a) * d, fz = z + Math.sin(a) * d;
       // Flowers in or just over the leaves (mounds, carpets) or on stems up to the full height.
       const top = above > 0.05 ? lh + above * (0.65 + 0.35 * rnd()) : lh * (0.8 + 0.25 * rnd());
-      if (above > 0.05) put("stem", fx, y + lh * 0.6, fz, 0.006 + fs * 0.05, top - lh * 0.6, 0.006 + fs * 0.05, STEM);
+      if (above > 0.05) put("stem", fx, y + lh * 0.6, fz, 0.006 + fs * 0.05, top - lh * 0.6, 0.006 + fs * 0.05, seeds ? ph.leaf : STEM);
       const fy = y + top;
       switch (hab.bloom) {
         case "spike": {
@@ -584,8 +618,11 @@ export function bedPlantParts(sp: Species, x: number, y: number, z: number, v: n
           break;
         }
         case "daisy":
-          put("bloom.daisy", fx, fy, fz, fs, fs, fs, color);
-          if (!seeds) put("bloom.eye", fx, fy + fs * 0.08, fz, fs * 0.38, fs * 0.38, fs * 0.38, eyeColor(sp, color));
+          if (seeds) put("bloom.eye", fx, fy, fz, fs * 0.45, fs * 0.45, fs * 0.45, color);
+          else {
+            put("bloom.daisy", fx, fy, fz, fs, fs, fs, color);
+            if (!budding) put("bloom.eye", fx, fy + fs * 0.08, fz, fs * 0.38, fs * 0.38, fs * 0.38, eyeColor(sp, color));
+          }
           break;
         case "umbel":
           put("bloom.umbel", fx, fy, fz, fs, fs, fs, color);
@@ -600,7 +637,7 @@ export function bedPlantParts(sp: Species, x: number, y: number, z: number, v: n
           put("bloom.trumpet", fx, fy - fs * 0.4, fz, fs * 0.6, fs * 0.9, fs * 0.6, color);
           break;
         case "plume":
-          put("bloom.plume", fx, fy - fs * 1.4, fz, fs * 0.8, fs * 1.6, fs * 0.8, look.flower ? color : STRAW);
+          put("bloom.plume", fx, fy - fs * 1.4, fz, fs * 0.8, fs * 1.6, fs * 0.8, color);
           break;
         case "bell":
           put("bloom.bell", fx, fy - fs * 0.8, fz, fs * 0.45, fs * 0.6, fs * 0.45, color);

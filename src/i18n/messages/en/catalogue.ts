@@ -71,6 +71,21 @@ const messages = {
   "catalogue.photo.credit": "Photo: {author}, {license}",
   // Shown when the photo is of the species rather than this cultivar; {species} is a Latin name.
   "catalogue.photo.species": "shows {species}",
+  // The plant month by month on its page; each tile says what it is doing.
+  "catalogue.year.title": "Through the year",
+  "catalogue.year.help": "As it stands in a Central European garden, all on one scale. Click a month to see the garden then.",
+  "catalogue.year.show": "Show the garden in {month}",
+  "catalogue.stage.dormant": "Resting",
+  "catalogue.stage.shoots": "New shoots",
+  "catalogue.stage.growing": "Growing",
+  "catalogue.stage.full": "Full leaf",
+  "catalogue.stage.bud": "In bud",
+  "catalogue.stage.bloom": "In flower",
+  "catalogue.stage.seed": "Seed heads",
+  "catalogue.stage.fading": "Turning",
+  "catalogue.stage.straw": "Winter stems",
+  "catalogue.stage.cut": "Cut back",
+  "catalogue.stage.underground": "Below ground",
   // Link from a plant's page to its Wikipedia article (in the app's language when there is one).
   "catalogue.link.wikipedia": "Read more on Wikipedia",
   // After the link when only the English article exists.

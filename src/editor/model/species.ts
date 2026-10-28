@@ -208,16 +208,6 @@ export function inBloom(species: Species, month: number): boolean {
   return a <= b ? month >= a && month <= b : month >= a || month <= b;
 }
 
-export type FoliageState = "leaf" | "autumn" | "bare";
-
-export function foliageState(species: Species, month: number): FoliageState {
-  if (!species.deciduous) return "leaf";
-  if (month === 12 || month <= 2) return "bare";
-  if (month === 3) return species.category === "bulb" ? "leaf" : "bare";
-  if (month === 10 || month === 11) return "autumn";
-  return "leaf";
-}
-
 /** Flowering months, e.g. "Apr–Jun", in the active language. */
 export function formatBloom(species: Species): string | null {
   if (!species.bloom) return null;

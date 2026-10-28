@@ -42,6 +42,7 @@ import { getEditor, useEditor } from "@/editor/store/store";
 import { KIND_STEP, stepStyle } from "../meta";
 import { PhotoCredit, SpeciesImage } from "./SpeciesImage";
 import { PlantLink } from "./PlantLink";
+import { YearStrip } from "./YearStrip";
 
 const PAGE = 60;
 
@@ -450,6 +451,11 @@ function speciesPage({ sp, kind, picked, forTree, onBack }: { sp: Species; kind:
             {sp.origin}
           </Fact>
           <Fact label={t("catalogue.fact.styles")}>{sp.styles.map((s) => STYLE_LABELS[s]).join(", ")}</Fact>
+          <div className="lg:col-span-2">
+            <Fact label={t("catalogue.year.title")}>
+              <YearStrip key={sp.id} sp={sp} />
+            </Fact>
+          </div>
           {sp.uses.length > 0 && (
             <div className="lg:col-span-2">
               <Fact label={t("catalogue.fact.uses")}>

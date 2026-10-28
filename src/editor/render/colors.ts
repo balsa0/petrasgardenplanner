@@ -1,5 +1,6 @@
-import { habitOf, inMonths, leafing } from "../model/habit";
-import { foliageState, inBloom, type Species } from "../model/species";
+import { phase } from "../model/phenology";
+import { habitOf, leafing } from "../model/habit";
+import { inBloom, type Species } from "../model/species";
 
 export function hexToRgb(hex: string): [number, number, number] {
   const h = hex.replace("#", "");
@@ -32,7 +33,6 @@ export interface SeasonLook {
 }
 
 const BARE = "#8b7d6b";
-const STRAW = "#c9b384";
 
 const WOODY = new Set<Species["category"]>(["tree", "fruit", "conifer", "shrub", "rose", "climber"]);
 
@@ -53,20 +53,9 @@ export function seasonLook(sp: Species, month: number): SeasonLook {
     const blossomTree = bloomNow && (sp.category === "tree" || sp.category === "fruit");
     return { canopy: blossomTree ? mix(canopy, bloomNow, 0.55) : canopy, flower: bloomNow, bare: false };
   }
-  // Bulbs show from a month before flowering to a month after, then die back.
-  if (sp.category === "bulb" && sp.bloom && !inMonths(month, (sp.bloom[0] + 10) % 12 + 1, sp.bloom[1] % 12 + 1)) return { canopy: BARE, flower: null, bare: true, hidden: true };
-  // Annuals are planted a month or so before they flower and cleared after; without data, May to October.
-  if (sp.category === "annual" && !(sp.bloom ? inMonths(month, (sp.bloom[0] + 10) % 12 + 1, sp.bloom[1]) : inMonths(month, 5, 10))) {
-    return { canopy: BARE, flower: null, bare: true, hidden: true };
-  }
-  // Ornamental grasses stand as straw through winter until cut back in March.
-  if (sp.category === "grass" && sp.deciduous && inMonths(month, 11, 3)) {
-    return month === 3 ? { canopy: BARE, flower: null, bare: true } : { canopy: STRAW, flower: null, bare: false };
-  }
-  const state = foliageState(sp, month);
-  const bloom = bloomNow;
-  if (state === "bare") return { canopy: BARE, flower: bloom, bare: true };
-  if (state === "autumn") return { canopy: sp.autumn ?? mix(sp.foliage, "#c9a33a", 0.6), flower: null, bare: false };
-  const blossomTree = bloom && (sp.category === "tree" || sp.category === "fruit");
-  return { canopy: blossomTree ? mix(sp.foliage, bloom, 0.7) : sp.foliage, flower: bloom, bare: false };
+  // Everything else follows its yearly cycle (model/phenology).
+  const ph = phase(sp, month);
+  if (ph.hidden) return { canopy: BARE, flower: null, bare: true, hidden: true };
+  if (ph.stage === "dormant" || ph.stage === "cut") return { canopy: ph.leaf, flower: null, bare: true };
+  return { canopy: ph.leaf, flower: ph.heads === "open" ? ph.headColor : null, bare: false };
 }
