@@ -74,7 +74,7 @@ export function SpeciesPicker({ value, layer, forTree, onChange }: { value: stri
                 >
                   <ColorDot color={s.flower ?? s.foliage} />
                   <span className="min-w-0 flex-1 truncate">{speciesName(s)}</span>
-                  {s.native && <Leaf className="size-3 text-primary" aria-label={t("panels.library.native")} />}
+                  {s.native && <Leaf className="size-3 text-leaf" aria-label={t("panels.library.native")} />}
                 </CommandItem>
               ))}
             </CommandGroup>
@@ -85,7 +85,7 @@ export function SpeciesPicker({ value, layer, forTree, onChange }: { value: stri
               setOpen(false);
               getEditor().openCatalogue({ kind, forTree });
             }}
-            className="flex w-full items-center gap-2 border-t px-3 py-2.5 text-left text-[13px] font-semibold text-primary hover:bg-muted"
+            className="flex w-full items-center gap-2 border-t px-3 py-2.5 text-left text-[13px] font-semibold text-primary-ink hover:bg-muted"
           >
             <BookOpen className="size-4" /> {t("catalogue.browse")}
           </button>
@@ -100,7 +100,7 @@ export function SpeciesDetails({ sp }: { sp: Species }) {
   const bloom = formatBloom(sp);
   const rows: [string, React.ReactNode][] = [
     [t("panels.details.family"), sp.family],
-    [t("panels.details.origin"), <span key="o" className="flex items-center gap-1">{sp.native && <Leaf className="size-3 text-primary" aria-label={t("panels.library.native")} />}{sp.origin}</span>],
+    [t("panels.details.origin"), <span key="o" className="flex items-center gap-1">{sp.native && <Leaf className="size-3 text-leaf" aria-label={t("panels.library.native")} />}{sp.origin}</span>],
     [t("panels.details.light"), SUN_LABELS[sp.sun]],
     [t("panels.details.soil"), MOISTURE_LABELS[sp.moisture]],
     [t("panels.details.hardiness"), t("panels.details.hardinessValue", { zone: sp.hardiness, temp: zoneMinC(sp.hardiness) })],

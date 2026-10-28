@@ -47,7 +47,7 @@ export interface PlanInput {
 
 type Ctx = CanvasRenderingContext2D;
 
-const PAPER = "#f2f0e9";
+const PAPER = "#f7e8cf";
 
 export function drawPlan(ctx: Ctx, input: PlanInput): AnnotationHit[] {
   const { cam, doc } = input;
@@ -154,13 +154,16 @@ function drawScaleBar(ctx: Ctx, cam: PlanCamera) {
   const L = steps.find((s) => s * cam.zoom >= 70) ?? steps[steps.length - 1];
   const w = L * cam.zoom;
   const x = 16, y = cam.height - 22;
-  ctx.fillStyle = "rgba(255,255,255,0.85)";
+  ctx.fillStyle = "#fff7ea";
   ctx.beginPath();
-  ctx.roundRect(x - 8, y - 20, w + 16 + 40, 30, 6);
+  ctx.rect(x - 8.5, y - 20.5, w + 16 + 40, 30);
   ctx.fill();
-  ctx.fillStyle = "#1c1917";
+  ctx.strokeStyle = "#151413";
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.fillStyle = "#151413";
   ctx.fillRect(x, y, w / 2, 4);
-  ctx.strokeStyle = "#1c1917";
+  ctx.strokeStyle = "#151413";
   ctx.lineWidth = 1;
   ctx.strokeRect(x + 0.5, y + 0.5, w - 1, 4);
   ctx.font = font(500, 11);

@@ -70,7 +70,7 @@ function Header({ e }: { e: Entity }) {
   return (
     <div className="flex items-start gap-2 border-b px-4 pt-3.5 pb-3">
       <div className="min-w-0 flex-1">
-        <div className="text-[12px] font-medium text-primary">{kindLabel(e.kind)}</div>
+        <div className="text-[12px] font-medium text-primary-ink">{kindLabel(e.kind)}</div>
         {canName ? (
           <input
             aria-label={t("common.name")}
@@ -460,7 +460,7 @@ function MultiInspector({ ids, doc }: { ids: string[]; doc: GardenDoc }) {
   return (
     <>
       <div className="border-b px-4 pt-3.5 pb-3">
-        <div className="text-[12px] font-medium text-primary">{t("panels.inspector.multi.title")}</div>
+        <div className="text-[12px] font-medium text-primary-ink">{t("panels.inspector.multi.title")}</div>
         <div className="text-[15px] font-semibold">{t("common.items", { count: ids.length })}</div>
         <div className="mt-1 text-xs text-muted-foreground">{Array.from(kinds.entries()).map(([k, n]) => `${fmtNumber(n)} × ${k}`).join(" · ")}</div>
       </div>

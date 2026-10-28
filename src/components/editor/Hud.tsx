@@ -119,7 +119,7 @@ export function ResourceStrip() {
         >
           {items.map((it, i) => (
             <span key={i} className={cn("flex items-baseline gap-1.5", i > 1 && "hidden @3xl:flex")}>
-              <it.icon className="size-4 shrink-0 self-center text-primary" />
+              <it.icon className="size-4 shrink-0 self-center text-primary-ink" />
               <Counter value={it.value} />
               <span className="hidden text-[11.5px] whitespace-nowrap text-muted-foreground @5xl:inline">{it.label}</span>
             </span>

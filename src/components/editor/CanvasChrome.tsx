@@ -198,7 +198,7 @@ function StatusBar() {
         {view !== "3d" && (
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant="ghost" size="sm" className={cn("gap-1.5", snapCount ? "text-primary" : "text-muted-foreground")}>
+              <Button variant="ghost" size="sm" className={cn("gap-1.5", snapCount ? "text-primary-ink" : "text-muted-foreground")}>
                 <Magnet /> {t(snapCount ? "shell.canvas.snap.on" : "shell.canvas.snap.off")}
               </Button>
             </PopoverTrigger>
@@ -229,7 +229,7 @@ function StatusBar() {
           )}
         </span>
         <span className="h-4 w-px bg-border" />
-        <button type="button" className="font-semibold text-foreground hover:text-primary" onClick={() => setUnits(units === "metric" ? "imperial" : "metric")} title={t("shell.canvas.switchUnits")}>
+        <button type="button" className="font-semibold text-foreground hover:text-primary-ink" onClick={() => setUnits(units === "metric" ? "imperial" : "metric")} title={t("shell.canvas.switchUnits")}>
           {units === "metric" ? "m" : "ft"}
         </button>
       </Pill>

@@ -62,7 +62,7 @@ function FloatingInputBox({ f }: { f: FloatingInputState }) {
 
   return (
     <div
-      className="absolute z-30 w-64 -translate-x-1/2 rounded-xl border bg-popover p-2.5 shadow-xl ring-1 ring-black/5"
+      className="absolute z-30 w-64 -translate-x-1/2 rounded-xl border-[length:var(--line)] border-[var(--ink)] bg-popover p-2.5"
       style={{ left: Math.max(140, pos[0]), top: pos[1] + 14 }}
       onPointerDown={(e) => e.stopPropagation()}
     >

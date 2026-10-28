@@ -26,14 +26,14 @@ export function CatalogueButton({ kind }: { kind: PickKind }) {
     <button
       type="button"
       onClick={() => getEditor().openCatalogue({ kind })}
-      className="group flex w-full items-center gap-3 rounded-xl bg-[oklch(0.33_0.05_158)] py-2.5 pr-3 pl-2.5 text-left text-white shadow-[0_2px_0_oklch(0.24_0.04_158)] transition-transform outline-none hover:-translate-y-px focus-visible:ring-2 focus-visible:ring-ring/60 active:translate-y-0.5 active:shadow-none"
+      className="group flex w-full items-center gap-3 rounded-md border-[length:var(--line)] border-[var(--ink)] bg-primary py-2.5 pr-3 pl-2.5 text-left text-primary-foreground transition-transform outline-none focus-visible:ring-2 focus-visible:ring-ring/60 active:translate-x-px active:translate-y-px"
     >
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[oklch(0.988_0.006_100)] text-[oklch(0.33_0.05_158)] shadow-[inset_-3px_0_0_rgba(0,0,0,0.08)]">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-sm border-[length:var(--line)] border-[var(--ink)] bg-card text-foreground">
         <BookOpen className="size-5" />
       </span>
       <span className="min-w-0">
         <span className="font-display block truncate text-[14px] leading-tight font-semibold">{t(`catalogue.title.${kind}`)}</span>
-        <span className="block text-[11.5px] text-white/70">{t(`catalogue.count.${kind}`, { count: TOTALS[kind]() })}</span>
+        <span className="block text-[11.5px] text-primary-foreground/75">{t(`catalogue.count.${kind}`, { count: TOTALS[kind]() })}</span>
       </span>
     </button>
   );
@@ -81,7 +81,7 @@ function PickedRow({ sp, selected, onUse, onRemove }: { sp: Species; selected: b
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1">
           <span className="truncate text-[13px] font-semibold">{speciesName(sp)}</span>
-          {sp.native && <Leaf className="size-3 shrink-0 text-primary" aria-label={t("panels.library.native")} />}
+          {sp.native && <Leaf className="size-3 shrink-0 text-leaf" aria-label={t("panels.library.native")} />}
         </span>
         <span className="mt-0.5 flex items-center gap-2 text-[11px] text-muted-foreground tabular">
           <SunGlyph sun={sp.sun} className="size-3" />
@@ -128,7 +128,7 @@ export function PickedSpecies({ layer }: { layer: "tree" | "bed" }) {
           ))}
         </div>
       ) : (
-        <p className="rounded-xl border border-dashed border-black/15 px-3 py-3 text-[12px] leading-snug text-muted-foreground">{t(`catalogue.empty.${kind}`)}</p>
+        <p className="rounded-md border-[length:var(--line)] border-dashed border-[var(--ink)]/50 px-3 py-3 text-[12px] leading-snug text-muted-foreground">{t(`catalogue.empty.${kind}`)}</p>
       )}
     </Section>
   );
@@ -178,7 +178,7 @@ export function PickedSurfaces() {
                   <span className="truncate text-[12px] font-semibold">{m.name}</span>
                   {totals[m.id] ? <span className="shrink-0 text-[10px] text-muted-foreground tabular">{fmtArea(totals[m.id]!)}</span> : null}
                 </div>
-                <span className="absolute top-1 right-1 rounded-md bg-white/85">
+                <span className="absolute top-1 right-1 rounded-sm bg-card">
                   <RemoveButton onClick={() => unpick("surfaces", m.id)} />
                 </span>
               </div>
@@ -186,7 +186,7 @@ export function PickedSurfaces() {
           })}
         </div>
       ) : (
-        <p className="rounded-xl border border-dashed border-black/15 px-3 py-3 text-[12px] leading-snug text-muted-foreground">{t("catalogue.empty.surfaces")}</p>
+        <p className="rounded-md border-[length:var(--line)] border-dashed border-[var(--ink)]/50 px-3 py-3 text-[12px] leading-snug text-muted-foreground">{t("catalogue.empty.surfaces")}</p>
       )}
     </Section>
   );

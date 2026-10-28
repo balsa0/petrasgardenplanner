@@ -111,7 +111,7 @@ export function Segmented<T extends string>({
           className={cn(
             "flex flex-1 items-center justify-center gap-1.5 rounded-md px-2 font-medium whitespace-nowrap transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
             size === "sm" ? "h-6 text-xs" : "h-7 text-[13px]",
-            value === o.value ? "bg-background text-foreground shadow-sm ring-1 ring-border" : "text-muted-foreground hover:text-foreground",
+            value === o.value ? "bg-accent text-accent-foreground ring-[length:var(--line)] ring-[var(--ink)]" : "text-muted-foreground hover:text-foreground",
           )}
         >
           {o.label}

@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, IBM_Plex_Mono, Space_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Monospace throughout, like a field notebook: Plex for text, Space Mono for titles and numbers.
+const plex = IBM_Plex_Mono({
+  variable: "--font-plex",
   subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
 });
 
-// Display face for step names, counters and hotkeys: a little character without being playful.
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const space = Space_Mono({
+  variable: "--font-space",
   subsets: ["latin", "latin-ext"],
-  axes: ["opsz", "wdth"],
+  weight: ["400", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -27,12 +28,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f6f1",
+  themeColor: "#fcefda",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} h-full antialiased`}>
+    <html lang="en" className={`${plex.variable} ${space.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="h-full overflow-hidden">
         <TooltipProvider delayDuration={300}>{children}</TooltipProvider>
         <Toaster position="top-center" offset={116} theme="light" richColors={false} closeButton />

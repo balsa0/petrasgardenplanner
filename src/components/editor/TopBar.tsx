@@ -58,7 +58,7 @@ function StageStepper() {
                   aria-current={active ? "step" : undefined}
                   className={cn(
                     "group flex h-8 items-center gap-1.5 rounded-full p-1 text-[13px] font-semibold transition-colors outline-none focus-visible:ring-2 focus-visible:ring-ring/60",
-                    active ? "bg-primary pr-3 text-primary-foreground shadow-[0_2px_0_oklch(0.33_0.08_152)]" : "text-muted-foreground hover:text-foreground",
+                    active ? "border-[length:var(--line)] border-[var(--ink)] bg-primary pr-3 text-primary-foreground" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   <span
@@ -213,7 +213,7 @@ export function TopBar() {
     <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center gap-3 p-3">
       <div className="flex min-w-0 flex-1">
         <div className="hud-panel pointer-events-auto flex h-11 min-w-0 items-center gap-2 rounded-2xl pr-2 pl-1.5">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_2px_0_oklch(0.33_0.08_152)]">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-md border-[length:var(--line)] border-[var(--ink)] bg-primary text-primary-foreground">
             <Sprout className="size-4.5" />
           </div>
           <div className="font-display hidden text-[14px] font-semibold whitespace-nowrap text-foreground/70 2xl:block">Garden Planner</div>

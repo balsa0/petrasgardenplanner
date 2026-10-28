@@ -124,7 +124,7 @@ function VariantCard({ v, active, onlyOne }: { v: VariantMeta; active: boolean; 
             if (name) void renameVariant(v.id, name);
           }}
         />
-        {active && <span className="ml-auto shrink-0 text-[10.5px] font-medium text-primary">{t("shell.versions.current")}</span>}
+        {active && <span className="ml-auto shrink-0 text-[10.5px] font-medium text-primary-ink">{t("shell.versions.current")}</span>}
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

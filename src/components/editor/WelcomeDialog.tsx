@@ -42,12 +42,12 @@ export function WelcomeDialog() {
   return (
     <Dialog open={open} onOpenChange={(o) => (hasContent || !o ? setWelcome(o) : undefined)}>
       <DialogContent showCloseButton={hasContent} className="gap-0 overflow-hidden p-0 sm:max-w-[720px]">
-        <div className="relative bg-gradient-to-br from-[#eef4ea] via-[#f6f4ec] to-[#f1ede2] px-7 pt-7 pb-6">
+        <div className="relative border-b-[length:var(--line)] border-[var(--ink)] bg-accent px-7 pt-7 pb-6">
           <div className="flex items-center gap-2.5">
-            <div className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm">
+            <div className="flex size-9 items-center justify-center rounded-xl border-[length:var(--line)] border-[var(--ink)] bg-primary text-primary-foreground">
               <Sprout className="size-5" />
             </div>
-            <span className="text-sm font-medium text-muted-foreground">Garden Planner</span>
+            <span className="text-sm font-medium text-foreground/70">Garden Planner</span>
           </div>
           <DialogTitle className="mt-4 text-2xl font-semibold tracking-tight">{t("shell.welcome.title")}</DialogTitle>
           <DialogDescription className="mt-1.5 max-w-lg text-[13.5px]">{t("shell.welcome.description")}</DialogDescription>
@@ -55,9 +55,9 @@ export function WelcomeDialog() {
             {STAGES.map((st) => {
               const Icon = STAGE_ICONS[st.id];
               return (
-                <li key={st.id} className="flex items-center gap-1.5 rounded-full bg-background/80 px-2.5 py-1 text-[11.5px] font-medium ring-1 ring-black/5">
+                <li key={st.id} className="flex items-center gap-1.5 rounded-md border-[length:var(--line)] border-[var(--ink)] bg-card px-2.5 py-1 text-[11.5px] font-medium">
                   <span className="text-muted-foreground tabular">{st.index}</span>
-                  <Icon className="size-3.5 text-primary" />
+                  <Icon className="size-3.5 text-primary-ink" />
                   {st.short}
                 </li>
               );
@@ -72,7 +72,7 @@ export function WelcomeDialog() {
           )}
           <div className="flex flex-col rounded-xl border p-4 sm:col-span-3 sm:flex-row sm:items-center sm:gap-5">
             <div className="flex-1">
-              <div className="flex items-center gap-2 font-semibold"><SquareDashed className="size-4 text-primary" /> {t("shell.welcome.size.title")}</div>
+              <div className="flex items-center gap-2 font-semibold"><SquareDashed className="size-4 text-primary-ink" /> {t("shell.welcome.size.title")}</div>
               <p className="mt-1 text-xs text-muted-foreground">{t("shell.welcome.size.description")}</p>
             </div>
             <div className="mt-3 flex items-center gap-2 sm:mt-0">
@@ -94,7 +94,7 @@ export function WelcomeDialog() {
             }}
             className="group rounded-xl border p-4 text-left transition-colors hover:border-primary/50 hover:bg-accent/40 sm:col-span-1"
           >
-            <div className="flex items-center gap-2 font-semibold"><PenLine className="size-4 text-primary" /> {t("shell.welcome.draw.title")}</div>
+            <div className="flex items-center gap-2 font-semibold"><PenLine className="size-4 text-primary-ink" /> {t("shell.welcome.draw.title")}</div>
             <p className="mt-1 text-xs text-muted-foreground">{t("shell.welcome.draw.description", { unit: lengthUnitLabel() })}</p>
           </button>
           <button
@@ -105,7 +105,7 @@ export function WelcomeDialog() {
             }}
             className="group rounded-xl border p-4 text-left transition-colors hover:border-primary/50 hover:bg-accent/40 sm:col-span-2"
           >
-            <div className="flex items-center gap-2 font-semibold"><Sparkles className="size-4 text-primary" /> {t("shell.welcome.sample.title")}</div>
+            <div className="flex items-center gap-2 font-semibold"><Sparkles className="size-4 text-primary-ink" /> {t("shell.welcome.sample.title")}</div>
             <p className="mt-1 text-xs text-muted-foreground">{t("shell.welcome.sample.description")}</p>
           </button>
         </div>

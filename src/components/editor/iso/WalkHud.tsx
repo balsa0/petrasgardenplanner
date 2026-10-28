@@ -86,7 +86,7 @@ function Minimap() {
       ctx.arc(x, y, reach, pose.yaw - fov, pose.yaw + fov);
       ctx.closePath();
       ctx.fill();
-      ctx.fillStyle = "#2563eb";
+      ctx.fillStyle = "#ff7a2e";
       ctx.strokeStyle = "#fff";
       ctx.lineWidth = 2;
       ctx.beginPath();
@@ -97,7 +97,7 @@ function Minimap() {
       ctx.beginPath();
       ctx.moveTo(x + fx * 5, y + fy * 5);
       ctx.lineTo(x + fx * 11, y + fy * 11);
-      ctx.strokeStyle = "#2563eb";
+      ctx.strokeStyle = "#ff7a2e";
       ctx.stroke();
     };
     raf = requestAnimationFrame(draw);
@@ -141,10 +141,10 @@ export function WalkHud() {
   return (
     <>
       <div className="absolute left-3 z-10 flex items-center gap-2" style={{ top: "var(--hud-top)" }}>
-        <Button variant="secondary" size="sm" className="gap-1.5 shadow-sm" onClick={exitWalk}>
+        <Button variant="secondary" size="sm" className="gap-1.5" onClick={exitWalk}>
           <LogOut /> {t("walk.exit")} <Kbd className="ml-0.5">Esc</Kbd>
         </Button>
-        <div className="flex items-center gap-2 rounded-lg bg-background/90 py-0.5 pr-0.5 pl-2.5 shadow-sm ring-1 ring-border/60 backdrop-blur">
+        <div className="flex items-center gap-2 hud-panel rounded-lg py-0.5 pr-0.5 pl-2.5">
           <span className="text-xs font-medium text-muted-foreground">{t("walk.eye.label")}</span>
           <Segmented<EyeHeight>
             size="sm"
@@ -154,10 +154,10 @@ export function WalkHud() {
           />
         </div>
       </div>
-      <div className="absolute right-3 bottom-3 z-10 hidden rounded-xl bg-background/90 p-1 shadow-lg ring-1 ring-border/60 backdrop-blur @2xl:block">
+      <div className="absolute right-3 bottom-3 z-10 hidden hud-panel rounded-xl p-1 @2xl:block">
         <Minimap />
       </div>
-      <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex max-w-[calc(100%-1.5rem)] flex-wrap items-center gap-x-3 gap-y-1 rounded-xl bg-foreground/80 px-3 py-1.5 text-xs text-background shadow-lg backdrop-blur @2xl:max-w-[calc(100%-15rem)]">
+      <div className="pointer-events-none absolute bottom-3 left-3 z-10 flex max-w-[calc(100%-1.5rem)] flex-wrap items-center gap-x-3 gap-y-1 rounded-xl bg-foreground px-3 py-1.5 text-xs text-background @2xl:max-w-[calc(100%-15rem)]">
         {rows.map(([k, v]) => (
           <span key={v} className="flex items-center gap-1.5 whitespace-nowrap">
             <Kbd className="bg-background/15 text-background">{k}</Kbd> {v}

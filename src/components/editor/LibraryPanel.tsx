@@ -79,7 +79,7 @@ function TypingTip() {
   const code = "rounded bg-background px-1 font-mono";
   return (
     <div className="flex gap-2.5 rounded-xl bg-muted/70 p-3 text-xs leading-relaxed text-muted-foreground">
-      <Info className="mt-0.5 size-3.5 shrink-0 text-primary" />
+      <Info className="mt-0.5 size-3.5 shrink-0 text-primary-ink" />
       <div>
         {tx("panels.draw.typingTip", {
           title: <span className="font-medium text-foreground">{t("panels.draw.typingTipTitle")}</span>,
@@ -491,7 +491,7 @@ export function LibraryPanel() {
             type="button"
             data-active={complete}
             onClick={() => setStage(next.id)}
-            className={cn("keycap flex h-8 items-center gap-1.5 rounded-lg px-3 text-[13px] font-semibold", complete && "animate-hud-pop")}
+            className={cn("keycap flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-[12.5px] font-semibold whitespace-nowrap", complete && "animate-hud-pop")}
           >
             {t("panels.library.next", { stage: next.short })} <ArrowRight className="size-4" />
           </button>

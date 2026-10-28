@@ -7,10 +7,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-plex), ui-monospace, monospace;
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
-  --font-display: var(--font-bricolage), var(--font-geist-sans), sans-serif;
+  --font-display: var(--font-space), var(--font-plex), ui-monospace, monospace;
   --color-ink: var(--ink);
   --color-honey: var(--honey);
   --color-honey-foreground: var(--honey-foreground);
@@ -40,6 +40,8 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-leaf: var(--leaf);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -51,47 +53,65 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  /* Flat: no drop shadows anywhere; surfaces are separated by ink outlines. */
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: 0 0 #0000;
+  --shadow-2xl: 0 0 #0000;
 }
 
 :root {
-  --background: oklch(0.985 0.004 95);
-  --foreground: oklch(0.24 0.014 75);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.014 75);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.014 75);
-  --primary: oklch(0.46 0.095 152);
-  --primary-foreground: oklch(0.985 0.01 150);
-  --secondary: oklch(0.955 0.012 140);
-  --secondary-foreground: oklch(0.3 0.05 150);
-  --muted: oklch(0.962 0.006 95);
-  --muted-foreground: oklch(0.52 0.014 80);
-  --accent: oklch(0.948 0.03 150);
-  --accent-foreground: oklch(0.3 0.06 152);
-  --destructive: oklch(0.577 0.215 27.325);
-  --border: oklch(0.912 0.009 90);
-  --input: oklch(0.9 0.01 90);
-  --ring: oklch(0.62 0.1 152);
-  --chart-1: oklch(0.62 0.13 150);
-  --chart-2: oklch(0.7 0.12 80);
-  --chart-3: oklch(0.55 0.08 230);
-  --chart-4: oklch(0.6 0.12 40);
-  --chart-5: oklch(0.45 0.05 100);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.978 0.005 95);
-  --sidebar-foreground: oklch(0.24 0.014 75);
-  --sidebar-primary: oklch(0.46 0.095 152);
-  --sidebar-primary-foreground: oklch(0.985 0.01 150);
-  --sidebar-accent: oklch(0.948 0.03 150);
-  --sidebar-accent-foreground: oklch(0.3 0.06 152);
-  --sidebar-border: oklch(0.912 0.009 90);
-  --sidebar-ring: oklch(0.62 0.1 152);
-  /* HUD: evergreen ink for dark chips, honey for progress and rewards, the lip under keycaps. */
-  --ink: oklch(0.27 0.035 160);
-  --honey: oklch(0.8 0.145 78);
-  --honey-foreground: oklch(0.3 0.06 70);
-  --keycap-edge: oklch(0.86 0.014 120);
-  --hud-shadow: 0 1px 0 oklch(1 0 0 / 0.9) inset, 0 10px 30px -12px oklch(0.27 0.035 160 / 0.35), 0 2px 6px -2px oklch(0.27 0.035 160 / 0.16);
+  /* Warm & flat: cream paper, ink outlines, sun-yellow for "selected / done", orange for "go". */
+  --background: #fcefda;
+  --foreground: #151413;
+  --card: #fff7ea;
+  --card-foreground: #151413;
+  --popover: #fff7ea;
+  --popover-foreground: #151413;
+  --primary: #ff7a2e;
+  --primary-foreground: #151413;
+  /* Orange is too light for text on cream; this burnt shade carries it. */
+  --primary-ink: #b8460f;
+  --leaf: #3d7a4a;
+  --secondary: #f6e3c6;
+  --secondary-foreground: #151413;
+  --muted: #f4e2c6;
+  --muted-foreground: #6b5f52;
+  --accent: #f8dc48;
+  --accent-foreground: #151413;
+  --destructive: #d8432c;
+  --border: #151413;
+  --input: #151413;
+  --ring: #151413;
+  --chart-1: #ff7a2e;
+  --chart-2: #f8dc48;
+  --chart-3: #4f8a5b;
+  --chart-4: #3d6fb5;
+  --chart-5: #151413;
+  --radius: 0.15rem;
+  --sidebar: #fcefda;
+  --sidebar-foreground: #151413;
+  --sidebar-primary: #ff7a2e;
+  --sidebar-primary-foreground: #151413;
+  --sidebar-accent: #f8dc48;
+  --sidebar-accent-foreground: #151413;
+  --sidebar-border: #151413;
+  --sidebar-ring: #151413;
+  --ink: #151413;
+  --honey: #f8dc48;
+  --honey-foreground: #151413;
+  --keycap-edge: #151413;
+  --hud-shadow: none;
+  /* Catalogue book: cover board, pages, the backdrop behind illustrations. */
+  --cover: #151413;
+  --cover-foreground: #fcefda;
+  --paper: #fcefda;
+  --art: #f9e2bd;
+  /* Outline weight used everywhere. */
+  --line: 1.5px;
 }
 
 .dark {
@@ -140,34 +160,33 @@
   }
 }
 @layer components {
-  /* Floating HUD surfaces over the garden. */
+  /* Flat surfaces over the garden: paper with an ink outline, no shadow. */
   .hud-panel {
-    background: oklch(1 0 0 / 0.97);
-    border: 1px solid oklch(0.27 0.035 160 / 0.1);
-    box-shadow: var(--hud-shadow);
-    backdrop-filter: blur(10px);
+    background: var(--card);
+    border: var(--line) solid var(--ink);
+    box-shadow: none;
   }
-  /* A tactile key: a lip underneath that it sinks into when pressed. */
+  /* Flat outlined key; yellow when selected, orange for the main action. */
   .keycap {
-    background: oklch(1 0 0);
-    border: 1px solid var(--keycap-edge);
-    box-shadow: 0 2px 0 var(--keycap-edge);
-    transition: transform 80ms ease-out, box-shadow 80ms ease-out, background-color 120ms, color 120ms;
+    background: var(--card);
+    border: var(--line) solid var(--ink);
+    box-shadow: none;
+    transition: background-color 100ms, color 100ms, transform 60ms;
   }
   .keycap:hover {
-    background: oklch(0.975 0.012 140);
+    background: var(--muted);
   }
   .keycap:active {
-    transform: translateY(2px);
-    box-shadow: 0 0 0 var(--keycap-edge);
+    transform: translate(1px, 1px);
   }
   .keycap[aria-pressed="true"],
-  .keycap[aria-checked="true"],
+  .keycap[aria-checked="true"] {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
   .keycap[data-active="true"] {
     background: var(--primary);
-    border-color: oklch(0.38 0.09 152);
     color: var(--primary-foreground);
-    box-shadow: 0 2px 0 oklch(0.33 0.08 152);
   }
 }
 

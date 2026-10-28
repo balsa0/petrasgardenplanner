@@ -728,11 +728,11 @@ function HeightPins({ doc, grid, selection }: { doc: GardenDoc; grid: HeightGrid
           <group key={e.id} position={[e.p[0], g, e.p[1]]} userData={{ entityId: e.id }}>
             <mesh position-y={0.35}>
               <cylinderGeometry args={[0.025, 0.025, 0.7, 6]} />
-              <meshLambertMaterial color={sel ? "#2563eb" : "#44403c"} />
+              <meshLambertMaterial color={sel ? "#f8dc48" : "#44403c"} />
             </mesh>
             <mesh position-y={0.72}>
               <sphereGeometry args={[0.09, 10, 8]} />
-              <meshLambertMaterial color={sel ? "#2563eb" : "#f97316"} />
+              <meshLambertMaterial color={sel ? "#f8dc48" : "#f97316"} />
             </mesh>
           </group>
         );

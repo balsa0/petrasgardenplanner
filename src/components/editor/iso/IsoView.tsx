@@ -208,7 +208,7 @@ function Bridge({
         const e = s.doc.entities[id];
         if (e?.kind !== "heightpoint") continue;
         const sp = project(e.p, sampleHeight(grid, e.p[0], e.p[1]) + 0.95);
-        if (sp) drawPill(ctx, sp[0], sp[1], fmtElev(e.elevation), { bg: s.selection.includes(id) ? "#2563eb" : "rgba(28,25,23,0.82)", fg: "#fff", h: 18 });
+        if (sp) drawPill(ctx, sp[0], sp[1], fmtElev(e.elevation), { bg: s.selection.includes(id) ? "#ff7a2e" : "#151413", fg: s.selection.includes(id) ? "#151413" : "#fcefda", border: "#151413", h: 18 });
       }
     }
     hitsRef.current = drawAnnotations(
@@ -508,7 +508,7 @@ export function IsoView({ mode }: { mode: "iso" | "3d" | "walk" }) {
       tabIndex={-1}
       className="absolute inset-0 touch-none select-none outline-none"
       data-view={mode}
-      style={{ background: "radial-gradient(120% 90% at 50% 0%, #f4f7f1 0%, #e3e9df 55%, #d5dccf 100%)" }}
+      style={{ background: "#f7e8cf" }}
     >
       <Canvas
         shadows

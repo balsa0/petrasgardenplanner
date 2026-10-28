@@ -45,12 +45,14 @@ export function font(weight: number, size: number, mono = false): string {
 }
 
 export const COLORS = {
-  accent: "#2563eb",
-  accentSoft: "rgba(37, 99, 235, 0.14)",
-  guide: "#db2777",
-  error: "#dc2626",
-  measure: "#c2410c",
+  accent: "#ff7a2e",
+  accentSoft: "rgba(255, 122, 46, 0.16)",
+  guide: "#3d6fb5",
+  error: "#d8432c",
+  measure: "#f8dc48",
   subtract: "#e11d48",
+  ink: "#151413",
+  paper: "#fff7ea",
 };
 
 const STYLE: Record<OverlayStyle, { stroke: string; width: number; dash?: number[]; fill?: string; halo?: boolean }> = {
@@ -110,7 +112,7 @@ function applyStroke(ctx: Ctx, style: OverlayStyle) {
   if (s.halo) {
     ctx.save();
     ctx.setLineDash([]);
-    ctx.strokeStyle = "rgba(255,255,255,0.85)";
+    ctx.strokeStyle = "rgba(21, 20, 19, 0.9)";
     ctx.lineWidth = s.width + 3;
     ctx.stroke();
     ctx.restore();
@@ -136,18 +138,13 @@ export function drawPill(
   const w = ctx.measureText(text).width + padX * 2 + dotW;
   const x0 = o.align === "left" ? x : x - w / 2;
   const y0 = y - h / 2;
-  ctx.save();
-  ctx.shadowColor = "rgba(15, 23, 42, 0.18)";
-  ctx.shadowBlur = 6;
-  ctx.shadowOffsetY = 1;
   ctx.fillStyle = o.bg;
   ctx.beginPath();
-  ctx.roundRect(x0, y0, w, h, h / 2);
+  ctx.rect(Math.round(x0) + 0.5, Math.round(y0) + 0.5, Math.round(w), h);
   ctx.fill();
-  ctx.restore();
   if (o.border) {
     ctx.strokeStyle = o.border;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.5;
     ctx.stroke();
   }
   if (o.dot) {
@@ -204,9 +201,9 @@ export function drawOverlays(ctx: Ctx, overlays: Overlay[], proj: Projector) {
         if (o.kind === "mid") ctx.arc(s[0], s[1], 3.5, 0, Math.PI * 2);
         else if (o.kind === "point") ctx.arc(s[0], s[1], 5, 0, Math.PI * 2);
         else ctx.rect(s[0] - 4.5, s[1] - 4.5, 9, 9);
-        ctx.fillStyle = o.kind === "active" ? COLORS.accent : "#fff";
+        ctx.fillStyle = o.kind === "active" ? COLORS.accent : COLORS.paper;
         ctx.fill();
-        ctx.strokeStyle = COLORS.accent;
+        ctx.strokeStyle = COLORS.ink;
         ctx.lineWidth = 1.5;
         ctx.stroke();
         break;
@@ -217,12 +214,12 @@ export function drawOverlays(ctx: Ctx, overlays: Overlay[], proj: Projector) {
         const e = 1 - (1 - o.k) ** 3;
         ctx.beginPath();
         ctx.arc(s[0], s[1], 6 + 30 * e, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(233, 168, 59, ${0.85 * (1 - o.k)})`;
+        ctx.strokeStyle = `rgba(255, 122, 46, ${0.9 * (1 - o.k)})`;
         ctx.lineWidth = 1 + 3 * (1 - o.k);
         ctx.stroke();
         ctx.beginPath();
         ctx.arc(s[0], s[1], 4 * (1 - o.k) + 1, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.9 * (1 - o.k)})`;
+        ctx.fillStyle = `rgba(248, 220, 72, ${0.95 * (1 - o.k)})`;
         ctx.fill();
         break;
       }
@@ -252,10 +249,10 @@ export function drawOverlays(ctx: Ctx, overlays: Overlay[], proj: Projector) {
         const s = proj.project(o.p, o.z);
         if (!s) break;
         const y = s[1] + (o.dy ?? 0);
-        if (o.style === "dim") drawPill(ctx, s[0], y, o.text, { bg: "rgba(255,255,255,0.95)", fg: "#0f172a", border: "rgba(15,23,42,0.12)", font: font(500, 11) });
-        else if (o.style === "input") drawPill(ctx, s[0], y, o.text, { bg: COLORS.accent, fg: "#fff", font: font(600, 12, true), h: 22, padX: 8 });
-        else if (o.style === "warn") drawPill(ctx, s[0], y, o.text, { bg: "#fef2f2", fg: "#b91c1c", border: "#fecaca" });
-        else drawPill(ctx, s[0], y, o.text, { bg: "rgba(15,23,42,0.86)", fg: "#fff" });
+        if (o.style === "dim") drawPill(ctx, s[0], y, o.text, { bg: COLORS.paper, fg: COLORS.ink, border: COLORS.ink, font: font(500, 11) });
+        else if (o.style === "input") drawPill(ctx, s[0], y, o.text, { bg: COLORS.accent, fg: COLORS.ink, border: COLORS.ink, font: font(600, 12, true), h: 22, padX: 8 });
+        else if (o.style === "warn") drawPill(ctx, s[0], y, o.text, { bg: "#fde3d6", fg: "#a12a17", border: "#a12a17" });
+        else drawPill(ctx, s[0], y, o.text, { bg: COLORS.ink, fg: "#fcefda" });
         break;
       }
     }
@@ -336,9 +333,9 @@ export function drawAnnotations(ctx: Ctx, doc: GardenDoc, o: AnnotationOptions, 
       const s = proj.project(p, o.anchorZ?.(e));
       if (!s) continue;
       const r = drawPill(ctx, s[0], s[1] - (proj.drape ? 14 : 0), e.name!, {
-        bg: sel.has(id) ? "#eff6ff" : "rgba(255,255,255,0.94)",
-        fg: "#1c1917",
-        border: sel.has(id) ? COLORS.accent : "rgba(28,25,23,0.12)",
+        bg: sel.has(id) ? "#f8dc48" : COLORS.paper,
+        fg: COLORS.ink,
+        border: COLORS.ink,
         dot: KIND_DOT[e.kind],
       });
       hits.push({ id, ...r });
@@ -351,8 +348,9 @@ export function drawAnnotations(ctx: Ctx, doc: GardenDoc, o: AnnotationOptions, 
       const s = proj.project(e.p, o.anchorZ?.(e));
       if (!s) continue;
       const r = drawPill(ctx, s[0], s[1], e.text || t("tools.label.empty"), {
-        bg: sel.has(id) ? COLORS.accent : "#1f3d2b",
-        fg: "#fff",
+        bg: sel.has(id) ? COLORS.accent : COLORS.ink,
+        fg: sel.has(id) ? COLORS.ink : "#fcefda",
+        border: COLORS.ink,
         font: font(600, 12),
         h: 24,
         padX: 10,
@@ -370,17 +368,12 @@ export function drawAnnotations(ctx: Ctx, doc: GardenDoc, o: AnnotationOptions, 
     const selected = sel.has(id);
     const hovered = o.hover === id;
     // Pin.
-    ctx.save();
-    ctx.shadowColor = "rgba(15,23,42,0.3)";
-    ctx.shadowBlur = 6;
-    ctx.shadowOffsetY = 2;
     ctx.fillStyle = c.pin;
     ctx.beginPath();
     ctx.arc(s[0], s[1], selected ? 11 : 10, 0, Math.PI * 2);
     ctx.fill();
-    ctx.restore();
-    ctx.strokeStyle = selected ? COLORS.accent : "#fff";
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = COLORS.ink;
+    ctx.lineWidth = selected ? 2.5 : 1.5;
     ctx.stroke();
     ctx.fillStyle = "#fff";
     for (let k = -1; k <= 1; k++) ctx.fillRect(s[0] - 4.5, s[1] + k * 3 - 0.75, k === 1 ? 6 : 9, 1.5);
@@ -393,21 +386,16 @@ export function drawAnnotations(ctx: Ctx, doc: GardenDoc, o: AnnotationOptions, 
       const w = Math.max(...lines.map((l) => ctx.measureText(l).width)) + 22;
       const h = lines.length * 16 + 12;
       const x = s[0] + 16, y = s[1] - h / 2;
-      ctx.save();
-      ctx.shadowColor = "rgba(15,23,42,0.18)";
-      ctx.shadowBlur = 10;
-      ctx.shadowOffsetY = 2;
-      ctx.fillStyle = "#fffdf7";
+      ctx.fillStyle = COLORS.paper;
       ctx.beginPath();
-      ctx.roundRect(x, y, w, h, 8);
+      ctx.rect(Math.round(x) + 0.5, Math.round(y) + 0.5, Math.round(w), h);
       ctx.fill();
-      ctx.restore();
-      ctx.strokeStyle = selected ? COLORS.accent : "rgba(28,25,23,0.1)";
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = COLORS.ink;
+      ctx.lineWidth = selected ? 2.5 : 1.5;
       ctx.stroke();
       ctx.fillStyle = c.bar;
       ctx.fillRect(x, y + 6, 3, h - 12);
-      ctx.fillStyle = "#292524";
+      ctx.fillStyle = COLORS.ink;
       ctx.textBaseline = "top";
       lines.forEach((l, i) => ctx.fillText(l, x + 12, y + 7 + i * 16));
       hits.push({ id, x, y, w, h });
