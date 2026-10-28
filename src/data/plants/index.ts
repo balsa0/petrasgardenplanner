@@ -6,5 +6,6 @@ import mediterranean from "./mediterranean.json";
 import perennials from "./perennials.json";
 import centralNatives from "./central-natives.json";
 import kitchen from "./kitchen.json";
+import nursery from "./nursery.json";
 
-export const PLANT_DATA: unknown[] = [...core, ...trees, ...shrubs, ...mediterranean, ...perennials, ...centralNatives, ...kitchen];
+export const PLANT_DATA: unknown[] = [...core, ...trees, ...shrubs, ...mediterranean, ...perennials, ...centralNatives, ...kitchen, ...nursery];
